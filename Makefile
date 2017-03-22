@@ -37,11 +37,6 @@ ifeq ($(RELATIVE), 1)
 	PELICANOPTS += --relative-urls
 endif
 
-# Vaiables for sashareplacepath
-NOTDOT:= href="css/Sasha-Black
-DOT:= href="../css/Sasha-Black
-FILENAME:= Sasha Black/Sasha-Black-description.md
-
 help:
 	@echo 'Makefile for a pelican Web site                                           '
 	@echo '                                                                          '
