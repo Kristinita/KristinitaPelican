@@ -107,4 +107,4 @@ Noco: 159d5
 <br />
 <br />
 <h2 id="VALZ">VALZ</h2>
-<SashaDot>VALZ</SashaDot> — не могу согласиться с совокупностью положений, на которых основываются ваши мнения, <a href="http://kristinita.ru/Giologica/Valerywork-Kiravel" target="_blank" title="Вэлериворк">т. н. Valerywork'ом</a>. За редкими исключениями, к коим не относится наш случай, я принимаю за факт лишь <a href="http://kristinita.ru/Giologica/Valerywork-Kiravel" target="_blank" title="Киравэл">Kiravel</a> — те устоявшиеся мнения, насчёт которых в науке на настоящий момент сложился чёткий консенсус.
+<SashaDot>VALZ</SashaDot> — не могу согласиться с совокупностью положений, на которых основываются ваши мнения, <a href="{filename}/Giologica/Valerywork-Kiravel.md" target="_blank" title="Вэлериворк">т. н. Valerywork'ом</a>. За редкими исключениями, к коим не относится наш случай, я принимаю за факт лишь <a href="{filename}/Giologica/Valerywork-Kiravel.md" target="_blank" title="Киравэл">Kiravel</a> — те устоявшиеся мнения, насчёт которых в науке на настоящий момент сложился чёткий консенсус.
