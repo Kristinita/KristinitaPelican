@@ -81,7 +81,7 @@ ARTICLE_PATHS = ['None']
 # Не модифицируемые папки и файлы
 # [Хак] Почему-то регистр имеет значение. 404.md и 404.html уже не работает.
 STATIC_PATHS = ['']
-STATIC_EXCLUDES = ['Sublime Text', 'Life-hacks', 'Sasha Black', 'extra']
+STATIC_EXCLUDES = ['Sublime Text', 'Life-hacks', 'Sasha Black']
 # Чтобы имя файла было = Slug и не нужно было бы каждый раз вписывать slug
 # вручную
 SLUGIFY_SOURCE = 'basename'
