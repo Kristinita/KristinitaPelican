@@ -81,7 +81,7 @@ ARTICLE_PATHS = ['None']
 # Не модифицируемые папки и файлы
 # [Хак] Почему-то регистр имеет значение. 404.md и 404.html уже не работает.
 STATIC_PATHS = ['']
-STATIC_EXCLUDES = ['Sublime Text', 'Life-hacks', 'Sasha Black']
+STATIC_EXCLUDES = ['Sublime Text', 'Life-hacks', 'Sasha Black', 'extra']
 # Чтобы имя файла было = Slug и не нужно было бы каждый раз вписывать slug
 # вручную
 SLUGIFY_SOURCE = 'basename'
@@ -91,6 +91,8 @@ SLUGIFY_SOURCE = 'basename'
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
     'extra/CNAME': {'path': 'CNAME'},
+    'extra/404.md': {'path': '404.md'},
+    'extra/404.html': {'path': '404.html'},
     'extra/verifyforzoho.HTML': {'path': 'zohoverify/verifyforzoho.html'},
     'favicons/favicon.ico': {'path': 'favicon.ico'},
     'Sasha Black/Sasha-Black.md': {'path': 'Sasha-Black.md'},
