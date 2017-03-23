@@ -72,20 +72,21 @@ TYPOGRIFY = True
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['pagefixer', 'pelican_javascript']
 
+
+OUTPUT_SOURCES = False
 # Путь к pages
 PAGE_PATHS = ['']
 # Путь к articles
 # [Хак] Чтобы исключить articles, подставил несуществующую папку.
 # «ARTICLE_PATHS = None» — critical error
 ARTICLE_PATHS = ['None']
+ARTICLE_EXCLUDES = ['extra']
 # Не модифицируемые папки и файлы
 # [Хак] Почему-то регистр имеет значение. 404.md и 404.html уже не работает.
 STATIC_PATHS = ['']
-STATIC_EXCLUDES = ['Sublime Text', 'Life-hacks', 'Sasha Black']
 # Чтобы имя файла было = Slug и не нужно было бы каждый раз вписывать slug
 # вручную
 SLUGIFY_SOURCE = 'basename'
-
 # Extra path metadata, see
 # http://manos.im/blog/static-site-pelican-grunt-travis-github-pages/
 EXTRA_PATH_METADATA = {
