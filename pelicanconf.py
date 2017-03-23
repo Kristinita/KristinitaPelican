@@ -19,11 +19,8 @@ AUTHOR = 'Саша Черных'
 SITENAME = 'Поиск Кристиниты'
 SITEURL = 'http://kristinita.ru'
 
-# Путь, где пишется контент сайта
-PATH = 'content'
-
+# Lang and timezone
 TIMEZONE = 'Europe/Moscow'
-
 DEFAULT_LANG = 'en'
 
 # Feed generation, perhaps, not desired when developing
@@ -53,7 +50,7 @@ RELATIVE_URLS = True
 DELETE_OUTPUT_DIRECTORY = True
 OUTPUT_RETENTION = [".git"]
 
-# Подключаем предустановленную тему
+# Theme
 THEME = 'themes/sashapelican'
 
 PAGE_URL = '{slug}.html'
@@ -68,7 +65,11 @@ LOAD_CONTENT_CACHE = False
 
 TYPOGRIFY = True
 
-# Плагины
+
+# Путь, где пишется контент сайта
+PATH = 'content'
+
+# Plugins
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['pagefixer', 'pelican_javascript', 'sitemap']
 
@@ -90,12 +91,14 @@ SITEMAP = {
 
 OUTPUT_SOURCES = False
 # Путь к pages
-PAGE_PATHS = ['']
+# Don't set “PAGE_PATHS = ['']”! See
+# https://github.com/getpelican/pelican/issues/2123
+PAGE_PATHS = ['Gingerinas', 'Giologica', 'Life-hacks', 'Sasha-Black',
+              'Smert-svobode', 'Sublime-Text']
 # Путь к articles
 # [Хак] Чтобы исключить articles, подставил несуществующую папку.
 # «ARTICLE_PATHS = None» — critical error
 ARTICLE_PATHS = ['None']
-ARTICLE_EXCLUDES = ['extra']
 # Не модифицируемые папки и файлы
 # [Хак] Почему-то регистр имеет значение. 404.md и 404.html уже не работает.
 STATIC_PATHS = ['']
@@ -107,11 +110,8 @@ SLUGIFY_SOURCE = 'basename'
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
     'extra/CNAME': {'path': 'CNAME'},
-    'extra/404.md': {'path': '404.md'},
-    'extra/404.html': {'path': '404.html'},
     'extra/verifyforzoho.HTML': {'path': 'zohoverify/verifyforzoho.html'},
     'favicons/favicon.ico': {'path': 'favicon.ico'},
-    'Sasha Black/Sasha-Black.md': {'path': 'Sasha-Black.md'},
 }
 
 # Disable logging of empty alt attribute, needs “import logging” module
