@@ -17,7 +17,7 @@ sys.path.append('plugins')
 
 AUTHOR = 'Саша Черных'
 SITENAME = 'Поиск Кристиниты'
-SITEURL = 'https://kristinita.bitbucket.io'
+SITEURL = 'http://kristinita.ru'
 
 # Путь, где пишется контент сайта
 PATH = 'content'
@@ -70,8 +70,23 @@ TYPOGRIFY = True
 
 # Плагины
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['pagefixer', 'pelican_javascript']
+PLUGINS = ['pagefixer', 'pelican_javascript', 'sitemap']
 
+# SITEMAP, see
+# https://github.com/getpelican/pelican-plugins/tree/master/sitemap
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0,
+        'indexes': 0.5,
+        'pages': 1
+    },
+    'changefreqs': {
+        'articles': 'never',
+        'indexes': 'weekly',
+        'pages': 'always'
+    }
+}
 
 OUTPUT_SOURCES = False
 # Путь к pages
