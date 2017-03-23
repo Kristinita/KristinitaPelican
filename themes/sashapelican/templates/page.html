@@ -67,14 +67,15 @@
 {% block base_content %}{{ page.content }}{% endblock %}
 
 <!-- Футер: ннр и подпись -->
+<!-- E-Mail obfuscate: http://rot13.florianbersier.com/ -->
 {% block base_new_russian %}
 	{%- if page.lang == 'ru' -%}
 	<div class="SashaEmNoColor">По любым вопросам касающимся статьи, можете связаться со мной по электронной почте
-<span id="obf"><script>document.getElementById("obf").innerHTML="<n uers=\"znvygb:FnfunPurealxuRzcerffBsHavirefr@xevfgvavgn.eh?fhowrpg=R-znvy gb Fnfun Purealxu\" gnetrg=\"_oynax\">r-znvy</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});document.body.appendChild(eo);</script>
+<span id="obf"><script>document.getElementById("obf").innerHTML="<n uers=\"znvygb:FnfunPurealxuRzcerffBsHavirefr@xevfgvavgn.eh?fhowrpg=R-znvy gb Fnfun Purealxu\" gnetrg=\"_oynax\">r-znvy</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});</script>
 <noscript><span style="unicode-bidi:bidi-override;direction:rtl;">ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span> или же оставив комментарий в <a href="https://github.com/Kristinita/SashaSublime/issues" title="GitHub bugtracker">issue tracker GitHub</a>, кликнув по «New Issue». С комментариями в стиле <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">новых недовольных русских</a> оставляю право распоряжаться по собственному усмотрению.
 	{% else %}
 	<div class="SashaEmNoColor">For all matters relating to article please contact me by
-<span id="obf"><script>document.getElementById("obf").innerHTML="<n uers=\"znvygb:FnfunPurealxuRzcerffBsHavirefr@xevfgvavgn.eh?fhowrpg=R-znvy gb Fnfun Purealxu\" gnetrg=\"_oynax\">r-znvy</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});document.body.appendChild(eo);</script>
+<span id="obf"><script>document.getElementById("obf").innerHTML="<n uers=\"znvygb:FnfunPurealxuRzcerffBsHavirefr@xevfgvavgn.eh?fhowrpg=R-znvy gb Fnfun Purealxu\" gnetrg=\"_oynax\">r-znvy</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});</script>
 <noscript><span style="unicode-bidi:bidi-override;direction:rtl;">ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span> or by <a href="https://github.com/Kristinita/SashaSublime/issues" title="GitHub bugtracker">GitHub</a>, click «New Issue». With commentary in the style of <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">new disgruntled Russian</a> i reserve the right to dispose of my own&nbsp;discretion.</div>
 	{% endif %}
 {% endblock %}
