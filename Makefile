@@ -70,7 +70,7 @@ sashareplacepath:
 
 # Beautify HTML
 sashaprettyhtml:
-	cd $(OUTPUTDIR) && glob-run html-beautify -r '**/*.html'
+	cd $(OUTPUTDIR) && glob-run html-beautify -r **/*.html
 
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
