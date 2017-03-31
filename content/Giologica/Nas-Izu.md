@@ -5,11 +5,12 @@ Lang: ru
 Summary:
 Pagetitle: Нас Изу
 Metacontent: Книги для общего развития, психологии прокачки определённых тем, специфические и интересных фактов
-Pagecolors: giologica 
-Iconleftorright: left  
-Tags: giologica, gingerinas-training   
-Category: Giologica,    
+Pagecolors: giologica
+Iconleftorright: left
+Tags: giologica, gingerinas-training
+Category: Giologica
 JQuery: true
+Mailhu: true
 Rainbow: true
 Tooltipster: false
 ClipboardJs: true

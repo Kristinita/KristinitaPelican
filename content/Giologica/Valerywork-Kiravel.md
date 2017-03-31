@@ -10,6 +10,7 @@ Iconleftorright: right
 Tags: giologica
 Category: Giologica
 JQuery: true
+Mailhu: true
 Rainbow: true
 Tooltipster: false
 ClipboardJs: true

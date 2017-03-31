@@ -9,17 +9,13 @@ MetaContent: SashaSublime — theme and color scheme for Sublime Text 3, where a
 PageColors: sublime-text
 IconLeftOrRight: right
 JQuery: true
+Mailhu: true
 Rainbow: true
 Tooltipster: true
 ClipboardJs: true
 DetailsPolyfill: false
 Noco: 1g9b6
 
-
-
-</SashaVersion>
-<br />
-<br />
 <br />
 <br />
 <p>
@@ -376,7 +372,7 @@ git clone https://github.com/Kristinita/SashaSublime.git
 &quot;color_scheme&quot;: &quot;Packages/SashaSublime/SashaSublime.tmTheme&quot;,
 &quot;theme&quot;: &quot;SashaSublime.sublime-theme&quot;,
 </code><button class="SashaButton SashaTooltip" data-clipboard-target=".SashaClipboard4"><img src="{filename}/images/interface_images/clippy.svg" width="13"></button></pre>
-<p>Be attentive, <a href="http://ru.stackoverflow.com/a/238934/199934">correctly place</a> commas, quotes, brackets and colons.</p>
+<p>Be attentive, <a href="http://ru.stackoverflow.com/a/238934/199934">correct place</a> commas, quotes, brackets and colons.</p>
 <h2 id="preferences">Preferences</h2>
 <p>Also, you can make that all your settings were as at me. Copy into your file <em>Preferences</em> → <em>Settings - User</em> these lines from my file <em>Preferences</em> → <em>Preferences.sublime-settings</em>:</p>
 <pre class="SashaClipboard5"><code data-language="json">
@@ -525,7 +521,7 @@ git clone https://github.com/Kristinita/SashaSublime.git
 <p>Install <a href="https://github.com/skuroda/PackageResourceViewer">PackageResourceViewer</a> plugin:
 	<kbd>Ctrl+Shift+P</kbd> → <em>PackageResourseViewer:Open Resourse</em> → <em>SashaSublime</em> → edit SashaSublime files.</p>
 <h4 id="problem">Problem</h4>
-<p>After updates, SashaSublime your changes will be lost. You will need to copy the modified file in a separate place, and after the upgrade SashaSublime, you will need to merge you changes from your file into the file of SashaSublime, for example, via <a href="http://www.sublimerge.com/sm3/">Sublimerge 3</a>.</p>
+<p>After updates, SashaSublime your changes will lost. You will need to copy the modified file in a separate place, and after the upgrade SashaSublime, you will need to merge you changes from your file into the file of SashaSublime, for example, via <a href="http://www.sublimerge.com/sm3/">Sublimerge 3</a>.</p>
 <h3 id="editing-user-files">Editing user files</h3>
 <h4 id="steps_1">Steps</h4>
 <ol>
@@ -580,12 +576,12 @@ body#inline-error div.error a
 <p></p>
 <h2 id="see-also">See also</h2>
 <ul>
-	<li><a href="http://kristinita.ru">Kristinita&rsquo;s Search</a> — search engine, searching only authoritative sources, materials are written by experts on the subject.</li>
+	<li><a href="http://kristinita.ru">Kristinita&rsquo;s Search</a> — search engine, searching authoritative sources, materials written by experts on the subject.</li>
 	<li><a href="http://kristinita.ru/Sasha-Black">Sasha Black</a> — mini-service checks the reputation of your site and the availability of the site in the blacklists.</li>
 </ul>
 <h2 id="thanks">Thanks</h2>
-<p>Many thanks to those who answered my questions on themes and color schemes on <a href="http://stackoverflow.com/">Stack Overflow</a>, <a href="https://forum.sublimetext.com/">English</a> and <a href="http://forum.sublimetext.ru">Russian</a> Sublime Text forums: <a href="https://github.com/keith-hall">@Keith Hall</a>, <a href="https://github.com/MattDMo">@MattDMo</a>, <a href="https://github.com/Enteleform">@Enteleform</a>, <a href="https://github.com/r-stein">@r-stein</a>, <a href="https://github.com/maximsmol">@maximsmol</a>, <a href="https://github.com/braver">@braver</a> and <a href="https://vk.com/id206422835">@Дмитрий Лоак</a>.</p>
-<p>During the work on a theme the theme <a href="http://colorsublime.com/theme/Espresso_Libre">Espresso Libre</a> of Chris Thomas is taken as a basis.</p>
+<p>Thanks to those who answered my questions on themes and color schemes on <a href="http://stackoverflow.com/">Stack Overflow</a>, <a href="https://forum.sublimetext.com/">English</a> and <a href="http://forum.sublimetext.ru">Russian</a> Sublime Text forums: <a href="https://github.com/keith-hall">@Keith Hall</a>, <a href="https://github.com/MattDMo">@MattDMo</a>, <a href="https://github.com/Enteleform">@Enteleform</a>, <a href="https://github.com/r-stein">@r-stein</a>, <a href="https://github.com/maximsmol">@maximsmol</a>, <a href="https://github.com/braver">@braver</a> and <a href="https://vk.com/id206422835">@Дмитрий Лоак</a>.</p>
+<p>During the work on a theme the theme <a href="http://colorsublime.com/theme/Espresso_Libre">Espresso Libre</a> of Chris Thomas as a basis.</p>
 <h2 id="contacts">Contacts</h2>
 <p>
 	<kbd>Ctrl+Shift+P</kbd> → <em>SashaSublime: Report SashaSublime issue</em> → write your issue.</p>
@@ -597,7 +593,7 @@ body#inline-error div.error a
 <p>
 	<a href="{filename}/images/donate_files/Bitcoin-HTML-Redirect.HTML"><img alt="Bitcoin Donate Button" src="{filename}/images/donate_files/Bitcoin-Donate-button.png" /></a>
 </p>
-<p>See <a href="http://bitcoin.stackexchange.com/a/48744/41598">my answer</a> to Bitcoin Stack Exchange, if you want to know how to make exactly the same button. If you Bitcoin client not supported <a href="https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki">standard bitcoin schema URI</a>, my Bitcoin address is:</p>
+<p>See <a href="http://bitcoin.stackexchange.com/a/48744/41598">my answer</a> to Bitcoin Stack Exchange, if you want to know how to make the same button. If you Bitcoin client not supported <a href="https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki">standard bitcoin schema URI</a>, my Bitcoin address is:</p>
 <pre class="SashaClipboard10"><code>17uctxtsWG3gpyAy6iJ8AVd5rdSjkJH2</code><button class="SashaButton SashaTooltip" data-clipboard-target=".SashaClipboard10"><img src="{filename}/images/interface_images/clippy.svg" width="13"></button></pre>
 <h3 id="litecoin">Litecoin</h3>
 <p>

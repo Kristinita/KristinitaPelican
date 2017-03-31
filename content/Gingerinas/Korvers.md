@@ -10,6 +10,7 @@ Iconleftorright: right
 Tags: gingerinas
 Category: Техника в джинджеринах,
 JQuery: true
+Mailhu: true
 Rainbow: true
 Tooltipster: false
 ClipboardJs: true

@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
-<!-- Титульная фраза -->
+<!-- Title phrase -->
 {% block base_pagetitle %}{{ page.pagetitle }}{% endblock %}
-<!-- Содержимое <meta content="|"> -->
+<!-- Content of attribute <meta content="|"> -->
 {% block base_metacontent %}{{ page.metacontent }}{% endblock %}
 
 <!--=============================
@@ -15,10 +15,21 @@
     {%- endif -%}
 {%- endblock %}
 
+<!-- Mailhu -->
+{% block base_mailhu -%}
+    {%- if page.mailhu == 'true' -%}
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Resize/resize.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Mailhu/mailhu.js" defer></script>
+		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Mailhu/Sasha-Mailhu.css">
+    {%- endif -%}
+{%- endblock %}
+
 <!-- Rainbow -->
 {% block base_rainbow -%}
     {%- if page.rainbow == 'true' -%}
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/rainbow/dist/rainbow.min.js"></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/rainbow/dist/rainbow.min.js" async></script>
 	    <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/rainbow/themes/css/rainbow.css">
     {%- endif -%}
 {%- endblock %}
@@ -26,47 +37,47 @@
 <!-- Tooltipster -->
 {% block base_tooltipster -%}
     {%- if page.tooltipster == 'true' -%}
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/tooltipster/dist/js/tooltipster.bundle.min.js"></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/tooltipster/dist/js/tooltipster.bundle.min.js" defer></script>
 		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/tooltipster/dist/css/tooltipster.bundle.min.css" />
 		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" />
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Tooltipster/tooltip.js"></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Tooltipster/tooltip.js" defer></script>
     {%- endif -%}
 {%- endblock %}
 
 <!-- Clipboard.js -->
 {% block base_clipboardjs -%}
     {%- if page.clipboardjs == 'true' -%}
-	    <script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/clipboard/dist/clipboard.min.js"></script>
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Clipboard.js/DOMClipboard.js"></script>
+	    <script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/clipboard/dist/clipboard.min.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Clipboard.js/DOMClipboard.js" defer></script>
     {%- endif -%}
 {%- endblock %}
 
 <!-- Details-Polyfill -->
 {% block base_detailspolyfill -%}
     {%- if page.detailspolyfill == 'true' -%}
-		<script src="{{SITEURL}}/js/Details-Polyfill/details1.js"></script>
-		<script src="{{SITEURL}}/js/Details-Polyfill/details2.js"></script>
+		<script src="{{SITEURL}}/js/Details-Polyfill/details1.js" defer></script>
+		<script src="{{SITEURL}}/js/Details-Polyfill/details2.js" defer></script>
     {%- endif -%}
 {%- endblock %}
 
-<!-- Находится ли Сашина икона слева или справа -->
+<!-- Right or left Sasha icon -->
 {% block base_iconleftorright %}{{ page.iconleftorright }}{% endblock %}
-<!-- Оформление страницы -->
+<!-- CSS of pages -->
 {% block base_pagecolors %}{{ page.pagecolors }}{% endblock %}
 
-<!-- Текст, отображаемый в aside блоке -->
+<!-- Text in aside block -->
 {% block base_asidetitle %}{{ page.pagetitle }}{% endblock %}
 
-<!-- Заголовок основного контента -->
+<!-- Content header -->
 {% block base_h1 %}{{ page.pagetitle }}{% endblock %}
 {% block base_noco %}{{ page.noco }}{% endblock %}
 {% block base_date %}{{ page.date }}{% endblock %}
 {% block base_date_displayed %}{{ page.modified }}{% endblock %}
 
-<!-- Содержание -->
+<!-- Site content -->
 {% block base_content %}{{ page.content }}{% endblock %}
 
-<!-- Футер: ннр и подпись -->
+<!-- Footer: new disgruntled Russian and sign -->
 <!-- E-Mail obfuscate: http://rot13.florianbersier.com/ -->
 {% block base_new_russian %}
 	{%- if page.lang == 'ru' -%}

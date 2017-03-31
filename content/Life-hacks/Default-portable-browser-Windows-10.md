@@ -10,6 +10,7 @@ Iconleftorright: left
 Tags: life-hacks, pale-moon
 Category: Life-hacks,
 JQuery: true
+Mailhu: true
 Rainbow: true
 Tooltipster: true
 ClipboardJs: true
