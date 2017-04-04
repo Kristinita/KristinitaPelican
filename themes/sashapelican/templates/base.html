@@ -14,6 +14,8 @@
     {% block base_jquery %}{% endblock %}
     <!-- Mailhu -->
     {% block base_mailhu %}{% endblock %}
+    <!-- Fancybox -->
+    {% block base_fancybox %}{% endblock %}
     <!-- Rainbow -->
     {% block base_rainbow %}{% endblock %}
     <!-- Tooltipster, see http://ru.stackoverflow.com/a/584718/199934 -->
@@ -48,16 +50,15 @@
     <main>
         <div class="SashaMargin">
             <h1 class="SashaTopHeader">{% block base_h1 %}{% endblock %}</h1>
-            <img src="http://2no.co/{% block base_noco %}{% endblock %}.png">
-            <SashaVersion>
-                <time datetime="{% block base_date %}{% endblock %}">{% block base_date_displayed %}{% endblock %}</time>
-            </SashaVersion>
+            <img src="http://2no.co/{% block base_noco %}{% endblock %}.png" alt="image">
+            <div class="SashaVersion">Version {% block base_version %}{% endblock %}</div>
+            <time datetime="{% block base_date %}{% endblock %}">{% block base_date_displayed %}{% endblock %}</time>
             {% block base_content %}{% endblock %} {% block base_new_russian %}{% endblock %}
             <div class="WorkOnYourself">Работайте над собой</div>
         </div>
     </main>
+    <!-- Personal JavaScript for pages, pelican_javascript, see https://github.com/mortada/pelican_javascript/ -->
+    {% if page %} {% if page.javascripts %} {% for javascript in page.javascripts %} {{ javascript }} {% endfor %} {% endif %} {% endif %}
 </body>
-<!-- Personal JavaScript for pages, pelican_javascript, see https://github.com/mortada/pelican_javascript/ -->
-{% if page %} {% if page.javascripts %} {% for javascript in page.javascripts %} {{ javascript }} {% endfor %} {% endif %} {% endif %}
 
 </html>

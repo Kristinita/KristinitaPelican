@@ -26,6 +26,16 @@
     {%- endif -%}
 {%- endblock %}
 
+<!-- Fancybox -->
+{% block base_fancybox -%}
+    {%- if page.fancybox == 'true' -%}
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/fancybox/dist/jquery.fancybox.min.js" async></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Fancybox/fancybox.js" defer></script>
+		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/fancybox/dist/jquery.fancybox.min.css">
+    {%- endif -%}
+{%- endblock %}
+
+
 <!-- Rainbow -->
 {% block base_rainbow -%}
     {%- if page.rainbow == 'true' -%}
@@ -71,6 +81,7 @@
 <!-- Content header -->
 {% block base_h1 %}{{ page.pagetitle }}{% endblock %}
 {% block base_noco %}{{ page.noco }}{% endblock %}
+{% block base_version %}{{ page.version }}{% endblock %}
 {% block base_date %}{{ page.date }}{% endblock %}
 {% block base_date_displayed %}{{ page.modified }}{% endblock %}
 
@@ -87,7 +98,6 @@
 	{% else %}
 	<div class="SashaEmNoColor">For all matters relating to article please contact me by
 <span id="obf"><script>document.getElementById("obf").innerHTML="<n uers=\"znvygb:FnfunPurealxuRzcerffBsHavirefr@xevfgvavgn.eh?fhowrpg=R-znvy gb Fnfun Purealxu\" gnetrg=\"_oynax\">r-znvy</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});</script>
-<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span> or by <a href="https://github.com/Kristinita/SashaSublime/issues" title="GitHub bugtracker">GitHub</a>, click «New Issue». With commentary in the style of <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">new disgruntled Russian</a> i reserve the right to dispose of my own&nbsp;discretion.</div>
+<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span> or by <a href="https://github.com/Kristinita/SashaMiscellaneous" title="GitHub bugtracker">GitHub</a>, click «New Issue». With commentary in the style of <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">new disgruntled Russian</a> i reserve the right to dispose of my own&nbsp;discretion.</div>
 	{% endif %}
 {% endblock %}
-

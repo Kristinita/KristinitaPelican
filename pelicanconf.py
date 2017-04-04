@@ -70,9 +70,9 @@ OUTPUT_SOURCES = False
 # ****************************************************************************
 
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['pagefixer', 'pelican_javascript', 'sitemap']
+PLUGINS = ['pagefixer', 'pelican_javascript', 'sitemap', 'section_number']
 
-# SITEMAP, see
+# Sitemap, see
 # https://github.com/getpelican/pelican-plugins/tree/master/sitemap
 SITEMAP = {
     'format': 'xml',
@@ -87,6 +87,11 @@ SITEMAP = {
         'pages': 'always'
     }
 }
+
+# Section number, see
+# https://github.com/getpelican/pelican-plugins/tree/master/section_number
+
+SECTION_NUMBER_MAX = 5
 
 # ****************************************************************************
 # *                                   Paths                                  *
