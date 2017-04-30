@@ -1,0 +1,6 @@
+# Browserslist default settings except Internet Explorer
+# For Autoprefixer and stylelint
+# https://github.com/ai/browserslist#custom-usage-data
+
+Defaults
+IE >= 4147

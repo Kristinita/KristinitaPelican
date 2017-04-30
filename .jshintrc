@@ -1,0 +1,6 @@
+// I don't want support old browsers
+// Use ECMAScript 6
+// https://github.com/jshint/jshint/issues/2966#issuecomment-228208496
+{
+  "esversion": 6
+}

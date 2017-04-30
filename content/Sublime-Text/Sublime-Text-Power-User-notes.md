@@ -7,8 +7,8 @@ Pagetitle: “Sublime Text Power User” notes
 Metacontent: Notes of book “Sublime Text Power User”
 Pagecolors: sublime-text
 Iconleftorright: right
-Tags: Sublime-Text
-Category: Sublime,
+Tags: sublime-text
+Category: Sublime Text,
 JQuery: true
 Mailhu: true
 Rainbow: true

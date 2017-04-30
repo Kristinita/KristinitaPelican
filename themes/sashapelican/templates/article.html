@@ -1,0 +1,130 @@
+<!-- @Author: Kristinita -->
+<!-- @Date:   2017-04-15 17:42:59 -->
+<!-- @Last Modified time: 2017-04-17 10:38:15 -->
+{% extends 'base.html' %}
+
+<!--==========================
+=            Head            =
+===========================-->
+
+<!-- Title phrase -->
+{% block base_pagetitle %}{{ article.pagetitle }}{% endblock %}
+<!-- Content of attribute <meta content="|"> -->
+{% block base_metacontent %}{{ article.metacontent }}{% endblock %}
+<!-- Open Graph image -->
+{% block base_opengraphimage %}{{ article.opengraphimage }}{% endblock %}
+
+<!--=============================
+=            Scripts            =
+==============================-->
+<!-- jQuery -->
+{% block base_jquery -%}
+    {%- if article.jquery == 'true' -%}
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/jquery/dist/jquery.min.js"></script>
+    {%- endif -%}
+{%- endblock %}
+
+<!-- Mailhu -->
+{% block base_mailhu -%}
+    {%- if article.mailhu == 'true' -%}
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Resize/resize.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Mailhu/mailhu.js" defer></script>
+		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Mailhu/Sasha-Mailhu.css">
+    {%- endif -%}
+{%- endblock %}
+
+<!-- Fancybox -->
+{% block base_fancybox -%}
+    {%- if article.fancybox == 'true' -%}
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/fancybox/dist/jquery.fancybox.min.js" async></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Fancybox/fancybox.js" defer></script>
+		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/fancybox/dist/jquery.fancybox.min.css">
+    {%- endif -%}
+{%- endblock %}
+
+<!-- Rainbow -->
+{% block base_rainbow -%}
+    {%- if article.rainbow == 'true' -%}
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/rainbow/dist/rainbow.min.js" async></script>
+	    <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/rainbow/themes/css/rainbow.css">
+    {%- endif -%}
+{%- endblock %}
+
+<!-- Tooltipster -->
+{% block base_tooltipster -%}
+    {%- if article.tooltipster == 'true' -%}
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/tooltipster/dist/js/tooltipster.bundle.min.js" defer></script>
+		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/tooltipster/dist/css/tooltipster.bundle.min.css" />
+		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" />
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Tooltipster/tooltip.js" defer></script>
+    {%- endif -%}
+{%- endblock %}
+
+<!-- Clipboard.js -->
+{% block base_clipboardjs -%}
+    {%- if article.clipboardjs == 'true' -%}
+	    <script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/clipboard/dist/clipboard.min.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Clipboard.js/Clipboard.js" defer></script>
+    {%- endif -%}
+{%- endblock %}
+
+<!-- Details-Polyfill -->
+{% block base_detailspolyfill -%}
+    {%- if article.detailspolyfill == 'true' -%}
+		<script src="{{SITEURL}}/js/Details-Polyfill/details1.js" defer></script>
+		<script src="{{SITEURL}}/js/Details-Polyfill/details2.js" defer></script>
+    {%- endif -%}
+{%- endblock %}
+
+<!--=========================
+=            CSS            =
+==========================-->
+
+<!-- Right or left Sasha icon -->
+{% block base_iconleftorright %}{{ article.iconleftorright }}{% endblock %}
+<!-- CSS of pages -->
+{% block base_pagecolors %}{{ article.pagecolors }}{% endblock %}
+
+<!-- CodeHilite fruity theme -->
+{% block base_codehilite -%}
+    {%- if article.pagecolors == 'sublime-text' -%}
+		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/python-markdown/fruity.css" />
+    {%- endif -%}
+{%- endblock %}
+
+<!-- Progressbar, http://facelessuser.github.io/pymdown-extensions/extensions/progressbar/ -->
+{% block base_progressbar -%}
+    {%- if article.pagecolors == 'sublime-text' -%}
+		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/python-markdown/progressbar.css" />
+    {%- endif -%}
+{%- endblock %}
+
+<!--=============================
+=            Content            =
+==============================-->
+
+<!-- Text in aside block -->
+{% block base_asidetitle %}{{ article.pagetitle }}{% endblock %}
+
+<!-- Content header -->
+{% block base_h1 %}{{ article.pagetitle }}{% endblock %}
+{% block base_noco %}{{ article.noco }}{% endblock %}
+{% block base_version %}{{ article.version }}{% endblock %}
+{% block base_date %}{{ article.date }}{% endblock %}
+{% block base_date_displayed %}{{ article.modified }}{% endblock %}
+
+<!-- Site content -->
+{% block base_content %}{{ article.content }}{% endblock %}
+
+<!-- Footer: new disgruntled Russian and sign -->
+<!-- E-Mail obfuscate: http://rot13.florianbersier.com/ -->
+<!-- Get relative source path like https://github.com/kura/kura.io/blob/e8f2c6801a0013201d734aa1ac48d9ac92a40b96/ghastly/templates/article.html#L10 -->
+{% block base_new_russian %}
+	{%- if article.lang == 'ru' -%}
+	<div class="SashaEmNoColor"> Если Вы найдёте в данной статье ошибки или опечатки, можете <a href="{{GITHUB_URL}}/edit/master/content/{{article.get_relative_source_path()}}">отредактировать её</a> и отправить <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>. Пожалуйста, пишите на русском (предпочтительно) или английском языках. По любым относящимся к статье и её предмету вопросам можете связаться и по электронной почте <span id="obf"><script src="{{SITEURL}}/js/personal/mail/personal-mail.js" async></script><noscript><span>ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span>. С комментариями в стиле <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">новых недовольных русских</a> оставляю право распоряжаться по собственному усмотрению.
+	{% else %}
+	<div class="SashaEmNoColor">If you find in this article errors and/or typos, you can <a href="{{GITHUB_URL}}/edit/master/content/{{article.get_relative_source_path()}}">edit it</a> and send me <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>. Please, write in Russian (preferable) or English. Also, you can write me by <span id="obf"><script src="{{SITEURL}}/js/personal/mail/personal-mail.js" async></script><noscript><span>ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span> about everything related to this article. With commentary in the style of <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">new disgruntled Russian</a> i reserve the right to dispose of my own discretion.</div>
+	{% endif %}
+{% endblock %}

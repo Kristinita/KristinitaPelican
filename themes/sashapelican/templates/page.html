@@ -1,9 +1,18 @@
+<!-- @Author: Kristinita -->
+<!-- @Date:   2017-04-15 17:42:59 -->
+<!-- @Last Modified time: 2017-04-15 17:45:54 -->
 {% extends 'base.html' %}
+
+<!--==========================
+=            Head            =
+===========================-->
 
 <!-- Title phrase -->
 {% block base_pagetitle %}{{ page.pagetitle }}{% endblock %}
 <!-- Content of attribute <meta content="|"> -->
 {% block base_metacontent %}{{ page.metacontent }}{% endblock %}
+<!-- Open Graph image -->
+{% block base_opengraphimage %}{{ page.opengraphimage }}{% endblock %}
 
 <!--=============================
 =            Scripts            =
@@ -35,7 +44,6 @@
     {%- endif -%}
 {%- endblock %}
 
-
 <!-- Rainbow -->
 {% block base_rainbow -%}
     {%- if page.rainbow == 'true' -%}
@@ -58,7 +66,7 @@
 {% block base_clipboardjs -%}
     {%- if page.clipboardjs == 'true' -%}
 	    <script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/clipboard/dist/clipboard.min.js" defer></script>
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Clipboard.js/DOMClipboard.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Clipboard.js/Clipboard.js" defer></script>
     {%- endif -%}
 {%- endblock %}
 
@@ -70,10 +78,32 @@
     {%- endif -%}
 {%- endblock %}
 
+<!--=========================
+=            CSS            =
+==========================-->
+
 <!-- Right or left Sasha icon -->
 {% block base_iconleftorright %}{{ page.iconleftorright }}{% endblock %}
 <!-- CSS of pages -->
 {% block base_pagecolors %}{{ page.pagecolors }}{% endblock %}
+
+<!-- CodeHilite fruity theme -->
+{% block base_codehilite -%}
+    {%- if page.pagecolors == 'sublime-text' -%}
+		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/python-markdown/fruity.css" />
+    {%- endif -%}
+{%- endblock %}
+
+<!-- Progressbar, http://facelessuser.github.io/pymdown-extensions/extensions/progressbar/ -->
+{% block base_progressbar -%}
+    {%- if page.pagecolors == 'sublime-text' -%}
+		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/python-markdown/progressbar.css" />
+    {%- endif -%}
+{%- endblock %}
+
+<!--=============================
+=            Content            =
+==============================-->
 
 <!-- Text in aside block -->
 {% block base_asidetitle %}{{ page.pagetitle }}{% endblock %}
@@ -90,14 +120,11 @@
 
 <!-- Footer: new disgruntled Russian and sign -->
 <!-- E-Mail obfuscate: http://rot13.florianbersier.com/ -->
+<!-- Get relative source path like https://github.com/kura/kura.io/blob/e8f2c6801a0013201d734aa1ac48d9ac92a40b96/ghastly/templates/page.html#L10 -->
 {% block base_new_russian %}
 	{%- if page.lang == 'ru' -%}
-	<div class="SashaEmNoColor">По любым вопросам касающимся статьи, можете связаться со мной по электронной почте
-<span id="obf"><script>document.getElementById("obf").innerHTML="<n uers=\"znvygb:FnfunPurealxuRzcerffBsHavirefr@xevfgvavgn.eh?fhowrpg=R-znvy gb Fnfun Purealxu\" gnetrg=\"_oynax\">r-znvy</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});</script>
-<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span> или же оставив комментарий в <a href="https://github.com/Kristinita/SashaSublime/issues" title="GitHub bugtracker">issue tracker GitHub</a>, кликнув по «New Issue». С комментариями в стиле <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">новых недовольных русских</a> оставляю право распоряжаться по собственному усмотрению.
+	<div class="SashaEmNoColor"> Если Вы найдёте в данной статье ошибки или опечатки, можете <a href="{{GITHUB_URL}}/edit/master/content/{{page.get_relative_source_path()}}">отредактировать её</a> и отправить <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>. По любым относящимся к статье и её предмету вопросам можете связаться и по электронной почте <span id="obf"><script src="{{SITEURL}}/js/personal/mail/personal-mail.js" async></script><noscript><span>ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span>. С комментариями в стиле <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">новых недовольных русских</a> оставляю право распоряжаться по собственному усмотрению.
 	{% else %}
-	<div class="SashaEmNoColor">For all matters relating to article please contact me by
-<span id="obf"><script>document.getElementById("obf").innerHTML="<n uers=\"znvygb:FnfunPurealxuRzcerffBsHavirefr@xevfgvavgn.eh?fhowrpg=R-znvy gb Fnfun Purealxu\" gnetrg=\"_oynax\">r-znvy</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});</script>
-<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span> or by <a href="https://github.com/Kristinita/SashaMiscellaneous" title="GitHub bugtracker">GitHub</a>, click «New Issue». With commentary in the style of <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">new disgruntled Russian</a> i reserve the right to dispose of my own&nbsp;discretion.</div>
+	<div class="SashaEmNoColor">If you find in this article errors and/or typos, you can <a href="{{GITHUB_URL}}/edit/master/content/{{page.get_relative_source_path()}}">edit it</a> and send me <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>. Also, you can write me by <span id="obf"><script src="{{SITEURL}}/js/personal/mail/personal-mail.js" async></script><noscript><span>ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span> about everything related to this article. With commentary in the style of <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">new disgruntled Russian</a> i reserve the right to dispose of my own discretion.</div>
 	{% endif %}
 {% endblock %}

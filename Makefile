@@ -68,11 +68,6 @@ html:
 sashareplacepath:
 	cd $(OUTPUTDIR) && sfk replace -dir . -file .html -pat "_css/personal_../css/personal_" -yes
 
-# Replace ampersands in URL's
-# See https://github.com/waylan/Python-Markdown/issues/556
-sashaampersands:
-	cd $(OUTPUTDIR) && sfk replace -dir . -file .html -pat "_&amp;_&_" -yes
-
 # Beautify HTML
 sashaprettyhtml:
 	cd $(OUTPUTDIR) && glob-run html-beautify -r **/*.html

@@ -6,10 +6,17 @@
     <meta charset="utf-8">
     <!-- Title phrase -->
     <title>{% block base_pagetitle %}{% endblock %}</title>
-    <!-- Description, EDGE-compatible, different screens-->
+    <!-- Description, EDGE-compatible, different screens -->
     <meta content="{% block base_metacontent %}{% endblock %}">
     <meta content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Open Graph, http://ruogp.me/ -->
+    <!-- Jinja2, ≥ 2 blocks, http://stackoverflow.com/a/1245030/5951529 -->
+    <meta property="og:title" content="{{ self.base_pagetitle() }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{% block base_opengraphimage %}{% endblock %}" />
+    <meta property="og:description" content="{{ self.base_metacontent() }}" />
+    <meta property="og:site_name" content="{{SITENAME}}" />
     <!-- JQuery -->
     {% block base_jquery %}{% endblock %}
     <!-- Mailhu -->
@@ -33,9 +40,10 @@
     <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/image_{% block base_iconleftorright %}{% endblock %}.css">
     <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{% block base_pagecolors %}{% endblock %}.css">
     <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/fonts.css">
+    <!-- CodeHilite, https://pythonhosted.org/Markdown/extensions/code_hilite.html , http://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/ -->
+    {% block base_codehilite %}{% endblock %}
+    {% block base_progressbar %}{% endblock %}
     <!-- Custom styles -->
-    <!-- Open links in new tabs -->
-    <base target="_blank">
     <!-- Personal CSS for pages, pelican_javascript, https://github.com/mortada/pelican_javascript/tree/58e7335e5f5fa0acc945425c2d12bf9dcadb150f -->
     {% if page %} {% if page.stylesheets %} {% for stylesheet in page.stylesheets %} {{ stylesheet }} {% endfor %} {% endif %} {% endif %}
 </head>
@@ -52,7 +60,14 @@
             <h1 class="SashaTopHeader">{% block base_h1 %}{% endblock %}</h1>
             <img src="http://2no.co/{% block base_noco %}{% endblock %}.png" alt="image">
             <div class="SashaVersion">Version {% block base_version %}{% endblock %}</div>
-            <time datetime="{% block base_date %}{% endblock %}">{% block base_date_displayed %}{% endblock %}</time>
+            <div class="SashaVersion">
+            	Posted —
+            	<time datetime="{% block base_date %}{% endblock %}">{{ self.base_date() }}</time>
+            </div>
+            <div class="SashaVersion">
+                Last modified —
+                <time pubdate="{% block base_date_displayed %}{% endblock %}">{{ self.base_date_displayed() }}</time>
+            </div>
             {% block base_content %}{% endblock %} {% block base_new_russian %}{% endblock %}
             <div class="WorkOnYourself">Работайте над собой</div>
         </div>

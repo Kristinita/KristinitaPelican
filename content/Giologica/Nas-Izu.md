@@ -61,7 +61,7 @@ Noco: 159d5
 <br />
 <br />
 <h2 id="ESTR">ESTR</h2>
-<SashaDot>ESTR</SashaDot> — <a href="http://www.wikireality.ru/wiki/Оффтопик" target="_blank" title="Определение оффтопа">оффтоп</a>. Мы ушли от незавершившегося обсуждения предмета к другому, о чём я, настроенный разобраться с предыдущим, толковать не намерен. Просьба <a href="http://dic.academic.ru/dic.nsf/proverbs/11543/Вернёмся" target="_blank" title="Вернёмся к нашим баранам">вернуться к нашим баранам</a>.
+<SashaDot>ESTR</SashaDot> — <a href="http://www.wikireality.ru/wiki/%D0%9E%D1%84%D1%84%D1%82%D0%BE%D0%BF%D0%B8%D0%BA" target="_blank" title="Определение оффтопа">оффтоп</a>. Мы ушли от незавершившегося обсуждения предмета к другому, о чём я, настроенный разобраться с предыдущим, толковать не намерен. Просьба <a href="http://dic.academic.ru/dic.nsf/proverbs/11543/Вернёмся" target="_blank" title="Вернёмся к нашим баранам">вернуться к нашим баранам</a>.
 <br />
 <br />
 <h2 id="GRAL">GRAL</h2>
