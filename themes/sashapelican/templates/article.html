@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2017-04-17 10:38:15 -->
+<!-- @Last Modified time: 2017-05-02 18:28:22 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -18,20 +18,21 @@
 =            Scripts            =
 ==============================-->
 <!-- jQuery -->
+<!-- CDN vs Locally, http://stackoverflow.com/a/3832498/5951529 -->
 {% block base_jquery -%}
     {%- if article.jquery == 'true' -%}
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/jquery/dist/jquery.min.js"></script>
+		<script src="//cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
     {%- endif -%}
 {%- endblock %}
 
-<!-- Mailhu -->
-{% block base_mailhu -%}
-    {%- if article.mailhu == 'true' -%}
+<!-- Gemini -->
+{% block base_gemini -%}
+    {%- if article.gemini == 'true' -%}
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Resize/resize.js" defer></script>
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js" defer></script>
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Mailhu/mailhu.js" defer></script>
-		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
-		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Mailhu/Sasha-Mailhu.css">
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/gemini-scrollbar/index.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Gemini/gemini.js" defer></script>
+		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/gemini-scrollbar/gemini-scrollbar.css">
+		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Gemini/gemini.css">
     {%- endif -%}
 {%- endblock %}
 
@@ -47,7 +48,7 @@
 <!-- Rainbow -->
 {% block base_rainbow -%}
     {%- if article.rainbow == 'true' -%}
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/rainbow/dist/rainbow.min.js" async></script>
+		<script src="//cdn.jsdelivr.net/rainbow/latest/rainbow.min.js" async></script>
 	    <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/rainbow/themes/css/rainbow.css">
     {%- endif -%}
 {%- endblock %}
@@ -55,8 +56,8 @@
 <!-- Tooltipster -->
 {% block base_tooltipster -%}
     {%- if article.tooltipster == 'true' -%}
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/tooltipster/dist/js/tooltipster.bundle.min.js" defer></script>
-		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/tooltipster/dist/css/tooltipster.bundle.min.css" />
+		<script src="//cdn.jsdelivr.net/jquery.tooltipster/latest/js/tooltipster.bundle.min.js" defer></script>
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.tooltipster/latest/css/tooltipster.bundle.min.css" />
 		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" />
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Tooltipster/tooltip.js" defer></script>
     {%- endif -%}
@@ -65,7 +66,7 @@
 <!-- Clipboard.js -->
 {% block base_clipboardjs -%}
     {%- if article.clipboardjs == 'true' -%}
-	    <script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/clipboard/dist/clipboard.min.js" defer></script>
+	    <script src="//cdn.jsdelivr.net/clipboard.js/latest/clipboard.min.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Clipboard.js/Clipboard.js" defer></script>
     {%- endif -%}
 {%- endblock %}

@@ -10,7 +10,7 @@ MetaContent: SashaSublime — theme and color scheme for Sublime Text 3, where a
 PageColors: sublime-text
 IconLeftOrRight: right
 JQuery: true
-Mailhu: true
+Gemini: true
 Fancybox: true
 Rainbow: true
 Tooltipster: true

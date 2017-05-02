@@ -10,7 +10,7 @@ Iconleftorright: right
 Tags: sublime-text
 Category: Sublime Text,
 JQuery: true
-Mailhu: true
+Gemini: true
 Rainbow: true
 Tooltipster: false
 ClipboardJs: true

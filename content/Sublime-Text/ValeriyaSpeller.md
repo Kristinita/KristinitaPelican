@@ -1,6 +1,6 @@
 Title: ValeriyaSpeller
 Date: 2017-04-04 04:14:07
-Modified: 2017-04-21 19:35:52
+Modified: 2017-05-02 12:31:25
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -13,7 +13,7 @@ Tags: sublime-text, yaspeller
 Category: Sublime Text
 Noco: 1g9b6
 Jquery: true
-Mailhu: true
+Gemini: true
 Fancybox: true
 Rainbow: true
 Tooltipster: true

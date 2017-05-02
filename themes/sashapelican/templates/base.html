@@ -19,8 +19,8 @@
     <meta property="og:site_name" content="{{SITENAME}}" />
     <!-- JQuery -->
     {% block base_jquery %}{% endblock %}
-    <!-- Mailhu -->
-    {% block base_mailhu %}{% endblock %}
+    <!-- Gemini -->
+    {% block base_gemini %}{% endblock %}
     <!-- Fancybox -->
     {% block base_fancybox %}{% endblock %}
     <!-- Rainbow -->
@@ -36,10 +36,10 @@
     <link rel="icon" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/Sasha.ico" type="image/x-icon">
     <!-- Pages style -->
     <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/basic.css">
+    <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/fonts.css">
     <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/aside.css">
     <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/image_{% block base_iconleftorright %}{% endblock %}.css">
     <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{% block base_pagecolors %}{% endblock %}.css">
-    <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/fonts.css">
     <!-- CodeHilite, https://pythonhosted.org/Markdown/extensions/code_hilite.html , http://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/ -->
     {% block base_codehilite %}{% endblock %}
     {% block base_progressbar %}{% endblock %}

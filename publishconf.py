@@ -20,6 +20,8 @@ http://stackoverflow.com/a/1084984/5951529
 """
 
 
+DELETE_OUTPUT_DIRECTORY = True
+
 # Absolute path, if site publish
 # Don't use relative paths for publishing!
 

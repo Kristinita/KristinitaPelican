@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2017-04-30 18:11:23
+# @Last Modified time: 2017-05-02 12:30:47
 
 import logging
 """ logging pelican module.
@@ -99,7 +99,6 @@ PLUGINS = [
     'pagefixer',
     'pelican_javascript',
     'section_number',
-    # 'deadlinks'
 ]
 
 # Deadlinks
@@ -270,7 +269,6 @@ MARKDOWN = {
                                   'style_plain_text': True,
                                   'use_codehilite_settings': False, },
         'pymdownx.betterem': {},
-        # [FIXME] Site build hangs
         'pymdownx.caret': {},
         'pymdownx.critic': {},
         'pymdownx.magiclink': {'hide_protocol': True, 'repo_url_shortener':

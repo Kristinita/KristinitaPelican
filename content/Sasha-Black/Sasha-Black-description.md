@@ -10,7 +10,7 @@ Iconleftorright: right
 Tags: sasha-black
 Category: Sasha Black
 JQuery: true
-Mailhu: true
+Gemini: true
 Rainbow: true
 Tooltipster: false
 ClipboardJs: true
