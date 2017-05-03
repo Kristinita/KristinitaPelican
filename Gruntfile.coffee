@@ -66,7 +66,7 @@ module.exports = (grunt) ->
         ## Fancybox images,
         ## With regex: https://github.com/yoniholmes/grunt-text-replace#usage
         {
-          from: /<img alt="([A-Za-z0-9А-Яа-я ]+)" src="(.+?)">/g
+          from: /<img alt="([A-Za-z0-9А-ЯЁёа-я ]+)" src="(.+?)"( \/)?>/g
           to: '<a class="fancybox" href="$2"><img src="$2" alt="$1"></a>'
         }
         ## Cllipboard.js,

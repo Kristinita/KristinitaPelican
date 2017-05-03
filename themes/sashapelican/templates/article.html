@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2017-05-02 18:28:22 -->
+<!-- @Last Modified time: 2017-05-03 07:14:17 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -48,7 +48,7 @@
 <!-- Rainbow -->
 {% block base_rainbow -%}
     {%- if article.rainbow == 'true' -%}
-		<script src="//cdn.jsdelivr.net/rainbow/latest/rainbow.min.js" async></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/rainbow/dist/rainbow.min.js" async></script>
 	    <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/rainbow/themes/css/rainbow.css">
     {%- endif -%}
 {%- endblock %}
@@ -126,6 +126,6 @@
 	{%- if article.lang == 'ru' -%}
 	<div class="SashaEmNoColor"> Если Вы найдёте в данной статье ошибки или опечатки, можете <a href="{{GITHUB_URL}}/edit/master/content/{{article.get_relative_source_path()}}">отредактировать её</a> и отправить <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>. Пожалуйста, пишите на русском (предпочтительно) или английском языках. По любым относящимся к статье и её предмету вопросам можете связаться и по электронной почте <span id="obf"><script src="{{SITEURL}}/js/personal/mail/personal-mail.js" async></script><noscript><span>ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span>. С комментариями в стиле <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">новых недовольных русских</a> оставляю право распоряжаться по собственному усмотрению.
 	{% else %}
-	<div class="SashaEmNoColor">If you find in this article errors and/or typos, you can <a href="{{GITHUB_URL}}/edit/master/content/{{article.get_relative_source_path()}}">edit it</a> and send me <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>. Please, write in Russian (preferable) or English. Also, you can write me by <span id="obf"><script src="{{SITEURL}}/js/personal/mail/personal-mail.js" async></script><noscript><span>ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span> about everything related to this article. With commentary in the style of <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">new disgruntled Russian</a> i reserve the right to dispose of my own discretion.</div>
+	<div class="SashaEmNoColor">If you find in this article errors and/or typos, you can <a href="{{GITHUB_URL}}/edit/master/content/{{article.get_relative_source_path()}}">edit it</a> and send me <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>. Please, write in Russian (preferable) or English. Also, you can write me by <span id="obf"><script src="{{SITEURL}}/js/personal/Mail/personal-mail.js" async></script><noscript><span>ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span> about everything related to this article. With commentary in the style of <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">new disgruntled Russian</a> i reserve the right to dispose of my own discretion.</div>
 	{% endif %}
 {% endblock %}
