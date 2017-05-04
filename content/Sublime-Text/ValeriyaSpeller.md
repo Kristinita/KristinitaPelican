@@ -1,6 +1,6 @@
 Title: ValeriyaSpeller
 Date: 2017-04-04 04:14:07
-Modified: 2017-05-02 12:31:25
+Modified: 2017-05-04 14:04:14
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -14,6 +14,7 @@ Category: Sublime Text
 Noco: 1g9b6
 Jquery: true
 Gemini: true
+JQueryLazy: true
 Fancybox: true
 Rainbow: true
 Tooltipster: true

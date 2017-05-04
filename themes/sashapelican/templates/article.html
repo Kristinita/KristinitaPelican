@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2017-05-03 07:14:17 -->
+<!-- @Last Modified time: 2017-05-04 16:36:53 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -33,6 +33,14 @@
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Gemini/gemini.js" defer></script>
 		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/gemini-scrollbar/gemini-scrollbar.css">
 		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Gemini/gemini.css">
+    {%- endif -%}
+{%- endblock %}
+
+<!-- JQuery Lazy -->
+{% block base_jquerylazy -%}
+    {%- if article.jquerylazy == 'true' -%}
+    	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.min.js" defer></script>
+    	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.plugins.min.js" defer></script>
     {%- endif -%}
 {%- endblock %}
 

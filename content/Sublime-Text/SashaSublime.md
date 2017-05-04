@@ -11,6 +11,7 @@ PageColors: sublime-text
 IconLeftOrRight: right
 JQuery: true
 Gemini: true
+JQueryLazy: true
 Fancybox: true
 Rainbow: true
 Tooltipster: true

@@ -21,6 +21,8 @@
     {% block base_jquery %}{% endblock %}
     <!-- Gemini -->
     {% block base_gemini %}{% endblock %}
+    <!-- JQuery Lazy -->
+    {% block base_jquerylazy %}{% endblock %}
     <!-- Fancybox -->
     {% block base_fancybox %}{% endblock %}
     <!-- Rainbow -->
@@ -58,7 +60,7 @@
     <main>
         <div class="SashaMargin">
             <h1 class="SashaTopHeader">{% block base_h1 %}{% endblock %}</h1>
-            <img src="http://2no.co/{% block base_noco %}{% endblock %}.png" alt="image">
+            <img class="SashaNotModified" src="http://2no.co/{% block base_noco %}{% endblock %}.png" alt="image">
             <div class="SashaVersion">Version {% block base_version %}{% endblock %}</div>
             <div class="SashaVersion">
             	Posted —

@@ -1,21 +1,23 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2017-05-02 12:30:47
+# @Last Modified time: 2017-05-04 17:47:39
+"""Pelican configuration file.
 
-import logging
-""" logging pelican module.
-
-For disabling warnings:
-http://docs.getpelican.com/en/stable/settings.html#logging
+For development. publishconf.py — for publishing.
 """
-
 import sys
 """sys module.
 
 For download plugins from “plugins” folder.
 """
 
+# import logging
+""" logging pelican module.
+
+For disabling warnings:
+http://docs.getpelican.com/en/stable/settings.html#logging
+"""
 # That Pelican see plugins from this folder
 
 sys.path.append('plugins')
@@ -346,8 +348,10 @@ THEME = 'themes/sashapelican'
 DEFAULT_PAGINATION = False
 
 # Disable logging of empty alt attribute, needs “import logging” module
+# Fix, but save as comment, that doesn't forgot if I will have a similar
+# problem.
 
-LOG_FILTER = [(logging.WARN, 'Empty alt attribute for image %s in %s')]
+# LOG_FILTER = [(logging.WARN, 'Empty alt attribute for image %s in %s')]
 
 # ****************************************************************************
 # *                                 External                                 *
