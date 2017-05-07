@@ -53,29 +53,36 @@ module.exports = (grunt) ->
     ## Replace text ##
     ##################
     ## https://github.com/yoniholmes/grunt-text-replace
-    replace: replacehtml:
-      src: [ 'output/**/*.html' ]
-      overwrite: true
-      replacements: [
-      	## Incorrect paths for personal CSS and JavaScript,
-      	## https://github.com/mortada/pelican_javascript/issues/3
-        {
-          from: 'css/personal'
-          to: '../css/personal'
-        }
-        ## Cllipboard.js,
-        ## http://ru.stackoverflow.com/a/582520/199934
-        ## http://stackoverflow.com/a/33758293/5951529
-        {
-          from: /<pre><code class="(.+?)">((.|\n|\r)+?)<\/code><\/pre>/g
-          to: '<pre><code data-language="$1">$2</code><button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="../images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button></pre>'
-        }
-        ## Fancybox and JQueryLazy images,
-        ## With regex: https://github.com/yoniholmes/grunt-text-replace#usage
-        {
-          from: /<img alt="([A-Za-z0-9А-ЯЁёа-я ]+)" src="(.+?)"( \/)?>/g
-          to: '<a class="fancybox" href="$2"><img class="SashaLazy" src="../images/interface_images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
-        }
+    replace:
+      replacehtml:
+	      src: [ 'output/**/*.html' ]
+	      overwrite: true
+	      replacements: [
+	      	## Incorrect paths for personal CSS and JavaScript,
+	      	## https://github.com/mortada/pelican_javascript/issues/3
+	        {
+	          from: 'css/personal'
+	          to: '../css/personal'
+	        }
+	        ## Cllipboard.js,
+	        ## http://ru.stackoverflow.com/a/582520/199934
+	        ## http://stackoverflow.com/a/33758293/5951529
+	        {
+	          from: /<pre><code class="(.+?)">((.|\n|\r)+?)<\/code><\/pre>/g
+	          to: '<pre><code data-language="$1">$2</code><button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="../images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button></pre>'
+	        }
+	        ## Fancybox and JQueryLazy images,
+	        ## With regex: https://github.com/yoniholmes/grunt-text-replace#usage
+	        {
+	          from: /<img alt="([A-Za-z0-9А-ЯЁёа-я ]+)" src="(.+?)"( \/)?>/g
+	          to: '<a class="fancybox" href="$2"><img class="SashaLazy" src="../images/interface_images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
+	        },
+	        ## GitCDN
+	        ## https://github.com/schme16/gitcdn.xyz
+	        {
+	        	from: /http:\/\/kristinita.ru\/(.+?)\.(js|css)/g
+	        	to: '//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/$1.$2'
+	        }
       ]
     ##########################
     ## PostCSS Autoprefixer ##

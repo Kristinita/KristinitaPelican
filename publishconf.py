@@ -29,7 +29,8 @@ SITEURL = 'http://kristinita.ru'
 RELATIVE_URLS = False
 
 PLUGINS = [
-    'deadlinks',
+    # Temporary disable, when bugs not fixed
+    # 'deadlinks',
     'feed_summary',
     'interlinks',
     'optimize_images',

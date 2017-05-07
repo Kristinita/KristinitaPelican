@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2017-05-07 15:19:53 -->
+<!-- @Last Modified time: 2017-05-07 20:19:20 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -28,7 +28,6 @@
 <!-- Gemini -->
 {% block base_gemini -%}
     {%- if article.gemini == 'true' -%}
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Resize/resize.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/gemini-scrollbar/index.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Gemini/GeminiAndJQueryLazy.js" defer></script>
 		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/gemini-scrollbar/gemini-scrollbar.css">
