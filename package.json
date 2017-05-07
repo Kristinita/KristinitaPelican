@@ -13,7 +13,8 @@
     "grunt": "~0.4.0",
     "grunt-cli": ">=0.1.13",
     "grunt-shell": ">=1.1.2",
-    "laziestloader": "^0.7.3"
+    "laziestloader": "^0.7.3",
+    "match-media": "^0.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",

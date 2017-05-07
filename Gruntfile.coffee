@@ -74,7 +74,7 @@ module.exports = (grunt) ->
         ## With regex: https://github.com/yoniholmes/grunt-text-replace#usage
         {
           from: /<img alt="([A-Za-z0-9А-ЯЁёа-я ]+)" src="(.+?)"( \/)?>/g
-          to: '<a class="fancybox" href="$2"><img class="SashaLazy" data-src="$2" alt="$1"></a>'
+          to: '<a class="fancybox" href="$2"><img class="SashaLazy" src="../images/interface_images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
         }
       ]
     ##########################

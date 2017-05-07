@@ -43,8 +43,7 @@
     <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/image_{% block base_iconleftorright %}{% endblock %}.css">
     <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{% block base_pagecolors %}{% endblock %}.css">
     <!-- CodeHilite, https://pythonhosted.org/Markdown/extensions/code_hilite.html , http://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/ -->
-    {% block base_codehilite %}{% endblock %}
-    {% block base_progressbar %}{% endblock %}
+    {% block base_codehilite %}{% endblock %} {% block base_progressbar %}{% endblock %}
     <!-- Custom styles -->
     <!-- Personal CSS for pages, pelican_javascript, https://github.com/mortada/pelican_javascript/tree/58e7335e5f5fa0acc945425c2d12bf9dcadb150f -->
     {% if page %} {% if page.stylesheets %} {% for stylesheet in page.stylesheets %} {{ stylesheet }} {% endfor %} {% endif %} {% endif %}
@@ -59,19 +58,24 @@
     <!-- Content -->
     <main>
         <div class="SashaMargin">
-            <h1 class="SashaTopHeader">{% block base_h1 %}{% endblock %}</h1>
-            <img class="SashaNotModified" src="http://2no.co/{% block base_noco %}{% endblock %}.png" alt="image">
-            <div class="SashaVersion">Version {% block base_version %}{% endblock %}</div>
-            <div class="SashaVersion">
-            	Posted —
-            	<time datetime="{% block base_date %}{% endblock %}">{{ self.base_date() }}</time>
-            </div>
-            <div class="SashaVersion">
-                Last modified —
-                <time pubdate="{% block base_date_displayed %}{% endblock %}">{{ self.base_date_displayed() }}</time>
-            </div>
-            {% block base_content %}{% endblock %} {% block base_new_russian %}{% endblock %}
-            <div class="WorkOnYourself">Работайте над собой</div>
+            <header>
+                <h1 class="SashaTopHeader">{% block base_h1 %}{% endblock %}</h1>
+                <img class="SashaNotModified" src="http://2no.co/{% block base_noco %}{% endblock %}.png" alt="image">
+                <div class="SashaVersion">Version {% block base_version %}{% endblock %}</div>
+                <div class="SashaVersion">
+                    Posted —
+                    <time datetime="{% block base_date %}{% endblock %}">{{ self.base_date() }}</time>
+                </div>
+                <div class="SashaVersion">
+                    Last modified —
+                    <time pubdate="{% block base_date_displayed %}{% endblock %}">{{ self.base_date_displayed() }}</time>
+                </div>
+            </header>
+            {% block base_content %}{% endblock %}
+            <footer>
+                {% block base_new_russian %}{% endblock %}
+                <div class="WorkOnYourself">Работайте над собой</div>
+            </footer>
         </div>
     </main>
     <!-- Personal JavaScript for pages, pelican_javascript, see https://github.com/mortada/pelican_javascript/ -->
