@@ -58,12 +58,6 @@ module.exports = (grunt) ->
 	      src: [ 'output/**/*.html' ]
 	      overwrite: true
 	      replacements: [
-	      	## Incorrect paths for personal CSS and JavaScript,
-	      	## https://github.com/mortada/pelican_javascript/issues/3
-	        {
-	          from: 'css/personal'
-	          to: '../css/personal'
-	        }
 	        ## Cllipboard.js,
 	        ## http://ru.stackoverflow.com/a/582520/199934
 	        ## http://stackoverflow.com/a/33758293/5951529
@@ -80,7 +74,7 @@ module.exports = (grunt) ->
 	        ## GitCDN
 	        ## https://github.com/schme16/gitcdn.xyz
 	        {
-	        	from: /http:\/\/kristinita.ru\/(.+?)\.(js|css)/g
+	        	from: /http:\/\/kristinita.ru\/(.+?)\.(js|css|ico)/g
 	        	to: '//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/$1.$2'
 	        }
       ]
@@ -96,7 +90,7 @@ module.exports = (grunt) ->
         ]
       },
       dist: {
-        src: [ 'themes/sashapelican/static/css/**/*.css', 'content/personal/**/*.css' ]
+        src: [ 'themes/sashapelican/static/css/**/*.css', 'output/personal/**/*.css' ]
       }
     }
     ###################
@@ -104,7 +98,7 @@ module.exports = (grunt) ->
     ###################
     ## https://github.com/vkadam/grunt-jsbeautifier
     jsbeautifier:
-    	files: [ 'output/**/*.html' ]
+    	files: [ 'output/**/*.html', 'output/**/*.css' ]
 
    	image:
    	    static:
@@ -129,11 +123,12 @@ module.exports = (grunt) ->
 	   #  }
 
   grunt.registerTask 'test', [
-  	'postcss'
     'shell:generate'
-    'move'
-    'clean'
-    'replace'
+  	# 'postcss'
+    # 'move'
+    # 'clean'
+    # 'replace'
+    'jsbeautifier'
   ]
   grunt.registerTask 'build', [
     'shell:generate'

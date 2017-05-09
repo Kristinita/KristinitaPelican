@@ -14,7 +14,8 @@ Gemini: true
 Rainbow: true
 Tooltipster: false
 ClipboardJs: true
-Stylesheets: personal/Sasha-Black/sasha-black-description.css
+Customcss: true
+Customcss1: Sasha-Black/sasha-black-description
 DetailsPolyfill: true
 Noco: 1QBY
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2017-05-07 18:41:11
+# @Last Modified time: 2017-05-09 13:08:46
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -99,7 +99,10 @@ PLUGINS = [
     'feed_summary',
     'interlinks',
     'pagefixer',
-    'pelican_javascript',
+    # Disable, because:
+    # 1. Plugin create duplicates of files
+    # 2. Incorrect paths — http://bit.ly/2pZdyk0
+    # 'pelican_javascript',
     'section_number',
 ]
 

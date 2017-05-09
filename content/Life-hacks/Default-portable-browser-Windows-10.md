@@ -15,7 +15,8 @@ Rainbow: true
 Tooltipster: true
 ClipboardJs: true
 DetailsPolyfill: false
-Stylesheets: personal/Life-hacks/default-portable-browser.css
+Customcss: true
+Customcss1: Life-hacks/default-portable-browser
 Noco: 1vWK5
 
 <a href="#Why-Portable" target="_self">Почему портативный браузер?</a>

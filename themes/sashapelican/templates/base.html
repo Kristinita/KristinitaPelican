@@ -33,6 +33,8 @@
     {% block base_clipboardjs %}{% endblock %}
     <!-- Details Polyfill, see http://ru.stackoverflow.com/a/498984/199934 -->
     {% block base_detailspolyfill %}{% endblock %}
+    <!-- Custom JavaScript -->
+	{% block base_customjs %}{% endblock %}
     <!-- Sasha icon -->
     <link rel="shortcut icon" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/icons/Sasha.ico" type="image/x-icon">
     <link rel="icon" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/Sasha.ico" type="image/x-icon">
@@ -43,10 +45,11 @@
     <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/image_{% block base_iconleftorright %}{% endblock %}.css">
     <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{% block base_pagecolors %}{% endblock %}.css">
     <!-- CodeHilite, https://pythonhosted.org/Markdown/extensions/code_hilite.html , http://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/ -->
-    {% block base_codehilite %}{% endblock %} {% block base_progressbar %}{% endblock %}
-    <!-- Custom styles -->
-    <!-- Personal CSS for pages, pelican_javascript, https://github.com/mortada/pelican_javascript/tree/58e7335e5f5fa0acc945425c2d12bf9dcadb150f -->
-    {% if page %} {% if page.stylesheets %} {% for stylesheet in page.stylesheets %} {{ stylesheet }} {% endfor %} {% endif %} {% endif %}
+    {% block base_codehilite %}{% endblock %}
+    <!-- Progressbar -->
+    {% block base_progressbar %}{% endblock %}
+    <!-- Custom CSS -->
+    {% block base_customcss %}{% endblock %}
 </head>
 
 <body>
@@ -78,8 +81,6 @@
             </footer>
         </div>
     </main>
-    <!-- Personal JavaScript for pages, pelican_javascript, see https://github.com/mortada/pelican_javascript/ -->
-    {% if page %} {% if page.javascripts %} {% for javascript in page.javascripts %} {{ javascript }} {% endfor %} {% endif %} {% endif %}
 </body>
 
 </html>

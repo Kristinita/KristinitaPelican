@@ -35,7 +35,6 @@ PLUGINS = [
     'interlinks',
     'optimize_images',
     'pagefixer',
-    'pelican_javascript',
     'section_number',
     'sitemap',
 ]
