@@ -2,7 +2,7 @@
 # @Author: Kristinita
 # @Date:   2017-03-26 12:56:49
 # @Last Modified by:   Kristinita
-# @Last Modified time: 2017-04-14 10:52:24
+# @Last Modified time: 2017-05-10 09:55:22
 ## Markdownlint configuration
 ## 【rules】https://github.com/mivok/markdownlint/blob/master/docs/RULES.md
 ## 【style file】https://github.com/mivok/markdownlint/blob/master/docs/configuration.md
@@ -23,6 +23,8 @@ rule 'MD009', :br_spaces => 3
 exclude_rule 'MD010'
 # Line length
 exclude_rule 'MD013'
+# I end headers by question marks
+exclude_rule 'MD026'
 # Inline HTML support
 exclude_rule 'MD033'
 # I use bare URL for Open Graph variable og:image

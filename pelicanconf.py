@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2017-05-09 13:08:46
+# @Last Modified time: 2017-05-10 15:27:54
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -210,6 +210,10 @@ critic — Critic Markup support
 http://facelessuser.github.io/pymdown-extensions/extensions/critic/
 http://criticmarkup.com/
 
+escapeall — don't convert space symbols
+http://facelessuser.github.io/pymdown-extensions/extensions/escapeall/
+https://github.com/waylan/Python-Markdown/issues/564#issuecomment-299681538
+
 inlinehilite — inline highlight code
 http://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/
 https://pythonhosted.org/Markdown/extensions/code_hilite.html#step-2-add-css-classes
@@ -276,6 +280,7 @@ MARKDOWN = {
         'pymdownx.betterem': {},
         'pymdownx.caret': {},
         'pymdownx.critic': {},
+        'pymdownx.escapeall': {},
         'pymdownx.magiclink': {'hide_protocol': True, 'repo_url_shortener':
                                True},
         'pymdownx.mark': {},
