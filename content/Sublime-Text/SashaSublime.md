@@ -40,7 +40,7 @@ Noco: 1g9b6
 1. [Description](#description)
 1. [Support](#support)
     1. [Platforms](#platforms)
-    1. [\[\]\(#sublime-text\)Sublime Text](#sublime-textsublime-text)
+    1. [Sublime Text](#sublime-text)
     1. [Syntaxes](#syntaxes)
 1. [Screenshots](#screenshots)
     1. [General](#general)
@@ -59,9 +59,9 @@ Noco: 1g9b6
         1. [BracketHighlighter](#brackethighlighter)
         1. [Emmet](#emmet)
         1. [Color Helper](#color-helper)
-        1. [dr\_months\_calendar](#dr%5Cmonths%5Ccalendar)
+        1. [dr\_months\_calendar](#dr\months\calendar)
         1. [Suricate](#suricate)
-        1. [sublime\_unicode\_nbsp](#sublime%5Cunicode%5Cnbsp)
+        1. [sublime\_unicode\_nbsp](#sublime\unicode\nbsp)
     1. [Selected text](#selected-text)
         1. [Selected text example](#selected-text-example)
         1. [Selected text when the carriage is not on text field](#selected-text-when-the-carriage-is-not-on-text-field)
@@ -122,7 +122,7 @@ Noco: 1g9b6
     1. [Bitcoin](#bitcoin)
     1. [Litecoin](#litecoin)
     1. [Paypal $](#paypal-)
-    1. [Paypal €](#paypal-%E2%82%AC)
+    1. [Paypal €](#paypal-€)
 1. [License](#license)
 
 <!-- /MarkdownTOC -->
@@ -154,8 +154,8 @@ i faced a problem that in already available themes and color schemes many elemen
 
 Windows, macOS, Linux.
 
-<a name="sublime-textsublime-text"></a>
-## [](#sublime-text)Sublime Text
+<a name="sublime-text"></a>
+## Sublime Text
 
 Only Build 3114 and higher. Older versions of Sublime Text are not supported. Please take the automatic upgrade Sublime Text, if you wanted use SashaSublime.
 
@@ -261,7 +261,7 @@ In a theme/scheme the smallest details are well visible.
 
 ![Color Helper](http://i.imgur.com/ZcmyymH.png)
 
-<a name="dr%5Cmonths%5Ccalendar"></a>
+<a name="dr\months\calendar"></a>
 ### [dr\_months\_calendar](https://github.com/dragon/dr_months_calendar)
 
 ![dr\_months\_calendar](http://i.imgur.com/Pq1HXC7.png)
@@ -273,7 +273,7 @@ In a theme/scheme the smallest details are well visible.
 
 If *"popup\_style\_file": "Packages/Suricate/css/dark.css",* in Suricate settings.
 
-<a name="sublime%5Cunicode%5Cnbsp"></a>
+<a name="sublime\unicode\nbsp"></a>
 ### [sublime\_unicode\_nbsp](https://github.com/possan/sublime_unicode_nbsp)
 
 ![sublime\_unicode\_nbsp](http://i.imgur.com/LCTE0Y2.png)
@@ -850,7 +850,7 @@ LLVvhNKGMLGHa8QmeRrBsjZUBjSpQMjUkP
 
 [![PayPal Dollar button]({filename}/images/donate_files/PayPal-Donate-Button-Dollar.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W6MP468ZZV66Q)
 
-<a name="paypal-%E2%82%AC"></a>
+<a name="paypal-€"></a>
 ## Paypal €
 
 [![PayPal Euro button]({filename}/images/donate_files/PayPal-Donate-Button-Euro.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DGT7K29LDD2HQ)
