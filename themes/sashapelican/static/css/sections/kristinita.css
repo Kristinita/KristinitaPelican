@@ -1,7 +1,7 @@
 /* @Author: Kristinita
 * @Date:   2016-11-25 10:51:23
 * @Last Modified by:   Kristinita
-* @Last Modified time: 2017-05-02 18:46:12
+* @Last Modified time: 2017-09-27 11:26:57
 */
 /* For correct Gemini display in body tag */
 html,
@@ -176,7 +176,7 @@ img {
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffefd5, 0 0 70px #ffefd5, 0 0 80px #ffefd5, 0 0 100px #ffefd5;
 }
 /* Подвал в head */
-.SashaFooter {
+footer {
   position: relative;
   float: left;
   text-align: left;

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2017-05-10 15:27:54
+# @Last Modified time: 2017-09-27 11:14:24
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -276,7 +276,9 @@ MARKDOWN = {
         # 'markdown.extensions.toc': {'permalink': True},
         'pymdownx.inlinehilite': {'css_class': 'SashaInlineHighlight',
                                   'style_plain_text': True,
-                                  'use_codehilite_settings': False, },
+                                  # Deprecated in 3.0 version
+                                  # 'use_codehilite_settings': False,
+                                  },
         'pymdownx.betterem': {},
         'pymdownx.caret': {},
         'pymdownx.critic': {},

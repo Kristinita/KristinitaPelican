@@ -20,8 +20,8 @@ DetailsPolyfill: false
 Noco: 1g9b6
 
 <p>
-    <a href="{filename}/images/donate_files/Bitcoin-HTML-Redirect.HTML"><img src="{filename}/images/donate_files/Bitcoin-Donate-button.png" alt="Bitcoin Donate Button" class="SashaInline" /></a>
-    <a href="{filename}/images/donate_files/Litecoin-HTML-Redirect.HTML"><img src="{filename}/images/donate_files/Litecoin-Donate-button.png" alt="Litecoin Donate Button" class="SashaInline" /></a>
+    <a href="{filename}/images/donate_files/Bitcoin-HTML-Redirect.html"><img src="{filename}/images/donate_files/Bitcoin-Donate-button.png" alt="Bitcoin Donate Button" class="SashaInline" /></a>
+    <a href="{filename}/images/donate_files/Litecoin-HTML-Redirect.html"><img src="{filename}/images/donate_files/Litecoin-Donate-button.png" alt="Litecoin Donate Button" class="SashaInline" /></a>
     <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=63KC7VJTRVNVQ"><img class="SashaInline" src="{filename}/images/donate_files/PayPal-Donate-Button-Dollar.png" alt="PayPal Dollar button" class="SashaInline" /></a>
     <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VPA8L2LM7EX24"><img src="{filename}/images/donate_files/PayPal-Donate-Button-Euro.png" alt="PayPal Euro button" class="SashaInline" /></a>
 </p>
@@ -826,7 +826,7 @@ I do not hope that I will get at least a penny, but suddenly I’m feeling lucky
 <a name="bitcoin"></a>
 ## Bitcoin
 
-[![Bitcoin Donate Button]({filename}/images/donate_files/Bitcoin-Donate-button.png)]({filename}/images/donate_files/Bitcoin-HTML-Redirect.HTML)
+[![Bitcoin Donate Button]({filename}/images/donate_files/Bitcoin-Donate-button.png)]({filename}/images/donate_files/Bitcoin-HTML-Redirect.html)
 
 See [my answer](http://bitcoin.stackexchange.com/a/48744/41598) to Bitcoin Stack Exchange, if you want to know how to make the same button. If you Bitcoin client not supported [standard bitcoin schema URI](https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki), my Bitcoin address is:
 
@@ -837,7 +837,7 @@ See [my answer](http://bitcoin.stackexchange.com/a/48744/41598) to Bitcoin Stack
 <a name="litecoin"></a>
 ## Litecoin
 
-[![Litecoin Donate Button]({filename}/images/donate_files/Litecoin-Donate-button.png)]({filename}/images/donate_files/Litecoin-HTML-Redirect.HTML)
+[![Litecoin Donate Button]({filename}/images/donate_files/Litecoin-Donate-button.png)]({filename}/images/donate_files/Litecoin-HTML-Redirect.html)
 
 If you Litecoin client not supported Litecoin schema URI, my Litecoin address is:
 
