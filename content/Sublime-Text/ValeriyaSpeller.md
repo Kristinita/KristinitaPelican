@@ -1,6 +1,6 @@
 Title: ValeriyaSpeller
 Date: 2017-04-04 04:14:07
-Modified: 2017-05-05 18:23:25
+Modified: 2017-12-25 11:11:59
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -141,7 +141,7 @@ yaspeller --check-yo --find-repeat-words --ignore-digits --ignore-latin --ignore
 
 1. SublimeLinter [don't work with unsaved buffers](https://github.com/SublimeLinter/SublimeLinter3/issues/545), it use [`#!python file_name()` method, not `#!python id()` method](https://www.sublimetext.com/docs/3/api_reference.html#sublime.View).
 
-**If you may to solve these problems, please tell me about it. Pull requests welcome!** You alto can add your `+1` comment in any issue of this list.
+**If you may to solve these problems, please tell me about it. Pull requests welcome!** You also can add your `+1` comment in any issue of this list.
 
 # Others thematic packages
 

@@ -77,6 +77,11 @@ module.exports = (grunt) ->
 	        	from: /http:\/\/kristinita.ru\/(.+?)\.(js|css|ico)/g
 	        	to: '//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/$1.$2'
 	        }
+	        ## Header permalink
+	        {
+	        	from: /(<p><a name="(.+?)"><\/a><\/p>\s+?<h\d+?>.+?)(<\/h\d+?>)/g
+	        	to: '$1 <a class="headerlink" href="#$2" title="Permanent link">¶</a>$3'
+	        }
       ]
     ##########################
     ## PostCSS Autoprefixer ##

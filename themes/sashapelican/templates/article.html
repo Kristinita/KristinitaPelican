@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2017-12-06 12:30:05 -->
+<!-- @Last Modified time: 2017-12-06 17:22:41 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -30,7 +30,7 @@
     {%- if article.gemini == 'true' -%}
 		<script src="//cdn.jsdelivr.net/npm/gemini-scrollbar/index.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Gemini/GeminiAndJQueryLazy.js" defer></script>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gemini-scrollbar/gemini-scrollbar.css">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gemini-scrollbar/gemini-scrollbar.css">
 		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Gemini/gemini.css">
     {%- endif -%}
 {%- endblock %}
