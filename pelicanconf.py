@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2017-09-27 11:14:24
+# @Last Modified time: 2017-12-27 19:41:29
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -98,6 +98,7 @@ PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = [
     'feed_summary',
     'interlinks',
+    'just_table',
     'pagefixer',
     # Disable, because:
     # 1. Plugin create duplicates of files
@@ -119,18 +120,25 @@ DEADLINK_OPTS = {
     'labels': False
 }
 
+# just_table
+# Simple Pelican tables
+# https://github.com/burakkose/just_table
+# [Bug] Unwanted <p> tag — https://github.com/burakkose/just_table/issues/5
+JTABLE_SEPARATOR = '|'
+
+
 # Sitemap
 # https://github.com/getpelican/pelican-plugins/tree/master/sitemap
 
 SITEMAP = {
     'format': 'xml',
     'priorities': {
-        'articles': 0,
+        'articles': 1,
         'indexes': 0.5,
-        'pages': 1
+        'pages': 0.5
     },
     'changefreqs': {
-        'articles': 'never',
+        'articles': 'always',
         'indexes': 'weekly',
         'pages': 'always'
     }
@@ -269,10 +277,14 @@ MARKDOWN = {
     'extension_configs': {
         'markdown.extensions.extra': {},
         'markdown.extensions.admonition': {},
-        'markdown.extensions.nl2br': {},
+        # [Bug] just_table conflict, just_table tables display incorrect
+        # nl2br — extension, without which I can do
+        # 'markdown.extensions.nl2br': {},
         'markdown.extensions.sane_lists': {},
         # [Bug] “section_number” disabling bug
         # https://github.com/waylan/Python-Markdown/issues/560
+        # Now I use regex replacing in Gruntfile.coffee and don't need this
+        # extension
         # 'markdown.extensions.toc': {'permalink': True},
         'pymdownx.inlinehilite': {'css_class': 'SashaInlineHighlight',
                                   'style_plain_text': True,
