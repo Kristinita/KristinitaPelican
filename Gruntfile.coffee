@@ -40,14 +40,16 @@ module.exports = (grunt) ->
       extra:
         src: 'output/extra/*'
         dest: 'output/'
-    ##########################
-    ## Delete blank folders ##
+    ####################################
+    ## Delete blank folders and files ##
     ##########################
     ## https://github.com/gruntjs/grunt-contrib-clean
+    ## Remove parent css file for design sections
     clean: [
       'output/extra'
       'output/favicons'
       'output/root-html'
+      'output/theme/css/sections/core-design.css'
     ]
     ##################
     ## Replace text ##
@@ -131,7 +133,7 @@ module.exports = (grunt) ->
     'shell:generate'
   	# 'postcss'
     # 'move'
-    # 'clean'
+    'clean'
     # 'replace'
     'jsbeautifier'
   ]
