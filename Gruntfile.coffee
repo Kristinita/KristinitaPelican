@@ -2,6 +2,10 @@
 # @Date:   2017-04-05 20:11:18
 # @Last Modified time: 2017-04-11 08:20:09
 
+###########################
+## Loading Grunt plugins ##
+###########################
+
 module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-shell'
   grunt.loadNpmTasks 'grunt-move'
@@ -11,7 +15,9 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-jsbeautifier'
   grunt.loadNpmTasks 'grunt-contrib-imagemin'
   grunt.loadNpmTasks 'grunt-image'
+  grunt.loadNpmTasks 'grunt-purifycss'
   grunt.initConfig
+
   	###################
   	## Pelican build ##
   	###################
@@ -20,6 +26,7 @@ module.exports = (grunt) ->
     shell:
       generate: command: 'pelican content -s pelicanconf.py'
       deploy: command: 'pelican content -s publishconf.py'
+
     ##################################
     ## Move files to another folder ##
     ##################################
@@ -40,6 +47,7 @@ module.exports = (grunt) ->
       extra:
         src: 'output/extra/*'
         dest: 'output/'
+
     ####################################
     ## Delete blank folders and files ##
     ##########################
@@ -51,6 +59,7 @@ module.exports = (grunt) ->
       'output/root-html'
       'output/theme/css/sections/core-design.css'
     ]
+
     ##################
     ## Replace text ##
     ##################
@@ -85,6 +94,7 @@ module.exports = (grunt) ->
 	        	to: '$1 <a class="headerlink" href="#$2" title="Permanent link">¶</a>$3'
 	        }
       ]
+
     ##########################
     ## PostCSS Autoprefixer ##
     ##########################
@@ -100,6 +110,7 @@ module.exports = (grunt) ->
         src: [ 'themes/sashapelican/static/css/**/*.css', 'output/personal/**/*.css' ]
       }
     }
+
     ###################
     ## js-beautifier ##
     ###################
@@ -129,13 +140,40 @@ module.exports = (grunt) ->
 	   #    }
 	   #  }
 
+	###############
+    ## PurifyCSS ##
+    ###############
+    # Remove unused CSS for kristinita.ru design
+    # https://github.com/purifycss/purifycss
+    # https://github.com/purifycss/grunt-purifycss
+    purifycss:
+    	options:
+    		whitelist: ['.tooltipster-punk-purple .tooltipster-box', '.tooltipster-punk-aquamarine .tooltipster-box']
+	    sublimetexttarget:
+		    src: ['output/Sublime-Text/*.html']
+		    css: ['output/theme/css/sections/sublime-text.css']
+		    dest: 'output/theme/css/sections/sublime-text.css'
+	    gingerinastarget:
+            src: ['output/Gingerinas/*.html']
+            css: ['output/theme/css/sections/gingerinas.css']
+            dest: 'output/theme/css/sections/gingerinas.css'
+
+  ##################
+  ## registerTask ##
+  ##################
+  # Run Grunt commands
+  # test — for testing new features
+  # build — reviewing with relative paths
+  # publish — before publishing with absolute paths
+
   grunt.registerTask 'test', [
     'shell:generate'
   	# 'postcss'
     # 'move'
-    'clean'
+    # 'clean'
     # 'replace'
-    'jsbeautifier'
+    # 'jsbeautifier'
+    'purifycss'
   ]
   grunt.registerTask 'build', [
     'shell:generate'
