@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2017-12-27 19:41:29
+# @Last Modified time: 2017-12-28 09:32:30
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
