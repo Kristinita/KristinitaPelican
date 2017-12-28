@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2017-12-06 17:22:41 -->
+<!-- @Last Modified time: 2017-12-28 13:50:33 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -75,6 +75,15 @@
     {%- if article.clipboardjs == 'true' -%}
 	    <script src="//cdn.jsdelivr.net/clipboard.js/latest/clipboard.min.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Clipboard.js/Clipboard.js" defer></script>
+    {%- endif -%}
+{%- endblock %}
+
+<!-- Visualize -->
+{% block base_visualize -%}
+    {%- if article.visualize == 'true' -%}
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-bar-chart.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-pie-chart.js" defer></script>
     {%- endif -%}
 {%- endblock %}
 

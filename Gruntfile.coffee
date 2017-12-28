@@ -179,7 +179,8 @@ module.exports = (grunt) ->
     'shell:generate'
     'move'
     'clean'
-    'replace'
+    'replace',
+    'purifycss'
   ]
   grunt.registerTask 'publish', [
   	'postcss'
@@ -187,6 +188,7 @@ module.exports = (grunt) ->
     'move'
     'clean'
     'jsbeautifier'
-    'replace'
+    'replace',
+    'purifycss'
   ]
   return
