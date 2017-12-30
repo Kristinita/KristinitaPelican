@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2017-12-29 20:47:52
+# @Last Modified time: 2017-12-30 14:38:58
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -32,31 +32,6 @@ SITEURL = 'http://kristinita.ru'
 
 TIMEZONE = 'Europe/Moscow'
 DEFAULT_LANG = 'en'
-
-# ****************************************************************************
-# *                               Sharing                                    *
-# ****************************************************************************
-
-# Feed generation, perhaps, not desired when developing
-
-FEED_DOMAIN = SITEURL
-
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
-TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
-
-# Blogroll
-# LINKS = (('Pelican', 'http://getpelican.com/'),
-#          ('Python.org', 'http://python.org/'),
-#          ('Jinja2', 'http://jinja.pocoo.org/'),
-#          ('You can edit those links in your config file', '#'),)
-
-# Social widget
-# SOCIAL = (('You can add links in your config file', '#'),
-#           ('Another social link', '#'),)
-
 
 # ****************************************************************************
 # *                                Generation                                *
@@ -96,13 +71,16 @@ GITHUB_URL = 'https://github.com/Kristinita/KristinitaPelican'
 
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = [
-    'feed_summary',
+    # [Deprecated], now by default
+    # https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
+    # 'feed_summary',
     'interlinks',
     'just_table',
     'neighbors',
     # [FIXME] Different colors for different designs
     # 'pelican-linkclass',
     'pagefixer',
+    'permalinks',
     # Disable, because:
     # 1. Plugin create duplicates of files
     # 2. Incorrect paths — http://bit.ly/2pZdyk0
@@ -161,8 +139,9 @@ INTERLINKS = {
 
 # Feed summary — short RSS feed by content «Summary» metadata tag
 # https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
+# [Deprecated] — https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
 
-FEED_USE_SUMMARY = True
+# FEED_USE_SUMMARY = True
 
 # ****************************************************************************
 # *                                 Markdown                                 *

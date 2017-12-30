@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2017-12-30 08:24:51 -->
+<!-- @Last Modified time: 2017-12-30 14:43:10 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -132,6 +132,21 @@
     {%- if article.customcss == 'true' -%}
     	<link rel="stylesheet" href="{{SITEURL}}/css/personal/{{article.customcss1}}.css">
     {%- endif -%}
+{%- endblock %}
+
+
+<!--=========================
+=            Feed           =
+==========================-->
+
+<!-- Add Atom Feed -->
+<!-- https://stackoverflow.com/a/440454/5951529 -->
+<!-- %s variable from pelicanconf.py file transform to format(category.slug) -->
+<!-- https://github.com/search?q=CATEGORY_FEED_ATOM&type=Code , https://github.com/satyamyadav/blog/blob/892083f531be87a274a5c13a90246db319b0201a/v0.3.0/blog/theme/templates/category.html -->
+<!-- https://webref.ru/html/link/rel -->
+{% block base_atom_feed -%}
+	<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" rel="alternate" type="application/atom+xml">
+	<link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" rel="alternate" type="application/atom+xml">
 {%- endblock %}
 
 

@@ -31,7 +31,6 @@ RELATIVE_URLS = False
 PLUGINS = [
     # Temporary disable, when bugs not fixed
     # 'deadlinks',
-    'feed_summary',
     'just_table',
     'interlinks',
     'neighbors',
@@ -40,6 +39,31 @@ PLUGINS = [
     'section_number',
     'sitemap',
 ]
+
+# ****************************************************************************
+# *                               Sharing                                    *
+# ****************************************************************************
+
+# Feed generation, perhaps, not desired when developing
+
+FEED_DOMAIN = SITEURL
+
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+TRANSLATION_FEED_ATOM = 'feeds/all-%s.atom.xml'
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+
+# Blogroll
+# LINKS = (('Pelican', 'http://getpelican.com/'),
+#          ('Python.org', 'http://python.org/'),
+#          ('Jinja2', 'http://jinja.pocoo.org/'),
+#          ('You can edit those links in your config file', '#'),)
+
+# Social widget
+# SOCIAL = (('You can add links in your config file', '#'),
+#           ('Another social link', '#'),)
+
 
 # Following items are often useful when publishing
 
