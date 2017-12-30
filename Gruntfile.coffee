@@ -15,6 +15,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-jsbeautifier'
   grunt.loadNpmTasks 'grunt-contrib-imagemin'
   grunt.loadNpmTasks 'grunt-image'
+  grunt.loadNpmTasks 'grunt-contrib-stylus'
   grunt.loadNpmTasks 'grunt-purifycss'
   grunt.initConfig
 
@@ -140,6 +141,17 @@ module.exports = (grunt) ->
 	   #    }
 	   #  }
 
+    ##############
+    ##  Stylus  ##
+    ##############
+    # Automatic compile Stylus to CSS
+    # https://github.com/gruntjs/grunt-contrib-stylus
+    stylus:
+      compile:
+        files:
+          'output/theme/css/sections/sublime-text.css': 'output/theme/stylus/sections/sublime-text.styl'
+          'output/theme/css/sections/gingerinas.css': 'output/theme/stylus/sections/gingerinas.styl'
+
 	###############
     ## PurifyCSS ##
     ###############
@@ -168,27 +180,31 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'test', [
     'shell:generate'
-  	# 'postcss'
+    # 'postcss'
     # 'move'
     # 'clean'
     # 'replace'
     # 'jsbeautifier'
-    'purifycss'
+    # 'purifycss'
+    'stylus'
   ]
+
   grunt.registerTask 'build', [
     'shell:generate'
     'move'
     'clean'
-    'replace',
+    'replace'
+    'stylus'
     'purifycss'
   ]
   grunt.registerTask 'publish', [
-  	'postcss'
     'shell:deploy'
     'move'
     'clean'
-    'jsbeautifier'
-    'replace',
+    'replace'
+    'stylus'
     'purifycss'
+    'postcss'
+    'jsbeautifier'
   ]
   return
