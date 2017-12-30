@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2017-12-28 13:50:33 -->
+<!-- @Last Modified time: 2017-12-30 08:24:51 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -152,13 +152,24 @@
 <!-- Site content -->
 {% block base_content %}{{ article.content }}{% endblock %}
 
+<!-- Neighbors: add pagination -->
+<!-- https://github.com/getpelican/pelican-plugins/tree/master/neighbors -->
+<!-- See example in https://github.com/whatifrussian/website/blob/9e29831dcf61c85e711a392709aaf711212ba7c9/themes/whatif/templates/includes/article_content.html -->
+{% block base_neighbors -%}
+	{%- if article.lang == 'ru' -%}
+		{% include 'includes/neighbors-ru.html' %}
+	{% else %}
+		{% include 'includes/neighbors-en.html' %}
+	{% endif %}
+{%- endblock %}
+
 <!-- Footer: new disgruntled Russian and sign -->
 <!-- E-Mail obfuscate: http://rot13.florianbersier.com/ -->
 <!-- Get relative source path like https://github.com/kura/kura.io/blob/e8f2c6801a0013201d734aa1ac48d9ac92a40b96/ghastly/templates/article.html#L10 -->
 {% block base_new_russian %}
 	{%- if article.lang == 'ru' -%}
-	<div class="SashaEmNoColor">Запрещается копирование и прочее воспроизведение данного текста без согласия с его автором. Если Вы найдёте в данной статье ошибки или опечатки, можете <a href="{{GITHUB_URL}}/edit/master/content/{{article.get_relative_source_path()}}">отредактировать её</a> и отправить <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>. Пожалуйста, пишите на русском (предпочтительно) или английском языках. По любым относящимся к статье и её предмету вопросам можете связаться и по <span id="obf"><script src="{{SITEURL}}/js/personal/Mail/personal-mail.js" async></script><noscript><span>ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span>. С комментариями в стиле <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">новых недовольных русских</a> оставляю право распоряжаться по собственному усмотрению.</div>
+		<div class="SashaEmNoColor">Запрещается копирование и прочее воспроизведение данного текста без согласия с его автором. Если Вы найдёте в данной статье ошибки или опечатки, можете <a href="{{GITHUB_URL}}/edit/master/content/{{article.get_relative_source_path()}}">отредактировать её</a> и отправить <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>. Пожалуйста, пишите на русском (предпочтительно) или английском языках. По любым относящимся к статье и её предмету вопросам можете связаться и по <span id="obf"><script src="{{SITEURL}}/js/personal/Mail/personal-mail.js" async></script><noscript><span>ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span>. С комментариями в стиле <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">новых недовольных русских</a> оставляю право распоряжаться по собственному усмотрению.</div>
 	{% else %}
-	<div class="SashaEmNoColor">All rights reserved ©. If you find in this article errors and/or typos, you can <a href="{{GITHUB_URL}}/edit/master/content/{{article.get_relative_source_path()}}">edit it</a> and send me <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>. Please, write in Russian (preferable) or English. Also, you can write me by <span id="obf"><script src="{{SITEURL}}/js/personal/Mail/personal-mail.js" async></script><noscript><span>ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span> about everything related to this article. With commentary in the style of <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">new disgruntled Russian</a> i reserve the right to dispose of my own discretion.</div>
+		<div class="SashaEmNoColor">All rights reserved ©. If you find in this article errors and/or typos, you can <a href="{{GITHUB_URL}}/edit/master/content/{{article.get_relative_source_path()}}">edit it</a> and send me <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>. Please, write in Russian (preferable) or English. Also, you can write me by <span id="obf"><script src="{{SITEURL}}/js/personal/Mail/personal-mail.js" async></script><noscript><span>ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span> about everything related to this article. With commentary in the style of <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">new disgruntled Russian</a> i reserve the right to dispose of my own discretion.</div>
 	{% endif %}
 {% endblock %}

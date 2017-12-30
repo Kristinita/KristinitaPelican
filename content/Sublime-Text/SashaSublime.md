@@ -1,5 +1,5 @@
 Title: SashaSublime
-Category: Sublime Text
+Category: Sublime Packages
 Tags: Sublime Text
 Date: 2017-01-31 09:13:30
 Status: published

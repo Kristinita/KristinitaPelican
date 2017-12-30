@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2017-12-28 09:32:30
+# @Last Modified time: 2017-12-29 20:47:52
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -99,6 +99,9 @@ PLUGINS = [
     'feed_summary',
     'interlinks',
     'just_table',
+    'neighbors',
+    # [FIXME] Different colors for different designs
+    # 'pelican-linkclass',
     'pagefixer',
     # Disable, because:
     # 1. Plugin create duplicates of files

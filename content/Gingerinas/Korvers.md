@@ -1,6 +1,6 @@
 Title: Korvers
 Date: 2017-02-13 19:15:15
-Modified: 2017-11-04 20:42:26
+Modified: 2017-12-30 08:49:26
 Version: 0.0.1
 Author: Sasha Chernykh
 Lang: ru
@@ -10,7 +10,7 @@ Metacontent: Логика и оценка риска в джинджеринах
 Pagecolors: gingerinas
 Iconleftorright: right
 Tags: gingerinas
-Category: Техника в джинджеринах,
+Category: Логика в джинджеринах
 JQuery: true
 Gemini: true
 Rainbow: true

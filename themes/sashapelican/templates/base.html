@@ -65,7 +65,7 @@
         <div class="SashaMargin">
             <header>
                 <h1 class="SashaTopHeader">{% block base_h1 %}{% endblock %}</h1>
-                <img class="SashaNotModified" src="http://2no.co/{% block base_noco %}{% endblock %}.png" alt="image">
+                <img class="SashaPageLoading" src="http://2no.co/{% block base_noco %}{% endblock %}.png" alt="Page loading, please, little wait">
                 <div class="SashaVersion">Version {% block base_version %}{% endblock %}</div>
                 <div class="SashaVersion">
                     Posted —
@@ -78,6 +78,8 @@
             </header>
             {% block base_content %}{% endblock %}
             <footer>
+            	{% block base_neighbors -%}{% endblock %}
+            	<div class="SashaClearBoth"></div>
                 {% block base_new_russian %}{% endblock %}
                 <div class="WorkOnYourself">Работайте над собой</div>
             </footer>

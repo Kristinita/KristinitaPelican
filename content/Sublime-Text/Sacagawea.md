@@ -1,6 +1,6 @@
 Title: Sacagawea
 Date: 2017-05-05 06:49:34
-Modified: 2017-05-09 15:45:14
+Modified: 2017-12-30 08:56:26
 Version: 0.1.0
 Author: Keith Hall
 Lang: ru
@@ -10,7 +10,7 @@ Metacontent: Таймер для джинджерин “Что? Где? Ког�
 Pagecolors: sublime-text
 Iconleftorright: right
 Tags: sublime-text, gingerinas, what-where-when
-Category: Sublime Text, Gingerinas
+Category: Sublime Packages
 Noco: 1g9b6
 Stylesheets: personal/
 Javascripts: personal/

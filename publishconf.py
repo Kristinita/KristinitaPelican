@@ -32,7 +32,9 @@ PLUGINS = [
     # Temporary disable, when bugs not fixed
     # 'deadlinks',
     'feed_summary',
+    'just_table',
     'interlinks',
+    'neighbors',
     'optimize_images',
     'pagefixer',
     'section_number',

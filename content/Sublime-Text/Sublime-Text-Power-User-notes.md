@@ -8,7 +8,7 @@ Metacontent: Notes of book “Sublime Text Power User”
 Pagecolors: sublime-text
 Iconleftorright: right
 Tags: sublime-text
-Category: Sublime Text,
+Category: Sublime Notes
 JQuery: true
 Gemini: true
 Rainbow: true
