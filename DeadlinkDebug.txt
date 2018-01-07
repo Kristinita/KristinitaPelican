@@ -1,19 +1,26 @@
 DEBUG: Pelican version: 3.7.1
-DEBUG: Python version: 3.6.1
+DEBUG: Python version: 3.6.3
 DEBUG: Adding current directory to system path
 DEBUG: Temporarily adding PLUGIN_PATHS to system path
-DEBUG: Loading plugin `feed_summary`
-DEBUG: Registering plugin `feed_summary`
+DEBUG: Loading plugin `deadlinks`
+DEBUG: Registering plugin `deadlinks`
 DEBUG: Loading plugin `interlinks`
 DEBUG: Registering plugin `interlinks`
+DEBUG: Loading plugin `just_table`
+DEBUG: Registering plugin `just_table`
+DEBUG: Loading plugin `neighbors`
+DEBUG: Registering plugin `neighbors`
 DEBUG: Loading plugin `pagefixer`
 DEBUG: Registering plugin `pagefixer`
+DEBUG: Loading plugin `permalinks`
+DEBUG: Registering plugin `permalinks`
 DEBUG: Loading plugin `section_number`
 DEBUG: Registering plugin `section_number`
 DEBUG: Restoring system path
+DEBUG: Found generator: <class 'permalinks.permalinks.PermalinkGenerator'>
 DEBUG: Cannot load cache D:\Kristinita\cache\ArticlesGenerator-Readers (this is normal on first run). Proceeding with empty cache.
   | FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kristinita\\cache\\ArticlesGenerator-Readers'
-DEBUG: Template list: ['!simple/archives.html', '!simple/article.html', '!simple/author.html', '!simple/authors.html', '!simple/base.html', '!simple/categories.html', '!simple/category.html', '!simple/gosquared.html', '!simple/index.html', '!simple/page.html', '!simple/pagination.html', '!simple/period_archives.html', '!simple/tag.html', '!simple/tags.html', '!simple/translations.html', '404.html', 'about.html', 'archives.html', 'article.html', 'author.html', 'authors.html', 'base.html', 'categories.html', 'category.html', 'gosquared.html', 'index.html', 'page.html', 'pagination.html', 'period_archives.html', 'sasha-black.html', 'tag.html', 'tags.html', 'translations.html']
+DEBUG: Template list: ['!simple/archives.html', '!simple/article.html', '!simple/author.html', '!simple/authors.html', '!simple/base.html', '!simple/categories.html', '!simple/category.html', '!simple/gosquared.html', '!simple/index.html', '!simple/page.html', '!simple/pagination.html', '!simple/period_archives.html', '!simple/tag.html', '!simple/tags.html', '!simple/translations.html', '404.html', 'about.html', 'archives.html', 'article.html', 'author.html', 'authors.html', 'base.html', 'categories.html', 'category.html', 'gosquared.html', 'includes/neighbors-en.html', 'includes/neighbors-ru.html', 'index.html', 'page.html', 'pagination.html', 'period_archives.html', 'sasha-black.html', 'tag.html', 'tags.html', 'translations.html']
 DEBUG: Cannot load cache D:\Kristinita\cache\PagesGenerator-Readers (this is normal on first run). Proceeding with empty cache.
   | FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kristinita\\cache\\PagesGenerator-Readers'
 DEBUG: Read file Gingerinas/Korvers.md -> Article
@@ -36,8 +43,6 @@ DEBUG: Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
 DEBUG: Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
 DEBUG: Successfuly imported extension module "markdown.extensions.admonition".
 DEBUG: Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
-DEBUG: Successfuly imported extension module "markdown.extensions.nl2br".
-DEBUG: Successfully loaded extension "markdown.extensions.nl2br.Nl2BrExtension".
 DEBUG: Successfuly imported extension module "markdown.extensions.sane_lists".
 DEBUG: Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
 DEBUG: Successfuly imported extension module "pymdownx.inlinehilite".
@@ -48,6 +53,8 @@ DEBUG: Successfuly imported extension module "pymdownx.caret".
 DEBUG: Successfully loaded extension "pymdownx.caret.InsertSubExtension".
 DEBUG: Successfuly imported extension module "pymdownx.critic".
 DEBUG: Successfully loaded extension "pymdownx.critic.CriticExtension".
+DEBUG: Successfuly imported extension module "pymdownx.escapeall".
+DEBUG: Successfully loaded extension "pymdownx.escapeall.EscapeAllExtension".
 DEBUG: Successfuly imported extension module "pymdownx.magiclink".
 DEBUG: Successfully loaded extension "pymdownx.magiclink.MagiclinkExtension".
 DEBUG: Successfuly imported extension module "pymdownx.mark".
@@ -77,20 +84,742 @@ DEBUG: Successfully loaded extension "markdown_blockdiag.extension.BlockdiagExte
 DEBUG: Successfuly imported extension module "markdown.extensions.meta".
 DEBUG: Successfully loaded extension "markdown.extensions.meta.MetaExtension".
 DEBUG: Signal article_generator_context.send(ArticlesGenerator, <metadata>)
+DEBUG: Good link: http://anima-kommunizm.forum2x2.ru/t135-topic#138 (200)
+DEBUG: Good link: http://forumsi.org/showpost.php?p=37455&postcount=1 (200)
+DEBUG: Good link: https://vk.com/hair_in_the_wind (200)
+DEBUG: Good link: http://www.youtube.com/watch?v=sd0S-t10oyo (200)
+DEBUG: Good link: http://anima-kommunizm.forum2x2.ru/t170-topic (200)
+DEBUG: Good link: http://lokeshdhakar.com/baseball-pitches-illustrated/ (200)
+DEBUG: Good link: http://content.fanatics.com/mapping-all-major-league-baseball-pitches/ (200)
+DEBUG: Good link: http://www.youtube.com/watch?v=7TjSspmHp3Q (200)
+DEBUG: Good link: http://www.youtube.com/watch?v=R794mnGXY9M (200)
+DEBUG: Good link: http://www.youtube.com/watch?feature=player (200)
+DEBUG: Good link: http://www.youtube.com/watch?feature=player (200)
+DEBUG: Good link: http://spectator.ru/entry/1041 (200)
+DEBUG: Good link: https://youtu.be/W52WfNRJPdU?t=1846 (200)
+DEBUG: Good link: https://youtu.be/HlhFX2fCOaI?t=268 (200)
+DEBUG: Read file Gingerinas/Testus.md -> Article
+DEBUG: Read file Gingerinas/Бесплатные-книги-и-учебные-ресурсы-для-джинджерин.md -> Article
+DEBUG: Read file Gingerinas/Грейзи-Фа.md -> Article
+DEBUG: Good link: http://www.newsvl.ru/economics/2017/04/07/158132/ (200)
+DEBUG: Good link: http://yandex.ru/ (200)
+DEBUG: Good link: https://google.ru (200)
+WARNING: Dead link: https://books.google.ru/ (error code: 401)
+DEBUG: Good link: http://gen.lib.rus.ec/ (200)
+DEBUG: Good link: http://www.bithal.com/ (200)
+DEBUG: Good link: https://webapps.stackexchange.com/a/107752/122122 (200)
+DEBUG: Good link: https://www.litres.ru/ (200)
+DEBUG: Good link: https://www.gazeta.ru/science/2008/02/26_a_2649910.shtml (200)
+DEBUG: Good link: https://ru.wikipedia.org/wiki/%D0%AD%D0%BA%D1%81%D0%BC%D0%BE#.D0.9A.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.BE_.D0.B8.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B9 (200)
+WARNING: Dead link: http://masteroff.org/38340.html (error code: 403)
+DEBUG: Good link: http://publishing_dictionary.academic.ru/2269/%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%B8%D0%BA (200)
+DEBUG: Good link: https://yadi.sk/i/xaE_aSa33Leevd (200)
+DEBUG: Good link: https://lifehacker.ru/2014/06/15/kak-pravilno-chitat-knigi/ (200)
+DEBUG: Good link: https://yadi.sk/i/_KxrVYOT3LcdAL (200)
+DEBUG: Good link: https://yadi.sk/i/MKNaBfpQ3LdBfv (200)
+DEBUG: Good link: http://lpgenerator.ru/blog/2014/05/12/iskusstvo-chteniya-kak-chitat-bystro-zapominat-luchshe/ (200)
+DEBUG: Read file Gingerinas/Грейс-Ло.md -> Article
+DEBUG: Good link: https://vk.com/mk_2802 (200)
+DEBUG: Good link: http://anima-kommunizm.forum2x2.ru/t135-topic (200)
+DEBUG: Good link: https://ru.wikipedia.org/wiki/Conquiztador (200)
+DEBUG: Good link: http://anima-kommunizm.forum2x2.ru/t135-topic (200)
+DEBUG: Good link: https://en.wikipedia.org/wiki/Ken_Jennings (200)
+DEBUG: Good link: https://mega.nz/ (200)
+DEBUG: Good link: https://www.sublimetext.com/3 (200)
+DEBUG: Good link: http://www.torrent-invites.com/software/25364-crack-patch-serial-keygen.html (200)
+DEBUG: Good link: https://github.com/alvesjtiago/hover-preview (200)
+DEBUG: Good link: http://www.sublimetext.com/3 (200)
+DEBUG: Good link: http://www.sublimetext.ru/documentation/projects (200)
+DEBUG: Good link: https://habrahabr.ru/post/147856/ (200)
+DEBUG: Good link: http://forum.sublimetext.ru/index.php?topic=6.0 (200)
+DEBUG: Good link: https://packagecontrol.io/packages/Hover%20Image%20Preview (200)
+DEBUG: Good link: https://github.com/alvesjtiago/hover-preview/issues/9#issuecomment-301037297 (200)
+DEBUG: Good link: http://bit.ly/2pC69nP (200)
+DEBUG: Good link: http://wombat.org.ua/AByteOfPython/AByteofPythonRussian-2.01.pdf (200)
+DEBUG: Read file Gingerinas/Джинджерины.md -> Article
+DEBUG: Good link: https://ru.wikipedia.org/wiki/%D0%A3%D0%BC%D0%BD%D0%B8%D1%86%D1%8B_%D0%B8_%D1%83%D0%BC%D0%BD%D0%B8%D0%BA%D0%B8 (200)
+DEBUG: Good link: http://vladimirkhil.com/tv/intro (200)
+DEBUG: Good link: https://www.science-education.ru/ru/article/view?id=1079 (200)
+-> Url http://kristinita.ru/#gsc.tab=0&gsc.q=%D0%B2%D0%B8%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B0 skipped because is starts with http://kristinita.ru
+DEBUG: Good link: http://dic.academic.ru/dic.nsf/efremova/168768/%D0%97%D0%BD%D0%B0%D1%82%D0%BE%D0%BA (200)
+DEBUG: Good link: http://www.forumsi.org/showpost.php?p=37455 (200)
+DEBUG: Good link: https://ru.wikipedia.org/wiki/Conquiztador (200)
+DEBUG: Good link: http://quizantia.ru/ (200)
+DEBUG: Good link: https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BC%D1%8B%D0%B9_%D1%83%D0%BC%D0%BD%D1%8B%D0%B9 (200)
+WARNING: Dead link: http://wikireality.ru/wiki/%D0%A7%D0%B8%D1%82%D0%B5%D1%80%D1%81%D1%82%D0%B2%D0%BE_%D0%B2_%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D1%8B%D1%85_%D0%B8%D0%B3%D1%80%D0%B0%D1%85 (error code: 403)
+DEBUG: Good link: https://en.wikipedia.org/wiki/World_Quizzing_Championship (200)
+DEBUG: Read file Gingerinas/Знания-в-джинджеринах.md -> Article
+DEBUG: Good link: http://web.archive.org/web/20121119135103/http://www.litrossia.ru/2007/24/01607.html (200)
+DEBUG: Good link: https://www.snopes.com/photos/architecture/largestpool.asp (200)
+WARNING: Dead link: http://bit.ly/2C5XH9H (error code: 403)
+WARNING: Dead link: https://www.google.com/search?q=%D0%A1%D0%B0%D0%BD+%D0%90%D0%BB%D1%8C%D1%84%D0%BE%D0%BD%D1%81%D0%BE+%D0%B4%D0%B5%D0%BB%D1%8C+%D0%9C%D0%B0%D1%80&newwindow=1&source=lnms&tbm=bks&sa=X&ved=0ahUKEwjC_9zV25_YAhXiFJoKHWMpBdAQ_AUIECgB&biw=2144&bih=955 (error code: 403)
+DEBUG: Good link: https://pronedra.ru/oil/2017/04/25/krupneyshie-npz-rossii/ (200)
+DEBUG: Good link: http://www.vokrugsveta.ru/vs/article/6122/ (200)
+DEBUG: Good link: https://yadi.sk/i/I1sJp8m_3QswDo (200)
+DEBUG: Good link: http://nbviewer.jupyter.org/github/Kristinita/SashaChernykhBooks/blob/master/%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F/Dumchev%2C%20Pomnit%20Vsyo.pdf (200)
+DEBUG: Good link: http://nbviewer.jupyter.org/github/Kristinita/SashaChernykhBooks/blob/master/%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F/%D0%A0%D0%B0%D0%B9%D0%BD%D0%B5%D1%80%20%D0%9C%D0%B0%D1%80%D1%82%D0%B5%D0%BD%D1%81%20%E2%80%94%20%D0%A3%D1%81%D0%BF%D0%B5%D1%88%D0%BD%D1%8B%D0%B9_%D1%82%D1%80%D0%B5%D0%BD%D0%B5%D1%80.pdf#page=23 (200)
+-> Url http://kristinita.ru/Smert-svobode/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BD%D0%B5%D0%B4%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5 skipped because is starts with http://kristinita.ru
+DEBUG: Good link: http://diesel.elcat.kg/index.php?showtopic=138084 (200)
+DEBUG: Good link: http://www.koreiko.ru/gold-calf_15.htm (200)
+DEBUG: Good link: http://f-ps.ru/ (200)
+DEBUG: Good link: https://ok.ru/profile/329953184247 (200)
+DEBUG: Good link: https://ok.ru/ulduz.garaev (200)
+DEBUG: Good link: http://donday.ru/devushka-naydennaya-mertvoy-v-novoshahtinske-planirovala-svadbu.html (200)
 DEBUG: Read file Gingerinas/Книги-для-джинджерин.md -> Article
+DEBUG: Good link: http://www.findbook.ru/search/d1?title=%D0%F3%F1%F1%EA%E8%E9+%F0%EE%EC%E0%ED%F1&authors=%D1%EE%E1%EE%EB%E5%E2%E0&r=0&s=1&viewsize=15&startidx=0 (200)
+DEBUG: Good link: http://www.findbook.ru/search/d1?title=%D0%F3%F1%F1%EA%E8%E9+%F1%EE%E2%E5%F2%F1%EA%E8%E9+%F0%EE%EC%E0%ED%F1&authors=%D1%EE%E1%EE%EB%E5%E2%E0&r=0&s=1&viewsize=15&startidx=0 (200)
+DEBUG: Good link: http://www.findbook.ru/search/d1?title=%D1%EC%E5%EB%EE%2C+%F2%EE%E2%E0%F0%E8%F9%E8%2C+%E2+%ED%EE%E3%F3&authors=%CB%F3%EA%EE%E2%ED%E8%EA%EE%E2&r=0&s=1&viewsize=15&startidx=0 (200)
+DEBUG: Good link: http://newauction.ru/offer/sssr_1987_g_pesnja_dalekaja_i_blizkaja_ju_e_birjukov-i62651621279072.html (200)
+DEBUG: Good link: http://www.findbook.ru/search/d1?title=%D2%FB+%EF%EE%EC%ED%E8%F8%FC%2C+%F2%EE%E2%E0%F0%E8%F9&r=0&s=1&viewsize=15&startidx=0 (200)
+DEBUG: Good link: http://www.findbook.ru/search/d1?title=%D7%E5%F0%E5%E7+%EE%E3%ED%E5%ED%ED%FB%E5+%E3%EE%E4%FB&r=0&s=1&viewsize=15&startidx=0 (200)
+DEBUG: Good link: http://www.findbook.ru/search/d1?title=%CF%EE%F7%E0%F9%E5+%EF%EE%E9%F2%E5+%EF%E5%F1%ED%E8+%D0%E5%E2%EE%EB%FE%F6%E8%E8&r=0&s=1&viewsize=15&startidx=0 (200)
+DEBUG: Good link: http://www.alib.ru/findp.php4?author=&title=%CD%E0%F8%E8+%EF%F0%E0%E7%E4%ED%E8%EA%E8&god1=1977&god2=1977 (200)
+DEBUG: Good link: http://rumed.ru/ponomarenko.php (200)
+WARNING: Dead link: http://bookradar.org/search/?q=%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B5+%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8%2C+%D0%BB%D1%83%D1%87%D1%88%D0%B8%D0%B5+%D1%86%D0%B8%D1%82%D0%B0%D1%82%D1%8B+%D0%B8%D0%B7+%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%BE%D0%B2&type=all (error code: 403)
+WARNING: Dead link: http://bookradar.org/search/?q=%D0%9E%20%D1%84%D0%B8%D0%BD%D0%B0%D0%BD%D1%81%D0%B0%D1%85%20%D0%BB%D0%B5%D0%B3%D0%BA%D0%BE%20%D0%B8%20%D0%BD%D0%B5%D0%BF%D1%80%D0%B8%D0%BD%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%BD%D0%BE&type=all (error code: 403)
+DEBUG: Good link: http://www.findbook.ru/search/d1?title=%CC%EE%F1%EA%E2%E0+%F2%E5%E0%F2%F0%E0%EB%FC%ED%E0%FF&authors=%C7%E0%F1%EB%E0%E2%F1%EA%E8%E9&r=0&s=1&viewsize=15&startidx=0 (200)
+WARNING: Dead link: http://bookradar.org/search/?q=%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B5+%D1%81%D0%BB%D0%BE%D0%B2%D0%B0+%D0%B7%D0%BD%D0%B0%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8B%D1%85+%D0%BB%D1%8E%D0%B4%D0%B5%D0%B9&type=all (error code: 403)
+DEBUG: Good link: http://www.findbook.ru/search/d1?title=%D4%E0%E2%EE%F0%E8%F2%FB+%EF%F0%E0%E2%E8%F2%E5%EB%E5%E9+%D0%EE%F1%F1%E8%E8&r=0&s=1&viewsize=15&startidx=0 (200)
+DEBUG: Good link: http://www.findbook.ru/search/d1?title=100+%E2%E5%EB%E8%EA%E8%F5+%E3%E0%EB%E5%F0%E5%E9+%E8+%EC%F3%E7%E5%E5%E2&r=0&s=1&viewsize=15&startidx=0 (200)
+DEBUG: Good link: http://kravchuk.ucoz.com/publ/rekordy_prirody/7-1-0-18 (200)
+WARNING: Dead link: http://bookradar.org/search/?q=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0+%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%BD%D0%B0%D1%8F%3A+100+%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%BE%D0%B2%2C+%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5+%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE+%D1%83%D0%B2%D0%B8%D0%B4%D0%B5%D1%82%D1%8C&type=all (error code: 403)
+DEBUG: Good link: http://www.findbook.ru/search/d1?title=%D2%E5%E0%F2%F0%FB+%CF%E5%F2%E5%F0%E1%F3%F0%E3%E0&r=0&s=1&viewsize=15&startidx=0 (200)
+WARNING: Dead link: http://bookradar.org/search/?q=%D0%AD%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%82%20%D0%B8%20%D1%81%D1%83%D0%B5%D0%B2%D0%B5%D1%80%D0%B8%D0%B9%20%D0%A5%D0%BE%D1%83%D0%BB&type=all (error code: 403)
+WARNING: Dead link: http://bookradar.org/search/?q=%D0%A1%D0%B0%D0%BC%D1%8B%D0%B5%20%D1%83%D0%B4%D0%B8%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BF%D1%80%D0%B0%D0%B7%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%BC%D0%B8%D1%80%D0%B0&type=all (error code: 403)
+DEBUG: Good link: http://www.findbook.ru/search/d1?title=%C2%E5%EB%E8%EA%E8%E5+%EC%FE%E7%E8%EA%EB%FB+%EC%E8%F0%E0&r=0&s=1&viewsize=15&startidx=0 (200)
+-> Url http://kristinita.ru skipped because is starts with http://kristinita.ru
+DEBUG: Good link: http://pishi-stihi.ru/ (200)
+DEBUG: Good link: https://briefly.ru/ (200)
+DEBUG: Good link: http://www.kulichki.com/vv/pesni/ (200)
+DEBUG: Good link: http://pesnifilm.ru/ (200)
+DEBUG: Good link: http://www.astronet.ru/db/constell.html (200)
+DEBUG: Good link: http://citatyizfilmov.ru/ (200)
+WARNING: Dead link: https://yadi.sk/i/Rn_DBsZUu8Ry4 (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/FG4QNXWHu8S95 (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/rKxDBQ8bu8S8k (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/FG4QNXWHu8S95 (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/l0TOsEgfu8S8Y (error code: 404)
+DEBUG: Good link: https://yadi.sk/d/3mpLe52hu8XhQ (200)
+DEBUG: Good link: https://yadi.sk/d/VvoVDhUGu8Xhi (200)
+DEBUG: Good link: http://svoya-igra.org/ (200)
+WARNING: Dead link: https://yadi.sk/d/hOVppas-u8hKJ (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/yZfdpzeQu8hPQ (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/aRJ374yiu8hPe (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/SpqETrd1u8hKg (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/KTz4hIBnu8hLR (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/1ltxCPm-u8CFd (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/XUGqgi3Ku8hMg (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/crlh9mzGu8hNX (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/1ltxCPm-u8CFd (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/oLR8Edvvu8hNy (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/gwWRduanu8hPt (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/ue2n7xJ-u8hQH (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/VLD0iCRsu8hQ7 (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/i7BzUDw9u8hQX (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/tBwGqL0ru8hL9 (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/fTuDeoweu8hQs (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/o7BQX4Qgu8hN3 (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/Sx4vUByru8hTS (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/QAe79MBuu8hRi (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/dRy6c3_4u8hKx (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/HRHQIS_Lu8hS3 (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/npce00Otu8hSF (error code: 404)
+DEBUG: Good link: https://yadi.sk/d/UZtu1kmju8hSR (200)
+WARNING: Dead link: https://yadi.sk/d/k1wb3Giyu8hSf (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/lRq04X2Nu8hT2 (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/oCfZ3OjRu8hTi (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/VGT5MRTuu8hTt (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/VeNxFoa6u8hUD (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/m-MqjvNKu9Ht5 (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/_gZnrDOMu9HvZ (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/DNG9mYVOu9Hz3 (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/VfVROpt4u9J2t (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/j1VpRcB-u9Hs7 (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/25YfXaldu9J9d (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/lXlCs5MAu9J4Y (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/98mGeAWwu9JBG (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/g4UU3jG5u9H4i (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/JV4h7e3tuFrNH (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/ur-WGna-u9H7y (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/ETEv_jo_u9HLc (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/P-v6PuRVu9HQN (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/HD3Lhiciu9HAp (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/w7D77y-Ru9HJN (error code: 404)
+WARNING: Dead link: https://yadi.sk/d/ZlPJ_Lzgu9Has (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/IJ4tEq85u9HWT (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/Ccx8X1lMu9HEU (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/2uYh7iaOu9JkD (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/ltj_qq8Du9Jbc (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/VHh7tdMLu9JoQ (error code: 404)
+WARNING: Dead link: https://yadi.sk/i/Aa4D1vYou9JSK (error code: 404)
+DEBUG: Read file Gingerinas/Тао.md -> Article
+DEBUG: Good link: http://changingminds.org/explanations/memory/von_restorff.htm (200)
+DEBUG: Good link: http://psyjournals.ru/kip/2009/n2/23526_full.shtml (200)
+DEBUG: Good link: https://vk.com/mihalsen (200)
+DEBUG: Good link: http://www.eleven.co.il/article/12499 (200)
+DEBUG: Good link: https://briefly.ru/djuma/graf_monte-kristo/ (200)
+DEBUG: Good link: https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D0%BD,_%D0%A0%D0%BE%D0%B9 (200)
+DEBUG: Read file Gingerinas/Фоны-и-Карта-С.md -> Article
+-> Url http://kristinita.ru/#gsc.tab=0&gsc.q=%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B8 skipped because is starts with http://kristinita.ru
+DEBUG: Good link: http://lpgenerator.ru/blog/2014/06/20/psihologiya-uspeha-kak-rabotaet-mozg-pobeditelej/ (200)
+WARNING: Dead link: https://yadi.sk/i/FAP-NcNu3LVtXu (error code: 404)
+DEBUG: Good link: https://en.wikipedia.org/wiki/Need_for_Speed:_Underground (200)
+DEBUG: Good link: http://pesnifilm.ru/ (200)
+DEBUG: Good link: http://basket-planet.com/ru/news/1883 (200)
+DEBUG: Good link: https://ru.wikipedia.org/wiki/Conquiztador (200)
+DEBUG: Good link: https://www.championat.com/basketball/article-206406-kobi-brajant-teper-spit-v-dva-raza-dolshe.html (200)
+DEBUG: Good link: http://www.worldquizzingchampionships.com/ (200)
+DEBUG: Good link: https://lifehacker.ru/2015/05/28/all-about-pomodoro/ (200)
+DEBUG: Good link: http://vladimirkhil.com/si/game (200)
+WARNING: Dead link: http://nbviewer.jupyter.org/github/Kristinita/SashaBooks/blob/master/%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F/%D0%98%D1%86%D1%85%D0%B0%D0%BA%20%D0%9F%D0%B8%D0%BD%D1%82%D0%BE%D1%81%D0%B5%D0%B2%D0%B8%D1%87%20%D0%9F%D0%BE%D0%BB%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C!%20%D0%A2%D0%B0%D0%B9%D0%BC-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%BC%D0%B5%D0%BD%D1%82%20%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE%20%D0%BF%D0%BE%D0%BA%D0%BE%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B7%D0%B0%2030%20%D0%B4%D0%BD%D0%B5%D0%B9.pdf#page=37 (error code: 400)
+WARNING: Dead link: http://nbviewer.jupyter.org/github/Kristinita/SashaBooks/blob/master/%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F/Diane-Halpern_-_Psixologiya-kriticheskogo-myshleniya_Skepdic.ru_.pdf (error code: 400)
 DEBUG: Read file Giologica/Nas-Izu.md -> Article
+WARNING: Dead link: http://www.companion.ua/articles/content?id=7178 (error code: 404)
+DEBUG: Good link: http://enc-dic.com/fwords/Akronim-1543.html (200)
+DEBUG: Good link: http://htmlbook.ru/samhtml/yakorya (200)
+-> Url http://kristinita.ru/Giologica/Nas-Izu#RNAZ skipped because is starts with http://kristinita.ru
+-> Url http://kristinita.ru/Giologica/Nas-Izu#RNAZ skipped because is starts with http://kristinita.ru
+-> Url http://kristinita.ru/Giologica/Nas-Izu#RNAZ skipped because is starts with http://kristinita.ru
+WARNING: Dead link: http://iph.ras.ru/enc_eth/103.html (not available)
+DEBUG: Good link: https://vk.com/hair_in_the_wind (200)
+WARNING: Dead link: http://www.wikireality.ru/wiki/%D0%9E%D1%84%D1%84%D1%82%D0%BE%D0%BF%D0%B8%D0%BA (error code: 403)
+ERROR: Could not process Giologica\Nas-Izu.md
+  | UnicodeEncodeError: 'ascii' codec can't encode characters in position 28-35: ordinal not in range(128)
+  |___
+  | Traceback (most recent call last):
+  |   File "c:\python36\lib\site-packages\pelican\generators.py", line 523, in generate_context
+  |     context_sender=self)
+  |   File "c:\python36\lib\site-packages\pelican\readers.py", line 572, in read_file
+  |     context=context)
+  |   File "c:\python36\lib\site-packages\pelican\contents.py", line 153, in __init__
+  |     signals.content_object_init.send(self)
+  |   File "c:\python36\lib\site-packages\blinker\base.py", line 267, in send
+  |     for receiver in self.receivers_for(sender)]
+  |   File "c:\python36\lib\site-packages\blinker\base.py", line 267, in <listcomp>
+  |     for receiver in self.receivers_for(sender)]
+  |   File "D:\Kristinita\pelican-plugins\deadlinks\deadlinks.py", line 163, in content_object_init
+  |     avail, success, code = get_status_code(url)
+  |   File "D:\Kristinita\pelican-plugins\deadlinks\deadlinks.py", line 32, in get_status_code
+  |     urlopen(url)
+  |   File "c:\python36\lib\urllib\request.py", line 223, in urlopen
+  |     return opener.open(url, data, timeout)
+  |   File "c:\python36\lib\urllib\request.py", line 526, in open
+  |     response = self._open(req, data)
+  |   File "c:\python36\lib\urllib\request.py", line 544, in _open
+  |     '_open', req)
+  |   File "c:\python36\lib\urllib\request.py", line 504, in _call_chain
+  |     result = func(*args)
+  |   File "c:\python36\lib\urllib\request.py", line 1346, in http_open
+  |     return self.do_open(http.client.HTTPConnection, req)
+  |   File "c:\python36\lib\urllib\request.py", line 1318, in do_open
+  |     encode_chunked=req.has_header('Transfer-encoding'))
+  |   File "c:\python36\lib\http\client.py", line 1239, in request
+  |     self._send_request(method, url, body, headers, encode_chunked)
+  |   File "c:\python36\lib\http\client.py", line 1250, in _send_request
+  |     self.putrequest(method, url, **skips)
+  |   File "c:\python36\lib\http\client.py", line 1117, in putrequest
+  |     self._output(request.encode('ascii'))
+  | UnicodeEncodeError: 'ascii' codec can't encode characters in position 28-35: ordinal not in range(128)
 DEBUG: Read file Giologica/Valerywork-Kiravel.md -> Article
+DEBUG: Good link: http://anima-kommunizm.forum2x2.ru/t36-topic (200)
+DEBUG: Good link: https://vk.com/zombelina (200)
+DEBUG: Good link: https://rsdn.ru/article/patterns/framework.xml#EKB (200)
+DEBUG: Good link: https://vk.com/hair_in_the_wind (200)
+DEBUG: Good link: http://vaden-pro.ru/blog/laravel/laravel-chto-eto (200)
+DEBUG: Good link: http://evolkov.net/nonscience/psychoanal/ (200)
+DEBUG: Good link: http://sceptic-ratio.narod.ru/ (200)
+-> Url http://kristinita.ru/Giologica/Nas-Izu.html#VALZ skipped because is starts with http://kristinita.ru
+DEBUG: Good link: http://cyberleninka.ru/article/n/indeks-tsitiruemosti-rossiyskih-uchenyh (200)
+DEBUG: Good link: http://anima-kommunizm.forum2x2.ru/t138-topic (200)
+DEBUG: Good link: http://dic.academic.ru/dic.nsf/enc_philosophy/902/%D0%9F%D0%90%D0%A0%D0%90%D0%94%D0%98%D0%93%D0%9C%D0%90 (200)
+DEBUG: Good link: http://enc-dic.com/rusphrase/Beloe-pjatno-330.html (200)
+DEBUG: Good link: https://vk.com/id190154920 (200)
 DEBUG: Read file Giologica/Демагогия-Нестеренко.md -> Article
+DEBUG: Good link: http://fan.lib.ru/n/nesterenko_j_l/text_0610.shtml (200)
+DEBUG: Good link: http://fan.lib.ru/n/nesterenko_j_l/text_0610.shtml (200)
+DEBUG: Good link: http://htmlbook.ru/samhtml/yakorya (200)
+-> Url http://kristinita.ru/Giologica/Демагогия-Нестеренко#1.4 skipped because is starts with http://kristinita.ru
+-> Url http://kristinita.ru/Giologica/Демагогия-Нестеренко#1.4 skipped because is starts with http://kristinita.ru
+-> Url http://kristinita.ru/Giologica/Демагогия-Нестеренко#3.2.5.3.а skipped because is starts with http://kristinita.ru
+-> Url http://kristinita.ru/Giologica/Демагогия-Нестеренко#3.2.5.3.а skipped because is starts with http://kristinita.ru
 DEBUG: Read file Giologica/Комментарии-к-материалам-о-неконструктивных-методах-ведения-дискуссии.md -> Article
+DEBUG: Good link: https://docs.zoho.com/file/9ustl0ebab1b5e94745b6a5cc656051b3e8d0 (200)
+DEBUG: Good link: http://www.e-reading.club/chapter.php/1019719/2/Bogatyrev_-_Demagogicheskie_shablony_Osnovy_Polemiki_s_demagogami.html (200)
+DEBUG: Good link: https://vk.com/hair_in_the_wind (200)
+DEBUG: Good link: http://people.novsu.ru/profiles/html/profileView.do?userid=s167163&lang=ru (200)
+DEBUG: Good link: http://www.vedomosti.ru/technology/articles/2012/09/07/novyj_dvigatel_torgovli (200)
+DEBUG: Good link: http://svr.gov.ru/material/3-1.htm (200)
+DEBUG: Good link: http://web.archive.org/web/20150615162941/http://www.xpomo.com/ruskolan/tolpa/piramida.htm (200)
 DEBUG: Read file Life-hacks/Default-portable-browser-Windows-10.md -> Article
+DEBUG: Good link: http://computerstory.ru/?p=3524 (200)
+DEBUG: Good link: http://tophope.ru/threads/%D0%A7%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D1%81%D1%82%D0%B8%D0%BB%D0%B5%D1%80-%D1%81%D1%82%D0%B8%D0%BB%D0%BB%D0%B5%D1%80-stealer-%D0%B8-%D0%B1%D0%BE%D1%80%D1%8C%D0%B1%D0%B0-%D1%81-%D0%BD%D0%B8%D0%BC.1965/ (200)
+WARNING: Dead link: http://www.spy-soft.net/chto-takoe-rat/ (error code: 403)
+DEBUG: Good link: http://portableapps.com/apps/internet/firefox_portable (200)
+DEBUG: Good link: https://support.mozilla.org/ru/kb/kak-sdelat-firefox-brauzerom-po-umolchaniyu (200)
 DEBUG: Read file Life-hacks/Как-автоматически-входить-на-сайты.md -> Article
+DEBUG: Good link: https://ru.wikipedia.org/wiki/Stack_Exchange_Network (200)
+DEBUG: Good link: http://ru.stackoverflow.com/help/badges/55/fanatic (200)
+DEBUG: Good link: http://loveread.ec/read_book.php?id=45782&p=12 (200)
+DEBUG: Good link: http://intop24.ru/article_20.php (200)
+WARNING: Dead link: http://archive.is/20160611162905/http://liwihelp.ru/sistema/avtomaticheskoe_vklyuchenie_kompyutera.html (error code: 451)
+DEBUG: Good link: http://vindavoz.ru/poleznoe/221-son-ili-gibernaciya.html (200)
+DEBUG: Good link: https://github.com/nnCron/nnCron#nncron-ru (200)
+DEBUG: Good link: http://www.nncron.ru/forums/viewtopic.php?f=5&t=13282&sid=b29f15e1a5c2d032bfc195a8498f43ff#p35308 (200)
+DEBUG: Good link: http://www.nncron.ru/download/nncron193b15.exe (200)
+DEBUG: Good link: http://www.nncron.ru/forums/viewtopic.php?f=5&t=13352&sid=87b407049e5d81a327ea9cc5d65ee6c2#p35669 (200)
+DEBUG: Good link: http://rsload.net/soft/manager/8453-process-hacker.html (200)
+DEBUG: Good link: http://www.windowsfaq.ru/content/category/3/7/45/ (200)
+DEBUG: Good link: http://vindavoz.ru/poleznoe/218-komandnaya-stroka-i-ee-komandy.html (200)
+DEBUG: Good link: http://sysadmins.ru/post7020767.html#7020767 (200)
+-> Url http://kristinita.ru/Life-hacks/Default-portable-browser-Windows-10#Why-Portable skipped because is starts with http://kristinita.ru
+DEBUG: Good link: http://www.outsidethebox.ms/11103/ (200)
+WARNING: Dead link: https://SashaChernykhQueenOfTheWorld.ru (not available)
+WARNING: Dead link: http://SashaChernykhGeniusOfPureBeauty.com (not available)
+WARNING: Dead link: http://SashaChernykhLaLeyenda.com/bonuspage.html (not available)
+WARNING: Dead link: https://learn.javascript.ru/window-methods (error code: 403)
+DEBUG: Good link: https://webref.ru/html/script (200)
+WARNING: Dead link: http://javascript.ru/window-location (error code: 403)
+WARNING: Dead link: http://ImageAnythingSasha.all (not available)
+DEBUG: Good link: http://dayte2.com/what-is-jquery (200)
+DEBUG: Good link: http://jquery-docs.ru/events/ready/ (200)
+WARNING: Dead link: http://SashaChernykhLaLeyenda.com/bonuspage.html (not available)
+WARNING: Dead link: http://SashaChernykhGeniusOfPureBeauty.com (not available)
+WARNING: Dead link: https://SashaChernykhQueenOfTheWorld.ru (not available)
+DEBUG: Good link: http://www.kristinita.ru (200)
+DEBUG: Good link: http://www.google.ru (200)
+DEBUG: Good link: http://www.yandex.ru (200)
+DEBUG: Good link: http://www.stackoverflow.com (200)
+DEBUG: Good link: http://www.nncron.ru/help/help_ru.htm (200)
+DEBUG: Good link: https://ru.wikipedia.org/wiki/Cron#crontab (200)
+DEBUG: Good link: http://www.kristinita.ru (200)
+DEBUG: Good link: http://www.google.ru (200)
+DEBUG: Good link: http://www.yandex.ru (200)
+DEBUG: Good link: http://www.stackoverflow.com (200)
+DEBUG: Read file Life-hacks/Перед-первым-применением-ARK-Benefit-S401.md -> Article
+DEBUG: Good link: http://fb.ru/article/254999/stokovaya-proshivka-chto-eto-takoe (200)
+DEBUG: Good link: http://4pda.ru/forum/index.php?showtopic=788444&st=340#entry67671845 (200)
+DEBUG: Good link: http://4pda.ru/forum/index.php?showtopic=788444&st=340#entry67600967 (200)
+DEBUG: Good link: http://4pda.ru/forum/index.php?showtopic=788444&st=300#entry64686674 (200)
+DEBUG: Good link: http://4pda.ru/forum/index.php?showtopic=788444&st=300#entry63816408 (200)
+DEBUG: Good link: http://4pda.ru/forum/index.php?showtopic=788444&st=300#entry63247178 (200)
+DEBUG: Good link: http://4pda.ru/forum/index.php?showtopic=788444&st=280#entry61611283 (200)
+DEBUG: Good link: http://4pda.ru/forum/index.php?showtopic=788444&st=280#entry60787829 (200)
+DEBUG: Good link: http://4pda.ru/forum/index.php?showtopic=788444&st=220#entry58263044 (200)
+DEBUG: Good link: http://4pda.ru/forum/index.php?s=&showtopic=788444&view=findpost&p=36669797 (200)
+DEBUG: Good link: https://f-droid.org/en/packages/be.ppareit.swiftp_free/ (200)
+DEBUG: Good link: http://4pda.ru/forum/index.php?s=&showtopic=788444&view=findpost&p=67471483 (200)
+DEBUG: Good link: http://www.techcolumnist.com/wp/2013/07/29/android-push-file-to-sdcard-with-adb/ (200)
+DEBUG: Good link: http://4pda.ru/forum/index.php?showtopic=735417&st=40#entry49802449 (200)
+DEBUG: Good link: https://f-droid.org/en/packages/dk.jens.backup/ (200)
+DEBUG: Good link: https://mega.nz/#F!oj5RQQKR!UdBNCCpFbThPqJy9mobGlQ!0jZAhZjR (200)
+DEBUG: Good link: https://mega.nz/#F!oj5RQQKR!UdBNCCpFbThPqJy9mobGlQ!4ixAzZqT (200)
+DEBUG: Good link: https://vk.com/topic-114301917_36567374 (200)
+DEBUG: Good link: http://4pda.ru/forum/index.php?s=&showtopic=788444&view=findpost&p=67800133 (200)
+DEBUG: Good link: https://4pda.ru/forum/index.php?s=&showtopic=523117&view=findpost&p=27160632 (200)
+WARNING: Dead link: http://archive.li/vWC97 (error code: 451)
+DEBUG: Good link: http://4pda.ru/forum/index.php?showtopic=788444&st=240#entry59542724 (200)
+DEBUG: Good link: http://4pda.ru/forum/index.php?showtopic=788444&st=120#entry56295822 (200)
+DEBUG: Good link: https://4pda.ru/forum/index.php?s=&showtopic=788444&view=findpost&p=36669797 (200)
+DEBUG: Good link: https://4pda.ru/forum/index.php?showtopic=788444&st=120#entry56296225 (200)
+DEBUG: Good link: https://4pda.ru/forum/index.php?showtopic=788444&st=60#entry55887596 (200)
+WARNING: Dead link: http://archive.li/vWC97 (error code: 451)
+DEBUG: Good link: https://4pda.ru/forum/index.php?s=&showtopic=528204&view=findpost&p=39754381 (200)
+WARNING: Dead link: https://archive.li/IWlGw (error code: 451)
+DEBUG: Good link: http://4pda.ru/forum/index.php?showtopic=788444&st=80#entry56070304 (200)
+DEBUG: Good link: http://4pda.ru/forum/index.php?s=&showtopic=788444&view=findpost&p=56066199 (200)
 DEBUG: Read file Smert-svobode/Новые-недовольные-русские.md -> Article
+DEBUG: Good link: https://esquire.ru/coined-word (200)
+WARNING: Dead link: http://wikireality.ru/wiki/MDK (error code: 403)
+DEBUG: Good link: https://ru.wikipedia.org/wiki/%D0%A7%D1%83%D1%87%D0%B5%D0%BB%D0%BE_%28%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%83%D0%BB%D0%BE%D0%B2%D0%BA%D0%B0%29 (200)
+DEBUG: Good link: http://archive.ec/2016.07.06-161912/http://www.sports.ru/biathlon/1021031007.html (200)
+DEBUG: Good link: http://archive.ec/FdlSe (200)
+DEBUG: Good link: http://archive.ec/xTF9O (200)
+DEBUG: Good link: http://ruxpert.ru/%D0%A2%D0%B5%D0%BA%D1%81%D1%82%D1%8B:%D0%9E%D0%B1%D1%80%D0%B5%D0%B7_%D0%91%D0%BB%D1%83%D0%BC%D0%B1%D0%B5%D1%80%D0%B3%D0%B0 (200)
+DEBUG: Good link: https://docs.zoho.com/file/3fy4o841007d31f974d508233a171cf608f44 (200)
+DEBUG: Good link: http://www.sports.ru/poll/football/1041826877.html (200)
+DEBUG: Good link: http://archive.ec/XrGp3 (200)
+DEBUG: Good link: http://archive.ec/dX1kq (200)
+DEBUG: Good link: http://archive.ec/d6u73 (200)
+DEBUG: Good link: http://archive.ec/xZnXv (200)
+DEBUG: Good link: http://ain.ua/2015/03/11/568972 (200)
+DEBUG: Good link: https://geektimes.ru/post/195256/ (200)
+WARNING: Dead link: http://archive.is/20160518165040/https://www.youtube.com/watch?v=qet1ypk3qDM&lc=z13owrebxvn2vt3e422du3wowrmzz5xxz04 (error code: 451)
+WARNING: Dead link: http://archive.is/20160522103717/https://www.youtube.com/watch?v=8Lsrvn7oa60&lc=z12bz5axmkngxx10i22ucr15rtvnsjpyy04 (error code: 451)
+DEBUG: Good link: https://github.com/Kristinita/Kristinita.github.io/issues (200)
+DEBUG: Good link: http://www.osp.ru/pcworld/2011/06/13009039/ (200)
+WARNING: Dead link: http://archive.is/ (error code: 451)
+DEBUG: Good link: https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BF%D0%BE%D1%82%D0%B5%D0%B7%D0%B0_%D0%BB%D0%B8%D0%BD%D0%B3%D0%B2%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BE%D1%82%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8 (200)
+DEBUG: Good link: http://www.sports.ru/biathlon/1038180362.html (200)
+DEBUG: Good link: https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BA%D0%BE%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%97%D0%B5%D1%82 (200)
+DEBUG: Good link: https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BA%D0%BE%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_Y (200)
+DEBUG: Good link: https://docs.zoho.com/file/9ustl0ebab1b5e94745b6a5cc656051b3e8d0 (200)
+-> Url http://kristinita.ru/#gsc.tab=0&gsc.q=%D0%BA%D1%80%D0%B8%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5%20%D0%BC%D1%8B%D1%88%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5 skipped because is starts with http://kristinita.ru
+DEBUG: Good link: http://dic.academic.ru/dic.nsf/ushakov/844322 (200)
+DEBUG: Good link: http://www.sports.ru/tribuna/blogs/codfo18/942166.html (200)
+DEBUG: Good link: https://ru.wikisource.org/wiki/%D0%AD%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0,_%D0%B8%D0%BB%D0%B8_%D0%98%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE_%D0%BF%D0%BE%D0%B1%D0%B5%D0%B6%D0%B4%D0%B0%D1%82%D1%8C_%D0%B2_%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D1%85_(%D0%A8%D0%BE%D0%BF%D0%B5%D0%BD%D0%B3%D0%B0%D1%83%D1%8D%D1%80/%D0%B4%27%D0%90%D0%BD%D0%B4%D1%80%D0%B5) (200)
+DEBUG: Good link: http://archive.ec/kJvSQ (200)
+DEBUG: Good link: http://archive.ec/7fPRr (200)
+DEBUG: Good link: http://anima-kommunizm.forum2x2.ru/t166-topic (200)
+DEBUG: Good link: http://archive.ec/WfyOI (200)
+DEBUG: Good link: http://archive.ec/HbkjV (200)
+DEBUG: Good link: http://www.sports.ru/football/1040692950.html (200)
+DEBUG: Good link: http://archive.ec/CsMOs (200)
+DEBUG: Good link: http://archive.ec/9eu1W (200)
+DEBUG: Good link: http://archive.ec/14lKI (200)
+DEBUG: Good link: http://archive.ec/xsSGe (200)
+DEBUG: Good link: http://www.sports.ru/profile/73531811/comments/ (200)
+DEBUG: Good link: http://www.sports.ru/profile/148024348/comments/ (200)
+DEBUG: Good link: https://vk.com/hair_in_the_wind (200)
+DEBUG: Good link: http://pda.sports.ru/football/1035048833.html (200)
+DEBUG: Good link: http://archive.ec/c4Exg (200)
+DEBUG: Good link: http://web.archive.org/web/20150615162941/http://www.xpomo.com/ruskolan/tolpa/piramida.htm (200)
+WARNING: Dead link: http://archive.is/20160518125518/https://www.facebook.com/permalink.php?story_fbid=517539018447713&id=100005748574402%23 (error code: 451)
+DEBUG: Good link: http://criminal_law.academic.ru/1580/%D0%9E%D0%A1%D0%9A%D0%9E%D0%A0%D0%91%D0%9B%D0%95%D0%9D%D0%98%D0%95 (200)
+DEBUG: Good link: http://www.sports.ru/tribuna/blogs/gremio/331282.html (200)
+WARNING: Dead link: http://archive.is/20160601035438/http://www.sports.ru/profile/1021517009/comments/?p=30 (error code: 451)
+WARNING: Dead link: http://archive.is/20160601041255/http://www.sports.ru/profile/70045047/comments/?p=38 (error code: 451)
+DEBUG: Good link: http://archive.ec/LLrvp (200)
+DEBUG: Good link: https://forum.antichat.ru/threads/20140/ (200)
+DEBUG: Good link: http://archive.ec/1lNZN (200)
+DEBUG: Good link: http://www.sports.ru/tribuna/blogs/codfo18/905611.html (200)
+DEBUG: Good link: http://archive.ec/TWuke (200)
+DEBUG: Good link: http://archive.ec/Vw2NC (200)
+DEBUG: Good link: http://archive.ec/lUi9j (200)
+DEBUG: Good link: http://www.sports.ru/tribuna/blogs/zayebca/732117.html (200)
+WARNING: Dead link: http://www.dm-dobrov.ru/publicism/suvorov.html (error code: 404)
+DEBUG: Good link: http://archive.ec/gwKO7 (200)
+DEBUG: Good link: http://www.sports.ru/profile/1023636164/ (200)
+DEBUG: Good link: http://neuronews.com.ua/page/aktualnye-voprosy-detskoj-psihiatrii (200)
+DEBUG: Good link: https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D1%82%D0%B5%D0%BB%D0%B8_%D0%BA%D0%B0%D0%BA_%D0%BB%D1%83%D1%87%D1%88%D0%B5,_%D0%B0_%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D0%BB%D0%BE%D1%81%D1%8C_%D0%BA%D0%B0%D0%BA_%D0%B2%D1%81%D0%B5%D0%B3%D0%B4%D0%B0 (200)
+DEBUG: Good link: http://live-and-learn.ru/catalog/article/kak-vylechit-privychku-k-vyneseniyu-otsenochnykh-suzhdeniy/ (200)
+DEBUG: Good link: http://www.sports.ru/football/145225969.html (200)
+DEBUG: Good link: https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B5%D0%B9%D0%B4%D0%B8%D0%B7%D0%BC#.D0.9A.D1.80.D0.B8.D1.82.D0.B8.D0.BA.D0.B0 (200)
+DEBUG: Good link: http://evolkov.net/nonscience/psychoanal/ (200)
+-> Url http://kristinita.ru/#gsc.tab=0&gsc.q=%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB-%D0%B4%D0%B0%D1%80%D0%B2%D0%B8%D0%BD%D0%B8%D0%B7%D0%BC skipped because is starts with http://kristinita.ru
+DEBUG: Good link: https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%BE%D0%BB%D0%BB%D0%B8%D0%BD%D0%B3 (200)
+DEBUG: Good link: http://www.sports.ru/profile/85472567/status/1169214/ (200)
+DEBUG: Good link: http://archive.ec/q5QJG (200)
+DEBUG: Good link: http://archive.ec/LpbuR (200)
+DEBUG: Good link: http://www.sports.ru/football/1034297217.html (200)
+DEBUG: Good link: http://wayback.archive.org/web/20160405014911/http://www.durov.com/linguistics2/levin-98.htm (200)
+DEBUG: Good link: http://www.sports.ru/api/comment/get/message.html?message_id=972227&message_class=Sports%3A%3ABlog%3A%3APost%3A%3APost&branding=&order_type=top10&page=4&cnt=20&cnt=30 (200)
+DEBUG: Good link: http://archive.ec/3Y3dH (200)
+DEBUG: Good link: http://www.sports.ru/profile/3299557/status/1037747/ (200)
+-> Url http://kristinita.ru/#gsc.tab=0&gsc.q=%D1%83%D0%BC%D0%B8%D0%BB%D1%8F%D1%82%D1%8C skipped because is starts with http://kristinita.ru
+DEBUG: Good link: http://archive.ec/Yah1w (200)
+-> Url http://kristinita.ru/#gsc.tab=0&gsc.q=%D0%B7%D0%B0%D0%B1%D0%B0%D0%B2%D0%BD%D0%BE skipped because is starts with http://kristinita.ru
+DEBUG: Good link: http://www.sports.ru/football/141048291.html (200)
+DEBUG: Good link: http://m.sports.ru/football/141048291.html?get=comments (200)
+DEBUG: Good link: http://ruxpert.ru/%D0%98%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE_%D1%81%D0%BF%D0%BE%D1%80%D0%B0_%28%D0%BE%D0%B1%D1%83%D1%87%D0%B0%D1%8E%D1%89%D0%B8%D0%B5_%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8B%29 (200)
+DEBUG: Good link: http://web.archive.org/web/20150615162941/http://www.xpomo.com/ruskolan/tolpa/piramida.htm (200)
+DEBUG: Good link: http://archive.ec/5T9Ib (200)
+-> Url http://kristinita.ru/#gsc.tab=0&gsc.q=ad%20hominem skipped because is starts with http://kristinita.ru
+DEBUG: Good link: http://archive.ec/W5Thy (200)
+DEBUG: Good link: http://lib.ru/SOCFANT/CHAPEK/gazeta.txt (200)
+DEBUG: Good link: http://archive.ec/534M1 (200)
+DEBUG: Good link: http://archive.ec/xqNo6 (200)
+-> Url http://kristinita.ru/Giologica/%D0%9A%D0%BE%D0%BC%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%B8%D0%B8-%D0%BA-%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B0%D0%BC-%D0%BE-%D0%BD%D0%B5%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D1%85-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B0%D1%85-%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B4%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D0%B8%D0%B8#Graham skipped because is starts with http://kristinita.ru
+-> Url http://kristinita.ru/Giologica/%D0%94%D0%B5%D0%BC%D0%B0%D0%B3%D0%BE%D0%B3%D0%B8%D1%8F-%D0%9D%D0%B5%D1%81%D1%82%D0%B5%D1%80%D0%B5%D0%BD%D0%BA%D0%BE#3.1.3.%D0%B0 skipped because is starts with http://kristinita.ru
+DEBUG: Good link: http://philologos.narod.ru/texts/karasik/status02.htm (200)
+DEBUG: Good link: http://archive.ec/Z9j5Q (200)
+DEBUG: Good link: http://archive.ec/Vp0E3 (200)
+DEBUG: Good link: http://archive.ec/PTYxe (200)
+DEBUG: Good link: http://archive.ec/lC1J1 (200)
+DEBUG: Good link: http://archive.ec/KVRBV (200)
+DEBUG: Good link: http://www.sports.ru/basketball/1038385264.html (200)
+DEBUG: Good link: http://archive.ec/FGM5m (200)
+-> Url http://kristinita.ru/#gsc.tab=0&gsc.q=%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B8%D0%BC%D0%B8%D0%BD%D0%B0%D1%86%D0%B8%D1%8F skipped because is starts with http://kristinita.ru
+DEBUG: Good link: http://archive.ec/DxV7M (200)
+DEBUG: Good link: http://archive.ec/QX3ta (200)
+DEBUG: Good link: http://www.bibliotekar.ru/encSlov/23/60.htm (200)
+DEBUG: Good link: https://antijob.net/ (200)
+DEBUG: Good link: http://archive.ec/H9M2x (200)
+DEBUG: Good link: http://www.sports.ru/profile/14986000/comments/?p=388 (200)
+DEBUG: Good link: https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B4%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C_(%D0%BB%D0%B8%D0%BD%D0%B3%D0%B2%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0)#.D0.90.D0.BA.D1.82.D1.83.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BA.D0.B0.D1.82.D0.B5.D0.B3.D0.BE.D1.80.D0.B8.D0.B8_.D0.BC.D0.BE.D0.B4.D1.83.D1.81.D0.B0 (200)
+DEBUG: Good link: http://www.sports.ru/biathlon/1028215981.html (200)
+DEBUG: Good link: http://archive.ec/1YmfI (200)
+DEBUG: Good link: http://archive.ec/eQScC (200)
+DEBUG: Good link: http://archive.ec/fwXoJ (200)
+DEBUG: Good link: https://ru.wikipedia.org/wiki/%D0%A1%D0%BA%D0%BE%D1%82%D0%BD%D1%8B%D0%B9_%D0%B4%D0%B2%D0%BE%D1%80 (200)
+DEBUG: Good link: http://www.sports.ru/tribuna/blogs/televizor3/822635.html?comments=1 (200)
+DEBUG: Good link: http://archive.ec/IqKDN (200)
+DEBUG: Good link: http://archive.ec/9xWVP (200)
+-> Url http://kristinita.ru/#gsc.tab=0&gsc.q=ad%20hominem skipped because is starts with http://kristinita.ru
+DEBUG: Good link: http://www.sports.ru/tribuna/blogs/vitalysuvorov/857883.html (200)
+DEBUG: Good link: http://www.e-reading.club/chapter.php/1039471/46/Tolstaya_-_Otec._Zhizn_Lva_Tolstogo.html (200)
+DEBUG: Good link: http://www.sports.ru/football/1040682633.html (200)
+DEBUG: Good link: http://archive.ec/QUwwY (200)
+DEBUG: Good link: https://vk.com/kristinita18 (200)
+DEBUG: Good link: http://archive.ec/KIpc2 (200)
 DEBUG: Read file Sasha-Black/Sasha-Black-description.md -> Article
-DEBUG: Read file Sublime-Text/RemovePelicanJavaScript.md -> Article
+WARNING: Dead link: https://revisium.com/kb/virusonsite.html (error code: 403)
+DEBUG: Good link: https://habrahabr.ru/post/137071/ (200)
+DEBUG: Good link: https://www.mywot.com/ru (200)
+WARNING: Dead link: https://colocat.ru/texts/realip.html (not available)
+DEBUG: Good link: http://www.infocity.kiev.ua/inet/content/inet312.phtml (200)
+DEBUG: Good link: http://aleksius.com/joomla/zashchita-sajta/zashchita-joomla-chast-1 (200)
+DEBUG: Good link: http://prgssr.ru/development/pochemu-generatory-staticheskih-sajtov-budut-populyarny.html#heading-section-1 (200)
+DEBUG: Good link: http://prgssr.ru/development/pochemu-generatory-staticheskih-sajtov-budut-populyarny.html (200)
+-> Url http://kristinita.ru/Sasha-Black skipped because is starts with http://kristinita.ru
+-> Url http://kristinita.ru/Sasha-Black skipped because is starts with http://kristinita.ru
+DEBUG: Good link: https://pip.qip.ru/ (200)
+DEBUG: Good link: http://suse.me/ (200)
+DEBUG: Good link: https://www.admuncher.com/ (200)
+DEBUG: Good link: https://productforums.google.com/forum/#!topic/gmail-ru/ydfMTF7IUec (200)
+DEBUG: Good link: http://bezopasnostpc.ru/sites/site-protection/proverka-sayta-na-virusyi-na-servise-quttera (200)
+DEBUG: Good link: http://darkzona.com/sucuri/ (200)
+DEBUG: Good link: http://www.thejethost.com/hosting/bezopasnost_sayta.html (200)
+WARNING: Dead link: http://dizems.ru/v-chem-otlichie-staticheskix-sajtov-ot-dinamicheskix (not available)
+DEBUG: Good link: http://forum.e-proficom.ru/viewtopic.php?f=83&t=1702 (200)
+DEBUG: Good link: http://ru.stackoverflow.com/questions/501519/%D0%91%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D1%81%D0%B0%D0%B9%D1%82%D0%B0-%D0%BD%D0%B0-github-pages (200)
+WARNING: Dead link: http://www.Is It Hacked.com/ (not available)
+WARNING: Dead link: http://optimakomp.ru/virustotal-totalnoe-skanirovanie-fajjlov-i-sajjtov-desyatkami-antivirusov/ (error code: 403)
+DEBUG: Good link: http://www.old.hostobzor.ru/doc/spam.php (200)
+DEBUG: Good link: https://geektimes.ru/post/59598/ (200)
+WARNING: Dead link: http://wolandblog.com/3-pochemu-ya-ne-ispolzuyu-dnsbl-v-pomoshh-nachinayushhemu-postmasteru/ (error code: 403)
+DEBUG: Good link: http://wayback.archive.org/web/20140209073704/http://spamlinks.net/filter-dnsbl-lists.htm (200)
+DEBUG: Good link: http://ru.stackoverflow.com/a/501219/199934 (200)
+DEBUG: Good link: http://seoslim.ru/interesno/kak-dobavit-sajt-v-katalog-dmoz.html (200)
+DEBUG: Good link: https://devaka.ru/articles/dmoz (200)
+DEBUG: Good link: https://www.projecthoneypot.org/ (200)
+DEBUG: Good link: http://wwhois.ru/whois.php (200)
+DEBUG: Good link: http://www.introweb.ru/inews/chronicle/news9487.php (200)
+DEBUG: Good link: http://zoom.cnews.ru/rnd/news/line/issledovana_mudrost_tolpy_v_borbe_s_fishingom (200)
+DEBUG: Good link: https://habrahabr.ru/post/63518/ (200)
+DEBUG: Good link: http://blog.virustotal.com/2012/09/virustotal-webutation.html (200)
+DEBUG: Good link: http://www.3dnews.ru/573758 (200)
+DEBUG: Good link: https://chrome.google.com/webstore/detail/trustpilot/meagmjlgkihmljnchdjagbcgfclobkho (200)
+DEBUG: Good link: https://en.wikipedia.org/wiki/Trustpilot#Criticism (200)
+DEBUG: Good link: https://safeweb.norton.com/ (200)
+DEBUG: Good link: https://2ip.ru/site-virus-scaner/ (200)
+DEBUG: Good link: http://xseo.in/viruscan (200)
+ERROR: Could not process Sasha-Black\Sasha-Black-description.md
+  | RemoteDisconnected: Remote end closed connection without response
+  |___
+  | Traceback (most recent call last):
+  |   File "c:\python36\lib\site-packages\pelican\generators.py", line 523, in generate_context
+  |     context_sender=self)
+  |   File "c:\python36\lib\site-packages\pelican\readers.py", line 572, in read_file
+  |     context=context)
+  |   File "c:\python36\lib\site-packages\pelican\contents.py", line 153, in __init__
+  |     signals.content_object_init.send(self)
+  |   File "c:\python36\lib\site-packages\blinker\base.py", line 267, in send
+  |     for receiver in self.receivers_for(sender)]
+  |   File "c:\python36\lib\site-packages\blinker\base.py", line 267, in <listcomp>
+  |     for receiver in self.receivers_for(sender)]
+  |   File "D:\Kristinita\pelican-plugins\deadlinks\deadlinks.py", line 163, in content_object_init
+  |     avail, success, code = get_status_code(url)
+  |   File "D:\Kristinita\pelican-plugins\deadlinks\deadlinks.py", line 32, in get_status_code
+  |     urlopen(url)
+  |   File "c:\python36\lib\urllib\request.py", line 223, in urlopen
+  |     return opener.open(url, data, timeout)
+  |   File "c:\python36\lib\urllib\request.py", line 526, in open
+  |     response = self._open(req, data)
+  |   File "c:\python36\lib\urllib\request.py", line 544, in _open
+  |     '_open', req)
+  |   File "c:\python36\lib\urllib\request.py", line 504, in _call_chain
+  |     result = func(*args)
+  |   File "c:\python36\lib\urllib\request.py", line 1361, in https_open
+  |     context=self._context, check_hostname=self._check_hostname)
+  |   File "c:\python36\lib\urllib\request.py", line 1321, in do_open
+  |     r = h.getresponse()
+  |   File "c:\python36\lib\http\client.py", line 1331, in getresponse
+  |     response.begin()
+  |   File "c:\python36\lib\http\client.py", line 297, in begin
+  |     version, status, reason = self._read_status()
+  |   File "c:\python36\lib\http\client.py", line 266, in _read_status
+  |     raise RemoteDisconnected("Remote end closed connection without"
+  | http.client.RemoteDisconnected: Remote end closed connection without response
 DEBUG: Read file Sublime-Text/Sacagawea.md -> Article
+DEBUG: Good link: https://vk.com/id152198389 (200)
+DEBUG: Good link: http://www.history.com/topics/native-american-history/sacagawea (200)
+DEBUG: Good link: https://www.sublimetext.com/3 (200)
+DEBUG: Good link: https://umaar.com/dev-tips/36-sublime-fuzzy-search/ (200)
+DEBUG: Good link: https://www.youtube.com/watch?v=QDajzykRdn0 (200)
+DEBUG: Good link: https://packagecontrol.io/packages/MarkdownEditing (200)
+DEBUG: Good link: https://packagecontrol.io/packages/SashaSublime (200)
+DEBUG: Good link: https://packagecontrol.io/packages/LastModifiedIndicator (200)
+DEBUG: Good link: https://ru.stackoverflow.com/posts/comments/901650 (200)
+WARNING: Dead link: https://autohotkey.com/boards/viewtopic.php?t=225 (error code: 403)
+DEBUG: Good link: https://umaar.com/dev-tips/36-sublime-fuzzy-search/ (200)
+DEBUG: Good link: https://www.youtube.com/watch?v=QDajzykRdn0 (200)
+DEBUG: Good link: https://forum.sublimetext.com/t/question-is-it-possible-to-use-sublime-text-hotkey-as-global-system-hotkey/27885/2?u=sasha_chernykh (200)
+DEBUG: Good link: https://en.wikipedia.org/wiki/Menu_key (200)
+DEBUG: Good link: https://support.microsoft.com/ru-ru/help/79869/pressing-alt-tab-to-switch-between-applications (200)
+DEBUG: Good link: https://addons.mozilla.org/en-us/firefox/addon/tabcinema/ (200)
+DEBUG: Good link: http://www.sublimetext.com/3 (200)
+DEBUG: Good link: http://mpg123.de/ (200)
+DEBUG: Good link: https://lifehacker.ru/2015/01/08/chocolatey/ (200)
+DEBUG: Good link: https://chocolatey.org/packages/mpg123/1.24.0 (200)
+DEBUG: Good link: https://docs.python.org/3/library/ossaudiodev.html (200)
+DEBUG: Good link: https://docs.python.org/3/library/winsound.html (200)
+DEBUG: Good link: http://stackoverflow.com/a/34179010/5951529 (200)
+DEBUG: Good link: https://www.youtube.com/watch?v=lx9nIHABnmY (200)
+DEBUG: Good link: https://packagecontrol.io/packages/FileCommands (200)
+DEBUG: Good link: https://github.com/nsubiron/SublimeSuricate (200)
+DEBUG: Good link: https://github.com/r-stein/sublime-text-keybinding-helper/issues/2#issue-198411616 (200)
+DEBUG: Good link: http://www.macdrifter.com/2012/08/install-sublime-packages-from-github.html (200)
+DEBUG: Good link: https://packagecontrol.io/packages/Preferences%20Editor (200)
+WARNING: Dead link: https://www.autohotkey.com/ (error code: 403)
+DEBUG: Good link: https://github.com/ahkscript/SublimeAutoHotkey (200)
+DEBUG: Good link: http://nncron.ru/ (200)
+DEBUG: Good link: http://i.imgur.com/VNC1Kzs.png (200)
+DEBUG: Good link: http://i.imgur.com/VNC1Kzs.png (200)
+DEBUG: Good link: http://windata.ru/windows-world/utility/zapusk-skriptov-autohotkey-ot-imeni-administratora/ (200)
+DEBUG: Good link: https://github.com/ahkscript/SublimeAutoHotkey/blob/master/Default.sublime-commands#L6-L9 (200)
+DEBUG: Good link: https://github.com/ahkscript/SublimeAutoHotkey (200)
+DEBUG: Good link: http://www.nncron.ru/help/RU/working/task/starting_task.htm (200)
+DEBUG: Good link: http://www.nncron.ru/help/RU/add_info/keys_mnemonics.htm (200)
+DEBUG: Good link: https://github.com/Kristinita/Sacagawea/blob/SashaDevelop/Sacagawea.sublime-settings (200)
+DEBUG: Good link: https://forum.sublimetext.com/t/question-how-install-package-control-package-as-dependency/28083/4?u=sasha_chernykh (200)
+DEBUG: Good link: https://github.com/wbond/package_control/issues/1089 (200)
+DEBUG: Good link: http://brendankemp.com/essays/how-to-add-a-shortcut-for-any-command-in-sublime-text/ (200)
+DEBUG: Good link: https://github.com/Kristinita/Sacagawea/blob/SashaDevelop/.travis.yml (200)
+DEBUG: Good link: https://pypi.python.org/pypi/flake8 (200)
+DEBUG: Good link: http://www.pydocstyle.org/ (200)
+DEBUG: Good link: https://github.com/keith-hall (200)
+DEBUG: Good link: https://www.soundjay.com/tos.html (200)
+DEBUG: Good link: https://github.com/Kristinita/Sacagawea/blob/SashaDevelop/License.md (200)
 DEBUG: Read file Sublime-Text/SashaSublime.md -> Article
+DEBUG: Good link: https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=63KC7VJTRVNVQ (200)
+DEBUG: Good link: https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VPA8L2LM7EX24 (200)
+DEBUG: Good link: https://packagecontrol.io/packages/SashaSublime (200)
+DEBUG: Good link: https://github.com/Kristinita/SashaSublime/issues (200)
+DEBUG: Good link: https://vk.com/hair_in_the_wind (200)
+DEBUG: Good link: https://forum.sublimetext.com/t/changing-scopes-in-build-3114/20088 (200)
+DEBUG: Good link: http://ru.stackoverflow.com/a/516668/199934 (200)
+DEBUG: Good link: https://toster.ru/q/321006#answer_852035 (200)
+DEBUG: Good link: https://packagecontrol.io/packages/CSS3_Syntax (200)
+DEBUG: Good link: https://packagecontrol.io/packages/JavaScriptNext%20-%20ES6%20Syntax (200)
+WARNING: Dead link: http://nbviewer.jupyter.org/github/Kristinita/SashaBooks/blob/master/IT/Sublime%20Text/Sublime%20Text%20Power%20User.pdf#page=73 (error code: 400)
+DEBUG: Good link: https://www.sublimetext.com/docs/2/distraction_free.html (200)
+DEBUG: Good link: http://stackoverflow.com/a/15908023/5951529 (200)
+DEBUG: Good link: http://www.sublimerge.com/sm3/ (200)
+DEBUG: Good link: https://packagecontrol.io/packages/GitGutter (200)
+DEBUG: Good link: https://github.com/facelessuser/HexViewer (200)
+DEBUG: Good link: https://packagecontrol.io/packages/GitGutter (200)
+DEBUG: Good link: http://www.sublimelinter.com/en/latest/ (200)
+DEBUG: Good link: https://facelessuser.github.io/BracketHighlighter/ (200)
+DEBUG: Good link: http://emmet.io/ (200)
+DEBUG: Good link: https://github.com/facelessuser/ColorHelper (200)
+DEBUG: Good link: https://github.com/dragon/dr_months_calendar (200)
+DEBUG: Good link: https://github.com/nsubiron/SublimeSuricate (200)
+DEBUG: Good link: https://github.com/possan/sublime_unicode_nbsp (200)
+DEBUG: Good link: https://github.com/possan/sublime_unicode_nbsp/pull/14/files (200)
+DEBUG: Good link: https://github.com/SublimeText/WordHighlight (200)
+DEBUG: Good link: https://github.com/aziz/SublimeANSI (200)
+DEBUG: Good link: https://github.com/aziz/SublimeANSI#using-this-plugin-as-a-dependency-for-your-pluginbuild-output-panel (200)
+DEBUG: Good link: https://packagecontrol.io/packages/LanguageTool (200)
+DEBUG: Good link: https://tmtheme-editor.herokuapp.com (200)
+DEBUG: Good link: https://packagecontrol.io/ (200)
+DEBUG: Good link: https://hub.github.com/ (200)
+DEBUG: Good link: https://github.com/Kristinita/SashaSublime (200)
+DEBUG: Good link: https://github.com/benweier/Themr (200)
+DEBUG: Good link: https://github.com/benweier/Schemr (200)
+DEBUG: Good link: http://www.macdrifter.com/2012/07/sublime-text-working-with-multiple-panes.html (200)
+DEBUG: Good link: http://ru.stackoverflow.com/a/238934/199934 (200)
+DEBUG: Good link: https://github.com/vishr/local-history (200)
+DEBUG: Good link: https://github.com/jisaacks/GitGutter/issues/199#issuecomment-227016698 (200)
+DEBUG: Good link: https://github.com/skuroda/PackageResourceViewer (200)
+DEBUG: Good link: http://apple.stackexchange.com/questions/153176/changing-sublime-text-3-icon-in-dock-on-yosemite (200)
+DEBUG: Good link: http://rsload.net/soft/editor/9133-resource-hacker.html (200)
+WARNING: Dead link: http://alternativeto.net/software/resource-hacker/ (error code: 403)
+DEBUG: Good link: https://www.sublimetext.com/3 (200)
+DEBUG: Good link: http://portableapps.com/node/25965 (200)
+DEBUG: Good link: http://rsload.net/soft/optimization/19590-winaero-tweaker.html (200)
+DEBUG: Good link: https://forum.sublimetext.com/t/bug-comments-deleted-in-preferences-user/7064/6?u=sasha_chernykh (200)
+DEBUG: Good link: http://www.sublimetext.ru/documentation/preferences/list (200)
+DEBUG: Good link: http://ru.stackoverflow.com/a/516668/199934 (200)
+DEBUG: Good link: http://ru.stackoverflow.com/search?q=user:199934%20%5Bsublime-text%5D%20is:answer (200)
+DEBUG: Good link: https://toster.ru/user/Kristinita/answers (200)
+DEBUG: Good link: https://github.com/skuroda/PackageResourceViewer (200)
+DEBUG: Good link: http://www.sublimerge.com/sm3/ (200)
+DEBUG: Good link: http://www.sublimerge.com/sm3/ (200)
+DEBUG: Good link: https://github.com/Kristinita/SashaSublime/issues (200)
+DEBUG: Good link: https://forum.sublimetext.com/t/how-to-style-placeholders-text-like-open-files-and-folders-in-the-find-in-files-dialog/21650 (200)
+DEBUG: Good link: https://github.com/SublimeTextIssues/Core/issues/694 (200)
+DEBUG: Good link: https://github.com/jisaacks/GitGutter/issues/307 (200)
+DEBUG: Good link: https://forum.sublimetext.com/t/how-to-disable-new-color-scheme-generating-color-highlighter/22949 (200)
+DEBUG: Good link: https://github.com/benweier/Schemr/issues/34 (200)
+DEBUG: Good link: https://forum.sublimetext.com/t/where-i-can-to-make-regex-syntax-highlight-for-replace-with/22961 (200)
+DEBUG: Good link: http://winreview.ru/forum/viewtopic.php?f=6&t=294 (200)
+DEBUG: Good link: http://winreview.ru/forum/viewtopic.php?f=6&t=295 (200)
+DEBUG: Good link: https://github.com/SublimeLinter/SublimeLinter3 (200)
+DEBUG: Good link: https://github.com/skuroda/PackageResourceViewer (200)
+DEBUG: Good link: https://github.com/r-stein (200)
+DEBUG: Good link: https://forum.sublimetext.com/t/sublimelinter-write-own-color-scheme-path-in-the-configuration-file/21842/2?u=sasha_chernykh (200)
+DEBUG: Good link: https://github.com/skuroda/PackageResourceViewer (200)
+-> Url http://kristinita.ru skipped because is starts with http://kristinita.ru
+-> Url http://kristinita.ru/Sasha-Black skipped because is starts with http://kristinita.ru
+DEBUG: Good link: http://stackoverflow.com/ (200)
+DEBUG: Good link: https://forum.sublimetext.com/ (200)
+DEBUG: Good link: http://forum.sublimetext.ru (200)
+DEBUG: Good link: https://github.com/keith-hall (200)
+DEBUG: Good link: https://github.com/MattDMo (200)
+DEBUG: Good link: https://github.com/Enteleform (200)
+DEBUG: Good link: https://github.com/r-stein (200)
+DEBUG: Good link: https://github.com/maximsmol (200)
+DEBUG: Good link: https://github.com/braver (200)
+DEBUG: Good link: https://vk.com/id206422835 (200)
+WARNING: Dead link: http://colorsublime.com/theme/Espresso_Libre (error code: 404)
+DEBUG: Good link: https://forum.sublimetext.com/t/changing-scopes-in-build-3114/20088?u=sasha_chernykh (200)
+DEBUG: Good link: https://github.com/Kristinita/SashaSublime/issues/new (200)
+DEBUG: Good link: http://ru.stackoverflow.com/a/544861/199934 (200)
+DEBUG: Good link: https://vk.com/hair_in_the_wind (200)
+DEBUG: Good link: http://bitcoin.stackexchange.com/a/48744/41598 (200)
+DEBUG: Good link: https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki (200)
+DEBUG: Good link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W6MP468ZZV66Q (200)
+DEBUG: Good link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DGT7K29LDD2HQ (200)
+DEBUG: Good link: https://opensource.org/licenses/MIT (200)
+DEBUG: Good link: https://vk.com/hair_in_the_wind (200)
+DEBUG: Good link: https://vk.com/hair_in_the_wind (200)
 DEBUG: Read file Sublime-Text/Sublime-Text-Power-User-notes.md -> Article
+DEBUG: Good link: http://jmp.sh/xasKD18 (200)
+DEBUG: Good link: https://docs.zoho.com/file/nqgo4e3473558e032489e9dc3bceb3db16723 (200)
+DEBUG: Good link: http://ru.stackoverflow.com/tags/sublime-text/topusers (200)
+DEBUG: Good link: https://johnblackbourn.com/sublimecodeintel-st3 (200)
+DEBUG: Good link: https://johnblackbourn.com/sublimecodeintel-st3 (200)
+DEBUG: Good link: https://github.com/spectacles/CodeComplice (200)
+DEBUG: Good link: https://github.com/spectacles/CodeComplice/issues/51 (200)
+DEBUG: Good link: http://docs.sublimetext.info/en/latest/command_line/command_line.html#invocations (200)
+DEBUG: Good link: http://docs.sublimetext.info/en/latest/command_line/command_line.html#options (200)
+DEBUG: Good link: https://forum.sublimetext.com/t/solved-how-to-quick-select-in-every-line-between-first-and-last-for-me/21688 (200)
+DEBUG: Good link: https://www.sublimetext.com/docs/3/syntax.html (200)
+DEBUG: Good link: https://forum.sublimetext.com/t/not-automatic-change-of-build-system/21745 (200)
+DEBUG: Good link: https://packagecontrol.io/packages/Transmit%20Docksend (200)
+DEBUG: Good link: https://github.com/benschwarz/sublime-bower#installation (200)
+WARNING: Dead link: https://github.com/y0ssar1an/CSS3_Syntax#announcement-for-st3-users-this-package-has-been-replaced-by-css3-this-package-will-be-removed-some-time-after-sublime-text-3-is-released (error code: 404)
+DEBUG: Good link: https://github.com/dzhibas/SublimePrettyJson/issues/70 (200)
+DEBUG: Good link: https://github.com/robcowie/SublimeTODO (200)
 DEBUG: Read file Sublime-Text/ValeriyaSpeller.md -> Article
+DEBUG: Good link: https://vk.com/hair_in_the_wind (200)
+DEBUG: Good link: https://vk.com/zombelina (200)
+DEBUG: Good link: https://nodejs.org/en/ (200)
+DEBUG: Good link: https://lifehacker.ru/2015/01/08/chocolatey/ (200)
+DEBUG: Good link: https://chocolatey.org/packages/nodejs (200)
+DEBUG: Good link: https://www.npmjs.com/package/yaspeller (200)
+DEBUG: Good link: https://packagecontrol.io/packages/SublimeLinter (200)
+DEBUG: Good link: https://docs.cs.cf.ac.uk/notes/sublime-text-packages/ (200)
+DEBUG: Good link: http://www.macdrifter.com/2012/08/install-sublime-packages-from-github.html (200)
+DEBUG: Good link: https://github.com/Kristinita/SublimeLinter-contrib-ValeriyaSpeller (200)
+DEBUG: Good link: https://www.sublimetext.com/docs/3/syntax.html (200)
+DEBUG: Good link: https://www.sublimetext.com/docs/3/scope_naming.html (200)
+DEBUG: Good link: http://ru.stackoverflow.com/q/637536/199934 (200)
+WARNING: Dead link: https://www.google.ru/search?q=status+bar&newwindow=1&source=lnms&tbm=isch&sa=X&ved=0ahUKEwi-j9WygojTAhVGiSwKHfRhATYQ_AUIBigB&biw=1173&bih=729 (error code: 403)
+DEBUG: Good link: http://www.sublimelinter.com/en/latest/lint_modes.html (200)
+DEBUG: Good link: http://stackoverflow.com/q/13965877/5951529 (200)
+DEBUG: Good link: https://www.npmjs.com/package/yaspeller (200)
+DEBUG: Good link: https://www.npmjs.com/package/yaspeller#options (200)
+DEBUG: Good link: https://yandex.ru/legal/speller_api/ (200)
+DEBUG: Good link: https://github.com/SublimeLinter/SublimeLinter3/issues/545 (200)
+DEBUG: Good link: https://www.sublimetext.com/docs/3/api_reference.html#sublime.View (200)
+DEBUG: Good link: https://packagecontrol.io/packages/LanguageTool (200)
+DEBUG: Good link: https://packagecontrol.io/packages/LanguageTool (200)
+DEBUG: Good link: https://github.com/titoBouzout/Dictionaries/pull/68 (200)
+DEBUG: Good link: https://packagecontrol.io/packages/SublimeLinter-contrib-write-good (200)
+DEBUG: Good link: https://packagecontrol.io/packages/Thesaurus (200)
+DEBUG: Good link: https://packagecontrol.io/packages/SublimeLinter-contrib-proselint (200)
+DEBUG: Good link: https://github.com/amperser/proselint/issues/686 (200)
 DEBUG: Read file css/personal/Life-hacks/default-portable-browser.css -> Static
 DEBUG: Signal static_generator_preread.send(StaticGenerator)
 DEBUG: Signal static_generator_context.send(StaticGenerator, <metadata>)
@@ -114,15 +843,14 @@ DEBUG: Read file favicons/favicon16\xd716.ico -> Static
 DEBUG: Read file favicons/manifest.json -> Static
 DEBUG: Read file favicons/mstile-150x150.png -> Static
 DEBUG: Read file favicons/safari-pinned-tab.svg -> Static
-DEBUG: Read file Gingerinas/Тренажёр-реакции.HTML -> Static
 DEBUG: Read file Gingerinas/Часы-для-концентрации.swf -> Static
 DEBUG: Read file images/banners/Баннер_1.swf -> Static
 DEBUG: Read file images/banners/Сашин_баннер.gif -> Static
 DEBUG: Read file images/donate_files/Bitcoin-Donate-button.png -> Static
-DEBUG: Read file images/donate_files/Bitcoin-HTML-Redirect.HTML -> Static
+DEBUG: Read file images/donate_files/Bitcoin-HTML-Redirect.html -> Static
 DEBUG: Read file images/donate_files/Bitcoin-Redirect.HTML -> Static
 DEBUG: Read file images/donate_files/Litecoin-Donate-button.png -> Static
-DEBUG: Read file images/donate_files/Litecoin-HTML-Redirect.HTML -> Static
+DEBUG: Read file images/donate_files/Litecoin-HTML-Redirect.html -> Static
 DEBUG: Read file images/donate_files/Litecoin-Redirect.HTML -> Static
 DEBUG: Read file images/donate_files/PayPal-Donate-Button-Dollar.png -> Static
 DEBUG: Read file images/donate_files/PayPal-Donate-Button-Euro.png -> Static
@@ -134,6 +862,7 @@ DEBUG: Read file images/giologica/Конформизм_в_рекламе.png -> Static
 DEBUG: Read file images/giologica/Настя_Изюмина.jpg -> Static
 DEBUG: Read file images/giologica/Пирамида_Грэма.jpg -> Static
 DEBUG: Read file images/interface_images/clippy.svg -> Static
+DEBUG: Read file images/interface_images/external-link.svg -> Static
 DEBUG: Read file images/interface_images/transparent-one-pixel.png -> Static
 DEBUG: Read file images/logo/Sasha_Black_logo.jpg -> Static
 DEBUG: Read file images/logo/Логотип_без_красного.jpeg -> Static
@@ -212,10 +941,10 @@ DEBUG: Read file js/Unveil/index.html -> Static
 DEBUG: Read file js/Unveil/jquery.unveil.js -> Static
 DEBUG: Read file js/Unveil/README.md -> Static
 DEBUG: Read file Kristinita's-Search/actual_catalogue.txt -> Static
-DEBUG: Read file Kristinita's-Search/catalogue.HTML -> Static
-DEBUG: Read file Kristinita's-Search/checkout.HTML -> Static
-DEBUG: Read file Kristinita's-Search/description.HTML -> Static
-DEBUG: Read file Kristinita's-Search/examples.HTML -> Static
+DEBUG: Read file Kristinita's-Search/catalogue.html -> Static
+DEBUG: Read file Kristinita's-Search/checkout.html -> Static
+DEBUG: Read file Kristinita's-Search/description.html -> Static
+DEBUG: Read file Kristinita's-Search/examples.html -> Static
 DEBUG: Read file Kristinita's-Search/Проверенные_каталоги.txt -> Static
 DEBUG: Read file Kristinita's-Search/JQueryLazy/demo.css -> Static
 DEBUG: Read file Kristinita's-Search/JQueryLazy/demo.html -> Static
@@ -224,19 +953,36 @@ DEBUG: Read file Kristinita's-Search/JQueryLazy/README.md -> Static
 DEBUG: Read file root-html/mozoleglazym.html -> Static
 DEBUG: Read file root-html/Sasha-Black.html -> Static
 DEBUG: Read file root-html/verifyforzoho.html -> Static
+DEBUG: Read file root-html/Тренажёр-реакции.html -> Static
 DEBUG: Read file Snippets/SashaTestSnippet.md -> Static
 DEBUG: Read file stylus/personal/Life-hacks/default-portable-browser.styl -> Static
 DEBUG: Read file stylus/personal/Sasha-Black/sasha-black-description.styl -> Static
 -> Writing D:\Kristinita\output\feeds/all.atom.xml
--> Writing D:\Kristinita\output\feeds/gingerinas.atom.xml
 -> Writing D:\Kristinita\output\feeds/giologica.atom.xml
+-> Writing D:\Kristinita\output\feeds/kritika-dzhindzherin.atom.xml
 -> Writing D:\Kristinita\output\feeds/life-hacks.atom.xml
--> Writing D:\Kristinita\output\feeds/sasha-black.atom.xml
+-> Writing D:\Kristinita\output\feeds/logika-v-dzhindzherinakh.atom.xml
+-> Writing D:\Kristinita\output\feeds/psikhologiia-dzhindzherin.atom.xml
 -> Writing D:\Kristinita\output\feeds/smert-svobode.atom.xml
--> Writing D:\Kristinita\output\feeds/sublime-text.atom.xml
--> Writing D:\Kristinita\output\feeds/sublime-text-gingerinas.atom.xml
--> Writing D:\Kristinita\output\feeds/tekhnika-v-dzhindzherinakh.atom.xml
--> Writing D:\Kristinita\output\Sublime-Text/RemovePelicanJavaScript.html
+-> Writing D:\Kristinita\output\feeds/spravka-po-dzhindzherinam.atom.xml
+-> Writing D:\Kristinita\output\feeds/sublime-notes.atom.xml
+-> Writing D:\Kristinita\output\feeds/sublime-packages.atom.xml
+-> Writing D:\Kristinita\output\feeds/test.atom.xml
+-> Writing D:\Kristinita\output\feeds/trenirovki-v-dzhindzherinakh.atom.xml
+-> Writing D:\Kristinita\output\feeds/keith-hall.atom.xml
+-> Writing D:\Kristinita\output\feeds/keith-hall.rss.xml
+-> Writing D:\Kristinita\output\feeds/sasha-chernykh.atom.xml
+-> Writing D:\Kristinita\output\feeds/sasha-chernykh.rss.xml
+-> Writing D:\Kristinita\output\feeds/all-ru.atom.xml
+-> Writing D:\Kristinita\output\feeds/all-en.atom.xml
+-> Writing D:\Kristinita\output\Gingerinas/Бесплатные-книги-и-учебные-ресурсы-для-джинджерин.html
+-> Writing D:\Kristinita\output\Gingerinas/Знания-в-джинджеринах.html
+-> Writing D:\Kristinita\output\Gingerinas/Фоны-и-Карта-С.html
+-> Writing D:\Kristinita\output\Gingerinas/Грейзи-Фа.html
+-> Writing D:\Kristinita\output\Gingerinas/Джинджерины.html
+-> Writing D:\Kristinita\output\Gingerinas/Тао.html
+-> Writing D:\Kristinita\output\Gingerinas/Testus.html
+-> Writing D:\Kristinita\output\Gingerinas/Грейс-Ло.html
 -> Writing D:\Kristinita\output\Sublime-Text/Sacagawea.html
 -> Writing D:\Kristinita\output\Sublime-Text/ValeriyaSpeller.html
 -> Writing D:\Kristinita\output\Life-hacks/Default-portable-browser-Windows-10.html
@@ -245,9 +991,8 @@ DEBUG: Read file stylus/personal/Sasha-Black/sasha-black-description.styl -> Sta
 -> Writing D:\Kristinita\output\Gingerinas/Книги-для-джинджерин.html
 -> Writing D:\Kristinita\output\Giologica/Комментарии-к-материалам-о-неконструктивных-методах-ведения-дискуссии.html
 -> Writing D:\Kristinita\output\Gingerinas/Korvers.html
--> Writing D:\Kristinita\output\Giologica/Nas-Izu.html
 -> Writing D:\Kristinita\output\Smert-svobode/Новые-недовольные-русские.html
--> Writing D:\Kristinita\output\Sasha-Black/Sasha-Black-description.html
+-> Writing D:\Kristinita\output\Life-hacks/Перед-первым-применением-ARK-Benefit-S401.html
 -> Writing D:\Kristinita\output\Sublime-Text/Sublime-Text-Power-User-notes.html
 -> Writing D:\Kristinita\output\Giologica/Valerywork-Kiravel.html
 -> Writing D:\Kristinita\output\Sublime-Text/SashaSublime.html
@@ -256,28 +1001,37 @@ DEBUG: Read file stylus/personal/Sasha-Black/sasha-black-description.styl -> Sta
 -> Writing D:\Kristinita\output\categories.html
 -> Writing D:\Kristinita\output\authors.html
 -> Writing D:\Kristinita\output\archives.html
--> Writing D:\Kristinita\output\tag/sublime-text.html
+-> Writing D:\Kristinita\output\tag/help.html
+-> Writing D:\Kristinita\output\tag/psychology.html
 -> Writing D:\Kristinita\output\tag/gingerinas.html
+-> Writing D:\Kristinita\output\tag/pumping.html
+-> Writing D:\Kristinita\output\tag/test.html
+-> Writing D:\Kristinita\output\tag/gingerinas-training.html
+-> Writing D:\Kristinita\output\tag/sublime-text.html
 -> Writing D:\Kristinita\output\tag/what-where-when.html
 -> Writing D:\Kristinita\output\tag/yaspeller.html
 -> Writing D:\Kristinita\output\tag/life-hacks.html
 -> Writing D:\Kristinita\output\tag/pale-moon.html
 -> Writing D:\Kristinita\output\tag/giologica.html
 -> Writing D:\Kristinita\output\tag/demagogue.html
--> Writing D:\Kristinita\output\tag/gingerinas-training.html
 -> Writing D:\Kristinita\output\tag/smert-svobode.html
 -> Writing D:\Kristinita\output\tag/ndr.html
--> Writing D:\Kristinita\output\tag/sasha-black.html
--> Writing D:\Kristinita\output\category/gingerinas.html
+-> Writing D:\Kristinita\output\tag/rom.html
+-> Writing D:\Kristinita\output\tag/android.html
 -> Writing D:\Kristinita\output\category/giologica.html
+-> Writing D:\Kristinita\output\category/kritika-dzhindzherin.html
 -> Writing D:\Kristinita\output\category/life-hacks.html
--> Writing D:\Kristinita\output\category/sasha-black.html
+-> Writing D:\Kristinita\output\category/logika-v-dzhindzherinakh.html
+-> Writing D:\Kristinita\output\category/psikhologiia-dzhindzherin.html
 -> Writing D:\Kristinita\output\category/smert-svobode.html
--> Writing D:\Kristinita\output\category/sublime-text.html
--> Writing D:\Kristinita\output\category/sublime-text-gingerinas.html
--> Writing D:\Kristinita\output\category/tekhnika-v-dzhindzherinakh.html
+-> Writing D:\Kristinita\output\category/spravka-po-dzhindzherinam.html
+-> Writing D:\Kristinita\output\category/sublime-notes.html
+-> Writing D:\Kristinita\output\category/sublime-packages.html
+-> Writing D:\Kristinita\output\category/test.html
+-> Writing D:\Kristinita\output\category/trenirovki-v-dzhindzherinakh.html
 -> Writing D:\Kristinita\output\author/keith-hall.html
 -> Writing D:\Kristinita\output\author/sasha-chernykh.html
+-> Generating permalink files in 'D:\\Kristinita\\output\\permalinks'
 -> Copying D:\Kristinita\themes\sashapelican\static\bower-components\angular\.bower.json to D:\Kristinita\output\theme\bower-components\angular\.bower.json
 -> Copying D:\Kristinita\themes\sashapelican\static\bower-components\angular\angular-csp.css to D:\Kristinita\output\theme\bower-components\angular\angular-csp.css
 -> Copying D:\Kristinita\themes\sashapelican\static\bower-components\angular\angular.js to D:\Kristinita\output\theme\bower-components\angular\angular.js
@@ -775,7 +1529,6 @@ DEBUG: Read file stylus/personal/Sasha-Black/sasha-black-description.styl -> Sta
 -> Copying D:\Kristinita\themes\sashapelican\static\bower-components\underscore\underscore.js to D:\Kristinita\output\theme\bower-components\underscore\underscore.js
 -> Copying D:\Kristinita\themes\sashapelican\static\css\general\aside.css to D:\Kristinita\output\theme\css\general\aside.css
 -> Copying D:\Kristinita\themes\sashapelican\static\css\general\basic.css to D:\Kristinita\output\theme\css\general\basic.css
--> Copying D:\Kristinita\themes\sashapelican\static\css\general\basic.styl to D:\Kristinita\output\theme\css\general\basic.styl
 -> Copying D:\Kristinita\themes\sashapelican\static\css\general\fonts.css to D:\Kristinita\output\theme\css\general\fonts.css
 -> Copying D:\Kristinita\themes\sashapelican\static\css\general\image_left.css to D:\Kristinita\output\theme\css\general\image_left.css
 -> Copying D:\Kristinita\themes\sashapelican\static\css\general\image_right.css to D:\Kristinita\output\theme\css\general\image_right.css
@@ -784,6 +1537,7 @@ DEBUG: Read file stylus/personal/Sasha-Black/sasha-black-description.styl -> Sta
 -> Copying D:\Kristinita\themes\sashapelican\static\css\script-colors\Gemini\gemini.css to D:\Kristinita\output\theme\css\script-colors\Gemini\gemini.css
 -> Copying D:\Kristinita\themes\sashapelican\static\css\script-colors\Malihu\malihu.css to D:\Kristinita\output\theme\css\script-colors\Malihu\malihu.css
 -> Copying D:\Kristinita\themes\sashapelican\static\css\sections\404.css to D:\Kristinita\output\theme\css\sections\404.css
+-> Copying D:\Kristinita\themes\sashapelican\static\css\sections\core-design.css to D:\Kristinita\output\theme\css\sections\core-design.css
 -> Copying D:\Kristinita\themes\sashapelican\static\css\sections\gingerinas.css to D:\Kristinita\output\theme\css\sections\gingerinas.css
 -> Copying D:\Kristinita\themes\sashapelican\static\css\sections\giologica-blue.css to D:\Kristinita\output\theme\css\sections\giologica-blue.css
 -> Copying D:\Kristinita\themes\sashapelican\static\css\sections\giologica.css to D:\Kristinita\output\theme\css\sections\giologica.css
@@ -851,6 +1605,9 @@ DEBUG: Read file stylus/personal/Sasha-Black/sasha-black-description.styl -> Sta
 -> Copying D:\Kristinita\themes\sashapelican\static\js\Malihu\non-scrollbar.js to D:\Kristinita\output\theme\js\Malihu\non-scrollbar.js
 -> Copying D:\Kristinita\themes\sashapelican\static\js\Resize\resize.js to D:\Kristinita\output\theme\js\Resize\resize.js
 -> Copying D:\Kristinita\themes\sashapelican\static\js\Tooltipster\tooltip.js to D:\Kristinita\output\theme\js\Tooltipster\tooltip.js
+-> Copying D:\Kristinita\themes\sashapelican\static\js\Visualize\visualize-bar-chart.js to D:\Kristinita\output\theme\js\Visualize\visualize-bar-chart.js
+-> Copying D:\Kristinita\themes\sashapelican\static\js\Visualize\visualize-pie-chart.js to D:\Kristinita\output\theme\js\Visualize\visualize-pie-chart.js
+-> Copying D:\Kristinita\themes\sashapelican\static\js\Visualize\visualize.js to D:\Kristinita\output\theme\js\Visualize\visualize.js
 -> Copying D:\Kristinita\themes\sashapelican\static\node_modules\clipboard\contributing.md to D:\Kristinita\output\theme\node_modules\clipboard\contributing.md
 -> Copying D:\Kristinita\themes\sashapelican\static\node_modules\clipboard\package.js to D:\Kristinita\output\theme\node_modules\clipboard\package.js
 -> Copying D:\Kristinita\themes\sashapelican\static\node_modules\clipboard\package.json to D:\Kristinita\output\theme\node_modules\clipboard\package.json
@@ -1160,6 +1917,23 @@ DEBUG: Read file stylus/personal/Sasha-Black/sasha-black-description.styl -> Sta
 -> Copying D:\Kristinita\themes\sashapelican\static\node_modules\tooltipster\src\js\tooltipster.js to D:\Kristinita\output\theme\node_modules\tooltipster\src\js\tooltipster.js
 -> Copying D:\Kristinita\themes\sashapelican\static\node_modules\tooltipster\src\js\plugins\tooltipster\sideTip\tooltipster-sideTip.js to D:\Kristinita\output\theme\node_modules\tooltipster\src\js\plugins\tooltipster\sideTip\tooltipster-sideTip.js
 -> Copying D:\Kristinita\themes\sashapelican\static\node_modules\tooltipster\src\js\plugins\tooltipster\SVG\tooltipster-SVG.js to D:\Kristinita\output\theme\node_modules\tooltipster\src\js\plugins\tooltipster\SVG\tooltipster-SVG.js
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\general\aside.styl to D:\Kristinita\output\theme\stylus\general\aside.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\general\basic.styl to D:\Kristinita\output\theme\stylus\general\basic.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\general\fonts.styl to D:\Kristinita\output\theme\stylus\general\fonts.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\general\image_left.styl to D:\Kristinita\output\theme\stylus\general\image_left.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\general\image_right.styl to D:\Kristinita\output\theme\stylus\general\image_right.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\python-markdown\progressbar.styl to D:\Kristinita\output\theme\stylus\python-markdown\progressbar.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\script-colors\Gemini\gemini.styl to D:\Kristinita\output\theme\stylus\script-colors\Gemini\gemini.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\sections\404.styl to D:\Kristinita\output\theme\stylus\sections\404.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\sections\core-design.styl to D:\Kristinita\output\theme\stylus\sections\core-design.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\sections\gingerinas.styl to D:\Kristinita\output\theme\stylus\sections\gingerinas.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\sections\giologica-blue.styl to D:\Kristinita\output\theme\stylus\sections\giologica-blue.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\sections\giologica.styl to D:\Kristinita\output\theme\stylus\sections\giologica.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\sections\kristinita.styl to D:\Kristinita\output\theme\stylus\sections\kristinita.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\sections\life-hacks.styl to D:\Kristinita\output\theme\stylus\sections\life-hacks.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\sections\sasha-black.styl to D:\Kristinita\output\theme\stylus\sections\sasha-black.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\sections\smert-svobode.styl to D:\Kristinita\output\theme\stylus\sections\smert-svobode.styl
+-> Copying D:\Kristinita\themes\sashapelican\static\stylus\sections\sublime-text.styl to D:\Kristinita\output\theme\stylus\sections\sublime-text.styl
 -> Copying D:\Kristinita\content\css\personal\Life-hacks\default-portable-browser.css to css/personal/Life-hacks/default-portable-browser.css
 -> Copying D:\Kristinita\content\css\personal\Sasha-Black\sasha-black-description.css to css/personal/Sasha-Black/sasha-black-description.css
 -> Copying D:\Kristinita\content\extra\.editorconfig to extra/.editorconfig
@@ -1181,15 +1955,14 @@ DEBUG: Read file stylus/personal/Sasha-Black/sasha-black-description.styl -> Sta
 -> Copying D:\Kristinita\content\favicons\manifest.json to favicons/manifest.json
 -> Copying D:\Kristinita\content\favicons\mstile-150x150.png to favicons/mstile-150x150.png
 -> Copying D:\Kristinita\content\favicons\safari-pinned-tab.svg to favicons/safari-pinned-tab.svg
--> Copying D:\Kristinita\content\Gingerinas\Тренажёр-реакции.HTML to Gingerinas/Тренажёр-реакции.HTML
 -> Copying D:\Kristinita\content\Gingerinas\Часы-для-концентрации.swf to Gingerinas/Часы-для-концентрации.swf
 -> Copying D:\Kristinita\content\images\banners\Баннер_1.swf to images/banners/Баннер_1.swf
 -> Copying D:\Kristinita\content\images\banners\Сашин_баннер.gif to images/banners/Сашин_баннер.gif
 -> Copying D:\Kristinita\content\images\donate_files\Bitcoin-Donate-button.png to images/donate_files/Bitcoin-Donate-button.png
--> Copying D:\Kristinita\content\images\donate_files\Bitcoin-HTML-Redirect.HTML to images/donate_files/Bitcoin-HTML-Redirect.HTML
+-> Copying D:\Kristinita\content\images\donate_files\Bitcoin-HTML-Redirect.html to images/donate_files/Bitcoin-HTML-Redirect.html
 -> Copying D:\Kristinita\content\images\donate_files\Bitcoin-Redirect.HTML to images/donate_files/Bitcoin-Redirect.HTML
 -> Copying D:\Kristinita\content\images\donate_files\Litecoin-Donate-button.png to images/donate_files/Litecoin-Donate-button.png
--> Copying D:\Kristinita\content\images\donate_files\Litecoin-HTML-Redirect.HTML to images/donate_files/Litecoin-HTML-Redirect.HTML
+-> Copying D:\Kristinita\content\images\donate_files\Litecoin-HTML-Redirect.html to images/donate_files/Litecoin-HTML-Redirect.html
 -> Copying D:\Kristinita\content\images\donate_files\Litecoin-Redirect.HTML to images/donate_files/Litecoin-Redirect.HTML
 -> Copying D:\Kristinita\content\images\donate_files\PayPal-Donate-Button-Dollar.png to images/donate_files/PayPal-Donate-Button-Dollar.png
 -> Copying D:\Kristinita\content\images\donate_files\PayPal-Donate-Button-Euro.png to images/donate_files/PayPal-Donate-Button-Euro.png
@@ -1201,6 +1974,7 @@ DEBUG: Read file stylus/personal/Sasha-Black/sasha-black-description.styl -> Sta
 -> Copying D:\Kristinita\content\images\giologica\Настя_Изюмина.jpg to images/giologica/Настя_Изюмина.jpg
 -> Copying D:\Kristinita\content\images\giologica\Пирамида_Грэма.jpg to images/giologica/Пирамида_Грэма.jpg
 -> Copying D:\Kristinita\content\images\interface_images\clippy.svg to images/interface_images/clippy.svg
+-> Copying D:\Kristinita\content\images\interface_images\external-link.svg to images/interface_images/external-link.svg
 -> Copying D:\Kristinita\content\images\interface_images\transparent-one-pixel.png to images/interface_images/transparent-one-pixel.png
 -> Copying D:\Kristinita\content\images\logo\Sasha_Black_logo.jpg to images/logo/Sasha_Black_logo.jpg
 -> Copying D:\Kristinita\content\images\logo\Логотип_без_красного.jpeg to images/logo/Логотип_без_красного.jpeg
@@ -1279,10 +2053,10 @@ DEBUG: Read file stylus/personal/Sasha-Black/sasha-black-description.styl -> Sta
 -> Copying D:\Kristinita\content\js\Unveil\jquery.unveil.js to js/Unveil/jquery.unveil.js
 -> Copying D:\Kristinita\content\js\Unveil\README.md to js/Unveil/README.md
 -> Copying D:\Kristinita\content\Kristinita's-Search\actual_catalogue.txt to Kristinita's-Search/actual_catalogue.txt
--> Copying D:\Kristinita\content\Kristinita's-Search\catalogue.HTML to Kristinita's-Search/catalogue.HTML
--> Copying D:\Kristinita\content\Kristinita's-Search\checkout.HTML to Kristinita's-Search/checkout.HTML
--> Copying D:\Kristinita\content\Kristinita's-Search\description.HTML to Kristinita's-Search/description.HTML
--> Copying D:\Kristinita\content\Kristinita's-Search\examples.HTML to Kristinita's-Search/examples.HTML
+-> Copying D:\Kristinita\content\Kristinita's-Search\catalogue.html to Kristinita's-Search/catalogue.html
+-> Copying D:\Kristinita\content\Kristinita's-Search\checkout.html to Kristinita's-Search/checkout.html
+-> Copying D:\Kristinita\content\Kristinita's-Search\description.html to Kristinita's-Search/description.html
+-> Copying D:\Kristinita\content\Kristinita's-Search\examples.html to Kristinita's-Search/examples.html
 -> Copying D:\Kristinita\content\Kristinita's-Search\Проверенные_каталоги.txt to Kristinita's-Search/Проверенные_каталоги.txt
 -> Copying D:\Kristinita\content\Kristinita's-Search\JQueryLazy\demo.css to Kristinita's-Search/JQueryLazy/demo.css
 -> Copying D:\Kristinita\content\Kristinita's-Search\JQueryLazy\demo.html to Kristinita's-Search/JQueryLazy/demo.html
@@ -1291,7 +2065,8 @@ DEBUG: Read file stylus/personal/Sasha-Black/sasha-black-description.styl -> Sta
 -> Copying D:\Kristinita\content\root-html\mozoleglazym.html to root-html/mozoleglazym.html
 -> Copying D:\Kristinita\content\root-html\Sasha-Black.html to root-html/Sasha-Black.html
 -> Copying D:\Kristinita\content\root-html\verifyforzoho.html to root-html/verifyforzoho.html
+-> Copying D:\Kristinita\content\root-html\Тренажёр-реакции.html to root-html/Тренажёр-реакции.html
 -> Copying D:\Kristinita\content\Snippets\SashaTestSnippet.md to Snippets/SashaTestSnippet.md
 -> Copying D:\Kristinita\content\stylus\personal\Life-hacks\default-portable-browser.styl to stylus/personal/Life-hacks/default-portable-browser.styl
 -> Copying D:\Kristinita\content\stylus\personal\Sasha-Black\sasha-black-description.styl to stylus/personal/Sasha-Black/sasha-black-description.styl
-Done: Processed 15 articles, 0 drafts, 0 pages and 0 hidden pages in 3.92 seconds.
+Done: Processed 21 articles, 0 drafts, 0 pages and 0 hidden pages in 435.35 seconds.

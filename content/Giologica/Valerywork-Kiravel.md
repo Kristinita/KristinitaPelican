@@ -11,7 +11,6 @@ Tags: giologica
 Category: Giologica
 JQuery: true
 Gemini: true
-Rainbow: true
 Tooltipster: false
 ClipboardJs: true
 DetailsPolyfill: false

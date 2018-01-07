@@ -1,6 +1,6 @@
 Title: ValeriyaSpeller
 Date: 2017-04-04 04:14:07
-Modified: 2017-12-30 08:57:05
+Modified: 2018-01-07 13:34:13
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -16,7 +16,6 @@ Jquery: true
 Gemini: true
 JQueryLazy: true
 Fancybox: true
-Rainbow: true
 Tooltipster: true
 Clipboardjs: true
 OpenGraphImage: http://i.imgur.com/iciGBgN.jpg

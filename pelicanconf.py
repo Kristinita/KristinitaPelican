@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2017-12-30 14:38:58
+# @Last Modified time: 2018-01-07 15:29:21
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -277,6 +277,7 @@ MARKDOWN = {
         'pymdownx.caret': {},
         'pymdownx.critic': {},
         'pymdownx.escapeall': {},
+        'pymdownx.highlight': {},
         'pymdownx.magiclink': {'hide_protocol': True, 'repo_url_shortener':
                                True},
         'pymdownx.mark': {},
@@ -284,7 +285,7 @@ MARKDOWN = {
         'pymdownx.snippets': {},
         'pymdownx.smartsymbols': {},
         # [FIXME] Spoils Rainbow.js code
-        # 'pymdownx.superfences': {},
+        'pymdownx.superfences': {'css_class': 'SashaBlockHighlight'},
         'pymdownx.tilde': {},
         'mdx_cite': {},
         'pyembed.markdown': {},
@@ -305,14 +306,14 @@ MARKDOWN = {
 
 PATH = 'content'
 
-# Path for pages
+# Path for articles
 # Don't set “PAGE_PATHS = ['']”! See
 # https://github.com/getpelican/pelican/issues/2123
 
 ARTICLE_PATHS = ['Gingerinas', 'Giologica', 'Life-hacks',
                  'Smert-svobode', 'Sasha-Black', 'Sublime-Text']
 
-# Path for articles
+# Path for pages
 # [Hack] That exclude articles, include non-exicting folder.
 # «ARTICLE_PATHS = None» — critical error, integer parameter
 

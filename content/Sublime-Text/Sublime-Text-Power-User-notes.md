@@ -11,7 +11,6 @@ Tags: sublime-text
 Category: Sublime Notes
 JQuery: true
 Gemini: true
-Rainbow: true
 Tooltipster: false
 ClipboardJs: true
 DetailsPolyfill: true

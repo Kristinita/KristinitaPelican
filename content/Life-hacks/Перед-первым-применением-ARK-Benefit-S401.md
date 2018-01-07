@@ -11,7 +11,6 @@ Tags: ROM, android
 Category: Life-hacks,
 JQuery: true
 Gemini: true
-Rainbow: true
 Tooltipster: true
 ClipboardJs: true
 DetailsPolyfill: false

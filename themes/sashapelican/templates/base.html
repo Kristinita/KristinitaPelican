@@ -25,8 +25,6 @@
     {% block base_jquerylazy %}{% endblock %}
     <!-- Fancybox -->
     {% block base_fancybox %}{% endblock %}
-    <!-- Rainbow -->
-    {% block base_rainbow %}{% endblock %}
     <!-- Tooltipster, see http://ru.stackoverflow.com/a/584718/199934 -->
     {% block base_tooltipster %}{% endblock %}
     <!-- Clipboard.js, see http://ru.stackoverflow.com/a/582520/199934 -->
@@ -46,10 +44,6 @@
     <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/aside.css">
     <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/image_{% block base_iconleftorright %}{% endblock %}.css">
     <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{% block base_pagecolors %}{% endblock %}.css">
-    <!-- CodeHilite, https://pythonhosted.org/Markdown/extensions/code_hilite.html , http://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/ -->
-    {% block base_codehilite %}{% endblock %}
-    <!-- Progressbar -->
-    {% block base_progressbar %}{% endblock %}
     <!-- Custom CSS -->
     {% block base_customcss %}{% endblock %}
     <!-- Atom feed -->

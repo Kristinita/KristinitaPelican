@@ -11,7 +11,6 @@ Tags: sasha-black
 Category: Sasha Black
 JQuery: true
 Gemini: true
-Rainbow: true
 Tooltipster: false
 ClipboardJs: true
 Customcss: true

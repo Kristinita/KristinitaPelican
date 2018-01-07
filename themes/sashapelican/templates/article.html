@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2017-12-30 14:43:10 -->
+<!-- @Last Modified time: 2018-01-07 15:24:01 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -17,6 +17,7 @@
 <!--=============================
 =            Scripts            =
 ==============================-->
+
 <!-- jQuery -->
 <!-- CDN vs Locally, http://stackoverflow.com/a/3832498/5951529 -->
 {% block base_jquery -%}
@@ -49,14 +50,6 @@
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/fancybox/dist/jquery.fancybox.min.js" async></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Fancybox/fancybox.js" defer></script>
 		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/fancybox/dist/jquery.fancybox.min.css">
-    {%- endif -%}
-{%- endblock %}
-
-<!-- Rainbow -->
-{% block base_rainbow -%}
-    {%- if article.rainbow == 'true' -%}
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/rainbow/dist/rainbow.min.js" async></script>
-	    <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/rainbow/themes/css/rainbow.css">
     {%- endif -%}
 {%- endblock %}
 
@@ -112,20 +105,6 @@
 {% block base_iconleftorright %}{{ article.iconleftorright }}{% endblock %}
 <!-- CSS of pages -->
 {% block base_pagecolors %}{{ article.pagecolors }}{% endblock %}
-
-<!-- CodeHilite fruity theme -->
-{% block base_codehilite -%}
-    {%- if article.pagecolors == 'sublime-text' -%}
-		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/python-markdown/fruity.css" />
-    {%- endif -%}
-{%- endblock %}
-
-<!-- Progressbar, http://facelessuser.github.io/pymdown-extensions/extensions/progressbar/ -->
-{% block base_progressbar -%}
-    {%- if article.pagecolors == 'sublime-text' -%}
-		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/python-markdown/progressbar.css" />
-    {%- endif -%}
-{%- endblock %}
 
 <!-- Custom CSS, specific for article -->
 {% block base_customcss -%}

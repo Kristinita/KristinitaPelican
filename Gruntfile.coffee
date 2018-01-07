@@ -70,12 +70,21 @@ module.exports = (grunt) ->
 	      src: [ 'output/**/*.html' ]
 	      overwrite: true
 	      replacements: [
-	        ## Cllipboard.js,
+	        ## [Deprecated] Cllipboard.js + Tooltipster for Rainbow
 	        ## http://ru.stackoverflow.com/a/582520/199934
 	        ## http://stackoverflow.com/a/33758293/5951529
+	        # {
+	        #   from: /<pre><code class="(.+?)">((.|\n|\r)+?)<\/code><\/pre>/g
+	        #   to: '<pre><code data-language="$1">$2</code><button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="../images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button></pre>'
+	        # }
+	        ## Clipboard.js + Tooltipster for SuperFences
+	        ## http://ru.stackoverflow.com/a/582520/199934
+	        ## https://stackoverflow.com/a/33758435/5951529
+	        # <button> and <img> tags must be in one line;
+	        # no line breaks between them!
 	        {
-	          from: /<pre><code class="(.+?)">((.|\n|\r)+?)<\/code><\/pre>/g
-	          to: '<pre><code data-language="$1">$2</code><button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="../images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button></pre>'
+	       	  from: /(<\/span>\s*?)(<\/pre><\/div>)/g
+	          to: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="../images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button>$2'
 	        }
 	        ## Fancybox and JQueryLazy images,
 	        ## With regex: https://github.com/yoniholmes/grunt-text-replace#usage
@@ -183,7 +192,7 @@ module.exports = (grunt) ->
     # 'postcss'
     # 'move'
     # 'clean'
-    # 'replace'
+    'replace'
     # 'jsbeautifier'
     # 'purifycss'
     'stylus'

@@ -13,7 +13,6 @@ JQuery: true
 Gemini: true
 JQueryLazy: true
 Fancybox: true
-Rainbow: true
 Tooltipster: true
 ClipboardJs: true
 DetailsPolyfill: false

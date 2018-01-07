@@ -1,6 +1,6 @@
 Title: Sacagawea
 Date: 2017-05-05 06:49:34
-Modified: 2017-12-30 08:56:26
+Modified: 2018-01-07 13:37:02
 Version: 0.1.0
 Author: Keith Hall
 Lang: ru
@@ -18,7 +18,6 @@ Jquery: true
 Gemini: true
 Jquerylazy: true
 Fancybox: true
-Rainbow: true
 Tooltipster: true
 Clipboardjs: true
 OpenGraphImage: http://i64.tinypic.com/b6x7ac.jpg
@@ -147,11 +146,14 @@ Sacagawea можно использовать, например, ведущем�
 <a name="Обязательно"></a>
 ### Обязательно
 
+<!-- See 7 item of Nested Fence Format: https://facelessuser.github.io/pymdown-extensions/extensions/superfences/#nested-fence-format -->
+
 1. [Sublime Text 3](http://www.sublimetext.com/3), если ещё не установлен.
 
 1. Кроссплатформенный CLI-плейер [mpg123](http://mpg123.de/). Для пользователей Windows рекомендовал бы [установить Chocolatey](https://lifehacker.ru/2015/01/08/chocolatey/), если ещё не установлен, → [наберите в терминале](https://chocolatey.org/packages/mpg123/1.24.0):
-
+        ```python
         choco install mpg123 -y
+        ```
 
     Установка стороннего плейера необходима, поскольку встроенные средства для воспроизведения аудио для Python, на котором написана Sacagawea, — [ossaudiodev](https://docs.python.org/3/library/ossaudiodev.html) и [winsound](https://docs.python.org/3/library/winsound.html) — [не кроссплатформенные](http://stackoverflow.com/a/34179010/5951529) → придётся всё равно что-то дополнительно устанавливать.
 
@@ -190,9 +192,7 @@ Sacagawea можно использовать, например, ведущем�
 
 *Sacagawea-CHGK.ahk*:
 
-```json
-
-
+```autohotkey
 WinActivate, Mozilla Firefox ahk_class MozillaWindowClass
 Sleep, 300
 Send, {Space}
@@ -225,14 +225,11 @@ Sleep, 300
 Send, {LAlt Up}
 Sleep, 300
 ExitApp
-#esc::ExitApp
 ```
 
 *Sacagawea-Blitz.ahk*:
 
-```json
-
-
+```autohotkey
 WinActivate, Mozilla Firefox ahk_class MozillaWindowClass
 Sleep, 300
 Send, {Space}
@@ -275,7 +272,7 @@ ExitApp
 
 [Добавьте в кронтаб](http://www.nncron.ru/help/RU/working/task/starting_task.htm) следующие строки:
 
-```ruby
+```python
 #( Sacagawea-CHGK
 WatchHotKey: "^{APP}"
 Action:
