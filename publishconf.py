@@ -54,6 +54,13 @@ TRANSLATION_FEED_ATOM = 'feeds/all-%s.atom.xml'
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# Feed summary — short RSS feed by content «Summary» metadata tag
+# https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
+# [Deprecated] — https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
+
+FEED_USE_SUMMARY = True
+
+
 # Blogroll
 # LINKS = (('Pelican', 'http://getpelican.com/'),
 #          ('Python.org', 'http://python.org/'),

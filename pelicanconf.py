@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-01-07 15:29:21
+# @Last Modified time: 2018-01-10 11:38:55
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -69,13 +69,24 @@ GITHUB_URL = 'https://github.com/Kristinita/KristinitaPelican'
 # *                                  Plugins                                 *
 # ****************************************************************************
 
+"""Plugins for Pelican.
+
+https://github.com/getpelican/pelican-plugins
+
+liquid_tags — add videos/images by code;
+for Instagram only images, without additional data;
+https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags
+
+"""
+
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = [
-    # [Deprecated], now by default
+    # [DEPRECATED], now by default
     # https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
     # 'feed_summary',
     'interlinks',
     'just_table',
+    'liquid_tags.gram',
     'neighbors',
     # [FIXME] Different colors for different designs
     # 'pelican-linkclass',
@@ -137,12 +148,6 @@ INTERLINKS = {
     'kristinita': 'http://kristinita.ru/#gsc.tab=0&gsc.q='
 }
 
-# Feed summary — short RSS feed by content «Summary» metadata tag
-# https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
-# [Deprecated] — https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
-
-# FEED_USE_SUMMARY = True
-
 # ****************************************************************************
 # *                                 Markdown                                 *
 # ****************************************************************************
@@ -200,7 +205,7 @@ critic — Critic Markup support
 http://facelessuser.github.io/pymdown-extensions/extensions/critic/
 http://criticmarkup.com/
 
-escapeall — don't convert space symbols
+escapeall — don't convert spaces, octotorps and another symbols
 http://facelessuser.github.io/pymdown-extensions/extensions/escapeall/
 https://github.com/waylan/Python-Markdown/issues/564#issuecomment-299681538
 
@@ -223,6 +228,7 @@ http://facelessuser.github.io/pymdown-extensions/extensions/snippets/
 
 superfences — different block highlights.
 http://facelessuser.github.io/pymdown-extensions/extensions/superfences/
+http://pygments.org/docs/lexers/
 
 tilde — ~~delete~~ and sub support
 http://facelessuser.github.io/pymdown-extensions/extensions/tilde/
@@ -230,6 +236,8 @@ http://facelessuser.github.io/pymdown-extensions/extensions/tilde/
 #
 # 4. Other extensions
 #
+
+https://github.com/Python-Markdown/markdown/wiki/Third-Party-Extensions
 
 downheader — down headers to 1 item, that MD002 is good
 https://github.com/cprieto/mdx_downheader
@@ -263,14 +271,14 @@ MARKDOWN = {
         # nl2br — extension, without which I can do
         # 'markdown.extensions.nl2br': {},
         'markdown.extensions.sane_lists': {},
-        # [Bug] “section_number” disabling bug
+        # [DEPRECATED] “section_number” disabling bug
         # https://github.com/waylan/Python-Markdown/issues/560
         # Now I use regex replacing in Gruntfile.coffee and don't need this
         # extension
         # 'markdown.extensions.toc': {'permalink': True},
         'pymdownx.inlinehilite': {'css_class': 'SashaInlineHighlight',
                                   'style_plain_text': True,
-                                  # Deprecated in 3.0 version
+                                  # [DEPRECATED] in 3.0 pymdown-extensions version
                                   # 'use_codehilite_settings': False,
                                   },
         'pymdownx.betterem': {},
@@ -284,7 +292,6 @@ MARKDOWN = {
         'pymdownx.progressbar': {},
         'pymdownx.snippets': {},
         'pymdownx.smartsymbols': {},
-        # [FIXME] Spoils Rainbow.js code
         'pymdownx.superfences': {'css_class': 'SashaBlockHighlight'},
         'pymdownx.tilde': {},
         'mdx_cite': {},
@@ -310,7 +317,7 @@ PATH = 'content'
 # Don't set “PAGE_PATHS = ['']”! See
 # https://github.com/getpelican/pelican/issues/2123
 
-ARTICLE_PATHS = ['Gingerinas', 'Giologica', 'Life-hacks',
+ARTICLE_PATHS = ['Gingerinas', 'Giologica', 'Life-hacks', 'Programs',
                  'Smert-svobode', 'Sasha-Black', 'Sublime-Text']
 
 # Path for pages

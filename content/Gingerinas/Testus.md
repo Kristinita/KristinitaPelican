@@ -1,6 +1,6 @@
 Title: Sasha Goddess
 Date: 2017-07-13 23:51:25
-Modified: 2018-01-07 13:37:00
+Modified: 2018-01-09 19:14:39
 Version: 1.0.0-beta
 Author: Sasha Chernykh
 Lang: ru
@@ -23,12 +23,23 @@ Detailspolyfill: false
 Customjs: false
 Customcss: false
 
-<!-- MarkdownTOC -->
+# Instagram
 
-1. [Simple test](#simple-test)
-1. [Code test](#code-test)
+{% gram BZlYdJbjqh1 %}
 
-<!-- /MarkdownTOC -->
+# Head
+
+1. First
+
+1. Second:
+
+    ```python
+    choco install mpg123 -y
+    ```
+
+    Sasha Hero!
+
+1. Third
 
 <a name="simple-test"></a>
 # Simple test
@@ -36,9 +47,6 @@ Customcss: false
 ```python
 from Sasha import Goddess
 ```
-
-<a name="code-test"></a>
-# Code test
 
 ```python hl_lines="1 4 18"
 import logbook

@@ -1,6 +1,6 @@
 Title: Sacagawea
 Date: 2017-05-05 06:49:34
-Modified: 2018-01-07 13:37:02
+Modified: 2018-01-10 09:20:44
 Version: 0.1.0
 Author: Keith Hall
 Lang: ru
@@ -10,7 +10,7 @@ Metacontent: Таймер для джинджерин “Что? Где? Ког�
 Pagecolors: sublime-text
 Iconleftorright: right
 Tags: sublime-text, gingerinas, what-where-when
-Category: Sublime Packages
+Category: Programs
 Noco: 1g9b6
 Stylesheets: personal/
 Javascripts: personal/
@@ -151,9 +151,10 @@ Sacagawea можно использовать, например, ведущем�
 1. [Sublime Text 3](http://www.sublimetext.com/3), если ещё не установлен.
 
 1. Кроссплатформенный CLI-плейер [mpg123](http://mpg123.de/). Для пользователей Windows рекомендовал бы [установить Chocolatey](https://lifehacker.ru/2015/01/08/chocolatey/), если ещё не установлен, → [наберите в терминале](https://chocolatey.org/packages/mpg123/1.24.0):
-        ```python
-        choco install mpg123 -y
-        ```
+
+    ```python
+    choco install mpg123 -y
+    ```
 
     Установка стороннего плейера необходима, поскольку встроенные средства для воспроизведения аудио для Python, на котором написана Sacagawea, — [ossaudiodev](https://docs.python.org/3/library/ossaudiodev.html) и [winsound](https://docs.python.org/3/library/winsound.html) — [не кроссплатформенные](http://stackoverflow.com/a/34179010/5951529) → придётся всё равно что-то дополнительно устанавливать.
 

@@ -1,5 +1,4 @@
 Title: SashaSublime
-Category: Sublime Packages
 Tags: Sublime Text
 Date: 2017-01-31 09:13:30
 Status: published
@@ -7,6 +6,7 @@ Author: Sasha Chernykh
 PageTitle: SashaSublime
 Summary: Theme and color scheme for Sublime Text, where all colors have good visible. <br><br> ![Hex Viewer](http://i.imgur.com/c0t0Iqy.png) <br><br> ![GoTo Anything](http://i.imgur.com/2hRinyv.png) <br><br> ![JSON](http://i.imgur.com/N2LvbNZ.png)
 MetaContent: SashaSublime — theme and color scheme for Sublime Text 3, where all elements are good visible
+Category: Programs
 PageColors: sublime-text
 IconLeftOrRight: right
 JQuery: true

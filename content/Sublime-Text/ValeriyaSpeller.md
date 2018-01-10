@@ -1,6 +1,6 @@
 Title: ValeriyaSpeller
 Date: 2017-04-04 04:14:07
-Modified: 2018-01-07 13:34:13
+Modified: 2018-01-10 21:46:25
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -10,7 +10,7 @@ Metacontent: Implementation yaspeller for Sublime Text
 Pagecolors: sublime-text
 Iconleftorright: right
 Tags: sublime-text, yaspeller
-Category: Sublime Packages
+Category: Programs
 Noco: 1g9b6
 Jquery: true
 Gemini: true

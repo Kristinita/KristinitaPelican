@@ -70,7 +70,7 @@ module.exports = (grunt) ->
 	      src: [ 'output/**/*.html' ]
 	      overwrite: true
 	      replacements: [
-	        ## [Deprecated] Cllipboard.js + Tooltipster for Rainbow
+	        ## [DEPRECATED] Cllipboard.js + Tooltipster for Rainbow
 	        ## http://ru.stackoverflow.com/a/582520/199934
 	        ## http://stackoverflow.com/a/33758293/5951529
 	        # {
@@ -160,6 +160,7 @@ module.exports = (grunt) ->
         files:
           'output/theme/css/sections/sublime-text.css': 'output/theme/stylus/sections/sublime-text.styl'
           'output/theme/css/sections/gingerinas.css': 'output/theme/stylus/sections/gingerinas.styl'
+          'output/theme/css/sections/kristinita-temp.css': 'output/theme/stylus/sections/kristinita-temp.styl'
 
 	###############
     ## PurifyCSS ##
@@ -178,6 +179,10 @@ module.exports = (grunt) ->
             src: ['output/Gingerinas/*.html']
             css: ['output/theme/css/sections/gingerinas.css']
             dest: 'output/theme/css/sections/gingerinas.css'
+		kristinitatemptarget:
+            src: ['output/Programs/*.html']
+            css: ['output/theme/css/sections/kristinita-temp.css']
+            dest: 'output/theme/css/sections/kristinita-temp.css'
 
   ##################
   ## registerTask ##
@@ -195,7 +200,7 @@ module.exports = (grunt) ->
     'replace'
     # 'jsbeautifier'
     # 'purifycss'
-    'stylus'
+    # 'stylus'
   ]
 
   grunt.registerTask 'build', [
