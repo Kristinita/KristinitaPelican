@@ -12,6 +12,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-text-replace'
   grunt.loadNpmTasks 'grunt-postcss'
+  grunt.loadNpmTasks 'grunt-htmltidy'
   grunt.loadNpmTasks 'grunt-jsbeautifier'
   grunt.loadNpmTasks 'grunt-contrib-imagemin'
   grunt.loadNpmTasks 'grunt-image'
@@ -82,44 +83,54 @@ module.exports = (grunt) ->
 	        ## https://stackoverflow.com/a/33758435/5951529
 	        # <button> and <img> tags must be in one line;
 	        # no line breaks between them!
-	        {
 	       	  from: /(<\/span>\s*?)(<\/pre><\/div>)/g
 	          to: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="../images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button>$2'
-	        }
 	        ## Fancybox and JQueryLazy images,
 	        ## With regex: https://github.com/yoniholmes/grunt-text-replace#usage
-	        {
 	          from: /<img alt="([A-Za-z0-9А-ЯЁёа-я ]+)" src="(.+?)"( \/)?>/g
 	          to: '<a class="fancybox" href="$2"><img class="SashaLazy" src="../images/interface_images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
-	        },
 	        ## GitCDN
 	        ## https://github.com/schme16/gitcdn.xyz
-	        {
 	        	from: /http:\/\/kristinita.ru\/(.+?)\.(js|css|ico)/g
 	        	to: '//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/$1.$2'
-	        }
 	        ## Header permalink
-	        {
 	        	from: /(<p>\s*?<a name="(.+?)"><\/a>\s*?<\/p>\s+?<h\d+?>.+?)(<\/h\d+?>)/g
 	        	to: '$1 <a class="headerlink" href="#$2" title="Permanent link">¶</a>$3'
-	        }
-      ]
+	        	]
 
     ##########################
     ## PostCSS Autoprefixer ##
     ##########################
     # https://github.com/nDmitry/grunt-postcss
-    postcss: {
-      options: {
-        map: true,
+    postcss:
+      options:
+        map: true
         processors: [
           require('autoprefixer')()
         ]
-      },
-      dist: {
+      dist:
         src: [ 'themes/sashapelican/static/css/**/*.css', 'output/personal/**/*.css' ]
-      }
-    }
+
+    htmltidy:
+    	options:
+    	  indent: no
+    	  # Disable line breaks
+    	  # https://stackoverflow.com/a/7681425/5951529
+    	  wrap: 0
+    	  'vertical-space': no
+	    tidyMultiple:
+	      files: [
+	        expand: true
+	        cwd: 'output/Gingerinas'
+	        src: '**/*.html'
+	        dest: 'output/Gingerinas'
+	      ]
+	      # files: [
+	      # 	expand: true
+	      # 	cwd: 'output/Programs'
+	      # 	src: '**/*.html'
+	      # 	dest: 'output/Programs'
+	      # ]
 
     ###################
     ## js-beautifier ##
@@ -193,11 +204,12 @@ module.exports = (grunt) ->
   # publish — before publishing with absolute paths
 
   grunt.registerTask 'test', [
-    'shell:generate'
+    # 'shell:generate'
     # 'postcss'
     # 'move'
     # 'clean'
-    'replace'
+    # 'replace'
+    'htmltidy:tidyMultiple'
     # 'jsbeautifier'
     # 'purifycss'
     # 'stylus'

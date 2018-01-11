@@ -1,6 +1,6 @@
 Title: KristinitaLuckyLink
 Date: 2018-01-09 19:27:50
-Modified: 2018-01-10 21:54:12
+Modified: 2018-01-11 11:48:28
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -29,11 +29,12 @@ Detailspolyfill: false
 1. [Description](#description)
     1. [Reason](#reason)
     1. [Demonstration](#demonstration)
-    1. [How it works](#how-it-works)
     1. [Examples](#examples)
+    1. [Saving time](#saving-time)
     1. [Supported search engines](#supported-search-engines)
+    1. [Supported markups](#supported-markups)
     1. [Features](#features)
-1. [Limits](#limits)
+1. [Limitations](#limitations)
 1. [Installation](#installation)
 1. [Activation](#activation)
     1. [Global Python packages](#global-python-packages)
@@ -82,8 +83,8 @@ It may take a lot of time. Use KristinitaLuckyLink I can make all these actions,
 
 <div class="SashaVideo"><iframe class="SashaLazy" data-src="https://streamable.com/s/bj22k/ykgkws"></iframe></div>
 
-<a name="how-it-works"></a>
-## How it works
+<a name="examples"></a>
+## Examples
 
 Conversion examples:
 
@@ -97,10 +98,10 @@ Conversion examples:
 
 ![KristinitaLuckyLink example](https://i.imgur.com/1KsfoM6.png)
 
-<a name="examples"></a>
-## Examples
+<a name="saving-time"></a>
+## Saving time
 
-When I write this article, I get these links, use KristinitaLuckyLink:
+When I wrote this article, I get these links, use KristinitaLuckyLink:
 
 1. [kristinitaluckylife](https://www.instagram.com/kristinitaluckylife/),
 1. [PyPI Google](https://pypi.python.org/pypi/google),
@@ -111,19 +112,26 @@ When I write this article, I get these links, use KristinitaLuckyLink:
 1. [keith-hall](https://github.com/keith-hall),
 1. [facelessuser](https://github.com/facelessuser).
 
+I save few minutes of my time.
+
 <a name="supported-search-engines"></a>
 ## Supported search engines
 
 1. DuckDuckGo,
 1. Google.com.
 
+<a name="supported-markups"></a>
+## Supported markups
+
+1. Markdown
+
 <a name="features"></a>
 ## Features
 
 1. Must work with selection text, contains any UTF-8 symbols.
 
-<a name="limits"></a>
-# Limits
+<a name="limitations"></a>
+# Limitations
 
 1. Use KristinitaLuckyLink you can get only top link of search engines. I'm sorry, if in top link not that you want.
 1. I'm not affiliated with Google Search or DuckDuckGo Developers. I am not responsible for the fact that there is one or another result in the top of SERP. You can get unexpected link.
@@ -131,7 +139,7 @@ When I write this article, I get these links, use KristinitaLuckyLink:
     But if in top of SERP one link, but KristinitaLuckyLink out another link, please make [these actions](#incorrect-links).
 
 1. If you don't want by some reasons install any software from [Installation](#installation) section, please, don't install KristinitaLuckyLink.
-1. Copy from [here](https://github.com/aviaryan/python-gsearch#warning): “Overusing KristinitaLuckyLink might lead to your IP being blocked by Google Search or DuckDuckGo servers. Searches through browser might still work but KristinitaLuckyLink will stop working. I recommend keeping a 5 seconds gap after each usage of this library. In most cases, much lower gaps or even continuous use of the library will still work but still this is something to be kept in mind. If you see a 'rate limit' or a 503 error, it's best to stop using the library and try back after some time (~1 minute).”
+1. Copy from [here](https://github.com/aviaryan/python-gsearch#warning): “Overusing KristinitaLuckyLink might lead to your IP being blocked by Google Search servers. Searches through browser might still work but KristinitaLuckyLink will stop working. I recommend keeping a 5 seconds gap after each usage of this library. In most cases, much lower gaps or even continuous use of the library will still work but still this is something to be kept in mind. If you see a 'rate limit' or a 503 error, it's best to stop using the library and try back after some time (~1 minute).”
 1. At the time supported:
 
     1. Markdown link style,
@@ -162,7 +170,7 @@ import sys; sys.path.append("C:\\Python36\\Lib\\site-packages")
 
 Where `C:\\Python36\\Lib\\site-packages` — path to Python _site-packages_ folder. Windows users, please, note to double slashes.
 
-That know your path, see [How installation works](https://docs.python.org/3/install/index.html#how-installation-works) item of Python documentation.
+That know your path, see “[How installation works](https://docs.python.org/3/install/index.html#how-installation-works)” item of Python documentation.
 
 [jtable]
 Platform|Default value
@@ -187,7 +195,7 @@ KristinitaLuckyLink must successful works.
 <a name="usage"></a>
 # Usage
 
-Select text, for which you want to get link...
+Select text, for which you want to get link and...
 
 <a name="shortcuts"></a>
 ## Shortcuts
@@ -267,7 +275,7 @@ KristinitaLuckyLink must be works in new versions macOS and Linux.
 <a name="kristinitaluckylink"></a>
 ## KristinitaLuckyLink
 
-1. PyPI google module have many bugs. I am planning fix or replace it.
+1. PyPI google module have bugs. I am planning fix or replace it.
 
 <a name="external"></a>
 ## External
@@ -280,7 +288,7 @@ About all detected bugs please report to [issues](https://github.com/Kristinita/
 <a name="incorrect-links"></a>
 ## Incorrect links
 
-If you get not top link of Google or DuckDuckGo SERP, please, make actions below.
+If use KristinitaLuckyLink you get not top link of Google or DuckDuckGo SERP, please, make actions below.
 
 <a name="sublimerepl"></a>
 ### SublimeREPL
@@ -298,6 +306,8 @@ Replace `Кристина Кива` to your real selection text.
 >>> dlink = query('! Кристина Кива').redirect.url
 >>> dlink
 ```
+
+Press <kbd>Enter</kbd>.
 
 If link, that you get via KristinitaLuckyLink, and this link match; it [DuckDuckGo](https://github.com/crazedpsyc/python-duckduckgo) module problem.
 

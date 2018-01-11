@@ -1,6 +1,6 @@
 Title: Sasha Goddess
 Date: 2017-07-13 23:51:25
-Modified: 2018-01-09 19:14:39
+Modified: 2018-01-11 09:43:27
 Version: 1.0.0-beta
 Author: Sasha Chernykh
 Lang: ru
@@ -23,56 +23,15 @@ Detailspolyfill: false
 Customjs: false
 Customcss: false
 
-# Instagram
+# Table
 
-{% gram BZlYdJbjqh1 %}
+[jtable]
+Cat|Dog
+Sasha|God
+[/jtable]
 
-# Head
-
-1. First
-
-1. Second:
-
-    ```python
-    choco install mpg123 -y
-    ```
-
-    Sasha Hero!
-
-1. Third
-
-<a name="simple-test"></a>
-# Simple test
+# long code
 
 ```python
-from Sasha import Goddess
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut laboresas et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ```
-
-```python hl_lines="1 4 18"
-import logbook
-import sys
-
-log = logbook.Logger("Sasha Logbook")
-
-
-def clize_log_level(*, logbook_level: 'll'="NOTICE"):
-    """Change log levels via command line.
-
-    User select, which logging messages to see. See about 6 log levels here:
-    https://logbook.readthedocs.io/en/stable/quickstart.html
-
-    :param logbook_level: user select logging level
-    """
-    if logbook_level == "DEBUG":
-        logbook.StreamHandler(sys.stdout,
-                              level=logbook.DEBUG).push_application()
-    elif logbook_level == "ERROR":
-        logbook.StreamHandler(sys.stdout,
-                              level=logbook.ERROR).push_application()
-    else:
-        logbook.StreamHandler(sys.stdout,
-                              level=logbook.NOTICE).push_application()
-
-```
-
-
