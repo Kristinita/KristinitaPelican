@@ -18,7 +18,10 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",
+    "browser-sync": "^2.23.5",
+    "bs-html-injector": "^3.0.3",
     "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-stylus": "^1.2.0",
@@ -26,6 +29,7 @@
     "grunt-image": "^2.2.3",
     "grunt-jsbeautifier": "^0.2.13",
     "grunt-lazyload": "^1.0.3",
+    "grunt-link-checker": "^0.2.0",
     "grunt-move": "0.0.5",
     "grunt-postcss": "^0.8.0",
     "grunt-prettify": "^0.4.0",
