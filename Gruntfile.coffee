@@ -167,18 +167,18 @@ module.exports = (grunt) ->
 			files: [ 'output/**/*.html', 'output/**/*.css' ]
 
 		image:
-				static:
-					options:
-						pngquant: true,
-						optipng: true,
-						zopflipng: true,
-						jpegRecompress: true,
-						jpegoptim: true,
-						mozjpeg: true,
-						gifsicle: true,
-						svgo: true
-					files:
-						src: ['output/**/*.jpg']
+			static:
+				options:
+					pngquant: true,
+					optipng: true,
+					zopflipng: true,
+					jpegRecompress: true,
+					jpegoptim: true,
+					mozjpeg: true,
+					gifsicle: true,
+					svgo: true
+				files:
+					src: ['output/**/*.jpg']
 
 		# # Imagemin
 		# ##
@@ -215,13 +215,13 @@ module.exports = (grunt) ->
 				css: ['output/theme/css/sections/sublime-text.css']
 				dest: 'output/theme/css/sections/sublime-text.css'
 			gingerinastarget:
-						src: ['output/Gingerinas/*.html']
-						css: ['output/theme/css/sections/gingerinas.css']
-						dest: 'output/theme/css/sections/gingerinas.css'
+				src: ['output/Gingerinas/*.html']
+				css: ['output/theme/css/sections/gingerinas.css']
+				dest: 'output/theme/css/sections/gingerinas.css'
 			kristinitatemptarget:
-						src: ['output/Programs/*.html']
-						css: ['output/theme/css/sections/kristinita-temp.css']
-						dest: 'output/theme/css/sections/kristinita-temp.css'
+				src: ['output/Programs/*.html']
+				css: ['output/theme/css/sections/kristinita-temp.css']
+				dest: 'output/theme/css/sections/kristinita-temp.css'
 
 		###################
 		##  Browsersync  ##
