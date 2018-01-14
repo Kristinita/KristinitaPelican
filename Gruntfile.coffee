@@ -266,12 +266,12 @@ module.exports = (grunt) ->
 	grunt.registerTask 'build', [
 		'shell:generate'
 		'move'
-		'clean'
+		# 'clean'
 		'replace'
-		'stylus'
+		# 'stylus'
 		'purifycss'
-
 	]
+
 	grunt.registerTask 'publish', [
 		'shell:deploy'
 		'move'
