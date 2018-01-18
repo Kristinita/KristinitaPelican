@@ -1,6 +1,6 @@
 Title: KristinitaLuckyLink
 Date: 2018-01-09 19:27:50
-Modified: 2018-01-18 09:58:35
+Modified: 2018-01-18 10:07:34
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -195,6 +195,8 @@ For example, `C:\\Python36\\Lib\\site-packages` — path on my Windows.
 
 See [examples](https://www.schrodinger.com/kb/1842), how you can add environment variable in your operating system.
 
+If you know, how possible develop a plugin without adding new environment variable, please, answer to [this question](https://stackoverflow.com/q/48276861/5951529).
+
 <a name="commands-and-hotkeys"></a>
 ## Commands and hotkeys
 
@@ -203,7 +205,7 @@ See [examples](https://www.schrodinger.com/kb/1842), how you can add environment
 <a name="restart"></a>
 ## Restart
 
-After all installation and activation actions restart Sublime Text.
+After all installation and activation actions restart Sublime Text. Operating system restart may be necessary.
 
 KristinitaLuckyLink must successful works.
 
