@@ -1,6 +1,6 @@
 Title: KristinitaLuckyLink
 Date: 2018-01-09 19:27:50
-Modified: 2018-01-11 11:48:28
+Modified: 2018-01-18 09:58:35
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -36,18 +36,24 @@ Detailspolyfill: false
     1. [Features](#features)
 1. [Limitations](#limitations)
 1. [Installation](#installation)
+    1. [Depenedencies](#depenedencies)
+    1. [KristinitaLuckyLink](#kristinitaluckylink)
+        1. [Stable version](#stable-version)
+        1. [Development version](#development-version)
 1. [Activation](#activation)
-    1. [Global Python packages](#global-python-packages)
+    1. [Environment variable](#environment-variable)
     1. [Commands and hotkeys](#commands-and-hotkeys)
     1. [Restart](#restart)
 1. [Usage](#usage)
     1. [Shortcuts](#shortcuts)
     1. [Command palette](#command-palette)
 1. [Documentation](#documentation)
+1. [Tricks](#tricks)
+    1. [Clarify](#clarify)
 1. [Testing environment](#testing-environment)
 1. [TODO](#todo)
 1. [Known bugs and another problems](#known-bugs-and-another-problems)
-    1. [KristinitaLuckyLink](#kristinitaluckylink)
+    1. [KristinitaLuckyLink](#kristinitaluckylink-1)
     1. [External](#external)
 1. [Troubleshooting](#troubleshooting)
     1. [Incorrect links](#incorrect-links)
@@ -104,7 +110,7 @@ Conversion examples:
 When I wrote this article, I get these links, use KristinitaLuckyLink:
 
 1. [kristinitaluckylife](https://www.instagram.com/kristinitaluckylife/),
-1. [PyPI Google](https://pypi.python.org/pypi/google),
+1. [pygoogling](https://github.com/essanpupil/pygoogling),
 1. [Sublime Suricate](https://github.com/nsubiron/SublimeSuricate),
 1. [SublimeREPL](https://github.com/wuub/SublimeREPL),
 1. [PEP8](https://www.python.org/dev/peps/pep-0008/),
@@ -138,7 +144,7 @@ I save few minutes of my time.
 
     But if in top of SERP one link, but KristinitaLuckyLink out another link, please make [these actions](#incorrect-links).
 
-1. If you don't want by some reasons install any software from [Installation](#installation) section, please, don't install KristinitaLuckyLink.
+1. If you don't want by some reasons make actions from [installation](#installation) and [activation](#activation) section, please, don't install KristinitaLuckyLink.
 1. Copy from [here](https://github.com/aviaryan/python-gsearch#warning): “Overusing KristinitaLuckyLink might lead to your IP being blocked by Google Search servers. Searches through browser might still work but KristinitaLuckyLink will stop working. I recommend keeping a 5 seconds gap after each usage of this library. In most cases, much lower gaps or even continuous use of the library will still work but still this is something to be kept in mind. If you see a 'rate limit' or a 503 error, it's best to stop using the library and try back after some time (~1 minute).”
 1. At the time supported:
 
@@ -150,27 +156,34 @@ Personally I use Markdown markup for my articles and Google and DuckDuckGo enoug
 <a name="installation"></a>
 # Installation
 
+<a name="depenedencies"></a>
+## Depenedencies
+
 1. You need to install Python 3 with pip to your computer, if no.
 1. `pip install git+https://github.com/Kristinita/python-duckduckgo` — install [DuckDuckGo module](https://github.com/crazedpsyc/python-duckduckgo), that I [ported for Python 3](https://github.com/Kristinita/python-duckduckgo).
-1. `pip install google` — install [PyPI Google](https://pypi.python.org/pypi/google) module.
+1. `pip install pygoogling` — install [pygoogling](https://github.com/essanpupil/pygoogling) module.
 1. Install [Sublime Suricate](https://github.com/nsubiron/SublimeSuricate) package [via Package Control](https://stackoverflow.com/a/19598084/5951529).
-1. Install KristinitaLuckyLink: <kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> for Mac) → _Package Control: Add Repository_ → paste in opened input field `https://github.com/Kristinita/KristinitaLuckyLink/tree/SashaDevelop` → <kbd>Enter</kbd> → _Package Control: Install Package_ → print _KristinitaLuckyLink_ → <kbd>Enter</kbd>.
+
+<a name="kristinitaluckylink"></a>
+## KristinitaLuckyLink
+
+<a name="stable-version"></a>
+### Stable version
+
+<kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> for Mac) → _Package Control: Add Repository_ → paste in opened input field `https://github.com/Kristinita/KristinitaLuckyLink` → <kbd>Enter</kbd> → _Package Control: Install Package_ → print _KristinitaLuckyLink_ → <kbd>Enter</kbd>.
+
+<a name="development-version"></a>
+### Development version
+
+As [stable version](#stable-version). Only replace `https://github.com/Kristinita/KristinitaLuckyLink` to `https://github.com/Kristinita/KristinitaLuckyLink/tree/SashaDevelop` in instruction above.
 
 <a name="activation"></a>
 # Activation
 
-<a name="global-python-packages"></a>
-## Global Python packages
+<a name="environment-variable"></a>
+## Environment variable
 
-[Open Sublime Text console](https://stackoverflow.com/a/15644431/5951529) → paste in opened input field this code:
-
-```python
-import sys; sys.path.append("C:\\Python36\\Lib\\site-packages")
-```
-
-Where `C:\\Python36\\Lib\\site-packages` — path to Python _site-packages_ folder. Windows users, please, note to double slashes.
-
-That know your path, see “[How installation works](https://docs.python.org/3/install/index.html#how-installation-works)” item of Python documentation.
+In your operating system add environment variable `PYTHONPACKAGES` with value — your Python `site-packages` folder, if already no. To find out your path, see “[How installation works](https://docs.python.org/3/install/index.html#how-installation-works)” item of Python documentation.
 
 [jtable]
 Platform|Default value
@@ -178,7 +191,9 @@ Unix|`/usr/local/lib/pythonX.Y/site-packages`
 Windows|`C:\PythonXY\Lib\site-packages`
 [/jtable]
 
-If you ever add path to your _site-packages_ folder, you can not re-add it.
+For example, `C:\\Python36\\Lib\\site-packages` — path on my Windows.
+
+See [examples](https://www.schrodinger.com/kb/1842), how you can add environment variable in your operating system.
 
 <a name="commands-and-hotkeys"></a>
 ## Commands and hotkeys
@@ -248,8 +263,24 @@ Captions:
 <a name="documentation"></a>
 # Documentation
 
-<!-- escapeall facelessuser plugin -->
+<!-- [NOTE:] escapeall facelessuser plugin -->
 _\#FuckTheDocs_
+
+<a name="tricks"></a>
+# Tricks
+
+<a name="clarify"></a>
+## Clarify
+
+To increase the probability of the expected result сlarify search queries as you clarify, when search in search engines.
+
+For example:
+
+[jtable]
+Selected text|KristinitaLuckyLink DuckDuckGo link
+Kristina Kiva|<https://www.facebook.com/public/Kristina-Kiva>
+Kristina Kiva Marbella|<https://www.instagram.com/kristinitaluckylife/>
+[/jtable]
 
 <a name="testing-environment"></a>
 # Testing environment
@@ -257,7 +288,7 @@ _\#FuckTheDocs_
 1. Windows 10 Enterprise LTSB 64-bit EN_
 1. Python 3.6.4,
 1. Sublime Text Build 3143,
-1. Python Google 1.9.3,
+1. pygoogling 0.0.2,
 1. Python DuckDuckGo for Python 3 0.242.
 
 KristinitaLuckyLink must be works in new versions macOS and Linux.
@@ -266,16 +297,13 @@ KristinitaLuckyLink must be works in new versions macOS and Linux.
 # TODO
 
 1. unit tests,
-1. fix or replace PyPI Google module,
 1. add plugin to Package Control.
 
 <a name="known-bugs-and-another-problems"></a>
 # Known bugs and another problems
 
-<a name="kristinitaluckylink"></a>
+<a name="kristinitaluckylink-1"></a>
 ## KristinitaLuckyLink
-
-1. PyPI google module have bugs. I am planning fix or replace it.
 
 <a name="external"></a>
 ## External
@@ -317,14 +345,16 @@ If link, that you get via KristinitaLuckyLink, and this link match; it [DuckDuck
 Replace `Кристина Кива` to your real selection text.
 
 ```pycon
->>> from google import search
->>> for glink in search('Кристина Кива', num=1, stop=1, pause=5.0):
+>>> from pygoogling.googling import GoogleSearch
+>>> google_search = GoogleSearch('Кристина Кива')
+>>> google_search.start_search(max_page=1)
+>>> glink = google_search.search_result[0]
 >>> glink
 ```
 
 Press <kbd>Enter</kbd>.
 
-If link, that you get via KristinitaLuckyLink, and this link match; it [PyPI Google](https://pypi.python.org/pypi/google) module problem.
+If link, that you get via KristinitaLuckyLink, and this link match; it [pygoogling](https://github.com/essanpupil/pygoogling) module problem.
 
 <a name="contributing"></a>
 # Contributing
@@ -343,7 +373,7 @@ Pull requests welcome! But, please, adhere to the following rules.
 <a name="terms-and-conditions"></a>
 # Terms and conditions
 
-By using this package, you agree that the author won't be responsible for any damage that comes to you and/or your property. You hereby agree to take all responsibilities for using this package. The author is merely a developer who created this package but you are the one who is using it.
+By using this package, you agree that the KristinitaLuckyLink, Sublime Text, Python DuckDuckGo and pygoogling authors won't be responsible for any damage that comes to you and/or your property. You hereby agree to take all responsibilities for using this package. The author is merely a developer who created this package but you are the one who is using it.
 
 <a name="license"></a>
 # License
