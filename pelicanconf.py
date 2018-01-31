@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-01-11 13:31:41
+# @Last Modified time: 2018-01-31 13:07:45
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -92,12 +92,17 @@ PLUGINS = [
     # 'pelican-linkclass',
     'pagefixer',
     'permalinks',
+    # 'photos',
     # Disable, because:
     # 1. Plugin create duplicates of files
     # 2. Incorrect paths — http://bit.ly/2pZdyk0
     # 'pelican_javascript',
     'section_number',
 ]
+
+# PHOTO_LIBRARY = "pictures"
+
+# PHOTO_THUMB = (192, 144, 60)
 
 # Deadlinks
 # https://github.com/silentlamb/pelican-deadlinks/
@@ -158,6 +163,7 @@ INTERLINKS = {
 
 """Python Markdown extensions.
 
+http://romeogolf.github.io/pelican-i-modul-python-markdown.html
 Extensions, which Sasha's fan use.
 
 #

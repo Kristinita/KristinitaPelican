@@ -1,6 +1,6 @@
 Title: KristinitaLuckyLink
 Date: 2018-01-09 19:27:50
-Modified: 2018-01-18 10:07:34
+Modified: 2018-01-18 12:36:30
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -176,6 +176,8 @@ Personally I use Markdown markup for my articles and Google and DuckDuckGo enoug
 ### Development version
 
 As [stable version](#stable-version). Only replace `https://github.com/Kristinita/KristinitaLuckyLink` to `https://github.com/Kristinita/KristinitaLuckyLink/tree/SashaDevelop` in instruction above.
+
+You will get all changes from `SashaDevelop` branch in each Sublime Text start.
 
 <a name="activation"></a>
 # Activation

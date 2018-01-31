@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2018-01-07 15:24:01 -->
+<!-- @Last Modified time: 2018-01-29 06:50:54 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -13,6 +13,8 @@
 {% block base_metacontent %}{{ article.metacontent }}{% endblock %}
 <!-- Open Graph image -->
 {% block base_opengraphimage %}{{ article.opengraphimage }}{% endblock %}
+
+
 
 <!--=============================
 =            Scripts            =
@@ -113,6 +115,9 @@
     {%- endif -%}
 {%- endblock %}
 
+{% block galleryblock -%}
+{% if article.photo_image %}<img src="{{ SITEURL }}/{{ article.photo_image[1] }}" />{% endif %}
+{%- endblock %}
 
 <!--=========================
 =            Feed           =

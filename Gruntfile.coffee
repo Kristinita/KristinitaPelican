@@ -74,6 +74,7 @@ module.exports = (grunt) ->
 					overwrite: true
 					replacements: [
 							## [NOTE] {Curly braces} are required for replaces
+							## [NOTE] Use (.|\n|\r) for any symbol, not (.|\n)
 							## [DEPRECATED] Cllipboard.js + Tooltipster for Rainbow
 							## http://ru.stackoverflow.com/a/582520/199934
 							## http://stackoverflow.com/a/33758293/5951529
@@ -87,8 +88,8 @@ module.exports = (grunt) ->
 							# <button> and <img> tags must be in one line;
 							# no line breaks between them!
 							{
-								from: /(<\/span>\s*?)(<\/pre><\/div>)/g
-								to: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="../images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button>$2'
+								from: /(<pre>(.|\n|\r)+?)(<\/pre><\/div>)/g
+								to: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="../images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button>$3'
 							}
 							## Fancybox and JQueryLazy images,
 							## With regex: https://github.com/yoniholmes/grunt-text-replace#usage
@@ -199,6 +200,7 @@ module.exports = (grunt) ->
 				files:
 					'output/theme/css/sections/sublime-text.css': 'output/theme/stylus/sections/sublime-text.styl'
 					'output/theme/css/sections/gingerinas.css': 'output/theme/stylus/sections/gingerinas.styl'
+					'output/theme/css/sections/it-articles.css': 'output/theme/stylus/sections/it-articles.styl'
 					'output/theme/css/sections/kristinita-temp.css': 'output/theme/stylus/sections/kristinita-temp.styl'
 
 		###############
@@ -256,15 +258,15 @@ module.exports = (grunt) ->
 	# publish — before publishing with absolute paths
 
 	grunt.registerTask 'test', [
-		# 'shell:generate'
+		'shell:generate'
 		# 'postcss'
 		# 'move'
 		# 'clean'
 		'replace'
 		# 'htmltidy'
 		# 'jsbeautifier'
-		# 'purifycss'
-		# 'stylus'
+		'purifycss'
+		'stylus'
 		# 'browserSync'
 	]
 
