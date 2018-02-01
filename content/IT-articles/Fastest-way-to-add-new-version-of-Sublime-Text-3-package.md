@@ -1,6 +1,6 @@
 Title: Fastest way to add new version of your Sublime Text package
 Date: 2018-01-29 12:04:22
-Modified: 2018-02-01 10:31:10
+Modified: 2018-02-01 13:35:20
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -334,7 +334,7 @@ release-it --no-npm.publish -n -V
 
 1. [You can't use](https://github.com/lob/generate-changelog/issues/37) [cz-emoji](https://github.com/ngryman/cz-emoji) for commit generation. Changelog will blank.
 1. release-it [can works incorrect](https://github.com/webpro/release-it/issues/218) in *--dry-run* mode.
-1. [You can have bugs](https://github.com/webpro/release-it/issues/213), if you want to use *${changelog}* release-it variable.
+1. [You can have bugs](https://github.com/webpro/release-it/issues/213), if you want to use *\${changelog}* release-it variable.
 
 <a name="testing-environment"></a>
 # Testing environment
