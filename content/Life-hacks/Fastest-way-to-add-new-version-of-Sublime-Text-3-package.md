@@ -1,11 +1,11 @@
-Title: The fastest way to make the release for your Sublime Text package
+Title: Fastest way to add new version of your Sublime Text package
 Date: 2018-01-29 12:04:22
-Modified: 2018-01-31 18:02:25
+Modified: 2018-02-01 10:05:15
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
 Summary: Tutorial, how you can make release and changelog, use only one command <br><br> ![Package Control messages](https://i.imgur.com/J5AuHmX.png) <br><br> ![*Changelog.md* and *messages.json*](https://i.imgur.com/12fFJsX.png) <br><br> ![*messages/&lt;version&gt;.txt* and *package.json*](https://i.imgur.com/kkKjiv5.png) <br><br> ![Releases page](https://i.imgur.com/FwPHBZS.png)
-Pagetitle: The fastest way to make the release for your Sublime Text package
+Pagetitle: Fastest way to add new version of your Sublime Text package
 Metacontent: Tutorial, how you can make release and changelog, use only one command
 Pagecolors: it-articles
 Iconleftorright: right
@@ -26,10 +26,11 @@ Customcss: false
 <!-- MarkdownTOC -->
 
 1. [Overview](#overview)
+1. [Audience](#audience)
+1. [Relevance](#relevance)
 1. [Motivation](#motivation)
 1. [Demonstration](#demonstration)
 1. [Features](#features)
-1. [Relevance](#relevance)
 1. [Limitations](#limitations)
 1. [Installation](#installation)
 1. [Activation](#activation)
@@ -55,7 +56,17 @@ Customcss: false
 
 Tutorial, how you can quick to create detailed release and changelog for your Sublime Text package.
 
+<a name="audience"></a>
+# Audience
+
+Inexperienced developers of Sublime Text 3 packages.
+
 This article may be useful for any non-Sublime Text developers, which makes releases and changelog.
+
+<a name="relevance"></a>
+# Relevance
+
+This article is relevant for February 2018. In the future, the data in this article may be obsolete.
 
 <a name="motivation"></a>
 # Motivation
@@ -67,7 +78,7 @@ When I create new release for my Sublime Text package, I need:
 1. [Update version in *messages.json*](https://packagecontrol.io/docs/messaging),
 1. Add changelog to *messages/&lt;version&gt;.txt* file,
 
-It may takes a lot of time.
+It may take a lot of time.
 
 In this article I wrote, how possible to make all these actions use only one command in command line.
 
@@ -104,15 +115,10 @@ Tutorial of this article must be support:
 1. cross-platform,
 1. [Semver](https://semver.org/) [major](https://semver.org/#spec-item-8), [minor](https://semver.org/#spec-item-7), [patch](https://semver.org/#spec-item-6) and custom tags.
 
-<a name="relevance"></a>
-# Relevance
-
-This article is relevant for January 2018. In the future, the data in this article may be obsolete.
-
 <a name="limitations"></a>
 # Limitations
 
-1. Your package must be hosted on GitHub. If your package on BitBucket, GitLab or another hosting, you can't make a release via [release-it](https://github.com/webpro/release-it).
+1. Your must host your package to GitHub. If your package on BitBucket, GitLab or another hosting, you can't make a release via [release-it](https://github.com/webpro/release-it).
 1. Your commits must be must be compatible with [Conventional Commits](https://conventionalcommits.org/). [List of supported scopes](https://conventionalcommits.org/). I recommend use [commitizen](https://www.npmjs.com/package/commitizen).
 
 <a name="installation"></a>
@@ -134,12 +140,11 @@ You need to create all files from this section in root folder of your package re
 
 You can see configuration files of real package in [SashaSublime repository](https://github.com/Kristinita/SashaSublime).
 
-<!-- FIXME: Faselessuser style -->
+!!! caution
+    I recommend in first do actions from [Activation](#activation) and [Usage](#usage) sections in the test repository, not real. Argumentation:
 
-WARNING: I recommend in first do actions from [Activation](#activation) and [Usage](#usage) sections in the test repository, not real. Argumentation:
-
-+ You or I can make a typo(s);
-+ Environment problems.
+    + You or I can make a typo(s);
+    + Environment problems.
 
 <a name="github-token"></a>
 ## GitHub token
@@ -205,23 +210,21 @@ Replace *SashaSublime* and *4.14.7* to your real values.
 
 + *https:\/\/github.com\/Kristinita\/SashaSublime* — URL of your package repository. Please, replace it to URL of your repository.
 
-<!-- FIXME: Note facelessuser style -->
+!!! note
+    If you want, you don't need to insert repository URL each time. You can use variable instead of URL in *buildCommand*, see how this is done for [Linux](https://bash.cyberciti.biz/guide/Command_substitution) and [Windows](https://stackoverflow.com/a/2340018/5951529). But [I don't find cross-platform syntax](https://unix.stackexchange.com/q/420742/237999), that solve this problem.
 
-If you want, you don't need to insert repository URL each time. You can use variable instead of URL in *buildCommand*, see how this is done for [Linux](https://bash.cyberciti.biz/guide/Command_substitution) and [Windows](https://stackoverflow.com/a/2340018/5951529). But [I don't find cross-platform syntax](https://unix.stackexchange.com/q/420742/237999), that solve this problem.
+!!! hint
+    Pay attention to slashes escaping. That convert terminal command to JSON I recommend to use [freeformatter.com service](https://www.freeformatter.com/json-escape.html#ad-output). For example:
 
-<!-- FIXME: Note facelessuser style -->
+    ```bash
+    sed -i '/\"install\"\: \"messages\/install\.txt\"/i\"4\.14\.7\"\: \"messages\/4\.14\.7\.txt\",' messages.json
+    ```
 
-Pay attention to slashes escaping. That convert terminal command to JSON I recommend to use [freeformatter.com service](https://www.freeformatter.com/json-escape.html#ad-output). For example:
+    will convert to:
 
-```bash
-sed -i '/\"install\"\: \"messages\/install\.txt\"/i\"4\.14\.7\"\: \"messages\/4\.14\.7\.txt\",' messages.json
-```
-
-will convert to:
-
-```json
-sed -i '\/\\\"install\\\": \\\"messages\\\/install\\.txt\\\"\/i\\\"${version}\\\": \\\"messages\\\/${version}\\.txt\\\",' messages.json
-```
+    ```json
+    sed -i '\/\\\"install\\\": \\\"messages\\\/install\\.txt\\\"\/i\\\"${version}\\\": \\\"messages\\\/${version}\\.txt\\\",' messages.json
+    ```
 
 <a name="messagesjson"></a>
 ## messages.json

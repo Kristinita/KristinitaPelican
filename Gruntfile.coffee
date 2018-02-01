@@ -232,7 +232,7 @@ module.exports = (grunt) ->
 		# https://github.com/BrowserSync/grunt-browser-sync
 		browserSync:
 			bsFiles:
-				src : ['output/theme/css/**/*.css', 'output/theme/js/**/*.js']
+				src : ['output/theme/css/**/*.css', 'output/theme/css/**/**/*.css', 'output/theme/js/**/*.js']
 			options:
 				server:
 					baseDir: "../"
