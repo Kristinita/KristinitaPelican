@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-01-31 13:07:45
+# @Last Modified time: 2018-02-01 11:58:37
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -323,7 +323,7 @@ PATH = 'content'
 # Don't set “PAGE_PATHS = ['']”! See
 # https://github.com/getpelican/pelican/issues/2123
 
-ARTICLE_PATHS = ['Gingerinas', 'Giologica', 'Life-hacks', 'Programs',
+ARTICLE_PATHS = ['Gingerinas', 'Giologica', 'IT-articles', 'Life-hacks', 'Programs',
                  'Smert-svobode', 'Sasha-Black', 'Sublime-Text']
 
 # Path for pages

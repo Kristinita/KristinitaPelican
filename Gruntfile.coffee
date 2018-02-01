@@ -18,6 +18,7 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-image'
 	grunt.loadNpmTasks 'grunt-contrib-stylus'
 	grunt.loadNpmTasks 'grunt-purifycss'
+	grunt.loadNpmTasks 'grunt-unused'
 	grunt.loadNpmTasks 'grunt-browser-sync'
 	grunt.initConfig
 
@@ -224,6 +225,28 @@ module.exports = (grunt) ->
 				src: ['output/Programs/*.html']
 				css: ['output/theme/css/sections/kristinita-temp.css']
 				dest: 'output/theme/css/sections/kristinita-temp.css'
+			itarticlestarget:
+				src: ['output/IT-articles/*.html']
+				css: ['output/theme/css/sections/it-articles.css']
+				dest: 'output/theme/css/sections/it-articles.css'
+
+		##############
+		##  Unused  ##
+		##############
+		# Remove unused images
+		# https://www.npmjs.com/package/grunt-unused
+		# [Deprecated] — doesn't work with multiple reference folders
+		# https://github.com/ryanburgess/grunt-unused/issues/10
+		# If fail: true, and unused files, exit code 1;
+		# If fail: false and unused files, Grunt continue to work.
+		unused:
+		    options:
+		      reference: 'output/images/'
+		      directory: ['output/**/*.html']
+		      days: false
+		      remove: true
+		      reportOutput: false
+		      fail: false
 
 		###################
 		##  Browsersync  ##
@@ -258,15 +281,16 @@ module.exports = (grunt) ->
 	# publish — before publishing with absolute paths
 
 	grunt.registerTask 'test', [
-		'shell:generate'
+		# 'shell:generate'
 		# 'postcss'
 		# 'move'
 		# 'clean'
-		'replace'
+		# 'replace'
 		# 'htmltidy'
 		# 'jsbeautifier'
-		'purifycss'
-		'stylus'
+		# 'purifycss'
+		# 'stylus'
+		'unused'
 		# 'browserSync'
 	]
 
@@ -292,5 +316,6 @@ module.exports = (grunt) ->
 		'purifycss'
 		'postcss'
 		'jsbeautifier'
+		'unused'
 	]
 	return

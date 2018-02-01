@@ -2,13 +2,17 @@
 # @Author: Kristinita
 # @Date:   2017-03-26 12:56:49
 # @Last Modified by:   Kristinita
-# @Last Modified time: 2017-05-10 09:55:22
+# @Last Modified time: 2018-02-01 10:35:19
 ## Markdownlint configuration
 ## 【rules】https://github.com/mivok/markdownlint/blob/master/docs/RULES.md
 ## 【style file】https://github.com/mivok/markdownlint/blob/master/docs/configuration.md
 ## 【style syntax】 https://github.com/mivok/markdownlint/blob/master/docs/creating_styles.md
 
 all
+
+# 4 spaces indented in nesting lists
+# http://bit.ly/2nrRZGS
+rule 'MD007', :indent => 4
 
 # Lint if more than 3 trailing spaces
 rule 'MD009', :br_spaces => 3
