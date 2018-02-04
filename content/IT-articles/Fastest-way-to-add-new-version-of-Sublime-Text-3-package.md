@@ -1,7 +1,7 @@
 Title: Fastest way to add new version of your Sublime Text package
 Date: 2018-01-29 12:04:22
-Modified: 2018-02-01 13:35:20
-Version: 0.1.0
+Modified: 2018-02-04 16:50:24
+Version: 0.2.0
 Author: Sasha Chernykh
 Lang: en
 Summary: Tutorial, how you can make release and changelog, use only one command <br><br> ![Package Control messages](https://i.imgur.com/J5AuHmX.png) <br><br> ![*Changelog.md* and *messages.json*](https://i.imgur.com/12fFJsX.png) <br><br> ![*messages/&lt;version&gt;.txt* and *package.json*](https://i.imgur.com/kkKjiv5.png) <br><br> ![Releases page](https://i.imgur.com/FwPHBZS.png)
@@ -129,7 +129,7 @@ You need to install:
 1. Node.js and npm, if no;
 1. git if no, even if you use another VCS;
 1. UNIX commands *tee*, *cat*, *mv* and *sed*, if no; for Windows users I recommend install [Cygwin](https://chocolatey.org/packages/Cygwin) and [add to your *Path* environment variable value — path to Cygwin commands folder](https://lifehacker.com/362316/use-unix-commands-in-windows-built-in-command-prompt);
-1. [release-it globally](https://www.npmjs.com/package/release-it#global);
+1. [release-it globally](https://www.npmjs.com/package/release-it#global) ≥ 6.2.0;
 1. [generate-changelog globally](https://www.npmjs.com/package/generate-changelog#installation);
 1. [npm js-beautify globally](https://www.npmjs.com/package/js-beautify).
 
@@ -186,7 +186,7 @@ Create blank file *Changelog.md*. If no, generate-changelog will works incorrect
 ```
 
 + *SashaSublime* — name of your package,
-+ *4.14.7* — previous version of your package.
++ *4.14.7* — previous version of your package. Use *0.0.0*, if you add first release for your package.
 
 Replace *SashaSublime* and *4.14.7* to your real values.
 
@@ -195,7 +195,7 @@ Replace *SashaSublime* and *4.14.7* to your real values.
 
 ```json
 {
-    "buildCommand": "changelog -f - -u https:\/\/github.com\/Kristinita\/SashaSublime | tee messages\/${version}.txt | cat - Changelog.md > temp && mv temp Changelog.md && sed -i '\/\\\"install\\\": \\\"messages\\\/install\\.txt\\\"\/i\\\"${version}\\\": \\\"messages\\\/${version}\\.txt\\\",' messages.json && js-beautify -r messages.json",
+    "buildCommand": "changelog -f - -u https:\/\/${repo.host}\/${repo.repository} | tee messages\/${version}.txt | cat - Changelog.md > temp && mv temp Changelog.md && sed -i '\/\\\"install\\\": \\\"messages\\\/install\\.txt\\\"\/i\\\"${version}\\\": \\\"messages\\\/${version}\\.txt\\\",' messages.json && js-beautify -r messages.json",
     "changelogCommand": "changelog -f -",
     "github": {
         "release": true,
@@ -207,11 +207,6 @@ Replace *SashaSublime* and *4.14.7* to your real values.
     }
 }
 ```
-
-+ *https:\/\/github.com\/Kristinita\/SashaSublime* — URL of your package repository. Please, replace it to URL of your repository.
-
-!!! note
-    If you want, you don't need to insert repository URL each time. You can use variable instead of URL in *buildCommand*, see how you can do it for [Linux](https://bash.cyberciti.biz/guide/Command_substitution) and [Windows](https://stackoverflow.com/a/2340018/5951529). But [I don't find cross-platform syntax](https://unix.stackexchange.com/q/420742/237999), that can solve this problem.
 
 !!! hint
     Pay attention to slashes escaping. To convert terminal command to JSON I recommend to use [freeformatter.com service](https://www.freeformatter.com/json-escape.html#ad-output). For example:
@@ -308,12 +303,12 @@ release-it --no-npm.publish -n -V
 ### buildCommand
 
 + *changelog -f -* — generate changelog. *-* — argument, that changelog [stdout to console](https://unix.stackexchange.com/a/419416/237999),
-+ `-u https:\/\/github.com\/<your name>\/<your repository>` — support URL's in changelog, that the user can quick go to the commit link.
++ `-u https:\/\/${repo.host}\/${repo.repository}` — support URL's in changelog, that the user can quick go to the commit link. `${repo.host}` — github.com. `${repo.repository}` — `<your username>/<your repository>`, `Kristinita/SashaSublime` for my example.
 
     Example:
 
-    + if `-u https:\/\/github.com\/<your name>\/<your repository>`, changelog generate `#!md ([40783aee](https://github.com/Kristinita/SashaSublime/commit/40783aee5a678d62f4e703248c277c725246f1ea))`,
-    + if no `-u https:\/\/github.com\/<your name>\/<your repository>`, changelog generate `(40783aee)`.
+    + if `-u https:\/\/${repo.host}\/${repo.repository}`, changelog generate `#!md ([40783aee](https://github.com/Kristinita/SashaSublime/commit/40783aee5a678d62f4e703248c277c725246f1ea))`,
+    + if no `-u https:\/\/${repo.host}\/${repo.repository}`, changelog generate `(40783aee)`.
 
 + `#!json tee messages\/${version}.txt` — output changelog to *messages/&lt;your new release&gt;.txt* file. File *&lt;your new release&gt;.txt* will create automatically. See [description of *tee* command](https://www.computerhope.com/unix/utee.htm).
 + `#!bash cat - Changelog.md > temp && mv temp Changelog.md` — [append changelog at beginning](https://superuser.com/a/246841/572069) of *Changelog.md* file. *Changelog.md* do not overwrite.
@@ -323,10 +318,10 @@ release-it --no-npm.publish -n -V
 <a name="another-lines"></a>
 ### Another lines
 
-+ *changelogCommand* — command, that generate changelog to `https://github.com/<your name>/<your repository>/releases`. Command must stdout to console.
-+ `#!json "release": true,` — [post changelog](https://www.npmjs.com/package/release-it#%EF%B8%8F-configuration) to `https://github.com/<your name>/<your repository>/releases`.
++ *changelogCommand* — command, that generate changelog to `https://github.com/<your username>/<your repository>/releases`. Command must stdout to console.
++ `#!json "release": true,` — [post changelog](https://www.npmjs.com/package/release-it#%EF%B8%8F-configuration) to `https://github.com/<your username>/<your repository>/releases`.
 + *GITHUB_TOKEN* — your [*GITHUB_TOKEN* environment variable](#github-token),
-+ `#!json "safeBump": false,` — that correct version in `https://github.com/<your name>/<your repository>/releases`; see [issue](https://github.com/webpro/release-it/issues/218) for details.
++ `#!json "safeBump": false,` — that correct version in `https://github.com/<your username>/<your repository>/releases`; see [issue](https://github.com/webpro/release-it/issues/218) for details.
 + `#!json "tagName": "st3-%s"` — [correct tag name](https://github.com/wbond/package_control/issues/1217#issuecomment-280041797) for Package Control. Tags for Sublime Text 3 must be in *st3-&lt;your version&gt;* format, for example — *st3-4.14.7*.
 
 <a name="problems-and-non-fixed-bugs"></a>
@@ -342,7 +337,7 @@ release-it --no-npm.publish -n -V
 + Windows 10 Enterprise LTSB 64-bit EN,
 + Node.js 9.4.0,
 + git 2.16.0.windows.2,
-+ release-it 6.1.1,
++ release-it 6.2.0,
 + changelog 1.7.0,
 + tee (GNU coreutils) 8.26, packaged by Cygwin (8.26-1),
 + cat (GNU coreutils) 8.26, packaged by Cygwin (8.26-1),
