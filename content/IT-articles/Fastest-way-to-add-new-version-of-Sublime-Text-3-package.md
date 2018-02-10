@@ -1,16 +1,16 @@
 Title: Fastest way to add new version of your Sublime Text package
 Date: 2018-01-29 12:04:22
-Modified: 2018-02-04 16:50:24
+Modified: 2018-02-09 20:42:08
 Version: 0.2.0
 Author: Sasha Chernykh
 Lang: en
-Summary: Tutorial, how you can make release and changelog, use only one command <br><br> ![Package Control messages](https://i.imgur.com/J5AuHmX.png) <br><br> ![*Changelog.md* and *messages.json*](https://i.imgur.com/12fFJsX.png) <br><br> ![*messages/&lt;version&gt;.txt* and *package.json*](https://i.imgur.com/kkKjiv5.png) <br><br> ![Releases page](https://i.imgur.com/FwPHBZS.png)
+Summary: Tutorial, how you can make release and changelog, use only one command <br><br> ![Package Control messages](https://i.imgur.com/J5AuHmX.png) <br><br> ![*CHANGELOG.md* and *messages.json*](https://i.imgur.com/12fFJsX.png) <br><br> ![*messages/&lt;version&gt;.txt* and *package.json*](https://i.imgur.com/kkKjiv5.png) <br><br> ![Releases page](https://i.imgur.com/FwPHBZS.png)
 Pagetitle: Fastest way to add new version of your Sublime Text package
 Metacontent: Tutorial, how you can make release and changelog, use one command
 Pagecolors: it-articles
-Iconleftorright: right
+Iconleftorright: left
 Tags: it-articles, sublime-text, release
-Category: Programs
+Category: IT-articles
 Noco: 1vWK5
 Jquery: true
 Gemini: true
@@ -36,7 +36,7 @@ Customcss: false
 1. [Activation](#activation)
     1. [GitHub token](#github-token)
     1. [Upstream branch](#upstream-branch)
-    1. [Changelog.md](#changelogmd)
+    1. [CHANGELOG.md](#changelogmd)
     1. [package.json](#packagejson)
     1. [.release-it.json](#release-itjson)
     1. [messages.json](#messagesjson)
@@ -74,7 +74,7 @@ This article is relevant for February 2018. In the future, the data in this arti
 When I create new release for my Sublime Text package, I need:
 
 1. Add changelog to [GitHub release page](https://github.com/Kristinita/SashaSublime/releases),
-1. Update *Changelog.md*,
+1. Update *CHANGELOG.md*,
 1. [Update version in *messages.json*](https://packagecontrol.io/docs/messaging),
 1. Add changelog to *messages/&lt;version&gt;.txt* file,
 
@@ -91,11 +91,11 @@ I [push commit](https://github.com/Kristinita/SashaSublime/commit/40783aee5a678d
 release-it --no-npm.publish -n -V
 ```
 
-Result: [1](https://github.com/Kristinita/SashaSublime/commit/b6bbf815fc4e59eff72c99e454898ec92d021990), [2](https://github.com/Kristinita/SashaSublime/releases):
+Result: [1](https://github.com/Kristinita/SashaSublime/commit/b6bbf815fc4e59eff72c99e454898ec92d021990), [2](https://github.com/Kristinita/SashaSublime/releases).
 
-*Changelog.md* and *messages.json*:
+*CHANGELOG.md* and *messages.json*:
 
-![*Changelog.md* and *messages.json*](https://i.imgur.com/12fFJsX.png)
+![*CHANGELOG.md* and *messages.json*](https://i.imgur.com/12fFJsX.png)
 
 *messages/&lt;version&gt;.txt* and *package.json*:
 
@@ -168,9 +168,9 @@ git branch --set-upstream
 + *yourbranch* — name of branch, which you want to do upstream. Please, change *yourbranch* to real branch name.
 
 <a name="changelogmd"></a>
-## Changelog.md
+## CHANGELOG.md
 
-Create blank file *Changelog.md*. If no, generate-changelog will works incorrect.
+Create blank file *CHANGELOG.md*. If no, generate-changelog will works incorrect.
 
 <a name="packagejson"></a>
 ## package.json
@@ -195,7 +195,7 @@ Replace *SashaSublime* and *4.14.7* to your real values.
 
 ```json
 {
-    "buildCommand": "changelog -f - -u https:\/\/${repo.host}\/${repo.repository} | tee messages\/${version}.txt | cat - Changelog.md > temp && mv temp Changelog.md && sed -i '\/\\\"install\\\": \\\"messages\\\/install\\.txt\\\"\/i\\\"${version}\\\": \\\"messages\\\/${version}\\.txt\\\",' messages.json && js-beautify -r messages.json",
+    "buildCommand": "changelog -f - -u https:\/\/${repo.host}\/${repo.repository} | tee messages\/${version}.txt | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md && sed -i '\/\\\"install\\\": \\\"messages\\\/install\\.txt\\\"\/i\\\"${version}\\\": \\\"messages\\\/${version}\\.txt\\\",' messages.json && js-beautify -r messages.json",
     "changelogCommand": "changelog -f -",
     "github": {
         "release": true,
@@ -311,7 +311,7 @@ release-it --no-npm.publish -n -V
     + if no `-u https:\/\/${repo.host}\/${repo.repository}`, changelog generate `(40783aee)`.
 
 + `#!json tee messages\/${version}.txt` — output changelog to *messages/&lt;your new release&gt;.txt* file. File *&lt;your new release&gt;.txt* will create automatically. See [description of *tee* command](https://www.computerhope.com/unix/utee.htm).
-+ `#!bash cat - Changelog.md > temp && mv temp Changelog.md` — [append changelog at beginning](https://superuser.com/a/246841/572069) of *Changelog.md* file. *Changelog.md* do not overwrite.
++ `#!bash cat - CHANGELOG.md > temp && mv temp CHANGELOG.md` — [append changelog at beginning](https://superuser.com/a/246841/572069) of *CHANGELOG.md* file. *CHANGELOG.md* do not overwrite.
 + `#!json sed -i '\/\\\"install\\\": \\\"messages\\\/install\\.txt\\\"\/i\\\"${version}\\\": \\\"messages\\\/${version}\\.txt\\\",' messages.json` — [add](https://stackoverflow.com/a/11695098/5951529) `#!json "<your version>": "messages/<your version>.txt",` line before `#!json "install": "messages/install.txt"` line.
 + `js-beautify -r messages.json` — [beautify *messages.json* file in-place](https://www.npmjs.com/package/js-beautify#options)
 

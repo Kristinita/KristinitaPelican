@@ -203,6 +203,7 @@ module.exports = (grunt) ->
 					'output/theme/css/sections/gingerinas.css': 'output/theme/stylus/sections/gingerinas.styl'
 					'output/theme/css/sections/it-articles.css': 'output/theme/stylus/sections/it-articles.styl'
 					'output/theme/css/sections/kristinita-temp.css': 'output/theme/stylus/sections/kristinita-temp.styl'
+					'output/theme/css/script-colors/Admonition/admonition.css': 'output/theme/stylus/script-colors/Admonition/admonition.styl'
 
 		###############
 		## PurifyCSS ##
@@ -281,7 +282,7 @@ module.exports = (grunt) ->
 	# publish — before publishing with absolute paths
 
 	grunt.registerTask 'test', [
-		# 'shell:generate'
+		'shell:generate'
 		# 'postcss'
 		# 'move'
 		# 'clean'
@@ -290,7 +291,7 @@ module.exports = (grunt) ->
 		# 'jsbeautifier'
 		# 'purifycss'
 		# 'stylus'
-		'unused'
+		# 'unused'
 		# 'browserSync'
 	]
 
@@ -303,7 +304,7 @@ module.exports = (grunt) ->
 		'move'
 		# 'clean'
 		'replace'
-		# 'stylus'
+		'stylus'
 		'purifycss'
 	]
 
