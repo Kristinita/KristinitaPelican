@@ -1,6 +1,6 @@
 Title: How to publish your package to PyPI, 2018
 Date: 2017-07-26 11:10:27
-Modified: 2018-02-10 21:34:00
+Modified: 2018-02-10 22:22:51
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -35,7 +35,7 @@ Customcss: false
 1. [Installation](#installation)
 1. [Configuration](#configuration)
     1. [Files](#files)
-    1. [\_\_init\_\_.py](#\\init\\py)
+    1. [__init__.py](#initpy)
     1. [License](#license)
     1. [README](#readme)
         1. [README.md](#readmemd)
@@ -207,8 +207,8 @@ In [Software Engineering site recommends](https://softwareengineering.stackexcha
 
     I don't find standard. Personally I use lowercase for file extensions, but you can use uppercase.
 
-<a name="\\init\\py"></a>
-## \_\_init\_\_.py
+<a name="initpy"></a>
+## __init__.py
 
 See [answer](https://stackoverflow.com/a/4116384/5951529), why *\_\_init\_\_.py* need. This file may be blank or contains content.
 
@@ -822,6 +822,3 @@ See [usage instructions](Fastest-way-to-add-new-version-of-Sublime-Text-3-packag
 + release-it 7.0.0,
 + changelog 1.7.0,
 + sed (GNU sed) 4.2.2.
-
-
-
