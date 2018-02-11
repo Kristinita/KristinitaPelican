@@ -1,6 +1,6 @@
 Title: How to publish your package to PyPI, 2018
 Date: 2017-07-26 11:10:27
-Modified: 2018-02-10 22:22:51
+Modified: 2018-02-11 11:44:24
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -711,7 +711,8 @@ That update your package in PyPI:
     I recommend in first do actions from this section for test project, not real. Argumentation:
 
     + You or I can make a typo(s);
-    + Environment problems.
+    + Differences in my and your environment;
+    + Different versions of tools from this article can do another behavior, [example](https://github.com/webpro/release-it/issues/233)
 
 <a name="demonstration-1"></a>
 ## Demonstration

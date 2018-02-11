@@ -1,7 +1,7 @@
 Title: Fastest way to add new version of your Sublime Text package
 Date: 2018-01-29 12:04:22
-Modified: 2018-02-09 20:42:08
-Version: 0.2.0
+Modified: 2018-02-11 12:25:33
+Version: 0.2.1
 Author: Sasha Chernykh
 Lang: en
 Summary: Tutorial, how you can make release and changelog, use only one command <br><br> ![Package Control messages](https://i.imgur.com/J5AuHmX.png) <br><br> ![*CHANGELOG.md* and *messages.json*](https://i.imgur.com/12fFJsX.png) <br><br> ![*messages/&lt;version&gt;.txt* and *package.json*](https://i.imgur.com/kkKjiv5.png) <br><br> ![Releases page](https://i.imgur.com/FwPHBZS.png)
@@ -85,10 +85,10 @@ In this article I wrote, how possible to make all these actions use only one com
 <a name="demonstration"></a>
 # Demonstration
 
-I [push commit](https://github.com/Kristinita/SashaSublime/commit/40783aee5a678d62f4e703248c277c725246f1ea) to my GitHub repository → I input in command line:
+I [push commit](https://github.com/Kristinita/SashaSublime/commit/40783aee5a678d62f4e703248c277c725246f1ea) to my GitHub repository → I enter in command line:
 
 ```bash
-release-it --no-npm.publish -n -V
+release-it -n -V
 ```
 
 Result: [1](https://github.com/Kristinita/SashaSublime/commit/b6bbf815fc4e59eff72c99e454898ec92d021990), [2](https://github.com/Kristinita/SashaSublime/releases).
@@ -144,7 +144,8 @@ You can see configuration files of real package in [SashaSublime repository](htt
     I recommend in first do actions from [Activation](#activation) and [Usage](#usage) sections in the test repository, not real. Argumentation:
 
     + You or I can make a typo(s);
-    + Environment problems.
+    + Differences in my and your environments;
+    + Different versions of tools from this article can do another behavior, [example](https://github.com/webpro/release-it/issues/233)
 
 <a name="github-token"></a>
 ## GitHub token
@@ -200,6 +201,9 @@ Replace *SashaSublime* and *4.14.7* to your real values.
     "github": {
         "release": true,
         "tokenRef": "GITHUB_TOKEN"
+    },
+    "npm": {
+        "publish": false
     },
     "safeBump": false,
     "src": {
@@ -271,10 +275,10 @@ To https://github.com/Kristinita/SashaSublime.git
 
 Now run [one of command](https://www.npmjs.com/package/release-it#%EF%B8%8F-usage):
 
-+ *release-it --no-npm.publish -n -V* or *release-it patch --no-npm.publish -n -V* — for release patch version;
-+ *release-it --minor --no-npm.publish -n -V* — for release minor version;
-+ *release-it --major --no-npm.publish -n -V* — for release major version;
-+ *release-it 4.14.7 --no-npm.publish -n -V* — for release custom version; *4.14.7* in example.
++ *release-it -n -V* or *release-it patch -n -V* — for release patch version;
++ *release-it --minor -n -V* — for release minor version;
++ *release-it --major -n -V* — for release major version;
++ *release-it 4.14.7 -n -V* — for release custom version; *4.14.7* in example.
 
 Also you can [create pre-releases](https://www.npmjs.com/package/release-it).
 
@@ -289,12 +293,11 @@ If you want to know, how files and commands works, please, read this section.
 ## release-it command
 
 ```bash
-release-it --no-npm.publish -n -V
+release-it -n -V
 ```
 
-+ *--no-npm.publish* — [don't publish release to npm](https://www.npmjs.com/package/release-it#%EF%B8%8F-configuration). We are writing Sublime Text package, not npm modules, and needs in this command-line argument.
 + *-n* — [non-interactive mode](https://www.npmjs.com/package/release-it#-interactive-vs-non-interactive-mode). That you don't need input values each time manually.
-+ *-V* — verbose. You can disable this argument, if you don't want to see full output. But this argument can help in debugging process.
++ *-V* — verbose. You can disable this command-line argument, but if you will get a bug, this argument may help you.
 
 <a name="release-itjson-1"></a>
 ## .release-it.json
@@ -321,6 +324,7 @@ release-it --no-npm.publish -n -V
 + *changelogCommand* — command, that generate changelog to `https://github.com/<your username>/<your repository>/releases`. Command must stdout to console.
 + `#!json "release": true,` — [post changelog](https://www.npmjs.com/package/release-it#%EF%B8%8F-configuration) to `https://github.com/<your username>/<your repository>/releases`.
 + *GITHUB_TOKEN* — your [*GITHUB_TOKEN* environment variable](#github-token),
++ `#!json "npm": {"publish": false},` — don't publish release to [npm](https://www.npmjs.com/). We are writing Sublime Text package, not npm modules, so needs this parameter.
 + `#!json "safeBump": false,` — that correct version in `https://github.com/<your username>/<your repository>/releases`; see [issue](https://github.com/webpro/release-it/issues/218) for details.
 + `#!json "tagName": "st3-%s"` — [correct tag name](https://github.com/wbond/package_control/issues/1217#issuecomment-280041797) for Package Control. Tags for Sublime Text 3 must be in *st3-&lt;your version&gt;* format, for example — *st3-4.14.7*.
 
