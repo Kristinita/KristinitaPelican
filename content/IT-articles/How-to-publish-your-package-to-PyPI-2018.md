@@ -1,6 +1,6 @@
 Title: How to publish your package to PyPI, 2018
 Date: 2017-07-26 11:10:27
-Modified: 2018-02-11 11:44:24
+Modified: 2018-02-11 17:07:58
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -35,7 +35,7 @@ Customcss: false
 1. [Installation](#installation)
 1. [Configuration](#configuration)
     1. [Files](#files)
-    1. [__init__.py](#initpy)
+    1. [&#95;&#95;init&#95;&#95;.py](#9595init9595py)
     1. [License](#license)
     1. [README](#readme)
         1. [README.md](#readmemd)
@@ -207,8 +207,9 @@ In [Software Engineering site recommends](https://softwareengineering.stackexcha
 
     I don't find standard. Personally I use lowercase for file extensions, but you can use uppercase.
 
-<a name="initpy"></a>
-## __init__.py
+<!-- Using HTML Entities -->
+<a name="9595init9595py"></a>
+## &#95;&#95;init&#95;&#95;.py
 
 See [answer](https://stackoverflow.com/a/4116384/5951529), why *\_\_init\_\_.py* need. This file may be blank or contains content.
 
@@ -228,6 +229,9 @@ If your editor is [Sublime Text 3](https://www.sublimetext.com/3), you can use [
 If you preferred write README in Markdown, you can have problems.
 
 At February 2018 [PyPI doesn't support Readme.md](https://github.com/pypa/warehouse/issues/869) without dependencies. Possibly, [it seems like there is no easy way to use a markdown README for PyPI. Solutions involve requiring pandoc locally, which is a heavy dependency](https://github.com/dhimmel/hetio/issues/7#issuecomment-283797432).
+
+!!! hint
+    You can [convert Markdown to reStructuredText](https://bfroehle.com/2013/04/26/converting-md-to-rst/) use [Pandoc](http://pandoc.org).
 
 <a name="readmerst"></a>
 ### README.rst

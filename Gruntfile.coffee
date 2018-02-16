@@ -2,6 +2,20 @@
 # @Date:   2017-04-05 20:11:18
 # @Last Modified time: 2017-04-11 08:20:09
 
+# [BUG] In ConEmu background color = Grunt output color
+# https://github.com/gruntjs/grunt/issues/1589
+# Temporarily solution — using --no-color argument
+# https://stackoverflow.com/a/23550493/5951529
+
+##########################
+## grunt-gulp variables ##
+##########################
+# https://www.npmjs.com/package/grunt-gulp#examples
+# CoffeeScript to JavaScript online — http://js2.coffee/
+
+gulp = require('gulp')
+htmltidy = require('gulp-htmltidy')
+
 ###########################
 ## Loading Grunt plugins ##
 ###########################
@@ -13,6 +27,8 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-text-replace'
 	grunt.loadNpmTasks 'grunt-postcss'
 	grunt.loadNpmTasks 'grunt-htmltidy'
+	grunt.loadNpmTasks 'grunt-html5-validate'
+	grunt.loadNpmTasks 'grunt-gulp'
 	grunt.loadNpmTasks 'grunt-jsbeautifier'
 	grunt.loadNpmTasks 'grunt-contrib-imagemin'
 	grunt.loadNpmTasks 'grunt-image'
@@ -20,22 +36,32 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-purifycss'
 	grunt.loadNpmTasks 'grunt-unused'
 	grunt.loadNpmTasks 'grunt-browser-sync'
+
+	################
+	## grunt-time ##
+	################
+	# Show time for Grunt tasks:
+	# https://github.com/sindresorhus/time-grunt
+	require('time-grunt')(grunt)
+
 	grunt.initConfig
 
-		###################
-		## Pelican build ##
-		###################
-		## Grunt plugin to run non-Grunt CLI commands
-		## http://manos.im/blog/static-site-pelican-grunt-travis-github-pages/
-		## https://github.com/sindresorhus/grunt-shell
+		#################
+		## grunt-shell ##
+		#################
+		# Grunt plugin to run non-Grunt CLI commands.
+		# Build Pelican site:
+		# http://manos.im/blog/static-site-pelican-grunt-travis-github-pages/
+		# https://github.com/sindresorhus/grunt-shell
 		shell:
 			generate: command: 'pelican content -s pelicanconf.py'
 			deploy: command: 'pelican content -s publishconf.py'
 
-		##################################
-		## Move files to another folder ##
-		##################################
-		## https://www.npmjs.com/package/grunt-move
+		################
+		## grunt-move ##
+		################
+		# Move files to another folder
+		# https://www.npmjs.com/package/grunt-move
 		move:
 			options:
 				ignoreMissing: true
@@ -53,11 +79,12 @@ module.exports = (grunt) ->
 				src: 'output/extra/*'
 				dest: 'output/'
 
-		####################################
-		## Delete blank folders and files ##
-		##########################
-		## https://github.com/gruntjs/grunt-contrib-clean
-		## Remove parent css file for design sections
+		#########################
+		## grunt-contrib-clean ##
+		#########################
+		# Delete blank folders and files
+		# https://github.com/gruntjs/grunt-contrib-clean
+		# Remove parent css file for design sections
 		clean: [
 			'output/extra'
 			'output/favicons'
@@ -65,10 +92,11 @@ module.exports = (grunt) ->
 			'output/theme/css/sections/core-design.css'
 		]
 
-		##################
-		## Replace text ##
-		##################
-		## https://github.com/yoniholmes/grunt-text-replace
+		########################
+		## grunt-text-replace ##
+		########################
+		# Replace text, using regex
+		# https://github.com/yoniholmes/grunt-text-replace
 		replace:
 				replacehtml:
 					src: [ 'output/**/*.html' ]
@@ -111,9 +139,9 @@ module.exports = (grunt) ->
 							}
 							]
 
-		##########################
-		## PostCSS Autoprefixer ##
-		##########################
+		################################
+		## grunt-postcss Autoprefixer ##
+		################################
 		# https://github.com/nDmitry/grunt-postcss
 		postcss:
 			options:
@@ -124,9 +152,9 @@ module.exports = (grunt) ->
 			dist:
 				src: [ 'themes/sashapelican/static/css/**/*.css', 'output/personal/**/*.css' ]
 
-		#########################
-		##      HTML-Tidy      ##
-		#########################
+		####################
+		## grunt-htmltidy ##
+		####################
 		# Fix HTML markup errors
 		# https://github.com/gavinballard/grunt-htmltidy
 		# [BUG] I don't use, because bug:
@@ -160,40 +188,80 @@ module.exports = (grunt) ->
 					dest: 'output/Programs'
 				]
 
+		##########################
+		## grunt-html5-validate ##
+		##########################
+		# Validate HTML — https://github.com/rgladwell/grunt-html5-validate
+		# [BUG] Plugin doesn't work:
+		# https://github.com/rgladwell/grunt-html5-validate/issues/1
+		# html5validate:
+		    # src: 'output/IT-articles/*.html'
 
 		###################
-		## js-beautifier ##
+		## gulp-htmltidy ##
 		###################
+		# Validate HTML
+		# https://www.npmjs.com/package/gulp-htmltidy
+		# For in-place dest needs «base: "."», see:
+		# https://stackoverflow.com/a/44337370/5951529
+		# [BUG] Doesn't work for multiple commands, see:
+		# https://github.com/shama/grunt-gulp/issues/13
+		gulp:
+			gulptidy:
+				gulp.src('output/**/*.html', base: ".")
+				.pipe(htmltidy(
+					doctype: 'html5'
+					indent: true
+					wrap: 0)).pipe gulp.dest('./')
+
+		########################
+		## grunt-jsbeautifier ##
+		########################
 		## https://github.com/vkadam/grunt-jsbeautifier
 		jsbeautifier:
 			files: [ 'output/**/*.html', 'output/**/*.css' ]
 
+		#################
+		## grunt-image ##
+		#################
+		# Compress images:
+		# https://github.com/1000ch/grunt-image
+		# [BUG] Doesn't work with multiple images:
+		# https://github.com/1000ch/grunt-image/issues/29
 		image:
 			static:
 				options:
-					pngquant: true,
-					optipng: true,
-					zopflipng: true,
-					jpegRecompress: true,
-					jpegoptim: true,
-					mozjpeg: true,
-					gifsicle: true,
+					pngquant: true
+					optipng: true
+					zopflipng: true
+					jpegRecompress: true
+					jpegoptim: true
+					mozjpeg: true
+					gifsicle: true
 					svgo: true
 				files:
 					src: ['output/**/*.jpg']
 
-		# # Imagemin
-		# ##
-		# imagemin:
-		# 	static:  {
-		 #	dist: {
-		 #	  src: ['output/**/*.{png,jpg,jpeg,gif,svg}'],
-		 #	}
-		 #  }
+		###########################
+		## grunt-contrb-imagemin ##
+		###########################
+		# Plugin for minify images:
+		# https://github.com/gruntjs/grunt-contrib-imagemin
+		# Minify all images in
+		imagemin:
+			dynamic:
+				options:
+					optimizationLevel: 7
+				files: [
+					expand: true
+					cwd: '.'
+					src: ['output/images/**/*.{png,jpg,jpeg,gif,svg}']
+					dest: '.'
+					]
 
-		##############
-		##  Stylus  ##
-		##############
+		##########################
+		## grunt-contrib-stylus ##
+		##########################
 		# Automatic compile Stylus to CSS
 		# https://github.com/gruntjs/grunt-contrib-stylus
 		stylus:
@@ -205,9 +273,9 @@ module.exports = (grunt) ->
 					'output/theme/css/sections/kristinita-temp.css': 'output/theme/stylus/sections/kristinita-temp.styl'
 					'output/theme/css/script-colors/Admonition/admonition.css': 'output/theme/stylus/script-colors/Admonition/admonition.styl'
 
-		###############
-		## PurifyCSS ##
-		###############
+		#####################
+		## grunt-purifycss ##
+		#####################
 		# Remove unused CSS for kristinita.ru design
 		# https://github.com/purifycss/purifycss
 		# https://github.com/purifycss/grunt-purifycss
@@ -231,27 +299,27 @@ module.exports = (grunt) ->
 				css: ['output/theme/css/sections/it-articles.css']
 				dest: 'output/theme/css/sections/it-articles.css'
 
-		##############
-		##  Unused  ##
-		##############
+		##################
+		## grunt-unused ##
+		##################
 		# Remove unused images
 		# https://www.npmjs.com/package/grunt-unused
-		# [Deprecated] — doesn't work with multiple reference folders
+		# [BUG] — doesn't work with multiple reference folders
 		# https://github.com/ryanburgess/grunt-unused/issues/10
 		# If fail: true, and unused files, exit code 1;
 		# If fail: false and unused files, Grunt continue to work.
 		unused:
-		    options:
-		      reference: 'output/images/'
-		      directory: ['output/**/*.html']
-		      days: false
-		      remove: true
-		      reportOutput: false
-		      fail: false
+			options:
+				reference: 'output/images/'
+				directory: ['output/**/*.html']
+				days: false
+				remove: true
+				reportOutput: false
+				fail: false
 
-		###################
-		##  Browsersync  ##
-		###################
+		########################
+		## grunt-browser-sync ##
+		########################
 		# Live Reloading
 		# https://github.com/BrowserSync/grunt-browser-sync
 		browserSync:
@@ -261,7 +329,9 @@ module.exports = (grunt) ->
 				server:
 					baseDir: "../"
 				plugins: [
-					## HTML-injector plugin
+					####################
+					##  html-injector ##
+					####################
 					## That HTML don't refresh, if I change HTML file:
 					## https://github.com/shakyshane/html-injector
 					## JavaScript needs refresh, see
@@ -282,7 +352,7 @@ module.exports = (grunt) ->
 	# publish — before publishing with absolute paths
 
 	grunt.registerTask 'test', [
-		'shell:generate'
+		# 'shell:generate'
 		# 'postcss'
 		# 'move'
 		# 'clean'
@@ -293,6 +363,9 @@ module.exports = (grunt) ->
 		# 'stylus'
 		# 'unused'
 		# 'browserSync'
+		# 'html5validate'
+		# 'gulp:gulptidy'
+		'imagemin'
 	]
 
 	grunt.registerTask 'bro', [
@@ -313,10 +386,11 @@ module.exports = (grunt) ->
 		'move'
 		'clean'
 		'replace'
+		'unused'
+		'imagemin'
 		'stylus'
 		'purifycss'
 		'postcss'
 		'jsbeautifier'
-		'unused'
 	]
 	return
