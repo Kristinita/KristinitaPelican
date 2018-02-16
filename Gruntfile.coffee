@@ -117,14 +117,14 @@ module.exports = (grunt) ->
 							# <button> and <img> tags must be in one line;
 							# no line breaks between them!
 							{
-								from: /(<pre>(.|\n|\r)+?)(<\/pre><\/div>)/g
-								to: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="../images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button>$3'
+								from: /(<pre>)((.|\n|\r)+?)(<\/pre><\/div>)/g
+								to: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button>$2$4'
 							}
 							## Fancybox and JQueryLazy images,
 							## With regex: https://github.com/yoniholmes/grunt-text-replace#usage
 							{
 								from: /<img alt="([A-Za-z0-9А-ЯЁёа-я ]+)" src="(.+?)"( \/)?>/g
-								to: '<a class="fancybox" href="$2"><img class="SashaLazy" src="../images/interface_images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
+								to: '<a class="fancybox" href="$2"><img class="SashaLazy" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface_images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
 							}
 							## GitCDN
 							## https://github.com/schme16/gitcdn.xyz
