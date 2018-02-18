@@ -36,6 +36,7 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-purifycss'
 	grunt.loadNpmTasks 'grunt-unused'
 	grunt.loadNpmTasks 'grunt-browser-sync'
+	grunt.loadNpmTasks 'grunt-ngrok'
 
 	################
 	## grunt-time ##
@@ -328,6 +329,7 @@ module.exports = (grunt) ->
 			options:
 				server:
 					baseDir: "../"
+				tunnel: true
 				plugins: [
 					####################
 					##  html-injector ##
@@ -340,6 +342,13 @@ module.exports = (grunt) ->
 					options:
 						files: "output/**/*.html"
 					]
+
+		ngrok:
+		    server:
+		      proto: 'tcp'
+		      port: 50010
+		      remotePort: 50010
+		      subdomain: 'sashagoddess'
 
 
 	##################
@@ -365,7 +374,8 @@ module.exports = (grunt) ->
 		# 'browserSync'
 		# 'html5validate'
 		# 'gulp:gulptidy'
-		'imagemin'
+		# 'imagemin'
+		'ngrok'
 	]
 
 	grunt.registerTask 'bro', [

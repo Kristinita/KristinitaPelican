@@ -33,6 +33,7 @@
     "grunt-lazyload": "^1.0.3",
     "grunt-link-checker": "^0.2.0",
     "grunt-move": "0.0.5",
+    "grunt-ngrok": "^0.2.2",
     "grunt-postcss": "^0.8.0",
     "grunt-prettify": "^0.4.0",
     "grunt-purifycss": "^0.1.2",
