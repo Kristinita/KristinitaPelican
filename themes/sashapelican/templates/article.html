@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2018-02-15 18:32:02 -->
+<!-- @Last Modified time: 2018-02-18 11:49:04 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -24,7 +24,7 @@
 <!-- CDN vs Locally, http://stackoverflow.com/a/3832498/5951529 -->
 {% block base_jquery -%}
     {%- if article.jquery == 'true' -%}
-		<script src="//cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
     {%- endif -%}
 {%- endblock %}
 
@@ -47,11 +47,15 @@
 {%- endblock %}
 
 <!-- Fancybox -->
+<!-- Obsolete version in JSDelivr -->
+<!-- https://www.jsdelivr.com/package/npm/fancybox -->
+<!-- [BUG] In CDNJS doesn't possible latest version -->
+<!-- https://stackoverflow.com/q/14801334/5951529 -->
 {% block base_fancybox -%}
     {%- if article.fancybox == 'true' -%}
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/fancybox/dist/jquery.fancybox.min.js" async></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Fancybox/fancybox.js" defer></script>
-		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/bower-components/fancybox/dist/jquery.fancybox.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css">
     {%- endif -%}
 {%- endblock %}
 
@@ -60,7 +64,7 @@
     {%- if article.tooltipster == 'true' -%}
 		<script src="//cdn.jsdelivr.net/jquery.tooltipster/latest/js/tooltipster.bundle.min.js" defer></script>
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.tooltipster/latest/css/tooltipster.bundle.min.css" />
-		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/node_modules/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" />
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/tooltipster@4.2.6/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" />
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Tooltipster/tooltip.js" defer></script>
     {%- endif -%}
 {%- endblock %}

@@ -123,7 +123,7 @@ module.exports = (grunt) ->
 							## Fancybox and JQueryLazy images,
 							## With regex: https://github.com/yoniholmes/grunt-text-replace#usage
 							{
-								from: /<img alt="([A-Za-z0-9А-ЯЁёа-я ]+)" src="(.+?)"( \/)?>/g
+								from: /<img alt="([^"]+?)" src="(.+?)"( \/)?>/g
 								to: '<a class="fancybox" href="$2"><img class="SashaLazy" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface_images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
 							}
 							## GitCDN
