@@ -115,10 +115,10 @@ module.exports = (grunt) ->
 				# <button> and <img> tags must be in one line;
 				# no line breaks between them!
 					from: /(<pre>)((.|\n|\r)+?)(<\/pre>(\s+?)<\/div>)/g
-					to: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button>$2$4'
+					to: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface-images/clippy.svg" alt="Clipboard button" width="13"></button>$2$4'
 				# Fancybox and JQueryLazy images,
 					from: /<img alt="([^"]+?)" src="(.+?)"( \/)?>/g
-					to: '<a class="fancybox" href="$2"><img class="SashaLazy" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface_images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
+					to: '<a class="fancybox" href="$2"><img class="SashaLazy" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface-images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
 				# GitCDN
 				# https://github.com/schme16/gitcdn.xyz
 					from: /http:\/\/kristinita.ru\/(.+?)\.(js|css|ico|xml)/g
@@ -215,12 +215,12 @@ module.exports = (grunt) ->
 					# no line breaks between them!
 					{
 					pattern: /(<pre>)(((.|\n|\r)+?)?)(<\/pre>((\s+?)?)<\/div>)/g
-					replacement: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button>$2$5'
+					replacement: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/theme/images/interface-images/clippy.svg" alt="Clipboard button" width="13"></button>$2$5'
 					}
 					# Fancybox and JQueryLazy images
 					{
 					pattern: /<img alt="([^"]+?)" src="(.+?)"( \/)?>/g
-					replacement: '<a class="fancybox" href="$2"><img class="SashaLazy" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface_images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
+					replacement: '<a class="fancybox" href="$2"><img class="SashaLazy" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/theme/images/interface-images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
 					}
 					# GitCDN
 					# https://github.com/schme16/gitcdn.xyz
@@ -441,11 +441,11 @@ module.exports = (grunt) ->
 		# 'jsbeautifier'
 		# 'purifycss'
 		# 'stylus'
-		# 'unused'
+		'unused'
 		# 'browserSync'
 		# 'html5validate'
 		# 'gulp:gulptidy'
-		'imagemin'
+		# 'imagemin'
 		# 'ngrok'
 		# 'concurrent:target1'
 		# 'concurrent:target2'
