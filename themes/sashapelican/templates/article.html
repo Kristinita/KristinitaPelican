@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2018-02-18 11:49:04 -->
+<!-- @Last Modified time: 2018-02-20 20:08:32 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -41,8 +41,8 @@
 <!-- JQuery Lazy -->
 {% block base_jquerylazy -%}
     {%- if article.jquerylazy == 'true' -%}
-    	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.min.js" defer></script>
-    	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.plugins.min.js" defer></script>
+    	<script src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.min.js" defer></script>
+    	<script src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.plugins.min.js" defer></script>
     {%- endif -%}
 {%- endblock %}
 

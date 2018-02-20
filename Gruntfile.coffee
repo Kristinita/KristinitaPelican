@@ -7,6 +7,9 @@
 # Temporarily solution — using --no-color argument
 # https://stackoverflow.com/a/23550493/5951529
 
+# Grunt apply for files dinamically
+# https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
+
 ##########################
 ## grunt-gulp variables ##
 ##########################
@@ -21,22 +24,15 @@ htmltidy = require('gulp-htmltidy')
 ###########################
 
 module.exports = (grunt) ->
-	grunt.loadNpmTasks 'grunt-shell'
-	grunt.loadNpmTasks 'grunt-move'
-	grunt.loadNpmTasks 'grunt-contrib-clean'
-	grunt.loadNpmTasks 'grunt-text-replace'
-	grunt.loadNpmTasks 'grunt-postcss'
-	grunt.loadNpmTasks 'grunt-htmltidy'
-	grunt.loadNpmTasks 'grunt-html5-validate'
-	grunt.loadNpmTasks 'grunt-gulp'
-	grunt.loadNpmTasks 'grunt-jsbeautifier'
-	grunt.loadNpmTasks 'grunt-contrib-imagemin'
-	grunt.loadNpmTasks 'grunt-image'
-	grunt.loadNpmTasks 'grunt-contrib-stylus'
-	grunt.loadNpmTasks 'grunt-purifycss'
-	grunt.loadNpmTasks 'grunt-unused'
-	grunt.loadNpmTasks 'grunt-browser-sync'
-	grunt.loadNpmTasks 'grunt-ngrok'
+
+	######################
+	## load-grunt-tasks ##
+	######################
+	# https://github.com/sindresorhus/load-grunt-tasks
+	# doesn't write “grunt.loadNpmTasks 'task'” each time
+	# [WARNING] Do not use grunt-lazyload! It conflicting plugin
+	# https://www.npmjs.com/package/grunt-lazyload
+	require('load-grunt-tasks')(grunt)
 
 	################
 	## grunt-time ##
@@ -96,49 +92,41 @@ module.exports = (grunt) ->
 		########################
 		## grunt-text-replace ##
 		########################
+		# [DEPRECATED] grunt-string-replace active maintained
+		# https://www.npmjs.com/package/grunt-string-replace
 		# Replace text, using regex
 		# https://github.com/yoniholmes/grunt-text-replace
 		replace:
-				replacehtml:
-					src: [ 'output/**/*.html' ]
-					overwrite: true
-					replacements: [
-							## [NOTE] {Curly braces} are required for replaces
-							## [NOTE] Use (.|\n|\r) for any symbol, not (.|\n)
-							## [DEPRECATED] Cllipboard.js + Tooltipster for Rainbow
-							## http://ru.stackoverflow.com/a/582520/199934
-							## http://stackoverflow.com/a/33758293/5951529
-							# {
-							#   from: /<pre><code class="(.+?)">((.|\n|\r)+?)<\/code><\/pre>/g
-							#   to: '<pre><code data-language="$1">$2</code><button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="../images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button></pre>'
-							# }
-							## Clipboard.js + Tooltipster for SuperFences
-							## http://ru.stackoverflow.com/a/582520/199934
-							## https://stackoverflow.com/a/33758435/5951529
-							# <button> and <img> tags must be in one line;
-							# no line breaks between them!
-							{
-								from: /(<pre>)((.|\n|\r)+?)(<\/pre><\/div>)/g
-								to: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button>$2$4'
-							}
-							## Fancybox and JQueryLazy images,
-							## With regex: https://github.com/yoniholmes/grunt-text-replace#usage
-							{
-								from: /<img alt="([^"]+?)" src="(.+?)"( \/)?>/g
-								to: '<a class="fancybox" href="$2"><img class="SashaLazy" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface_images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
-							}
-							## GitCDN
-							## https://github.com/schme16/gitcdn.xyz
-							{
-								from: /http:\/\/kristinita.ru\/(.+?)\.(js|css|ico)/g
-								to: '//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/$1.$2'
-							}
-							## Header permalink
-							{
-								from: /(<p>\s*?<a name="(.+?)"><\/a>\s*?<\/p>\s+?<h\d+?>.+?)(<\/h\d+?>)/g
-								to: '$1 <a class="headerlink" href="#$2" title="Permanent link">¶</a>$3'
-							}
-							]
+			replacehtml:
+				src: [ 'output/**/*.html' ]
+				overwrite: true
+				replacements: [
+				## [NOTE] Use (.|\n|\r) for any symbol, not (.|\n)
+				## [DEPRECATED] Cllipboard.js + Tooltipster for Rainbow
+				## http://ru.stackoverflow.com/a/582520/199934
+				## http://stackoverflow.com/a/33758293/5951529
+				# {
+				#   from: /<pre><code class="(.+?)">((.|\n|\r)+?)<\/code><\/pre>/g
+				#   to: '<pre><code data-language="$1">$2</code><button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="../images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button></pre>'
+				# }
+				# Clipboard.js + Tooltipster for SuperFences
+				# http://ru.stackoverflow.com/a/582520/199934
+				# https://stackoverflow.com/a/33758435/5951529
+				# <button> and <img> tags must be in one line;
+				# no line breaks between them!
+					from: /(<pre>)((.|\n|\r)+?)(<\/pre>(\s+?)<\/div>)/g
+					to: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button>$2$4'
+				# Fancybox and JQueryLazy images,
+					from: /<img alt="([^"]+?)" src="(.+?)"( \/)?>/g
+					to: '<a class="fancybox" href="$2"><img class="SashaLazy" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface_images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
+				# GitCDN
+				# https://github.com/schme16/gitcdn.xyz
+					from: /http:\/\/kristinita.ru\/(.+?)\.(js|css|ico|xml)/g
+					to: '//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/$1.$2'
+				# Header permalink
+					from: /(<p>\s*?<a name="(.+?)" id="(.+?)"><\/a>\s*?<\/p>\s+?<h\d+?>((.|\n|\r)+?))(<\/h\d+?>)/g
+					to: '$1 <a class="headerlink" href="#$2" title="Permanent link">¶</a>$6'
+				]
 
 		################################
 		## grunt-postcss Autoprefixer ##
@@ -152,6 +140,20 @@ module.exports = (grunt) ->
 				]
 			dist:
 				src: [ 'themes/sashapelican/static/css/**/*.css', 'output/personal/**/*.css' ]
+
+		posthtml:
+			options:
+				use: [
+					require('posthtml-doctype')(doctype: 'HTML 5')
+					require('posthtml-alt-always')()
+				]
+			build:
+				files: [
+					expand: true
+					cwd: 'output/Sublime-Text'
+					src: '**/*.html'
+					dest: 'output/Sublime-Text/tmp'
+				]
 
 		####################
 		## grunt-htmltidy ##
@@ -187,6 +189,50 @@ module.exports = (grunt) ->
 					cwd: 'output/Programs'
 					src: '**/*.html'
 					dest: 'output/Programs'
+				]
+
+		##########################
+		## grunt-string-replace ##
+		##########################
+		# Replace text, regex support
+		# https://www.npmjs.com/package/grunt-string-replace
+		'string-replace':
+			dist:
+				files: [
+					expand: true
+					cwd: 'output'
+					src: '**/*.html'
+					dest: 'output'
+				]
+			options:
+				# [NOTE] Use (.|\n|\r) for any symbol, not (.|\n)
+				# [NOTE] {Curly Braces} needs for delimite patterns
+				replacements: [
+					# Clipboard.js + Tooltipster for SuperFences
+					# http://ru.stackoverflow.com/a/582520/199934
+					# https://stackoverflow.com/a/33758435/5951529
+					# <button> and <img> tags must be in one line;
+					# no line breaks between them!
+					{
+					pattern: /(<pre>)(((.|\n|\r)+?)?)(<\/pre>((\s+?)?)<\/div>)/g
+					replacement: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button>$2$5'
+					}
+					# Fancybox and JQueryLazy images
+					{
+					pattern: /<img alt="([^"]+?)" src="(.+?)"( \/)?>/g
+					replacement: '<a class="fancybox" href="$2"><img class="SashaLazy" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface_images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
+					}
+					# GitCDN
+					# https://github.com/schme16/gitcdn.xyz
+					{
+					pattern: /http:\/\/kristinita.ru\/(.+?)\.(js|css|ico|xml)/g
+					replacement: '//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/$1.$2'
+					}
+					# Header permalink
+					{
+					pattern: /(<p>\s*?<a name="(.+?)"( id="(.+?)")?><\/a>\s*?<\/p>\s+?<h\d+?>((.|\n|\r)+?))(<\/h\d+?>)/g
+					replacement: '$1 <a class="headerlink" href="#$2" title="Permanent link">¶</a>$7'
+					}
 				]
 
 		##########################
@@ -248,7 +294,9 @@ module.exports = (grunt) ->
 		###########################
 		# Plugin for minify images:
 		# https://github.com/gruntjs/grunt-contrib-imagemin
-		# Minify all images in
+		# Minify all images in output folder
+		# [NOTE] Non-documented behavior!
+		# Imagemin prettify html and add new attributes instead of obsolete
 		imagemin:
 			dynamic:
 				options:
@@ -318,6 +366,24 @@ module.exports = (grunt) ->
 				reportOutput: false
 				fail: false
 
+		######################
+		## grunt-concurrent ##
+		######################
+		# Run multiple tasks
+		# https://www.npmjs.com/package/grunt-concurrent
+		concurrent:
+			# For publishing
+			target1: ['shell:deploy']
+			target2: ['move']
+			target3: ['clean', 'stylus', 'unused']
+			target4: ['purifycss', 'imagemin']
+			target5: ['postcss', 'string-replace']
+			target6: ['jsbeautifier']
+			# For development
+			target7: ['shell:generate']
+			target8: ['imagemin', 'stylus']
+			target9: ['string-replace', 'purifycss']
+
 		########################
 		## grunt-browser-sync ##
 		########################
@@ -329,11 +395,11 @@ module.exports = (grunt) ->
 			options:
 				server:
 					baseDir: "../"
-				tunnel: true
+				tunnel: false
 				plugins: [
-					####################
-					##  html-injector ##
-					####################
+					###################
+					## html-injector ##
+					###################
 					## That HTML don't refresh, if I change HTML file:
 					## https://github.com/shakyshane/html-injector
 					## JavaScript needs refresh, see
@@ -343,13 +409,18 @@ module.exports = (grunt) ->
 						files: "output/**/*.html"
 					]
 
+		#################
+		## grunt-ngrok ##
+		#################
+		# ngrok implementation for Grunt
+		# https://www.npmjs.com/package/grunt-ngrok
+		# [BUG] Doesn't work:
+		# https://github.com/bazilio91/grunt-ngrok/issues/7
 		ngrok:
-		    server:
-		      proto: 'tcp'
-		      port: 50010
-		      remotePort: 50010
-		      subdomain: 'sashagoddess'
-
+			options:
+				authToken: '6FAzTiHpA7FhKkLKjUoQi_4TJMoSofsewziHE3XFC5J'
+			server:
+				proto: 'https'
 
 	##################
 	## registerTask ##
@@ -374,8 +445,13 @@ module.exports = (grunt) ->
 		# 'browserSync'
 		# 'html5validate'
 		# 'gulp:gulptidy'
-		# 'imagemin'
-		'ngrok'
+		'imagemin'
+		# 'ngrok'
+		# 'concurrent:target1'
+		# 'concurrent:target2'
+		# 'concurrent:target3'
+		# 'posthtml'
+		# 'string-replace'
 	]
 
 	grunt.registerTask 'bro', [
@@ -383,24 +459,17 @@ module.exports = (grunt) ->
 	]
 
 	grunt.registerTask 'build', [
-		'shell:generate'
-		'move'
-		# 'clean'
-		'replace'
-		'stylus'
-		'purifycss'
+		'concurrent:target7'
+		'concurrent:target8'
+		'concurrent:target9'
 	]
 
 	grunt.registerTask 'publish', [
-		'shell:deploy'
-		'move'
-		'clean'
-		'replace'
-		'unused'
-		'imagemin'
-		'stylus'
-		'purifycss'
-		'postcss'
-		'jsbeautifier'
+		'concurrent:target1'
+		'concurrent:target2'
+		'concurrent:target3'
+		'concurrent:target4'
+		'concurrent:target5'
+		'concurrent:target6'
 	]
 	return

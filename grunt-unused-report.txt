@@ -1,9 +1,0 @@
-banners/Баннер_1.swf
-banners/Сашин_баннер.gif
-donate_files/Bitcoin-Redirect.HTML
-donate_files/Litecoin-Redirect.HTML
-gingerinas/4_14_7.png
-interface_images/external-link.svg
-logo/Логотип_с_тонким_шрифтом.jpeg
-sasha-black/Kristinita's_examples/URL_Void.jpg
-sasha-black/other_images/Question_Mark.png
