@@ -1,6 +1,6 @@
 Title: Fastest way to add new version of your Sublime Text package
 Date: 2018-01-29 12:04:22
-Modified: 2018-02-11 12:25:33
+Modified: 2018-02-21 10:40:57
 Version: 0.2.1
 Author: Sasha Chernykh
 Lang: en
@@ -51,24 +51,24 @@ Customcss: false
 
 <!-- /MarkdownTOC -->
 
-<a name="overview"></a>
+<a id="overview"></a>
 # Overview
 
 Tutorial, how you can quick to create detailed release and changelog for your Sublime Text package.
 
-<a name="audience"></a>
+<a id="audience"></a>
 # Audience
 
 Inexperienced developers of Sublime Text 3 packages.
 
 This article may be useful for any non-Sublime Text developers, which makes releases and changelog.
 
-<a name="relevance"></a>
+<a id="relevance"></a>
 # Relevance
 
 This article is relevant for February 2018. In the future, the data in this article may be obsolete.
 
-<a name="motivation"></a>
+<a id="motivation"></a>
 # Motivation
 
 When I create new release for my Sublime Text package, I need:
@@ -82,7 +82,7 @@ It may take a lot of time.
 
 In this article I wrote, how possible to make all these actions use only one command in command line.
 
-<a name="demonstration"></a>
+<a id="demonstration"></a>
 # Demonstration
 
 I [push commit](https://github.com/Kristinita/SashaSublime/commit/40783aee5a678d62f4e703248c277c725246f1ea) to my GitHub repository → I enter in command line:
@@ -107,7 +107,7 @@ Result: [1](https://github.com/Kristinita/SashaSublime/commit/b6bbf815fc4e59eff7
 
 If you want to have same behavior, read on.
 
-<a name="features"></a>
+<a id="features"></a>
 # Features
 
 Tutorial of this article must be support:
@@ -115,13 +115,13 @@ Tutorial of this article must be support:
 1. cross-platform,
 1. [Semver](https://semver.org/) [major](https://semver.org/#spec-item-8), [minor](https://semver.org/#spec-item-7), [patch](https://semver.org/#spec-item-6) and custom tags.
 
-<a name="limitations"></a>
+<a id="limitations"></a>
 # Limitations
 
 1. Your must host your package to GitHub. If your package on BitBucket, GitLab or another hosting, you can't make a release via [release-it](https://github.com/webpro/release-it).
 1. Your commits must be must be compatible with [Conventional Commits](https://conventionalcommits.org/). [List of supported scopes](https://conventionalcommits.org/). I recommend use [commitizen](https://www.npmjs.com/package/commitizen).
 
-<a name="installation"></a>
+<a id="installation"></a>
 # Installation
 
 You need to install:
@@ -133,7 +133,7 @@ You need to install:
 1. [generate-changelog globally](https://www.npmjs.com/package/generate-changelog#installation);
 1. [npm js-beautify globally](https://www.npmjs.com/package/js-beautify).
 
-<a name="activation"></a>
+<a id="activation"></a>
 # Activation
 
 You need to create all files from this section in root folder of your package repository.
@@ -147,7 +147,7 @@ You can see configuration files of real package in [SashaSublime repository](htt
     + Differences in my and your environments;
     + Different versions of tools from this article can do another behavior, [example](https://github.com/webpro/release-it/issues/233)
 
-<a name="github-token"></a>
+<a id="github-token"></a>
 ## GitHub token
 
 [Get your GitHub token and add environment variable with value — your token](https://www.npmjs.com/package/release-it#%EF%B8%8F-github-release).
@@ -156,7 +156,7 @@ You need to select all *repo* scopes.
 
 ![GitHub token](https://i.imgur.com/sWfide5.png)
 
-<a name="upstream-branch"></a>
+<a id="upstream-branch"></a>
 ## Upstream branch
 
 You need to [set upstream branch](https://stackoverflow.com/a/6089415/5951529):
@@ -168,12 +168,12 @@ git branch --set-upstream
 
 + *yourbranch* — name of branch, which you want to do upstream. Please, change *yourbranch* to real branch name.
 
-<a name="changelogmd"></a>
+<a id="changelogmd"></a>
 ## CHANGELOG.md
 
 Create blank file *CHANGELOG.md*. If no, generate-changelog will works incorrect.
 
-<a name="packagejson"></a>
+<a id="packagejson"></a>
 ## package.json
 
 ```json
@@ -191,7 +191,7 @@ Create blank file *CHANGELOG.md*. If no, generate-changelog will works incorrect
 
 Replace *SashaSublime* and *4.14.7* to your real values.
 
-<a name="release-itjson"></a>
+<a id="release-itjson"></a>
 ## .release-it.json
 
 ```json
@@ -225,7 +225,7 @@ Replace *SashaSublime* and *4.14.7* to your real values.
     sed -i '\/\\\"install\\\": \\\"messages\\\/install\\.txt\\\"\/i\\\"${version}\\\": \\\"messages\\\/${version}\\.txt\\\",' messages.json
     ```
 
-<a name="messagesjson"></a>
+<a id="messagesjson"></a>
 ## messages.json
 
 ```json
@@ -234,7 +234,7 @@ Replace *SashaSublime* and *4.14.7* to your real values.
 }
 ```
 
-<a name="usage"></a>
+<a id="usage"></a>
 # Usage
 
 Add, commit and push your changes to remote GitHub repository. Example:
@@ -284,12 +284,12 @@ Also you can [create pre-releases](https://www.npmjs.com/package/release-it).
 
 Example result see in [demonstration](#demonstration) section.
 
-<a name="details"></a>
+<a id="details"></a>
 # Details
 
 If you want to know, how files and commands works, please, read this section.
 
-<a name="release-it-command"></a>
+<a id="release-it-command"></a>
 ## release-it command
 
 ```bash
@@ -299,10 +299,10 @@ release-it -n -V
 + *-n* — [non-interactive mode](https://www.npmjs.com/package/release-it#-interactive-vs-non-interactive-mode). That you don't need input values each time manually.
 + *-V* — verbose. You can disable this command-line argument, but if you will get a bug, this argument may help you.
 
-<a name="release-itjson-1"></a>
+<a id="release-itjson-1"></a>
 ## .release-it.json
 
-<a name="buildcommand"></a>
+<a id="buildcommand"></a>
 ### buildCommand
 
 + *changelog -f -* — generate changelog. *-* — argument, that changelog [stdout to console](https://unix.stackexchange.com/a/419416/237999),
@@ -318,7 +318,7 @@ release-it -n -V
 + `#!json sed -i '\/\\\"install\\\": \\\"messages\\\/install\\.txt\\\"\/i\\\"${version}\\\": \\\"messages\\\/${version}\\.txt\\\",' messages.json` — [add](https://stackoverflow.com/a/11695098/5951529) `#!json "<your version>": "messages/<your version>.txt",` line before `#!json "install": "messages/install.txt"` line.
 + `js-beautify -r messages.json` — [beautify *messages.json* file in-place](https://www.npmjs.com/package/js-beautify#options)
 
-<a name="another-lines"></a>
+<a id="another-lines"></a>
 ### Another lines
 
 + *changelogCommand* — command, that generate changelog to `https://github.com/<your username>/<your repository>/releases`. Command must stdout to console.
@@ -328,14 +328,14 @@ release-it -n -V
 + `#!json "safeBump": false,` — that correct version in `https://github.com/<your username>/<your repository>/releases`; see [issue](https://github.com/webpro/release-it/issues/218) for details.
 + `#!json "tagName": "st3-%s"` — [correct tag name](https://github.com/wbond/package_control/issues/1217#issuecomment-280041797) for Package Control. Tags for Sublime Text 3 must be in *st3-&lt;your version&gt;* format, for example — *st3-4.14.7*.
 
-<a name="problems-and-non-fixed-bugs"></a>
+<a id="problems-and-non-fixed-bugs"></a>
 # Problems and non-fixed bugs
 
 1. [You can't use](https://github.com/lob/generate-changelog/issues/37) [cz-emoji](https://github.com/ngryman/cz-emoji) for commit generation. Changelog will blank.
 1. release-it [can works incorrect](https://github.com/webpro/release-it/issues/218) in *--dry-run* mode.
 1. [You can have bugs](https://github.com/webpro/release-it/issues/213), if you want to use *\${changelog}* release-it variable.
 
-<a name="testing-environment"></a>
+<a id="testing-environment"></a>
 # Testing environment
 
 + Windows 10 Enterprise LTSB 64-bit EN,

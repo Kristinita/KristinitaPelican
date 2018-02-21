@@ -1,6 +1,6 @@
 Title: How to publish your package to PyPI, 2018
 Date: 2017-07-26 11:10:27
-Modified: 2018-02-11 17:07:58
+Modified: 2018-02-21 10:34:24
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -79,7 +79,7 @@ Customcss: false
 
 <!-- /MarkdownTOC -->
 
-<a name="overview"></a>
+<a id="overview"></a>
 # Overview
 
 Tutorial, how you can add your Python package to [PyPI — Python Package Index](https://en.wikipedia.org/wiki/Python_Package_Index).
@@ -95,7 +95,7 @@ Read this article.
 !!! info
     In this article I wrote the most common method at February 2018. But you can consider another tools as [flit](https://github.com/takluyver/flit) and [poet](https://github.com/sdispater/poet).
 
-<a name="audience"></a>
+<a id="audience"></a>
 # Audience
 
 Python developers, that:
@@ -103,12 +103,12 @@ Python developers, that:
 1. publish package to PyPI first time,
 1. already published packages to PyPI, but want to do it more qualitatively.
 
-<a name="relevance"></a>
+<a id="relevance"></a>
 # Relevance
 
 This article is relevant for February 2018. In the future, the data in this article may be obsolete.
 
-<a name="motivation"></a>
+<a id="motivation"></a>
 # Motivation
 
 One more article? Why?
@@ -127,7 +127,7 @@ I don't want, that another beginner Python developers take a lot of time for PyP
 1. all-in-one; I try to add in my article all information, that I need for first PyPI publishing;
 1. described all problems, to solve that personally I spent my time.
 
-<a name="demonstration"></a>
+<a id="demonstration"></a>
 # Demonstration
 
 For examples in this article, I select my Erichek package.
@@ -152,19 +152,19 @@ If you want to have similar behavior, read on.
 
 If I have explained something incomprehensibly, see files of [Erichek GitHub repository](https://github.com/Kristinita/Erichek).
 
-<a name="features"></a>
+<a id="features"></a>
 # Features
 
 1. This article — cross platform solution.
 
-<a name="limitations"></a>
+<a id="limitations"></a>
 # Limitations
 
 1. You must be able to write working Python packages.
 1. Erichek and another my packages only for Python 3. I don't want support Python 2. If you want support Python 2, possibly, you will need some other action.
 1. If you can have a configuration different, that Erichek, possibly, you will need in another actions.
 
-<a name="installation"></a>
+<a id="installation"></a>
 # Installation
 
 Please, install via pip (*pip install &lt;package&gt;*):
@@ -176,10 +176,10 @@ Please, install via pip (*pip install &lt;package&gt;*):
 1. [pyroma](https://pypi.python.org/pypi/pyroma/),
 1. update your [setuptools](https://pypi.python.org/pypi/setuptools), to be sure, that [pyroma works correct](https://github.com/regebro/pyroma/issues/16) — `pip install -U setuptools`.
 
-<a name="configuration"></a>
+<a id="configuration"></a>
 # Configuration
 
-<a name="files"></a>
+<a id="files"></a>
 ## Files
 
 Simplify configuration. Real project configuration see in [Erichek GitHub repository](https://github.com/Kristinita/Erichek).
@@ -208,22 +208,23 @@ In [Software Engineering site recommends](https://softwareengineering.stackexcha
     I don't find standard. Personally I use lowercase for file extensions, but you can use uppercase.
 
 <!-- Using HTML Entities -->
-<a name="9595init9595py"></a>
+
+<a id="9595init9595py"></a>
 ## &#95;&#95;init&#95;&#95;.py
 
 See [answer](https://stackoverflow.com/a/4116384/5951529), why *\_\_init\_\_.py* need. This file may be blank or contains content.
 
-<a name="license"></a>
+<a id="license"></a>
 ## License
 
 Add text of license for your package to *LICENSE.md* file.
 
 If your editor is [Sublime Text 3](https://www.sublimetext.com/3), you can use [License Snippets](https://packagecontrol.io/packages/Licence%20Snippets) package.
 
-<a name="readme"></a>
+<a id="readme"></a>
 ## README
 
-<a name="readmemd"></a>
+<a id="readmemd"></a>
 ### README.md
 
 If you preferred write README in Markdown, you can have problems.
@@ -233,7 +234,7 @@ At February 2018 [PyPI doesn't support Readme.md](https://github.com/pypa/wareho
 !!! hint
     You can [convert Markdown to reStructuredText](https://bfroehle.com/2013/04/26/converting-md-to-rst/) use [Pandoc](http://pandoc.org).
 
-<a name="readmerst"></a>
+<a id="readmerst"></a>
 ### README.rst
 
 I recommend write README in [reStructuredText](http://docutils.sourceforge.net/rst.html) — you need use file *README.rst*. I add to [my README.rst](https://github.com/Kristinita/Erichek/blob/master/README.rst) next information:
@@ -244,7 +245,7 @@ I recommend write README in [reStructuredText](http://docutils.sourceforge.net/r
 
 I prefer to add long description to personal site, not to README, because I have much more options in the design of the description.
 
-<a name="setupcfg"></a>
+<a id="setupcfg"></a>
 ## setup.cfg
 
 !!! info
@@ -254,7 +255,7 @@ I prefer to add long description to personal site, not to README, because I have
 
 In the subsections below I describe the places that caused me difficulties.
 
-<a name="longdescription"></a>
+<a id="longdescription"></a>
 ### long_description
 
 my value:
@@ -265,14 +266,14 @@ long_description = file: Readme.rst
 
 Set your README file as value. Letters [must be in same register as in file](https://github.com/regebro/pyroma/issues/16#issuecomment-362904598). For example, if your file is *Readme.rst*, you need to set *file: README.rst*, not *file: Readme.rst* or *file: README.RST*.
 
-<a name="classifiers"></a>
+<a id="classifiers"></a>
 ### classifiers
 
 You can use only classifiers from [this list](https://pypi.python.org/pypi?%3Aaction=list_classifiers). If no, you can't publish your package to PyPI.
 
 Possibly, UNIX users can select classifiers via [pypi-classifiers GUI](https://github.com/mbr/pypi-classifiers), but [I can't set this program for Windows 10](https://github.com/mbr/pypi-classifiers/issues/2).
 
-<a name="zipsafe"></a>
+<a id="zipsafe"></a>
 ### zip_safe
 
 my value:
@@ -283,7 +284,7 @@ zip_safe = False
 
 If you build your package use Wheels, [you don't need this parameter](https://stackoverflow.com/a/16541150/5951529), but pyroma [will show lower value](https://github.com/regebro/pyroma/issues/19). So I recommend add `#!ini zip_safe = False` or `#!ini zip_safe = True` (unimportant) to your *setup.cfg* file.
 
-<a name="packages"></a>
+<a id="packages"></a>
 ### packages
 
 my value:
@@ -294,7 +295,7 @@ packages = find:
 
 If no `#!ini packages = find:`, users doesn't download folder with your Python module.
 
-<a name="consolescripts"></a>
+<a id="consolescripts"></a>
 ### console_scripts
 
 What is it. If Erichek user want run Erichek, he/she wrote in console:
@@ -322,7 +323,7 @@ Parameter and values:
 + `erichek.__main__` — relative path to your main module. For me it [*\_\_main\_\_.py* file in *erichek* folder](https://github.com/Kristinita/Erichek/blob/master/erichek/__main__.py).
 + `:main` — function, that run, when you run your module. For my *\_\_main\_\_.py* it `#!python main()` function.
 
-<a name="bdistwheel"></a>
+<a id="bdistwheel"></a>
 ### bdist_wheel
 
 my value:
@@ -341,7 +342,7 @@ Erichek — Python 3 package, so I have `#!ini python-tag = py3`. If your packag
 universal = 1
 ```
 
-<a name="dependencies"></a>
+<a id="dependencies"></a>
 ## Dependencies
 
 In this section I tell, what you need, that dependencies of your package from file *requirements.txt* automatically install for user. You don't need to write same dependencies in *requirements.txt* and *setup.cfg*/*setup.py*.
@@ -349,12 +350,12 @@ In this section I tell, what you need, that dependencies of your package from fi
 !!! caution
     Some developers [criticize this method](https://stackoverflow.com/a/33685899/5951529). If you need different dependencies for *requirements.txt* and *install_requires*, please, add list of your dependencies in *requirements.txt* and *setup.cfg* both.
 
-<a name="difference-between-requirementstxt-and-installrequires"></a>
+<a id="difference-between-requirementstxt-and-installrequires"></a>
 ### Difference between requirements.txt and install_requires
 
 Simplified definition.
 
-<a name="installrequires"></a>
+<a id="installrequires"></a>
 #### install_requires
 
 *install_requires* parameter in *setup.cfg* or *setup.py* show, which packages will install additionally, if user install your package via pip. For example, user install [clize package](https://pypi.org/project/sasha/):
@@ -391,7 +392,7 @@ Installing collected packages: od, clize
 Successfully installed clize-4.0.3 od-1.0
 ```
 
-<a name="requirementstxt"></a>
+<a id="requirementstxt"></a>
 #### requirements.txt
 
 For example, I am Python package developer and have local dependencies for my package.
@@ -406,7 +407,7 @@ For example, I am Python package developer and have local dependencies for my pa
 
 1. Services as [Dependabot](https://dependabot.com/) or [Pyup](https://pyup.io/) check dependencies from *requirements.txt* and update numbers of outdated versions.
 
-<a name="setuppy"></a>
+<a id="setuppy"></a>
 ### setup.py
 
 In this and 2 next sections I wrote, how you can get [install\_requires behavior](#installrequires), use only *requirements.txt* file. You don't need additional add your dependencies to install\_requires.
@@ -439,12 +440,12 @@ setup(
 
     But you need to add it.
 
-<a name="requirementstxt-1"></a>
+<a id="requirementstxt-1"></a>
 ### requirements.txt
 
 [Add list of your dependencies](https://pip.readthedocs.io/en/1.1/requirements.html) to *requirements.txt*.
 
-<a name="manifestin"></a>
+<a id="manifestin"></a>
 ### MANIFEST.in
 
 Add a line to *MANIFEST.in* file:
@@ -455,7 +456,7 @@ include requirements.txt
 
 If no, [users can't install your package](https://stackoverflow.com/q/26319101/5951529).
 
-<a name="pyroma"></a>
+<a id="pyroma"></a>
 ## pyroma
 
 [pyroma](https://pypi.python.org/pypi/pyroma/) — PyPI configuration validator.
@@ -485,22 +486,22 @@ Your cheese is so fresh most people think it's a cream: Mascarpone
 
 If no 10/10, please, see pyroma messages and try fix your package.
 
-<a name="testpypi"></a>
+<a id="testpypi"></a>
 # TestPyPI
 
-<a name="what-is-testpypi"></a>
+<a id="what-is-testpypi"></a>
 ## What is TestPyPI
 
 If you publish your package first time or not sure that everything is doing right, I recommend at first publish package to [TestPyPI](https://test.pypi.org/). TestPyPI — is a service, where you can test uploading, downloading and display your package on PyPI site before you share package to PyPI.
 
-<a name="registration"></a>
+<a id="registration"></a>
 ## Registration
 
 Please, register on [TestPyPI](https://testpypi.python.org) and [PyPI](https://pypi.python.org/pypi) sites.
 
 It would be nice, if you will use same username and password for both sites, that [Twine](#twine-settings) works correct.
 
-<a name="twine-settings"></a>
+<a id="twine-settings"></a>
 ## Twine settings
 
 [Add environment variables](https://github.com/pypa/twine#options)
@@ -514,7 +515,7 @@ See, how you can add environment variables for:
 !!! caution
     Also [you can add](http://peterdowns.com/posts/first-time-with-pypi.html) your username and password to *.pypirc* file, but it [not recommended](https://packaging.python.org/tutorials/distributing-packages/#create-an-account).
 
-<a name="build-package"></a>
+<a id="build-package"></a>
 ## Build package
 
 Print in your terminal:
@@ -529,7 +530,7 @@ python setup.py bdist_wheel
 !!! info
     If by some reasons you don't want use Wheels, [you can build your package](https://packaging.python.org/tutorials/distributing-packages/#source-distributions), use command `python setup.py sdist`
 
-<a name="publish-to-testpypi"></a>
+<a id="publish-to-testpypi"></a>
 ## Publish to TestPyPI
 
 [Enter in your terminal](https://packaging.python.org/guides/using-testpypi/#using-testpypi-with-twine):
@@ -543,7 +544,7 @@ If no errors in your configuration, package must successful upload to TestPyPI.
 !!! bug
     [Known bug](https://github.com/pypa/packaging-problems/issues/74) at February 2018 — in PyPI and TestPyPI you never can't overwrite specific version of your package, even if you delete your package. I.e., for example, you publish to PyPI or TestPyPI version *4.14.7* of your package *mypackage* → you delete *mypackage* from PyPI and/or TestPyPI → you can't upload *4.14.7* version of *mypackage* again.
 
-<a name="visit-testpypi"></a>
+<a id="visit-testpypi"></a>
 ## Visit TestPyPI
 
 After uploading visit 2 pages:
@@ -573,12 +574,12 @@ If the result suits you, in next step install package, that you upload, use virt
 
     If you have this problem for <https://pypi.python.org>, make same actions.
 
-<a name="virtualenv"></a>
+<a id="virtualenv"></a>
 ## virtualenv
 
 I recommend install your TestPyPI package, use virtual environment.
 
-<a name="why-virtual-environment"></a>
+<a id="why-virtual-environment"></a>
 ### Why virtual environment?
 
 Citation from [Pro Python Best Practices](https://www.apress.com/us/book/9781484222409) book:
@@ -592,7 +593,7 @@ Reasons of use virtual environment for TestPyPI installation:
 1. You can have bugs in your package. Bugs may have a negative impact of your environment. If you will use virtual environment, these bugs does not affect your global Python environment.
 1. You can have some globally dependencies in your environment, but users of your package may haven't them. If you use virtual environment, you see, how your package will install and works without, possibly, pre-installed global dependencies on your machine.
 
-<a name="using-virtualenv-and-virtualenvwrapper"></a>
+<a id="using-virtualenv-and-virtualenvwrapper"></a>
 ### Using virtualenv and virtualenvwrapper
 
 !!! caution
@@ -631,7 +632,7 @@ Where:
     You may need wait ~10 minutes, that 4.14.7 version index on TestPyPI. You can have a similar problem for PyPI.
 
 
-<a name="checking"></a>
+<a id="checking"></a>
 ### Checking
 
 If you can't have bugs in installation process, check, that you package works correct. For example, Erichek check, contains errors in *.txt* files in a folder or no. I run *erichek* console command.
@@ -668,11 +669,10 @@ After succsessful checking [you can remove](https://github.com/davidmarble/virtu
 
     Deleted C:\Users\SashaChernykh\Envs\erichekenv
 
-
 C:\Users\SashaChernykh>
 ```
 
-<a name="pypi"></a>
+<a id="pypi"></a>
 # PyPI
 
 If all actions from [TestPyPI section](#testpypi) success for you, you can publish your package to PyPI and then install it.
@@ -697,7 +697,7 @@ If all okay, **congratulations! You successful publish your package to PyPI!**
 
 ![Congratulations](https://i.imgur.com/4cvn8jX.jpg)
 
-<a name="updating"></a>
+<a id="updating"></a>
 # Updating
 
 That update your package in PyPI:
@@ -705,7 +705,7 @@ That update your package in PyPI:
 1. Make new changes,
 1. Make same actions as in [section above](#pypi).
 
-<a name="automatic-updating-release-and-changelog"></a>
+<a id="automatic-updating-release-and-changelog"></a>
 # Automatic updating, release and changelog
 
 !!! note
@@ -718,7 +718,7 @@ That update your package in PyPI:
     + Differences in my and your environment;
     + Different versions of tools from this article can do another behavior, [example](https://github.com/webpro/release-it/issues/233)
 
-<a name="demonstration-1"></a>
+<a id="demonstration-1"></a>
 ## Demonstration
 
 I enter command to the terminal:
@@ -745,24 +745,24 @@ I get [behavior](https://github.com/Kristinita/Erichek/commit/be58c1d53bbc8aeb76
 
 If you want to have same behavior, read on.
 
-<a name="features-1"></a>
+<a id="features-1"></a>
 ## Features
 
 See [these features](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#features).
 
-<a name="limitations-1"></a>
+<a id="limitations-1"></a>
 ## Limitations
 
 See [these limitations](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#limitations).
 
-<a name="installation-and-setting-up"></a>
+<a id="installation-and-setting-up"></a>
 ## Installation and setting-up
 
 1. you need to install all from [this section](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#installation) except *tee*, *cat*, *mv* and *js-beautify*;
 1. please, follow [these](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#github-token), [these](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#upstream-branch) and [these](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#changelogmd) instructions;
 1. [create a file *package.json*](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#packagejson) in root folder of your repository.
 
-<a name="release-itjson"></a>
+<a id="release-itjson"></a>
 ### .release-it.json
 
 Create a file *.release-it.json* in root folder of your repository with content:
@@ -805,12 +805,12 @@ Where:
 
 See [here](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#release-itjson-1), if you want to know details about another parts of *.release-it.json*.
 
-<a name="usage"></a>
+<a id="usage"></a>
 ## Usage
 
 See [usage instructions](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#usage).
 
-<a name="testing-environment"></a>
+<a id="testing-environment"></a>
 # Testing environment
 
 + Windows 10 Enterprise LTSB 64-bit EN,

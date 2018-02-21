@@ -230,8 +230,8 @@ module.exports = (grunt) ->
 					}
 					# Header permalink
 					{
-					pattern: /(<p>\s*?<a name="(.+?)"( id="(.+?)")?><\/a>\s*?<\/p>\s+?<h\d+?>((.|\n|\r)+?))(<\/h\d+?>)/g
-					replacement: '$1 <a class="headerlink" href="#$2" title="Permanent link">¶</a>$7'
+					pattern: /(<p>\s*?<a id="(.+?)"><\/a>\s*?<\/p>\s+?<h\d+?>((.|\n|\r)+?))(<\/h\d+?>)/g
+					replacement: '$1 <a class="headerlink" href="#$2" title="Permanent link">¶</a>$5'
 					}
 				]
 
@@ -441,11 +441,11 @@ module.exports = (grunt) ->
 		# 'jsbeautifier'
 		# 'purifycss'
 		# 'stylus'
-		'unused'
+		# 'unused'
 		# 'browserSync'
 		# 'html5validate'
 		# 'gulp:gulptidy'
-		# 'imagemin'
+		'imagemin'
 		# 'ngrok'
 		# 'concurrent:target1'
 		# 'concurrent:target2'
