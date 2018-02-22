@@ -9,8 +9,6 @@ Pagecolors: it-articles
 Iconleftorright: left
 Tags: life-hacks, pale-moon
 Category: Life-hacks,
-JQuery: true
-Gemini: true
 Tooltipster: true
 ClipboardJs: true
 DetailsPolyfill: false

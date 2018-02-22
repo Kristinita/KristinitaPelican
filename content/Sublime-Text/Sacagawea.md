@@ -1,6 +1,6 @@
 Title: Sacagawea
 Date: 2017-05-05 06:49:34
-Modified: 2018-02-21 10:40:58
+Modified: 2018-02-22 21:21:15
 Version: 0.1.0
 Author: Keith Hall
 Lang: ru
@@ -14,10 +14,6 @@ Category: Programs
 Noco: 1g9b6
 Stylesheets: personal/
 Javascripts: personal/
-Jquery: true
-Gemini: true
-Jquerylazy: true
-Fancybox: true
 Tooltipster: true
 Clipboardjs: true
 OpenGraphImage: http://i64.tinypic.com/b6x7ac.jpg

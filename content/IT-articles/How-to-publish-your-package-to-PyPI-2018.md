@@ -1,6 +1,6 @@
 Title: How to publish your package to PyPI, 2018
 Date: 2017-07-26 11:10:27
-Modified: 2018-02-21 10:34:24
+Modified: 2018-02-22 21:21:15
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -12,10 +12,6 @@ Iconleftorright: left
 Tags: it-articles, python, pypi, release
 Category: IT-Articles
 Noco: 1vWK5
-Jquery: true
-Gemini: true
-Jquerylazy: true
-Fancybox: true
 Tooltipster: true
 Clipboardjs: true
 Opengraphimage: https://i.imgur.com/mO0Fnsk.jpg

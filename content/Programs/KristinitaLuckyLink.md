@@ -1,6 +1,6 @@
 Title: KristinitaLuckyLink
 Date: 2018-01-09 19:27:50
-Modified: 2018-02-21 10:40:58
+Modified: 2018-02-22 21:21:15
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -12,10 +12,6 @@ Iconleftorright: right
 Tags: programs, sublime-text
 Category: Programs
 Noco: 1g9b6
-Jquery: true
-Gemini: true
-Jquerylazy: true
-Fancybox: true
 Tooltipster: true
 Clipboardjs: true
 Visualize: false

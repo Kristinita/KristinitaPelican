@@ -9,8 +9,6 @@ Pagecolors: sasha-black
 Iconleftorright: right
 Tags: sasha-black
 Category: Sasha Black
-JQuery: true
-Gemini: true
 Tooltipster: false
 ClipboardJs: true
 Customcss: true

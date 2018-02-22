@@ -1,6 +1,6 @@
 Title: Sasha Goddess
 Date: 2017-07-13 23:51:25
-Modified: 2018-01-31 19:25:53
+Modified: 2018-02-22 21:21:14
 Version: 1.0.0-beta
 Author: Sasha Chernykh
 Lang: ru
@@ -12,10 +12,6 @@ Iconleftorright: right
 Tags: Test
 Category: Test
 Noco:
-Jquery: true
-Gemini: true
-Jquerylazy: true
-Fancybox: true
 Tooltipster: true
 Clipboardjs: true
 Opengraphimage:

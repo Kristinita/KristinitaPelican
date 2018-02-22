@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2018-02-20 20:08:32 -->
+<!-- @Last Modified time: 2018-02-22 21:04:04 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -14,49 +14,18 @@
 <!-- Open Graph image -->
 {% block base_opengraphimage %}{{ article.opengraphimage }}{% endblock %}
 
-
-
 <!--=============================
 =            Scripts            =
 ==============================-->
 
-<!-- jQuery -->
-<!-- CDN vs Locally, http://stackoverflow.com/a/3832498/5951529 -->
-{% block base_jquery -%}
-    {%- if article.jquery == 'true' -%}
-		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    {%- endif -%}
-{%- endblock %}
-
-<!-- Gemini -->
-{% block base_gemini -%}
-    {%- if article.gemini == 'true' -%}
-		<script src="//cdn.jsdelivr.net/npm/gemini-scrollbar/index.js" defer></script>
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Gemini/GeminiAndJQueryLazy.js" defer></script>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gemini-scrollbar/gemini-scrollbar.css">
-		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Gemini/gemini.css">
-    {%- endif -%}
-{%- endblock %}
-
-<!-- JQuery Lazy -->
-{% block base_jquerylazy -%}
-    {%- if article.jquerylazy == 'true' -%}
-    	<script src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.min.js" defer></script>
-    	<script src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.plugins.min.js" defer></script>
-    {%- endif -%}
-{%- endblock %}
-
-<!-- Fancybox -->
-<!-- Obsolete version in JSDelivr -->
-<!-- https://www.jsdelivr.com/package/npm/fancybox -->
-<!-- [BUG] In CDNJS doesn't possible latest version -->
-<!-- https://stackoverflow.com/q/14801334/5951529 -->
-{% block base_fancybox -%}
-    {%- if article.fancybox == 'true' -%}
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Fancybox/fancybox.js" defer></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css">
-    {%- endif -%}
+<!-- typo-reporter -->
+{% block base_typoreporter -%}
+	<script src="https://npmcdn.com/typo-reporter/lib/TypoReporter.min.js" defer></script>
+	{%- if article.lang == 'ru' -%}
+		<script src="{{SITEURL}}/js/typo-reporter/typo-reporter-ru.js" defer></script>
+	{% else %}
+		<script src="{{SITEURL}}/js/typo-reporter/typo-reporter-en.js" defer></script>
+	{%- endif -%}
 {%- endblock %}
 
 <!-- Tooltipster -->
@@ -94,8 +63,8 @@
     {%- endif -%}
 {%- endblock %}
 
-<!-- Custom JavaScript, specific for article -->
-<!-- Article metadata variable -->
+<!-- Custom JavaScript, specific for article
+Article metadata variable -->
 {% block base_customjs -%}
     {%- if article.customjs == 'true' -%}
 		<script src="{{SITEURL}}/js/personal/{{article.customjs1}}.js" defer></script>
@@ -127,16 +96,16 @@
 =            Feed           =
 ==========================-->
 
-<!-- Add Atom Feed -->
-<!-- https://stackoverflow.com/a/440454/5951529 -->
-<!-- %s variable from pelicanconf.py file transform to format(category.slug) -->
-<!-- https://github.com/search?q=CATEGORY_FEED_ATOM&type=Code , https://github.com/satyamyadav/blog/blob/892083f531be87a274a5c13a90246db319b0201a/v0.3.0/blog/theme/templates/category.html -->
-<!-- https://webref.ru/html/link/rel -->
+<!-- Add Atom Feed
+https://stackoverflow.com/a/440454/5951529
+%s variable from pelicanconf.py file transform to format(category.slug)
+https://github.com/search?q=CATEGORY_FEED_ATOM&type=Code , https://github.com/satyamyadav/blog/blob/892083f531be87a274a5c13a90246db319b0201a/v0.3.0/blog/theme/templates/category.html
+https://webref.ru/html/link/rel
+-->
 {% block base_atom_feed -%}
 	<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" rel="alternate" type="application/atom+xml">
 	<link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" rel="alternate" type="application/atom+xml">
 {%- endblock %}
-
 
 <!--=============================
 =            Content            =
@@ -155,9 +124,9 @@
 <!-- Site content -->
 {% block base_content %}{{ article.content }}{% endblock %}
 
-<!-- Neighbors: add pagination -->
-<!-- https://github.com/getpelican/pelican-plugins/tree/master/neighbors -->
-<!-- See example in https://github.com/whatifrussian/website/blob/9e29831dcf61c85e711a392709aaf711212ba7c9/themes/whatif/templates/includes/article_content.html -->
+<!-- Neighbors: add pagination
+https://github.com/getpelican/pelican-plugins/tree/master/neighbors
+See example in https://github.com/whatifrussian/website/blob/9e29831dcf61c85e711a392709aaf711212ba7c9/themes/whatif/templates/includes/article_content.html -->
 {% block base_neighbors -%}
 	{%- if article.lang == 'ru' -%}
 		{% include 'includes/neighbors-ru.html' %}
@@ -166,13 +135,13 @@
 	{% endif %}
 {%- endblock %}
 
-<!-- Footer: new disgruntled Russian and sign -->
-<!-- E-Mail obfuscate: http://rot13.florianbersier.com/ -->
-<!-- Get relative source path like https://github.com/kura/kura.io/blob/e8f2c6801a0013201d734aa1ac48d9ac92a40b96/ghastly/templates/article.html#L10 -->
+<!-- Footer: new disgruntled Russian and sign
+E-Mail obfuscate: http://rot13.florianbersier.com/
+Get relative source path like https://github.com/kura/kura.io/blob/e8f2c6801a0013201d734aa1ac48d9ac92a40b96/ghastly/templates/article.html#L10 -->
 {% block base_new_russian %}
 	{%- if article.lang == 'ru' -%}
-		<div class="SashaEmNoColor">Запрещается копирование и прочее воспроизведение данного текста без согласия с его автором. Если Вы найдёте в данной статье ошибки или опечатки, можете <a href="{{GITHUB_URL}}/edit/master/content/{{article.get_relative_source_path()}}">отредактировать её</a> и отправить <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>. Пожалуйста, пишите на русском (предпочтительно) или английском языках. По любым относящимся к статье и её предмету вопросам можете связаться и по <span id="obf"><script src="{{SITEURL}}/js/personal/Mail/personal-mail.js" async></script><noscript><span>ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span>. С комментариями в стиле <a href="{{SITEURL}}/Smert-svobode/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BD%D0%B5%D0%B4%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5">новых недовольных русских</a> оставляю право распоряжаться по собственному усмотрению.</div>
+		{% include 'includes/footer-ru.html' %}
 	{% else %}
-		<div class="SashaEmNoColor">All rights reserved ©. If you find in this article errors and/or typos, you can <a href="{{GITHUB_URL}}/edit/master/content/{{article.get_relative_source_path()}}">edit it</a> and send me <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>. Please, write in Russian (preferable) or English. Also, you can write me by <span id="obf"><script src="{{SITEURL}}/js/personal/Mail/personal-mail.js" async></script><noscript><span>ur.atinitsirk@esrevinUfOsserpmEhkynrehCahsaS</span></noscript></span> about everything related to this article. With commentary in the style of <a href="{{SITEURL}}/Smert-svobode/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BD%D0%B5%D0%B4%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5">new disgruntled Russian</a> i reserve the right to dispose of my own discretion.</div>
+		{% include 'includes/footer-en.html' %}
 	{% endif %}
 {% endblock %}

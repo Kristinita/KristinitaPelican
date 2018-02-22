@@ -9,8 +9,6 @@ Pagecolors: giologica-blue
 Iconleftorright: right
 Tags: giologica
 Category: Giologica
-JQuery: true
-Gemini: true
 Tooltipster: false
 ClipboardJs: true
 DetailsPolyfill: false

@@ -1,6 +1,6 @@
 Title: ValeriyaSpeller
 Date: 2017-04-04 04:14:07
-Modified: 2018-01-31 10:54:57
+Modified: 2018-02-22 21:21:12
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -12,10 +12,6 @@ Iconleftorright: right
 Tags: sublime-text, yaspeller
 Category: Programs
 Noco: 1g9b6
-Jquery: true
-Gemini: true
-JQueryLazy: true
-Fancybox: true
 Tooltipster: true
 Clipboardjs: true
 OpenGraphImage: http://i.imgur.com/iciGBgN.jpg

@@ -1,6 +1,6 @@
 Title: Fastest way to add new version of your Sublime Text package
 Date: 2018-01-29 12:04:22
-Modified: 2018-02-21 10:40:57
+Modified: 2018-02-22 21:21:14
 Version: 0.2.1
 Author: Sasha Chernykh
 Lang: en
@@ -12,10 +12,6 @@ Iconleftorright: left
 Tags: it-articles, sublime-text, release
 Category: IT-articles
 Noco: 1vWK5
-Jquery: true
-Gemini: true
-Jquerylazy: true
-Fancybox: true
 Tooltipster: true
 Clipboardjs: true
 Opengraphimage: https://i.imgur.com/12fFJsX.png

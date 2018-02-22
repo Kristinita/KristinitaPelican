@@ -282,7 +282,8 @@ module.exports = (grunt) ->
 		posthtml:
 			options:
 				use: [
-					require('posthtml-doctype')(doctype: 'HTML 5')
+					require('posthtml-aria-tabs')()
+					require('posthtml-doctype')(doctype : 'HTML 4.01 Frameset')
 					require('posthtml-alt-always')()
 				]
 			build:
@@ -431,7 +432,7 @@ module.exports = (grunt) ->
 
 	grunt.registerTask 'test', [
 		# 'shell:generate'
-		'postcss'
+		# 'postcss'
 		# 'move'
 		# 'clean'
 		# 'replace'
@@ -448,7 +449,7 @@ module.exports = (grunt) ->
 		# 'concurrent:target1'
 		# 'concurrent:target2'
 		# 'concurrent:target3'
-		# 'posthtml'
+		'posthtml'
 		# 'string-replace'
 	]
 

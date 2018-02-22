@@ -9,8 +9,6 @@ Pagecolors: sublime-text
 Iconleftorright: right
 Tags: sublime-text
 Category: Sublime Notes
-JQuery: true
-Gemini: true
 Tooltipster: false
 ClipboardJs: true
 DetailsPolyfill: true
