@@ -15,6 +15,7 @@ a:focus {
   color: #e52b50;
 }
 em {
+  background-image: -webkit-gradient(linear, left top, right top, from(#008b8b), to(#7b68ee));
   background-image: linear-gradient(to right, #008b8b, #7b68ee);
   -webkit-background-clip: text;
   color: transparent;
@@ -23,14 +24,16 @@ dfn {
   color: #db7093;
 }
 img {
-  box-shadow: 0 0 2rem #000;
+  -webkit-box-shadow: 0 0 2rem #000;
+          box-shadow: 0 0 2rem #000;
 }
 .SashaPageLoading {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 kbd {
-  color: #ffc0cb;
-  background: #e7e9db;
+  color: #eee8aa;
+  background: #2e8b57;
 }
 hr {
   color: #c71585;
@@ -39,7 +42,7 @@ td,
 th {
   border: 0.0625rem solid #465550;
 }
-.cover-text {
+.SashaBottomAside {
   color: #fff;
   bottom: 8%;
 }

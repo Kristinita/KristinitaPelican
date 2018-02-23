@@ -43,6 +43,19 @@ module.exports = (grunt) ->
 
 	grunt.initConfig
 
+		######################
+		## grunt-dev-update ##
+		######################
+		# Automatic update local dev dependencies
+		# https://www.npmjs.com/package/grunt-dev-update
+		devUpdate:
+			main:
+				options:
+					# “semver: false” That dependencies update to latest version in any case
+					# https://www.npmjs.com/package/grunt-dev-update#optionssemver
+					semver: false
+					updateType: 'force'
+
 		#################
 		## grunt-shell ##
 		#################
@@ -376,6 +389,16 @@ module.exports = (grunt) ->
 		# 	server:
 		# 		proto: 'https'
 
+		#########################
+		## grunt-contrib-watch ##
+		#########################
+		# https://www.npmjs.com/package/grunt-contrib-watch
+		# Run in console “grunt watch” → change files → tasks will run
+		watch:
+			scripts:
+				files: ['**/*.styl']
+				tasks: ['stylus']
+
 		######################
 		## grunt-concurrent ##
 		######################
@@ -383,16 +406,18 @@ module.exports = (grunt) ->
 		# https://www.npmjs.com/package/grunt-concurrent
 		concurrent:
 			# For publishing
-			target1: ['shell:deploy']
-			target2: ['move']
-			target3: ['clean', 'stylus', 'unused']
-			target4: ['purifycss', 'imagemin']
-			target5: ['postcss', 'string-replace']
-			target6: ['jsbeautifier']
+			target1: ['devUpdate']
+			target2: ['shell:deploy']
+			target3: ['move']
+			target4: ['clean', 'stylus', 'unused']
+			target5: ['purifycss', 'imagemin']
+			target6: ['postcss', 'string-replace']
+			target7: ['jsbeautifier']
 			# For development
-			target7: ['shell:generate']
-			target8: ['imagemin', 'stylus']
-			target9: ['string-replace', 'purifycss']
+			target8: ['shell:generate']
+			target9: ['stylus']
+			target10: ['string-replace', 'purifycss']
+			# target11: ['gulp']
 
 		########################
 		## grunt-browser-sync ##
@@ -424,43 +449,14 @@ module.exports = (grunt) ->
 	##################
 	## registerTask ##
 	##################
-	# Run Grunt commands
-	# test — for testing new features
-	# bro — Browsersync
+	# Run chains Grunt commands
 	# build — reviewing with relative paths
 	# publish — before publishing with absolute paths
 
-	grunt.registerTask 'test', [
-		# 'shell:generate'
-		# 'postcss'
-		# 'move'
-		# 'clean'
-		# 'replace'
-		# 'htmltidy'
-		# 'jsbeautifier'
-		# 'purifycss'
-		# 'stylus'
-		# 'unused'
-		# 'browserSync'
-		# 'html5validate'
-		# 'gulp:gulptidy'
-		# 'imagemin'
-		# 'ngrok'
-		# 'concurrent:target1'
-		# 'concurrent:target2'
-		# 'concurrent:target3'
-		'posthtml'
-		# 'string-replace'
-	]
-
-	grunt.registerTask 'bro', [
-		'browserSync'
-	]
-
 	grunt.registerTask 'build', [
-		'concurrent:target7'
 		'concurrent:target8'
 		'concurrent:target9'
+		'concurrent:target10'
 	]
 
 	grunt.registerTask 'publish', [
@@ -470,5 +466,6 @@ module.exports = (grunt) ->
 		'concurrent:target4'
 		'concurrent:target5'
 		'concurrent:target6'
+		'concurrent:target7'
 	]
 	return
