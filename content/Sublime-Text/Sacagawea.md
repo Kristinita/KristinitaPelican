@@ -1,6 +1,6 @@
 Title: Sacagawea
 Date: 2017-05-05 06:49:34
-Modified: 2018-02-22 21:21:15
+Modified: 2018-02-24 16:07:32
 Version: 0.1.0
 Author: Keith Hall
 Lang: ru
@@ -16,7 +16,7 @@ Stylesheets: personal/
 Javascripts: personal/
 Tooltipster: true
 Clipboardjs: true
-OpenGraphImage: http://i64.tinypic.com/b6x7ac.jpg
+OpenGraphImage: https://i.imgur.com/cVITpm1.jpg
 Detailspolyfill: false
 
 <div class="SashaEpigraph">
@@ -26,7 +26,7 @@ Detailspolyfill: false
 </em>
 </div>
 
-![Sacagawea](http://i64.tinypic.com/b6x7ac.jpg)
+![Sacagawea](https://i.imgur.com/cVITpm1.jpg)
 
 `“What? Where? When?” has great popularity in the Russian language, not English, so the description of the package in Russian.`
 
@@ -174,13 +174,13 @@ Sacagawea можно использовать, например, ведущем�
 <a id="Активация-шорткатов"></a>
 ### Активация шорткатов
 
-В активном окне Sublime Text: <kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> для Mac) → *Suricate: Add Profile* → <kbd>Enter</kbd> → [Sacagawea](http://i.imgur.com/VNC1Kzs.png) → <kbd>Enter</kbd>.
+В активном окне Sublime Text: <kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> для Mac) → *Suricate: Add Profile* → <kbd>Enter</kbd> → [Sacagawea](https://i.imgur.com/VNC1Kzs.png) → <kbd>Enter</kbd>.
 
-![Sacagawea](http://i66.tinypic.com/35314l2.png)
+![Sacagawea](https://i.imgur.com/UdMhDrL.png)
 
 → горячие клавиши активированы.
 
-Если данные хоткеи задействованы в других Ваших плагинах или программах, можете их деактивировать. В активном окне Sublime Text: <kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> для Mac) → *Suricate: Add Profile* → <kbd>Enter</kbd> → [Sacagawea](http://i.imgur.com/VNC1Kzs.png) → <kbd>Enter</kbd>.
+Если данные хоткеи задействованы в других Ваших плагинах или программах, можете их деактивировать. В активном окне Sublime Text: <kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> для Mac) → *Suricate: Add Profile* → <kbd>Enter</kbd> → [Sacagawea](https://i.imgur.com/VNC1Kzs.png) → <kbd>Enter</kbd>.
 
 <a id="autohotkey"></a>
 ### AutoHotkey

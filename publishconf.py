@@ -25,7 +25,7 @@ DELETE_OUTPUT_DIRECTORY = True
 # Absolute path, if site publish
 # Don't use relative paths for publishing!
 
-SITEURL = 'http://kristinita.ru'
+SITEURL = 'https://kristinita.ru'
 RELATIVE_URLS = False
 
 PLUGINS = [

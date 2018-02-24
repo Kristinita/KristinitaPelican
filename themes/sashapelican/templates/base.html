@@ -7,73 +7,73 @@
 	=          Meta           =
 	========================-->
 
-    <!-- Encoding -->
-    <meta charset="utf-8">
-    <!-- Title phrase -->
-    <title>{% block base_pagetitle %}{% endblock %}</title>
-    <!-- Description, EDGE-compatible, different screens.
-    Needs for validation name="description", see:
-    https://stackoverflow.com/a/11202372/5951529 -->
-    <meta name="description" content="{% block base_metacontent %}{% endblock %}">
-    <!-- Needs for validation name="viewport", see: https://teamtreehouse.com/community/ive-received-the-following-errors-and-warnings-for-my-code-yet-im-not-sure-what-im-missing -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Open Graph, http://ruogp.me/
-    Jinja2, ≥ 2 blocks, http://stackoverflow.com/a/1245030/5951529 -->
-    <meta property="og:title" content="{{ self.base_pagetitle() }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="{% block base_opengraphimage %}{% endblock %}" />
-    <meta property="og:description" content="{{ self.base_metacontent() }}" />
-    <meta property="og:site_name" content="{{SITENAME}}" />
+	<!-- Encoding -->
+	<meta charset="utf-8">
+	<!-- Title phrase -->
+	<title>{% block base_pagetitle %}{% endblock %}</title>
+	<!-- Description, EDGE-compatible, different screens.
+	Needs for validation name="description", see:
+	https://stackoverflow.com/a/11202372/5951529 -->
+	<meta name="description" content="{% block base_metacontent %}{% endblock %}">
+	<!-- Needs for validation name="viewport", see: https://teamtreehouse.com/community/ive-received-the-following-errors-and-warnings-for-my-code-yet-im-not-sure-what-im-missing -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Open Graph, http://ruogp.me/
+	Jinja2, ≥ 2 blocks, http://stackoverflow.com/a/1245030/5951529 -->
+	<meta property="og:title" content="{{ self.base_pagetitle() }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="{% block base_opengraphimage %}{% endblock %}" />
+	<meta property="og:description" content="{{ self.base_metacontent() }}" />
+	<meta property="og:site_name" content="{{SITENAME}}" />
 
-    <!--============================
-    =       Miscellaneous          =
-    =============================-->
+	<!--============================
+	=       Miscellaneous          =
+	=============================-->
 
-    <!-- Sasha icon -->
-    <link rel="shortcut icon" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/icons/Sasha.ico" type="image/x-icon">
-    <link rel="icon" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/Sasha.ico" type="image/x-icon">
-    <!-- Atom feed -->
-    {% block base_atom_feed -%}{% endblock %}
+	<!-- Sasha icon -->
+	<link rel="shortcut icon" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/icons/Sasha.ico" type="image/x-icon">
+	<link rel="icon" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/Sasha.ico" type="image/x-icon">
+	<!-- Atom feed -->
+	{% block base_atom_feed -%}{% endblock %}
 
-    <!--=============================
-    =            Scripts            =
-    ==============================-->
+	<!--=============================
+	=            Scripts            =
+	==============================-->
 
-    <!-- JQuery
-   	CDN vs Locally, see:
-   	http://stackoverflow.com/a/3832498/5951529
-   	defer preferred, than async, see:
-   	https://stackoverflow.com/a/39711009/5951529
-    JQuery not a good candidate for async, see:
-    https://stackoverflow.com/a/10808243/5951529
-    -->
-    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script>
-    <!-- Gemini -->
-    <script src="//cdn.jsdelivr.net/npm/gemini-scrollbar/index.js" defer></script>
-    <script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Gemini/GeminiAndJQueryLazy.js" defer></script>
-    <!-- JQuery Lazy -->
-    <script src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.min.js" defer></script>
-    <script src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.plugins.min.js" defer></script>
-    <!-- typo-reporter -->
-    {% block base_typoreporter -%}{% endblock %}
-    <!-- Fancybox
-    Obsolete version in JSDelivr
-    https://www.jsdelivr.com/package/npm/fancybox
-    [BUG] In CDNJS doesn't possible latest version
-    https://stackoverflow.com/q/14801334/5951529
-    -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
-    <script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Fancybox/fancybox.js" defer></script>
-    <!-- Tooltipster, see http://ru.stackoverflow.com/a/584718/199934 -->
-    {% block base_tooltipster %}{% endblock %}
-    <!-- Clipboard.js, see http://ru.stackoverflow.com/a/582520/199934 -->
-    {% block base_clipboardjs %}{% endblock %}
-    <!-- Visualize, see https://github.com/kellyk/visualize -->
-    {% block base_visualize %}{% endblock %}
-    <!-- Details Polyfill, see http://ru.stackoverflow.com/a/498984/199934 -->
-    {% block base_detailspolyfill %}{% endblock %}
-    <!-- Custom JavaScript -->
+	<!-- JQuery
+	CDN vs Locally, see:
+	http://stackoverflow.com/a/3832498/5951529
+	defer preferred, than async, see:
+	https://stackoverflow.com/a/39711009/5951529
+	JQuery not a good candidate for async, see:
+	https://stackoverflow.com/a/10808243/5951529
+	-->
+	<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script>
+	<!-- Gemini -->
+	<script src="//cdn.jsdelivr.net/npm/gemini-scrollbar/index.js" defer></script>
+	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Gemini/GeminiAndJQueryLazy.js" defer></script>
+	<!-- JQuery Lazy -->
+	<script src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.min.js" defer></script>
+	<script src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.plugins.min.js" defer></script>
+	<!-- typo-reporter -->
+	{% block base_typoreporter -%}{% endblock %}
+	<!-- Fancybox
+	Obsolete version in JSDelivr
+	https://www.jsdelivr.com/package/npm/fancybox
+	[BUG] In CDNJS doesn't possible latest version
+	https://stackoverflow.com/q/14801334/5951529
+	-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Fancybox/fancybox.js" defer></script>
+	<!-- Tooltipster, see http://ru.stackoverflow.com/a/584718/199934 -->
+	{% block base_tooltipster %}{% endblock %}
+	<!-- Clipboard.js, see http://ru.stackoverflow.com/a/582520/199934 -->
+	{% block base_clipboardjs %}{% endblock %}
+	<!-- Visualize, see https://github.com/kellyk/visualize -->
+	{% block base_visualize %}{% endblock %}
+	<!-- Details Polyfill, see http://ru.stackoverflow.com/a/498984/199934 -->
+	{% block base_detailspolyfill %}{% endblock %}
+	<!-- Custom JavaScript -->
 	{% block base_customjs %}{% endblock %}
 
 	<!--============================
@@ -88,60 +88,60 @@
 
 	<!-- Gemini
 	[NOTE] Gemini styles must load first, otherwise bugs on page -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gemini-scrollbar/gemini-scrollbar.css">
-    <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Gemini/gemini.css">
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gemini-scrollbar/gemini-scrollbar.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Gemini/gemini.css">
 	<!-- SashaPelican theme -->
-    <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/basic.css">
-    <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/fonts.css">
-    <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/aside.css">
-    <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/image_{% block base_iconleftorright %}{% endblock %}.css">
-    <!-- External -->
-    <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{% block base_pagecolors %}{% endblock %}.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="{{SITEURL}}/css/typo-reporter/typo-reporter.css">
-    <!-- Admonition: note, warning etc. blocks, see
-    https://python-markdown.github.io/extensions/admonition/
-    https://squidfunk.github.io/mkdocs-material/extensions/admonition/ -->
-    <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Admonition/admonition.css">
-    <!-- Material icons font for icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!-- Custom CSS -->
-    {% block base_customcss %}{% endblock %}
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/basic.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/fonts.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/aside.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/image_{% block base_iconleftorright %}{% endblock %}.css">
+	<!-- External -->
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{% block base_pagecolors %}{% endblock %}.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="{{SITEURL}}/css/typo-reporter/typo-reporter.css">
+	<!-- Admonition: note, warning etc. blocks, see
+	https://python-markdown.github.io/extensions/admonition/
+	https://squidfunk.github.io/mkdocs-material/extensions/admonition/ -->
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Admonition/admonition.css">
+	<!-- Material icons font for icons -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<!-- Custom CSS -->
+	{% block base_customcss %}{% endblock %}
 </head>
 
 <body>
-    <!-- Background aside -->
-    <aside>
-        <!-- Header aside -->
-        <div class="SashaBottomAside">{% block base_asidetitle %}{% endblock %}</div>
-    </aside>
-    <!-- Content -->
-    <main itemscope>
-        <div class="SashaMargin">
-            <header>
-                <h1 class="SashaTopHeader">{% block base_h1 %}{% endblock %}</h1>
-                <img class="SashaPageLoading" src="https://2no.co/{% block base_noco %}{% endblock %}.png" alt="Page loading, please, little wait">
-                <div class="SashaVersion">Version {% block base_version %}{% endblock %}</div>
-                <div class="SashaVersion">
-                    Posted —
-                    <time datetime="{% block base_date %}{% endblock %}">{{ self.base_date() }}</time>
-                </div>
-                <div class="SashaVersion">
-                	<!-- pubdate attribute is obsolete, use itemprop: datePublished
-                	https://stackoverflow.com/a/24455070/5951529 -->
-                    Last modified —
-                    <time itemprop="datePublished" datetime="{% block base_date_displayed %}{% endblock %}">{{ self.base_date_displayed() }}</time>
-                </div>
-            </header>
-            {% block base_content %}{% endblock %}
-            <footer>
-            	{% block base_neighbors -%}{% endblock %}
-            	<div class="SashaClearBoth"></div>
-                {% block base_new_russian %}{% endblock %}
-                <div class="WorkOnYourself">Работайте над собой</div>
-            </footer>
-        </div>
-    </main>
+	<!-- Background aside -->
+	<aside>
+		<!-- Header aside -->
+		<div class="SashaBottomAside">{% block base_asidetitle %}{% endblock %}</div>
+	</aside>
+	<!-- Content -->
+	<main itemscope>
+		<div class="SashaMargin">
+			<header>
+				<h1 class="SashaTopHeader">{% block base_h1 %}{% endblock %}</h1>
+				<img class="SashaPageLoading" src="https://2no.co/{% block base_noco %}{% endblock %}.png" alt="Page loading, please, little wait">
+				<div class="SashaVersion">Version {% block base_version %}{% endblock %}</div>
+				<div class="SashaVersion">
+					Posted —
+					<time datetime="{% block base_date %}{% endblock %}">{{ self.base_date() }}</time>
+				</div>
+				<div class="SashaVersion">
+					<!-- pubdate attribute is obsolete, use itemprop: datePublished
+					https://stackoverflow.com/a/24455070/5951529 -->
+					Last modified —
+					<time itemprop="datePublished" datetime="{% block base_date_displayed %}{% endblock %}">{{ self.base_date_displayed() }}</time>
+				</div>
+			</header>
+			{% block base_content %}{% endblock %}
+			<footer>
+				{% block base_neighbors -%}{% endblock %}
+				<div class="SashaClearBoth"></div>
+				{% block base_new_russian %}{% endblock %}
+				<div class="WorkOnYourself">Работайте над собой</div>
+			</footer>
+		</div>
+	</main>
 </body>
 
 </html>

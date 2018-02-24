@@ -187,7 +187,8 @@ module.exports = (grunt) ->
 		# https://github.com/gruntjs/grunt-contrib-imagemin
 		# Minify all images in output folder
 		# [NOTE] Non-documented behavior!
-		# Imagemin prettify html and add new attributes instead of obsolete
+		# “gulp-htmltidy” task run, if I run “imagemin” task, see:
+		# https://github.com/shama/grunt-gulp/issues/14
 		imagemin:
 			dynamic:
 				options:
@@ -248,7 +249,7 @@ module.exports = (grunt) ->
 					# GitCDN
 					# https://github.com/schme16/gitcdn.xyz
 					{
-					pattern: /http:\/\/kristinita.ru\/(.+?)\.(js|css|ico|xml)/g
+					pattern: /https:\/\/kristinita.ru\/(.+?)\.(js|css|ico|xml)/g
 					replacement: '//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/$1.$2'
 					}
 					# Header permalink
@@ -257,6 +258,26 @@ module.exports = (grunt) ->
 					replacement: '$1 <a class="headerlink" href="#$2" title="Permanent link">¶</a>$5'
 					}
 				]
+
+		##############################
+		## grunt-http-convert-https ##
+		##############################
+		# Convert http to https
+		# https://www.npmjs.com/package/grunt-http-convert-https
+		# [BUG] plugin doesn't work, “Warning: Task "converthttps" not found”.
+		# Author long time inactive on GitHub, so no issue:
+		# https://github.com/sina-mfe
+		# converthttps:
+		# 	config:
+		# 		expand: true
+		# 		cwd: 'output'
+		# 		src: '**/*.html'
+		# 		dest: 'output'
+		# 		httpsJson:
+		# 			"imgur": [
+		# 				"http": "i.imgur.com"
+		# 				"https": "i.imgur.com"
+		# 			]
 
 		########################
 		## grunt-jsbeautifier ##
@@ -304,20 +325,29 @@ module.exports = (grunt) ->
 		# 			to: '$1 <a class="headerlink" href="#$2" title="Permanent link">¶</a>$6'
 		# 		]
 
-		posthtml:
-			options:
-				use: [
-					require('posthtml-aria-tabs')()
-					require('posthtml-doctype')(doctype : 'HTML 4.01 Frameset')
-					require('posthtml-alt-always')()
-				]
-			build:
-				files: [
-					expand: true
-					cwd: 'output/Sublime-Text'
-					src: '**/*.html'
-					dest: 'output/Sublime-Text/tmp'
-				]
+
+		# ####################
+		# ## grunt-posthtml ##
+		# ####################
+		# # PostHTML wrapper for Grunt:
+		# # https://www.npmjs.com/package/grunt-posthtml
+		# # https://www.npmjs.com/package/posthtml
+		# # [BUG] Any PostHTML plugin doesn't work for me, details:
+		# # https://github.com/TCotton/grunt-posthtml/issues/3
+		# posthtml:
+		# 	options:
+		# 		use: [
+		# 			require('posthtml-aria-tabs')()
+		# 			require('posthtml-doctype')(doctype : 'HTML 4.01 Frameset')
+		# 			require('posthtml-alt-always')()
+		# 		]
+		# 	build:
+		# 		files: [
+		# 			expand: true
+		# 			cwd: 'output/Sublime-Text'
+		# 			src: '**/*.html'
+		# 			dest: 'output/Sublime-Text/tmp'
+		# 		]
 
 		# ####################
 		# ## grunt-htmltidy ##

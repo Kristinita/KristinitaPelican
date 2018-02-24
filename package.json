@@ -1,6 +1,6 @@
 {
-  "name": "Pelican",
-  "version": "1.0.0",
+  "name": "Kristinita's Search",
+  "version": "0.1.0",
   "description": "Kristinita's Search site",
   "main": "Gruntfile.coffee",
   "repository": "https://github.com/Kristinita/KristinitaPelican",

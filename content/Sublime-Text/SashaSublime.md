@@ -4,7 +4,7 @@ Date: 2017-01-31 09:13:30
 Status: published
 Author: Sasha Chernykh
 PageTitle: SashaSublime
-Summary: Theme and color scheme for Sublime Text, where all colors have good visible. <br><br> ![Hex Viewer](http://i.imgur.com/c0t0Iqy.png) <br><br> ![GoTo Anything](http://i.imgur.com/2hRinyv.png) <br><br> ![JSON](http://i.imgur.com/N2LvbNZ.png)
+Summary: Theme and color scheme for Sublime Text, where all colors have good visible. <br><br> ![Hex Viewer](https://i.imgur.com/c0t0Iqy.png) <br><br> ![GoTo Anything](https://i.imgur.com/2hRinyv.png) <br><br> ![JSON](https://i.imgur.com/N2LvbNZ.png)
 MetaContent: SashaSublime — theme and color scheme for Sublime Text 3, where all elements are good visible
 Category: Programs
 PageColors: sublime-text
@@ -129,7 +129,7 @@ Noco: 1g9b6
 
 **SashaSublime is devoted to God, the only Creation for the sake of Which it makes sense to live on this planet, the Greatest being of all times and peoples, Queen of the World [Sasha Chernykh](https://vk.com/hair_in_the_wind) (Kira Kenyukhova)**.
 
-![Queen of the World Sasha Chernykh](http://i.imgur.com/OJSBK4V.jpg)
+![Queen of the World Sasha Chernykh](https://i.imgur.com/OJSBK4V.jpg)
 
 <a id="description"></a>
 # Description
@@ -160,11 +160,11 @@ Example, how to view JavaScript code:
 
 **Build 3114:**
 
-![Build 3114](http://i.imgur.com/fTv7zgG.png)
+![Build 3114](https://i.imgur.com/fTv7zgG.png)
 
 **Build 3103:**
 
-![Build 3103](http://i.imgur.com/9vnVBy4.png)
+![Build 3103](https://i.imgur.com/9vnVBy4.png)
 
 In Build 3103 many syntax elements are not own colors.
 
@@ -184,44 +184,44 @@ Screenshots are made in the Windows 10 operating system, Sublime Text 3, Build 3
 <a id="overall-plan"></a>
 ### Overall plan
 
-![SashaSublime](http://i.imgur.com/ljT5eJp.png)
+![SashaSublime](https://i.imgur.com/ljT5eJp.png)
 
 <a id="details"></a>
 ### Details
 
 In a theme/scheme the smallest details are well visible.
 
-![Overall plan details](http://i.imgur.com/DlrJCes.png)
+![Overall plan details](https://i.imgur.com/DlrJCes.png)
 
 <a id="gutter"></a>
 ### Gutter
 
-![Gutter](http://i.imgur.com/VqeuQtH.png)
+![Gutter](https://i.imgur.com/VqeuQtH.png)
 
 <a id="autocomplete"></a>
 ### Autocomplete
 
-![Autocomplete](http://i.imgur.com/3RPAwA7.png)
+![Autocomplete](https://i.imgur.com/3RPAwA7.png)
 
 <a id="tabs"></a>
 ### Tabs
 
-![Tabs](http://i.imgur.com/CTOQ9WG.png)
+![Tabs](https://i.imgur.com/CTOQ9WG.png)
 
 <a id="sidebar"></a>
 ### Sidebar
 
-![Side bar](http://i.imgur.com/N8UWi1Q.png)
+![Side bar](https://i.imgur.com/N8UWi1Q.png)
 
 <a id="indexing-status"></a>
 ### Indexing status
 
-![Indexing status](http://i.imgur.com/FMo5NLK.png)
+![Indexing status](https://i.imgur.com/FMo5NLK.png)
 
 <a id="phantom"></a>
 ### Phantom
 
-![Phantom](http://i.imgur.com/C2aZ7oy.png)
+![Phantom](https://i.imgur.com/C2aZ7oy.png)
 
 <a id="plugins"></a>
 ## Plugins
@@ -229,49 +229,49 @@ In a theme/scheme the smallest details are well visible.
 <a id="sublimerge-3--gitgutter"></a>
 ### [Sublimerge 3](http://www.sublimerge.com/sm3/) + [GitGutter](https://packagecontrol.io/packages/GitGutter)
 
-![Sublimerge](http://i.imgur.com/YnfYXWD.png)
+![Sublimerge](https://i.imgur.com/YnfYXWD.png)
 
 <a id="hexviewer"></a>
 ### [HexViewer](https://github.com/facelessuser/HexViewer)
 
-![Hex Viewer](http://i.imgur.com/c0t0Iqy.png)
+![Hex Viewer](https://i.imgur.com/c0t0Iqy.png)
 
 <a id="gitgutter--sublimelinter"></a>
 ### [GitGutter](https://packagecontrol.io/packages/GitGutter) + [SublimeLinter](http://www.sublimelinter.com/en/latest/)
 
-![GitGutter and SublimeLinter](http://i.imgur.com/24kzw67.png)
+![GitGutter and SublimeLinter](https://i.imgur.com/24kzw67.png)
 
 <a id="brackethighlighter"></a>
 ### [BracketHighlighter](https://facelessuser.github.io/BracketHighlighter/)
 
-![BracketHighlighter](http://i.imgur.com/S8SE9nh.png)
+![BracketHighlighter](https://i.imgur.com/S8SE9nh.png)
 
 <a id="emmet"></a>
 ### [Emmet](http://emmet.io/)
 
-![Emmet](http://i.imgur.com/Arhzbgl.png)
+![Emmet](https://i.imgur.com/Arhzbgl.png)
 
 <a id="color-helper"></a>
 ### [Color Helper](https://github.com/facelessuser/ColorHelper)
 
-![Color Helper](http://i.imgur.com/ZcmyymH.png)
+![Color Helper](https://i.imgur.com/ZcmyymH.png)
 
 <a id="dr\months\calendar"></a>
 ### [dr\_months\_calendar](https://github.com/dragon/dr_months_calendar)
 
-![dr\_months\_calendar](http://i.imgur.com/Pq1HXC7.png)
+![dr\_months\_calendar](https://i.imgur.com/Pq1HXC7.png)
 
 <a id="suricate"></a>
 ### [Suricate](https://github.com/nsubiron/SublimeSuricate)
 
-![Suricate](http://i.imgur.com/ivsdfXM.png)
+![Suricate](https://i.imgur.com/ivsdfXM.png)
 
 If *"popup\_style\_file": "Packages/Suricate/css/dark.css",* in Suricate settings.
 
 <a id="sublime\unicode\nbsp"></a>
 ### [sublime\_unicode\_nbsp](https://github.com/possan/sublime_unicode_nbsp)
 
-![sublime\_unicode\_nbsp](http://i.imgur.com/LCTE0Y2.png)
+![sublime\_unicode\_nbsp](https://i.imgur.com/LCTE0Y2.png)
 
 If [patched](https://github.com/possan/sublime_unicode_nbsp/pull/14/files).
 
@@ -283,22 +283,22 @@ Results with the established [WordHighlight](https://github.com/SublimeText/Word
 <a id="selected-text-example"></a>
 ### Selected text example
 
-![Accentuation](http://i.imgur.com/yJ2EdbD.png)
+![Accentuation](https://i.imgur.com/yJ2EdbD.png)
 
 <a id="selected-text-when-the-carriage-is-not-on-text-field"></a>
 ### Selected text when the carriage is not on text field
 
-![Accentuation2](http://i.imgur.com/y715wdq.png)
+![Accentuation2](https://i.imgur.com/y715wdq.png)
 
 <a id="find-ctrlf-text"></a>
 ### Find (<kbd>Ctrl+F</kbd>) text
 
-![Find result](http://i.imgur.com/Z3lGryq.png)
+![Find result](https://i.imgur.com/Z3lGryq.png)
 
 <a id="find-text-when-the-carriage-is-out-of-the-found-text"></a>
 ### Find text when the carriage is out of the found text
 
-![Find result2](http://i.imgur.com/Tyqv7to.png)
+![Find result2](https://i.imgur.com/Tyqv7to.png)
 
 Carriage color and this border color set to the same parameter.
 
@@ -308,22 +308,22 @@ Carriage color and this border color set to the same parameter.
 <a id="gotoanything-panel"></a>
 ### GotoAnything panel
 
-![GotoAnything panel](http://i.imgur.com/2hRinyv.png)
+![GotoAnything panel](https://i.imgur.com/2hRinyv.png)
 
 <a id="switch-project-panel"></a>
 ### Switch Project panel
 
-![Switch Project panel](http://i.imgur.com/YVcfF0k.png)
+![Switch Project panel](https://i.imgur.com/YVcfF0k.png)
 
 <a id="find-and-replace-panel"></a>
 ### Find and Replace panel
 
-![Find and Replace panel](http://i.imgur.com/H6tolbC.png)
+![Find and Replace panel](https://i.imgur.com/H6tolbC.png)
 
 <a id="console"></a>
 ### Console
 
-![Console](http://i.imgur.com/JwQyqyU.png)
+![Console](https://i.imgur.com/JwQyqyU.png)
 
 <a id="build-system-output-console"></a>
 ### Build System output console
@@ -337,12 +337,12 @@ For get a black and white colors, Install [SublimeANSI](https://github.com/aziz/
 "syntax": "Packages/ANSIescape/ANSI.tmLanguage"
 ```
 
-![Build console](http://i.imgur.com/4s81HhM.png)
+![Build console](https://i.imgur.com/4s81HhM.png)
 
 <a id="scopehunter-output-console"></a>
 ### ScopeHunter output console
 
-![ScopeHunter console](http://i.imgur.com/CsxZ8XW.png)
+![ScopeHunter console](https://i.imgur.com/CsxZ8XW.png)
 
 <a id="syntaxes-1"></a>
 ## Syntaxes
@@ -350,62 +350,62 @@ For get a black and white colors, Install [SublimeANSI](https://github.com/aziz/
 <a id="json"></a>
 ### JSON
 
-![JSON1](http://i.imgur.com/N2LvbNZ.png)
+![JSON1](https://i.imgur.com/N2LvbNZ.png)
 
-![JSON2](http://i.imgur.com/epuwjOb.png)
+![JSON2](https://i.imgur.com/epuwjOb.png)
 
 With [LanguageTool](https://packagecontrol.io/packages/LanguageTool) plugin:
 
-![JSON3](http://i.imgur.com/6kWo4aW.png)
+![JSON3](https://i.imgur.com/6kWo4aW.png)
 
 <a id="xml"></a>
 ### XML
 
-![XML](http://i.imgur.com/0s4EFYN.png)
+![XML](https://i.imgur.com/0s4EFYN.png)
 
 <a id="html"></a>
 ### HTML
 
-![HTML1](http://i.imgur.com/POTMTWq.png)
+![HTML1](https://i.imgur.com/POTMTWq.png)
 
-![HTML2](http://i.imgur.com/LFKMdDX.png)
+![HTML2](https://i.imgur.com/LFKMdDX.png)
 
-![HTML3](http://i.imgur.com/AbGgQa9.png)
+![HTML3](https://i.imgur.com/AbGgQa9.png)
 
 <a id="css"></a>
 ### CSS
 
-![CSS](http://i.imgur.com/Rr9AmIZ.png)
+![CSS](https://i.imgur.com/Rr9AmIZ.png)
 
 <a id="javascript"></a>
 ### JavaScript
 
 It turned out to work not so carefully as i wanted.
 
-![JS1](http://i.imgur.com/dedldIL.png)
+![JS1](https://i.imgur.com/dedldIL.png)
 
-![JS2](http://i.imgur.com/2e34vGr.png)
+![JS2](https://i.imgur.com/2e34vGr.png)
 
 <a id="diff"></a>
 ### Diff
 
-![Diff](http://i.imgur.com/AF7BgIU.png)
+![Diff](https://i.imgur.com/AF7BgIU.png)
 
 <a id="regular-expression"></a>
 ### Regular Expression
 
-![Regex1](http://i.imgur.com/kzwyA4E.png)
+![Regex1](https://i.imgur.com/kzwyA4E.png)
 
-![Regex2](http://i.imgur.com/Fu2Slm6.png)
+![Regex2](https://i.imgur.com/Fu2Slm6.png)
 
-![Regex3](http://i.imgur.com/1kvOeeK.png)
+![Regex3](https://i.imgur.com/1kvOeeK.png)
 
 <a id="mediawiki-ng"></a>
 ### Mediawiki NG
 
-![Mediawiki1](http://i.imgur.com/Y2FYuFI.png)
+![Mediawiki1](https://i.imgur.com/Y2FYuFI.png)
 
-![Mediawiki2](http://i.imgur.com/sSzqfsm.png)
+![Mediawiki2](https://i.imgur.com/sSzqfsm.png)
 
 <a id="comparison-of-monokai-default-color-scheme-and-sashasublime"></a>
 # Comparison of Monokai (default color scheme) and SashaSublime
@@ -415,12 +415,12 @@ SashaSublime has several times more than parameters, than a default theme Monoka
 <a id="monokai-scopes"></a>
 ## Monokai scopes
 
-![Monokai scopes](http://i.imgur.com/YITyD6A.png)
+![Monokai scopes](https://i.imgur.com/YITyD6A.png)
 
 <a id="sashasublime-scopes"></a>
 ## SashaSublime scopes
 
-![SashaSublime scopes](http://i.imgur.com/JzT6vnk.png)
+![SashaSublime scopes](https://i.imgur.com/JzT6vnk.png)
 
 <a id="downloading-and-installation"></a>
 # Downloading and installation
@@ -434,11 +434,11 @@ After installation, you need to activate SashaSublime, see [Activation](#Activat
 
 Open your Sublime Text. After Build 3124 install Package Control may quick, use *Tools* menu item: *Tools* → *Install Package Control...*.
 
-![Install Package Control](http://i.imgur.com/JSw5Rbw.png)
+![Install Package Control](https://i.imgur.com/JSw5Rbw.png)
 
 <kbd>Ctrl+Shift+P</kbd> → *Package Control: Install Package*
 
-![Install Package](http://i.imgur.com/qxOBpFq.png)
+![Install Package](https://i.imgur.com/qxOBpFq.png)
 
 Print *SashaSublime* → Enter.
 
@@ -469,7 +469,7 @@ hub clone Kristinita/SashaSublime
 
 Open the page <https://github.com/Kristinita/SashaSublime> in browser. In right bottom angle select Clone or download and then Download ZIP:
 
-![Download ZIP](http://i.imgur.com/fzvUXYo.png)
+![Download ZIP](https://i.imgur.com/fzvUXYo.png)
 
 Download zip-archive and unpack it to <kbd>Alt+N</kbd> → *Browse Packages...* folder. Rename *SashaSublime-master* to *SashaSublime*.
 
@@ -483,11 +483,11 @@ As a result, your folder with SashaSublime has to settle down on the path *Prefe
 
 Install [Themr](https://github.com/benweier/Themr) plugin. <kbd>Ctrl+Shift+P</kbd> → *Themr: List themes* → *SashaSublime* → Enter.
 
-![Theme SashaSublime](http://i.imgur.com/dgIVs3Y.png)
+![Theme SashaSublime](https://i.imgur.com/dgIVs3Y.png)
 
 Then install [Schemr](https://github.com/benweier/Schemr) plugin. <kbd>Ctrl+Shift+P</kbd> → *Schemr: List all schemes* → *SashaSublime \[Dark\]* → Enter.
 
-![Scheme SashaSublime](http://i.imgur.com/UYOiBB9.png)
+![Scheme SashaSublime](https://i.imgur.com/UYOiBB9.png)
 
 <a id="manually-activation"></a>
 ## Manually activation
@@ -621,11 +621,11 @@ If you follow all the steps in this section, you will get the result:
 
 + Active window
 
-![Active window](http://i.imgur.com/AUdJEug.png)
+![Active window](https://i.imgur.com/AUdJEug.png)
 
 + Inactive window
 
-![Inactive window](http://i.imgur.com/3E1qY10.png)
+![Inactive window](https://i.imgur.com/3E1qY10.png)
 
 <a id="changing-favicon-in-sublime-text-3"></a>
 ## Changing favicon in Sublime Text 3
@@ -636,7 +636,7 @@ Mac users possible help [this](http://apple.stackexchange.com/questions/153176/c
 
 For Windows users: download and open [Resource Hacker](http://rsload.net/soft/editor/9133-resource-hacker.html) or [alternate](http://alternativeto.net/software/resource-hacker/) programs for edit *exe* files. For example, in Resource Hacker: *File* → *Open* → *sublime\_text.exe* → *Icon Group* → right mouse button on *103:3081* → *Replace Icon ...*
 
-![Resource Hacker](http://i.imgur.com/XcLuNqS.png)
+![Resource Hacker](https://i.imgur.com/XcLuNqS.png)
 
 → select *SashaSublime.ico* in *icons* → *favicon* folder of this repository → *Replace* → *File* → *Save As* → *Yes* → *Save* → restart Windows.
 
@@ -644,7 +644,7 @@ In Sublime Text folder *sublime\_text\_original.exe* file create. If you don’t
 
 Examples, when use colors of «S» letter my favicon:
 
-![SashaSublime.ico](http://i.imgur.com/b2DxblV.png)
+![SashaSublime.ico](https://i.imgur.com/b2DxblV.png)
 
 - yellow — for smallest favicons, because is good visible; use in top left angle Sublime Text 3 and in Windows Explorer,
 - blue — icons in taskbar,
@@ -664,11 +664,11 @@ rundll32.exe shell32.dll,Control_RunDLL desk.cpl,Advanced,@Advanced
 
 → OK → move thumbs. You can preview changes in title bar your window. I select orange color:
 
-![Orange Title bar](http://i.imgur.com/iZDK322.png)
+![Orange Title bar](https://i.imgur.com/iZDK322.png)
 
 *Save changes*. Window border will have exactly the same color as title bar.
 
-![Orange windows border](http://i.imgur.com/jdWUb5m.png)
+![Orange windows border](https://i.imgur.com/jdWUb5m.png)
 
 <a id="winaero-tweaker"></a>
 ## Winaero Tweaker
@@ -680,14 +680,14 @@ Install program [Winaero Tweaker](http://rsload.net/soft/optimization/19590-wina
 
 *Appearance* → *Inactive Title Bars Color* → click on the square near *Current color (Click to change)* to select the color. I select pink color:
 
-![Pink inactive Title Bar](http://i.imgur.com/ZdcNwMQ.png)
+![Pink inactive Title Bar](https://i.imgur.com/ZdcNwMQ.png)
 
 <a id="menu-bar-settings"></a>
 ### Menu Bar settings
 
 *Advanced Appearance Settings* → *Menus* → change values of parameters. I select *Adjust menu height* → *27*, *font* — *Segoe UI*, *font size* — *10*.
 
-![Menu Bar](http://i.imgur.com/TxDmEIg.png)
+![Menu Bar](https://i.imgur.com/TxDmEIg.png)
 
 *Apply changes* → *Sign out now* → look settings in new Windows session.
 
@@ -696,7 +696,7 @@ Install program [Winaero Tweaker](http://rsload.net/soft/optimization/19590-wina
 
 *Advanced Appearance Settings* → *Window Title Bars* → change values of parameters. I select *Window Title bar height* → *30*, *font* — *Segoe UI*, *font size* — *11*.
 
-![Title bar settings](http://i.imgur.com/mFnVWxi.png)
+![Title bar settings](https://i.imgur.com/mFnVWxi.png)
 
 *Apply changes* → *Sign out now* → view settings in new Windows session.
 
@@ -772,11 +772,11 @@ Color of the square of minihtml phantoms look like background color.
 
 **Actual phantom**
 
-![Actual phantom](http://i.imgur.com/C2aZ7oy.png)
+![Actual phantom](https://i.imgur.com/C2aZ7oy.png)
 
 **Expected phantom**
 
-![Expected phantom](http://i.imgur.com/LB5EWfR.png)
+![Expected phantom](https://i.imgur.com/LB5EWfR.png)
 
 In the files of color scheme you can not change the color of the square of minihtml phantoms. You need again edit *exec.py* file after each update Sublime Text.
 
@@ -794,8 +794,8 @@ body#inline-error div.error a
 <a id="see-also"></a>
 # See also
 
-- [Kristinita’s Search](http://kristinita.ru) — search engine, searching authoritative sources, materials written by experts on the subject.
-- [Sasha Black](http://kristinita.ru/Sasha-Black) — mini-service checks the reputation of your site and the availability of the site in the blacklists.
+- [Kristinita’s Search](https://kristinita.ru) — search engine, searching authoritative sources, materials written by experts on the subject.
+- [Sasha Black](https://kristinita.ru/Sasha-Black) — mini-service checks the reputation of your site and the availability of the site in the blacklists.
 
 <a id="thanks"></a>
 # Thanks

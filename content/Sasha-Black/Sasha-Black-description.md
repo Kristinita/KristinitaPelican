@@ -84,7 +84,7 @@ Noco: 1QBY
 	<br />
 	<li>В меру своих ресурсов следуйте многочисленным рекомендациям профессионалов в зависисмости от того, какой у Вас сайт. <a href="http://aleksius.com/joomla/zashchita-sajta/zashchita-joomla-chast-1" target="_blank" title="Защита сайта на Joomla!">Пример для популярной CMS Joomla!</a>. Со статическими с. <a href="http://prgssr.ru/development/pochemu-generatory-staticheskih-sajtov-budut-populyarny.html#heading-section-1" target="_blank" title="Безопасность статических сайтов">проблем с безопасностью куда меньше</a>. Осваивайте генераторы статики, <a href="http://prgssr.ru/development/pochemu-generatory-staticheskih-sajtov-budut-populyarny.html" target="_blank" title="Почему статические сайты будут популярны">за ними будущее</a>.</li>
 	<br />
-	<li>Периодически проверяйте сайты в Sasha Black :) . Находясь на странице <a href="http://kristinita.ru/Sasha-Black" target="_blank" title="">http://kristinita.ru/Sasha-Black</a>, нажмите на
+	<li>Периодически проверяйте сайты в Sasha Black :) . Находясь на странице <a href="https://kristinita.ru/Sasha-Black" target="_blank" title="">https://kristinita.ru/Sasha-Black</a>, нажмите на
 		<input type="button" value="Ctrl">+
 		<input type="button" value="D"> (в Windows), добавив её тем самым в закладки браузера.</li>
 	<br />
@@ -312,7 +312,7 @@ Noco: 1QBY
 <script type="text/javascript">
 eval(unescape('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%27%3c%61%20%68%72%65%66%3d%22%6d%61%69%6c%74%6f%3a%53%61%73%68%61%43%68%65%72%6e%79%6b%68%45%6d%70%72%65%73%73%4f%66%55%6e%69%76%65%72%73%65%40%6b%72%69%73%74%69%6e%69%74%61%2e%72%75%3f%73%75%62%6a%65%63%74%3d%53%61%73%68%61%25%32%30%42%6c%61%63%6b%22%3e%53%61%73%68%61%43%68%65%72%6e%79%6b%68%45%6d%70%72%65%73%73%4f%66%55%6e%69%76%65%72%73%65%40%6b%72%69%73%74%69%6e%69%74%61%2e%72%75%3c%2f%61%3e%27%29%3b'))
 </script>
-<noscript>[Включите в браузере JavaScript для возможности связаться по электронной почте]</noscript> либо <a href="https://github.com/Kristinita/Kristinita.github.io/issues" target="_blank" title="Багтрекер Гитхаба">через GitHub</a>, нажав на «New Issue». Использование материалов статьи разрешено только с указанием активной гиперссылки на <a href="http://kristinita.ru/Sasha-Black-description" target="_blank" title="Описание Sasha Black">http://kristinita.ru/Sasha-Black-description</a> .
+<noscript>[Включите в браузере JavaScript для возможности связаться по электронной почте]</noscript> либо <a href="https://github.com/Kristinita/Kristinita.github.io/issues" target="_blank" title="Багтрекер Гитхаба">через GitHub</a>, нажав на «New Issue». Использование материалов статьи разрешено только с указанием активной гиперссылки на <a href="https://kristinita.ru/Sasha-Black-description" target="_blank" title="Описание Sasha Black">https://kristinita.ru/Sasha-Black-description</a> .
 <br />
 <br />
 <h2 id="Glossary">Глоссарий</h2>

@@ -70,17 +70,17 @@ Noco: 1vWK5
 <br />
 <h3 id="Not-work">Установка Pale Moon браузером по умолчанию обычными методами</h3>
 <br />
-<img src="http://i.imgur.com/gQywm8B.png" alt="Alt attribute fish">
+<img src="https://i.imgur.com/gQywm8B.png" alt="Alt attribute fish">
 <br /> Не помогает. В «Выборе программ по умолчанию», «Приложениях по умолчанию» и «Настройке доступа программ и параметров компьютера по умолчанию» Pale Moon Portable нет.
 <br />
 <br />
-<img src="http://i.imgur.com/HCIt8xR.png" alt="Alt attribute fish">
-<img src="http://i.imgur.com/l9HgjBJ.png" alt="Alt attribute fish">
-<img src="http://i.imgur.com/LNFEjsi.png" alt="Alt attribute fish">
+<img src="https://i.imgur.com/HCIt8xR.png" alt="Alt attribute fish">
+<img src="https://i.imgur.com/l9HgjBJ.png" alt="Alt attribute fish">
+<img src="https://i.imgur.com/LNFEjsi.png" alt="Alt attribute fish">
 <br /> Связать протоколы с Pale Moon также не получается:
 <br />
 <br />
-<img src="http://i.imgur.com/UiS638u.png" alt="Alt attribute fish">
+<img src="https://i.imgur.com/UiS638u.png" alt="Alt attribute fish">
 <br />
 <br />
 <h3 id="Solution">Решение</h3>
@@ -101,7 +101,7 @@ Noco: 1vWK5
 <br /> Т. е. <em>HKEY_CLASSES_ROOT</em> → <em>FirefoxHTML</em> → <em>shell</em> → <em>open</em> → <em>command</em>. Заменяем путь к Firefox на путь к Pale Moon Portable: правой кнопкой мыши на «По умолчанию» → <em>Изменить</em>.
 <br />
 <br />
-<img src="http://i.imgur.com/qKogH11.png" alt="Alt attribute fish" />
+<img src="https://i.imgur.com/qKogH11.png" alt="Alt attribute fish" />
 <br /> Например, у меня
 <br />Было: "<em>E:\FirefoxPortable\App\Firefox\firefox.exe" -osint -url "%1"</em>
 <br />Стало: <em>"E:Pale Moon\Palemoon-Portable.exe" -osint -url "%1"</em>
@@ -110,9 +110,9 @@ Noco: 1vWK5
 <br />
 <br />Пробуем открыть гиперссылку при работе в какой-нибудь программе, например, почтовой, → в диалоговом окне выбираем <em>Palemoon-Portable</em>, дополнительно поставив галочку напротив <em>Всегда использовать это приложение</em>:
 <br />
-<br /><img src="http://i.imgur.com/mcGNijr.png" alt="Alt attribute fish" />
+<br /><img src="https://i.imgur.com/mcGNijr.png" alt="Alt attribute fish" />
 <br />Отныне ссылки, кликнутые в любой программе, будут открываться браузером Pale Moon Portable. При открытии файлов с расширениями <em>html</em>, <em>htm</em>, <em>xhtml</em> в появившемся диалоговом окне выбираем <em>Palemoon-Portable.exe</em>, помня о галочке.
 <br />
 <br />
-<img src="http://i.imgur.com/DjwBc2Q.png" alt="Alt attribute fish">
+<img src="https://i.imgur.com/DjwBc2Q.png" alt="Alt attribute fish">
 <br /> Pale Moon Portable установлен браузером по умолчанию.

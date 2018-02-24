@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2018-02-22 21:04:04 -->
+<!-- @Last Modified time: 2018-02-24 17:40:13 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -30,45 +30,45 @@
 
 <!-- Tooltipster -->
 {% block base_tooltipster -%}
-    {%- if article.tooltipster == 'true' -%}
+	{%- if article.tooltipster == 'true' -%}
 		<script src="//cdn.jsdelivr.net/jquery.tooltipster/latest/js/tooltipster.bundle.min.js" defer></script>
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.tooltipster/latest/css/tooltipster.bundle.min.css" />
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/tooltipster@4.2.6/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" />
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Tooltipster/tooltip.js" defer></script>
-    {%- endif -%}
+	{%- endif -%}
 {%- endblock %}
 
 <!-- Clipboard.js -->
 {% block base_clipboardjs -%}
-    {%- if article.clipboardjs == 'true' -%}
-	    <script src="//cdn.jsdelivr.net/clipboard.js/latest/clipboard.min.js" defer></script>
+	{%- if article.clipboardjs == 'true' -%}
+		<script src="//cdn.jsdelivr.net/clipboard.js/latest/clipboard.min.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Clipboard.js/Clipboard.js" defer></script>
-    {%- endif -%}
+	{%- endif -%}
 {%- endblock %}
 
 <!-- Visualize -->
 {% block base_visualize -%}
-    {%- if article.visualize == 'true' -%}
+	{%- if article.visualize == 'true' -%}
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-bar-chart.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-pie-chart.js" defer></script>
-    {%- endif -%}
+	{%- endif -%}
 {%- endblock %}
 
 <!-- Details-Polyfill -->
 {% block base_detailspolyfill -%}
-    {%- if article.detailspolyfill == 'true' -%}
+	{%- if article.detailspolyfill == 'true' -%}
 		<script src="{{SITEURL}}/js/Details-Polyfill/details1.js" defer></script>
 		<script src="{{SITEURL}}/js/Details-Polyfill/details2.js" defer></script>
-    {%- endif -%}
+	{%- endif -%}
 {%- endblock %}
 
 <!-- Custom JavaScript, specific for article
 Article metadata variable -->
 {% block base_customjs -%}
-    {%- if article.customjs == 'true' -%}
+	{%- if article.customjs == 'true' -%}
 		<script src="{{SITEURL}}/js/personal/{{article.customjs1}}.js" defer></script>
-    {%- endif -%}
+	{%- endif -%}
 {%- endblock %}
 
 
@@ -83,9 +83,9 @@ Article metadata variable -->
 
 <!-- Custom CSS, specific for article -->
 {% block base_customcss -%}
-    {%- if article.customcss == 'true' -%}
-    	<link rel="stylesheet" href="{{SITEURL}}/css/personal/{{article.customcss1}}.css">
-    {%- endif -%}
+	{%- if article.customcss == 'true' -%}
+		<link rel="stylesheet" href="{{SITEURL}}/css/personal/{{article.customcss1}}.css">
+	{%- endif -%}
 {%- endblock %}
 
 {% block galleryblock -%}

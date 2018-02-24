@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-02-09 18:58:55
+# @Last Modified time: 2018-02-24 17:52:46
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -28,7 +28,6 @@ sys.path.append('plugins')
 
 AUTHOR = 'Саша Черных'
 SITENAME = 'Поиск Кристиниты'
-SITEURL = 'http://kristinita.ru'
 
 TIMEZONE = 'Europe/Moscow'
 DEFAULT_LANG = 'en'
@@ -150,7 +149,7 @@ SECTION_NUMBER_MAX = 5
 # https://github.com/getpelican/pelican-plugins/tree/master/interlinks
 
 INTERLINKS = {
-    'kristinita': 'http://kristinita.ru/#gsc.tab=0&gsc.q='
+    'kristinita': 'https://kristinita.ru/#gsc.tab=0&gsc.q='
 }
 
 # ****************************************************************************

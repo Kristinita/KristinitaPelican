@@ -32,7 +32,7 @@ Now by default
 <br /><br /><b>16</b>
 <br />
 <br />
-<img src="http://i.imgur.com/62uCZBa.png" alt="Alt attribute fish"><br />
+<img src="https://i.imgur.com/62uCZBa.png" alt="Alt attribute fish"><br />
  If to use Portable version, it isn't necessary to specify
 <dfn>%APPDATA%</dfn>.
 <br /><br /><b>45</b>
@@ -65,7 +65,7 @@ This command is only for folders, but not for files, see <a href="http://docs.su
 In the <kbd>Tools</kbd> menu there is no point <kbd>New snippet ...</kbd> .
 <br />
 <br />
-<img src="http://i.imgur.com/K3YqJ4S.png" alt="Alt attribute fish">
+<img src="https://i.imgur.com/K3YqJ4S.png" alt="Alt attribute fish">
 <br /><br /><b>80</b>
 <br />
 <blockquote>If you are having trouble finding the scope, an easy way to find it is to open your packages folder
@@ -83,7 +83,7 @@ In the <kbd>Tools</kbd> menu there is no point <kbd>New snippet ...</kbd> .
 <br /> Empty section «Moving Lines and Code Blocks»
 <br />
 <br />
-<img src="http://i.imgur.com/x1tF1mG.png" alt="Alt attribute fish">
+<img src="https://i.imgur.com/x1tF1mG.png" alt="Alt attribute fish">
 <br /><br /><b>94</b>
 <br />
 <blockquote>Using
@@ -103,12 +103,12 @@ If you only press the spacebar,
 	<kbd>Ctrl+↑/↓</kbd> on Windows is jump to the beginning/end of word, not line.
 	<br />
 	<br />
-	<img src="http://i.imgur.com/u3zjnlJ.png" alt="Alt attribute fish">
+	<img src="https://i.imgur.com/u3zjnlJ.png" alt="Alt attribute fish">
 	<br /><br /><b>96</b>
 	<br /> All hotkeys in this image is not work for me.
 	<br />
 	<br />
-	<img src="http://i.imgur.com/li2YjO9.png" alt="Alt attribute fish">
+	<img src="https://i.imgur.com/li2YjO9.png" alt="Alt attribute fish">
 	<br /><br /><b>103</b>
 	<br />
 	<blockquote>(Windows users use
@@ -124,7 +124,7 @@ If you only press the spacebar,
 	<br /><br /><b>108</b>
 	<br />
 	<br />
-	<img src="http://i.imgur.com/nlEMn8q.png" alt="Alt attribute fish"><br /> I think that once you have a slash at the beginning. Not
+	<img src="https://i.imgur.com/nlEMn8q.png" alt="Alt attribute fish"><br /> I think that once you have a slash at the beginning. Not
 	<dfn>"path": "/Volumes/Macintosh HD/wesbos/Dropbox/0185-book"</dfn>, correct is
 	<dfn>"path": "Volumes/Macintosh HD/wesbos/Dropbox/0185-book"</dfn>. For example, I have
 	<dfn>User</dfn> folder, when is situated my
@@ -141,7 +141,7 @@ If you only press the spacebar,
 	<br /><br /><b>143</b>
 	<br />
 	<br />
-	<img src="http://i.imgur.com/1Vfnz56.png" alt="Alt attribute fish">
+	<img src="https://i.imgur.com/1Vfnz56.png" alt="Alt attribute fish">
 	<br /> Hotkeys not work for me.
 	<br /><br /><b>154</b>
 	<br /> Not

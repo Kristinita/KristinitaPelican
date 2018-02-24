@@ -1,10 +1,10 @@
 Title: ValeriyaSpeller
 Date: 2017-04-04 04:14:07
-Modified: 2018-02-22 21:21:12
+Modified: 2018-02-24 15:58:32
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
-Summary: Spellchecker for Russian texts <br><br> ![ValeriyaSpeller](http://i.imgur.com/bqRl8eD.png)
+Summary: Spellchecker for Russian texts <br><br> ![ValeriyaSpeller](https://i.imgur.com/bqRl8eD.png)
 Pagetitle: ValeriyaSpeller
 Metacontent: Implementation yaspeller for Sublime Text
 Pagecolors: sublime-text
@@ -14,7 +14,7 @@ Category: Programs
 Noco: 1g9b6
 Tooltipster: true
 Clipboardjs: true
-OpenGraphImage: http://i.imgur.com/iciGBgN.jpg
+OpenGraphImage: https://i.imgur.com/iciGBgN.jpg
 Detailspolyfill: false
 
 <div class="SashaEpigraph">
@@ -29,7 +29,7 @@ perfect fan of <a href="https://vk.com/hair_in_the_wind">Goddess</a>
 </div>
 </div>
 
-![Angelovaleria](http://i.imgur.com/iciGBgN.jpg)
+![Angelovaleria](https://i.imgur.com/iciGBgN.jpg)
 
 # Briefly
 
@@ -37,9 +37,9 @@ Russian-language spellchecker for Sublime Text.
 
 # Demonstration
 
-![Sublime Text Window](http://i.imgur.com/bqRl8eD.png)
+![Sublime Text Window](https://i.imgur.com/bqRl8eD.png)
 
-![Error report](http://i.imgur.com/5x542fy.png)
+![Error report](https://i.imgur.com/5x542fy.png)
 
 # Motivation
 
@@ -112,7 +112,7 @@ Letter Ё (Yo): 1
 -----
 ```
 
-![Detailed output](http://i.imgur.com/uC1hthv.png)
+![Detailed output](https://i.imgur.com/uC1hthv.png)
 
 <kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> for Mac) → `SublimeLinter: Enable Debug Mode` → open file, which you needs to linting → [open Sublime Text console](http://stackoverflow.com/q/13965877/5951529) → see output.
 

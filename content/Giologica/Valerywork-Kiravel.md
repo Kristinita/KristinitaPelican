@@ -64,7 +64,7 @@ Noco: 159d5
 	<li>Течения, однозначно не признанные, а то и прямо отвергаемые современной наукой, как то <a href="http://evolkov.net/nonscience/psychoanal/" target="_blank" title="Критика психоанализа">фрейдизм</a>, <a href="http://sceptic-ratio.narod.ru/" target="_blank" title="Критика психоанализа 2">психоанализ</a>.</li>
 </ol>
 <br />
-<img class="leftimg" id="Kiravel" src="{filename}/images/giologica/Kiravel.jpg" alt="Киравэл" border="2px">Когда автору этих строк упорно пытаются что-то доказать с опорой на православие ли или книги Кастанеды, в ответ он пишет <a href="http://kristinita.ru/Giologica/Nas-Izu.html#VALZ" target="_blank" title="VALZ">VALZ</a>, 4 буквы, примерно означающие «рыбята, я признаю только Киравэл — не парьтесь, всё равно пропущу ваши слова мимо ушей».
+<img class="leftimg" id="Kiravel" src="{filename}/images/giologica/Kiravel.jpg" alt="Киравэл" border="2px">Когда автору этих строк упорно пытаются что-то доказать с опорой на православие ли или книги Кастанеды, в ответ он пишет <a href="https://kristinita.ru/Giologica/Nas-Izu.html#VALZ" target="_blank" title="VALZ">VALZ</a>, 4 буквы, примерно означающие «рыбята, я признаю только Киравэл — не парьтесь, всё равно пропущу ваши слова мимо ушей».
 <br />
 <br />
 <br />

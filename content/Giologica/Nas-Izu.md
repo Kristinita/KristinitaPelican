@@ -21,7 +21,7 @@ Noco: 159d5
 <br />
 <br /> Nas Izu — 4-буквенные <a href="http://enc-dic.com/fwords/Akronim-1543.html" target="_blank" title="Определение акронима">акронимы</a>, с чьей помощью вежливо выражается намерение прервать или окончить дискуссию. Применение: напишите собеседнику/ам подходящую аббревиатуру из списка ниже, проставив ссылку на соответствующий <a href="http://htmlbook.ru/samhtml/yakorya" target="_blank" title="Якорь HTML">якорь</a> этой страницы. Допустим, вы хотите завершить прения по причине, изложенной в RNAZ, — оставьте оппоненту/ам сообщение
 <br />
-<span style="background-color: lavenderblush; color: black; font-weight: bold;">RNAZ&nbsp;<a href="http://kristinita.ru/Giologica/Nas-Izu#RNAZ" target="_blank" title="Ссылка на RNAZ">http://kristinita.ru/Giologica/Nas-Izu#RNAZ</a></span> или просто <a href="http://kristinita.ru/Giologica/Nas-Izu#RNAZ" target="_blank"><b>RNAZ</b></a>, когда поддерживается переход по гиперссылкам при нажатии на определённый текст. Если в вашу сторону посыпались ответы, свидетельствующие, что собеседник продолжает гнуть свою линию, несмотря на приведённый акроним, молчите, — своё вы уже высказали.
+<span style="background-color: lavenderblush; color: black; font-weight: bold;">RNAZ&nbsp;<a href="https://kristinita.ru/Giologica/Nas-Izu#RNAZ" target="_blank" title="Ссылка на RNAZ">https://kristinita.ru/Giologica/Nas-Izu#RNAZ</a></span> или просто <a href="https://kristinita.ru/Giologica/Nas-Izu#RNAZ" target="_blank"><b>RNAZ</b></a>, когда поддерживается переход по гиперссылкам при нажатии на определённый текст. Если в вашу сторону посыпались ответы, свидетельствующие, что собеседник продолжает гнуть свою линию, несмотря на приведённый акроним, молчите, — своё вы уже высказали.
 <br />
 <br />
 <br />
