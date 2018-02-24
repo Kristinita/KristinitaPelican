@@ -48,6 +48,7 @@ module.exports = (grunt) ->
 		######################
 		# Automatic update local dev dependencies
 		# https://www.npmjs.com/package/grunt-dev-update
+		# https://stackoverflow.com/a/48952098/5951529
 		devUpdate:
 			main:
 				options:
@@ -55,6 +56,17 @@ module.exports = (grunt) ->
 					# https://www.npmjs.com/package/grunt-dev-update#optionssemver
 					semver: false
 					updateType: 'force'
+
+		##########################
+		## grunt-project-update ##
+		##########################
+		# Remove unused packages, use “npm prune”:
+		# https://www.npmjs.com/package/grunt-project-update
+		# https://stackoverflow.com/a/21417098/5951529
+		projectUpdate:
+			update:
+				cmd: 'npm'
+				args: ['prune']
 
 		#################
 		## grunt-shell ##
@@ -407,17 +419,17 @@ module.exports = (grunt) ->
 		concurrent:
 			# For publishing
 			target1: ['devUpdate']
-			target2: ['shell:deploy']
-			target3: ['move']
-			target4: ['clean', 'stylus', 'unused']
-			target5: ['purifycss', 'imagemin']
-			target6: ['postcss', 'string-replace']
-			target7: ['jsbeautifier']
+			target2: ['projectUpdate']
+			target3: ['shell:deploy']
+			target4: ['move']
+			target5: ['clean', 'stylus', 'unused']
+			target6: ['purifycss', 'imagemin']
+			target7: ['postcss', 'string-replace']
+			target8: ['jsbeautifier']
 			# For development
-			target8: ['shell:generate']
-			target9: ['stylus']
-			target10: ['string-replace', 'purifycss']
-			# target11: ['gulp']
+			target9: ['shell:generate']
+			target10: ['stylus']
+			target11: ['string-replace', 'purifycss']
 
 		########################
 		## grunt-browser-sync ##
@@ -454,9 +466,9 @@ module.exports = (grunt) ->
 	# publish — before publishing with absolute paths
 
 	grunt.registerTask 'build', [
-		'concurrent:target8'
 		'concurrent:target9'
 		'concurrent:target10'
+		'concurrent:target11'
 	]
 
 	grunt.registerTask 'publish', [
@@ -467,5 +479,6 @@ module.exports = (grunt) ->
 		'concurrent:target5'
 		'concurrent:target6'
 		'concurrent:target7'
+		'concurrent:target8'
 	]
 	return
