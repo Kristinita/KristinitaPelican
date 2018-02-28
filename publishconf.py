@@ -1,15 +1,14 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*- #
+# -*- coding: utf-8 -*-
+# @Author: Kristinita
+# @Date: 2017-01-17 17:43:09
+# @Last Modified time: 2018-02-27 18:35:50
 
-# This file used if use `make publish` or
-# explicitly specify it as your config file.
-
-import os
 import sys
 
-sys.path.append(os.curdir)
+# Doesn't need “os” module
+# https://github.com/getpelican/pelican-blog/blob/master/publishconf.py
+sys.path.append('.')
 
-from pelicanconf import *  # NOQA
 """pelicanconf module.
 
 Import settings from pelicanconf.py file.
@@ -17,8 +16,10 @@ Ignore flake8 errors/warnings in this line:
 http://stackoverflow.com/a/10506715/5951529
 “import pelicanconf” doesn't work:
 http://stackoverflow.com/a/1084984/5951529
+“noqa”, not “NOQA” works for Anaconda:
+https://stackoverflow.com/a/46759770/5951529
 """
-
+from pelicanconf import *  # noqa
 
 DELETE_OUTPUT_DIRECTORY = True
 
@@ -34,11 +35,17 @@ PLUGINS = [
     'just_table',
     'interlinks',
     'neighbors',
-    'optimize_images',
-    'pagefixer',
+    'putsashi',
     'section_number',
     'sitemap',
 ]
+
+# ****************************************************************************
+# *                               Cache                                   *
+# ****************************************************************************
+
+CACHE_CONTENT = False
+LOAD_CONTENT_CACHE = False
 
 # ****************************************************************************
 # *                               Sharing                                    *

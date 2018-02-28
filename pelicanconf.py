@@ -1,26 +1,18 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-02-24 17:52:46
+# @Last Modified time: 2018-02-27 20:37:15
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
 """
-import sys
-"""sys module.
 
-For download plugins from “plugins” folder.
-"""
-
-# import logging
 """ logging pelican module.
 
 For disabling warnings:
 http://docs.getpelican.com/en/stable/settings.html#logging
 """
-# That Pelican see plugins from this folder
-
-sys.path.append('plugins')
+# import logging
 
 # ****************************************************************************
 # *                                  General                                 *
@@ -28,6 +20,7 @@ sys.path.append('plugins')
 
 AUTHOR = 'Саша Черных'
 SITENAME = 'Поиск Кристиниты'
+SITEURL = '.'
 
 TIMEZONE = 'Europe/Moscow'
 DEFAULT_LANG = 'en'
@@ -47,8 +40,16 @@ DELETE_OUTPUT_DIRECTORY = False
 
 OUTPUT_RETENTION = [".git"]
 
-# Load non-modified content from cache
-
+# Cache settings
+# http://docs.getpelican.com/en/latest/settings.html?highlight=cache
+# [NOTE] If experiments with Pelican settings, use --ignore-cache option
+# http://docs.getpelican.com/en/latest/settings.html#settings
+CACHE_CONTENT = True
+CACHE_PATH = 'pelican_cache'
+GZIP_CACHE = True
+# [NOTE] WITH_FUTURE_DATES conflict with CONTENT_CACHING_LAYER
+# http://docs.getpelican.com/en/latest/settings.html#reading-only-modified-content
+CONTENT_CACHING_LAYER = 'reader'
 LOAD_CONTENT_CACHE = True
 
 # Relative URLs for developing
@@ -79,6 +80,8 @@ https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags
 """
 
 PLUGIN_PATHS = ['pelican-plugins']
+# [BUG] Automatic plugins installation doesn't work for me:
+# https://github.com/kplaube/pelican-plugin-installer/issues/6
 PLUGINS = [
     # [DEPRECATED], now by default
     # https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
@@ -89,13 +92,15 @@ PLUGINS = [
     'neighbors',
     # [FIXME] Different colors for different designs
     # 'pelican-linkclass',
-    'pagefixer',
-    'permalinks',
+    # [BUG] Doesn't work for Python 3.6:
+    # https://github.com/getpelican/pelican-plugins/issues/977
+    # 'permalinks',
     # 'photos',
     # Disable, because:
     # 1. Plugin create duplicates of files
     # 2. Incorrect paths — http://bit.ly/2pZdyk0
     # 'pelican_javascript',
+    'putsashi',
     'section_number',
 ]
 
@@ -165,36 +170,39 @@ INTERLINKS = {
 http://romeogolf.github.io/pelican-i-modul-python-markdown.html
 Extensions, which Sasha's fan use.
 
+Officially support extensions doesn't need additional installation:
+https://python-markdown.github.io/extensions/#officially-supported-extensions
+
 #
 # 1. extra
 #
 
 Attribute List — add id and classes in Markdown
-https://pythonhosted.org/Markdown/extensions/attr_list.html
+https://python-markdown.github.io/extensions/extra/
 
 Definition List — add dl, dd, dt tags
-https://pythonhosted.org/Markdown/extensions/definition_lists.html
+https://python-markdown.github.io/extensions/definition_lists/
 https://webref.ru/html/dd
 
 Fenced code blocks — correct display multiline code blocks
-https://pythonhosted.org/Markdown/extensions/fenced_code_blocks.html
+https://python-markdown.github.io/extensions/fenced_code_blocks/
 
 Tables — simple tables
-https://pythonhosted.org/Markdown/extensions/tables.html
+https://python-markdown.github.io/extensions/tables/
 
 #
 # 2. Other default extensions
 #
 
 admonition — notes in Markdown
-https://pythonhosted.org/Markdown/extensions/admonition.html
+https://python-markdown.github.io/extensions/admonition/
 
 nl2br — new line without 2 br in line end
 Like GitHub, not like Stack Overflow
-https://pythonhosted.org/Markdown/extensions/nl2br.html
+https://python-markdown.github.io/extensions/nl2br/
 
 sane_lists — mix ordered/unordered list
-https://pythonhosted.org/Markdown/extensions/sane_lists.html
+https://python-markdown.github.io/extensions/sane_lists/
 
 #
 # 3. facelessuser extensions

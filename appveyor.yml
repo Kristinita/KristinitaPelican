@@ -1,0 +1,57 @@
+# AppVeyor configuration:
+# https://www.appveyor.com/docs/appveyor-yml/
+
+init:
+  - setx PIPENV_VENV_IN_PROJECT 1
+  - refreshenv
+  # Needs, because will get messages as:
+  # «flake8 is not recognized»
+  # https://github.com/ogrisel/python-appveyor-demo/blob/master/appveyor.yml
+  # Python 2 by default, see:
+  # https://www.appveyor.com/docs/build-environment/#python
+  # https://ci.appveyor.com/project/Kristinita/erichek/build/1.0.3
+  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+  # Needs AppVeyor console set, see:
+  # https://stackoverflow.com/a/48093971/5951529
+  - set PYTHONIOENCODING=utf-8
+
+environment:
+
+  matrix:
+
+    # Variables:
+    # https://help.appveyor.com/discussions/problems/4629-how-to-use-appveyor-environment-variable
+    # https://help.appveyor.com/discussions/questions/15163-multiuple-build-matrix-dimensions-from-environment-variables
+    - PYTHON: "C:\\Python36-x64"
+      PYTHON_VERSION: "3.6.4"
+      PYTHON_ARCH: "64"
+      GRUNT_COMMAND: build
+    - PYTHON: "C:\\Python36-x64"
+      PYTHON_VERSION: "3.6.4"
+      PYTHON_ARCH: "64"
+      GRUNT_COMMAND: publish
+
+platform: x64
+
+# Build configuration:
+# https://www.appveyor.com/docs/build-configuration/#build-pipeline
+install:
+
+  - choco install nodejs -y
+  - pip install --upgrade pip
+  - pip install pipenv
+  - pipenv install --dev
+  - npm install -g grunt-cli
+  - npm install
+
+# Check, that virtual environment install inside project
+before_build:
+
+  # Get current working directory:
+  # https://stackoverflow.com/a/607682/5951529
+  - cd
+  - pipenv --venv
+
+build_script:
+
+  - grunt %GRUNT_COMMAND%

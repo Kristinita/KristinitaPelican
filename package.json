@@ -1,11 +1,29 @@
 {
-  "name": "Kristinita's Search",
-  "version": "0.1.0",
+  "name": "kristinitas-search",
   "description": "Kristinita's Search site",
-  "main": "Gruntfile.coffee",
-  "repository": "https://github.com/Kristinita/KristinitaPelican",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Kristinita/KristinitaPelican",
+  "author": "Sasha Chernykh (http://uid.me/sasha_chernykh)",
+  "repository": "github:Kristinita/KristinitaPelican",
+  "bugs": {
+    "url": "https://github.com/Kristinita/KristinitaPelican/issues"
+  },
   "license": "MIT",
-  "author": "Sasha Chernykh",
+  "files": [
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=4"
+  },
+  "keywords": [
+    "Kristinita",
+    "Pelican",
+    "Grunt"
+  ],
+  "contributors": [
+    "Sasha Chernykh Kristinita"
+  ],
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^8.0.0",
     "browser-sync": "^2.23.6",
@@ -24,6 +42,7 @@
     "grunt-image": "^4.1.0",
     "grunt-jsbeautifier": "^0.2.13",
     "grunt-move": "^0.1.5",
+    "grunt-notify": "^0.4.5",
     "grunt-postcss": "^0.9.0",
     "grunt-posthtml": "^0.5.0",
     "grunt-prettify": "^0.4.0",

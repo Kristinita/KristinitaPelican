@@ -1,0 +1,45 @@
+# Trusty by default:
+# https://stackoverflow.com/a/21133609/5951529
+# https://blog.travis-ci.com/2017-07-11-trusty-as-default-linux-is-coming
+language: python
+
+python: 3.6
+
+# Multiple scripts
+# http://bit.ly/2ow2DvL
+env:
+  - GRUNT_COMMAND=build
+  - GRUNT_COMMAND=publish
+
+# Sections:
+# https://docs.travis-ci.com/user/customizing-the-build/#The-Build-Lifecycle
+# https://stackoverflow.com/a/34384262/5951529
+
+before_install:
+  # Virtual environment inside project directory:
+  # https://jcutrer.com/howto/dev/python/pipenv-pipfile
+  # “setx PIPENV_VENV_IN_PROJECT 1” for Windows
+  - export PIPENV_VENV_IN_PROJECT=1
+  # Ignore already existing virtual environments:
+  # https://github.com/menzenski/pipenv-travis-test/blob/develop/.travis.yml
+  - export PIPENV_IGNORE_VIRTUALENVS=1
+
+install:
+  - pip install --upgrade pip
+  - npm install --global npm
+  - pip install pipenv
+  - pipenv install --dev
+  # Grunt tasks needs grunt-cli globally:
+  # https://stackoverflow.com/a/21133609/5951529
+  - npm install -g grunt-cli
+  - npm install
+
+# Check, that virtual environment install inside project
+before_script:
+  # Get current working directory:
+  # https://unix.stackexchange.com/a/188191/237999
+  - echo $PWD
+  - pipenv --venv
+
+script:
+  - grunt $GRUNT_COMMAND

@@ -43,6 +43,14 @@ module.exports = (grunt) ->
 
 	grunt.initConfig
 
+		# notify_hooks:
+		# 	options:
+		# 		enabled: true
+		# 		title: "Kristinita's Search"
+		# 		success: true
+		# 		duration: 7
+		# 		message: 'Compiled Successfully'
+
 		######################
 		## grunt-dev-update ##
 		######################
@@ -68,6 +76,22 @@ module.exports = (grunt) ->
 				cmd: 'npm'
 				args: ['prune']
 
+		# ###################
+		# ## grunt-pelican ##
+		# ###################
+		# # Pelican tasks from Grunt
+		# # https://www.npmjs.com/package/grunt-pelican
+		# # [WARNING] Pipenv doesn't work in Grunt Pelican
+		# # https://github.com/chuwy/grunt-pelican/issues/4
+		# pelican:
+		# 	options:
+		# 		contentDir: 'content'
+		# 		outputDir: 'output'
+		# 	build:
+		# 		configFile: 'pelicanconf.py'
+		# 	publish:
+		# 		configFile: 'publishconf.py'
+
 		#################
 		## grunt-shell ##
 		#################
@@ -75,9 +99,26 @@ module.exports = (grunt) ->
 		# Build Pelican site:
 		# http://manos.im/blog/static-site-pelican-grunt-travis-github-pages/
 		# https://github.com/sindresorhus/grunt-shell
+		# Needs “pipenv run”, that scripts from pipenv virtual environment successful run;
+		# for example, “pipenv run pelican --help”, not “pelican --help”.
+		# https://robots.thoughtbot.com/how-to-manage-your-python-projects-with-pipenv
+		# exit(1), if any warning
 		shell:
-			generate: command: 'pelican content -s pelicanconf.py'
-			deploy: command: 'pelican content -s publishconf.py'
+			generate:
+				command: 'pipenv run pelican content -s pelicanconf.py --fatal warnings'
+			deploy:
+				command: 'pipenv run pelican content -s publishconf.py --fatal warnings'
+			# Update Pip and Pipenv
+			pipenvupdate:
+				command: 'pipenv --update'
+			# Update all Python Pipenv packages:
+			# https://stackoverflow.com/a/16269635/5951529
+			# https://github.com/jgonggrijp/pip-review#pip-review
+			pipenvupdateall:
+				command: 'pipenv run pip-review --auto'
+			# Clean unused packages
+			pipenvcleanunused:
+				command: 'pipenv clean --verbose'
 
 		################
 		## grunt-move ##
@@ -448,18 +489,19 @@ module.exports = (grunt) ->
 		# https://www.npmjs.com/package/grunt-concurrent
 		concurrent:
 			# For publishing
-			target1: ['devUpdate']
-			target2: ['projectUpdate']
-			target3: ['shell:deploy']
-			target4: ['move']
-			target5: ['clean', 'stylus', 'unused']
-			target6: ['purifycss', 'imagemin']
-			target7: ['postcss', 'string-replace']
-			target8: ['jsbeautifier']
+			target1: ['devUpdate', 'shell:pipenvupdate']
+			target2: ['projectUpdate', 'shell:pipenvupdateall']
+			target3: ['shell:pipenvcleanunused']
+			target4: ['shell:deploy']
+			target5: ['move']
+			target6: ['clean', 'stylus', 'unused']
+			target7: ['purifycss', 'imagemin']
+			target8: ['postcss', 'string-replace']
+			target9: ['jsbeautifier']
 			# For development
-			target9: ['shell:generate']
-			target10: ['stylus']
-			target11: ['string-replace', 'purifycss']
+			target10: ['shell:generate']
+			target11: ['stylus']
+			target12: ['string-replace', 'purifycss']
 
 		########################
 		## grunt-browser-sync ##
@@ -488,6 +530,23 @@ module.exports = (grunt) ->
 						files: "output/**/*.html"
 					]
 
+		# ########################
+		# ## grunt-nice-package ##
+		# ########################
+		# # package.json validator
+		# # https://www.npmjs.com/package/grunt-nice-package
+		# # [BUG] Some features works incorrect:
+		# # https://github.com/bahmutov/grunt-nice-package/issues/25
+		# # https://github.com/bahmutov/grunt-nice-package/issues/26
+		# # nicePackage shortcut:
+		# # https://www.npmjs.com/package/grunt-nice-package#alternative-default-options
+		# # "generate-package" generate package.json:
+		# # https://www.npmjs.com/package/generate-package
+		# nicePackage:
+		# 	all:
+		# 		options:
+		# 			blankLine: false
+
 	##################
 	## registerTask ##
 	##################
@@ -496,19 +555,21 @@ module.exports = (grunt) ->
 	# publish — before publishing with absolute paths
 
 	grunt.registerTask 'build', [
-		'concurrent:target9'
 		'concurrent:target10'
 		'concurrent:target11'
+		'concurrent:target12'
 	]
 
 	grunt.registerTask 'publish', [
 		'concurrent:target1'
 		'concurrent:target2'
-		'concurrent:target3'
+		# [BUG] Clean real mdx_cite package
+		# 'concurrent:target3'
 		'concurrent:target4'
 		'concurrent:target5'
 		'concurrent:target6'
 		'concurrent:target7'
 		'concurrent:target8'
+		'concurrent:target9'
 	]
 	return

@@ -1,6 +1,6 @@
 Title: How to publish your package to PyPI, 2018
 Date: 2017-07-26 11:10:27
-Modified: 2018-02-22 21:21:15
+Modified: 2018-02-28 07:46:16
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -132,7 +132,7 @@ For examples in this article, I select my Erichek package.
 
 ![Erichek on pypi.python.org](https://i.imgur.com/yzNSQNm.png)
 
-<https://pypi.org/project/erichek> page at February 2018:
+<https://pypi.org/project/erichek> [Warehouse](https://pyfound.blogspot.com/2018/02/python-package-maintainers-help-test.html) page at February 2018:
 
 ![Erichek on pypi.org](https://i.imgur.com/DjMYPrP.png)
 
