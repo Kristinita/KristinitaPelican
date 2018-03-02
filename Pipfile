@@ -20,15 +20,14 @@ pelican = "*"
 markdown = "*"
 "beautifulsoup4" = "*"
 pymdown-extensions = "*"
-mdx-cite = {git = "git://github.com/aleray/mdx_cite.git"}
-mdx-custom-span-class = {git = "git://github.com/exaroth/mdx_custom_span_class.git"}
 pyembed-markdown = "*"
-markdown-newtab = {git = "https://github.com/Undeterminant/markdown-newtab"}
+markdown-newtab = {git = "https://github.com/Undeterminant/markdown-newtab.git", editable = true}
 md-environ = "*"
 markdown-blockdiag = "*"
 pip-review = "*"
-mdx-downheader = {git = "https://github.com/cprieto/mdx_downheader.git"}
-mdx_downheader = {git = "https://github.com/cprieto/mdx_downheader.git"}
+mdx-cite = {git = "https://github.com/aleray/mdx_cite.git", editable = true}
+mdx-custom-span-class = {git = "https://github.com/exaroth/mdx_custom_span_class.git", editable = true}
+markdown-downheader = "*"
 
 
 [requires]

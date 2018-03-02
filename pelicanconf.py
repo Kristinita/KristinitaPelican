@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-03-02 11:12:17
+# @Last Modified time: 2018-03-02 14:03:49
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -373,6 +373,20 @@ CATEGORY_SAVE_AS = CATEGORY_URL
 TAG_URL = 'tag/{slug}.html'
 TAG_SAVE_AS = TAG_URL
 TAGS_SAVE_AS = 'tag/alltags.html'
+
+# ****************************************************************************
+# *                               Sharing                                    *
+# ****************************************************************************
+
+# Disable feed generation in developing process
+# http://docs.getpelican.com/en/latest/faq.html#what-if-i-want-to-disable-feed-generation
+# [BUG] I get in console: “TypeError: not all arguments converted during string formatting”
+
+# FEED_ALL_ATOM = None
+# CATEGORY_FEED_ATOM = None
+# TRANSLATION_FEED_ATOM = None
+# AUTHOR_FEED_ATOM = None
+# AUTHOR_FEED_RSS = None
 
 # ****************************************************************************
 # *                                   Other                                  *

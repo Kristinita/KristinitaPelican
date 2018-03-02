@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "1313538e67f3aff1364c41f074eaed97a12e179fff9c86f3bf234df424192c49"
+            "sha256": "8158327bc1ca16b662a20128ed3cc250d863843ef643c754b08c4cd5c7f3cccc"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -119,8 +119,15 @@
             ],
             "version": "==0.7.0"
         },
+        "markdown-downheader": {
+            "hashes": [
+                "sha256:4822e9b19f033168f2da702c2798d0df1e118663c73d5951a24abf4ef8cfdde3"
+            ],
+            "version": "==1.1.0"
+        },
         "markdown-newtab": {
-            "git": "https://github.com/Undeterminant/markdown-newtab"
+            "editable": true,
+            "git": "https://github.com/Undeterminant/markdown-newtab.git"
         },
         "markupsafe": {
             "hashes": [
@@ -135,13 +142,12 @@
             "version": "==0.1.0"
         },
         "mdx-cite": {
-            "git": "git://github.com/aleray/mdx_cite.git"
+            "editable": true,
+            "git": "https://github.com/aleray/mdx_cite.git"
         },
         "mdx-custom-span-class": {
-            "git": "git://github.com/exaroth/mdx_custom_span_class.git"
-        },
-        "mdx-downheader": {
-            "git": "https://github.com/cprieto/mdx_downheader.git"
+            "editable": true,
+            "git": "https://github.com/exaroth/mdx_custom_span_class.git"
         },
         "nwdiag": {
             "hashes": [

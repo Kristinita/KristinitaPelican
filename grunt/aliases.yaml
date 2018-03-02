@@ -1,0 +1,26 @@
+##################
+## registerTask ##
+##################
+# Run chains Grunt commands
+# default — reviewing with relative paths
+# publish — before publishing with absolute paths
+# update — update Node.js, Python and git
+# If “default”, you need run only “grunt” in command prompt, not “grunt default”:
+# https://www.html5rocks.com/en/tutorials/tooling/supercharging-your-gruntfile/#toc-organizing
+default:
+  - 'concurrent:tarb1'
+  - 'concurrent:tarb2'
+  - 'concurrent:tarb3'
+
+publish:
+  - 'concurrent:tarp1'
+  - 'concurrent:tarp2'
+  - 'concurrent:tarp3'
+  - 'concurrent:tarp4'
+  - 'concurrent:tarp5'
+  - 'concurrent:tarp6'
+
+update:
+  - 'concurrent:taru1'
+  - 'concurrent:taru2'
+  - 'concurrent:taru3'

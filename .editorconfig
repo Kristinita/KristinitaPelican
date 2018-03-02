@@ -1,4 +1,12 @@
+# EditorConfig
+# http://editorconfig.org/
+
 # UNIX line endings in “.sh” files:
 # https://stackoverflow.com/a/49050430/5951529
 [*.sh]
 end_of_line = lf
+
+# Tabs = 4 spaces for CoffeeScript always
+[*.coffee]
+indent_style = tab
+indent_size = 4
