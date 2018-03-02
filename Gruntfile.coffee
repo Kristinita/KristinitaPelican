@@ -71,6 +71,8 @@ module.exports = (grunt) ->
 		# Remove unused packages, use “npm prune”:
 		# https://www.npmjs.com/package/grunt-project-update
 		# https://stackoverflow.com/a/21417098/5951529
+		# For example, you don't want use grunt-image → you remove grunt-image from package.json →
+		# you run “npm prune” → grunt-image delete with dependencies
 		projectUpdate:
 			update:
 				cmd: 'npm'
@@ -120,9 +122,14 @@ module.exports = (grunt) ->
 			pipenvupdateall:
 				command: 'pipenv run pip-review --auto'
 			# Clean unused packages
+			# [NOTE] Python non-PyPI packages from GitHub need install in format:
+			# git+ssh://git@github.com/org/repo.git#egg=pkgname
+			# Don't firget “#egg=pkgname”
+			# [NOTE] Filename non-PyPI packages must be in format:
+			# “mdx-custom-span-class”, not “mdx_custom_span_class”
+			# [WARNING] pipenv can delete needest Python GitHub packages
 			pipenvcleanunused:
 				command: 'pipenv clean --verbose'
-			# Clean .git folder:
 			#########
 			## git ##
 			#########
