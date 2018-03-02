@@ -108,6 +108,9 @@ module.exports = (grunt) ->
 				command: 'pipenv run pelican content -s pelicanconf.py --fatal warnings'
 			deploy:
 				command: 'pipenv run pelican content -s publishconf.py --fatal warnings'
+			############
+			## pipenv ##
+			############
 			# Update Pip and Pipenv
 			pipenvupdate:
 				command: 'pipenv --update'
@@ -119,6 +122,25 @@ module.exports = (grunt) ->
 			# Clean unused packages
 			pipenvcleanunused:
 				command: 'pipenv clean --verbose'
+			# Clean .git folder:
+			#########
+			## git ##
+			#########
+			# Shrink .git folder
+			# https://stackoverflow.com/a/2116892/5951529
+			# Before: 568 MB — <https://i.imgur.com/aMvcfY1.png>
+			# After: 341 MB — <https://i.imgur.com/52cQ1AL.png>
+			#########
+			# Remove reflog entries older, than 90 days:
+			# https://stackoverflow.com/a/3824970/5951529
+			gitreflog:
+				command: 'git reflog expire --all'
+			# git gc
+			# https://stackoverflow.com/a/55738/5951529
+			# Prune loose objects older than 2 weeks ago:
+			# https://www.kernel.org/pub/software/scm/git/docs/git-gc.html
+			gitgarbagecollector:
+				command: 'git gc --aggressive'
 
 		################
 		## grunt-move ##
@@ -185,6 +207,9 @@ module.exports = (grunt) ->
 		# https://github.com/ryanburgess/grunt-unused/issues/10
 		# If fail: true, and unused files, exit code 1;
 		# If fail: false and unused files, Grunt continue to work.
+		# [WARNING] Find images, for which links only HTML files, not Markdown files.
+		# If you add link to image to your Markdown file, but you haven't link to file
+		# in your HTML file, grunt-unused delete this image.
 		unused:
 			options:
 				reference: 'output/images/'
@@ -488,20 +513,21 @@ module.exports = (grunt) ->
 		# Run multiple tasks
 		# https://www.npmjs.com/package/grunt-concurrent
 		concurrent:
-			# For publishing
-			target1: ['devUpdate', 'shell:pipenvupdate']
-			target2: ['projectUpdate', 'shell:pipenvupdateall']
-			target3: ['shell:pipenvcleanunused']
-			target4: ['shell:deploy']
-			target5: ['move']
-			target6: ['clean', 'stylus', 'unused']
-			target7: ['purifycss', 'imagemin']
-			target8: ['postcss', 'string-replace']
-			target9: ['jsbeautifier']
-			# For development
-			target10: ['shell:generate']
-			target11: ['stylus']
-			target12: ['string-replace', 'purifycss']
+			# For publishing, “target publish”
+			tarp1: ['shell:deploy']
+			tarp2: ['move']
+			tarp3: ['clean', 'stylus', 'unused']
+			tarp4: ['purifycss', 'imagemin']
+			tarp5: ['postcss', 'string-replace']
+			tarp6: ['jsbeautifier']
+			# For development, “target build”
+			tarb1: ['shell:generate']
+			tarb2: ['stylus']
+			tarb3: ['string-replace', 'purifycss']
+			# For updating dependencies, “target update”
+			taru1: ['devUpdate', 'shell:pipenvupdate', 'shell:gitreflog']
+			taru2: ['projectUpdate', 'shell:pipenvupdateall', 'shell:gitgarbagecollector']
+			taru3: ['shell:pipenvcleanunused']
 
 		########################
 		## grunt-browser-sync ##
@@ -555,21 +581,24 @@ module.exports = (grunt) ->
 	# publish — before publishing with absolute paths
 
 	grunt.registerTask 'build', [
-		'concurrent:target10'
-		'concurrent:target11'
-		'concurrent:target12'
+		'concurrent:tarb1'
+		'concurrent:tarb2'
+		'concurrent:tarb3'
 	]
 
 	grunt.registerTask 'publish', [
-		'concurrent:target1'
-		'concurrent:target2'
+		'concurrent:tarp1'
+		'concurrent:tarp2'
 		# [BUG] Clean real mdx_cite package
 		# 'concurrent:target3'
-		'concurrent:target4'
-		'concurrent:target5'
-		'concurrent:target6'
-		'concurrent:target7'
-		'concurrent:target8'
-		'concurrent:target9'
+		'concurrent:tarp4'
+		'concurrent:tarp5'
+		'concurrent:tarp6'
+	]
+
+	grunt.registerTask 'update', [
+		'concurrent:taru1'
+		'concurrent:taru2'
+		'concurrent:taru3'
 	]
 	return

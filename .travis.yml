@@ -1,6 +1,13 @@
+# Don't download all repository history, that save a time:
+# https://docs.travis-ci.com/user/customizing-the-build/#Git-Clone-Depth
+git:
+  depth: 1
+
 # Trusty by default:
 # https://stackoverflow.com/a/21133609/5951529
 # https://blog.travis-ci.com/2017-07-11-trusty-as-default-linux-is-coming
+# Travis CI doesn't support 32-bit platforms:
+# https://stackoverflow.com/a/37087813/5951529
 language: python
 
 python: 3.6
@@ -25,16 +32,13 @@ before_install:
   - export PIPENV_IGNORE_VIRTUALENVS=1
 
 install:
-  - pip install --upgrade pip
-  - npm install --global npm
-  - pip install pipenv
-  - pipenv install --dev
-  # Grunt tasks needs grunt-cli globally:
-  # https://stackoverflow.com/a/21133609/5951529
-  - npm install -g grunt-cli
-  - npm install
+  # [NOTE] Parallelshell works, but no time economy, compare:
+  # https://travis-ci.org/Kristinita/SashaPelicanTest/jobs/347254717
+  # https://travis-ci.org/Kristinita/SashaPelicanTest/jobs/347267767
+  - sudo apt-get install parallel
+  - bash ci/travis_install.sh
 
-# Check, that virtual environment install inside project
+# Check, that virtual environment install inside project.
 before_script:
   # Get current working directory:
   # https://unix.stackexchange.com/a/188191/237999

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-02-27 20:37:15
+# @Last Modified time: 2018-03-02 07:45:45
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -278,42 +278,54 @@ https://pyembed.github.io/usage/markdown/
 
 MARKDOWN = {
     'extension_configs': {
+        #
+        # 1. extra
+        #
         'markdown.extensions.extra': {},
+        #
+        # 2. Other default extensions
+        #
         'markdown.extensions.admonition': {},
-        # [Bug] just_table conflict, just_table tables display incorrect
-        # nl2br — extension, without which I can do
+        # [DEPRECATED] just_table conflict, just_table tables display incorrect.
+        # nl2br — extension, without which I can work.
         # 'markdown.extensions.nl2br': {},
         'markdown.extensions.sane_lists': {},
-        # [DEPRECATED] “section_number” disabling bug
+        # [DEPRECATED] “section_number” disabling bug:
         # https://github.com/waylan/Python-Markdown/issues/560
-        # Now I use regex replacing in Gruntfile.coffee and don't need this
-        # extension
+        # Now I use regex replacing in Gruntfile.coffee and don't need this extension:
         # 'markdown.extensions.toc': {'permalink': True},
-        'pymdownx.inlinehilite': {'css_class': 'SashaInlineHighlight',
-                                  'style_plain_text': True,
-                                  # [DEPRECATED] in 3.0 pymdown-extensions version
-                                  # 'use_codehilite_settings': False,
-                                  },
+        #
+        # 3. facelessuser extensions
+        #
         'pymdownx.betterem': {},
         'pymdownx.caret': {},
         'pymdownx.critic': {},
         'pymdownx.escapeall': {},
         'pymdownx.highlight': {},
-        'pymdownx.magiclink': {'hide_protocol': True, 'repo_url_shortener':
-                               True},
+        'pymdownx.inlinehilite': {'css_class': 'SashaInlineHighlight',
+                                  'style_plain_text': True,
+                                  # [DEPRECATED] in 3.0 pymdown-extensions version
+                                  # 'use_codehilite_settings': False,
+                                  },
+        'pymdownx.magiclink': {'hide_protocol': True,
+                               'repo_url_shortener': True
+                               },
         'pymdownx.mark': {},
         'pymdownx.progressbar': {},
-        'pymdownx.snippets': {},
         'pymdownx.smartsymbols': {},
+        'pymdownx.snippets': {},
         'pymdownx.superfences': {'css_class': 'SashaBlockHighlight'},
         'pymdownx.tilde': {},
-        'mdx_cite': {},
-        'pyembed.markdown': {},
-        'mdx_custom_span_class': {},
+        #
+        # 4. Other extensions
+        #
         'downheader': {},
+        'markdown_blockdiag': {},
         'markdown_newtab': {},
         'md_environ.environ': {},
-        'markdown_blockdiag': {},
+        'mdx_cite': {},
+        'mdx_custom_span_class': {},
+        'pyembed.markdown': {},
     },
     'output_format': 'html5',
 }

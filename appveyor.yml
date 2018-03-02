@@ -1,6 +1,10 @@
 # AppVeyor configuration:
 # https://www.appveyor.com/docs/appveyor-yml/
 
+# Don't download all repository history, that save a time:
+# https://www.appveyor.com/docs/how-to/repository-shallow-clone/#setting-depth-of-git-clone-command
+clone_depth: 1
+
 init:
   - setx PIPENV_VENV_IN_PROJECT 1
   - refreshenv
@@ -38,13 +42,15 @@ platform: x64
 install:
 
   - choco install nodejs -y
-  - pip install --upgrade pip
-  - pip install pipenv
-  - pipenv install --dev
-  - npm install -g grunt-cli
-  - npm install
+  # [WARNING] npm parallel doesn't work, example:
+  # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.25/job/70x5h1qq2d6j8gyp
+  # [WARNING] start command doesn't work without batch file:
+  # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.31
+  # Project folder:
+  # https://github.com/vim/vim-win32-installer/blob/master/appveyor.yml
+  - "%APPVEYOR_BUILD_FOLDER%/ci/appveyor_install.bat"
 
-# Check, that virtual environment install inside project
+# Check, that virtual environment install inside project.
 before_build:
 
   # Get current working directory:
