@@ -124,10 +124,8 @@ module.exports = (grunt) ->
 			# Clean unused packages
 			# [NOTE] Python non-PyPI packages from GitHub need install in format:
 			# git+ssh://git@github.com/org/repo.git#egg=pkgname
-			# Don't firget “#egg=pkgname”
-			# [NOTE] Filename non-PyPI packages must be in format:
-			# “mdx-custom-span-class”, not “mdx_custom_span_class”
-			# [WARNING] pipenv can delete needest Python GitHub packages
+			# [BUG] Don't use! It clean Markdown extensions:
+			# https://github.com/pypa/pipenv/issues/1524
 			pipenvcleanunused:
 				command: 'pipenv clean --verbose'
 			#########
@@ -534,7 +532,7 @@ module.exports = (grunt) ->
 			# For updating dependencies, “target update”
 			taru1: ['devUpdate', 'shell:pipenvupdate', 'shell:gitreflog']
 			taru2: ['projectUpdate', 'shell:pipenvupdateall', 'shell:gitgarbagecollector']
-			taru3: ['shell:pipenvcleanunused']
+			# taru3: ['shell:pipenvcleanunused']
 
 		########################
 		## grunt-browser-sync ##
