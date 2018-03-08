@@ -2,6 +2,7 @@
 ## grunt-shell ##
 #################
 # Grunt plugin to run non-Grunt CLI commands.
+# https://www.npmjs.com/package/grunt-shell
 module.exports =
 	#############
 	## Pelican ##
@@ -54,3 +55,20 @@ module.exports =
 	# https://www.kernel.org/pub/software/scm/git/docgit-gc.html
 	gitgarbagecollector:
 		command: 'git gc --aggressive'
+	###############
+	## HTML Tidy ##
+	###############
+	# HTML Tidy scripts for Unix and Linux
+	tidymodify:
+		# Platform-specific tasks
+		# https://stackoverflow.com/a/23848087/5951529
+		if process.platform == "win32"
+			# Need quotes, that command run
+		    command: '"tidy/tidy-modify.bat"'
+		else
+		    command: 'bash tidy/tidy-modify.sh'
+	tidyvalidate:
+		if process.platform == "win32"
+		    command: '"tidy/tidy-validate.bat"'
+		else
+		    command: 'bash tidy/tidy-validate.sh'

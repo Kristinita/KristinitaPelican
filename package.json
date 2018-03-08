@@ -25,7 +25,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^8.0.0",
+    "autoprefixer": "^8.1.0",
     "browser-sync": "^2.23.6",
     "bs-html-injector": "^3.0.3",
     "grunt": "^1.0.2",
@@ -36,7 +36,6 @@
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-dev-update": "^2.3.0",
-    "grunt-gulp": "^1.0.2",
     "grunt-html5-validate": "^0.1.1",
     "grunt-htmltidy": "^0.2.2",
     "grunt-jsbeautifier": "^0.2.13",

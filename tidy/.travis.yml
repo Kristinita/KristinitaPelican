@@ -39,6 +39,13 @@ install:
   - bash tidy/tidy-install.sh
   - bash ci/travis-install.sh
 
+# Check, that virtual environment install inside project.
+before_script:
+  # Get current working directory:
+  # https://unix.stackexchange.com/a/188191/237999
+  - echo $PWD
+  - pipenv --venv
+
 script:
   - grunt $GRUNT_COMMAND
   # Fix permission denied:

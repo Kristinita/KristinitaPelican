@@ -41,23 +41,18 @@ platform: x64
 # https://www.appveyor.com/docs/build-configuration/#build-pipeline
 install:
 
-  - choco install nodejs -y
   # [WARNING] npm parallel doesn't work, example:
   # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.25/job/70x5h1qq2d6j8gyp
   # [WARNING] start command doesn't work without batch file:
   # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.31
   # Project folder:
   # https://github.com/vim/vim-win32-installer/blob/master/appveyor.yml
-  - "%APPVEYOR_BUILD_FOLDER%/ci/appveyor_install.bat"
-
-# Check, that virtual environment install inside project.
-before_build:
-
-  # Get current working directory:
-  # https://stackoverflow.com/a/607682/5951529
-  - cd
-  - pipenv --venv
+  - "%APPVEYOR_BUILD_FOLDER%/ci/appveyor-install.bat"
 
 build_script:
 
   - grunt %GRUNT_COMMAND%
+  - grunt shell:tidymodify
+
+test_script:
+  - grunt shell:tidyvalidate

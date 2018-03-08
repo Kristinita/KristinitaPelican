@@ -1,6 +1,6 @@
 Title: Sasha Goddess
 Date: 2017-07-13 23:51:25
-Modified: 2018-03-02 10:23:54
+Modified: 2018-03-02 21:17:08
 Version: 1.0.0-beta
 Author: Sasha Chernykh
 Lang: ru
@@ -15,7 +15,6 @@ Noco:
 Tooltipster: true
 Clipboardjs: true
 Opengraphimage:
-Detailspolyfill: false
 Customjs: false
 Customcss: false
 <!-- Gallery: {photo}kris -->

@@ -29,8 +29,9 @@
     <link rel="icon" type="image/png" href="{{SITEURL}}/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="{{SITEURL}}/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="{{SITEURL}}/manifest.json">
-    <!-- Now be valid, see https://github.com/RealFaviconGenerator/realfavicongenerator/issues/218 -->
-    <link rel="mask-icon" href="{{SITEURL}}/safari-pinned-tab.svg" color="#5bbad5">
+    <!-- [BUG] HTML Tidy doesn't support Pinned Tab Icons:
+    https://github.com/htacg/tidy-html5/issues/686 -->
+    {# <link rel="mask-icon" href="{{SITEURL}}/safari-pinned-tab.svg" color="#5bbad5"> #}
     <meta name="apple-mobile-web-app-title" content="Kristinita's Search">
     <meta name="application-name" content="Kristinita's Search">
     <meta name="theme-color" content="#ffffff">

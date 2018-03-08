@@ -11,7 +11,6 @@ Tags: sublime-text
 Category: Sublime Notes
 Tooltipster: false
 ClipboardJs: true
-DetailsPolyfill: true
 Noco: 1EBY
 
 <h2>Preamble</h2>

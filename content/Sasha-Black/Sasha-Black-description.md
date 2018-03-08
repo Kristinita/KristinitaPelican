@@ -13,7 +13,6 @@ Tooltipster: false
 ClipboardJs: true
 Customcss: true
 Customcss1: Sasha-Black/sasha-black-description
-DetailsPolyfill: true
 Noco: 1QBY
 
 

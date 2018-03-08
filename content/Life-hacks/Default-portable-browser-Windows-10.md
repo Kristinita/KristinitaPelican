@@ -11,7 +11,6 @@ Tags: life-hacks, pale-moon
 Category: Life-hacks,
 Tooltipster: true
 ClipboardJs: true
-DetailsPolyfill: false
 Customcss: true
 Customcss1: Life-hacks/default-portable-browser
 Noco: 1vWK5

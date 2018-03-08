@@ -11,7 +11,6 @@ Tags: giologica, gingerinas-training
 Category: Giologica
 Tooltipster: false
 ClipboardJs: true
-DetailsPolyfill: true
 Noco: 159d5
 
 <blockquote><a href="http://www.companion.ua/articles/content?id=7178" target="_blank" title="Цитата Черчилля">Если хотите, чтобы ваше слово в споре было последним, скажите оппоненту: "Пожалуй, вы правы"</a>

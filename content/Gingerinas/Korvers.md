@@ -1,6 +1,6 @@
 Title: Korvers
 Date: 2017-02-13 19:15:15
-Modified: 2018-03-02 09:18:39
+Modified: 2018-03-02 21:16:56
 Version: 0.0.1
 Author: Sasha Chernykh
 Lang: ru
@@ -13,7 +13,6 @@ Tags: gingerinas
 Category: Логика в джинджеринах
 Tooltipster: false
 ClipboardJs: true
-DetailsPolyfill: true
 Noco: 1EBY
 
 <!-- MarkdownTOC -->

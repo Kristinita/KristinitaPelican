@@ -1,6 +1,6 @@
 Title: Sacagawea
 Date: 2017-05-05 06:49:34
-Modified: 2018-02-24 16:07:32
+Modified: 2018-03-02 21:17:11
 Version: 0.1.0
 Author: Keith Hall
 Lang: ru
@@ -17,7 +17,6 @@ Javascripts: personal/
 Tooltipster: true
 Clipboardjs: true
 OpenGraphImage: https://i.imgur.com/cVITpm1.jpg
-Detailspolyfill: false
 
 <div class="SashaEpigraph">
 <em>Посвящено <a href="https://vk.com/id152198389">Наталье Степуриной (Шмелёвой)</a>, <br>

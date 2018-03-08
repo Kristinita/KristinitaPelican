@@ -4,6 +4,7 @@
 # All buggy, obsolete and/or unneedable plugins.
 # Save, because possibly I can use them again.
 
+
 # ###################
 # ## grunt-pelican ##
 # ###################
@@ -19,6 +20,7 @@
 # 		configFile: 'pelicanconf.py'
 # 	publish:
 # 		configFile: 'publishconf.py'
+
 
 ##############################
 ## grunt-http-convert-https ##
@@ -39,6 +41,7 @@
 # 				"http": "i.imgur.com"
 # 				"https": "i.imgur.com"
 # 			]
+
 
 ########################
 ## grunt-text-replace ##
@@ -79,6 +82,7 @@
 # 			to: '$1 <a class="headerlink" href="#$2" title="Permanent link">¶</a>$6'
 # 		]
 
+
 # ####################
 # ## grunt-posthtml ##
 # ####################
@@ -102,6 +106,7 @@
 # 			dest: 'output/Sublime-Text/tmp'
 # 		]
 
+
 # ####################
 # ## grunt-htmltidy ##
 # ####################
@@ -123,6 +128,7 @@
 # 			src: '**/*.html'
 # 			dest: 'output'
 # 		]
+
 
 ##########################
 ## grunt-html5-validate ##
@@ -155,6 +161,7 @@
 # 		files:
 # 			src: ['output/**/*.jpg']
 
+
 # #################
 # ## grunt-ngrok ##
 # #################
@@ -167,6 +174,7 @@
 # 		authToken: '6FAzTiHpA7FhKkLKjUoQi_4TJMoSofsewziHE3XFC5J'
 # 	server:
 # 		proto: 'https'
+
 
 # ########################
 # ## grunt-nice-package ##
@@ -185,3 +193,31 @@
 # 	all:
 # 		options:
 # 			blankLine: false
+
+
+# ###################
+# ## gulp-htmltidy ##
+# ###################
+# # Validate HTML
+# # https://www.npmjs.com/package/gulp-htmltidy
+
+# ##########################
+# ## grunt-gulp variables ##
+# ##########################
+# # https://www.npmjs.com/package/grunt-gulp#examples
+# # CoffeeScript to JavaScript online — http://js2.coffee/
+
+# gulp = require('gulp')
+# htmltidy = require('gulp-htmltidy')
+
+# # For in-place dest needs «base: "."», see:
+# # https://stackoverflow.com/a/44337370/5951529
+# # [BUG] Doesn't work for multiple commands, see:
+# # https://github.com/shama/grunt-gulp/issues/13
+# module.exports =
+# 	gulptidy:
+# 		gulp.src('<%= templates.paths.html %>', base: ".")
+# 		.pipe(htmltidy(
+# 			doctype: 'html5'
+# 			indent: true
+# 			wrap: 0)).pipe gulp.dest('./')

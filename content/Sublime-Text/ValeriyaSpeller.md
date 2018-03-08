@@ -1,6 +1,6 @@
 Title: ValeriyaSpeller
 Date: 2017-04-04 04:14:07
-Modified: 2018-02-24 15:58:32
+Modified: 2018-03-02 21:17:11
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -15,7 +15,6 @@ Noco: 1g9b6
 Tooltipster: true
 Clipboardjs: true
 OpenGraphImage: https://i.imgur.com/iciGBgN.jpg
-Detailspolyfill: false
 
 <div class="SashaEpigraph">
 <em>i express my gratitude to Her <br>

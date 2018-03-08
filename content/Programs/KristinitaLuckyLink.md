@@ -1,6 +1,6 @@
 Title: KristinitaLuckyLink
 Date: 2018-01-09 19:27:50
-Modified: 2018-02-24 17:55:50
+Modified: 2018-03-02 21:17:10
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -16,7 +16,6 @@ Tooltipster: true
 Clipboardjs: true
 Visualize: false
 Opengraphimage: https://i.imgur.com/TuyxneV.png
-Detailspolyfill: false
 
 ![KristinitaLuckyLink](https://i.imgur.com/TuyxneV.png)
 

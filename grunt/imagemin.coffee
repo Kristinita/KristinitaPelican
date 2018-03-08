@@ -7,6 +7,8 @@
 # [NOTE] Non-documented behavior!
 # “gulp-htmltidy” task run, if I run “imagemin” task, see:
 # https://github.com/shama/grunt-gulp/issues/14
+# [BUG] Don't use grunt-image:
+# https://github.com/1000ch/grunt-image/issues/34
 module.exports =
 	dynamic:
 		options:

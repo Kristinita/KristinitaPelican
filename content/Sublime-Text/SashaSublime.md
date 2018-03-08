@@ -11,7 +11,6 @@ PageColors: sublime-text
 IconLeftOrRight: right
 Tooltipster: true
 ClipboardJs: true
-DetailsPolyfill: false
 Noco: 1g9b6
 
 <p>

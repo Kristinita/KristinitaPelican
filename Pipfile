@@ -1,4 +1,6 @@
-# [NOTE] Don't modify values of “url”, “verify_ssl” and “name” parameters.
+# [BUG] Not use quotation marks in Pipfile!
+# https://github.com/appveyor/ci/issues/2129
+# [NOTE] Don't modify values of "url", "verify_ssl" and "name" parameters.
 # These parameters for repository, from where the download is made.
 # https://pipenv.readthedocs.io/en/latest/advanced/#specifying-package-indexes
 

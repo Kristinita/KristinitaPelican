@@ -11,7 +11,6 @@ Tags: giologica
 Category: Giologica
 Tooltipster: false
 ClipboardJs: true
-DetailsPolyfill: false
 Noco: 159d5
 
 <li><a href="#Valerywork">Вэлериворк</a>

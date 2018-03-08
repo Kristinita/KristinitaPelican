@@ -19,6 +19,7 @@ publish:
   - 'concurrent:tarp4'
   - 'concurrent:tarp5'
   - 'concurrent:tarp6'
+  - 'concurrent:tarp7'
 
 update:
   - 'concurrent:taru1'
