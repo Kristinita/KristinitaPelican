@@ -60,12 +60,14 @@ module.exports =
 	###############
 	# HTML Tidy scripts for Unix and Linux
 	tidymodify:
-		# Platform-specific tasks
+		# Platform-specific tasks:
 		# https://stackoverflow.com/a/23848087/5951529
 		if process.platform == "win32"
-			# Need quotes, that command run
+			# Need quotes, that command run:
 		    command: '"tidy/tidy-modify.bat"'
 		else
+			# Fix permission denied:
+			# https://stackoverflow.com/a/46818913/5951529
 		    command: 'bash tidy/tidy-modify.sh'
 	tidyvalidate:
 		if process.platform == "win32"

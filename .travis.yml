@@ -15,7 +15,9 @@ python: 3.6
 # Multiple scripts
 # http://bit.ly/2ow2DvL
 env:
-  - GRUNT_COMMAND=build
+  # “grunt default” = “grunt”;
+  # Travis CI support blank value.
+  - GRUNT_COMMAND=
   - GRUNT_COMMAND=publish
 
 # Sections:
@@ -41,9 +43,6 @@ install:
 
 script:
   - grunt $GRUNT_COMMAND
-  # Fix permission denied:
-  # https://stackoverflow.com/a/46818913/5951529
-  - grunt shell:tidymodify
 
 after_success:
   - grunt shell:tidyvalidate

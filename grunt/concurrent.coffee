@@ -22,6 +22,7 @@ module.exports =
 	# Warning: Cannot read property 'forEach' of undefined Use --force to continue.
 	# https://github.com/purifycss/grunt-purifycss/issues/26
 	tarb3: ['newer:string-replace', 'purifycss']
+	tarb4: ['shell:tidymodify']
 	#
 	# For publishing, “target publish”
 	#

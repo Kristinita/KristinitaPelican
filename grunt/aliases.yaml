@@ -11,6 +11,7 @@ default:
   - 'concurrent:tarb1'
   - 'concurrent:tarb2'
   - 'concurrent:tarb3'
+  - 'concurrent:tarb4'
 
 publish:
   - 'concurrent:tarp1'
