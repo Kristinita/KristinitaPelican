@@ -3,7 +3,7 @@
 # @Last Modified by:   Kristinita
 # @Last Modified time: 2018-03-07 19:38:29
 # Modify HTML: doesn't show warnings or errors.
-# I need use variable, that contains 1 letter; «f» — «filename».
+# I need use variable, that contains 1 letter; “f” — “filename”.
 shopt -s globstar
 for f in output/**/*.html;
 	# Not show errors and warnings:

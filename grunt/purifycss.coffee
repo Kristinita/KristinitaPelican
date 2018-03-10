@@ -24,3 +24,19 @@ module.exports =
 		src: ['output/IT-articles/*.html']
 		css: ['output/theme/css/sections/it-articles.css']
 		dest: 'output/theme/css/sections/it-articles.css'
+	giologicabluetarget:
+		src: ['output/Giologica/Valerywork-Kiravel.html']
+		css: ['output/theme/css/sections/giologica-blue.css']
+		dest: 'output/theme/css/sections/giologica-blue.css'
+	giologicatarget:
+		src: ['output/Giologica/*.html']
+		css: ['output/theme/css/sections/giologica.css']
+		dest: 'output/theme/css/sections/giologica.css'
+	sashablacktarget:
+		src: ['output/Sasha-Black/*.html']
+		css: ['output/theme/css/sections/sasha-black-description.css']
+		dest: 'output/theme/css/sections/sasha-black-description.css'
+	smertsvobodetarget:
+		src: ['output/Smert-svobode/*.html']
+		css: ['output/theme/css/sections/smert-svobode.css']
+		dest: 'output/theme/css/sections/smert-svobode.css'

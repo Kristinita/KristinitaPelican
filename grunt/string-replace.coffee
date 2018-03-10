@@ -40,4 +40,10 @@ module.exports =
 			pattern: /(<p>\s*?<a id="(.+?)"><\/a>\s*?<\/p>\s+?<h\d+?>((.|\n|\r)+?))(<\/h\d+?>)/g
 			replacement: '$1 <a class="headerlink" href="#$2" title="Permanent link">¶</a>$5'
 			}
+			# Remove proprietary attribute markdown="1" after site build:
+			# https://python-markdown.github.io/extensions/extra/#markdown-inside-html-blocks
+			{
+			pattern: / markdown="1"/g
+			replacement: ''
+			}
 		]

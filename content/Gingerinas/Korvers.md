@@ -1,6 +1,6 @@
 Title: Korvers
 Date: 2017-02-13 19:15:15
-Modified: 2018-03-02 21:16:56
+Modified: 2018-03-09 09:34:39
 Version: 0.0.1
 Author: Sasha Chernykh
 Lang: ru
@@ -94,14 +94,14 @@ Noco: 1EBY
 <a id="Корверы"></a>
 # Корверы
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/korver10.jpg" class="Sasha470" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/korver10.jpg" class="Sasha470" alt="ImageDescription">
 
 В данном разделе выделены 4 наиболее характерные на момент написания статьи ошибки мышления в джинджеринах, носящие технический, а не психологический характер, и названные по фамилиям баскетболистов стартовой пятёрки Атланты Хокс на сезон 2014—15 советы по предотвращению каждой из них.
 
 <a id="Миллсэп"></a>
 ## Миллсэп
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/horfor10.jpg" class="Sasha470" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/horfor10.jpg" class="Sasha470" alt="ImageDescription">
 
 Правильное мышление — гарантия результата. Как перед игрой в целом, так и перед каждым вопросом в отдельности настраиваться, что будешь «раскручивать» их именно так, как нарабатывал, не отступая от плана. почитатель Саши представляет, как переходит по нределям (см. ниже) подобно комбинациям той же «Атланты». Не следует готовиться взять вопрос непременно, ответить первым или же быстрее читать — при верном подходе эти же показатели примут большее значение без специального концентрирования на них. Должно готовиться качественнее обмысливать вопрос ы, а не обыграть конкурентов .
 
@@ -158,7 +158,7 @@ Noco: 1EBY
 <a id="Тиг"></a>
 ## Тиг
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/theagu10.jpg" class="Sasha470" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/theagu10.jpg" class="Sasha470" alt="ImageDescription">
 
 **Нредель** — направление, линия мышления как между аксаксами , так и в пределах одного из них.
 
@@ -217,9 +217,9 @@ Noco: 1EBY
 <a id="Хорфорд"></a>
 ## Хорфорд
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/millsa10.jpg" class="Sasha470" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/millsa10.jpg" class="Sasha470" alt="ImageDescription">
 
-<img src="https://s019.radikal.ru/i637/1509/15/66e863476e3c.png" width="392" height="90" />
+<img src="https://s019.radikal.ru/i637/1509/15/66e863476e3c.png" width="392" height="90" alt="ImageDescription">
 
 **Памелло** — грубые на более поздний взгляд самого игрока ошибки, выданные вопреки логике. Примеры, показывающие 2 вариации памелло:
 
@@ -266,7 +266,7 @@ Noco: 1EBY
 <a id="Кэрролл"></a>
 ## Кэрролл
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/demarr10.jpg" class="Sasha470" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/demarr10.jpg" class="Sasha470" alt="ImageDescription">
 
 Замечали ли за собой зацикливания — **гриьами**? Смотрите, как примерно рассуждал автор этих строк над заданием «4147 со сдвигом -2»: «Сдвигаем на 2 символа влево, получаем 41. Не подходит. Пробуем вправо — 414700, тоже нет. Снова влево 41. А ну, если добавить 2 нуля, 004147? Не вышло. Ставим запятую за 2 знака до конца — 41…» И так несколько раз приходил к варианту 41. Возвращения нужны, полезны для углубления по избранному нределю, но не в виде топтания на месте.
 
@@ -318,7 +318,7 @@ Noco: 1EBY
 <a id="Паксаксы"></a>
 ## Паксаксы
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/fastba10.jpg" class="Sasha140" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/fastba10.jpg" class="Sasha140" alt="ImageDescription">
 
 <a id="Фастболл"></a>
 ### Фастболл
@@ -388,7 +388,7 @@ Noco: 1EBY
 <a id="Каттер"></a>
 ### Каттер
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/cutter10.jpg" class="Sasha140" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/cutter10.jpg" class="Sasha140" alt="ImageDescription">
 
 **Каттер** — вспоминать при прескевю. В первую очередь спросить себя, а) вертится ли ответ «на кончике языка» либо б) знакома сопутствующая ему информация. Если а, то перебирать связанные с фактом данные; когда б, признать, что сам ответ не вспомнится, и перейти к прочим аксаксам. Главная ошибка — не показывать своим видом, мимикой и жестами «ой, сейчас-сейчас, слышал, знаю,» а пытаться дойти в размышлениях до чётко сформулированной версии.
 
@@ -467,7 +467,7 @@ Noco: 1EBY
 <a id="Сплиттер"></a>
 ### Сплиттер
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/sinker10.jpg" class="Sasha140" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/sinker10.jpg" class="Sasha140" alt="ImageDescription">
 
 **Сплиттер** — прикидка, что подходит по указанные в вопросе дату и/или место. Этот аксакс часто неоправданно используется игроками, уповающими больше на свои знания, чем на логику.
 
@@ -520,7 +520,7 @@ Noco: 1EBY
 <a id="Синкер"></a>
 ### Синкер
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/four-s10.jpg" class="Sasha140" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/four-s10.jpg" class="Sasha140" alt="ImageDescription">
 
 **Синкер** — перечисление элементов какого-либо множества. Этот аксакс можно сравнить со счётом вариантов в шахматах. Для углубления в Синкер необходима твёрдая уверенность, что правильный ответ будет содержаться именно в этом множестве, иначе не стоит на нём зацикливаться. Для синкеров применяются переходы по множествам
 
@@ -607,7 +607,7 @@ Noco: 1EBY
 <a id="Слайдер"></a>
 ### Слайдер
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/two-se10.jpg" class="Sasha140" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/two-se10.jpg" class="Sasha140" alt="ImageDescription">
 
 **Слайдер** — задавание себе наводящих вопросов. Обычно модификации вопроса «Что вообще может представлять собой ответ?», а если не подошло «А кроме этого?» Слайдер — «что» и «кроме».
 
@@ -768,7 +768,7 @@ Noco: 1EBY
 <a id="Палмболл"></a>
 ### Палмболл
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/palmba10.jpg" class="Sasha140" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/palmba10.jpg" class="Sasha140" alt="ImageDescription">
 
 **Палмболл** — визуализировать картину, представленную в вопросе, и попробовать определить, на что она похожа. Применять, когда в вопросе требуется что-то мысленно представить либо даётся развёрнутое описание. Вероятно, наиболее медленный из аксаксов.
 
@@ -804,7 +804,7 @@ Noco: 1EBY
 <a id="Чейнджап"></a>
 ### Чейнджап
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/slider10.jpg" class="Sasha140" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/slider10.jpg" class="Sasha140" alt="ImageDescription">
 
 **Чейнджап** — поиск ассоциаций к ключевым словам вопроса.
 
@@ -965,7 +965,7 @@ Noco: 1EBY
 <a id="Скрюболл"></a>
 ### Скрюболл
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/screwb10.jpg" class="Sasha140" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/screwb10.jpg" class="Sasha140" alt="ImageDescription">
 
 (TODO: разделить скрюболл на категории — хиазмы, противопоставление, и неожиданный ответ)
 
@@ -1020,7 +1020,7 @@ Noco: 1EBY
 <a id="Курвеболл"></a>
 ### Курвеболл
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/curve10.jpg" class="Sasha140" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/curve10.jpg" class="Sasha140" alt="ImageDescription">
 
 (TODO: юбилейный вопрос перенести в раксаксы — это не курвеболл, а связь со спецификой соревнования)
 
@@ -1143,7 +1143,7 @@ Noco: 1EBY
 <a id="Слурв"></a>
 ### Слурв
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/change10.jpg" class="Sasha140" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/change10.jpg" class="Sasha140" alt="ImageDescription">
 
 **Слурв** — подбор ответа по буквам. Применяется, например, при «матричных» темах; когда указано количество букв и иногда некоторые из них; если понятно, что в ответе малоизвестный термин и т.д. Во многом на слурве базируются ответы на вопросы капитал-шоу «Поле чудес». Рассмотрим случаи применения:
 
@@ -1288,7 +1288,7 @@ Noco: 1EBY
 <a id="Жироболл"></a>
 ### Жироболл
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/gyroba10.jpg" class="Sasha140" width="134" height="163" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/gyroba10.jpg" class="Sasha140" width="134" height="163" alt="ImageDescription">
 
 **Жироболл** — лингвистические аксаксы.
 
@@ -1380,7 +1380,7 @@ Noco: 1EBY
 <a id="Кнуклеболл"></a>
 ### Кнуклеболл
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/forkba10.jpg" class="Sasha140" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/forkba10.jpg" class="Sasha140" alt="ImageDescription">
 
 **Кнуклеболл** — отыскивание аллюзий на информацию в вопросе как в реальном мире так и в произведения искусства. «Как у других?» или же «На что похоже?» описываемое.
 
@@ -1414,7 +1414,7 @@ Noco: 1EBY
 <a id="Эмериболл"></a>
 ### Эмериболл
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/emery_10.jpg" class="Sasha140" width="112" height="126" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/emery_10.jpg" class="Sasha140" width="112" height="126" alt="ImageDescription">
 
 **Эмериболл** — поиск объединительного признака, что схожего между однородными членами. Применим, когда в вопросе ведётся перечисление элементов.
 
@@ -1459,7 +1459,7 @@ Noco: 1EBY
 
 (TODO: это объединить с палмболлом, а форкболлом назвать раксакс — когда нужно проверить слово на другое значение: например, коса (география) и коса женщины)
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/knuckl10.jpg" class="Sasha140" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/knuckl10.jpg" class="Sasha140" alt="ImageDescription">
 
 **Форкболл** — воспоминания, где мог сталкиваться с понятиями, описанными в вопросе. Данный аксакс применяется, когда необходимо назвать определение или синоним блибо же знаком с обстоятельствами вопроса не понаслышке.
 
@@ -1532,7 +1532,7 @@ Noco: 1EBY
 <a id="toss"></a>
 ## Toss
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/toss10.png" class="Sasha280" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/toss10.png" class="Sasha280" alt="ImageDescription">
 
 Отвечайте только тогда, когда решились — придуманная Вами версия верна, или же что выдадите правильный вариант до окончания времени на ответ. В момент, когда готовитесь к нажатию кнопки, в голове не должно быть «каши».
 
@@ -1557,7 +1557,7 @@ Noco: 1EBY
 <a id="off-tackle"></a>
 ## Off Tackle
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/off_ta10.png" class="Sasha280" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/off_ta10.png" class="Sasha280" alt="ImageDescription">
 
 В общем случае степень риска зависит от общей сложности турнира, где вы играете. Если же вы уверены в своём ответе — жмите, где бы Вы не участвовали.
 
@@ -1568,7 +1568,7 @@ Noco: 1EBY
 <a id="draw"></a>
 ## Draw
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/draw10.png" class="Sasha280" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/draw10.png" class="Sasha280" alt="ImageDescription">
 
 (TODO: рекомендация неудачная, заменить)
 
@@ -1597,7 +1597,7 @@ Noco: 1EBY
 <a id="misdirection"></a>
 ## Misdirection
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/misdir10.png" class="Sasha280" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/misdir10.png" class="Sasha280" alt="ImageDescription">
 
 Не разбираешься в теме — не суйся.
 
@@ -1624,7 +1624,7 @@ Noco: 1EBY
 <a id="dive"></a>
 ## Dive
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/dive10.png" class="Sasha280" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/dive10.png" class="Sasha280" alt="ImageDescription">
 
 Придумали версию — пораскиньте, может ли быть ответом что-то ещё.
 
@@ -1651,7 +1651,7 @@ Noco: 1EBY
 <a id="pitch"></a>
 ## Pitch
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/pitch10.png" class="Sasha280" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/pitch10.png" class="Sasha280" alt="ImageDescription">
 
 В вопросе содержится противоречащий вашей версии факт — не жмите.
 
@@ -1660,7 +1660,7 @@ Noco: 1EBY
 <a id="slash"></a>
 ## Slash
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/slash10.png" class="Sasha280" />
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/slash10.png" class="Sasha280" alt="ImageDescription">
 
 Если вам неизвестен факт, о котором спрашивается в вопросе, но какие-то данные из вопроса прочно связаны у вас с некоторыми достаточно нетривиальными знаниями, в которых содержится ответ, — не молчите.
 

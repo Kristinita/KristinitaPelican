@@ -13,9 +13,13 @@ SET VALIDALL=true
 SETLOCAL EnableDelayedExpansion
 @REM If/else exitcode:
 @REM https://stackoverflow.com/a/36897449/5951529
-@REM I need use variable, that contains 1 letter; «f» — «filename».
+@REM I need use variable, that contains 1 letter; “f” — “filename”.
 FOR /R %%f IN (*.html) DO (
-	tidy -mq --wrap 0 %%f
+	@REM [FIXME] Safari Pinned Tab Icons doesn't support for HTML Tidy:
+	@REM https://github.com/htacg/tidy-html5/issues/686
+	@REM “--markup no” — disable print file content to console:
+	@REM http://api.html-tidy.org/tidy/quickref_next.html#markup
+	tidy -q --markup no --warn-proprietary-attributes no %%f
 	@REM Error level:
 	@REM https://stackoverflow.com/a/334893/5951529
 	IF "!ERRORLEVEL!"=="0" (
