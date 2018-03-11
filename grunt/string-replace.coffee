@@ -8,7 +8,7 @@ module.exports =
 		files: [
 			expand: true
 			cwd: 'output'
-			src: '**/*.html'
+			src: '**/**/**/*.{html,css}'
 			dest: 'output'
 		]
 	options:
@@ -22,19 +22,23 @@ module.exports =
 			# no line breaks between them!
 			{
 			pattern: /(<pre>)(((.|\n|\r)+?)?)(<\/pre>((\s+?)?)<\/div>)/g
-			replacement: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/theme/images/interface-images/clippy.svg" alt="Clipboard button" width="13"></button>$2$5'
+			replacement: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="https://kristinita.ru/theme/images/interface-images/clippy.svg" alt="Clipboard button" width="13"></button>$2$5'
 			}
 			# Fancybox and JQueryLazy images
 			{
 			pattern: /<img alt="([^"]+?)" src="(.+?)"( \/)?>/g
-			replacement: '<a class="fancybox" href="$2"><img class="SashaLazy" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/theme/images/interface-images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
+			replacement: '<a class="fancybox" href="$2"><img class="SashaLazy" src="https://kristinita.ru//theme/images/interface-images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
 			}
-			# GitCDN
-			# https://github.com/schme16/gitcdn.xyz
-			{
-			pattern: /https:\/\/kristinita.ru\/(.+?)\.(js|css|ico|xml)/g
-			replacement: '//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/$1.$2'
-			}
+			# # GitCDN
+			# # https://github.com/schme16/gitcdn.xyz
+			# # [DEPRECATED]
+			# # 1. Server often falls,
+			# # 2. Scripts from gitcdn.xyz sometimes doesn't load,
+			# # 3. Cloudflare download source from gitcdn.xyz slowly
+			# {
+			# pattern: /https:\/\/kristinita.ru\/(.+?)\.(js|css|ico|xml)/g
+			# replacement: '//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/$1.$2'
+			# }
 			# Header permalink
 			{
 			pattern: /(<p>\s*?<a id="(.+?)"><\/a>\s*?<\/p>\s+?<h\d+?>((.|\n|\r)+?))(<\/h\d+?>)/g
@@ -45,5 +49,10 @@ module.exports =
 			{
 			pattern: / markdown="1"/g
 			replacement: ''
+			}
+			# Absolute paths to images in CSS
+			{
+			pattern: /(url\(")(..\/..)(\/.+?\.jpg"\))/g
+			replacement: '$1https://kristinita.ru/theme$3'
 			}
 		]

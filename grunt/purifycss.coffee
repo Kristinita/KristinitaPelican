@@ -5,6 +5,8 @@
 # https://github.com/purifycss/purifycss
 # https://github.com/purifycss/grunt-purifycss
 # [NOTE] Needs separate task for each style. Because different styles in Kristinita.ru
+# [BUG] Doesn't work with grunt-newer:
+# https://github.com/purifycss/grunt-purifycss/issues/30
 module.exports =
 	options:
 		whitelist: ['.tooltipster-punk-purple .tooltipster-box', '.tooltipster-punk-aquamarine .tooltipster-box']

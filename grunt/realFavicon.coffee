@@ -5,7 +5,7 @@
 # https://www.npmjs.com/package/grunt-real-favicon
 module.exports =
 	favicons:
-		src: 'content/images/favicon/kristinita-favicon.png'
+		src: 'output/theme/images/icons/kristinita-favicon.png'
 		dest: 'output'
 		options:
 			iconsPath: '.'

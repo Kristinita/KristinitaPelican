@@ -7,7 +7,7 @@
 # Temporarily solution — using --no-color argument
 # https://stackoverflow.com/a/23550493/5951529
 
-# Grunt apply for files dinamically
+# Grunt apply for files dynamically:
 # https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
 
 ###########################

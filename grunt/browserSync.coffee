@@ -7,6 +7,7 @@ module.exports =
 	bsFiles:
 		src : ['output/theme/css/**/*.css', 'output/theme/css/**/**/*.css', 'output/theme/js/**/*.js']
 	options:
+		port: 3000
 		server:
 			baseDir: "../"
 		# localtunnel doesn't work, see:
