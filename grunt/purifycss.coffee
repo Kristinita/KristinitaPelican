@@ -2,8 +2,8 @@
 ## grunt-purifycss ##
 #####################
 # Remove unused CSS for Kristinita.ru design
-# https://github.com/purifycss/purifycss
-# https://github.com/purifycss/grunt-purifycss
+# https://www.npmjs.com/package/purify-css
+# https://www.npmjs.com/package/grunt-purifycss
 # [NOTE] Needs separate task for each style. Because different styles in Kristinita.ru
 # [BUG] Doesn't work with grunt-newer:
 # https://github.com/purifycss/grunt-purifycss/issues/30

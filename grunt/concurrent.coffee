@@ -21,7 +21,8 @@ module.exports =
 	# [BUG] grunt-newer doesn't work with purifycss:
 	# Warning: Cannot read property 'forEach' of undefined Use --force to continue.
 	# https://github.com/purifycss/grunt-purifycss/issues/26
-	tarb3: ['newer:string-replace', 'purifycss']
+	tarb3: ['newer:string-replace'
+			'purifycss']
 	tarb4: ['shell:tidymodify']
 	#
 	# For publishing, “target publish”
@@ -31,15 +32,27 @@ module.exports =
 	tarp1: ['shell:deploy']
 	# Don't use “newer” for “move”! Files from “root-html” doesn't move.
 	# Don't use “newer” with “realFavicon”! “index.html” will not changed!
-	tarp2: ['move', 'realFavicon']
-	tarp3: ['stylus', 'newer:unused']
-	tarp4: ['clean', 'purifycss', 'imagemin']
-	tarp5: ['postcss', 'string-replace']
+	tarp2: ['move'
+			'realFavicon'
+			'humans_txt'
+			'robotstxt']
+	tarp3: ['stylus'
+			'newer:unused']
+	tarp4: ['clean'
+			'purifycss'
+			'imagemin']
+	tarp5: ['postcss'
+			'string-replace']
 	tarp6: ['shell:tidymodify']
 	tarp7: ['jsbeautifier']
 	#
 	# For updating dependencies, “target update”
 	#
-	taru1: ['devUpdate', 'shell:pipenvupdate', 'shell:gitreflog']
-	taru2: ['projectUpdate', 'shell:pipenvupdateall', 'shell:gitgarbagecollector']
+	taru1: ['devUpdate'
+			# [FIXME] KeyError: 'pip':
+			# 'shell:pipenvupdate'
+			'shell:gitreflog']
+	taru2: ['projectUpdate'
+			'shell:pipenvupdateall'
+			'shell:gitgarbagecollector']
 	taru3: ['shell:pipenvcleanunused']

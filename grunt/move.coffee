@@ -7,10 +7,6 @@ module.exports =
 	options:
 		ignoreMissing: true
 		moveAcrossVolumes: true
-	# Favicons
-	favicons:
-		src: 'output/favicons/*'
-		dest: 'output/'
 	# HTML, which I need to move in root folder
 	roothtml:
 		src: 'output/root-html/*'

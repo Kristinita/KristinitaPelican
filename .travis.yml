@@ -46,3 +46,48 @@ script:
 
 after_success:
   - grunt shell:tidyvalidate
+
+# Automatically deploy site to GitHub Pages:
+# https://docs.travis-ci.com/user/deployment
+# https://docs.travis-ci.com/user/deployment/pages/
+# Changes not deploy, if pull request:
+# https://docs.travis-ci.com/user/deployment#Pull-Requests
+# If “script” failed, deploying doesn't run;
+# else “pelican_scaffold”, deploy run, even if “script” failed, don't use “pelican_scaffold”:
+# https://github.com/textbook/pelican_scaffold
+# [WARNING] Custom commit messages doesn't support:
+# https://github.com/travis-ci/travis-ci/issues/9287
+deploy:
+  provider: pages
+  on:
+    branch: master
+    # Deploy site, only if “grunt publish”, if “grunt” — not deploy:
+    # https://docs.travis-ci.com/user/deployment#Conditional-Releases-with-on%3A
+    condition: $GRUNT_COMMAND = publish
+  # [DONE]
+  # # [FIXME] Downgrade dpl for correct deploying to GitHub Pages:
+  # # https://github.com/travis-ci/travis-ci/issues/9312
+  # edge:
+  #   branch: v1.8.47
+  # Don't overwrite commit history of destination repository:
+  # https://docs.travis-ci.com/user/deployment/pages/
+  keep-history: true
+  # Don't clean output folder:
+  # https://docs.travis-ci.com/user/deployment/pages/
+  skip-cleanup: true
+  target-branch: master
+  local-dir: output
+  repo: Kristinita/Kristinita.github.io
+  # “GITHUB_API_KEY” is secure variable, that set in repository settings:
+  # https://docs.travis-ci.com/user/environment-variables#Defining-Variables-in-Repository-Settings
+  # https://docs.travis-ci.com/user/deployment/pages/#Setting-the-GitHub-token
+  github-token: $GITHUB_TOKEN
+  # Name and e-mail of committer:
+  # https://docs.travis-ci.com/user/deployment/pages/#Further-configuration
+  committer-from-gh: true
+  # Automatically generate CNAME for custom domain:
+  fqdn: Kristinita.ru
+  # [WARNING] Don't use single quotes in “project-name”:
+  # https://github.com/travis-ci/travis-ci/issues/9325
+  project-name: Поиск Кристиниты
+  verbose: true

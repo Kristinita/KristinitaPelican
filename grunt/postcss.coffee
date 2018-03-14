@@ -1,7 +1,7 @@
 ###################
 ## grunt-postcss ##
 ###################
-# https://github.com/nDmitry/grunt-postcss
+# https://www.npmjs.com/package/grunt-postcss
 module.exports =
 	options:
 		# Disable sourcemapping, because I don't minify CSS

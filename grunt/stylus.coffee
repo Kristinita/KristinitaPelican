@@ -1,8 +1,8 @@
 ##########################
 ## grunt-contrib-stylus ##
 ##########################
-# Compile Stylus to CSS
-# https://github.com/gruntjs/grunt-contrib-stylus
+# Compile Stylus to CSS:
+# https://www.npmjs.com/package/grunt-contrib-stylus
 module.exports =
 	options:
 		compress: false

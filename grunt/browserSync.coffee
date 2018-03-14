@@ -1,8 +1,8 @@
 ########################
 ## grunt-browser-sync ##
 ########################
-# Live Reloading
-# https://github.com/BrowserSync/grunt-browser-sync
+# Live Reloading:
+# https://www.npmjs.com/package/grunt-browser-sync
 module.exports =
 	bsFiles:
 		src : ['output/theme/css/**/*.css', 'output/theme/css/**/**/*.css', 'output/theme/js/**/*.js']

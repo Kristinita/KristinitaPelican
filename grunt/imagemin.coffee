@@ -2,7 +2,7 @@
 ## grunt-contrb-imagemin ##
 ###########################
 # Plugin for minify images:
-# https://github.com/gruntjs/grunt-contrib-imagemin
+# https://www.npmjs.com/package/grunt-contrib-imagemin
 # Minify all images in output folder
 # [NOTE] Non-documented behavior!
 # “gulp-htmltidy” task run, if I run “imagemin” task, see:
