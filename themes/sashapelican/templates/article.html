@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2018-03-02 09:43:33 -->
+<!-- @Last Modified time: 2018-03-20 11:56:53 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -22,9 +22,9 @@
 {% block base_typoreporter -%}
 	<script src="https://npmcdn.com/typo-reporter/lib/TypoReporter.min.js" defer></script>
 	{%- if article.lang == 'ru' -%}
-		<script src="{{SITEURL}}/js/typo-reporter/typo-reporter-ru.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/typo-reporter/typo-reporter-ru.js" defer></script>
 	{% else %}
-		<script src="{{SITEURL}}/js/typo-reporter/typo-reporter-en.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/typo-reporter/typo-reporter-en.js" defer></script>
 	{%- endif -%}
 {%- endblock %}
 

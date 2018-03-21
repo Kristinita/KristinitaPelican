@@ -18,12 +18,16 @@ module.exports =
 		command: 'pipenv run pelican content -s pelicanconf.py --fatal warnings'
 	deploy:
 		command: 'pipenv run pelican content -s publishconf.py --fatal warnings'
-	############
-	## pipenv ##
-	############
-	# Update Pip and Pipenv
-	pipenvupdate:
-		command: 'pipenv --update'
+
+	# [DEPRECATED] If “pipenv --update”, users have bug:
+	# https://github.com/pypa/pipenv/issues/1761
+	# ############
+	# ## pipenv ##
+	# ############
+	# # Update Pip and Pipenv
+	# pipenvupdate:
+	# 	command: 'pipenv --update'
+
 	# Update all Python Pipenv packages:
 	# https://stackoverflow.com/a/16269635/5951529
 	# https://github.com/jgonggrijp/pip-review#pip-review

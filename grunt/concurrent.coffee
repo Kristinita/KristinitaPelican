@@ -17,40 +17,47 @@ module.exports =
 	# [NOTE] Don't use “newer:” for shell tasks!
 	# grunt-newer check, that your source (src) not change and doesn't run build process.
 	tarb1: ['shell:generate']
-	tarb2: ['newer:stylus']
+	tarb2: ['newer:move']
+	tarb3: ['newer:stylus']
 	# [BUG] grunt-newer doesn't work with purifycss:
 	# Warning: Cannot read property 'forEach' of undefined Use --force to continue.
 	# https://github.com/purifycss/grunt-purifycss/issues/26
-	tarb3: ['newer:string-replace'
+	tarb4: ['newer:string-replace'
 			'purifycss']
-	tarb4: ['shell:tidymodify']
+	tarb5: ['shell:tidymodify']
+	tarb6: ['notify:default']
 	#
 	# For publishing, “target publish”
 	#
 	# Don't use “newer” for publishing, because output directory deleted →
 	# all src files will newer.
-	tarp1: ['shell:deploy']
+	#######################
+	## grunt-checkbranch ##
+	#######################
+	# Check, that you in right branch:
+	# https://www.npmjs.com/package/grunt-checkbranch
+	tarp1: ['checkbranch:master']
+	tarp2: ['shell:deploy']
 	# Don't use “newer” for “move”! Files from “root-html” doesn't move.
 	# Don't use “newer” with “realFavicon”! “index.html” will not changed!
-	tarp2: ['move'
+	tarp3: ['move'
 			'realFavicon'
 			'humans_txt'
 			'robotstxt']
-	tarp3: ['stylus'
-			'newer:unused']
-	tarp4: ['clean'
+	tarp4: ['stylus'
+			'unused']
+	tarp5: ['clean'
 			'purifycss'
 			'imagemin']
-	tarp5: ['postcss'
+	tarp6: ['postcss'
 			'string-replace']
-	tarp6: ['shell:tidymodify']
-	tarp7: ['jsbeautifier']
+	tarp7: ['shell:tidymodify']
+	tarp8: ['jsbeautifier']
+	tarp9: ['notify:deploy']
 	#
 	# For updating dependencies, “target update”
 	#
 	taru1: ['devUpdate'
-			# [FIXME] KeyError: 'pip':
-			# 'shell:pipenvupdate'
 			'shell:gitreflog']
 	taru2: ['projectUpdate'
 			'shell:pipenvupdateall'

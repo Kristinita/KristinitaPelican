@@ -13,6 +13,8 @@ default:
   - 'concurrent:tarb2'
   - 'concurrent:tarb3'
   - 'concurrent:tarb4'
+  - 'concurrent:tarb5'
+  - 'concurrent:tarb6'
 
 publish:
   - 'concurrent:taru1'
@@ -25,6 +27,8 @@ publish:
   - 'concurrent:tarp5'
   - 'concurrent:tarp6'
   - 'concurrent:tarp7'
+  - 'concurrent:tarp8'
+  - 'concurrent:tarp9'
 
 git:
   - 'gta:add'
