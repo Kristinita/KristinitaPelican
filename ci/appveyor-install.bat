@@ -1,7 +1,7 @@
 @REM @Author: Kristinita
 @REM @Date:   2018-02-28 19:42:16
 @REM @Last Modified by:   Kristinita
-@REM Modified time: 2018-03-04 17:12:45
+@REM Modified time: 2018-03-21 17:50:23
 @REM Parallel pip and npm commands.
 @REM Use REM comments:
 @REM https://stackoverflow.com/a/12407934/5951529
@@ -16,5 +16,9 @@
 @REM https://github.com/majkinetor/au-packages/issues/75
 @REM https://ci.appveyor.com/project/Kristinita/sashatidydebugging/build/1.0.12
 START /B CMD /C "choco install html-tidy -y -ignoredependencies"
-START /B CMD /C "pip install --upgrade pip & pip install pipenv & pipenv install --dev"
+@REM [NOTE] Needs “python -m pip install -U pip”, not “pip install -U pip”, because
+@REM “PermissionError: [WinError 5] Access is denied”:
+@REM https://pip.pypa.io/en/stable/installing/#upgrading-pip
+@REM https://pythonhosted.org/CodeChat/appveyor.yml.html
+START /B CMD /C "python -m pip install --upgrade pip & pip install pipenv & pipenv install --dev"
 START /B CMD /C "choco install nodejs -y & npm install -g grunt-cli & npm install"

@@ -43,6 +43,11 @@ platform: x64
 # https://www.appveyor.com/docs/build-configuration/#build-pipeline
 install:
 
+  # That script run for “master” branch, not for “HEAD”;
+  # Needs, that “grunt-checkbranch” works correct:
+  # https://stackoverflow.com/a/18866140/5951529
+  # Needs in “install” section, because in “init” section actions before cloning:
+  - git checkout master
   # [WARNING] npm parallel doesn't work, example:
   # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.25/job/70x5h1qq2d6j8gyp
   # [WARNING] start command doesn't work without batch file:

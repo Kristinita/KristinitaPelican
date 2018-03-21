@@ -32,6 +32,10 @@ before_install:
   # Ignore already existing virtual environments:
   # https://github.com/menzenski/pipenv-travis-test/blob/develop/.travis.yml
   - export PIPENV_IGNORE_VIRTUALENVS=1
+  # That script run for “master” branch, not for “HEAD”;
+  # Needs, that “grunt-checkbranch” works correct:
+  # https://stackoverflow.com/a/18866140/5951529
+  - git checkout master
 
 install:
   # [NOTE] Parallelshell works, but no time economy, compare:
