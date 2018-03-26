@@ -1,9 +1,13 @@
 env:
   browser: true
   es6: true
+  jquery: true
 extends: 'eslint:recommended'
 parserOptions:
-  sourceType: module
+  ecmaVersion: 9
+  sourceType: script
+  ecmaFeatures:
+  	jsx: true
 rules:
   indent:
     - error
