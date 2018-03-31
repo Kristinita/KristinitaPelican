@@ -29,6 +29,7 @@ publish:
   - 'concurrent:tarp7'
   - 'concurrent:tarp8'
   - 'concurrent:tarp9'
+  - 'concurrent:tarp10'
 
 git:
   - 'gta:add'

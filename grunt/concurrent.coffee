@@ -40,20 +40,24 @@ module.exports =
 	tarp2: ['shell:deploy']
 	# Don't use “newer” for “move”! Files from “root-html” doesn't move.
 	# Don't use “newer” with “realFavicon”! “index.html” will not changed!
-	tarp3: ['move'
+	tarp3: ['license_finder'
 			'realFavicon'
 			'humans_txt'
-			'robotstxt']
-	tarp4: ['stylus'
-			'unused']
-	tarp5: ['clean'
+			'robotstxt'
+			'shell:lice'
+			'shell:covgen']
+	tarp4: ['move']
+	tarp5: ['stylus'
+			'unused'
+			'copy']
+	tarp6: ['clean'
 			'purifycss'
 			'imagemin']
-	tarp6: ['postcss'
+	tarp7: ['postcss'
 			'string-replace']
-	tarp7: ['shell:tidymodify']
-	tarp8: ['jsbeautifier']
-	tarp9: ['notify:deploy']
+	tarp8: ['shell:tidymodify']
+	tarp9: ['jsbeautifier']
+	tarp10: ['notify:deploy']
 	#
 	# For updating dependencies, “target update”
 	#

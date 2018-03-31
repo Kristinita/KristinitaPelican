@@ -4,6 +4,8 @@
 # Grunt plugin to run non-Grunt CLI commands.
 # https://www.npmjs.com/package/grunt-shell
 module.exports =
+
+
 	#############
 	## Pelican ##
 	#############
@@ -19,6 +21,7 @@ module.exports =
 	deploy:
 		command: 'pipenv run pelican content -s publishconf.py --fatal warnings'
 
+
 	# [DEPRECATED] If “pipenv --update”, users have bug:
 	# https://github.com/pypa/pipenv/issues/1761
 	# ############
@@ -27,6 +30,7 @@ module.exports =
 	# # Update Pip and Pipenv
 	# pipenvupdate:
 	# 	command: 'pipenv --update'
+
 
 	# Update all Python Pipenv packages:
 	# https://stackoverflow.com/a/16269635/5951529
@@ -41,6 +45,8 @@ module.exports =
 	# http://pipenv.readthedocs.io/en/latest/basics/#editable-dependencies-e-g-e
 	pipenvcleanunused:
 		command: 'pipenv clean --verbose'
+
+
 	#########
 	## git ##
 	#########
@@ -59,6 +65,8 @@ module.exports =
 	# https://www.kernel.org/pub/software/scm/git/docgit-gc.html
 	gitgarbagecollector:
 		command: 'git gc --aggressive'
+
+
 	###############
 	## HTML Tidy ##
 	###############
@@ -75,6 +83,45 @@ module.exports =
 		    command: 'bash tidy/tidy-modify.sh'
 	tidyvalidate:
 		if process.platform == "win32"
-		    command: '"tidy/tidy-validate.bat"'
+			command: '"tidy/tidy-validate.bat"'
 		else
-		    command: 'bash tidy/tidy-validate.sh'
+			command: 'bash tidy/tidy-validate.sh'
+
+
+	##########
+	## lice ##
+	##########
+	# Generate license for project:
+	# https://pypi.org/project/lice/
+	lice:
+		command: 'pipenv run lice mit -o "Sasha Chernykh" --file output/LICENSE.md'
+
+
+	############
+	## covgen ##
+	############
+	# Generate Code of conduct for project:
+	# https://contributor-covenant.org/
+	# https://www.npmjs.com/package/covgen
+	# [WARNING] Generate “CODE_OF_CONDUCT.md” only for root folder:
+	# https://github.com/simonv3/covenant-generator/issues/15
+	# [WARNING] Unobfuscated plain text e-mail:
+	# https://github.com/ContributorCovenant/contributor_covenant/issues/523
+	#########
+	## npx ##
+	#########
+	# Tool for running npm CLI commands:
+	# https://www.npmjs.com/package/npx
+	# https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b
+	# https://stackoverflow.com/a/45164863/5951529
+	covgen:
+		command: 'npx covgen SashaChernykhEmpressOfUniverse$kristinita.ru'
+
+
+	##################
+	## pip-licenses ##
+	##################
+	# Output licenses of all PyPI packages:
+	# https://pypi.org/project/pip-licenses/
+	piplicenses:
+		command: 'pipenv run pip-licenses --format-markdown > python.md'

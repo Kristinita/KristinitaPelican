@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-03-02 14:03:49
+# @Last Modified time: 2018-03-27 08:09:20
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -351,7 +351,7 @@ ARTICLE_PATHS = ['Gingerinas', 'Giologica', 'IT-articles', 'Life-hacks', 'Progra
 # [Hack] That exclude articles, include non-exicting folder.
 # «ARTICLE_PATHS = None» — critical error, integer parameter
 
-PAGE_PATHS = ['None']
+PAGE_PATHS = ['Pages']
 
 # Non-modified files and folders
 # [Hack] The register matters. 404.md & 404.html don't work.

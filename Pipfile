@@ -30,6 +30,8 @@ pip-review = "*"
 mdx-cite = {git = "https://github.com/aleray/mdx_cite.git", editable = true}
 mdx-custom-span-class = {git = "https://github.com/exaroth/mdx_custom_span_class.git", editable = true}
 markdown-downheader = "*"
+lice = "*"
+pip-licenses = "*"
 
 
 [requires]

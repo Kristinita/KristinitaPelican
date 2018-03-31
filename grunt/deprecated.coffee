@@ -221,3 +221,14 @@
 # 			doctype: 'html5'
 # 			indent: true
 # 			wrap: 0)).pipe gulp.dest('./')
+
+
+# [DEPRECATED] pip-licenses more customisable
+# ############
+# ## yolk3k ##
+# ############
+# # Generate licenses for all Python packages:
+# # https://stackoverflow.com/a/26718306/5951529
+# # https://pypi.org/project/yolk3k/
+# yolk:
+# 	command: 'pipenv run yolk -l -f license > python.txt'
