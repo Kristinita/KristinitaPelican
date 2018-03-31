@@ -94,7 +94,12 @@ module.exports =
 	# Generate license for project:
 	# https://pypi.org/project/lice/
 	lice:
-		command: 'pipenv run lice mit -o "Sasha Chernykh" --file output/LICENSE.md'
+		# [BUG] lice doesn't work in AppVeyor:
+		# https://github.com/appveyor/ci/issues/2226
+		if process.platform == "win32"
+			command: 'echo "Sorry, lice doesn\'t work in AppVeyor — https://github.com/appveyor/ci/issues/2226"'
+		else
+			command: 'pipenv run lice mit -o "Sasha Chernykh" --file output/LICENSE.md'
 
 
 	############

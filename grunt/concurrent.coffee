@@ -11,6 +11,17 @@
 # https://www.npmjs.com/package/grunt-newer
 # https://www.html5rocks.com/en/tutorials/tooling/supercharging-your-gruntfile/#toc-buildtime
 module.exports =
+
+	options:
+		# [NOTE] Useless option:
+		# https://www.npmjs.com/package/grunt-concurrent#logconcurrentoutput
+		# https://github.com/sindresorhus/grunt-concurrent/issues/43#issue-37014351
+		logConcurrentOutput: false
+		# Improve max concurrent tasks:
+		# https://stackoverflow.com/a/20963687/5951529
+		# https://www.npmjs.com/package/grunt-concurrent#limit
+		limit: 7
+
 	#
 	# For development, “target build”
 	#
@@ -45,7 +56,8 @@ module.exports =
 			'humans_txt'
 			'robotstxt'
 			'shell:lice'
-			'shell:covgen']
+			'shell:covgen'
+			'shell:piplicenses']
 	tarp4: ['move']
 	tarp5: ['stylus'
 			'unused'
