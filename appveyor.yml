@@ -7,6 +7,9 @@ clone_depth: 1
 
 init:
   - setx PIPENV_VENV_IN_PROJECT 1
+  # Use “CALL Refreshenv.cmd” for local installation:
+  # https://github.com/chocolatey/choco/issues/1461#issuecomment-348136706
+  # https://ss64.com/nt/call.html
   - refreshenv
   # Needs, because will get messages as:
   # «flake8 is not recognized»

@@ -35,7 +35,8 @@ module.exports =
 		css: ['output/theme/css/sections/giologica.css']
 		dest: 'output/theme/css/sections/giologica.css'
 	sashablacktarget:
-		src: ['output/Sasha-Black/*.html']
+		# Pages and Sasha Black
+		src: ['output/Sasha-Black/*.html', 'output/Pages/*.html']
 		css: ['output/theme/css/sections/sasha-black-description.css']
 		dest: 'output/theme/css/sections/sasha-black-description.css'
 	smertsvobodetarget:
