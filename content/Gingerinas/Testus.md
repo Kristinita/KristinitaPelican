@@ -1,6 +1,6 @@
 Title: Sasha Goddess
 Date: 2017-07-13 23:51:25
-Modified: 2018-03-02 21:17:08
+Modified: 2018-04-04 11:30:20
 Version: 1.0.0-beta
 Author: Sasha Chernykh
 Lang: ru
@@ -8,6 +8,7 @@ Summary: Test
 Pagetitle: Sasha Goddess
 Metacontent: Test
 Pagecolors: gingerinas
+Asideimage: SashaFluffy
 Iconleftorright: right
 Tags: Test
 Category: Test

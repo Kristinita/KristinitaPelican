@@ -1,6 +1,6 @@
 Title: Fastest way to add new version of your Sublime Text package
 Date: 2018-01-29 12:04:22
-Modified: 2018-03-02 21:17:09
+Modified: 2018-04-04 11:57:58
 Version: 0.2.1
 Author: Sasha Chernykh
 Lang: en
@@ -8,6 +8,7 @@ Summary: Tutorial, how you can make release and changelog, use only one command 
 Pagetitle: Fastest way to add new version of your Sublime Text package
 Metacontent: Tutorial, how you can make release and changelog, use one command
 Pagecolors: it-articles
+Asideimage: SashaGreenSweater
 Iconleftorright: left
 Tags: it-articles, sublime-text, release
 Category: IT-articles
@@ -29,18 +30,18 @@ Customcss: false
 1. [Limitations](#limitations)
 1. [Installation](#installation)
 1. [Activation](#activation)
-    1. [GitHub token](#github-token)
-    1. [Upstream branch](#upstream-branch)
-    1. [CHANGELOG.md](#changelogmd)
-    1. [package.json](#packagejson)
-    1. [.release-it.json](#release-itjson)
-    1. [messages.json](#messagesjson)
+	1. [GitHub token](#github-token)
+	1. [Upstream branch](#upstream-branch)
+	1. [CHANGELOG.md](#changelogmd)
+	1. [package.json](#packagejson)
+	1. [.release-it.json](#release-itjson)
+	1. [messages.json](#messagesjson)
 1. [Usage](#usage)
 1. [Details](#details)
-    1. [release-it command](#release-it-command)
-    1. [.release-it.json](#release-itjson-1)
-        1. [buildCommand](#buildcommand)
-        1. [Another lines](#another-lines)
+	1. [release-it command](#release-it-command)
+	1. [.release-it.json](#release-itjson-1)
+		1. [buildCommand](#buildcommand)
+		1. [Another lines](#another-lines)
 1. [Problems and non-fixed bugs](#problems-and-non-fixed-bugs)
 1. [Testing environment](#testing-environment)
 

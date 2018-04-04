@@ -6,13 +6,12 @@ Summary: Sasha Black — проверка репутации сайта, на н
 Pagetitle: Sasha Black
 Metacontent: Sasha_Black — удобный сервис проверки сайта на возможно вредоносное содержимое, наличие в вирусных и спам-базах, репутации на основе пользовательских оценок.
 Pagecolors: sasha-black-description
+Asideimage: SashaInflatedSponges
 Iconleftorright: right
 Tags: sasha-black
 Category: Sasha Black
 Tooltipster: false
 ClipboardJs: true
-Customcss: true
-Customcss1: Sasha-Black/sasha-black-description
 Noco: 1QBY
 
 <!-- MarkdownTOC -->
@@ -21,20 +20,20 @@ Noco: 1QBY
 1. [Советы владельцам сайтов](#Советы-владельцам-сайтов)
 1. [Sasha Black как проверка сторонних сайтов](#sasha-black-как-проверка-сторонних-сайтов)
 1. [Онлайн-сканеры](#Онлайн-сканеры)
-    1. [Quterra](#quterra)
-    1. [Sucuri](#sucuri)
-    1. [Is It Hacked?](#is-it-hacked)
-    1. [VirusTotal](#virustotal)
+	1. [Quterra](#quterra)
+	1. [Sucuri](#sucuri)
+	1. [Is It Hacked?](#is-it-hacked)
+	1. [VirusTotal](#virustotal)
 1. [Блэклисты](#Блэклисты)
-    1. [Robtex](#robtex)
-    1. [MX Toolbox](#mx-toolbox)
-    1. [Rosinstrument](#rosinstrument)
-    1. [URL Void](#url-void)
-    1. [vURL](#vurl)
+	1. [Robtex](#robtex)
+	1. [MX Toolbox](#mx-toolbox)
+	1. [Rosinstrument](#rosinstrument)
+	1. [URL Void](#url-void)
+	1. [vURL](#vurl)
 1. [Пользовательские оценки](#Пользовательские-оценки)
-    1. [Web of Trust](#web-of-trust)
-    1. [Webutation](#webutation)
-    1. [Trustpilot](#trustpilot)
+	1. [Web of Trust](#web-of-trust)
+	1. [Webutation](#webutation)
+	1. [Trustpilot](#trustpilot)
 1. [Не включены в Sasha Black](#Не-включены-в-sasha-black)
 1. [Послесловие](#Послесловие)
 1. [Глоссарий](#Глоссарий)

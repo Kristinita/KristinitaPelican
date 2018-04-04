@@ -1,13 +1,18 @@
 Title: Sacagawea
 Date: 2017-05-05 06:49:34
-Modified: 2018-03-02 21:17:11
+Modified: 2018-04-04 16:23:47
 Version: 0.1.0
 Author: Keith Hall
 Lang: ru
 Summary: Timer for Russian gingerinas.
 Pagetitle: Sacagawea
 Metacontent: Таймер для джинджерин “Что? Где? Когда?”, “Брейн Ринг”
-Pagecolors: sublime-text
+Pagecolors: programs
+Asideimage: SashaChocolate
+Titleimage: true
+Titleimagename: NatalyaMindGames
+Epigraph: true
+Epigraphtext: Посвящено <a href="https://vk.com/id152198389">Наталье Степуриной (Шмелёвой)</a>, <br>никогда не оставлявшую меня в трудную минуту. <br>Названо в честь <a href="http://www.history.com/topics/native-american-history/sacagawea">Её игрового никнейма</a>.
 Iconleftorright: right
 Tags: sublime-text, gingerinas, what-where-when
 Category: Programs
@@ -18,15 +23,6 @@ Tooltipster: true
 Clipboardjs: true
 OpenGraphImage: https://i.imgur.com/cVITpm1.jpg
 
-<div class="SashaEpigraph">
-<em>Посвящено <a href="https://vk.com/id152198389">Наталье Степуриной (Шмелёвой)</a>, <br>
-никогда не оставлявшую меня в трудную минуту. <br>
-Названо в честь <a href="http://www.history.com/topics/native-american-history/sacagawea">Её игрового никнейма</a>.
-</em>
-</div>
-
-![Sacagawea](https://i.imgur.com/cVITpm1.jpg)
-
 `“What? Where? When?” has great popularity in the Russian language, not English, so the description of the package in Russian.`
 
 <!-- MarkdownTOC -->
@@ -35,23 +31,23 @@ OpenGraphImage: https://i.imgur.com/cVITpm1.jpg
 1. [Мотивация](#Мотивация)
 1. [Ограничения к использованию](#Ограничения-к-использованию)
 1. [Заявленное поведение](#Заявленное-поведение)
-    1. [Без использования third-party программ](#Без-использования-third-party-программ)
-        1. [Режим Блиц/Суперблиц/Брейн Ринг](#Режим-БлицСуперблицБрейн-Ринг)
-        1. [60-секундный режим](#60-секундный-режим)
-    1. [C использованием сторонних программ](#c-использованием-сторонних-программ)
-        1. [Windows](#windows)
+	1. [Без использования third-party программ](#Без-использования-third-party-программ)
+		1. [Режим Блиц/Суперблиц/Брейн Ринг](#Режим-БлицСуперблицБрейн-Ринг)
+		1. [60-секундный режим](#60-секундный-режим)
+	1. [C использованием сторонних программ](#c-использованием-сторонних-программ)
+		1. [Windows](#windows)
 1. [Установка и настройка](#Установка-и-настройка)
-    1. [Установка](#Установка)
-        1. [Обязательно](#Обязательно)
-        1. [Опционально](#Опционально)
-    1. [Настройка](#Настройка)
-        1. [Активация шорткатов](#Активация-шорткатов)
-        1. [AutoHotkey](#autohotkey)
-        1. [nnCron](#nncron)
+	1. [Установка](#Установка)
+		1. [Обязательно](#Обязательно)
+		1. [Опционально](#Опционально)
+	1. [Настройка](#Настройка)
+		1. [Активация шорткатов](#Активация-шорткатов)
+		1. [AutoHotkey](#autohotkey)
+		1. [nnCron](#nncron)
 1. [Опции](#Опции)
 1. [Известные проблемы](#Известные-проблемы)
-    1. [Sacagawea](#sacagawea)
-    1. [Зависимости](#Зависимости)
+	1. [Sacagawea](#sacagawea)
+	1. [Зависимости](#Зависимости)
 1. [Примечания](#Примечания)
 1. [Программное обеспечение при тестировании](#Программное-обеспечение-при-тестировании)
 1. [TODO](#todo)

@@ -1,13 +1,16 @@
 Title: KristinitaLuckyLink
 Date: 2018-01-09 19:27:50
-Modified: 2018-03-02 21:17:10
+Modified: 2018-04-04 16:18:30
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
 Summary: Sublime Text 3 package, that wrap the selected text to DuckDuckGo or Google top query URL <br><br> ![KristinitaLuckyLink](https://i.imgur.com/TuyxneV.png)
 Pagetitle: KristinitaLuckyLink
 Metacontent: Wrap selected text with top DuckDuckGo or Google URL
-Pagecolors: kristinita-temp
+Pagecolors: programs
+Asideimage: KristinaGold
+Titleimage: true
+Titleimagename: KristinitaLuckyLink
 Iconleftorright: right
 Tags: programs, sublime-text
 Category: Programs
@@ -17,44 +20,42 @@ Clipboardjs: true
 Visualize: false
 Opengraphimage: https://i.imgur.com/TuyxneV.png
 
-![KristinitaLuckyLink](https://i.imgur.com/TuyxneV.png)
-
 <!-- MarkdownTOC -->
 
 1. [Description](#description)
-    1. [Reason](#reason)
-    1. [Demonstration](#demonstration)
-    1. [Examples](#examples)
-    1. [Saving time](#saving-time)
-    1. [Supported search engines](#supported-search-engines)
-    1. [Supported markups](#supported-markups)
-    1. [Features](#features)
+	1. [Reason](#reason)
+	1. [Demonstration](#demonstration)
+	1. [Examples](#examples)
+	1. [Saving time](#saving-time)
+	1. [Supported search engines](#supported-search-engines)
+	1. [Supported markups](#supported-markups)
+	1. [Features](#features)
 1. [Limitations](#limitations)
 1. [Installation](#installation)
-    1. [Depenedencies](#depenedencies)
-    1. [KristinitaLuckyLink](#kristinitaluckylink)
-        1. [Stable version](#stable-version)
-        1. [Development version](#development-version)
+	1. [Depenedencies](#depenedencies)
+	1. [KristinitaLuckyLink](#kristinitaluckylink)
+		1. [Stable version](#stable-version)
+		1. [Development version](#development-version)
 1. [Activation](#activation)
-    1. [Environment variable](#environment-variable)
-    1. [Commands and hotkeys](#commands-and-hotkeys)
-    1. [Restart](#restart)
+	1. [Environment variable](#environment-variable)
+	1. [Commands and hotkeys](#commands-and-hotkeys)
+	1. [Restart](#restart)
 1. [Usage](#usage)
-    1. [Shortcuts](#shortcuts)
-    1. [Command palette](#command-palette)
+	1. [Shortcuts](#shortcuts)
+	1. [Command palette](#command-palette)
 1. [Documentation](#documentation)
 1. [Tricks](#tricks)
-    1. [Clarify](#clarify)
+	1. [Clarify](#clarify)
 1. [Testing environment](#testing-environment)
 1. [TODO](#todo)
 1. [Known bugs and another problems](#known-bugs-and-another-problems)
-    1. [KristinitaLuckyLink](#kristinitaluckylink-1)
-    1. [External](#external)
+	1. [KristinitaLuckyLink](#kristinitaluckylink-1)
+	1. [External](#external)
 1. [Troubleshooting](#troubleshooting)
-    1. [Incorrect links](#incorrect-links)
-        1. [SublimeREPL](#sublimerepl)
-        1. [DuckDuckGo](#duckduckgo)
-        1. [Google](#google)
+	1. [Incorrect links](#incorrect-links)
+		1. [SublimeREPL](#sublimerepl)
+		1. [DuckDuckGo](#duckduckgo)
+		1. [Google](#google)
 1. [Contributing](#contributing)
 1. [Thanks](#thanks)
 1. [Terms and conditions](#terms-and-conditions)

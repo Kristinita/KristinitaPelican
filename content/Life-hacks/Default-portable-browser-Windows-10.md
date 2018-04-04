@@ -6,9 +6,10 @@ Summary:
 Pagetitle: Портативный браузер по умолчанию в Windows 10
 Metacontent: Description, how to make Pale Moon default browser in Windows
 Pagecolors: it-articles
+Asideimage: SashaGreenSweater
 Iconleftorright: left
 Tags: life-hacks, pale-moon
-Category: Life-hacks,
+Category: Life-hacks
 Tooltipster: true
 ClipboardJs: true
 Customcss: true

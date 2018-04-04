@@ -1,7 +1,7 @@
 Title: typo-reporter
 Status: published
 Date: 2018-03-22 07:53:03
-Modified: 2018-03-22 15:10:32
+Modified: 2018-04-04 11:58:12
 Version: 0.2.1
 Author: Sasha Chernykh
 Lang: en
@@ -9,6 +9,7 @@ Summary: Features, problems and it solutions, that not described in official typ
 Pagetitle: typo-reporter
 Metacontent: Features, problems and it solutions, that not described in official typo-reporter Readme.
 Pagecolors: it-articles
+Asideimage: SashaGreenSweater
 Iconleftorright: left
 Tags: it-articles, spelling
 Category: IT-articles

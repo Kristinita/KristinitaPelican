@@ -1,6 +1,6 @@
 Title: How to publish your package to PyPI, 2018
 Date: 2017-07-26 11:10:27
-Modified: 2018-03-02 21:17:09
+Modified: 2018-04-04 11:57:55
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -8,6 +8,7 @@ Summary: Tutorial, how you can publish your Python package to PyPI: <br><br> ![E
 Pagetitle: How to publish your package to PyPI, 2018
 Metacontent: Tutorial, how you can publish your Python package to PyPI
 Pagecolors: it-articles
+Asideimage: SashaGreenSweater
 Iconleftorright: left
 Tags: it-articles, python, pypi, release
 Category: IT-Articles
@@ -29,47 +30,47 @@ Customcss: false
 1. [Limitations](#limitations)
 1. [Installation](#installation)
 1. [Configuration](#configuration)
-    1. [Files](#files)
-    1. [&#95;&#95;init&#95;&#95;.py](#9595init9595py)
-    1. [License](#license)
-    1. [README](#readme)
-        1. [README.md](#readmemd)
-        1. [README.rst](#readmerst)
-    1. [setup.cfg](#setupcfg)
-        1. [long_description](#longdescription)
-        1. [classifiers](#classifiers)
-        1. [zip_safe](#zipsafe)
-        1. [packages](#packages)
-        1. [console_scripts](#consolescripts)
-        1. [bdist_wheel](#bdistwheel)
-    1. [Dependencies](#dependencies)
-        1. [Difference between requirements.txt and install_requires](#difference-between-requirementstxt-and-installrequires)
-            1. [install_requires](#installrequires)
-            1. [requirements.txt](#requirementstxt)
-        1. [setup.py](#setuppy)
-        1. [requirements.txt](#requirementstxt-1)
-        1. [MANIFEST.in](#manifestin)
-    1. [pyroma](#pyroma)
+	1. [Files](#files)
+	1. [&#95;&#95;init&#95;&#95;.py](#9595init9595py)
+	1. [License](#license)
+	1. [README](#readme)
+		1. [README.md](#readmemd)
+		1. [README.rst](#readmerst)
+	1. [setup.cfg](#setupcfg)
+		1. [long_description](#long_description)
+		1. [classifiers](#classifiers)
+		1. [zip_safe](#zip_safe)
+		1. [packages](#packages)
+		1. [console_scripts](#console_scripts)
+		1. [bdist_wheel](#bdist_wheel)
+	1. [Dependencies](#dependencies)
+		1. [Difference between requirements.txt and install_requires](#difference-between-requirementstxt-and-install_requires)
+			1. [install_requires](#install_requires)
+			1. [requirements.txt](#requirementstxt)
+		1. [setup.py](#setuppy)
+		1. [requirements.txt](#requirementstxt-1)
+		1. [MANIFEST.in](#manifestin)
+	1. [pyroma](#pyroma)
 1. [TestPyPI](#testpypi)
-    1. [What is TestPyPI](#what-is-testpypi)
-    1. [Registration](#registration)
-    1. [Twine settings](#twine-settings)
-    1. [Build package](#build-package)
-    1. [Publish to TestPyPI](#publish-to-testpypi)
-    1. [Visit TestPyPI](#visit-testpypi)
-    1. [virtualenv](#virtualenv)
-        1. [Why virtual environment?](#why-virtual-environment)
-        1. [Using virtualenv and virtualenvwrapper](#using-virtualenv-and-virtualenvwrapper)
-        1. [Checking](#checking)
+	1. [What is TestPyPI](#what-is-testpypi)
+	1. [Registration](#registration)
+	1. [Twine settings](#twine-settings)
+	1. [Build package](#build-package)
+	1. [Publish to TestPyPI](#publish-to-testpypi)
+	1. [Visit TestPyPI](#visit-testpypi)
+	1. [virtualenv](#virtualenv)
+		1. [Why virtual environment?](#why-virtual-environment)
+		1. [Using virtualenv and virtualenvwrapper](#using-virtualenv-and-virtualenvwrapper)
+		1. [Checking](#checking)
 1. [PyPI](#pypi)
 1. [Updating](#updating)
 1. [Automatic updating, release and changelog](#automatic-updating-release-and-changelog)
-    1. [Demonstration](#demonstration-1)
-    1. [Features](#features-1)
-    1. [Limitations](#limitations-1)
-    1. [Installation and setting-up](#installation-and-setting-up)
-        1. [.release-it.json](#release-itjson)
-    1. [Usage](#usage)
+	1. [Demonstration](#demonstration-1)
+	1. [Features](#features-1)
+	1. [Limitations](#limitations-1)
+	1. [Installation and setting-up](#installation-and-setting-up)
+		1. [.release-it.json](#release-itjson)
+	1. [Usage](#usage)
 1. [Testing environment](#testing-environment)
 
 <!-- /MarkdownTOC -->
@@ -250,7 +251,7 @@ I prefer to add long description to personal site, not to README, because I have
 
 In the subsections below I describe the places that caused me difficulties.
 
-<a id="longdescription"></a>
+<a id="long_description"></a>
 ### long_description
 
 my value:
@@ -268,7 +269,7 @@ You can use only classifiers from [this list](https://pypi.python.org/pypi?%3Aac
 
 Possibly, UNIX users can select classifiers via [pypi-classifiers GUI](https://github.com/mbr/pypi-classifiers), but [I can't set this program for Windows 10](https://github.com/mbr/pypi-classifiers/issues/2).
 
-<a id="zipsafe"></a>
+<a id="zip_safe"></a>
 ### zip_safe
 
 my value:
@@ -290,7 +291,7 @@ packages = find:
 
 If no `#!ini packages = find:`, users doesn't download folder with your Python module.
 
-<a id="consolescripts"></a>
+<a id="console_scripts"></a>
 ### console_scripts
 
 What is it. If Erichek user want run Erichek, he/she wrote in console:
@@ -318,7 +319,7 @@ Parameter and values:
 + `erichek.__main__` — relative path to your main module. For me it [*\_\_main\_\_.py* file in *erichek* folder](https://github.com/Kristinita/Erichek/blob/master/erichek/__main__.py).
 + `:main` — function, that run, when you run your module. For my *\_\_main\_\_.py* it `#!python main()` function.
 
-<a id="bdistwheel"></a>
+<a id="bdist_wheel"></a>
 ### bdist_wheel
 
 my value:
@@ -345,12 +346,12 @@ In this section I tell, what you need, that dependencies of your package from fi
 !!! caution
     Some developers [criticize this method](https://stackoverflow.com/a/33685899/5951529). If you need different dependencies for *requirements.txt* and *install_requires*, please, add list of your dependencies in *requirements.txt* and *setup.cfg* both.
 
-<a id="difference-between-requirementstxt-and-installrequires"></a>
+<a id="difference-between-requirementstxt-and-install_requires"></a>
 ### Difference between requirements.txt and install_requires
 
 Simplified definition.
 
-<a id="installrequires"></a>
+<a id="install_requires"></a>
 #### install_requires
 
 *install_requires* parameter in *setup.cfg* or *setup.py* show, which packages will install additionally, if user install your package via pip. For example, user install [clize package](https://pypi.org/project/sasha/):

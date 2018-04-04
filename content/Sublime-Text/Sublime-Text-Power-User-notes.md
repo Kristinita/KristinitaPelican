@@ -5,7 +5,8 @@ Lang: en
 Summary: 
 Pagetitle: “Sublime Text Power User” notes
 Metacontent: Notes of book “Sublime Text Power User”
-Pagecolors: sublime-text
+Pagecolors: programs
+Asideimage: SashaChocolate
 Iconleftorright: right
 Tags: sublime-text
 Category: Sublime Notes

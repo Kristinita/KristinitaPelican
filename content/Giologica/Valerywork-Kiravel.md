@@ -6,6 +6,7 @@ Summary:
 Pagetitle: Вэлериворк &amp; Киравэл
 Metacontent: Вэлериворк и Киравэл
 Pagecolors: giologica-blue
+Asideimage: SashaBlueEyes
 Iconleftorright: right
 Tags: giologica
 Category: Giologica

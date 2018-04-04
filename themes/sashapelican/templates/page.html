@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2018-03-31 18:52:07 -->
+<!-- @Last Modified time: 2018-04-04 22:17:14 -->
 <!-- Differences pages and articles:
 1. In pages disable categories.
 2. Replace any files with “articles”. -->
@@ -86,6 +86,8 @@ Article metadata variable -->
 {% block base_iconleftorright %}{{ page.iconleftorright }}{% endblock %}
 <!-- CSS of pages -->
 {% block base_pagecolors %}{{ page.pagecolors }}{% endblock %}
+<!-- Aside image -->
+{% block base_asideimage %}{{ page.asideimage }}{% endblock %}
 
 <!-- Custom CSS, specific for article -->
 {% block base_customcss -%}
@@ -111,6 +113,22 @@ Article metadata variable -->
 {% block base_version %}{{ page.version }}{% endblock %}
 {% block base_date %}{{ page.date }}{% endblock %}
 {% block base_date_displayed %}{{ page.modified }}{% endblock %}
+
+<!-- Epigraph -->
+{% block base_epigraph -%}
+	{%- if page.epigraph == 'true' -%}
+	<div class="SashaEpigraph">
+		<em>{{ page.epigraphtext }}</em>
+	</div>
+	{% endif %}
+{%- endblock %}
+
+<!-- Title image -->
+{% block base_titleimage -%}
+	{%- if page.titleimage == 'true' -%}
+		<p><img alt="Header image" src="{{SITEURL}}/images/header/{{ page.titleimagename }}.jpg"></p>
+	{% endif %}
+{%- endblock %}
 
 <!-- Site content -->
 {% block base_content %}{{ page.content }}{% endblock %}

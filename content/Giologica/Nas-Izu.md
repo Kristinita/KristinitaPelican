@@ -6,6 +6,7 @@ Summary:
 Pagetitle: Нас Изу
 Metacontent: Книги для общего развития, психологии прокачки определённых тем, специфические и интересных фактов
 Pagecolors: giologica
+Asideimage: SashaBrazil
 Iconleftorright: left
 Tags: giologica, gingerinas-training
 Category: Giologica

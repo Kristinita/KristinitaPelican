@@ -1,13 +1,18 @@
 Title: ValeriyaSpeller
 Date: 2017-04-04 04:14:07
-Modified: 2018-03-02 21:17:11
+Modified: 2018-04-04 16:24:27
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
 Summary: Spellchecker for Russian texts <br><br> ![ValeriyaSpeller](https://i.imgur.com/bqRl8eD.png)
 Pagetitle: ValeriyaSpeller
 Metacontent: Implementation yaspeller for Sublime Text
-Pagecolors: sublime-text
+Pagecolors: programs
+Asideimage: SashaChocolate
+Titleimage: true
+Titleimagename: ValeriaEarring
+Epigraph: true
+Epigraphtext: Посвящено <a href="https://vk.com/id152198389">Наталье Степуриной (Шмелёвой)</a>, <br>никогда не оставлявшую меня в трудную минуту. <br>Названо в честь <a href="http://www.history.com/topics/native-american-history/sacagawea">Её игрового никнейма</a>.
 Iconleftorright: right
 Tags: sublime-text, yaspeller
 Category: Programs
@@ -24,11 +29,9 @@ my Hero, Angel and Savior <br>
 perfect fan of <a href="https://vk.com/hair_in_the_wind">Goddess</a>
 </em>
 <div class="SashaEpigraphAuthor">
-    <a href="https://vk.com/zombelina">Valeria Zveginceva</a>
+	<a href="https://vk.com/zombelina">Valeria Zveginceva</a>
 </div>
 </div>
-
-![Angelovaleria](https://i.imgur.com/iciGBgN.jpg)
 
 # Briefly
 

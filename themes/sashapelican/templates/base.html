@@ -96,8 +96,9 @@
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/fonts.css">
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/aside.css">
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/image_{% block base_iconleftorright %}{% endblock %}.css">
-	<!-- External -->
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{% block base_pagecolors %}{% endblock %}.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/aside/{% block base_asideimage %}{% endblock %}.css">
+	<!-- External -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css">
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/typo-reporter/typo-reporter.css">
 	<!-- Admonition: note, warning etc. blocks, see
@@ -134,6 +135,8 @@
 					<time itemprop="datePublished" datetime="{% block base_date_displayed %}{% endblock %}">{{ self.base_date_displayed() }}</time>
 				</div>
 			</header>
+			{% block base_epigraph %}{% endblock %}
+			{% block base_titleimage %}{% endblock %}
 			{% block base_content %}{% endblock %}
 			<footer>
 				{% block base_neighbors -%}{% endblock %}

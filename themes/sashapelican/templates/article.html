@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2018-03-20 11:56:53 -->
+<!-- @Last Modified time: 2018-04-04 17:54:04 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -83,6 +83,8 @@ Article metadata variable -->
 {% block base_iconleftorright %}{{ article.iconleftorright }}{% endblock %}
 <!-- CSS of pages -->
 {% block base_pagecolors %}{{ article.pagecolors }}{% endblock %}
+<!-- Aside image -->
+{% block base_asideimage %}{{ article.asideimage }}{% endblock %}
 
 <!-- Custom CSS, specific for article -->
 {% block base_customcss -%}
@@ -123,6 +125,22 @@ https://webref.ru/html/link/rel
 {% block base_version %}{{ article.version }}{% endblock %}
 {% block base_date %}{{ article.date }}{% endblock %}
 {% block base_date_displayed %}{{ article.modified }}{% endblock %}
+
+<!-- Epigraph -->
+{% block base_epigraph -%}
+	{%- if article.epigraph == 'true' -%}
+	<div class="SashaEpigraph">
+		<em>{{ article.epigraphtext }}</em>
+	</div>
+	{% endif %}
+{%- endblock %}
+
+<!-- Title image -->
+{% block base_titleimage -%}
+	{%- if article.titleimage == 'true' -%}
+		<p><img alt="Header image" src="{{SITEURL}}/images/header/{{ article.titleimagename }}.jpg"></p>
+	{% endif %}
+{%- endblock %}
 
 <!-- Site content -->
 {% block base_content %}{{ article.content }}{% endblock %}

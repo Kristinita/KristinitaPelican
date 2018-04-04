@@ -6,6 +6,7 @@ Summary:
 Pagetitle: Портативный браузер по умолчанию в Windows 10
 Metacontent: Description, how to make Pale Moon default browser in Windows
 Pagecolors: it-articles
+Asideimage: SashaGreenSweater
 Iconleftorright: left
 Tags: ROM, android
 Category: Life-hacks,
