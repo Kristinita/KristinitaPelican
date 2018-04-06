@@ -1,6 +1,4 @@
 Title: How to publish your package to PyPI, 2018
-Date: 2017-07-26 11:10:27
-Modified: 2018-04-04 11:57:55
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -89,7 +87,7 @@ pip install <your_package>
 Read this article.
 
 !!! info
-    In this article I wrote the most common method at February 2018. But you can consider another tools as [flit](https://github.com/takluyver/flit) and [poet](https://github.com/sdispater/poet).
+	In this article I wrote the most common method at February 2018. But you can consider another tools as [flit](https://github.com/takluyver/flit) and [poet](https://github.com/sdispater/poet).
 
 <a id="audience"></a>
 # Audience
@@ -199,9 +197,9 @@ Simplify configuration. Real project configuration see in [Erichek GitHub reposi
 In [Software Engineering site recommends](https://softwareengineering.stackexchange.com/q/301691/264224) use uppercase for README and some another text files.
 
 !!! question
-    I [ask a question](https://softwareengineering.stackexchange.com/questions/365410/readme-md-vs-readme-md), need I use uppercase for file extension or no? *README.rst* or *README.RST*? But I get 7 minuses and my question will delete.
+	I [ask a question](https://softwareengineering.stackexchange.com/questions/365410/readme-md-vs-readme-md), need I use uppercase for file extension or no? *README.rst* or *README.RST*? But I get 7 minuses and my question will delete.
 
-    I don't find standard. Personally I use lowercase for file extensions, but you can use uppercase.
+	I don't find standard. Personally I use lowercase for file extensions, but you can use uppercase.
 
 <!-- Using HTML Entities -->
 
@@ -228,7 +226,7 @@ If you preferred write README in Markdown, you can have problems.
 At February 2018 [PyPI doesn't support Readme.md](https://github.com/pypa/warehouse/issues/869) without dependencies. Possibly, [it seems like there is no easy way to use a markdown README for PyPI. Solutions involve requiring pandoc locally, which is a heavy dependency](https://github.com/dhimmel/hetio/issues/7#issuecomment-283797432).
 
 !!! hint
-    You can [convert Markdown to reStructuredText](https://bfroehle.com/2013/04/26/converting-md-to-rst/) use [Pandoc](http://pandoc.org).
+	You can [convert Markdown to reStructuredText](https://bfroehle.com/2013/04/26/converting-md-to-rst/) use [Pandoc](http://pandoc.org).
 
 <a id="readmerst"></a>
 ### README.rst
@@ -245,7 +243,7 @@ I prefer to add long description to personal site, not to README, because I have
 ## setup.cfg
 
 !!! info
-    You can add your parameters to *setup.py*, not to *setup.cfg*, see [discussion](https://github.com/pypa/python-packaging-user-guide/issues/378). I believe, that adding to *setup.cfg* more convenient.
+	You can add your parameters to *setup.py*, not to *setup.cfg*, see [discussion](https://github.com/pypa/python-packaging-user-guide/issues/378). I believe, that adding to *setup.cfg* more convenient.
 
 [See example *setup.cfg*](https://github.com/4383/sampleproject/blob/update/distribute/setup.cfg). Copy content of this file to your *setup.cfg* and change example values of parameters to your real values.
 
@@ -344,7 +342,7 @@ universal = 1
 In this section I tell, what you need, that dependencies of your package from file *requirements.txt* automatically install for user. You don't need to write same dependencies in *requirements.txt* and *setup.cfg*/*setup.py*.
 
 !!! caution
-    Some developers [criticize this method](https://stackoverflow.com/a/33685899/5951529). If you need different dependencies for *requirements.txt* and *install_requires*, please, add list of your dependencies in *requirements.txt* and *setup.cfg* both.
+	Some developers [criticize this method](https://stackoverflow.com/a/33685899/5951529). If you need different dependencies for *requirements.txt* and *install_requires*, please, add list of your dependencies in *requirements.txt* and *setup.cfg* both.
 
 <a id="difference-between-requirementstxt-and-install_requires"></a>
 ### Difference between requirements.txt and install_requires
@@ -364,11 +362,11 @@ pip install clize
 
 ```python
 install_requires=[
-    'six',
-    'sigtools >= 2.0',
-    'attrs >= 17.4.0',
-    'od',
-    'docutils',
+	'six',
+	'sigtools >= 2.0',
+	'attrs >= 17.4.0',
+	'od',
+	'docutils',
 ],
 ```
 
@@ -395,11 +393,11 @@ For example, I am Python package developer and have local dependencies for my pa
 
 1. If I want to update local dependencies, I update versions in *requirements.txt* → I run in console:
 
-    ```shell
-    pip install -r requirements.txt -t . --upgrade
-    ```
+	```shell
+	pip install -r requirements.txt -t . --upgrade
+	```
 
-    my local dependencies are updated.
+	my local dependencies are updated.
 
 1. Services as [Dependabot](https://dependabot.com/) or [Pyup](https://pyup.io/) check dependencies from *requirements.txt* and update numbers of outdated versions.
 
@@ -423,18 +421,18 @@ install_reqs = parse_requirements('requirements.txt', session='hack')
 reqs = [str(ir.req) for ir in install_reqs]
 
 setup(
-    install_requires = reqs
+	install_requires = reqs
 )
 ```
 
 !!! note
-    Author of answer by link above doesn't add a line in answer:
+	Author of answer by link above doesn't add a line in answer:
 
-    ```python
-    from setuptools import setup
-    ```
+	```python
+	from setuptools import setup
+	```
 
-    But you need to add it.
+	But you need to add it.
 
 <a id="requirementstxt-1"></a>
 ### requirements.txt
@@ -509,7 +507,7 @@ See, how you can add environment variables for:
 + [Windows](https://superuser.com/a/79614/572069).
 
 !!! caution
-    Also [you can add](http://peterdowns.com/posts/first-time-with-pypi.html) your username and password to *.pypirc* file, but it [not recommended](https://packaging.python.org/tutorials/distributing-packages/#create-an-account).
+	Also [you can add](http://peterdowns.com/posts/first-time-with-pypi.html) your username and password to *.pypirc* file, but it [not recommended](https://packaging.python.org/tutorials/distributing-packages/#create-an-account).
 
 <a id="build-package"></a>
 ## Build package
@@ -521,10 +519,10 @@ python setup.py bdist_wheel
 ```
 
 !!! note
-    [*python setup.py register*](http://peterdowns.com/posts/first-time-with-pypi.html) [is obsolete method](https://packaging.python.org/tutorials/distributing-packages/#uploading-your-project-to-pypi).
+	[*python setup.py register*](http://peterdowns.com/posts/first-time-with-pypi.html) [is obsolete method](https://packaging.python.org/tutorials/distributing-packages/#uploading-your-project-to-pypi).
 
 !!! info
-    If by some reasons you don't want use Wheels, [you can build your package](https://packaging.python.org/tutorials/distributing-packages/#source-distributions), use command `python setup.py sdist`
+	If by some reasons you don't want use Wheels, [you can build your package](https://packaging.python.org/tutorials/distributing-packages/#source-distributions), use command `python setup.py sdist`
 
 <a id="publish-to-testpypi"></a>
 ## Publish to TestPyPI
@@ -538,7 +536,7 @@ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 If no errors in your configuration, package must successful upload to TestPyPI.
 
 !!! bug
-    [Known bug](https://github.com/pypa/packaging-problems/issues/74) at February 2018 — in PyPI and TestPyPI you never can't overwrite specific version of your package, even if you delete your package. I.e., for example, you publish to PyPI or TestPyPI version *4.14.7* of your package *mypackage* → you delete *mypackage* from PyPI and/or TestPyPI → you can't upload *4.14.7* version of *mypackage* again.
+	[Known bug](https://github.com/pypa/packaging-problems/issues/74) at February 2018 — in PyPI and TestPyPI you never can't overwrite specific version of your package, even if you delete your package. I.e., for example, you publish to PyPI or TestPyPI version *4.14.7* of your package *mypackage* → you delete *mypackage* from PyPI and/or TestPyPI → you can't upload *4.14.7* version of *mypackage* again.
 
 <a id="visit-testpypi"></a>
 ## Visit TestPyPI
@@ -563,12 +561,12 @@ Examples for Erichek at February 2018:
 If the result suits you, in next step install package, that you upload, use virtual environment.
 
 !!! caution
-    You can't find your package, if you use search form on <https://test.pypi.org> or <https://pypi.org>. [The search indexes are not immediately updated, it may take \~24 hours for a new package or deleted package to appear in a search](https://github.com/pypa/warehouse/issues/2899#issuecomment-364150430).
+	You can't find your package, if you use search form on <https://test.pypi.org> or <https://pypi.org>. [The search indexes are not immediately updated, it may take \~24 hours for a new package or deleted package to appear in a search](https://github.com/pypa/warehouse/issues/2899#issuecomment-364150430).
 
 !!! note
-    On <https://testpypi.python.org> can't show last version of your package. That fix it, login at <https://testpypi.python.org> → visit `https://testpypi.python.org/pypi?%3Aaction=pkg_edit&name=<your_package>` (<https://testpypi.python.org/pypi?%3Aaction=pkg_edit&name=erichek> for Erichek) → [set *Hide? No*](https://i.imgur.com/bGjKHzS.png) for latest version.
+	On <https://testpypi.python.org> can't show last version of your package. That fix it, login at <https://testpypi.python.org> → visit `https://testpypi.python.org/pypi?%3Aaction=pkg_edit&name=<your_package>` (<https://testpypi.python.org/pypi?%3Aaction=pkg_edit&name=erichek> for Erichek) → [set *Hide? No*](https://i.imgur.com/bGjKHzS.png) for latest version.
 
-    If you have this problem for <https://pypi.python.org>, make same actions.
+	If you have this problem for <https://pypi.python.org>, make same actions.
 
 <a id="virtualenv"></a>
 ## virtualenv
@@ -593,7 +591,7 @@ Reasons of use virtual environment for TestPyPI installation:
 ### Using virtualenv and virtualenvwrapper
 
 !!! caution
-    If you on Windows, please, use [standard Windows console](https://conemu.github.io/en/Delusions.html#delusion-2) for correct virtualenvwrapper-win works or use plugin for your preferred terminal. You can't use command lines command from this section in [PowerShell](https://pypi.python.org/pypi/virtualenvwrapper-win) or [Far Manager](https://github.com/FarGroup/FarManager/issues/23).
+	If you on Windows, please, use [standard Windows console](https://conemu.github.io/en/Delusions.html#delusion-2) for correct virtualenvwrapper-win works or use plugin for your preferred terminal. You can't use command lines command from this section in [PowerShell](https://pypi.python.org/pypi/virtualenvwrapper-win) or [Far Manager](https://github.com/FarGroup/FarManager/issues/23).
 
 Open terminal in any directory. Run these commands:
 
@@ -605,7 +603,7 @@ Installing setuptools, pip, wheel...done.
 
 (erichekenv) C:\Users\SashaChernykh>toggleglobalsitepackages
 
-    Disabled global site-packages
+	Disabled global site-packages
 (erichekenv) C:\Users\SashaChernykh>pip install --extra-index-url https://test.pypi.org/simple/ erichek
 ```
 
@@ -615,17 +613,17 @@ Where:
 + *erichek* — name of your package; use real name of your package instead of *erichek*.
 
 !!! note
-    [Use *--extra-index-url*](https://stackoverflow.com/a/34561435/5951529), [not *--index-url*](https://packaging.python.org/guides/using-testpypi/#using-testpypi-with-pip) command line argument for correct dependencies installation.
+	[Use *--extra-index-url*](https://stackoverflow.com/a/34561435/5951529), [not *--index-url*](https://packaging.python.org/guides/using-testpypi/#using-testpypi-with-pip) command line argument for correct dependencies installation.
 
 !!! caution
-    Can take ~10 minutes, before you can install last version of your package. For example, you upload *4.14.7* version your package *mypackage* to TestPyPI → you print in a terminal `pip install --extra-index-url https://test.pypi.org/simple/ mypackage==4.14.7` → you can get an error:
+	Can take ~10 minutes, before you can install last version of your package. For example, you upload *4.14.7* version your package *mypackage* to TestPyPI → you print in a terminal `pip install --extra-index-url https://test.pypi.org/simple/ mypackage==4.14.7` → you can get an error:
 
-    ```shell
-    Could not find a version that satisfies the requirement mypackage==4.14.7 (from versions: 4.14.6)
-    No matching distribution found for mypackage==4.14.7
-    ```
+	```shell
+	Could not find a version that satisfies the requirement mypackage==4.14.7 (from versions: 4.14.6)
+	No matching distribution found for mypackage==4.14.7
+	```
 
-    You may need wait ~10 minutes, that 4.14.7 version index on TestPyPI. You can have a similar problem for PyPI.
+	You may need wait ~10 minutes, that 4.14.7 version index on TestPyPI. You can have a similar problem for PyPI.
 
 
 <a id="checking"></a>
@@ -663,7 +661,7 @@ After succsessful checking [you can remove](https://github.com/davidmarble/virtu
 ```
 (erichekenv) C:\Users\SashaChernykh>rmvirtualenv erichekenv
 
-    Deleted C:\Users\SashaChernykh\Envs\erichekenv
+	Deleted C:\Users\SashaChernykh\Envs\erichekenv
 
 C:\Users\SashaChernykh>
 ```
@@ -676,16 +674,16 @@ If all actions from [TestPyPI section](#testpypi) success for you, you can publi
 1. change version in your *setup.cfg* file (it must be [semver](https://semver.org/)-compatible);
 1. in root folder of your package open terminal and print:
 
-    ```shell
-    python setup.py bdist_wheel && twine upload dist/*
-    ```
+	```shell
+	python setup.py bdist_wheel && twine upload dist/*
+	```
 
 1. visit `https://pypi.python.org/pypi/<your_package>` and `https://pypi.org/project/<your_package>`, as you [visit TestPyPI](#visit-testpypi) and check, is everything okay;
 1. install your package, use pip:
 
-    ```shell
-    pip install <your_package>
-    ```
+	```shell
+	pip install <your_package>
+	```
 
 1. check, that your package works correct [as in previous section](#checking).
 
@@ -705,14 +703,14 @@ That update your package in PyPI:
 # Automatic updating, release and changelog
 
 !!! note
-    In this article I wrote not detailed. If you want to read details, how it worked, see [my another article](Fastest-way-to-add-new-version-of-Sublime-Text-3-package). I recommend read it before making actions from this section.
+	In this article I wrote not detailed. If you want to read details, how it worked, see [my another article](Fastest-way-to-add-new-version-of-Sublime-Text-3-package). I recommend read it before making actions from this section.
 
 !!! caution
-    I recommend in first do actions from this section for test project, not real. Argumentation:
+	I recommend in first do actions from this section for test project, not real. Argumentation:
 
-    + You or I can make a typo(s);
-    + Differences in my and your environment;
-    + Different versions of tools from this article can do another behavior, [example](https://github.com/webpro/release-it/issues/233)
+	+ You or I can make a typo(s);
+	+ Differences in my and your environment;
+	+ Different versions of tools from this article can do another behavior, [example](https://github.com/webpro/release-it/issues/233)
 
 <a id="demonstration-1"></a>
 ## Demonstration
@@ -727,15 +725,15 @@ I get [behavior](https://github.com/Kristinita/Erichek/commit/be58c1d53bbc8aeb76
 
 1. All commits description add to *CHANGELOG.md*:
 
-    ![Changelog](https://i.imgur.com/pmePvzQ.png)
+	![Changelog](https://i.imgur.com/pmePvzQ.png)
 
 1. New release [publish to GitHub](https://github.com/Kristinita/Erichek/releases/tag/0.2.0):
 
-    ![New release](https://i.imgur.com/fiMNQAw.png)
+	![New release](https://i.imgur.com/fiMNQAw.png)
 
 1. Version updates in *setup.cfg*:
 
-    ![Version in setup.cfg](https://i.imgur.com/4C1jnLm.png)
+	![Version in setup.cfg](https://i.imgur.com/4C1jnLm.png)
 
 1. New version of Erichek publish to PyPI.
 
@@ -765,16 +763,16 @@ Create a file *.release-it.json* in root folder of your repository with content:
 
 ```json
 {
-    "buildCommand": "changelog -u https:\/\/${repo.host}\/${repo.repository} -f CHANGELOG.md && sed -i 's\/^version = .*$\/version = ${version}\/g' setup.cfg && python setup.py bdist_wheel && twine upload dist\/*",
-    "changelogCommand": "changelog -f -",
-    "github": {
-        "release": true,
-        "tokenRef": "GITHUB_TOKEN"
-    },
-    "npm": {
-        "publish": false
-    },
-    "safeBump": false
+	"buildCommand": "changelog -u https:\/\/${repo.host}\/${repo.repository} -f CHANGELOG.md && sed -i 's\/^version = .*$\/version = ${version}\/g' setup.cfg && python setup.py bdist_wheel && twine upload dist\/*",
+	"changelogCommand": "changelog -f -",
+	"github": {
+		"release": true,
+		"tokenRef": "GITHUB_TOKEN"
+	},
+	"npm": {
+		"publish": false
+	},
+	"safeBump": false
 }
 ```
 
@@ -782,22 +780,22 @@ Where:
 
 + `sed -i 's\/^version = .*$\/version = ${version}\/g' setup.cfg` — command for replacing version in your *setup.cfg* to the newest, see [find and replace via sed](https://askubuntu.com/a/20416/582218):
 
-    ![Version in setup.cfg](https://i.imgur.com/4C1jnLm.png)
+	![Version in setup.cfg](https://i.imgur.com/4C1jnLm.png)
 
 + `python setup.py bdist_wheel && twine upload dist\/*` — [build and publish](#pypi) your package.
 
 !!! note
-    [In *.release-it.json* of real Erichek repository](https://github.com/Kristinita/Erichek/blob/master/.release-it.json) I add also next text:
+	[In *.release-it.json* of real Erichek repository](https://github.com/Kristinita/Erichek/blob/master/.release-it.json) I add also next text:
 
-    ```json
-    && sed -i 's\/^VERSION = \".*\"$\/VERSION = \"${version}\"\/g' \"erichek\/eric_config.py\"
-    ```
+	```json
+	&& sed -i 's\/^VERSION = \".*\"$\/VERSION = \"${version}\"\/g' \"erichek\/eric_config.py\"
+	```
 
-    It change a version in *eric\_config.py* file, that command `erichek --version` works correct.
+	It change a version in *eric\_config.py* file, that command `erichek --version` works correct.
 
-    ![Version in eric_config.py](https://i.imgur.com/xMrSbew.png)
+	![Version in eric_config.py](https://i.imgur.com/xMrSbew.png)
 
-    If you don't want to have this behavior, please, do not add this text to your *.release-it.json*.
+	If you don't want to have this behavior, please, do not add this text to your *.release-it.json*.
 
 See [here](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#release-itjson-1), if you want to know details about another parts of *.release-it.json*.
 

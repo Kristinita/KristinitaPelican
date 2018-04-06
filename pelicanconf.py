@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-03-31 18:36:50
+# @Last Modified time: 2018-04-06 20:11:21
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -73,6 +73,11 @@ GITHUB_URL = 'https://github.com/Kristinita/KristinitaPelican'
 
 https://github.com/getpelican/pelican-plugins
 
+filetime_from_git — add “date” and “modified” varables from Git:
+If plugin exist: you don't need add “Date:” and “Modified:” variables for
+your each article:
+https://github.com/getpelican/pelican-plugins/tree/master/filetime_from_git
+
 liquid_tags — add videos/images by code;
 for Instagram only images, without additional data;
 https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags
@@ -86,14 +91,15 @@ PLUGINS = [
     # [DEPRECATED], now by default
     # https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
     # 'feed_summary',
+    'filetime_from_git',
     'interlinks',
     'just_table',
     'liquid_tags.gram',
     'neighbors',
     # [FIXME] Different colors for different designs
     # 'pelican-linkclass',
-    # [BUG] Doesn't work for Python 3.6:
-    # https://github.com/getpelican/pelican-plugins/issues/977
+    # [BUG] “TypeError: Unicode-objects must be encoded before hashing”:
+    # https://github.com/getpelican/pelican-plugins/issues/1011
     # 'permalinks',
     # 'photos',
     # Disable, because:
@@ -101,6 +107,9 @@ PLUGINS = [
     # 2. Incorrect paths — http://bit.ly/2pZdyk0
     # 'pelican_javascript',
     'putsashi',
+    # [BUG] Incorrect Cyrillic URL's:
+    # https://github.com/getpelican/pelican-plugins/issues/1010
+    # 'random_article',
     'section_number',
 ]
 
@@ -124,9 +133,17 @@ DEADLINK_OPTS = {
 # just_table
 # Simple Pelican tables
 # https://github.com/burakkose/just_table
-# [Bug] Unwanted <p> tag — https://github.com/burakkose/just_table/issues/5
+# [BUG] Unwanted <p> tag — https://github.com/burakkose/just_table/issues/5
 JTABLE_SEPARATOR = '|'
 
+# filetime_from_git
+# https://github.com/getpelican/pelican-plugins/tree/master/filetime_from_git#other-options
+GIT_HISTORY_FOLLOWS_RENAME = True
+# GIT_GENERATE_PERMALINK = True
+GIT_SHA_METADATA = True
+GIT_FILETIME_FROM_GIT = True
+
+RANDOM = 'random.html'
 
 # Sitemap
 # https://github.com/getpelican/pelican-plugins/tree/master/sitemap

@@ -1,6 +1,4 @@
 Title: Sacagawea
-Date: 2017-05-05 06:49:34
-Modified: 2018-04-04 16:23:47
 Version: 0.1.0
 Author: Keith Hall
 Lang: ru

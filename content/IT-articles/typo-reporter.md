@@ -1,7 +1,5 @@
 Title: typo-reporter
 Status: published
-Date: 2018-03-22 07:53:03
-Modified: 2018-04-04 11:58:12
 Version: 0.2.1
 Author: Sasha Chernykh
 Lang: en

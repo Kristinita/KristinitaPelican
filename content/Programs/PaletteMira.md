@@ -1,6 +1,4 @@
 Title: PaletteMira
-Date: 2018-04-04 16:33:45
-Modified: 2018-04-04 22:25:04
 Version: 0.0.1
 Author: Sasha Chernykh
 Lang: en

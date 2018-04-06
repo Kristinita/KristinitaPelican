@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-03-02 20:14:05
+# @Last Modified time: 2018-04-06 20:16:30
 
 # [WARNING] Close all files from “output” folder in all programs,
 # that “pelican -s publishconfig.py” run without warnings and errors.
@@ -35,6 +35,7 @@ RELATIVE_URLS = False
 PLUGINS = [
     # Temporary disable, when bugs not fixed
     # 'deadlinks',
+    'filetime_from_git',
     'just_table',
     'interlinks',
     'neighbors',

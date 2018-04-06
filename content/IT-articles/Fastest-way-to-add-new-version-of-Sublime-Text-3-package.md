@@ -1,6 +1,4 @@
 Title: Fastest way to add new version of your Sublime Text package
-Date: 2018-01-29 12:04:22
-Modified: 2018-04-04 11:57:58
 Version: 0.2.1
 Author: Sasha Chernykh
 Lang: en
@@ -137,11 +135,11 @@ You need to create all files from this section in root folder of your package re
 You can see configuration files of real package in [SashaSublime repository](https://github.com/Kristinita/SashaSublime).
 
 !!! caution
-    I recommend in first do actions from [Activation](#activation) and [Usage](#usage) sections in the test repository, not real. Argumentation:
+	I recommend in first do actions from [Activation](#activation) and [Usage](#usage) sections in the test repository, not real. Argumentation:
 
-    + You or I can make a typo(s);
-    + Differences in my and your environments;
-    + Different versions of tools from this article can do another behavior, [example](https://github.com/webpro/release-it/issues/233)
+	+ You or I can make a typo(s);
+	+ Differences in my and your environments;
+	+ Different versions of tools from this article can do another behavior, [example](https://github.com/webpro/release-it/issues/233)
 
 <a id="github-token"></a>
 ## GitHub token
@@ -177,7 +175,7 @@ Create blank file *CHANGELOG.md*. If no, generate-changelog will works incorrect
   "name": "SashaSublime",
   "version": "4.14.7",
   "scripts": {
-    "release": "release-it"
+	"release": "release-it"
   }
 }
 ```
@@ -192,41 +190,41 @@ Replace *SashaSublime* and *4.14.7* to your real values.
 
 ```json
 {
-    "buildCommand": "changelog -f - -u https:\/\/${repo.host}\/${repo.repository} | tee messages\/${version}.txt | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md && sed -i '\/\\\"install\\\": \\\"messages\\\/install\\.txt\\\"\/i\\\"${version}\\\": \\\"messages\\\/${version}\\.txt\\\",' messages.json && js-beautify -r messages.json",
-    "changelogCommand": "changelog -f -",
-    "github": {
-        "release": true,
-        "tokenRef": "GITHUB_TOKEN"
-    },
-    "npm": {
-        "publish": false
-    },
-    "safeBump": false,
-    "src": {
-        "tagName": "st3-%s"
-    }
+	"buildCommand": "changelog -f - -u https:\/\/${repo.host}\/${repo.repository} | tee messages\/${version}.txt | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md && sed -i '\/\\\"install\\\": \\\"messages\\\/install\\.txt\\\"\/i\\\"${version}\\\": \\\"messages\\\/${version}\\.txt\\\",' messages.json && js-beautify -r messages.json",
+	"changelogCommand": "changelog -f -",
+	"github": {
+		"release": true,
+		"tokenRef": "GITHUB_TOKEN"
+	},
+	"npm": {
+		"publish": false
+	},
+	"safeBump": false,
+	"src": {
+		"tagName": "st3-%s"
+	}
 }
 ```
 
 !!! hint
-    Pay attention to slashes escaping. To convert terminal command to JSON I recommend to use [freeformatter.com service](https://www.freeformatter.com/json-escape.html#ad-output). For example:
+	Pay attention to slashes escaping. To convert terminal command to JSON I recommend to use [freeformatter.com service](https://www.freeformatter.com/json-escape.html#ad-output). For example:
 
-    ```bash
-    sed -i '/\"install\"\: \"messages\/install\.txt\"/i\"4\.14\.7\"\: \"messages\/4\.14\.7\.txt\",' messages.json
-    ```
+	```bash
+	sed -i '/\"install\"\: \"messages\/install\.txt\"/i\"4\.14\.7\"\: \"messages\/4\.14\.7\.txt\",' messages.json
+	```
 
-    will convert to:
+	will convert to:
 
-    ```json
-    sed -i '\/\\\"install\\\": \\\"messages\\\/install\\.txt\\\"\/i\\\"${version}\\\": \\\"messages\\\/${version}\\.txt\\\",' messages.json
-    ```
+	```json
+	sed -i '\/\\\"install\\\": \\\"messages\\\/install\\.txt\\\"\/i\\\"${version}\\\": \\\"messages\\\/${version}\\.txt\\\",' messages.json
+	```
 
 <a id="messagesjson"></a>
 ## messages.json
 
 ```json
 {
-    "install": "messages/install.txt"
+	"install": "messages/install.txt"
 }
 ```
 
@@ -304,10 +302,10 @@ release-it -n -V
 + *changelog -f -* — generate changelog. *-* — argument, that changelog [stdout to console](https://unix.stackexchange.com/a/419416/237999),
 + `-u https:\/\/${repo.host}\/${repo.repository}` — support URL's in changelog, that the user can quick go to the commit link. `${repo.host}` — github.com. `${repo.repository}` — `<your username>/<your repository>`, `Kristinita/SashaSublime` for my example.
 
-    Example:
+	Example:
 
-    + if `-u https:\/\/${repo.host}\/${repo.repository}`, changelog generate `#!md ([40783aee](https://github.com/Kristinita/SashaSublime/commit/40783aee5a678d62f4e703248c277c725246f1ea))`,
-    + if no `-u https:\/\/${repo.host}\/${repo.repository}`, changelog generate `(40783aee)`.
+	+ if `-u https:\/\/${repo.host}\/${repo.repository}`, changelog generate `#!md ([40783aee](https://github.com/Kristinita/SashaSublime/commit/40783aee5a678d62f4e703248c277c725246f1ea))`,
+	+ if no `-u https:\/\/${repo.host}\/${repo.repository}`, changelog generate `(40783aee)`.
 
 + `#!json tee messages\/${version}.txt` — output changelog to *messages/&lt;your new release&gt;.txt* file. File *&lt;your new release&gt;.txt* will create automatically. See [description of *tee* command](https://www.computerhope.com/unix/utee.htm).
 + `#!bash cat - CHANGELOG.md > temp && mv temp CHANGELOG.md` — [append changelog at beginning](https://superuser.com/a/246841/572069) of *CHANGELOG.md* file. *CHANGELOG.md* do not overwrite.

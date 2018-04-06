@@ -1,6 +1,4 @@
 Title: KristinitaLuckyLink
-Date: 2018-01-09 19:27:50
-Modified: 2018-04-04 16:18:30
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -138,14 +136,14 @@ I save few minutes of my time.
 1. Use KristinitaLuckyLink you can get only top link of search engines. I'm sorry, if in top link not that you want.
 1. I'm not affiliated with Google Search or DuckDuckGo Developers. I am not responsible for the fact that there is one or another result in the top of SERP. You can get unexpected link.
 
-    But if in top of SERP one link, but KristinitaLuckyLink out another link, please make [these actions](#incorrect-links).
+	But if in top of SERP one link, but KristinitaLuckyLink out another link, please make [these actions](#incorrect-links).
 
 1. If you don't want by some reasons make actions from [installation](#installation) and [activation](#activation) section, please, don't install KristinitaLuckyLink.
 1. Copy from [here](https://github.com/aviaryan/python-gsearch#warning): “Overusing KristinitaLuckyLink might lead to your IP being blocked by Google Search servers. Searches through browser might still work but KristinitaLuckyLink will stop working. I recommend keeping a 5 seconds gap after each usage of this library. In most cases, much lower gaps or even continuous use of the library will still work but still this is something to be kept in mind. If you see a 'rate limit' or a 503 error, it's best to stop using the library and try back after some time (~1 minute).”
 1. At the time supported:
 
-    1. Markdown link style,
-    1. English DuckDuckGo and Google search engines.
+	1. Markdown link style,
+	1. English DuckDuckGo and Google search engines.
 
 Personally I use Markdown markup for my articles and Google and DuckDuckGo enough for me. If you use another markups and/or search engines, [pull requests welcome](#contributing).
 
@@ -229,18 +227,18 @@ If these hotkeys used in you another packages or you don't want use default hotk
 
 ```json
 {
-    "user_commands": {
-        "sasha_kristinitaluckylink_duckduckgo": {
-            "keys": ["super+keypad_multiply"],
-            "caption": "KristinitaLuckyLink: DuckDuckGo",
-            "call": "sublime.kristinita_lucky_link_duck_duck_go"
-        },
-        "sasha_kristinitaluckylink_google": {
-            "keys": ["<c>+super+browser_home"],
-            "caption": "KristinitaLuckyLink: Google",
-            "call": "sublime.kristinita_lucky_link_google"
-        }
-    }
+	"user_commands": {
+		"sasha_kristinitaluckylink_duckduckgo": {
+			"keys": ["super+keypad_multiply"],
+			"caption": "KristinitaLuckyLink: DuckDuckGo",
+			"call": "sublime.kristinita_lucky_link_duck_duck_go"
+		},
+		"sasha_kristinitaluckylink_google": {
+			"keys": ["<c>+super+browser_home"],
+			"caption": "KristinitaLuckyLink: Google",
+			"call": "sublime.kristinita_lucky_link_google"
+		}
+	}
 }
 ```
 

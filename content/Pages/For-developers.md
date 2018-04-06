@@ -1,6 +1,4 @@
 Title: For developers
-Date: 2018-03-27 07:55:49
-Modified: 2018-04-04 11:59:37
 Version: 0.0.1
 Author: Sasha Chernykh
 Lang: en
@@ -130,7 +128,7 @@ git clone --depth=1 --branch=master https://github.com/Kristinita/KristinitaPeli
 cd KristinitaPelican
 wait
 parallel ::: 'pip install --upgrade pip && pip install pipenv && pipenv install --dev' \
-             'npm install --global npm && npm install -g grunt-cli && npm install'
+			 'npm install --global npm && npm install -g grunt-cli && npm install'
 ```
 
 **Except** [*pexpect.exceptions.TIMEOUT*](https://github.com/pypa/pipenv/issues/65):

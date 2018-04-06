@@ -1,6 +1,4 @@
 Title: ValeriyaSpeller
-Date: 2017-04-04 04:14:07
-Modified: 2018-04-04 16:24:27
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
@@ -11,8 +9,6 @@ Pagecolors: programs
 Asideimage: SashaChocolate
 Titleimage: true
 Titleimagename: ValeriaEarring
-Epigraph: true
-Epigraphtext: Посвящено <a href="https://vk.com/id152198389">Наталье Степуриной (Шмелёвой)</a>, <br>никогда не оставлявшую меня в трудную минуту. <br>Названо в честь <a href="http://www.history.com/topics/native-american-history/sacagawea">Её игрового никнейма</a>.
 Iconleftorright: right
 Tags: sublime-text, yaspeller
 Category: Programs
