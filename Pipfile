@@ -4,20 +4,14 @@
 # These parameters for repository, from where the download is made.
 # https://pipenv.readthedocs.io/en/latest/advanced/#specifying-package-indexes
 
-
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [packages]
 
-
-
 [dev-packages]
-
 pelican = "*"
 markdown = "*"
 "beautifulsoup4" = "*"
@@ -32,8 +26,7 @@ mdx-custom-span-class = {git = "https://github.com/exaroth/mdx_custom_span_class
 markdown-downheader = "*"
 lice = "*"
 pip-licenses = "*"
-
+gitpython = "*"
 
 [requires]
-
 python_version = "3.6"
