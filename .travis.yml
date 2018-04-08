@@ -45,7 +45,6 @@ install:
   # https://travis-ci.org/Kristinita/SashaPelicanTest/jobs/347254717
   # https://travis-ci.org/Kristinita/SashaPelicanTest/jobs/347267767
   - sudo apt-get install parallel
-  - bash tidy/tidy-install.sh
   - bash ci/travis-install.sh
 
 script:
