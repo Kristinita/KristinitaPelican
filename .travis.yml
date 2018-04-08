@@ -36,6 +36,9 @@ before_install:
   # Needs, that “grunt-checkbranch” works correct:
   # https://stackoverflow.com/a/18866140/5951529
   - git checkout master
+  # Correct displaying Non-ASCII symbols in Travis CI console:
+  # https://stackoverflow.com/a/34549249/5951529
+  - git config --global core.quotePath false
 
 install:
   # [NOTE] Parallelshell works, but no time economy, compare:
@@ -49,6 +52,12 @@ script:
   - grunt $GRUNT_COMMAND
 
 after_success:
+
+  # Lint “.travis.yml” file locally:
+  # https://stackoverflow.com/a/35607499/5951529
+  # https://rubygems.org/gems/travis
+  # “-x” argument — exit code 1, if any warning:
+  # - travis lint -x
   - grunt shell:tidyvalidate
 
 # Automatically deploy site to GitHub Pages:

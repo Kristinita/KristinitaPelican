@@ -1,5 +1,5 @@
 Title: Fastest way to add new version of your Sublime Text package
-Version: 0.2.1
+Version: 0.3.0
 Author: Sasha Chernykh
 Lang: en
 Summary: Tutorial, how you can make release and changelog, use only one command <br><br> ![Package Control messages](https://i.imgur.com/J5AuHmX.png) <br><br> ![*CHANGELOG.md* and *messages.json*](https://i.imgur.com/12fFJsX.png) <br><br> ![*messages/&lt;version&gt;.txt* and *package.json*](https://i.imgur.com/kkKjiv5.png) <br><br> ![Releases page](https://i.imgur.com/FwPHBZS.png)
@@ -60,7 +60,7 @@ This article may be useful for any non-Sublime Text developers, which makes rele
 <a id="relevance"></a>
 # Relevance
 
-This article is relevant for February 2018. In the future, the data in this article may be obsolete.
+This article is relevant for April 2018. In the future, the data in this article may be obsolete.
 
 <a id="motivation"></a>
 # Motivation
@@ -123,7 +123,7 @@ You need to install:
 1. Node.js and npm, if no;
 1. git if no, even if you use another VCS;
 1. UNIX commands *tee*, *cat*, *mv* and *sed*, if no; for Windows users I recommend install [Cygwin](https://chocolatey.org/packages/Cygwin) and [add to your *Path* environment variable value — path to Cygwin commands folder](https://lifehacker.com/362316/use-unix-commands-in-windows-built-in-command-prompt);
-1. [release-it globally](https://www.npmjs.com/package/release-it#global) ≥ 6.2.0;
+1. [release-it globally](https://www.npmjs.com/package/release-it#global) [≥ 7.3.0](https://github.com/webpro/release-it/issues/233);
 1. [generate-changelog globally](https://www.npmjs.com/package/generate-changelog#installation);
 1. [npm js-beautify globally](https://www.npmjs.com/package/js-beautify).
 
@@ -201,6 +201,7 @@ Replace *SashaSublime* and *4.14.7* to your real values.
 	},
 	"safeBump": false,
 	"src": {
+		"addUntrackedFiles": true,
 		"tagName": "st3-%s"
 	}
 }
@@ -320,6 +321,7 @@ release-it -n -V
 + *GITHUB_TOKEN* — your [*GITHUB_TOKEN* environment variable](#github-token),
 + `#!json "npm": {"publish": false},` — don't publish release to [npm](https://www.npmjs.com/). We are writing Sublime Text package, not npm modules, so needs this parameter.
 + `#!json "safeBump": false,` — that correct version in `https://github.com/<your username>/<your repository>/releases`; see [issue](https://github.com/webpro/release-it/issues/218) for details.
++ `#!json "addUntrackedFiles": true,` — add [untracked file](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository) *messages/&lt;version&gt;.txt* [to release commit](https://github.com/webpro/release-it/issues/233).
 + `#!json "tagName": "st3-%s"` — [correct tag name](https://github.com/wbond/package_control/issues/1217#issuecomment-280041797) for Package Control. Tags for Sublime Text 3 must be in *st3-&lt;your version&gt;* format, for example — *st3-4.14.7*.
 
 <a id="problems-and-non-fixed-bugs"></a>
@@ -335,7 +337,7 @@ release-it -n -V
 + Windows 10 Enterprise LTSB 64-bit EN,
 + Node.js 9.4.0,
 + git 2.16.0.windows.2,
-+ release-it 6.2.0,
++ release-it 7.3.0,
 + changelog 1.7.0,
 + tee (GNU coreutils) 8.26, packaged by Cygwin (8.26-1),
 + cat (GNU coreutils) 8.26, packaged by Cygwin (8.26-1),
