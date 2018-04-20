@@ -1,5 +1,5 @@
 Title: How to get current … in Sublime Text
-Version: 0.1.0
+Version: 0.2.0
 Author: Sasha Chernykh
 Lang: en
 Summary: Tutorial, how to get some variable parameters for your Sublime Text. <br><br> ![Color scheme and theme](https://i.imgur.com/nwNgLkR.png)
@@ -44,12 +44,12 @@ Customcss: false
 		1. [What is it?](#what-is-it-3)
 		1. [What should you do?](#what-should-you-do-3)
 		1. [Method](#method-3)
-	1. [Scope selector](#scope-selector)
+	1. [Scope](#scope)
 		1. [What is it?](#what-is-it-4)
 		1. [What should you do?](#what-should-you-do-4)
 		1. [Method](#method-4)
 		1. [Not recommended](#not-recommended-1)
-	1. [Syntax scope selector](#syntax-scope-selector)
+	1. [Syntax scope](#syntax-scope)
 		1. [What is it?](#what-is-it-5)
 		1. [What should you do?](#what-should-you-do-5)
 		1. [Method](#method-5)
@@ -83,7 +83,7 @@ This article is relevant for April 2018. In the future, the data in this article
 
 + `#!bash $parameter` — parameter, which you want to know.
 
- **Example**: **if** you want to know your syntax, `#!bash $parameter` is *Syntax*; **else** theme, `#!bash $parameter` is *Theme* and so on.
+**Example**: **if** you want to know your syntax, `#!bash $parameter` is *Syntax*; **else** theme, `#!bash $parameter` is *Theme* and so on.
 
 1. open Sublime Text;
 1. open file whose `#!bash $parameter` you want to know;
@@ -203,7 +203,7 @@ In image below:
 ### Method
 
 ```python
-view.settings().get('color_scheme')
+view.settings().get('theme')
 ```
 
 <a id="color-scheme"></a>
@@ -229,16 +229,25 @@ view.settings().get('color_scheme')
 !!! hint
 	You can get your another [settings](http://docs.sublimetext.info/en/latest/customization/settings.html), use `#!python view.settings().get()`. **Example**: to obtain your current font face, you need `#!python view.settings().get('font_face')`.
 
-<a id="scope-selector"></a>
-## Scope selector
+<a id="scope"></a>
+## Scope
+
+!!! caution
+	“Scope”, “syntax scope”, “syntax type scope” unconventional, not official terms. Please, read [links below](#what-is-it-4) for additional information.
 
 <a id="what-is-it-4"></a>
 ### What is it?
 
+[jtable]
+scope|syntax scope|syntax type scope
+source.css meta.property-list.css meta.property-name.css support.type.property-name.css |source.css
+text.html.basic source.css meta.property-list.css meta.property-name.css|source support.type.property-name.css |text.html.basic|text
+kira.genius kira.error |kira.genius|kira
+[/jtable]
+
++ [Scope vs. scope selector](https://forum.sublimetext.com/t/question-terminology-scope-vs-scope-selector/36039?u=sasha_chernykh),
 + [Introduction to scopes](http://blog.macromates.com/2005/introduction-to-scopes/),
 + [“Scope selector” definition](http://manual.macromates.com/en/scope_selectors.html).
-
-![Scope selector](https://i.imgur.com/TwO4pha.png)
 
 <a id="what-should-you-do-4"></a>
 ### What should you do?
@@ -267,25 +276,13 @@ I not recommend it, arguments:
 
 <!-- [TODO] Hate hotkeys -->
 
-<a id="syntax-scope-selector"></a>
-## Syntax scope selector
+<a id="syntax-scope"></a>
+## Syntax scope
 
 <a id="what-is-it-5"></a>
 ### What is it?
 
-!!! caution
-	“Syntax scope selector” — my own term. I couldn't find official term name in Sublime Text and TextMate documentations.
-
-Syntax scope selector — for [syntax](#syntax): part of any [scope selector](#scope-selector) before first space symbol.
-
-**Examples**:
-
-[jtable]
-scope selector|syntax scope selector
-source.css meta.property-list.css meta.property-name.css support.type.property-name.css |source.css
-text.html.basic source.css meta.property-list.css meta.property-name.css support.type.property-name.css |text.html.basic
-kira.genius kira.error |kira.genius
-[/jtable]
+Syntax scope — for [syntax](#syntax): part of any [scope](#scope-selector) before first space symbol. Details [read above](#what-is-it-4).
 
 <a id="what-should-you-do-5"></a>
 ### What should you do?

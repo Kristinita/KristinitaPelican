@@ -104,8 +104,58 @@ def generate_table(generator):
                 article._content = article._content.replace(''.join(all_match_str), replacement)
 
 
+def generate_table_pages(generator):
+    from jinja2 import Template
+
+    if JTABLE_SEPARATOR in generator.settings:
+        separator = generator.settings[JTABLE_SEPARATOR]
+    else:
+        separator = DEFAULT_SEPARATOR
+
+    if JTABLE_TEMPLATE in generator.settings:
+        table_template = generator.settings[JTABLE_TEMPLATE]
+    else:
+        table_template = DEFAULT_TEMPATE
+
+    template = Template(table_template)
+
+    for page in generator.pages:
+        for match in MAIN_REGEX.findall(page._content):
+            all_match_str, props, table_data = match
+            param = {"ai": 0, "th": 1, "caption": "", "sep": separator}
+
+            if AUTO_INCREMENT_REGEX.search(props):
+                param['ai'] = 1
+            if CAPTION_REGEX.search(props):
+                param['caption'] = CAPTION_REGEX.findall(props)[0]
+            if TABLE_HEADER_REGEX.search(props):
+                param["th"] = 0
+            if SEPARATOR_REGEX.search(props):
+                param["sep"] = SEPARATOR_REGEX.findall(props)[0]
+
+            table_data_list = table_data.strip().split('\n')
+
+            if len(table_data_list) >= 1:
+                heads = table_data_list[0].split(param["sep"]) if param['th'] else None
+                if heads:
+                    bodies = [n.split(param["sep"], len(heads) - 1) for n in table_data_list[1:]]
+                else:
+                    bodies = [n.split(param["sep"]) for n in table_data_list]
+
+                context = generator.context.copy()
+                context.update({
+                    'heads': heads,
+                    'bodies': bodies,
+                })
+                context.update(param)
+
+                replacement = template.render(context)
+                page._content = page._content.replace(''.join(all_match_str), replacement)
+
+
 def register():
     """Plugin registration."""
     from pelican import signals
 
     signals.article_generator_finalized.connect(generate_table)
+    signals.page_generator_finalized.connect(generate_table_pages)

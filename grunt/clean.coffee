@@ -6,7 +6,7 @@
 # Remove parent css file for design sections
 module.exports =
 	[
-		'output/extra'
-		'output/root-html'
-		'output/theme/css/sections/core-design.css'
+		"<%= templates.paths.output_path %>/extra"
+		"<%= templates.paths.output_path %>/root-html"
+		"<%= templates.yamlconfig.output_path %>/<%= templates.paths.theme %>/css/sections/core-design.css"
 	]

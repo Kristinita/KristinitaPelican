@@ -51,13 +51,7 @@ script:
   - grunt $GRUNT_COMMAND
 
 after_success:
-
-  # Lint “.travis.yml” file locally:
-  # https://stackoverflow.com/a/35607499/5951529
-  # https://rubygems.org/gems/travis
-  # “-x” argument — exit code 1, if any warning:
-  # - travis lint -x
-  - grunt shell:tidyvalidate
+  - grunt validatesource validateoutput remote travis
 
 # Automatically deploy site to GitHub Pages:
 # https://docs.travis-ci.com/user/deployment
@@ -90,9 +84,12 @@ deploy:
   target-branch: master
   local-dir: output
   repo: Kristinita/Kristinita.github.io
-  # “GITHUB_API_KEY” is secure variable, that set in repository settings:
+  # “GITHUB_TOKEN” is secure variable, that set in repository settings:
   # https://docs.travis-ci.com/user/environment-variables#Defining-Variables-in-Repository-Settings
   # https://docs.travis-ci.com/user/deployment/pages/#Setting-the-GitHub-token
+  # [WARNING] You need set secure variables for each repository,
+  # variables for all repositories not possible at the time:
+  # https://github.com/travis-ci/travis-ci/issues/2069
   github-token: $GITHUB_TOKEN
   # Name and e-mail of committer:
   # https://docs.travis-ci.com/user/deployment/pages/#Further-configuration

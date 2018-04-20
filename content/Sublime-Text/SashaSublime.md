@@ -15,19 +15,19 @@ ClipboardJs: true
 Noco: 1g9b6
 
 <p>
-    <a href="{filename}/images/donate_files/Bitcoin-HTML-Redirect.html"><img src="{filename}/images/donate_files/Bitcoin-Donate-button.png" alt="Bitcoin Donate Button" class="SashaInline" /></a>
-    <a href="{filename}/images/donate_files/Litecoin-HTML-Redirect.html"><img src="{filename}/images/donate_files/Litecoin-Donate-button.png" alt="Litecoin Donate Button" class="SashaInline" /></a>
-    <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=63KC7VJTRVNVQ"><img class="SashaInline" src="{filename}/images/donate_files/PayPal-Donate-Button-Dollar.png" alt="PayPal Dollar button" class="SashaInline" /></a>
-    <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VPA8L2LM7EX24"><img src="{filename}/images/donate_files/PayPal-Donate-Button-Euro.png" alt="PayPal Euro button" class="SashaInline" /></a>
+	<a href="{filename}/images/donate_files/Bitcoin-HTML-Redirect.html"><img src="{filename}/images/donate_files/Bitcoin-Donate-button.png" alt="Bitcoin Donate Button" class="SashaInline" /></a>
+	<a href="{filename}/images/donate_files/Litecoin-HTML-Redirect.html"><img src="{filename}/images/donate_files/Litecoin-Donate-button.png" alt="Litecoin Donate Button" class="SashaInline" /></a>
+	<a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=63KC7VJTRVNVQ"><img class="SashaInline" src="{filename}/images/donate_files/PayPal-Donate-Button-Dollar.png" alt="PayPal Dollar button" class="SashaInline" /></a>
+	<a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VPA8L2LM7EX24"><img src="{filename}/images/donate_files/PayPal-Donate-Button-Euro.png" alt="PayPal Euro button" class="SashaInline" /></a>
 </p>
 <p>
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" class="SashaInline" />
-    <img src="https://img.shields.io/badge/Release-1.3.1-orange.svg" alt="Release" class="SashaInline" />
-    <img src="https://img.shields.io/github/stars/Kristinita/SashaSublime.svg" alt="Stars" />
-    <img src="https://img.shields.io/github/forks/Kristinita/SashaSublime.svg" alt="Forks" />
-    <img src="https://img.shields.io/maintenance/STATUS/2017.svg" alt="Maintained" />
-    <a href="https://packagecontrol.io/packages/SashaSublime"><img src="https://packagecontrol.herokuapp.com/downloads/SashaSublime.svg?style=flat-square" alt="Package Control" /></a>
-    <a href="https://github.com/Kristinita/SashaSublime/issues"><img src="https://img.shields.io/github/issues/Kristinita/SashaSublime.svg" alt="GitHub issues" /></a>
+	<img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" class="SashaInline" />
+	<img src="https://img.shields.io/badge/Release-1.3.1-orange.svg" alt="Release" class="SashaInline" />
+	<img src="https://img.shields.io/github/stars/Kristinita/SashaSublime.svg" alt="Stars" />
+	<img src="https://img.shields.io/github/forks/Kristinita/SashaSublime.svg" alt="Forks" />
+	<img src="https://img.shields.io/maintenance/STATUS/2018.svg" alt="Maintained" />
+	<a href="https://packagecontrol.io/packages/SashaSublime"><img src="https://packagecontrol.herokuapp.com/downloads/SashaSublime.svg?style=flat-square" alt="Package Control" /></a>
+	<a href="https://github.com/Kristinita/SashaSublime/issues"><img src="https://img.shields.io/github/issues/Kristinita/SashaSublime.svg" alt="GitHub issues" /></a>
 </p>
 
 <!-- MarkdownTOC -->
@@ -121,7 +121,6 @@ Noco: 1g9b6
 1. [License](#license)
 
 <!-- /MarkdownTOC -->
-
 
 ------------------------------------------------------------------------
 
@@ -520,8 +519,8 @@ Also, you can make that all your settings were as at me. Copy into your file *Pr
 "font_face": "Consolas",
 "font_options":
 [
-    "subpixel_antialias",
-    "directwrite"
+	"subpixel_antialias",
+	"directwrite"
 ],
 "highlight_line": true,
 "highlight_modified_tabs": true,
@@ -552,54 +551,54 @@ To paint in different colors of a bracket of a plugin of BracketHighlighter, exe
 
 ```json
 {
-  "bracket_styles":
-  {
-    "unmatched": {
+	"bracket_styles":
+	{
+	"unmatched": {
 "icon": "question",
 "color": "brackethighlighter.unmatched",
 "style": "highlight"
-    },
-    "curly": {
+	},
+	"curly": {
 "icon": "curly_bracket",
 "color": "brackethighlighter.curly",
 "style": "highlight"
-    },
-    "round": {
+	},
+	"round": {
 "icon": "round_bracket",
 "color": "brackethighlighter.round",
 "style": "outline"
-    },
-    "square": {
+	},
+	"square": {
 "icon": "square_bracket",
 "color": "brackethighlighter.square",
 "style": "outline"
-    },
-    "angle": {
+	},
+	"angle": {
 "icon": "angle_bracket",
 "color": "brackethighlighter.angle",
 "style": "outline"
-    },
-    "tag": {
+	},
+	"tag": {
 "icon": "tag",
 "color": "brackethighlighter.tag",
 "style": "outline"
-    },
-    "single_quote": {
+	},
+	"single_quote": {
 "icon": "single_quote",
 "color": "brackethighlighter.quote",
 "style": "outline"
-    },
-    "double_quote": {
+	},
+	"double_quote": {
 "icon": "double_quote",
 "color": "brackethighlighter.quote",
 "style": "outline"
-    },
-    "regex": {
+	},
+	"regex": {
 "icon": "regex",
 "color": "brackethighlighter.quote",
 "style": "outline"
-    }
-  }
+	}
+	}
 }
 ```
 
@@ -619,11 +618,11 @@ All manuals in this section for Windows 10 users, use default theme. Users of ot
 
 If you follow all the steps in this section, you will get the result:
 
-+ Active window
+*Active window:*
 
 ![Active window](https://i.imgur.com/AUdJEug.png)
 
-+ Inactive window
+*Inactive window:*
 
 ![Inactive window](https://i.imgur.com/3E1qY10.png)
 
@@ -770,11 +769,11 @@ Restart Sublime Text → SublimeLinter should not prescribe in your preferences 
 
 Color of the square of minihtml phantoms look like background color.
 
-**Actual phantom**
+**Actual phantom:**
 
 ![Actual phantom](https://i.imgur.com/C2aZ7oy.png)
 
-**Expected phantom**
+**Expected phantom:**
 
 ![Expected phantom](https://i.imgur.com/LB5EWfR.png)
 
@@ -785,7 +784,7 @@ Install [PackageResourceViewer](https://github.com/skuroda/PackageResourceViewer
 ```css
 body#inline-error div.error a
 {
-    background-color: #28071a;
+	background-color: #28071a;
 }
 ```
 

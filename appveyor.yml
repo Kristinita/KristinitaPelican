@@ -64,4 +64,4 @@ build_script:
   - grunt %GRUNT_COMMAND%
 
 test_script:
-  - grunt shell:tidyvalidate
+  - grunt validatesource validateoutput remote

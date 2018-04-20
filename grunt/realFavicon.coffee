@@ -5,14 +5,14 @@
 # https://www.npmjs.com/package/grunt-real-favicon
 module.exports =
 	favicons:
-		src: 'output/theme/images/icons/kristinita-favicon.png'
-		dest: 'output'
+		src: "<%= templates.yamlconfig.theme %>/<%= templates.yamlconfig.theme_static_paths %>/images/icons/kristinita-favicon.png"
+		dest: "output"
 		options:
-			iconsPath: '.'
-			html: ['output/index.html']
+			iconsPath: "."
+			html: ["<%= templates.yamlconfig.output_path %>/index.html"]
 			design:
 				ios:
-					pictureAspect: 'noChange'
+					pictureAspect: "noChange"
 					assets:
 						ios6AndPriorIcons: false
 						ios7AndLaterIcons: false
@@ -23,9 +23,9 @@ module.exports =
 				# https://www.tutorialspoint.com/coffeescript/coffeescript_objects.htm
 				desktopBrowser: {}
 				windows:
-					pictureAspect: 'noChange'
-					backgroundColor: '#ffc40d'
-					onConflict: 'override'
+					pictureAspect: "noChange"
+					backgroundColor: "#ffc40d"
+					onConflict: "override"
 					assets:
 						windows80Ie10Tile: false
 						windows10Ie11EdgeTiles:
@@ -35,24 +35,24 @@ module.exports =
 							rectangle: false
 					appName: "Kristinita\'s Search"
 				androidChrome:
-					pictureAspect: 'noChange'
-					themeColor: '#ffffff'
+					pictureAspect: "noChange"
+					themeColor: "#ffffff"
 					manifest:
 						name: "Kristinita\'s Search"
-						startUrl: 'https://Kristinita.ru'
-						display: 'standalone'
-						orientation: 'notSet'
-						onConflict: 'override'
+						startUrl: "https://Kristinita.ru"
+						display: "standalone"
+						orientation: "notSet"
+						onConflict: "override"
 						declared: true
 					assets:
 						legacyIcon: false
 						lowResolutionIcons: false
 				safariPinnedTab:
-					pictureAspect: 'blackAndWhite'
+					pictureAspect: "blackAndWhite"
 					threshold: 50
-					themeColor: '#d55b9a'
+					themeColor: "#d55b9a"
 			settings:
-				scalingAlgorithm: 'Mitchell'
+				scalingAlgorithm: "Mitchell"
 				errorOnImageTooSmall: false
 				readmeFile: false
 				htmlCodeFile: false

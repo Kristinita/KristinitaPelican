@@ -16,6 +16,6 @@ module.exports =
 		files: [
 			expand: true
 			cwd: '.'
-			src: ['output/images/**/*.{png,jpg,jpeg,gif,svg}']
+			src: ["<%= templates.paths.output_path %>/images/**/*.{png,jpg,jpeg,gif,svg}"]
 			dest: '.'
 			]

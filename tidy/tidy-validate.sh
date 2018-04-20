@@ -11,11 +11,11 @@ validall=true
 # Using variables in script:
 # http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-7.html
 for f in output/**/*.html; do
-  if tidy -q --markup no --warn-proprietary-attributes no $f; then
-    echo $f valid
-  else
-    validall=false
-    echo $f not valid! Please, fix it!
-  fi
+	if tidy -q --markup no --warn-proprietary-attributes no $f; then
+		echo $f valid
+	else
+		validall=false
+		echo $f not valid! Please, fix it!
+	fi
 done
 $validall

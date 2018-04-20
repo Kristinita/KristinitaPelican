@@ -1,0 +1,18 @@
+##########
+# Flake8 #
+##########
+# Validator of Python files:
+# http://flake8.pycqa.org/en/latest/index.html
+[flake8]
+# W191 — tabs, not spaces:
+# https://stackoverflow.com/a/5048130/5951529
+# https://softwareengineering.stackexchange.com/a/72/264224
+# [WARNING] Disable, because:
+# 1. Anaconda doesn't preserve tabs:
+# https://github.com/DamnWidget/anaconda/issues/757
+# 2. It PEP8 standart:
+# https://stackoverflow.com/a/121671/5951529
+# ignore = W191
+# 120 max line length, 80 is small:
+# https://stackoverflow.com/a/111015/5951529
+max_line_length = 120

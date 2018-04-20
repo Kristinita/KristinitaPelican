@@ -1,7 +1,7 @@
 @REM @Author: Kristinita
 @REM @Date:   2018-03-07 14:51:41
 @REM @Last Modified by:   Kristinita
-@REM Modified time: 2018-03-07 19:32:09
+@REM Modified time: 2018-04-13 18:52:39
 @REM Modify HTML: doesn't show warnings or errors.
 @REM [BUG]: AppVeyor works incorrect, if filename contains Cyrillic letters:
 @REM https://github.com/appveyor/ci/issues/2107

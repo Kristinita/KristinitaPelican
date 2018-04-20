@@ -11,17 +11,17 @@ module.exports =
 	themecompile:
 		files: [
 			expand: true
-			cwd: 'output/theme/stylus/'
+			cwd: "<%= templates.yamlconfig.output_path %>/<%= templates.paths.theme_static_dir %>/stylus/"
 			src: '**/*.styl'
-			dest: 'output/theme/css'
+			dest: "<%= templates.yamlconfig.output_path %>/<%= templates.paths.theme_static_dir %>/css"
 			ext: '.css'
 			]
 	personalcompile:
 		files: [
 			expand: true
-			cwd: 'output/stylus'
+			cwd: "<%= templates.paths.output_path %>/stylus"
 			src: '**/**/*.styl'
-			dest: 'output/css'
+			dest: "<%= templates.paths.output_path %>/css"
 			# Extensions in filepaths:
 			# https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
 			ext: '.css'

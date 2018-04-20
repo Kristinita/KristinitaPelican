@@ -1,7 +1,7 @@
 @REM @Author: Kristinita
 @REM @Date:   2018-03-07 14:57:34
 @REM @Last Modified by:   Kristinita
-@REM Modified time: 2018-03-07 19:20:32
+@REM Modified time: 2018-04-13 18:41:43
 @REM Validation all HTML files.
 @ECHO off
 @REM For correct displaying Cyrillic filenames

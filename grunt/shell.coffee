@@ -76,11 +76,11 @@ module.exports =
 		# https://stackoverflow.com/a/23848087/5951529
 		if process.platform == "win32"
 			# Need quotes, that command run:
-		    command: '"tidy/tidy-modify.bat"'
+			command: '"tidy/tidy-modify.bat"'
 		else
 			# Fix permission denied:
 			# https://stackoverflow.com/a/46818913/5951529
-		    command: 'bash tidy/tidy-modify.sh'
+			command: 'bash tidy/tidy-modify.sh'
 	tidyvalidate:
 		if process.platform == "win32"
 			command: '"tidy/tidy-validate.bat"'
@@ -130,3 +130,42 @@ module.exports =
 	# https://pypi.org/project/pip-licenses/
 	piplicenses:
 		command: 'pipenv run pip-licenses --format-markdown > python.md'
+
+
+	##########################
+	## commitlint Travis CI ##
+	##########################
+	# Commit linting for Travis CI:
+	# http://marionebl.github.io/commitlint/#/guides-ci-setup
+	commitlint:
+		command: 'commitlint-travis'
+
+
+	###################
+	## Travis Client ##
+	###################
+	# Lint “.travis.yml” file locally:
+	# https://stackoverflow.com/a/35607499/5951529
+	# https://rubygems.org/gems/travis
+	# “-x” argument — exit code 1, if any warning:
+	travislint:
+		command: 'travis lint -x'
+
+
+	##########
+	# EClint #
+	##########
+	# Lint and fix files for EditorConfig rules:
+	# https://www.npmjs.com/package/eclint
+	# eclint doesn't search files and folders, that ignored in “.gitignore”:
+	# https://github.com/jedmao/eclint/issues/80#issuecomment-314936365
+	# “eclint infer” — show current statistic:
+	# https://www.npmjs.com/package/eclint#infer
+	# [WARNING] Another eclint check and fix methods doesn't work:
+	# https://github.com/jedmao/eclint/issues/130
+	# [WARNING] User can get different results for Windows and *NIX:
+	# https://github.com/jedmao/eclint/issues/129#event-1574600632
+	eclintfix:
+		command: "cd <%= templates.paths.output_path %> && npx eclint fix && cd <%= templates.paths.cwd %>"
+	eclintcheck:
+		command: "cd <%= templates.paths.output_path %> && npx eclint check && cd <%= templates.paths.cwd %>"

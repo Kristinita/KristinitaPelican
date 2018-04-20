@@ -2,7 +2,7 @@ Title: Sublime-Text-Power-User-notes
 Date: 2017-02-13 19:15:15
 Author: Sasha Chernykh
 Lang: en
-Summary: 
+Summary:
 Pagetitle: “Sublime Text Power User” notes
 Metacontent: Notes of book “Sublime Text Power User”
 Pagecolors: programs
@@ -33,7 +33,7 @@ Now by default
 <br />
 <br />
 <img src="https://i.imgur.com/62uCZBa.png" alt="Alt attribute fish"><br />
- If to use Portable version, it isn't necessary to specify
+If to use Portable version, it isn't necessary to specify
 <dfn>%APPDATA%</dfn>.
 <br /><br /><b>45</b>
 <br /> On <a href="https://johnblackbourn.com/sublimecodeintel-st3">https://johnblackbourn.com/sublimecodeintel-st3</a> page now <a href="https://github.com/spectacles/CodeComplice">reccomend</a> CodeComplice use, but for me CodeComplice is some bugs and undesirable behavior, <a href="https://github.com/spectacles/CodeComplice/issues/51">example</a>.
@@ -72,8 +72,10 @@ In the <kbd>Tools</kbd> menu there is no point <kbd>New snippet ...</kbd> .
 	<kbd>Preferences</kbd> →
 		<kbd>Browse Packages...</kbd> and find the folder associated with your language. Inside of that folder will be a
 		<dfn>.tmLanguage </dfn> file.</blockquote>
-1. Now use <a href="https://www.sublimetext.com/docs/3/syntax.html">sublime-syntax</a> files.<br />
-2. Not all folders programming languages can be found on the path
+
+1. Now use <a href="https://www.sublimetext.com/docs/3/syntax.html">sublime-syntax</a> files.
+1. Not all folders programming languages can be found on the path
+
 <kbd>Preferences</kbd> →
 <kbd>Browse Packages...</kbd> .
 <br /><br /><b>84</b>

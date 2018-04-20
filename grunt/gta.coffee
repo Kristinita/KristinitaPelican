@@ -32,6 +32,6 @@ module.exports =
 		# SASHASHORTCOMMITDESCRIPTION="<your short commit description>"
 		# SASHALONGCOMMITDESCRIPTION="<your long commit description>"
 		else
-			command: 'git commit -m "$SASHASHORTCOMMITDESCRIPTION" -m "$SASHALONGCOMMITDESCRIPTION"'
+			command: 'commit -m "$SASHASHORTCOMMITDESCRIPTION" -m "$SASHALONGCOMMITDESCRIPTION"'
 	push:
 		command: 'push'

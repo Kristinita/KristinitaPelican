@@ -7,7 +7,7 @@ parserOptions:
   ecmaVersion: 9
   sourceType: script
   ecmaFeatures:
-  	jsx: true
+    jsx: true
 rules:
   indent:
     - error

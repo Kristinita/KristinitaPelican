@@ -10,18 +10,18 @@ module.exports =
 		ignoreMissing: false
 	# HTML, which I need to move in root folder
 	roothtml:
-		src: 'output/root-html/*'
-		dest: 'output/'
+		src: "<%= templates.paths.output_path %>/root-html/*"
+		dest: "<%= templates.paths.output_path %>/"
 	# Different file types
 	extra:
-		src: 'output/extra/*'
-		dest: 'output/'
+		src: "<%= templates.paths.output_path %>/extra/*"
+		dest: "<%= templates.paths.output_path %>/"
 	# Move licenses of all npm/Grunt and Python packages
 	licenses:
 		src: [
 			'grunt-and-npm.csv'
 			'python.md'
 		]
-		# [NOTE] Use “licenses/”, not “license”, otherwise a file “licenses” will create
+		# [NOTE] Use “licenses/”, not “licenses”, otherwise a file “licenses” will create
 		# [NOTE] grunt-move create a needest folder, if no
-		dest: 'output/licenses/'
+		dest: "<%= templates.paths.output_path %>/licenses/"

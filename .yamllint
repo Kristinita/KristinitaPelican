@@ -1,0 +1,17 @@
+# yamllint — linter for YAML files:
+# https://yamllint.readthedocs.io/en/latest/index.html
+# Disable triple dashes in begin of document:
+# https://stackoverflow.com/a/41760135/5951529
+# https://yamllint.readthedocs.io/en/stable/configuration.html#default-configuration
+rules:
+  # Disable triple-dash in YAML documents:
+  # https://yamllint.readthedocs.io/en/stable/rules.html#module-yamllint.rules.document_start
+  document-start:
+    present: false
+  # Max line length. required parameters “allow-non-breakable-words” and
+  # “allow-non-breakable-inline-mappings”
+  # https://yamllint.readthedocs.io/en/latest/rules.html#module-yamllint.rules.line_length
+  line-length:
+    max: 120
+    allow-non-breakable-words: false
+    allow-non-breakable-inline-mappings: false

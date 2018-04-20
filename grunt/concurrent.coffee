@@ -23,7 +23,7 @@ module.exports =
 		limit: 7
 
 	#
-	# For development, “target build”
+	# For development, “target build”.
 	#
 	# [NOTE] Don't use “newer:” for shell tasks!
 	# grunt-newer check, that your source (src) not change and doesn't run build process.
@@ -36,9 +36,10 @@ module.exports =
 	tarb4: ['newer:string-replace'
 			'purifycss']
 	tarb5: ['shell:tidymodify']
-	tarb6: ['notify:default']
+	tarb6: ['shell:eclintfix']
+	tarb7: ['notify:default']
 	#
-	# For publishing, “target publish”
+	# For publishing, “target publish”.
 	#
 	# Don't use “newer” for publishing, because output directory deleted →
 	# all src files will newer.
@@ -68,10 +69,11 @@ module.exports =
 	tarp7: ['postcss'
 			'string-replace']
 	tarp8: ['shell:tidymodify']
-	tarp9: ['jsbeautifier']
-	tarp10: ['notify:deploy']
+	tarp9: ['shell:eclintfix']
+	tarp10: ['jsbeautifier']
+	tarp11: ['notify:deploy']
 	#
-	# For updating dependencies, “target update”
+	# For updating dependencies, “target update”.
 	#
 	taru1: ['devUpdate'
 			'shell:gitreflog']
@@ -79,3 +81,31 @@ module.exports =
 			'shell:pipenvupdateall'
 			'shell:gitgarbagecollector']
 	taru3: ['shell:pipenvcleanunused']
+	#
+	# For validating sources, “target sources”.
+	#
+	#
+	tars1: ['markdownlint']
+	# For validating output, “target validate”.
+	#
+	tarv1: ['shell:tidyvalidate'
+			'path_validator']
+	tarv2: ['shell:eclintcheck']
+	#
+	# For only Continuous Integration tasks, “target remote”.
+	# If task in this secton, please, give reasons, why not local:
+	#
+	# [FIXME] At April 2018 exists only Ruby version of Travis Client →
+	# user need to install Ruby virtual environment locally:
+	# lint “.travis.yml” — small improvement, that install Ruby virtual environment.
+	tarr1: ['shell:travislint']
+	#
+	# For Travis CI specific tasks, not for local or another CI — “target travis”.
+	# If task in this section, please, give reasons, why not local or another CI:
+	#
+	# 1. Doesn't need in local, because commitlint+husky lints commit,
+	# when I make it locally:
+	# http://marionebl.github.io/commitlint/#/guides-local-setup
+	# 2. Doesn't work in AppVeyor or another CI, Travis-specific:
+	# https://github.com/marionebl/commitlint/blob/master/%40commitlint/travis-cli/src/cli.js
+	tart1: ['shell:commitlint']

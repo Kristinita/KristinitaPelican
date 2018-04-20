@@ -1,7 +1,12 @@
-# EditorConfig
+################
+# EditorConfig #
+################
+# Define and maintain consistent coding styles between different editors and IDEs:
 # http://editorconfig.org/
+# [NOTE] At the time no existing linters for “.editorconfig” file:
+# https://github.com/editorconfig/editorconfig/issues/345
 
-# That apply this .editorconfig, not for Kristinita folder
+# Apply another .editorconfig for subfolder, that for root folder
 # http://editorconfig.org/#file-format-details
 # root = true
 
@@ -16,9 +21,44 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
+# Markdown support trailing spaces:
+# http://markdown-guide.readthedocs.io/en/latest/basics.html#line-return
 [*.md]
 trim_trailing_whitespace = false
 
-[*.{yaml,yml}]
+# [WARNING] YAML doesn't support tabs:
+# http://yaml.org/faq.html
+# https://stackoverflow.com/a/19976827/5951529
+[*.{yaml,yml,yamllint}]
 indent_style = space
 indent_size = 2
+
+# Read reasons in “.flake8” file:
+# https://github.com/Kristinita/KristinitaPelican/blob/master/.flake8
+[*.py]
+indent_style = space
+
+# Windows line endings in batch file.
+# If LF, user may have some problems:
+# for me, incorrect output, if unicode symbols in batch comments
+# https://stackoverflow.com/a/38836221/5951529
+# https://serverfault.com/a/429598/351829
+[*.bat]
+end_of_line = crlf
+
+# eclint will not change third-party folders:
+# https://stackoverflow.com/a/40348831/5951529
+# https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties#current-universal-properties
+# [WARNING] Negative eclint glob patterns may doesn't works as expected:
+# https://github.com/jedmao/eclint#check
+# https://github.com/jedmao/eclint/issues/124
+[pelican-plugins/**]
+# [FIXED]
+# [BUG]: “charset = unset” doesn't work:
+# https://github.com/jedmao/eclint/issues/127
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset

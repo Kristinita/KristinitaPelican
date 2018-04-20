@@ -1,0 +1,18 @@
+###############
+# No Response #
+###############
+# Close issue, if issue author don't respond:
+# I use this bot, if:
+# 1. User don't added clarifying information.
+# 2. User don't answer, the problem solved for her/him or not.
+# https://probot.github.io/apps/no-response/
+
+# Number of days of inactivity before an issue is closed for lack of response
+daysUntilClose: 60
+# Label requiring a response
+responseRequiredLabel: needs-answer-or-more-info
+# Comment to post when closing an issue for lack of response. Set to `false` to disable
+closeComment: >
+  This issue has been automatically closed because there has been no response from the original author.
+  For issue author: if you still have this problem, please add comment for this issue →
+  issue will reopened automatically.

@@ -1,68 +1,78 @@
 {
-  "name": "kristinitas-search",
-  "description": "Kristinita's Search site",
-  "version": "0.1.0",
-  "homepage": "https://Kristinita.ru",
-  "author": "Sasha Chernykh (http://uid.me/sasha_chernykh)",
-  "repository": "github:Kristinita/KristinitaPelican",
-  "bugs": {
-    "url": "https://github.com/Kristinita/KristinitaPelican/issues"
-  },
-  "license": "MIT",
-  "files": [
-    "README.md"
-  ],
-  "engines": {
-    "node": ">=4"
-  },
-  "keywords": [
-    "Kristinita",
-    "Pelican",
-    "Grunt"
-  ],
-  "contributors": [
-    "Sasha Chernykh Kristinita"
-  ],
-  "dependencies": {},
-  "devDependencies": {
-    "autoprefixer": "^8.2.0",
-    "browser-sync": "^2.23.6",
-    "bs-html-injector": "^3.0.3",
-    "covgen": "^3.0.2",
-    "grunt": "^1.0.2",
-    "grunt-browser-sync": "^2.2.0",
-    "grunt-checkbranch": "^1.0.4",
-    "grunt-concurrent": "^2.3.1",
-    "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-imagemin": "^2.0.1",
-    "grunt-contrib-stylus": "^1.2.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-dev-update": "^2.3.0",
-    "grunt-git-them-all": "0.0.13",
-    "grunt-html5-validate": "^0.1.1",
-    "grunt-htmltidy": "^0.2.2",
-    "grunt-humans-txt": "^0.2.1",
-    "grunt-jsbeautifier": "^0.2.13",
-    "grunt-license-finder": "^2.0.0",
-    "grunt-move": "^0.1.5",
-    "grunt-newer": "^1.3.0",
-    "grunt-notify": "^0.4.5",
-    "grunt-postcss": "^0.9.0",
-    "grunt-prettify": "^0.4.0",
-    "grunt-project-update": "^0.2.4",
-    "grunt-purifycss": "^0.1.2",
-    "grunt-real-favicon": "^0.2.2",
-    "grunt-robots-txt": "^1.0.1",
-    "grunt-shell": "^2.1.0",
-    "grunt-string-replace": "^1.3.1",
-    "grunt-unused": "^0.2.3",
-    "gulp-htmltidy": "^0.2.4",
-    "load-grunt-config": "^0.19.2",
-    "load-grunt-tasks": "^3.5.2",
-    "posthtml-alt-always": "^1.0.1",
-    "posthtml-aria-tabs": "^1.0.0",
-    "posthtml-doctype": "^1.1.1",
-    "time-grunt": "^1.4.0"
-  }
+	"name": "kristinitas-search",
+	"description": "Kristinita's Search site",
+	"version": "0.1.0",
+	"homepage": "https://Kristinita.ru",
+	"author": "Sasha Chernykh (http://uid.me/sasha_chernykh)",
+	"repository": "github:Kristinita/KristinitaPelican",
+	"bugs": {
+		"url": "https://github.com/Kristinita/KristinitaPelican/issues"
+	},
+	"license": "MIT",
+	"files": [
+		"README.md"
+	],
+	"engines": {
+		"node": ">=4"
+	},
+	"keywords": [
+		"Kristinita",
+		"Pelican",
+		"Grunt"
+	],
+	"contributors": [
+		"Sasha Chernykh"
+	],
+	"scripts": {
+		"commitmsg": "commitlint -e $GIT_PARAMS"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@commitlint/cli": "^6.1.3",
+		"@commitlint/travis-cli": "^6.1.3",
+		"autoprefixer": "^8.3.0",
+		"browser-sync": "^2.23.6",
+		"bs-html-injector": "^3.0.3",
+		"covgen": "^3.0.2",
+		"eclint": "^2.7.0",
+		"grunt": "^1.0.2",
+		"grunt-browser-sync": "^2.2.0",
+		"grunt-checkbranch": "^1.0.4",
+		"grunt-concurrent": "^2.3.1",
+		"grunt-contrib-clean": "^1.1.0",
+		"grunt-contrib-copy": "^1.0.0",
+		"grunt-contrib-imagemin": "^2.0.1",
+		"grunt-contrib-stylus": "^1.2.0",
+		"grunt-contrib-watch": "^1.0.0",
+		"grunt-dev-update": "^2.3.0",
+		"grunt-git-them-all": "0.0.13",
+		"grunt-html5-validate": "^0.1.1",
+		"grunt-htmltidy": "^0.2.2",
+		"grunt-humans-txt": "^0.2.1",
+		"grunt-indentator": "^0.1.4",
+		"grunt-jsbeautifier": "^0.2.13",
+		"grunt-license-finder": "^2.0.0",
+		"grunt-markdownlint": "^1.1.2",
+		"grunt-move": "^0.1.5",
+		"grunt-newer": "^1.3.0",
+		"grunt-notify": "^0.4.5",
+		"grunt-path-validator": "^2.0.2",
+		"grunt-postcss": "^0.9.0",
+		"grunt-prettify": "^0.4.0",
+		"grunt-project-update": "^0.2.4",
+		"grunt-purifycss": "^0.1.2",
+		"grunt-real-favicon": "^0.2.2",
+		"grunt-robots-txt": "^1.0.1",
+		"grunt-shell": "^2.1.0",
+		"grunt-string-replace": "^1.3.1",
+		"grunt-unused": "^0.2.3",
+		"gulp-htmltidy": "^0.2.4",
+		"husky": "^0.14.3",
+		"load-grunt-config": "^0.19.2",
+		"load-grunt-tasks": "^3.5.2",
+		"posthtml-alt-always": "^1.0.1",
+		"posthtml-aria-tabs": "^1.0.0",
+		"posthtml-doctype": "^1.1.1",
+		"time-grunt": "^1.4.0"
+	}
 }

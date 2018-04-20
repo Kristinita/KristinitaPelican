@@ -308,7 +308,7 @@ my value:
 
 ```ini
 console_scripts =
-   erichek = erichek.__main__:main
+	erichek = erichek.__main__:main
 ```
 
 Parameter and values:
@@ -375,12 +375,12 @@ In clize installation process [*six*, *sigtools*, *docutils*, *od* and *attrs* p
 ```shell
 D:\>pip install clize
 Collecting clize
-  Using cached clize-4.0.3-py2.py3-none-any.whl
+	Using cached clize-4.0.3-py2.py3-none-any.whl
 Requirement already satisfied: six in c:\python36\lib\site-packages (from clize)
 Requirement already satisfied: sigtools>=2.0 in c:\python36\lib\site-packages (from clize)
 Requirement already satisfied: docutils in c:\python36\lib\site-packages (from clize)
 Collecting od (from clize)
-  Using cached od-1.0-py3-none-any.whl
+	Using cached od-1.0-py3-none-any.whl
 Requirement already satisfied: attrs>=17.4.0 in c:\python36\lib\site-packages (from clize)
 Installing collected packages: od, clize
 Successfully installed clize-4.0.3 od-1.0
@@ -625,7 +625,6 @@ Where:
 
 	You may need wait ~10 minutes, that 4.14.7 version index on TestPyPI. You can have a similar problem for PyPI.
 
-
 <a id="checking"></a>
 ### Checking
 
@@ -658,7 +657,10 @@ Erichek works as expected.
 
 After succsessful checking [you can remove](https://github.com/davidmarble/virtualenvwrapper-win/#main-commands) your virtual environment (*erichekenv* in example):
 
-```
+<!-- [NOTE] Plain text lexer:
+http://pygments.org/docs/lexers/#pygments.lexers.special.TextLexer -->
+
+```text
 (erichekenv) C:\Users\SashaChernykh>rmvirtualenv erichekenv
 
 	Deleted C:\Users\SashaChernykh\Envs\erichekenv

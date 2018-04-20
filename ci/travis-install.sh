@@ -9,5 +9,5 @@
 # [WARNING] apt-get HTML Tidy version outdated, build HTML tidy on Ubuntu from sources:
 # https://codeyarns.com/2016/06/06/how-to-build-and-install-html-tidy/
 parallel ::: 'pip install --upgrade pip && pip install pipenv && pipenv install --dev' \
-             'npm install --global npm && npm install -g grunt-cli && npm install' \
-             'git clone https://github.com/htacg/tidy-html5.git && cd tidy-html5 && cd build/cmake && cmake ../.. && cmake --build . --config Release && sudo make install'
+	'npm install --global npm && npm install -g grunt-cli && npm install' \
+	'git clone https://github.com/htacg/tidy-html5.git && cd tidy-html5 && cd build/cmake && cmake ../.. && cmake --build . --config Release && sudo make install'

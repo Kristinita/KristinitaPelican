@@ -27,6 +27,7 @@ markdown-downheader = "*"
 lice = "*"
 pip-licenses = "*"
 gitpython = "*"
+pyyaml = "*"
 
 [requires]
 python_version = "3.6"

@@ -172,11 +172,11 @@ Create blank file *CHANGELOG.md*. If no, generate-changelog will works incorrect
 
 ```json
 {
-  "name": "SashaSublime",
-  "version": "4.14.7",
-  "scripts": {
+	"name": "SashaSublime",
+	"version": "4.14.7",
+	"scripts": {
 	"release": "release-it"
-  }
+	}
 }
 ```
 
@@ -247,15 +247,15 @@ Line 1 will be cropped at 100 characters. All other lines will be wrapped after 
 
 ? Select the type of change that you're committing: build:     Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
 ? Denote the scope of this change ($location, $browser, $compile, etc.):
- release-it
+release-it
 ? Write a short, imperative tense description of the change:
- Fix .release-it.json
+Fix .release-it.json
 ? Provide a longer description of the change:
- Add to .release-it.json URL of SashaSublime repository
+Add to .release-it.json URL of SashaSublime repository
 ? List any breaking changes or issues closed by this change:
 
 [SashaDevelop 52e517a] build(release-it): Fix .release-it.json
- 1 file changed, 2 insertions(+), 1 deletion(-)
+1 file changed, 2 insertions(+), 1 deletion(-)
 
 D:\SashaSublime>git push
 Counting objects: 3, done.
@@ -265,7 +265,7 @@ Writing objects: 100% (3/3), 735 bytes | 183.00 KiB/s, done.
 Total 3 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/Kristinita/SashaSublime.git
-   0360628..52e517a  SashaDevelop -> SashaDevelop
+	0360628..52e517a  SashaDevelop -> SashaDevelop
 ```
 
 Now run [one of command](https://www.npmjs.com/package/release-it#%EF%B8%8F-usage):

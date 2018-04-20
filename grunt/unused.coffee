@@ -13,7 +13,7 @@
 module.exports =
 	options:
 		reference: 'output/images/'
-		directory: ['<%= templates.paths.html %>']
+		directory: ["<%= templates.paths.html %>"]
 		days: false
 		remove: true
 		reportOutput: false

@@ -94,4 +94,3 @@ Therefor the usage with subcategories is:
         </li>
     {% endif %}
     </ul>
-

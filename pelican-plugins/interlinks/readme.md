@@ -26,11 +26,13 @@ Usage
 
 Interlinks are specified in your settings file. Here is an example:
 
-	INTERLINKS = {
-	    'wikipedia_en': 'http://en.wikipedia.org/wiki/',
-	    'wikipedia_es': 'http://es.wikipedia.org/wiki/',
-	    'ddg': 'https://duckduckgo.com/?q='
-	}
+```python
+INTERLINKS = {
+    'wikipedia_en': 'http://en.wikipedia.org/wiki/',
+    'wikipedia_es': 'http://es.wikipedia.org/wiki/',
+    'ddg': 'https://duckduckgo.com/?q='
+}
+```
 
 There's also a default key, `this`, that is mapped to the `SITEURL` variable.
 

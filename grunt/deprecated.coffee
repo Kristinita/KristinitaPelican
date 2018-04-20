@@ -137,7 +137,7 @@
 # # [BUG] Plugin doesn't work:
 # # https://github.com/rgladwell/grunt-html5-validate/issues/1
 # html5validate:
-    # src: 'output/IT-articles/*.html'
+	# src: 'output/IT-articles/*.html'
 
 
 # #################
@@ -232,3 +232,24 @@
 # # https://pypi.org/project/yolk3k/
 # yolk:
 # 	command: 'pipenv run yolk -l -f license > python.txt'
+
+
+# [DEPRECATED] SuperFences now preserve tabs:
+# https://github.com/facelessuser/pymdown-extensions/issues/276
+# ######################
+# ## grunt-indentator ##
+# ######################
+# # Indent 4 spaces to tab:
+# # https://www.npmjs.com/package/grunt-indentator
+# # [WARNING]: Replace tabs to spaces only if first indentation — spaces:
+# # Needs run before “eslint fix”:
+# # https://github.com/gespinha/grunt-indentator/issues/1
+# module.exports =
+# 	options:
+# 		type: 'tab'
+# 		size: 1
+# 		debug: true
+# 	files:
+# 		[
+# 			"<%= templates.paths.html %>"
+# 		]

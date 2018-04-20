@@ -1,17 +1,28 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-04-06 20:11:21
+# @Last Modified time: 2018-04-19 20:15:58
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
 """
 
-""" logging pelican module.
+# Parse YAML configuration file:
+# https://stackoverflow.com/q/41974628/5951529
+# Require PyYAML module:
+# http://pyyaml.org/wiki/PyYAML
+import yaml
+YAMLCONFIG = yaml.load(open('pelicanvariables.yaml'))
+PATH = YAMLCONFIG['path']
+OUTPUT_PATH = YAMLCONFIG['output_path']
+THEME = YAMLCONFIG['theme']
+THEME_STATIC_DIR = YAMLCONFIG['theme_static_dir']
+THEME_STATIC_PATHS = YAMLCONFIG['theme_static_paths']
 
-For disabling warnings:
-http://docs.getpelican.com/en/stable/settings.html#logging
-"""
+
+# [DEPRECATED] All warnings fixed:
+# For disabling warnings:
+# http://docs.getpelican.com/en/stable/settings.html#logging
 # import logging
 
 # ****************************************************************************
@@ -187,6 +198,9 @@ INTERLINKS = {
 http://romeogolf.github.io/pelican-i-modul-python-markdown.html
 Extensions, which Sasha's fan use.
 
+CLI usage: https://python-markdown.github.io/cli/#using-extensions
+Example: “python -m markdown -x pymdownx.superfences -c config.yml SashaSuperFences.md”
+
 Officially support extensions doesn't need additional installation:
 https://python-markdown.github.io/extensions/#officially-supported-extensions
 
@@ -319,21 +333,28 @@ MARKDOWN = {
         'pymdownx.critic': {},
         'pymdownx.escapeall': {},
         'pymdownx.highlight': {},
-        'pymdownx.inlinehilite': {'css_class': 'SashaInlineHighlight',
-                                  'style_plain_text': True,
-                                  # [DEPRECATED] in 3.0 pymdown-extensions version
-                                  # 'use_codehilite_settings': False,
-                                  },
-        'pymdownx.magiclink': {'hide_protocol': True,
-                               'repo_url_shortener': True
-                               },
+        'pymdownx.inlinehilite': {
+            'css_class': 'SashaInlineHighlight',
+            'style_plain_text': True,
+            # [DEPRECATED] in 3.0 pymdown-extensions version
+            # 'use_codehilite_settings': False,
+        },
+        'pymdownx.magiclink': {
+            'hide_protocol': True,
+            'repo_url_shortener': True
+        },
         'pymdownx.mark': {},
         # That bars change colors in each 10%:
         # https://github.com/facelessuser/pymdown-extensions/pull/208
         'pymdownx.progressbar': {'progress_increment': 10},
         'pymdownx.smartsymbols': {},
         'pymdownx.snippets': {},
-        'pymdownx.superfences': {'css_class': 'SashaBlockHighlight'},
+        'pymdownx.superfences': {
+            'css_class': 'SashaBlockHighlight',
+            # Doesn't convert tabs to spaces in code blocks:
+            # https://github.com/marionebl/commitlint/issues/316
+            'preserve_tabs': True
+        },
         'pymdownx.tilde': {},
         #
         # 4. Other extensions
@@ -355,14 +376,26 @@ MARKDOWN = {
 
 # Path for site content
 
-PATH = 'content'
+# PATH = 'content'
+
+# Where to output the generated files
+
+# OUTPUT_PATH = 'output'
 
 # Path for articles
 # Don't set “PAGE_PATHS = ['']”! See
 # https://github.com/getpelican/pelican/issues/2123
 
-ARTICLE_PATHS = ['Gingerinas', 'Giologica', 'IT-articles', 'Life-hacks', 'Programs',
-                 'Smert-svobode', 'Sasha-Black', 'Sublime-Text']
+ARTICLE_PATHS = [
+    'Gingerinas',
+    'Giologica',
+    'IT-articles',
+    'Life-hacks',
+    'Programs',
+    'Smert-svobode',
+    'Sasha-Black',
+    'Sublime-Text'
+]
 
 # Path for pages
 # [Hack] That exclude articles, include non-exicting folder.
@@ -408,10 +441,6 @@ TAGS_SAVE_AS = 'tag/alltags.html'
 # ****************************************************************************
 # *                                   Other                                  *
 # ****************************************************************************
-
-# Theme
-
-THEME = 'themes/sashapelican'
 
 # Pagination — division of articles
 

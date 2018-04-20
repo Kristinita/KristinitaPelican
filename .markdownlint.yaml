@@ -1,0 +1,61 @@
+##################
+## Markdownlint ##
+##################
+# Lint Markdown files:
+# https://www.npmjs.com/package/markdownlint
+# [WARNING] Ruby Markdownlint obsolete, have bugs (see comments below)
+# and doesn't support at the time:
+# https://rubygems.org/gems/mdl
+# Blank lines in code:
+# https://softwareengineering.stackexchange.com/a/17306/264224
+
+
+# Rules: https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md
+# [DEPRECATED] In my Pelican articles I use h1 tag in page templates
+# I begin section use h2 tag
+# Using h1 tag is good — http://archive.li/X3d8c
+# Enable, because downheader extension
+# https://github.com/cprieto/mdx_downheader
+# "MD002": false,
+# [WARNING] Rule only for spaces indentation, show errors, if using tabs. So exclude.
+MD007: false
+# Allowed 2 trailing spaces in line, not 1, 3 or 4:
+# https://github.com/markdownlint/markdownlint/issues/165
+MD009:
+  br_spaces: 2
+# I prefer tabs instead of spaces:
+# https://softwareengineering.stackexchange.com/a/72/264224
+MD010: false
+# [DEPRECATED] In my Pelican articles I use h1 tag in page templates
+# I begin section use h2 tag
+# Using h1 tag is good — http://archive.li/X3d8c
+# Enable, because downheader extension
+# https://github.com/cprieto/mdx_downheader
+# exclude_rule 'MD0102'
+# Disable line length limitation
+MD013: false
+# I use MarkdownTOC autoanchoring:
+# https://github.com/naokazuterada/MarkdownTOC#auto-anchoring-when-heading-has-anchor-defined
+MD022: false
+# MarkdownTOC generate HTMl anchors with different id's:
+# https://packagecontrol.io/packages/MarkdownTOC
+MD024: false
+# I end headers with question marks:
+# [BUG] Doesn't work, if inline HTML:
+# https://github.com/markdownlint/markdownlint/issues/196
+MD026:
+  punctuation: ".,;:!"
+# Pelican features needs inline HTML support
+MD033: false
+# I use bare URL for Pelican article metadata variable “Opengraphimage”.
+# Open Graph — http://ruogp.me/
+# Also, I use bare URL for magiclink:
+# http://facelessuser.github.io/pymdown-extensions/extensions/magiclink/
+MD034: false
+# [DONE] This option works in Node Markdownlint, not Ruby mdl:
+# [BUG] Temporary exclude rule before the new release:
+# https://github.com/mivok/markdownlint/pull/160
+# "MD039": false,
+# In Pelican articles and pages first line — is Metadata,
+# then TOC, then <a id="value"></a>, not header
+MD041: false

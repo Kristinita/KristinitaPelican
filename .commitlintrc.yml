@@ -1,0 +1,166 @@
+##############
+# Commitlint #
+##############
+# Lint commit messages:
+# http://marionebl.github.io/commitlint
+# [WARNING] Commitlint doesn't install globally:
+# https://github.com/marionebl/commitlint/issues/179
+# Probot Commitlint
+# Check commits in pull requests.
+# [WARNING] Probot Commitlint doesn't work with commitlint configuration files:
+# https://github.com/ahmed-taj/commitlint-bot/pull/8
+# https://probot.github.io/apps/commitlint/
+# [NOTE] If contains “.commitlintrc.yml” file, config-conventional extends doesn't need;
+# You don't need install @commitlint/config-conventional:
+# http://marionebl.github.io/commitlint/#/guides-local-setup?id=install-commitlint
+# commitlint rules:
+# 0 — disable, 1 — warning, 2 — error:
+# I'm not use warnings, that CI works correct.
+# https://github.com/marionebl/commitlint/blob/master/docs/reference-rules.md#rules
+# https://github.com/SuperPaintman/commitlint-config-pedantic/blob/master/configs/base.yml
+# [WARNING] I set value for each rule, because no default level values in commitlint description:
+# https://github.com/marionebl/commitlint/issues/316
+rules:
+  body-leading-blank:
+    - 2
+    - always
+
+  body-max-length:
+    - 0
+    - always
+
+  body-min-length:
+    - 0
+    - always
+
+  footer-leading-blank:
+    - 2
+    - always
+
+  footer-max-length:
+    - 0
+    - always
+
+  footer-min-length:
+    - 0
+    - always
+
+  header-max-length:
+    - 2
+    - always
+    - 120
+
+  header-min-length:
+    - 2
+    - always
+    - 1
+
+  references-empty:
+    - 2
+    - always
+
+  scope-enum:
+    - 0
+    - always
+
+  scope-case:
+    - 2
+    - always
+    - lower-case
+
+  scope-empty:
+    - 2
+    - never
+
+  scope-max-length:
+    - 0
+    - always
+
+  scope-min-length:
+    - 0
+    - always
+
+  subject-case:
+    - 2
+    - never
+    -
+      - upper-case
+      - pascal-case
+      - sentence-case
+      - start-case
+
+  subject-empty:
+    - 2
+    - never
+
+  subject-full-stop:
+    - 2
+    - never
+    - "."
+
+  subject-max-length:
+    - 0
+    - always
+
+  subject-min-length:
+    - 0
+    - always
+
+  type-enum:
+    - 2
+    - always
+    -
+      # A new feature
+      - feat
+      # A bug fix
+      - fix
+      # Documentation only changes
+      - docs
+      # Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+      # Validation changes — this type.
+      - style
+      # A code change that neither fixes a bug nor adds a feature
+      - refactor
+      # A code change that improves performance
+      - perf
+      # Adding missing or correcting existing tests
+      - test
+      # Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+      - ci
+      # Changes to the build process or auxiliary tools and libraries such as documentation generation
+      - chore
+      # Reverts a previous commit
+      - revert
+      # Personal types:
+      # VCS changes (example scopes: bazaar, mercurial, git)
+      - vcs
+      # Debugging.
+      - debug
+
+  type-case:
+    - 2
+    - always
+    - kebab-case
+
+  type-empty:
+    - 2
+    - never
+
+  type-max-length:
+    - 0
+    - always
+
+  type-min-length:
+    - 0
+    - always
+
+  # Sign-off commits:
+  # https://stackoverflow.com/a/14044024/5951529
+  # I'm not use it in my projects:
+  # 1. gpg-sign more really certify commit author,
+  # 2. unobfuscate e-mail push to GitHub,
+  # 3. User needs add “Signed-off-by: Your Name <your.email@example.com>” each time,
+  # it may take a lot of time.
+  signed-off-by:
+    - 0
+    - always

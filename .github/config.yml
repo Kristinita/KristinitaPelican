@@ -1,0 +1,104 @@
+##########
+# Probot #
+##########
+# Framework for GitHub hooks:
+# https://probot.github.io/
+# [WARNING] “.github” folder for Probot apps must be in “master” branch,
+# otherwise Probot apps will not work. Example:
+# https://github.com/Kristinita/SashaGitHub/issues/1
+
+# [NOTE] Folded and literal styles for multiline YAML messages:
+# https://yaml-multiline.info/
+# https://stackoverflow.com/a/21699210/5951529
+
+################
+# Request Info #
+################
+# Warns, if blank message in issue or pull request:
+# https://probot.github.io/apps/request-info/
+
+# *Required* Comment to reply with
+requestInfoReplyComment: |
+  We would appreciate it if you could provide us with more info about this issue/pull request!
+
+  Please, add **for**:
+
+      *Bug report*: steps to reproduce,
+      *Feature request*: expected behavior in details,
+      *Question*: details,
+      *Pull request*: behavior with your changes.
+
+  Thanks.
+
+# *OPTIONAL* default titles to check against for lack of descriptiveness
+# MUST BE ALL LOWERCASE
+# If issue/pull request head as value of “requestInfoDefaultTitles” keys,
+# Request Info will works even if message not blank:
+# https://github.com/Kristinita/SashaProbot/issues/12
+requestInfoDefaultTitles:
+  - update readme.md
+  - updates
+
+# *OPTIONAL* Label to be added to Issues and Pull Requests with insufficient information given
+requestInfoLabelToAdd: needs-more-info
+
+
+#################
+# Sentiment Bot #
+#################
+# Bot, that warns, if toxic message:
+# https://probot.github.io/apps/sentiment-bot/
+# https://www.perspectiveapi.com
+# https://github.com/conversationai/perspectiveapi/blob/master/api_reference.md
+
+# *Required* toxicity threshold between 0 and .99 with the higher numbers being the most toxic
+# Anything higher than this threshold will be marked as toxic and commented on
+# If 0.001, bot can marked non-toxic messages, else .99, bot marked minimum toxic messages:
+# .7 is optimal:
+# https://github.com/behaviorbot/sentiment-bot/issues/24
+sentimentBotToxicityThreshold: .7
+
+# *Required* Comment to reply with
+sentimentBotReplyComment: >
+  Possibly, you message not correspond code of conduct of this repository.
+  Please be sure to review the code of conduct and be respectful of other users.
+
+
+###########
+# Welcome #
+###########
+# Bot, that show messages for GitHub users, that make
+# first issue or pull request or whose pull-request merge.
+# https://probot.github.io/apps/welcome/
+# [BUG] Autoresponder bot with similar features doesn't work:
+# https://github.com/probot/autoresponder/issues/27
+# It is recommend to include as many gifs and emojis as possible
+
+# Comment to be posted to on first time issues
+newIssueWelcomeComment: >
+  Thanks for opening your first issue here!
+
+
+  1. Please be polite.
+  If your message does not match
+  [**Contributor Covenant Code of Conduct of this repository**](../blob/master/CODE_OF_CONDUCT.md),
+  I can close and delete it without any explanation,
+  [**block you from my account and/or report abuse**](https://blog.github.com/2011-06-01-block-the-bullies/).
+  I hope this never happens.
+
+  1. I'm sorry, I'm not proffessional programmer.
+  Even if I think, that your feature request — is great,
+  I can not implement it, because I don't have enough programming skills.
+  But pull requests are welcome!
+
+# Comment to be posted to on PRs from first time contributors in your repository
+newPRWelcomeComment: >
+  Thanks for opening this pull request!
+
+
+  Please, note, that all files and commits of your pull request
+  [**must be 100% valid**](https://kristinita.ru/About-for-developers#linting-and-validation).
+
+# Comment to be posted to on pull requests merged by a first time user
+firstPRMergeComment: >
+  Congratulations on merging your first pull request! I look forward to further cooperation!

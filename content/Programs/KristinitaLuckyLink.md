@@ -89,7 +89,7 @@ It may take a lot of time. Use KristinitaLuckyLink I can make all these actions,
 Conversion examples:
 
 + `kristinitaluckylife` → `[kristinitaluckylife](https://www.instagram.com/kristinitaluckylife/)`,
-+ `Поиск Кристиниты `→ `[Поиск Кристиниты](https://kristinita.ru/)`.
++ `Поиск Кристиниты` → `[Поиск Кристиниты](https://kristinita.ru/)`.
 
 1. You select text,
 1. KristinitaLuckyLink get query to search engine; query = your selected text,
@@ -262,7 +262,8 @@ Captions:
 # Documentation
 
 <!-- [NOTE:] escapeall facelessuser plugin -->
-_\#FuckTheDocs_
+
+_\#FuckTheDocs_.
 
 <a id="tricks"></a>
 # Tricks

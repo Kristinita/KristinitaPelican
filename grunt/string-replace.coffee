@@ -7,9 +7,9 @@ module.exports =
 	dist:
 		files: [
 			expand: true
-			cwd: 'output'
-			src: '**/**/**/*.{html,css}'
-			dest: 'output'
+			cwd: "<%= templates.paths.output_path %>"
+			src: '**/*.{html,css}'
+			dest: "<%= templates.paths.output_path %>"
 		]
 	options:
 		# [NOTE] Use (.|\n|\r) for any symbol, not (.|\n)

@@ -5,14 +5,14 @@
 # https://www.npmjs.com/package/grunt-browser-sync
 module.exports =
 	bsFiles:
-		src : ['output/theme/css/**/*.css', 'output/theme/css/**/**/*.css', 'output/theme/js/**/*.js']
+		src : ['<%= templates.paths.theme %>/css/**/*.css', '<%= templates.paths.theme %>/css/**/**/*.css', '<%= templates.paths.theme %>/js/**/*.js']
 	options:
 		# Doesn't open “http://localhost:3001/” tab, when BrowserSync start:
 		# https://browsersync.io/docs/options#option-open
 		open: false
 		port: 3000
 		server:
-			baseDir: "../"
+			baseDir: '../'
 		# localtunnel doesn't work, see:
 		# https://github.com/BrowserSync/browser-sync/issues/1513
 		tunnel: false

@@ -3,12 +3,18 @@
 ############################
 # .gitignore boilerplates
 # https://github.com/theadamlt/Sublime-Gitignore
+# Syntax of Git ignore patterns:
+# https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+# [WARNING] That ignore all files in folder “output”, use “output/”, not “/output” syntax!
+# “/output” works for GitHub, but not documented and doesn't work for eclint.
 
 ###Personal###
 
 # Separate repository for output site
 
-/output
+output/
+
+output/.git/
 
 # Personal folder settings
 
@@ -16,7 +22,7 @@ desktop.ini
 
 # Pelican cache
 
-/pelican_cache
+pelican_cache/
 
 # [NOTE] I don't need add to .gitignore files as Pipfile.lock and package-lock.json:
 # https://stackoverflow.com/a/46303305/5951529

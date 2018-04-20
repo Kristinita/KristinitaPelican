@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-04-06 20:16:30
+# @Last Modified time: 2018-04-13 13:47:19
+"""Pelican configuration file.
+
+For publishing. pelicanconf.py — for development.
+"""
 
 # [WARNING] Close all files from “output” folder in all programs,
 # that “pelican -s publishconfig.py” run without warnings and errors.

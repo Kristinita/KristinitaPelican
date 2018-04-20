@@ -1,11 +1,11 @@
 Title: For developers
-Version: 0.0.1
+Version: 0.0.2
 Author: Sasha Chernykh
 Lang: en
 Summary: Information for developers about Kristinita's Search
 Pagetitle: For developers
 Metacontent: Information for developers about Kristinita's Search
-Pagecolors: sasha-black
+Pagecolors: sasha-black-description
 Asideimage: SashaInflatedSponges
 Iconleftorright: right
 Noco: 1QCqM6
@@ -27,6 +27,13 @@ Opengraphimage: https://i.imgur.com/2blY7dI.png
 		1. [Batch file](#batch-file)
 	1. [UNIX and macOS](#unix-and-macos-1)
 1. [Build](#build)
+1. [Linting and validation](#linting-and-validation)
+	1. [Glossary for table heading](#glossary-for-table-heading)
+		1. [Type](#type)
+		1. [Checking tool](#checking-tool)
+		1. [Rules description](#rules-description)
+		1. [Configuration file](#configuration-file)
+	1. [Validation table](#validation-table)
 
 <!-- /MarkdownTOC -->
 
@@ -128,7 +135,7 @@ git clone --depth=1 --branch=master https://github.com/Kristinita/KristinitaPeli
 cd KristinitaPelican
 wait
 parallel ::: 'pip install --upgrade pip && pip install pipenv && pipenv install --dev' \
-			 'npm install --global npm && npm install -g grunt-cli && npm install'
+				'npm install --global npm && npm install -g grunt-cli && npm install'
 ```
 
 **Except** [*pexpect.exceptions.TIMEOUT*](https://github.com/pypa/pipenv/issues/65):
@@ -171,3 +178,67 @@ grunt publish
 ```
 
 See comments in [files of *grunt* folder](https://github.com/Kristinita/KristinitaPelican/tree/master/grunt).
+
+<a id="linting-and-validation"></a>
+# Linting and validation
+
+**All original files and commits of Sasha Chernykh repositories must be 100% valid.**
+
+Please, consider this, if you make a pull request.
+
+“Original” — not from third-party frameworks, libraries, packages, scripts and so on. I'm not responsible, if third-party files not valid.
+
+<a id="glossary-for-table-heading"></a>
+## Glossary for table heading
+
+For validating table below.
+
+<a id="type"></a>
+### Type
+
+Type of object.
+
+If in this column name of markup or programming language — I mean files, specific for this language.
+
+Example:
+
++ `Python` — check all files with `.py` extension
++ `Markdown` — all files with `.md`, `.mdown` and `.markdown` extensions
+
+<a id="checking-tool"></a>
+### Checking tool
+
+Checking/linting/validating tool.
+
+<a id="rules-description"></a>
+### Rules description
+
+Link(s) to detailed description of checking tool rules.
+
+<a id="configuration-file"></a>
+### Configuration file
+
+File for checking tool, if I use non-default rules.
+
+For **each** custom option I add comment, why I doesn't use default option.
+
+If `—` in this column, I use default checking tool configuration.
+
+<a id="validation-table"></a>
+## Validation table
+
+For all Sasha Chernykh projects:
+
+[jtable]
+Type|Checking tool|Rules description|Configuration file
+commits|[commitlint](http://marionebl.github.io/commitlint/)|[1](http://marionebl.github.io/commitlint/#/reference-rules)|[.commitlintrc.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/.commitlintrc)
+all files|[EditorConfig](http://editorconfig.org/)|[1](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties)|[.editorconfig](https://github.com/Kristinita/KristinitaPelican/blob/master/.editorconfig)
+all file and folder names|[grunt-path-validator](https://www.npmjs.com/package/grunt-path-validator) (only for Grunt projects, I can't find tool for all project types)|no whitespace characters in names — it accept in files/folder naming conventions — [1](https://superuser.com/q/29111/572069), [2](https://portal.slac.stanford.edu/sites/inc_public/Pages/folder-file-names.aspx), [3](https://www.reddit.com/r/linux/comments/1kpzxz/what_are_your_file_naming_conventions/), [4](https://www2.le.ac.uk/services/research-data/organise-data/naming-files), [5](https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming)|[path_validator.coffee](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/path_validator.coffee) (only for Grunt projects, I can't find tool for all project types)
+supported browsers|[Browserslist](https://github.com/browserslist/browserslist)|[1](https://github.com/browserslist/browserslist#queries)|[browserslist](https://github.com/Kristinita/KristinitaPelican/blob/master/browserslist)
+Python|[Flake8](http://flake8.pycqa.org/en/latest/)|[1](http://flake8.pycqa.org/en/latest/user/configuration.html)|[.flake8](https://github.com/Kristinita/KristinitaPelican/blob/master/.flake8)
+Python|[pydocstyle](http://www.pydocstyle.org/en/latest/usage.html)|[1](http://www.pydocstyle.org/en/latest/usage.html#configuration-files)|—
+Markdown|[Markdownlint](https://www.npmjs.com/package/markdownlint)|[1](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md)|[.markdownlint.yaml](https://github.com/Kristinita/KristinitaPelican/blob/master/.markdownlint.yaml)
+HTML|[HTML Tidy](http://www.html-tidy.org/)|[1](http://api.html-tidy.org/tidy/tidylib_api_next/tidy_config.html)|—
+YAML|[yamllint](http://yamllint.readthedocs.io/en/latest/)|[1](http://yamllint.readthedocs.io/en/latest/configuration.html)|[.yamllint](https://github.com/Kristinita/KristinitaPelican/blob/master/.yamllint)
+.travis.yml|[Travis CI Client](https://github.com/travis-ci/travis.rb#lint)|[1](https://docs.travis-ci.com/user/customizing-the-build)|—
+[/jtable]

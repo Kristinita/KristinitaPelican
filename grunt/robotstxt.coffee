@@ -9,7 +9,7 @@
 # http://robotstxt.org.ru/robotstxterrors
 module.exports =
 	dist:
-		dest: 'output/'
+		dest: "<%= templates.paths.output_path %>/"
 		policy: [
 			{
 				ua: '*'

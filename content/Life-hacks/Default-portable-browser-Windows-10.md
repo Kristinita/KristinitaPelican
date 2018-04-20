@@ -2,7 +2,7 @@ Title: Установка портативной версии Pale Moon в ка�
 Date: 2017-02-13 19:15:15
 Author: Sasha Chernykh
 Lang: ru
-Summary: 
+Summary:
 Pagetitle: Портативный браузер по умолчанию в Windows 10
 Metacontent: Description, how to make Pale Moon default browser in Windows
 Pagecolors: it-articles

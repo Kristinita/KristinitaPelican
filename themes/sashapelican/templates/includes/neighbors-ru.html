@@ -1,13 +1,10 @@
 {% if article.prev_article_in_category %}
-    <span class="SashaPreviousNeighbor"><a href="{{ SITEURL }}/{{ article.prev_article_in_category.url }}" title="{{ article.prev_article_in_category.title }}">← Предыдущая статья</a></span>
+	<span class="SashaPreviousNeighbor"><a href="{{ SITEURL }}/{{ article.prev_article_in_category.url }}" title="{{ article.prev_article_in_category.title }}">← Предыдущая статья</a></span>
 {% else %}
-    <span class="SashaHeadPageLeft"><a href="{{ SITEURL }}" title="Поиск Кристиниты">Поиск Кристиниты</a></span>
+	<span class="SashaHeadPageLeft"><a href="{{ SITEURL }}" title="Поиск Кристиниты">Поиск Кристиниты</a></span>
 {% endif %}
-<!-- {% if article.category.slug == "about Sasha Chernykh" %}
-    <li class="contents"><a href="{{ SITEURL }}/translations/">Оглавление</a></li>
-{% endif %} -->
 {% if article.next_article_in_category %}
-    <span class="SashaNextNeighbor"><a href="{{ SITEURL }}/{{ article.next_article_in_category.url }}" title="{{ article.next_article_in_category.title }}">Следующая статья →</a></span>
+	<span class="SashaNextNeighbor"><a href="{{ SITEURL }}/{{ article.next_article_in_category.url }}" title="{{ article.next_article_in_category.title }}">Следующая статья →</a></span>
 {% else %}
-    <span class="SashaHeadPageRight"><a href="{{ SITEURL }}" title="Поиск Кристиниты">Поиск Кристиниты</a></span>
+	<span class="SashaHeadPageRight"><a href="{{ SITEURL }}" title="Поиск Кристиниты">Поиск Кристиниты</a></span>
 {% endif %}
