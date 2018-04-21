@@ -25,3 +25,12 @@ module.exports =
 		# [NOTE] Use “licenses/”, not “licenses”, otherwise a file “licenses” will create
 		# [NOTE] grunt-move create a needest folder, if no
 		dest: "<%= templates.paths.output_path %>/licenses/"
+	# Move license for output repository.
+	# [NOTE] grunt-move support different file names:
+	# “LICENSE” → “LICENSE.md”.
+	# Need “LICENSE”, not “LICENSE.md”, because:
+	# 1. license-generator doesn't generate license in non-root folder,
+	# 2. root folder already have “LICENSE.md” file for sources.
+	outputlicense:
+		src: 'LICENSE'
+		dest: "<%= templates.paths.output_path %>/LICENSE.md"

@@ -253,3 +253,22 @@
 # 		[
 # 			"<%= templates.paths.html %>"
 # 		]
+
+
+# [DEPRECATED] Generate invalid license files:
+# https://github.com/licenses/lice/issues/50
+# I can't file Grunt package for this task;
+# license-generator output error in installation process:
+# https://pypi.org/project/license-generator/
+# ##########
+# ## lice ##
+# ##########
+# # Generate license for project:
+# # https://pypi.org/project/lice/
+# lice:
+# 	# [BUG] lice doesn't work in AppVeyor:
+# 	# https://github.com/appveyor/ci/issues/2226
+# 	if process.platform == "win32"
+# 		command: 'echo "Sorry, lice doesn\'t work in AppVeyor — https://github.com/appveyor/ci/issues/2226"'
+# 	else
+# 		command: 'pipenv run lice mit -o "Sasha Chernykh" --file output/LICENSE.md'

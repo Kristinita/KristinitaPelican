@@ -56,7 +56,7 @@ module.exports =
 			'realFavicon'
 			'humans_txt'
 			'robotstxt'
-			'shell:lice'
+			'shell:licensegenerator'
 			'shell:covgen'
 			'shell:piplicenses']
 	tarp4: ['move']

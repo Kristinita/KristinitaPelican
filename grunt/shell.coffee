@@ -94,20 +94,6 @@ module.exports =
 			command: 'bash tidy/tidy-validate.sh'
 
 
-	##########
-	## lice ##
-	##########
-	# Generate license for project:
-	# https://pypi.org/project/lice/
-	lice:
-		# [BUG] lice doesn't work in AppVeyor:
-		# https://github.com/appveyor/ci/issues/2226
-		if process.platform == "win32"
-			command: 'echo "Sorry, lice doesn\'t work in AppVeyor — https://github.com/appveyor/ci/issues/2226"'
-		else
-			command: 'pipenv run lice mit -o "Sasha Chernykh" --file output/LICENSE.md'
-
-
 	############
 	## covgen ##
 	############
@@ -177,3 +163,12 @@ module.exports =
 		command: "npx eclint fix CODE_OF_CONDUCT.md && cd <%= templates.paths.output_path %> && npx eclint fix && cd <%= templates.paths.cwd %>"
 	eclintcheck:
 		command: "cd <%= templates.paths.output_path %> && npx eclint check && cd <%= templates.paths.cwd %>"
+
+
+	#####################
+	# license-generator #
+	#####################
+	# Generate license:
+	# https://www.npmjs.com/package/license-generator
+	licensegenerator:
+		command: "npx license-generator install mit -n \"Sasha Chernykh\""
