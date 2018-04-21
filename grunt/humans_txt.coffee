@@ -7,6 +7,9 @@
 # [WARNING] Generator is outdated, you get a waning in console:
 # “npm WARN grunt-humans-txt@0.2.1 requires a peer of grunt@~0.4.1 but none is installed. You must install peer dependencies yourself.”
 # https://github.com/roughcoder/grunt-humans-txt/pull/7
+# Use @robinpokorny version:
+# https://stackoverflow.com/a/21918559/5951529
+# https://github.com/roughcoder/grunt-humans-txt/issues/3#issuecomment-375207928
 # [NOTE] Needs “module.exports = (grunt) ->” instead of “module.exports =”, that don't get an error:
 # “ReferenceError: grunt is not defined”
 module.exports = (grunt) ->
@@ -14,22 +17,28 @@ module.exports = (grunt) ->
 		pkg: grunt.file.readJSON('package.json')
 		intro: 'humans.txt file for Kristinita\'s Search'
 		commentStyle: 'c'
+		# Indentation of nested values:
+		# https://github.com/robinpokorny/grunt-humans-txt#tab
+		tab: '\t'
+		# Section, where last update date:
+		# https://github.com/robinpokorny/grunt-humans-txt#includeupdatein
+		includeUpdateIn: 'site'
 		content:
-			'team': [
-				'Web developer': '<%= humans_txt.options.pkg.author %>'
-				'Site': '<%= humans_txt.options.pkg.homepage %>'
+			team: [
+				'Web developer': "<%= humans_txt.options.pkg.author %>"
+				'Site': "<%= humans_txt.options.pkg.homepage %>"
 				'Contacts': 'https://vk.com/hair_in_the_wind'
 				'Location': 'Там, где Саша'
 			]
-			'thanks': [
+			thanks: [
 				'Name': 'Alfy Centauri'
 				'Site': 'alfavika.ru'
 			]
-			'site': [
+			site: [
 				'Standards': 'HTML5, CoffeeScript, Stylus'
 				'Components': 'Pelican, Python Markdown, Grunt, JQuery and many plugins for this components'
 				'Software': 'Sublime Text and many plugins for Sublime Text'
-				'License': '<%= humans_txt.options.pkg.license %>'
+				'License': "<%= humans_txt.options.pkg.license %>"
 			]
 	task:
 		dest: "<%= templates.paths.output_path %>/humans.txt"

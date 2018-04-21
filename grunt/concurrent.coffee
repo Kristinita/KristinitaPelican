@@ -81,6 +81,7 @@ module.exports =
 			'shell:pipenvupdateall'
 			'shell:gitgarbagecollector']
 	taru3: ['shell:pipenvcleanunused']
+	taru4: ['shell:pipenvupdatepipfilelock']
 	#
 	# For validating sources, “target sources”.
 	#

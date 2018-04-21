@@ -46,6 +46,7 @@ update:
   - 'concurrent:taru1'
   - 'concurrent:taru2'
   - 'concurrent:taru3'
+  - 'concurrent:taru4'
 
 validatesource:
   - 'concurrent:tars1'

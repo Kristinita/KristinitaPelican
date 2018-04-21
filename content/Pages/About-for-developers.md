@@ -202,8 +202,8 @@ If in this column name of markup or programming language — I mean files, speci
 
 Example:
 
-+ `Python` — check all files with `.py` extension
-+ `Markdown` — all files with `.md`, `.mdown` and `.markdown` extensions
++ *Python* — check all files with *.py* extension
++ *Markdown* — all files with *.md*, *.mdown* and *.markdown* extensions
 
 <a id="checking-tool"></a>
 ### Checking tool
@@ -222,7 +222,7 @@ File for checking tool, if I use non-default rules.
 
 For **each** custom option I add comment, why I doesn't use default option.
 
-If `—` in this column, I use default checking tool configuration.
+If *—* in this column, I use default checking tool configuration.
 
 <a id="validation-table"></a>
 ## Validation table
@@ -232,8 +232,8 @@ For all Sasha Chernykh projects:
 [jtable]
 Type|Checking tool|Rules description|Configuration file
 commits|[commitlint](http://marionebl.github.io/commitlint/)|[1](http://marionebl.github.io/commitlint/#/reference-rules)|[.commitlintrc.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/.commitlintrc)
+all files and folders names|[grunt-path-validator](https://www.npmjs.com/package/grunt-path-validator) (only for Grunt projects, I can't find tool for all project types)|no whitespace characters in names — it accept in files/folder naming conventions — [1](https://superuser.com/q/29111/572069), [2](https://portal.slac.stanford.edu/sites/inc_public/Pages/folder-file-names.aspx), [3](https://www.reddit.com/r/linux/comments/1kpzxz/what_are_your_file_naming_conventions/), [4](https://www2.le.ac.uk/services/research-data/organise-data/naming-files), [5](https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming)|[path_validator.coffee](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/path_validator.coffee) (only for Grunt projects, I can't find tool for all project types)
 all files|[EditorConfig](http://editorconfig.org/)|[1](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties)|[.editorconfig](https://github.com/Kristinita/KristinitaPelican/blob/master/.editorconfig)
-all file and folder names|[grunt-path-validator](https://www.npmjs.com/package/grunt-path-validator) (only for Grunt projects, I can't find tool for all project types)|no whitespace characters in names — it accept in files/folder naming conventions — [1](https://superuser.com/q/29111/572069), [2](https://portal.slac.stanford.edu/sites/inc_public/Pages/folder-file-names.aspx), [3](https://www.reddit.com/r/linux/comments/1kpzxz/what_are_your_file_naming_conventions/), [4](https://www2.le.ac.uk/services/research-data/organise-data/naming-files), [5](https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming)|[path_validator.coffee](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/path_validator.coffee) (only for Grunt projects, I can't find tool for all project types)
 supported browsers|[Browserslist](https://github.com/browserslist/browserslist)|[1](https://github.com/browserslist/browserslist#queries)|[browserslist](https://github.com/Kristinita/KristinitaPelican/blob/master/browserslist)
 Python|[Flake8](http://flake8.pycqa.org/en/latest/)|[1](http://flake8.pycqa.org/en/latest/user/configuration.html)|[.flake8](https://github.com/Kristinita/KristinitaPelican/blob/master/.flake8)
 Python|[pydocstyle](http://www.pydocstyle.org/en/latest/usage.html)|[1](http://www.pydocstyle.org/en/latest/usage.html#configuration-files)|—

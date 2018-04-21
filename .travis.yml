@@ -23,6 +23,8 @@ env:
 # Sections:
 # https://docs.travis-ci.com/user/customizing-the-build/#The-Build-Lifecycle
 # https://stackoverflow.com/a/34384262/5951529
+# Exit codes:
+# https://docs.travis-ci.com/user/customizing-the-build/#Breaking-the-Build
 
 before_install:
   # Virtual environment inside project directory:
@@ -49,8 +51,15 @@ install:
 
 script:
   - grunt $GRUNT_COMMAND
-
-after_success:
+  # [WARNING] Don't move these commands to “after_success” section,
+  # exit code = 0 in this section always:
+  # https://blog.travis-ci.com/after_script_behavior_changes/
+  # https://github.com/travis-ci/travis-ci/issues/758
+  # https://travis-ci.org/Kristinita/KristinitaPelican/jobs/368968780
+  # [WARNING] I don't use Build Stages, because each stage run in new virtual machine,
+  # no data persistence → it takes a lot of time, that install and compile all dependencies before stages.
+  # This is unnecessary in my case.
+  # https://docs.travis-ci.com/user/build-stages/#Data-persistence-between-stages-and-jobs
   - grunt validatesource validateoutput remote travis
 
 # Automatically deploy site to GitHub Pages:

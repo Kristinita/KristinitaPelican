@@ -235,11 +235,11 @@
         },
         "pip-licenses": {
             "hashes": [
-                "sha256:77ae0cbe3aaa6711a715100b7615367781c5265a2ab9c6e223d0f9057fcfbe1d",
-                "sha256:c05e48e653322d2de7f1ef40a31fbd434b463eab598a044793dd081179c6aec3"
+                "sha256:61f0fb880648c67ce4193d47165fd07ef6fd3c1e40e2da74b5cf411edd6228e5",
+                "sha256:f2658fe65a5837d3fa63cca5cc7a55f6268c4a832ccfb18a72fa0076d1877090"
             ],
             "index": "pypi",
-            "version": "==1.7.0"
+            "version": "==1.7.1"
         },
         "pip-review": {
             "hashes": [
@@ -278,11 +278,11 @@
         },
         "pymdown-extensions": {
             "hashes": [
-                "sha256:8fd25fbfc28d6116367c8b6c5723279c2c2f204042b62b84ca34dc60efb76d91",
-                "sha256:c9915c5bed2cce864c062f0f8ebdfbc4c05b103652e3c47a49760341a3213729"
+                "sha256:76aebc78bd67789dea74c50969f42b3f3736349e992fdad773dc82bb56f82cca",
+                "sha256:97964f736ba55e340039f59538bc3eaeb262cb026d6a4bd3392d7494b9a04ef1"
             ],
             "index": "pypi",
-            "version": "==4.9.2"
+            "version": "==4.10"
         },
         "pyparsing": {
             "hashes": [

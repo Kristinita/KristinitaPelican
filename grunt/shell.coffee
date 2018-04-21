@@ -45,6 +45,12 @@ module.exports =
 	# http://pipenv.readthedocs.io/en/latest/basics/#editable-dependencies-e-g-e
 	pipenvcleanunused:
 		command: 'pipenv clean --verbose'
+	# Update packages versions to the newest in “Pipfile.lock”, that:
+	# 1. Another users have newest packages versions in their environment:
+	# 2. Fix CI errors as https://travis-ci.org/Kristinita/KristinitaPelican/jobs/368968779#L658-L677
+	# https://docs.pipenv.org/basics/#example-pipenv-upgrade-workflow
+	pipenvupdatepipfilelock:
+		command: 'pipenv update'
 
 
 	#########
@@ -165,7 +171,9 @@ module.exports =
 	# https://github.com/jedmao/eclint/issues/130
 	# [WARNING] User can get different results for Windows and *NIX:
 	# https://github.com/jedmao/eclint/issues/129#event-1574600632
+	# [BUG] 2 blank lines in end of file “CODE_OF_CONDUCT.md”, needs fix it:
+	# https://github.com/ContributorCovenant/contributor_covenant/issues/528
 	eclintfix:
-		command: "cd <%= templates.paths.output_path %> && npx eclint fix && cd <%= templates.paths.cwd %>"
+		command: "npx eclint fix CODE_OF_CONDUCT.md && cd <%= templates.paths.output_path %> && npx eclint fix && cd <%= templates.paths.cwd %>"
 	eclintcheck:
 		command: "cd <%= templates.paths.output_path %> && npx eclint check && cd <%= templates.paths.cwd %>"
