@@ -1,4 +1,9 @@
-# AppVeyor configuration:
+############
+# AppVeyor #
+############
+# Continuous integration for Windows:
+# https://www.appveyor.com/docs/
+# Configuration:
 # https://www.appveyor.com/docs/appveyor-yml/
 
 # Don't download all repository history, that save a time:
@@ -6,62 +11,62 @@
 clone_depth: 1
 
 init:
-  - setx PIPENV_VENV_IN_PROJECT 1
+- setx PIPENV_VENV_IN_PROJECT 1
   # Use “CALL Refreshenv.cmd” for local installation:
   # https://github.com/chocolatey/choco/issues/1461#issuecomment-348136706
   # https://ss64.com/nt/call.html
-  - refreshenv
+- refreshenv
   # Needs, because will get messages as:
   # «flake8 is not recognized»
   # https://github.com/ogrisel/python-appveyor-demo/blob/master/appveyor.yml
   # Python 2 by default, see:
   # https://www.appveyor.com/docs/build-environment/#python
   # https://ci.appveyor.com/project/Kristinita/erichek/build/1.0.3
-  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+- SET PATH=%PYTHON%;%PYTHON%\Scripts;%PATH%
   # Needs AppVeyor console set, see:
   # https://stackoverflow.com/a/48093971/5951529
-  - set PYTHONIOENCODING=utf-8
+- set PYTHONIOENCODING=utf-8
+  # Set latest Ruby version at the time:
+  # https://www.appveyor.com/docs/lang/ruby/
+  # https://www.appveyor.com/docs/build-environment/#ruby
+- set PATH=C:\Ruby25-x64\bin;%PATH%
 
 environment:
-
   matrix:
-
     # Variables:
     # https://help.appveyor.com/discussions/problems/4629-how-to-use-appveyor-environment-variable
     # https://help.appveyor.com/discussions/questions/15163-multiuple-build-matrix-dimensions-from-environment-variables
-    - PYTHON: "C:\\Python36-x64"
-      PYTHON_VERSION: "3.6.4"
-      PYTHON_ARCH: "64"
-      # “grunt default” = “grunt”;
-      # AppVeyor support blank value.
-      GRUNT_COMMAND:
-    - PYTHON: "C:\\Python36-x64"
-      PYTHON_VERSION: "3.6.4"
-      PYTHON_ARCH: "64"
-      GRUNT_COMMAND: publish
+  - PYTHON: C:\Python36-x64
+    PYTHON_VERSION: 3.6.4
+    PYTHON_ARCH: 64
+    # “grunt default” = “grunt”;
+    # AppVeyor support blank value.
+    GRUNT_COMMAND:
+  - PYTHON: C:\Python36-x64
+    PYTHON_VERSION: 3.6.4
+    PYTHON_ARCH: 64
+    GRUNT_COMMAND: publish
 
 platform: x64
 
 # Build configuration:
 # https://www.appveyor.com/docs/build-configuration/#build-pipeline
 install:
-
   # That script run for “master” branch, not for “HEAD”;
   # Needs, that “grunt-checkbranch” works correct:
   # https://stackoverflow.com/a/18866140/5951529
   # Needs in “install” section, because in “init” section actions before cloning:
-  - git checkout master
+- git checkout master
   # [WARNING] npm parallel doesn't work, example:
   # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.25/job/70x5h1qq2d6j8gyp
   # [WARNING] start command doesn't work without batch file:
   # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.31
   # Project folder:
   # https://github.com/vim/vim-win32-installer/blob/master/appveyor.yml
-  - "%APPVEYOR_BUILD_FOLDER%/ci/appveyor-install.bat"
+- '%APPVEYOR_BUILD_FOLDER%/ci/appveyor-install.bat'
 
 build_script:
-
-  - grunt %GRUNT_COMMAND%
+- grunt %GRUNT_COMMAND%
 
 test_script:
-  - grunt validatesource validateoutput remote
+- grunt validatesource validateoutput remote

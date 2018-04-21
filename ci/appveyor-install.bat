@@ -1,7 +1,7 @@
 @REM @Author: Kristinita
 @REM @Date:   2018-02-28 19:42:16
 @REM @Last Modified by:   Kristinita
-@REM Modified time: 2018-04-13 18:53:06
+@REM Modified time: 2018-04-21 15:49:01
 @REM Parallel pip and npm commands.
 @REM Use REM comments:
 @REM https://stackoverflow.com/a/12407934/5951529
@@ -22,3 +22,4 @@ START /B CMD /C "choco install html-tidy -y -ignoredependencies"
 @REM https://pythonhosted.org/CodeChat/appveyor.yml.html
 START /B CMD /C "python -m pip install --upgrade pip & pip install pipenv & pipenv install --dev"
 START /B CMD /C "choco install nodejs -y & npm install -g grunt-cli & npm install"
+START /B CMD /C "gem install travis"

@@ -1,3 +1,10 @@
+#############
+# Travis CI #
+#############
+# Continuous integration for Ubuntu:
+# https://travis-ci.org/
+# [WARNING] “group: travis_latest” doesn't work at April 2018, read end of article:
+# https://blog.travis-ci.com/2017-12-01-new-update-schedule-for-linux-build-images
 # Don't download all repository history, that save a time:
 # https://docs.travis-ci.com/user/customizing-the-build/#Git-Clone-Depth
 git:
@@ -15,10 +22,10 @@ python: 3.6
 # Multiple scripts
 # http://bit.ly/2ow2DvL
 env:
-  # “grunt default” = “grunt”;
-  # Travis CI support blank value.
-  - GRUNT_COMMAND=
-  - GRUNT_COMMAND=publish
+# “grunt default” = “grunt”;
+# Travis CI support blank value.
+- GRUNT_COMMAND=
+- GRUNT_COMMAND=publish
 
 # Sections:
 # https://docs.travis-ci.com/user/customizing-the-build/#The-Build-Lifecycle
@@ -27,40 +34,40 @@ env:
 # https://docs.travis-ci.com/user/customizing-the-build/#Breaking-the-Build
 
 before_install:
-  # Virtual environment inside project directory:
-  # https://jcutrer.com/howto/dev/python/pipenv-pipfile
-  # “setx PIPENV_VENV_IN_PROJECT 1” for Windows
-  - export PIPENV_VENV_IN_PROJECT=1
-  # Ignore already existing virtual environments:
-  # https://github.com/menzenski/pipenv-travis-test/blob/develop/.travis.yml
-  - export PIPENV_IGNORE_VIRTUALENVS=1
-  # That script run for “master” branch, not for “HEAD”;
-  # Needs, that “grunt-checkbranch” works correct:
-  # https://stackoverflow.com/a/18866140/5951529
-  - git checkout master
-  # Correct displaying Non-ASCII symbols in Travis CI console:
-  # https://stackoverflow.com/a/34549249/5951529
-  - git config --global core.quotePath false
+# Virtual environment inside project directory:
+# https://jcutrer.com/howto/dev/python/pipenv-pipfile
+# “setx PIPENV_VENV_IN_PROJECT 1” for Windows
+- export PIPENV_VENV_IN_PROJECT=1
+# Ignore already existing virtual environments:
+# https://github.com/menzenski/pipenv-travis-test/blob/develop/.travis.yml
+- export PIPENV_IGNORE_VIRTUALENVS=1
+# That script run for “master” branch, not for “HEAD”;
+# Needs, that “grunt-checkbranch” works correct:
+# https://stackoverflow.com/a/18866140/5951529
+- git checkout master
+# Correct displaying Non-ASCII symbols in Travis CI console:
+# https://stackoverflow.com/a/34549249/5951529
+- git config --global core.quotePath false
 
 install:
-  # [NOTE] Parallelshell works, but no time economy, compare:
-  # https://travis-ci.org/Kristinita/SashaPelicanTest/jobs/347254717
-  # https://travis-ci.org/Kristinita/SashaPelicanTest/jobs/347267767
-  - sudo apt-get install parallel
-  - bash ci/travis-install.sh
+# [NOTE] Parallelshell works, but no time economy, compare:
+# https://travis-ci.org/Kristinita/SashaPelicanTest/jobs/347254717
+# https://travis-ci.org/Kristinita/SashaPelicanTest/jobs/347267767
+- sudo apt-get install parallel
+- bash ci/travis-install.sh
 
 script:
-  - grunt $GRUNT_COMMAND
-  # [WARNING] Don't move these commands to “after_success” section,
-  # exit code = 0 in this section always:
-  # https://blog.travis-ci.com/after_script_behavior_changes/
-  # https://github.com/travis-ci/travis-ci/issues/758
-  # https://travis-ci.org/Kristinita/KristinitaPelican/jobs/368968780
-  # [WARNING] I don't use Build Stages, because each stage run in new virtual machine,
-  # no data persistence → it takes a lot of time, that install and compile all dependencies before stages.
-  # This is unnecessary in my case.
-  # https://docs.travis-ci.com/user/build-stages/#Data-persistence-between-stages-and-jobs
-  - grunt validatesource validateoutput remote travis
+- grunt $GRUNT_COMMAND
+# [WARNING] Don't move these commands to “after_success” section,
+# exit code = 0 in this section always:
+# https://blog.travis-ci.com/after_script_behavior_changes/
+# https://github.com/travis-ci/travis-ci/issues/758
+# https://travis-ci.org/Kristinita/KristinitaPelican/jobs/368968780
+# [WARNING] I don't use Build Stages, because each stage run in new virtual machine,
+# no data persistence → it takes a lot of time, that install and compile all dependencies before stages.
+# This is unnecessary in my case.
+# https://docs.travis-ci.com/user/build-stages/#Data-persistence-between-stages-and-jobs
+- grunt validatesource validateoutput remote travis
 
 # Automatically deploy site to GitHub Pages:
 # https://docs.travis-ci.com/user/deployment

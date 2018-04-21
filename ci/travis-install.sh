@@ -23,4 +23,5 @@
 # https://github.com/htacg/tidy-html5/issues/721
 parallel ::: 'pip install --upgrade pip && pip install pipenv && pipenv install --dev' \
 	'npm install --global npm && npm install -g grunt-cli && npm install' \
-	'sudo apt-get install xsltproc && git clone https://github.com/htacg/tidy-html5.git && cd tidy-html5 && cd build/cmake && cmake ../.. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIB:BOOL=OFF && make && sudo make install'
+	'sudo apt-get install xsltproc && git clone https://github.com/htacg/tidy-html5.git && cd tidy-html5 && cd build/cmake && cmake ../.. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIB:BOOL=OFF && make && sudo make install' \
+	'gem install travis'
