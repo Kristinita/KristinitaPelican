@@ -7,9 +7,11 @@
 # [WARNING] Generator is outdated, you get a waning in console:
 # “npm WARN grunt-humans-txt@0.2.1 requires a peer of grunt@~0.4.1 but none is installed. You must install peer dependencies yourself.”
 # https://github.com/roughcoder/grunt-humans-txt/pull/7
-# Use @robinpokorny version:
+# @robinpokorny version:
 # https://stackoverflow.com/a/21918559/5951529
 # https://github.com/roughcoder/grunt-humans-txt/issues/3#issuecomment-375207928
+# I use my own fork. Reasons:
+# https://github.com/Kristinita/grunt-humans-txt/blob/master/README.md
 # [NOTE] Needs “module.exports = (grunt) ->” instead of “module.exports =”, that don't get an error:
 # “ReferenceError: grunt is not defined”
 module.exports = (grunt) ->

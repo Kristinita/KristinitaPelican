@@ -24,6 +24,7 @@ Customcss: false
 1. [Overview](#overview)
 1. [Audience](#audience)
 1. [Relevance](#relevance)
+1. [Features](#features)
 1. [Sublime Text console](#sublime-text-console)
 	1. [Console actions](#console-actions)
 1. [How to get current …](#how-to-get-current-…)
@@ -65,17 +66,25 @@ Article, how you can to obtain some variable parameters for your Sublime Text. I
 <a id="audience"></a>
 # Audience
 
-Inexperienced Sublime Text users.
+Sublime Text users:
+
++ Inexperienced
++ Which help inexperienced users
 
 <a id="relevance"></a>
 # Relevance
 
 This article is relevant for April 2018. In the future, the data in this article may be obsolete.
 
+<a id="features"></a>
+# Features
+
++ Data of this article cross platform. They are relevance for Windows, macOS and Linux users.
+
 <a id="sublime-text-console"></a>
 # Sublime Text console
 
-+ [“Sublime Text is Programmable”](http://docs.sublimetext.info/en/latest/basic_concepts.html#sublime-text-is-programmable),
++ [“Sublime Text is Programmable”](http://docs.sublimetext.info/en/latest/basic_concepts.html#sublime-text-is-programmable)
 + [“What is the purpose of Console in Sublime Text editor?”](https://softwareengineering.stackexchange.com/q/164225/264224)
 
 <a id="console-actions"></a>
@@ -85,15 +94,15 @@ This article is relevant for April 2018. In the future, the data in this article
 
 **Example**: **if** you want to know your syntax, `#!bash $parameter` is *Syntax*; **else** theme, `#!bash $parameter` is *Theme* and so on.
 
-1. open Sublime Text;
-1. open file whose `#!bash $parameter` you want to know;
-1. place your caret before symbol whose `#!bash $parameter` you want to know;
+1. open Sublime Text
+1. open file whose `#!bash $parameter` you want to know
+1. place your caret before symbol whose `#!bash $parameter` you want to know
 
 	!!! caution
 		Please, do not confuse [caret](https://www.computerhope.com/jargon/t/textcurs.htm) and [mouse pointer](https://www.computerhope.com/jargon/m/mouspoin.htm).
 
-1. open [Sublime Text console](https://stackoverflow.com/q/13965877/5951529);
-1. paste method from `#!bash $parameter` section to Sublime Text console input area → <kbd>Enter</kbd>.
+1. open [Sublime Text console](https://stackoverflow.com/q/13965877/5951529)
+1. paste method from `#!bash $parameter` section to Sublime Text console input area → <kbd>Enter</kbd>
 
 You should obtain console output, **example**:
 
@@ -110,8 +119,8 @@ You should obtain console output, **example**:
 
 [Packages directory](http://docs.sublimetext.info/en/sublime-text-3/basic_concepts.html#the-packages-directory) — *Data/Packages* — path, where stored:
 
-1. [“user packages” except “installed packages”](http://docs.sublimetext.info/en/latest/extensibility/packages.html#types-of-packages) in Sublime Text terminology;
-1. *User* folder, where stored [user settings](https://www.sublimetext.com/docs/3/settings.html).
+1. [“user packages” except “installed packages”](http://docs.sublimetext.info/en/latest/extensibility/packages.html#types-of-packages) in Sublime Text terminology
+1. *User* folder, where stored [user settings](https://www.sublimetext.com/docs/3/settings.html)
 
 <a id="what-should-you-do"></a>
 ### What should you do?
@@ -145,11 +154,11 @@ In some sources ([example](https://stackoverflow.com/a/19158010/5951529)) you ca
 >
 > Linux: *~/.config/sublime-text-3*.
 
-I not recommend this, arguments:
+I'm not recommend this, arguments:
 
-1. it less simple,
-1. in new versions of Sublime Text and/or operating systems paths may be change,
-1. it [doesn't take](http://docs.sublimetext.info/en/sublime-text-3/basic_concepts.html#the-data-directory) portable Sublime Text on Windows.
+1. it less simple
+1. in new versions of Sublime Text and/or operating systems paths may be change
+1. it [doesn't take](http://docs.sublimetext.info/en/sublime-text-3/basic_concepts.html#the-data-directory) portable Sublime Text on Windows
 
 <a id="syntax"></a>
 ## Syntax
@@ -179,13 +188,13 @@ view.settings().get('syntax')
 
 Please, do not confuse theme and color scheme:
 
-1. **color scheme** — file, that design your Sublime Text [syntaxes](#syntax); it zone — area of your opened files;
-1. **theme** — file, that design your Sublime Text UI; almost everyone else, that not highlight color scheme.
+1. **color scheme** — file, that design your Sublime Text [syntaxes](#syntax); it zone — area of your opened files
+1. **theme** — file, that design your Sublime Text UI; almost everyone else, that not highlight color scheme
 
 In image below:
 
-+ color scheme design area in a pink rectangle;
-+ theme — another area, blue rectangle.
++ color scheme design area in a pink rectangle
++ theme — another area, blue rectangle
 
 ![Color scheme and theme](https://i.imgur.com/nwNgLkR.png)
 
@@ -240,14 +249,14 @@ view.settings().get('color_scheme')
 
 [jtable]
 scope|syntax scope|syntax type scope
-source.css meta.property-list.css meta.property-name.css support.type.property-name.css |source.css
+source.css meta.property-list.css meta.property-name.css support.type.property-name.css |source.css|source
 text.html.basic source.css meta.property-list.css meta.property-name.css|source support.type.property-name.css |text.html.basic|text
 kira.genius kira.error |kira.genius|kira
 [/jtable]
 
-+ [Scope vs. scope selector](https://forum.sublimetext.com/t/question-terminology-scope-vs-scope-selector/36039?u=sasha_chernykh),
-+ [Introduction to scopes](http://blog.macromates.com/2005/introduction-to-scopes/),
-+ [“Scope selector” definition](http://manual.macromates.com/en/scope_selectors.html).
++ [Scope vs. scope selector](https://forum.sublimetext.com/t/question-terminology-scope-vs-scope-selector/36039?u=sasha_chernykh)
++ [Introduction to scopes](http://blog.macromates.com/2005/introduction-to-scopes/)
++ [“Scope selector” definition](http://manual.macromates.com/en/scope_selectors.html)
 
 <a id="what-should-you-do-4"></a>
 ### What should you do?
@@ -299,5 +308,5 @@ view.scope_name(0).split()[0]
 <a id="external-links"></a>
 # External links
 
-+ [Sublime Text 3 API Reference](https://www.sublimetext.com/docs/3/api_reference.html),
-+ [“Writing Sublime Plugins”](https://leanpub.com/writing-sublime-plugins) book.
++ [Sublime Text 3 API Reference](https://www.sublimetext.com/docs/3/api_reference.html)
++ [“Writing Sublime Plugins”](https://leanpub.com/writing-sublime-plugins) book

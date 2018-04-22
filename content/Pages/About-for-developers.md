@@ -222,7 +222,7 @@ File for checking tool, if I use non-default rules.
 
 For **each** custom option I add comment, why I doesn't use default option.
 
-If *—* in this column, I use default checking tool configuration.
+If *—* symbol in this column, I use default checking tool configuration.
 
 <a id="validation-table"></a>
 ## Validation table

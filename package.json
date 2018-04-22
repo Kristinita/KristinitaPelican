@@ -48,7 +48,7 @@
 		"grunt-git-them-all": "0.0.13",
 		"grunt-html5-validate": "^0.1.1",
 		"grunt-htmltidy": "^0.2.2",
-		"grunt-humans-txt": "github:roughcoder/grunt-humans-txt",
+		"grunt-humans-txt": "github:Kristinita/grunt-humans-txt",
 		"grunt-indentator": "^0.1.4",
 		"grunt-jsbeautifier": "^0.2.13",
 		"grunt-license-finder": "^2.0.0",

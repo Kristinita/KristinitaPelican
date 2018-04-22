@@ -14,13 +14,16 @@ module.exports =
 		dest: "<%= templates.paths.output_path %>/"
 	# Different file types
 	extra:
-		src: "<%= templates.paths.output_path %>/extra/*"
+		src: [
+			"<%= templates.paths.output_path %>/extra/opensearch.xml"
+			"<%= templates.paths.output_path %>/extra/README.md"
+		]
 		dest: "<%= templates.paths.output_path %>/"
 	# Move licenses of all npm/Grunt and Python packages
 	licenses:
 		src: [
-			'grunt-and-npm.csv'
-			'python.md'
+			"grunt-and-npm.csv"
+			"python.md"
 		]
 		# [NOTE] Use “licenses/”, not “licenses”, otherwise a file “licenses” will create
 		# [NOTE] grunt-move create a needest folder, if no
@@ -32,5 +35,5 @@ module.exports =
 	# 1. license-generator doesn't generate license in non-root folder,
 	# 2. root folder already have “LICENSE.md” file for sources.
 	outputlicense:
-		src: 'LICENSE'
+		src: "LICENSE"
 		dest: "<%= templates.paths.output_path %>/LICENSE.md"

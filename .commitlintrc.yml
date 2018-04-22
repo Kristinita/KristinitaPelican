@@ -129,6 +129,8 @@ rules:
       - ci
       # Changes to the build process or auxiliary tools and libraries such as documentation generation
       - chore
+      # Building tools changes (example scopes: grunt, gulp)
+      - build
       # Reverts a previous commit
       - revert
       # Personal types:
