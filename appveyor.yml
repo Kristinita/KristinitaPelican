@@ -12,23 +12,23 @@ clone_depth: 1
 
 init:
 - setx PIPENV_VENV_IN_PROJECT 1
-  # Use “CALL Refreshenv.cmd” for local installation:
-  # https://github.com/chocolatey/choco/issues/1461#issuecomment-348136706
-  # https://ss64.com/nt/call.html
+# Use “CALL Refreshenv.cmd” for local installation:
+# https://github.com/chocolatey/choco/issues/1461#issuecomment-348136706
+# https://ss64.com/nt/call.html
 - refreshenv
-  # Needs, because will get messages as:
-  # «flake8 is not recognized»
-  # https://github.com/ogrisel/python-appveyor-demo/blob/master/appveyor.yml
-  # Python 2 by default, see:
-  # https://www.appveyor.com/docs/build-environment/#python
-  # https://ci.appveyor.com/project/Kristinita/erichek/build/1.0.3
+# Needs, because will get messages as:
+# «flake8 is not recognized»
+# https://github.com/ogrisel/python-appveyor-demo/blob/master/appveyor.yml
+# Python 2 by default, see:
+# https://www.appveyor.com/docs/build-environment/#python
+# https://ci.appveyor.com/project/Kristinita/erichek/build/1.0.3
 - SET PATH=%PYTHON%;%PYTHON%\Scripts;%PATH%
-  # Needs AppVeyor console set, see:
-  # https://stackoverflow.com/a/48093971/5951529
+# Needs AppVeyor console set, see:
+# https://stackoverflow.com/a/48093971/5951529
 - set PYTHONIOENCODING=utf-8
-  # Set latest Ruby version at the time:
-  # https://www.appveyor.com/docs/lang/ruby/
-  # https://www.appveyor.com/docs/build-environment/#ruby
+# Set latest Ruby version at the time:
+# https://www.appveyor.com/docs/lang/ruby/
+# https://www.appveyor.com/docs/build-environment/#ruby
 - set PATH=C:\Ruby25-x64\bin;%PATH%
 
 environment:
@@ -47,23 +47,32 @@ environment:
     PYTHON_ARCH: 64
     GRUNT_COMMAND: publish
 
+# [NOTE] I'm doesn't support 32-bit Windows:
+# https://www.appveyor.com/docs/appveyor-yml/
 platform: x64
 
 # Build configuration:
 # https://www.appveyor.com/docs/build-configuration/#build-pipeline
 install:
-  # That script run for “master” branch, not for “HEAD”;
-  # Needs, that “grunt-checkbranch” works correct:
-  # https://stackoverflow.com/a/18866140/5951529
-  # Needs in “install” section, because in “init” section actions before cloning:
+# That script run for “master” branch, not for “HEAD”;
+# Needs, that “grunt-checkbranch” works correct:
+# https://stackoverflow.com/a/18866140/5951529
+# Needs in “install” section, because in “init” section actions before cloning.
 - git checkout master
-  # [WARNING] npm parallel doesn't work, example:
-  # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.25/job/70x5h1qq2d6j8gyp
-  # [WARNING] start command doesn't work without batch file:
-  # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.31
-  # Project folder:
-  # https://github.com/vim/vim-win32-installer/blob/master/appveyor.yml
-- '%APPVEYOR_BUILD_FOLDER%/ci/appveyor-install.bat'
+# [NOTE] Console (cmd.exe) is default terminal.
+# If needs PowerShell, “ps:” required:
+# https://www.appveyor.com/docs/appveyor-yml/
+# [WARNING] For local Scoop installation must be required:
+# “Set-ExecutionPolicy RemoteSigned -scope CurrentUser”
+# http://scoop.sh/
+- ps: iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+# [WARNING] npm parallel doesn't work, example:
+# https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.25/job/70x5h1qq2d6j8gyp
+# [WARNING] start command doesn't work without batch file:
+# https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.31
+# Project folder:
+# https://github.com/vim/vim-win32-installer/blob/master/appveyor.yml
+- '%APPVEYOR_BUILD_FOLDER%/batch/appveyor-install.bat'
 
 build_script:
 - grunt %GRUNT_COMMAND%

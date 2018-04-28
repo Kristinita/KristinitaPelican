@@ -5,22 +5,44 @@
 # https://travis-ci.org/
 # [WARNING] “group: travis_latest” doesn't work at April 2018, read end of article:
 # https://blog.travis-ci.com/2017-12-01-new-update-schedule-for-linux-build-images
-# Don't download all repository history, that save a time:
-# https://docs.travis-ci.com/user/customizing-the-build/#Git-Clone-Depth
-git:
-  depth: 1
 
 # Trusty by default:
 # https://stackoverflow.com/a/21133609/5951529
 # https://blog.travis-ci.com/2017-07-11-trusty-as-default-linux-is-coming
 # Travis CI doesn't support 32-bit platforms:
 # https://stackoverflow.com/a/37087813/5951529
+# I use Trusty with sudo required:
+# https://docs.travis-ci.com/user/reference/overview/#Virtualisation-Environment-vs-Operating-System
+# Possibly, Trusty — more modern, so by default:
+# https://docs.travis-ci.com/user/reference/trusty/#Image-differences-from-Precise
+# https://blog.travis-ci.com/2017-08-31-trusty-as-default-status
+
+# Needs for correct APT addon usage:
+# https://docs.travis-ci.com/user/reference/overview/
+# Diff:
+# https://travis-ci.org/Kristinita/SashaScrutinizer/builds/370138075
+# https://travis-ci.org/Kristinita/SashaScrutinizer/builds/370122401
+sudo: enabled
+
+# Don't download all repository history, that save a time:
+# https://docs.travis-ci.com/user/customizing-the-build/#Git-Clone-Depth
+git:
+  depth: 1
+
+# Needs “language: bash” for multilanguage projects:
+# https://github.com/travis-ci/travis-ci/issues/4895
+# https://github.com/travis-ci/docs-travis-ci-com/issues/910
+# But that use latest Python 3 version, not Python 2, you need “language: python” or
+# install Python via APT addon:
+# https://stackoverflow.com/a/37660551/5951529
+# https://travis-ci.org/Kristinita/SashaScrutinizer/builds/370118828
+# https://github.com/travis-ci/travis-ci/issues/9180
 language: python
 
 python: 3.6
 
 # Multiple scripts
-# http://bit.ly/2ow2DvL
+# https://docs.travis-ci.com/user/speeding-up-the-build/#Parallelizing-your-builds-across-virtual-machines
 env:
 # “grunt default” = “grunt”;
 # Travis CI support blank value.
@@ -32,6 +54,32 @@ env:
 # https://stackoverflow.com/a/34384262/5951529
 # Exit codes:
 # https://docs.travis-ci.com/user/customizing-the-build/#Breaking-the-Build
+
+# Addons:
+# https://docs.travis-ci.com/user/addons/
+# APT addon:
+# https://docs.travis-ci.com/user/installing-dependencies/#Installing-Packages-with-the-APT-Addon
+# APT sources whitelist:
+# https://github.com/travis-ci/apt-source-whitelist
+# APT package whitelist:
+# https://github.com/travis-ci/apt-package-whitelist
+# [NOTE] ShellCheck default in Travis CI configuration:
+# https://github.com/koalaman/shellcheck#travis-ci
+addons:
+  apt:
+    packages:
+    - parallel
+    # For HTML Tidy building:
+    # https://askubuntu.com/a/1027128/582218
+    - xsltproc
+
+# Cache not needed for this project.
+# Cache needs, when 1 job install dependencies, another jobs runs test, using the cache:
+# https://docs.travis-ci.com/user/build-stages/warm-cache/
+# Cache upload after “script” phase:
+# https://docs.travis-ci.com/user/caching/#Build-phases
+# Cache doesn't save between “images” — new builds: new virtual machine for each build:
+# https://docs.travis-ci.com/user/caching/#Things-not-to-cache
 
 before_install:
 # Virtual environment inside project directory:
@@ -50,11 +98,11 @@ before_install:
 - git config --global core.quotePath false
 
 install:
-# [NOTE] Parallelshell works, but no time economy, compare:
+# [NOTE] Parallelshell works, but no time economy, diff:
 # https://travis-ci.org/Kristinita/SashaPelicanTest/jobs/347254717
 # https://travis-ci.org/Kristinita/SashaPelicanTest/jobs/347267767
 - sudo apt-get install parallel
-- bash ci/travis-install.sh
+- bash bash/travis-install.sh
 
 script:
 - grunt $GRUNT_COMMAND
@@ -83,7 +131,7 @@ deploy:
   provider: pages
   on:
     branch: master
-    # Deploy site, only if “grunt publish”, if “grunt” — not deploy:
+    # Deploy site, if “grunt publish”, else “grunt” — not deploy:
     # https://docs.travis-ci.com/user/deployment#Conditional-Releases-with-on%3A
     condition: $GRUNT_COMMAND = publish
   # [DONE]

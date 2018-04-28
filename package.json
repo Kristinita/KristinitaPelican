@@ -30,7 +30,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "^6.1.3",
 		"@commitlint/travis-cli": "^6.1.3",
-		"autoprefixer": "^8.3.0",
+		"autoprefixer": "^8.4.1",
 		"browser-sync": "^2.23.7",
 		"bs-html-injector": "^3.0.3",
 		"covgen": "^3.0.2",
@@ -53,7 +53,7 @@
 		"grunt-jsbeautifier": "^0.2.13",
 		"grunt-license-finder": "^2.0.0",
 		"grunt-markdownlint": "^1.1.3",
-		"grunt-move": "^0.1.5",
+		"grunt-move": "^1.0.0",
 		"grunt-newer": "^1.3.0",
 		"grunt-notify": "^0.4.5",
 		"grunt-path-validator": "^2.0.2",

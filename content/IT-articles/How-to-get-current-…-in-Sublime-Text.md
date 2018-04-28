@@ -250,7 +250,7 @@ view.settings().get('color_scheme')
 [jtable]
 scope|syntax scope|syntax type scope
 source.css meta.property-list.css meta.property-name.css support.type.property-name.css |source.css|source
-text.html.basic source.css meta.property-list.css meta.property-name.css|source support.type.property-name.css |text.html.basic|text
+text.html.basic source.css meta.property-list.css meta.property-name.css |text.html.basic|text
 kira.genius kira.error |kira.genius|kira
 [/jtable]
 

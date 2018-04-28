@@ -93,13 +93,19 @@ module.exports =
 			'path_validator']
 	tarv2: ['shell:eclintcheck']
 	#
-	# For only Continuous Integration tasks, “target remote”.
+	# For Continuous Integration tasks, “target remote”.
 	# If task in this secton, please, give reasons, why not local:
 	#
-	# [FIXME] At April 2018 exists only Ruby version of Travis Client →
+	# [NOTE] At April 2018 exists only Ruby version of Travis Client →
 	# user need to install Ruby virtual environment locally:
 	# lint “.travis.yml” — small improvement, that install Ruby virtual environment.
-	tarr1: ['shell:travislint']
+	# ShellCheck needs additional dependency scoop for Windows:
+	# https://github.com/koalaman/shellcheck#installing
+	tarr1: ['shell:shellcheck']
+	# [BUG] Travis Client doesn't recognized APT addon:
+	# https://github.com/travis-ci/travis-yaml/issues/58
+	# https://github.com/travis-ci/travis.rb/issues/422
+	# tarr2: ['shell:travislint']
 	#
 	# For Travis CI specific tasks, not for local or another CI — “target travis”.
 	# If task in this section, please, give reasons, why not local or another CI:

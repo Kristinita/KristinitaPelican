@@ -1,6 +1,8 @@
+#!/bin/bash
 ################
 # GNU Parallel #
 ################
+# Install all Travis CI dependencies for building and validation.
 # Run commands parallel:
 # https://www.gnu.org/software/parallel/
 # [WARNING] On Windows works only in Cygwin, not in default console:
@@ -23,5 +25,5 @@
 # https://github.com/htacg/tidy-html5/issues/721
 parallel ::: 'pip install --upgrade pip && pip install pipenv && pipenv install --dev' \
 	'npm install --global npm && npm install -g grunt-cli && npm install' \
-	'sudo apt-get install xsltproc && git clone https://github.com/htacg/tidy-html5.git && cd tidy-html5 && cd build/cmake && cmake ../.. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIB:BOOL=OFF && make && sudo make install' \
+	'git clone https://github.com/htacg/tidy-html5.git && cd tidy-html5 && cd build/cmake && cmake ../.. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIB:BOOL=OFF && make && sudo make install' \
 	'gem install travis'

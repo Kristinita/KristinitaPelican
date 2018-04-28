@@ -10,6 +10,13 @@
 # Grunt apply for files dynamically:
 # https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
 
+# [DONE]
+# Node.js 10.0.0 bugs:
+# 1. node::contextify::ContextifyScript
+# https://github.com/gulpjs/gulp/issues/2162
+# 2. npm ERR cb() never called
+# https://stackoverflow.com/a/15483897/5951529
+
 ###########################
 ## Loading Grunt plugins ##
 ###########################

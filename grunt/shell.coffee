@@ -82,16 +82,16 @@ module.exports =
 		# https://stackoverflow.com/a/23848087/5951529
 		if process.platform == "win32"
 			# Need quotes, that command run:
-			command: '"tidy/tidy-modify.bat"'
+			command: '"batch/tidy-modify.bat"'
 		else
 			# Fix permission denied:
 			# https://stackoverflow.com/a/46818913/5951529
-			command: 'bash tidy/tidy-modify.sh'
+			command: 'bash bash/tidy-modify.sh'
 	tidyvalidate:
 		if process.platform == "win32"
-			command: '"tidy/tidy-validate.bat"'
+			command: '"batch/tidy-validate.bat"'
 		else
-			command: 'bash tidy/tidy-validate.sh'
+			command: 'bash bash/tidy-validate.sh'
 
 
 	############
@@ -100,7 +100,7 @@ module.exports =
 	# Generate Code of conduct for project:
 	# https://contributor-covenant.org/
 	# https://www.npmjs.com/package/covgen
-	# [WARNING] Generate “CODE_OF_CONDUCT.md” only for root folder:
+	# [WARNING] Generate “CODE_OF_CONDUCT.md” for root folder:
 	# https://github.com/simonv3/covenant-generator/issues/15
 	# [WARNING] Unobfuscated plain text e-mail:
 	# https://github.com/ContributorCovenant/contributor_covenant/issues/523
@@ -172,3 +172,16 @@ module.exports =
 	# https://www.npmjs.com/package/license-generator
 	licensegenerator:
 		command: "npx license-generator install mit -n \"Sasha Chernykh\""
+
+
+	##############
+	# ShellCheck #
+	##############
+	# Check “.sh” files:
+	# https://www.shellcheck.net/
+	shellcheck:
+		if process.platform == "win32"
+			command: '"batch/shellcheck.bat"'
+		else
+			command: 'bash bash/shellcheck.sh'
+

@@ -1,8 +1,8 @@
 @REM @Author: Kristinita
 @REM @Date:   2018-03-07 14:57:34
 @REM @Last Modified by:   Kristinita
-@REM Modified time: 2018-04-13 18:41:43
-@REM Validation all HTML files.
+@REM Modified time: 2018-04-28 08:35:35
+@REM HTML Tidy — validation all HTML files.
 @ECHO off
 @REM For correct displaying Cyrillic filenames
 CHCP 65001
