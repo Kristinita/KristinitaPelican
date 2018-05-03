@@ -7,11 +7,15 @@
 module.exports =
 	options:
 		html:
-			indentWithTabs: true
 			endWithNewline: true
+			indentWithTabs: true
+			# [BUG] This parameter required:
+			# https://github.com/vkadam/grunt-jsbeautifier/issues/64
+			wrapLineLength: 0
 		css:
-			indentWithTabs: true
 			endWithNewline: true
+			indentWithTabs: true
+			wrapLineLength: 0
 	files: [
 			"<%= templates.paths.html %>"
 			"<%= templates.paths.css %>"

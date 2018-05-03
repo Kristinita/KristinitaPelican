@@ -24,7 +24,8 @@ module.exports =
 		# First configure your SASHASHORTCOMMITDESCRIPTION and SASHALONGCOMMITDESCRIPTION variables:
 		# SET SASHASHORTCOMMITDESCRIPTION=<your short commit description>
 		# SET SASHALONGCOMMITDESCRIPTION=<your long commit description>
-		if process.platform == "win32"
+		# [NOTE] Needs “is” instead of “==”
+		if process.platform is "win32"
 			command: 'commit -m "%SASHASHORTCOMMITDESCRIPTION%" -m "%SASHALONGCOMMITDESCRIPTION%"'
 		# Set variable only for current shell:
 		# https://askubuntu.com/a/58828/582218

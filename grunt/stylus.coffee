@@ -6,7 +6,8 @@
 module.exports =
 	options:
 		compress: false
-		# linenos not save comments, linenos add extra constructions as “/* line 479 : D:\Kristinita\output\theme\stylus\sections\core-design.styl */”. So false.
+		# linenos not save comments, linenos add extra constructions as “/* line 479 :
+		# D:\Kristinita\output\theme\stylus\sections\core-design.styl */”. So false.
 		linenos: false
 	themecompile:
 		files: [

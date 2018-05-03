@@ -5,7 +5,8 @@
 # https://www.npmjs.com/package/grunt-browser-sync
 module.exports =
 	bsFiles:
-		src : ['<%= templates.paths.theme %>/css/**/*.css', '<%= templates.paths.theme %>/css/**/**/*.css', '<%= templates.paths.theme %>/js/**/*.js']
+		src : ['<%= templates.paths.theme %>/css/**/*.css', '<%= templates.paths.theme %>/css/**/**/*.css', \
+				'<%= templates.paths.theme %>/js/**/*.js']
 	options:
 		# Doesn't open “http://localhost:3001/” tab, when BrowserSync start:
 		# https://browsersync.io/docs/options#option-open
@@ -25,7 +26,8 @@ module.exports =
 			# JavaScript needs refresh:
 			# https://stackoverflow.com/q/30762114/5951529
 			# If I change HTML or CSS in HTML file, I need save file, that to see changes in browser.
-			# Else I change JavaScript in HTML file, I need save file 2 times, that HTML page reload in browser and I can to see changes in browser.
+			# Else I change JavaScript in HTML file, I need save file 2 times,
+			# that HTML page reload in browser and I can to see changes in browser.
 			module: "bs-html-injector"
 			options:
 				files: "<%= templates.paths.html %>"

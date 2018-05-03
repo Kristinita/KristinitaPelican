@@ -22,12 +22,16 @@ module.exports =
 			# no line breaks between them!
 			{
 			pattern: /(<pre>)(((.|\n|\r)+?)?)(<\/pre>((\s+?)?)<\/div>)/g
-			replacement: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="https://kristinita.ru/theme/images/interface-images/clippy.svg" alt="Clipboard button" width="13"></button>$2$5'
+			replacement: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" \
+							src="https://kristinita.ru/theme/images/interface-images/clippy.svg" \
+							alt="Clipboard button" width="13"></button>$2$5'
 			}
 			# Fancybox and JQueryLazy images
 			{
 			pattern: /<img alt="([^"]+?)" src="(.+?)"( \/)?>/g
-			replacement: '<a class="fancybox" href="$2"><img class="SashaLazy" src="https://kristinita.ru//theme/images/interface-images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
+			replacement: '<a class="fancybox" href="$2"><img class="SashaLazy" \
+							src="https://kristinita.ru//theme/images/interface-images/transparent-one-pixel.png" \
+							data-src="$2" alt="$1"></a>'
 			}
 			# # GitCDN
 			# # https://github.com/schme16/gitcdn.xyz

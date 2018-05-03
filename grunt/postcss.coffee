@@ -13,4 +13,5 @@ module.exports =
 			require('autoprefixer')()
 		]
 	dist:
-		src: ["<%= templates.yamlconfig.output_path %>/<%= templates.paths.theme_static_dir %>/css/**/*.css", "<%= templates.paths.output_path %>/css/personal/**/*.css"]
+		src: ["<%= templates.yamlconfig.output_path %>/<%= templates.paths.theme_static_dir %>/css/**/*.css", \
+				"<%= templates.paths.output_path %>/css/personal/**/*.css"]

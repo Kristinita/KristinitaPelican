@@ -5,7 +5,8 @@
 # https://www.npmjs.com/package/grunt-real-favicon
 module.exports =
 	favicons:
-		src: "<%= templates.yamlconfig.theme %>/<%= templates.yamlconfig.theme_static_paths %>/images/icons/kristinita-favicon.png"
+		src: "<%= templates.yamlconfig.theme %>/<%= templates.yamlconfig.theme_static_paths %>\
+				/images/icons/kristinita-favicon.png"
 		dest: "output"
 		options:
 			iconsPath: "."

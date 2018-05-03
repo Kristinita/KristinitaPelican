@@ -14,6 +14,8 @@ Tooltipster: false
 ClipboardJs: true
 Noco: 1EBY
 
+[Sacagawea](Sacagawea)
+
 <h2>Preamble</h2>
 <br /> All comments on <a href="http://jmp.sh/xasKD18">this</a> (<a href="https://docs.zoho.com/file/nqgo4e3473558e032489e9dc3bceb3db16723">alternate link</a>) version of the book «Sublime Text Power User», bold numbers — numbers of pages your book. I admit that many of my notes are not your mistakes and typos, and I do not understand something, or affect my poor knowledge of the English language, but I beg to review my notes. Please ask me for clarification if you do not understand the phrase in my bad English. I use Windows 10 Education, Sublime Text 3 Build 3114 and all my notes belong to Windows.
 <br />

@@ -6,14 +6,47 @@
 # YAML — is official extension:
 # http://yaml.org/faq.html
 
+
+# [NOT RECOMMEND CHANGE]
+# Default Pelican values for settings.
+# Not recommended change it without the need.
+# http://docs.getpelican.com/en/stable/settings.html
 # Source path
 path: content
 # Build path
 output_path: output
 # Theme path
-theme: 'themes/sashapelican'
+theme: themes/sashapelican
 # Theme directory in the output path
 theme_static_dir: theme
 # Static paths in theme
 theme_static_paths:
-  - static
+- static
+# Plugin paths
+plugin_paths:
+- pelican-plugins
+# Cache path
+cache_path: pelican_cache
+
+
+# [CHANGE it]
+# Custom settings, change it
+author: Саша Черных
+sitename: Поиск Кристиниты
+timezone: Europe/Moscow
+default_lang: en
+# Site URL. Absolute path for publishing.
+siteurl: https://kristinita.ru
+page_paths:
+- Pages
+article_paths:
+- Gingerinas
+- Giologica
+- IT-articles
+- Life-hacks
+- Programs
+- Smert-svobode
+- Sasha-Black
+- Sublime-Text
+# GitHub repository URL of this source:
+github_url: https://github.com/Kristinita/KristinitaPelican

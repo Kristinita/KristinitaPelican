@@ -3,6 +3,7 @@
 ################
 # Configuration for Autoprefixer, stylelint and some another tools:
 # https://github.com/browserslist/browserslist
+# Unofficial site:
 # http://browserl.ist/
 
 # Last 2 versions of any browser:

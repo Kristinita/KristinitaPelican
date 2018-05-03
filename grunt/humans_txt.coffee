@@ -4,8 +4,9 @@
 # Generate humans.txt file:
 # https://www.npmjs.com/package/grunt-humans-txt
 # http://humanstxt.org/
-# [WARNING] Generator is outdated, you get a waning in console:
-# “npm WARN grunt-humans-txt@0.2.1 requires a peer of grunt@~0.4.1 but none is installed. You must install peer dependencies yourself.”
+# [WARNING] Generator outdated, you get a warning in console:
+# “npm WARN grunt-humans-txt@0.2.1 requires a peer of grunt@~0.4.1 but none is installed.
+# You must install peer dependencies yourself.”
 # https://github.com/roughcoder/grunt-humans-txt/pull/7
 # @robinpokorny version:
 # https://stackoverflow.com/a/21918559/5951529

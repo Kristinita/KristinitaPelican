@@ -61,7 +61,9 @@
 # 		## http://stackoverflow.com/a/33758293/5951529
 # 		# {
 # 		#   from: /<pre><code class="(.+?)">((.|\n|\r)+?)<\/code><\/pre>/g
-# 		#   to: '<pre><code data-language="$1">$2</code><button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="../images/interface_images/clippy.svg" alt="Clipboard button" width="13"></button></pre>'
+# 		#   to: '<pre><code data-language="$1">$2</code><button class="SashaButton SashaTooltip">\
+# 		<img class="SashaNotModify" src="../images/interface_images/clippy.svg" \
+# 		alt="Clipboard button" width="13"></button></pre>'
 # 		# }
 # 		# Clipboard.js + Tooltipster for SuperFences
 # 		# http://ru.stackoverflow.com/a/582520/199934
@@ -69,10 +71,14 @@
 # 		# <button> and <img> tags must be in one line;
 # 		# no line breaks between them!
 # 			from: /(<pre>)((.|\n|\r)+?)(<\/pre>(\s+?)<\/div>)/g
-# 			to: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface-images/clippy.svg" alt="Clipboard button" width="13"></button>$2$4'
+# 			to: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" \
+# 			src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface-images/clippy.svg" \
+# 			alt="Clipboard button" width="13"></button>$2$4'
 # 		# Fancybox and JQueryLazy images,
 # 			from: /<img alt="([^"]+?)" src="(.+?)"( \/)?>/g
-# 			to: '<a class="fancybox" href="$2"><img class="SashaLazy" src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface-images/transparent-one-pixel.png" data-src="$2" alt="$1"></a>'
+# 			to: '<a class="fancybox" href="$2"><img class="SashaLazy" \
+# 			src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface-images/transparent-one-pixel.png" \
+# 			data-src="$2" alt="$1"></a>'
 # 		# GitCDN
 # 		# https://github.com/schme16/gitcdn.xyz
 # 			from: /http:\/\/kristinita.ru\/(.+?)\.(js|css|ico|xml)/g

@@ -80,7 +80,7 @@ module.exports =
 	tidymodify:
 		# Platform-specific tasks:
 		# https://stackoverflow.com/a/23848087/5951529
-		if process.platform == "win32"
+		if process.platform is "win32"
 			# Need quotes, that command run:
 			command: '"batch/tidy-modify.bat"'
 		else
@@ -88,7 +88,7 @@ module.exports =
 			# https://stackoverflow.com/a/46818913/5951529
 			command: 'bash bash/tidy-modify.sh'
 	tidyvalidate:
-		if process.platform == "win32"
+		if process.platform is "win32"
 			command: '"batch/tidy-validate.bat"'
 		else
 			command: 'bash bash/tidy-validate.sh'
@@ -160,7 +160,8 @@ module.exports =
 	# [BUG] 2 blank lines in end of file “CODE_OF_CONDUCT.md”, needs fix it:
 	# https://github.com/ContributorCovenant/contributor_covenant/issues/528
 	eclintfix:
-		command: "npx eclint fix CODE_OF_CONDUCT.md && cd <%= templates.paths.output_path %> && npx eclint fix && cd <%= templates.paths.cwd %>"
+		command: "npx eclint fix CODE_OF_CONDUCT.md && cd <%= templates.paths.output_path %> \
+					&& npx eclint fix && cd <%= templates.paths.cwd %>"
 	eclintcheck:
 		command: "cd <%= templates.paths.output_path %> && npx eclint check && cd <%= templates.paths.cwd %>"
 
@@ -180,8 +181,7 @@ module.exports =
 	# Check “.sh” files:
 	# https://www.shellcheck.net/
 	shellcheck:
-		if process.platform == "win32"
+		if process.platform is "win32"
 			command: '"batch/shellcheck.bat"'
 		else
 			command: 'bash bash/shellcheck.sh'
-

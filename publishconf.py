@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-04-13 13:47:19
+# @Last Modified time: 2018-04-30 10:30:13
 """Pelican configuration file.
 
 For publishing. pelicanconf.py — for development.
 """
-
 # [WARNING] Close all files from “output” folder in all programs,
 # that “pelican -s publishconfig.py” run without warnings and errors.
 
@@ -32,8 +31,7 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # Absolute path, if site publish
 # Don't use relative paths for publishing!
-
-SITEURL = 'https://kristinita.ru'
+SITEURL = YAMLCONFIG['siteurl']
 RELATIVE_URLS = False
 
 PLUGINS = [
@@ -60,7 +58,6 @@ LOAD_CONTENT_CACHE = False
 # ****************************************************************************
 
 # Feed generation, perhaps, not desired when developing
-
 FEED_DOMAIN = SITEURL
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
@@ -72,7 +69,6 @@ AUTHOR_FEED_RSS = None
 # Feed summary — short RSS feed by content «Summary» metadata tag
 # https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
 # [Deprecated] — https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
-
 FEED_USE_SUMMARY = True
 
 
@@ -89,5 +85,5 @@ FEED_USE_SUMMARY = True
 
 # Following items are often useful when publishing
 
-# DISQUS_SITENAME = ""
-# GOOGLE_ANALYTICS = ""
+# DISQUS_SITENAME = ''
+# GOOGLE_ANALYTICS = ''

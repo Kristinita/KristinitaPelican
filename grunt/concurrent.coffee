@@ -69,8 +69,8 @@ module.exports =
 	tarp7: ['postcss'
 			'string-replace']
 	tarp8: ['shell:tidymodify']
-	tarp9: ['shell:eclintfix']
-	tarp10: ['jsbeautifier']
+	tarp9: ['jsbeautifier']
+	tarp10: ['shell:eclintfix']
 	tarp11: ['notify:deploy']
 	#
 	# For updating dependencies, “target update”.
@@ -86,7 +86,8 @@ module.exports =
 	# For validating sources, “target sources”.
 	#
 	#
-	tars1: ['markdownlint']
+	tars1: ['coffeelint'
+			'markdownlint']
 	# For validating output, “target validate”.
 	#
 	tarv1: ['shell:tidyvalidate'
@@ -96,7 +97,7 @@ module.exports =
 	# For Continuous Integration tasks, “target remote”.
 	# If task in this secton, please, give reasons, why not local:
 	#
-	# [NOTE] At April 2018 exists only Ruby version of Travis Client →
+	# [NOTE] At April 2018 exists only Ruby version of Travis Client, →
 	# user need to install Ruby virtual environment locally:
 	# lint “.travis.yml” — small improvement, that install Ruby virtual environment.
 	# ShellCheck needs additional dependency scoop for Windows:

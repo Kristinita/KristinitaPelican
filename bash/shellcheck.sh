@@ -2,7 +2,7 @@
 # @Author: Kristinita
 # @Date:   2018-04-28 07:38:29
 # @Last Modified by:   Kristinita
-# @Last Modified time: 2018-04-28 08:52:34
+# @Last Modified time: 2018-04-28 12:15:08
 ##############
 # ShellCheck #
 ##############
@@ -18,7 +18,7 @@
 shopt -s globstar
 validall=true
 for f in bash/*.sh; do
-	if shellcheck -a "$f"; then
+	if shellcheck "$f"; then
 		echo "$f" valid
 	else
 		validall=false
