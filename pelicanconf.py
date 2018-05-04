@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-05-02 19:39:02
+# @Last Modified time: 2018-05-04 11:53:10
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -26,7 +26,11 @@ import yaml
 SITEURL = '.'
 
 # Configuration from YAML files.
-YAMLCONFIG = yaml.load(open('pelicanvariables.yaml'))
+# [BUG] Needs add encoding for AppVeyor:
+# https://stackoverflow.com/a/16347110/5951529
+# https://github.com/appveyor/ci/issues/2129
+# https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/jhtr2opsnckg214g
+YAMLCONFIG = yaml.load(open('pelicanvariables.yaml', encoding='utf-8'))
 
 PATH = YAMLCONFIG['path']
 OUTPUT_PATH = YAMLCONFIG['output_path']
@@ -341,7 +345,7 @@ MARKDOWN = {
         'pymdownx.highlight': {},
         'pymdownx.inlinehilite': {
             'css_class': 'SashaInlineHighlight',
-            'style_plain_text': True,
+            'style_plain_text': True
             # [DEPRECATED] in 3.0 pymdown-extensions version
             # 'use_codehilite_settings': False,
         },
@@ -361,7 +365,7 @@ MARKDOWN = {
             'css_class': 'SashaBlockHighlight',
             # Doesn't convert tabs to spaces in code blocks:
             # https://github.com/marionebl/commitlint/issues/316
-            'preserve_tabs': True,
+            'preserve_tabs': True
         },
         'pymdownx.tilde': {},
         #
@@ -373,7 +377,7 @@ MARKDOWN = {
         'md_environ.environ': {},
         'mdx_cite': {},
         'mdx_custom_span_class': {},
-        'pyembed.markdown': {},
+        'pyembed.markdown': {}
     },
     'output_format': 'html5',
 }

@@ -31,9 +31,6 @@
 	"no_empty_param_list": {
 		"level": "warn"
 	},
-	"no_implicit_parens": {
-		"level": "warn"
-	},
 	"no_interpolation_in_single_quotes": {
 		"level": "warn"
 	},
@@ -68,6 +65,9 @@
         "value": 120
     },
 	"no_implicit_braces": {
+		"level": "ignore"
+	},
+	"no_implicit_parens": {
 		"level": "ignore"
 	},
     "no_tabs": {

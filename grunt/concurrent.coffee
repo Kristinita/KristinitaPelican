@@ -29,7 +29,8 @@ module.exports =
 	# grunt-newer check, that your source (src) not change and doesn't run build process.
 	tarb1: ['shell:generate']
 	tarb2: ['newer:move']
-	tarb3: ['newer:stylus']
+	tarb3: ['newer:coffee'
+			'newer:stylus']
 	# [BUG] grunt-newer doesn't work with purifycss:
 	# Warning: Cannot read property 'forEach' of undefined Use --force to continue.
 	# https://github.com/purifycss/grunt-purifycss/issues/26
@@ -61,6 +62,7 @@ module.exports =
 			'shell:piplicenses']
 	tarp4: ['move']
 	tarp5: ['stylus'
+			'coffee'
 			'unused'
 			'copy']
 	tarp6: ['clean'
@@ -86,21 +88,22 @@ module.exports =
 	# For validating sources, “target sources”.
 	#
 	#
-	tars1: ['coffeelint'
+	tars1: ['coffeelint:source'
 			'markdownlint']
 	# For validating output, “target validate”.
 	#
-	tarv1: ['shell:tidyvalidate'
-			'path_validator']
+	tarv1: ['coffeelint:output'
+			'path_validator'
+			'shell:tidyvalidate']
 	tarv2: ['shell:eclintcheck']
 	#
 	# For Continuous Integration tasks, “target remote”.
 	# If task in this secton, please, give reasons, why not local:
 	#
-	# [NOTE] At April 2018 exists only Ruby version of Travis Client, →
+	# [NOTE] At April 2018 exists Ruby version of Travis Client, not versions for another languages →
 	# user need to install Ruby virtual environment locally:
 	# lint “.travis.yml” — small improvement, that install Ruby virtual environment.
-	# ShellCheck needs additional dependency scoop for Windows:
+	# ShellCheck needs extra dependency scoop for Windows:
 	# https://github.com/koalaman/shellcheck#installing
 	tarr1: ['shell:shellcheck']
 	# [BUG] Travis Client doesn't recognized APT addon:

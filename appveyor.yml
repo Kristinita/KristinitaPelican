@@ -62,7 +62,7 @@ install:
 # [NOTE] Console (cmd.exe) is default terminal.
 # If needs PowerShell, “ps:” required:
 # https://www.appveyor.com/docs/appveyor-yml/
-# [WARNING] For local Scoop installation must be required:
+# [WARNING] For local Scoop installation must required:
 # “Set-ExecutionPolicy RemoteSigned -scope CurrentUser”
 # http://scoop.sh/
 - ps: iex (new-object net.webclient).downloadstring('https://get.scoop.sh')

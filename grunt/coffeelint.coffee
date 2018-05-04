@@ -18,6 +18,7 @@ Custom options:
 “indentation” 1 needs for tabs indentation
 “max_value_length” — https://stackoverflow.com/a/111015/5951529
 “no_implicit_braces” — extra braces
+“no_implicit_parens” — extra parens
 “no_tabs” — I use tabs indentation:
 https://softwareengineering.stackexchange.com/a/72/264224
 “no_unnecessary_double_quotes” ignore, because BetterCoffeeScript
@@ -30,3 +31,6 @@ module.exports =
 	source:
 		files:
 			src: ["grunt/*.coffee"]
+	output:
+		files:
+			src: ["<%= templates.yamlconfig.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/coffee/**/*.coffee"]
