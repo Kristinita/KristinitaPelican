@@ -90,7 +90,7 @@ __[Стоковая прошивка](http://fb.ru/article/254999/stokovaya-pros
 
 ### Установка драйверов
 
-я делал так. С выключенным телефоном заходил в Device Manager → подключил выключенный телефон по USB → в Device Manager на время около секунды появлялся пункт _Ports (COM & LPT)_ → _Preloader USB VCOM Port (COM6)_.
+я делал так. С выключенным телефоном заходил в Device Manager → подключил выключенный телефон по USB → в Device Manager на время около секунды появлялся пункт _Ports (COM &amp; LPT)_ → _Preloader USB VCOM Port (COM6)_.
 
 ![Preloader](https://i.imgur.com/vAN4BIQ.png)
 

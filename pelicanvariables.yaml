@@ -39,6 +39,8 @@ default_lang: en
 siteurl: https://kristinita.ru
 page_paths:
 - Pages
+- 404.md
+- Sasha-Black.md
 article_paths:
 - Gingerinas
 - Giologica
@@ -49,4 +51,5 @@ article_paths:
 - Sasha-Black
 - Sublime-Text
 # GitHub repository URL of this source:
-github_url: https://github.com/Kristinita/KristinitaPelican
+github_sources_url: https://github.com/Kristinita/KristinitaPelican
+github_output_url: https://github.com/Kristinita/Kristinita.github.io

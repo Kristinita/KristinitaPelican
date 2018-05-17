@@ -9,7 +9,7 @@
 @ECHO off
 CHCP 65001
 CD output
-FOR /R %%f IN (*.html) DO tidy -mq --wrap 0 --show-errors 0 --show-warnings 0 %%f
+FOR /R %%f IN (*.html) DO tidy -config ../tidy.conf -modify %%f
 @REM Exit code = 0 in any case:
 @REM https://stackoverflow.com/a/4728151/5951529
 EXIT /b 0

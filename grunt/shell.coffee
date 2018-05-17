@@ -76,7 +76,12 @@ module.exports =
 	###############
 	## HTML Tidy ##
 	###############
-	# HTML Tidy scripts for Unix and Linux
+	# Validate and fix HTMl files:
+	# http://www.html-tidy.org/
+	# Description:
+	# http://api.html-tidy.org/tidy/tidylib_api_next/index.html
+	# Options:
+	# http://api.html-tidy.org/tidy/quickref_next.html
 	tidymodify:
 		# Platform-specific tasks:
 		# https://stackoverflow.com/a/23848087/5951529
@@ -185,3 +190,15 @@ module.exports =
 			command: '"batch/shellcheck.bat"'
 		else
 			command: 'bash bash/shellcheck.sh'
+
+
+	###########
+	# bashate #
+	###########
+	# Check “.sh” files:
+	# https://docs.openstack.org/bashate/latest/readme
+	bashate:
+		if process.platform is "win32"
+			command: '"batch/bashate.bat"'
+		else
+			command: 'bash bash/bashate.sh'

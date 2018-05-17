@@ -16,18 +16,23 @@ Opengraphimage: https://i.imgur.com/2blY7dI.png
 
 <!-- MarkdownTOC -->
 
-1. [Demonstration](#demonstration)
-1. [Pre-installation](#pre-installation)
-	1. [All operating systems](#all-operating-systems)
-	1. [Windows](#windows)
-	1. [UNIX and macOS](#unix-and-macos)
-1. [Installation](#installation)
-	1. [Windows](#windows-1)
-		1. [Terminal selection](#terminal-selection)
-		1. [Batch file](#batch-file)
-	1. [UNIX and macOS](#unix-and-macos-1)
-1. [Build](#build)
+1. [Unsupported](#unsupported)
+1. [Testing](#testing)
+1. [Devices and browsers](#devices-and-browsers)
+1. [Site building](#site-building)
+	1. [Demonstration](#demonstration)
+	1. [Pre-installation](#pre-installation)
+		1. [All operating systems](#all-operating-systems)
+		1. [Windows](#windows)
+		1. [UNIX and macOS](#unix-and-macos)
+	1. [Installation](#installation)
+		1. [Windows](#windows-1)
+			1. [Terminal selection](#terminal-selection)
+			1. [Batch file](#batch-file)
+		1. [UNIX and macOS](#unix-and-macos-1)
+	1. [Build](#build)
 1. [Linting and validation](#linting-and-validation)
+	1. [General rules](#general-rules)
 	1. [Glossary for table heading](#glossary-for-table-heading)
 		1. [Type](#type)
 		1. [Checking tool](#checking-tool)
@@ -38,43 +43,84 @@ Opengraphimage: https://i.imgur.com/2blY7dI.png
 
 <!-- /MarkdownTOC -->
 
+<a id="unsupported"></a>
+# Unsupported
+
+Developer of this site doesn't support:
+
+<!-- [FIXME] Fuck old browser -->
+
+1. Older than 2 last version of each browser
+1. [Any versions](https://www.quora.com/Is-Internet-Explorer-really-as-bad-as-everyone-tries-to-make-out) of [Internet Explorer](https://www.lifewire.com/why-do-people-hate-internet-explorer-3485786)
+1. [JavaScript turn off](https://www.reddit.com/r/webdev/comments/48z7jz/do_you_take_into_account_those_who_disable/d0nxftd/)
+1. [32-bit Windows](https://www.howtogeek.com/56701/htg-explains-whats-the-difference-between-32-bit-and-64-bit-windows-7/)
+
+<a id="testing"></a>
+# Testing
+
+Site tested via [BrowserStack](https://www.browserstack.com) on these devices and latest browsers version at May 2018:
+
++ macOS High Sierra, Safari 11.1
++ [Windows 10 64-bit](https://www.browserstack.com/question/621)
+	+ Firefox
+	+ Opera
+	+ Edge
+	+ Chrome
++ iPhone X
++ iPad 5th
+	+ ([iOS and Safari](https://www.lifewire.com/check-the-version-number-of-safari-446563)) 11
++ Samsung Galaxy S8, Chrome
+
+<a id="devices-and-browsers"></a>
+# Devices and browsers
+
+2 latest stable versions of these browsers:
+
++ Firefox
++ Opera
++ Safari
++ Chrome
+
+<a id="site-building"></a>
+# Site building
+
 <a id="demonstration"></a>
-# Demonstration
+## Demonstration
 
 1. [AppVeyor](https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/1.0.8/job/xupi280mw74lrnnx),
 1. [Travis CI](https://travis-ci.org/Kristinita/KristinitaPelican/jobs/360627297).
 
 <a id="pre-installation"></a>
-# Pre-installation
+## Pre-installation
 
 You must install in your machine latest versions:
 
 <a id="all-operating-systems"></a>
-## All operating systems
+### All operating systems
 
 + Python 3,
 + Node.js,
 + Git (even if you use another VCS).
 
 <a id="windows"></a>
-## Windows
+### Windows
 
 + [Chocolatey](https://chocolatey.org/install#installing-chocolatey).
 
 <a id="unix-and-macos"></a>
-## UNIX and macOS
+### UNIX and macOS
 
 + [GNU Parallel](https://askubuntu.com/a/634835/582218),
 + [HTML Tidy](https://codeyarns.com/2016/06/06/how-to-build-and-install-html-tidy/).
 
 <a id="installation"></a>
-# Installation
+## Installation
 
 <a id="windows-1"></a>
-## Windows
+### Windows
 
 <a id="terminal-selection"></a>
-### Terminal selection
+#### Terminal selection
 
 Run batch file below from:
 
@@ -89,7 +135,7 @@ In Far Manager you need <kbd>F9</kbd> → *Options* → *System settings* → ma
 Environment variables will update automatically in current session, but that apply updated environment variables for another session, you need to make [another actions](https://github.com/FarGroup/FarManager/issues/31).
 
 <a id="batch-file"></a>
-### Batch file
+#### Batch file
 
 **Try** run this batch file:
 
@@ -126,7 +172,7 @@ See comments to the script in files:
 + [appveyor-install.bat](https://github.com/Kristinita/KristinitaPelican/blob/master/ci/appveyor-install.bat).
 
 <a id="unix-and-macos-1"></a>
-## UNIX and macOS
+### UNIX and macOS
 
 **Try** run this shell file:
 
@@ -162,7 +208,7 @@ See comments to the script in files:
 + [travis-install.sh](https://github.com/Kristinita/KristinitaPelican/blob/master/ci/travis-install.sh).
 
 <a id="build"></a>
-# Build
+## Build
 
 For build site run in *KristinitaPelican* folder:
 
@@ -188,6 +234,16 @@ See comments in [files of *grunt* folder](https://github.com/Kristinita/Kristini
 Please, consider this, if you make a pull request.
 
 “Original” — not from third-party frameworks, libraries, packages, scripts and so on. I'm not responsible, if third-party files not valid.
+
+<a id="general-rules"></a>
+## General rules
+
+Accept for all files, if no exceptions.
+
+1. [Tabs, not spaces](https://softwareengineering.stackexchange.com/a/2037/264224)
+1. [Indent size — 4](https://www.quora.com/Why-do-most-developers-prefer-indenting-code-with-2-spaces-instead-of-a-tab/answer/David-Toomey)
+1. [Line lenght — 120 in syntaxes, where needed](https://stackoverflow.com/a/111015/5951529)
+1. [Syntactic sugar](https://www.computerhope.com/jargon/s/syntactic-sugar.htm) welcome
 
 <a id="glossary-for-table-heading"></a>
 ## Glossary for table heading
@@ -239,9 +295,12 @@ supported browsers|[Browserslist](https://github.com/browserslist/browserslist)|
 Python|[Flake8](http://flake8.pycqa.org/en/latest/)|[1](http://flake8.pycqa.org/en/latest/user/configuration.html)|[.flake8](https://github.com/Kristinita/KristinitaPelican/blob/master/.flake8)
 Python|[pydocstyle](http://www.pydocstyle.org/en/latest/usage.html)|[1](http://www.pydocstyle.org/en/latest/usage.html#configuration-files)|—
 Markdown|[Markdownlint](https://www.npmjs.com/package/markdownlint)|[1](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md)|[.markdownlint.yaml](https://github.com/Kristinita/KristinitaPelican/blob/master/.markdownlint.yaml)
-HTML|[HTML Tidy](http://www.html-tidy.org/)|[1](http://api.html-tidy.org/tidy/tidylib_api_next/tidy_config.html)|—
+HTML, CSS, JavaScript (not minified)|[JS Beautifier](http://jsbeautifier.org/)|[1](https://www.npmjs.com/package/js-beautify#options)|[.jsbeautifyrc](https://github.com/Kristinita/KristinitaPelican/blob/master/.jsbeautifyrc)
+HTML|[HTML Tidy](http://www.html-tidy.org/)|[1](http://api.html-tidy.org/tidy/tidylib_api_next/tidy_config.html)|[tidy.conf](https://github.com/Kristinita/KristinitaPelican/blob/master/tidy.conf)
+Stylus|[Stylint](https://simenb.github.io/stylint/)|[1](https://www.npmjs.com/package/stylint#excluding-files-directories-and-code-blocks-from-the-linter)|[.stylintrc](https://github.com/Kristinita/KristinitaPelican/blob/master/.stylintrc) (comments in [stylint.coffee](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/stylint.coffee), because [JSON doesn't support them](https://github.com/SimenB/stylint/issues/434)
 CoffeeScript|[CoffeeLint](http://www.coffeelint.org/)|[1](http://www.coffeelint.org/#options)|[coffeelint.json](https://github.com/Kristinita/KristinitaPelican/blob/master/coffeelint.json) (comments in [coffeelint.coffee](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/coffeelint.coffee), because [JSON doesn't support them](https://github.com/clutchski/coffeelint/issues/638))
 Bash|[ShellCheck](https://www.shellcheck.net/)|[1](https://github.com/koalaman/shellcheck/wiki)|—
+Bash|[bashate](https://docs.openstack.org/bashate/latest/readme)|[1](https://docs.openstack.org/bashate/latest/readme#currently-supported-checks)|[bashate.sh](https://github.com/Kristinita/KristinitaPelican/blob/master/bash/bashate.sh) ([no configuration file for bashate](https://bugs.launchpad.net/bash8/+bug/1395391))
 YAML|[yamllint](http://yamllint.readthedocs.io/en/latest/)|[1](http://yamllint.readthedocs.io/en/latest/configuration.html)|[.yamllint](https://github.com/Kristinita/KristinitaPelican/blob/master/.yamllint)
 .travis.yml|[Travis CI Client](https://github.com/travis-ci/travis.rb#lint)|[1](https://docs.travis-ci.com/user/customizing-the-build)|—
 [/jtable]

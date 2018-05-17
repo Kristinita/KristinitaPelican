@@ -55,10 +55,12 @@
 	<script src="//cdn.jsdelivr.net/npm/gemini-scrollbar/index.js" defer></script>
 	<!-- No smooth scrolling, if JQuery Lazy:
 	https://github.com/eisbehr-/jquery.lazy/issues/98#issuecomment-376064894 -->
-	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Gemini/GeminiAndJQueryLazy.js" defer></script>
+	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Gemini/GeminiAndJQueryLazy.min.js" defer></script>
 	<!-- JQuery Lazy -->
 	<script src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.min.js" defer></script>
 	<script src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.plugins.min.js" defer></script>
+	{# Browser-Update #}
+	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Browser-Update/browser-update.min.js" defer></script>
 	<!-- typo-reporter -->
 	{% block base_typoreporter -%}{% endblock %}
 	<!-- Fancybox
@@ -68,7 +70,7 @@
 	https://stackoverflow.com/q/14801334/5951529
 	-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
-	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Fancybox/fancybox.js" defer></script>
+	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Fancybox/fancybox.min.js" defer></script>
 	<!-- Tooltipster, see http://ru.stackoverflow.com/a/584718/199934 -->
 	{% block base_tooltipster %}{% endblock %}
 	<!-- Clipboard.js, see http://ru.stackoverflow.com/a/582520/199934 -->
@@ -91,29 +93,33 @@
 
 	<!-- Gemini
 	[NOTE] Gemini styles must load first, otherwise bugs on page -->
-	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gemini-scrollbar/gemini-scrollbar.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Gemini/gemini.css">
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gemini-scrollbar/gemini-scrollbar.min.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Gemini/gemini.min.css">
 	<!-- SashaPelican theme -->
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/basic.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/fonts.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/aside.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/image_{% block base_iconleftorright %}{% endblock %}.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{% block base_pagecolors %}{% endblock %}.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/aside/{% block base_asideimage %}{% endblock %}.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/basic.min.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/fonts.min.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/aside.min.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/image_{% block base_iconleftorright %}{% endblock %}.min.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{% block base_pagecolors %}{% endblock %}.min.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/aside/{% block base_asideimage %}{% endblock %}.min.css">
 	<!-- External -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/typo-reporter/typo-reporter.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/typo-reporter/typo-reporter.min.css">
 	<!-- Admonition: note, warning etc. blocks, see
 	https://python-markdown.github.io/extensions/admonition/
 	https://squidfunk.github.io/mkdocs-material/extensions/admonition/ -->
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Admonition/admonition.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Admonition/admonition.min.css">
 	<!-- Material icons font for icons -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<!-- ProgressBar -->
+	{% block base_progressbar -%}{% endblock %}
 	<!-- Custom CSS -->
 	{% block base_customcss %}{% endblock %}
 </head>
 
 <body>
+	{# Message, if JavaScript disabled #}
+	{% block base_noscript %}{% endblock %}
 	<!-- Background aside -->
 	<aside>
 		<!-- Header aside -->

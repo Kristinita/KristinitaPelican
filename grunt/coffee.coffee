@@ -9,7 +9,15 @@ module.exports =
 		# “(function() { ... }).call(this);”
 		bare: true
 		# Generate sourcemap
-		sourceMap: true
+		sourceMap: false
+	personalcompile:
+		files: [
+			expand: true
+			cwd: "<%= templates.paths.output_path %>/coffee"
+			src: '**/**/*.coffee'
+			dest: "<%= templates.paths.output_path %>/js"
+			ext: '.js'
+			]
 	themecompile:
 		files: [
 			expand: true

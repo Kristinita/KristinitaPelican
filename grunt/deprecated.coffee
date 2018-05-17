@@ -278,3 +278,21 @@
 # 		command: 'echo "Sorry, lice doesn\'t work in AppVeyor — https://github.com/appveyor/ci/issues/2226"'
 # 	else
 # 		command: 'pipenv run lice mit -o "Sasha Chernykh" --file output/LICENSE.md'
+
+# [DEPRECATED] Doesn't work for CSS paths
+# #########################
+# # grunt-path-absolutely #
+# #########################
+# # https://www.npmjs.com/package/grunt-path-absolutely
+# module.exports =
+# 	cssimages:
+# 		options:
+# 			devRoot: "."
+# 			releaseRoot: "https://kristinita.ru"
+# 			resourceFilter: ["*.css"]
+# 		files: [
+# 			expand: true
+# 			cwd: "."
+# 			src: ["<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/css/aside/*.css"]
+# 			dest: "."
+# 		]

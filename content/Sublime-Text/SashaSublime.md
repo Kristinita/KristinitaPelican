@@ -17,8 +17,8 @@ Noco: 1g9b6
 <p>
 	<a href="{filename}/images/donate_files/Bitcoin-HTML-Redirect.html"><img src="{filename}/images/donate_files/Bitcoin-Donate-button.png" alt="Bitcoin Donate Button" class="SashaInline" /></a>
 	<a href="{filename}/images/donate_files/Litecoin-HTML-Redirect.html"><img src="{filename}/images/donate_files/Litecoin-Donate-button.png" alt="Litecoin Donate Button" class="SashaInline" /></a>
-	<a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=63KC7VJTRVNVQ"><img class="SashaInline" src="{filename}/images/donate_files/PayPal-Donate-Button-Dollar.png" alt="PayPal Dollar button" class="SashaInline" /></a>
-	<a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VPA8L2LM7EX24"><img src="{filename}/images/donate_files/PayPal-Donate-Button-Euro.png" alt="PayPal Euro button" class="SashaInline" /></a>
+	<a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=63KC7VJTRVNVQ"><img class="SashaInline" src="{filename}/images/donate_files/PayPal-Donate-Button-Dollar.png" alt="PayPal Dollar button" class="SashaInline" /></a>
+	<a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=VPA8L2LM7EX24"><img src="{filename}/images/donate_files/PayPal-Donate-Button-Euro.png" alt="PayPal Euro button" class="SashaInline" /></a>
 </p>
 <p>
 	<img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" class="SashaInline" />

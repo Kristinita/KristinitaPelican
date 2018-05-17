@@ -17,8 +17,10 @@
 # https://github.com/koalaman/shellcheck/wiki/SC2086
 shopt -s globstar
 validall=true
-for f in bash/*.sh; do
-	if shellcheck "$f"; then
+for f in bash/*.sh
+	do
+	if shellcheck "$f"
+		then
 		echo "$f" valid
 	else
 		validall=false

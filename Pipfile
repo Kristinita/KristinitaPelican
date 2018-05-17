@@ -27,6 +27,7 @@ markdown-downheader = "*"
 pip-licenses = "*"
 gitpython = "*"
 pyyaml = "*"
+bashate = "*"
 
 [requires]
 python_version = "3.6"

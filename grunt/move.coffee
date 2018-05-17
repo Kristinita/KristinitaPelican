@@ -8,10 +8,6 @@ module.exports =
 	options:
 		# If incorrect src, task failed.
 		ignoreMissing: false
-	# HTML, which I need to move in root folder
-	roothtml:
-		src: "<%= templates.paths.output_path %>/root-html/*"
-		dest: "<%= templates.paths.output_path %>/"
 	# Different file types
 	extra:
 		src: [

@@ -7,6 +7,7 @@
 module.exports =
 	[
 		"<%= templates.paths.output_path %>/extra"
-		"<%= templates.paths.output_path %>/root-html"
-		"<%= templates.yamlconfig.output_path %>/<%= templates.paths.theme %>/css/sections/core-design.css"
+		"<%= templates.paths.output_path %>/<%= templates.paths.theme %>/css/sections/core-design.css"
+		"<%= templates.paths.output_path %>/<%= templates.paths.theme %>/css/aside/core-images.css"
+		"<%= templates.paths.output_path %>/<%= templates.paths.theme %>/css/script-colors/Tooltipster/core-tooltipster.css"
 	]

@@ -45,7 +45,7 @@ environment:
   - PYTHON: C:\Python36-x64
     PYTHON_VERSION: 3.6.4
     PYTHON_ARCH: 64
-    GRUNT_COMMAND: publish
+    GRUNT_COMMAND: default && grunt http-server screenshots && grunt publish
 
 # [NOTE] I'm doesn't support 32-bit Windows:
 # https://www.appveyor.com/docs/appveyor-yml/
@@ -78,4 +78,4 @@ build_script:
 - grunt %GRUNT_COMMAND%
 
 test_script:
-- grunt validatesource validateoutput remote
+- grunt validate remote

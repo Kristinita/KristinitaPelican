@@ -17,5 +17,5 @@ module.exports = (grunt) ->
 		theme: "<%= templates.yamlconfig.theme %>"
 		theme_static_dir: "<%= templates.yamlconfig.theme_static_dir %>"
 		theme_static_paths: "<%= templates.yamlconfig.theme_static_paths %>"
-		html: "<%= templates.yamlconfig.output_path %>/**/*.html"
-		css: "<%= templates.yamlconfig.output_path %>/**/*.css"
+	site:
+		siteurl: "<%= templates.yamlconfig.siteurl %>"

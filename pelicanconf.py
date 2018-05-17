@@ -1,17 +1,21 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-05-04 11:53:10
+# @Last Modified time: 2018-05-16 20:38:02
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
 """
-
 # Parse YAML configuration file:
 # https://stackoverflow.com/q/41974628/5951529
 # Require PyYAML module:
 # http://pyyaml.org/wiki/PyYAML
 import yaml
+
+# Insert current year to templates:
+# https://bernhard.scheirle.de/posts/2016/February/29/how-to-keep-your-copyright-year-up-to-date-using-jinja-filters/
+from datetime import date
+CURRENTYEAR = date.today().year
 
 # [DEPRECATED] All warnings fixed:
 # For disabling warnings:
@@ -54,7 +58,8 @@ PAGE_PATHS = YAMLCONFIG['page_paths']
 # https://github.com/getpelican/pelican/issues/2123
 ARTICLE_PATHS = YAMLCONFIG['article_paths']
 
-GITHUB_URL = YAMLCONFIG['github_url']
+GITHUB_SOURCES_URL = YAMLCONFIG['github_sources_url']
+GITHUB_OUTPUT_URL = YAMLCONFIG['github_output_url']
 
 # ****************************************************************************
 # *                                Generation                                *
@@ -67,7 +72,11 @@ GITHUB_URL = YAMLCONFIG['github_url']
 DELETE_OUTPUT_DIRECTORY = False
 
 # Do not touch in generation process
-OUTPUT_RETENTION = ['.git']
+OUTPUT_RETENTION = [
+    '.git',
+    # Doesn't remove folder with screenshots
+    'screenshots'
+]
 
 # Cache settings
 # http://docs.getpelican.com/en/latest/settings.html?highlight=cache
@@ -357,6 +366,7 @@ MARKDOWN = {
         # That bars change colors in each 10%:
         # https://github.com/facelessuser/pymdown-extensions/pull/208
         'pymdownx.progressbar': {
+            'level_class': True,
             'progress_increment': 10
         },
         'pymdownx.smartsymbols': {},

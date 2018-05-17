@@ -19,6 +19,7 @@ Stylesheets: personal/
 Javascripts: personal/
 Tooltipster: true
 Clipboardjs: true
+ProgressBar: false
 OpenGraphImage: https://i.imgur.com/cVITpm1.jpg
 
 `“What? Where? When?” has great popularity in the Russian language, not English, so the description of the package in Russian.`

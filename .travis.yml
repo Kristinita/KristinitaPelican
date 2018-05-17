@@ -47,7 +47,9 @@ env:
 # “grunt default” = “grunt”;
 # Travis CI support blank value.
 - GRUNT_COMMAND=
-- GRUNT_COMMAND=publish
+# If http-server run in background, “pipenv run pelican content -s publishconf.py” command can't move “theme” folder.
+# I can't find method for http-server stop
+- GRUNT_COMMAND=default && grunt http-server screenshots && grunt publish
 
 # Sections:
 # https://docs.travis-ci.com/user/customizing-the-build/#The-Build-Lifecycle
@@ -115,7 +117,7 @@ script:
 # no data persistence → it takes a lot of time, that install and compile all dependencies before stages.
 # This is unnecessary in my case.
 # https://docs.travis-ci.com/user/build-stages/#Data-persistence-between-stages-and-jobs
-- grunt validatesource validateoutput remote travis
+- grunt validate remote travis
 
 # Automatically deploy site to GitHub Pages:
 # https://docs.travis-ci.com/user/deployment

@@ -5,7 +5,7 @@
 # Install all Travis CI dependencies for building and validation.
 # Run commands parallel:
 # https://www.gnu.org/software/parallel/
-# [WARNING] On Windows works only in Cygwin, not in default console:
+# [WARNING] On Windows works in Cygwin, not in default console:
 # https://savannah.gnu.org/forum/forum.php?forum_id=7581
 # Parallel npm and pip tasks:
 # https://unix.stackexchange.com/a/427419/237999

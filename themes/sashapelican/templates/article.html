@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2018-05-03 19:36:38 -->
+<!-- @Last Modified time: 2018-05-11 20:49:50 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -20,11 +20,11 @@
 
 <!-- typo-reporter -->
 {% block base_typoreporter -%}
-	<script src="https://npmcdn.com/typo-reporter/lib/TypoReporter.min.js" defer></script>
+	<script src="//npmcdn.com/typo-reporter/lib/TypoReporter.min.js" defer></script>
 	{%- if article.lang == 'ru' -%}
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/typo-reporter/typo-reporter-ru.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/typo-reporter/typo-reporter-ru.min.js" defer></script>
 	{% else %}
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/typo-reporter/typo-reporter-en.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/typo-reporter/typo-reporter-en.min.js" defer></script>
 	{%- endif -%}
 {%- endblock %}
 
@@ -34,7 +34,7 @@
 		<script src="//cdn.jsdelivr.net/jquery.tooltipster/latest/js/tooltipster.bundle.min.js" defer></script>
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.tooltipster/latest/css/tooltipster.bundle.min.css" />
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" />
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Tooltipster/tooltip.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Tooltipster/tooltip.min.js" defer></script>
 	{%- endif -%}
 {%- endblock %}
 
@@ -42,9 +42,12 @@
 {% block base_clipboardjs -%}
 	{%- if article.clipboardjs == 'true' -%}
 		<script src="//cdn.jsdelivr.net/clipboard.js/latest/clipboard.min.js" defer></script>
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Clipboard.js/Clipboard.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Clipboard-js/Clipboard.min.js" defer></script>
 	{%- endif -%}
 {%- endblock %}
+
+<!-- ProgressBar -->
+
 
 <!-- Visualize -->
 {# JavaScript pie and bar charts:
@@ -53,8 +56,8 @@ https://github.com/kellyk/visualize #}
 {% block base_visualize -%}
 	{%- if article.visualize == 'true' -%}
 		<script src="//gitcdn.xyz/repo/kellyk/visualize/master/visualize.js" defer></script>
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-bar-chart.js" defer></script>
-		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-pie-chart.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-bar-chart.min.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-pie-chart.min.js" defer></script>
 	{%- endif -%}
 {%- endblock %}
 
@@ -70,10 +73,10 @@ https://github.com/kellyk/visualize #}
 {%- endblock %} #}
 
 <!-- Custom JavaScript, specific for article
-Article metadata variable -->
+Metadata variable -->
 {% block base_customjs -%}
 	{%- if article.customjs == 'true' -%}
-		<script src="{{SITEURL}}/js/personal/{{article.customjs1}}.js" defer></script>
+		<script src="{{SITEURL}}/js/personal/{{article.customjs1}}.min.js" defer></script>
 	{%- endif -%}
 {%- endblock %}
 
@@ -89,15 +92,21 @@ Article metadata variable -->
 <!-- Aside image -->
 {% block base_asideimage %}{{ article.asideimage }}{% endblock %}
 
+{% block base_progressbar -%}
+	{%- if article.progressbar == 'true' -%}
+		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/ProgressBar/progressbar.min.css">
+	{%- endif -%}
+{%- endblock %}
+
 <!-- Custom CSS, specific for article -->
 {% block base_customcss -%}
 	{%- if article.customcss == 'true' -%}
-		<link rel="stylesheet" href="{{SITEURL}}/css/personal/{{article.customcss1}}.css">
+		<link rel="stylesheet" href="{{SITEURL}}/css/personal/{{article.customcss1}}.min.css">
 	{%- endif -%}
 {%- endblock %}
 
 {% block galleryblock -%}
-{% if article.photo_image %}<img src="{{ SITEURL }}/{{ article.photo_image[1] }}" />{% endif %}
+	{% if article.photo_image %}<img src="{{ SITEURL }}/{{ article.photo_image[1] }}" />{% endif %}
 {%- endblock %}
 
 <!--=========================
@@ -168,4 +177,8 @@ Get relative source path like https://github.com/kura/kura.io/blob/e8f2c6801a001
 	{% else %}
 		{% include 'includes/footer-en.html' %}
 	{% endif %}
+{% endblock %}
+
+{% block base_noscript %}
+	{% include 'includes/noscript-articles.html' %}
 {% endblock %}

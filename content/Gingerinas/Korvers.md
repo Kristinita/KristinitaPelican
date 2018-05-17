@@ -218,7 +218,7 @@ Noco: 1EBY
 
 <img src="https://i21.servimg.com/u/f21/17/58/26/07/millsa10.jpg" class="Sasha470" alt="ImageDescription">
 
-<img src="https://s019.radikal.ru/i637/1509/15/66e863476e3c.png" width="392" height="90" alt="ImageDescription">
+<img src="https://s019.radikal.ru/i637/1509/15/66e863476e3c.png" alt="ImageDescription">
 
 **Памелло** — грубые на более поздний взгляд самого игрока ошибки, выданные вопреки логике. Примеры, показывающие 2 вариации памелло:
 
@@ -1287,7 +1287,7 @@ Noco: 1EBY
 <a id="Жироболл"></a>
 ### Жироболл
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/gyroba10.jpg" class="Sasha140" width="134" height="163" alt="ImageDescription">
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/gyroba10.jpg" class="Sasha140" alt="ImageDescription">
 
 **Жироболл** — лингвистические аксаксы.
 
@@ -1413,7 +1413,7 @@ Noco: 1EBY
 <a id="Эмериболл"></a>
 ### Эмериболл
 
-<img src="https://i21.servimg.com/u/f21/17/58/26/07/emery_10.jpg" class="Sasha140" width="112" height="126" alt="ImageDescription">
+<img src="https://i21.servimg.com/u/f21/17/58/26/07/emery_10.jpg" class="Sasha140" alt="ImageDescription">
 
 **Эмериболл** — поиск объединительного признака, что схожего между однородными членами. Применим, когда в вопросе ведётся перечисление элементов.
 

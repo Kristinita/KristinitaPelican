@@ -19,7 +19,7 @@ FOR /R %%f IN (*.html) DO (
 	@REM https://github.com/htacg/tidy-html5/issues/686
 	@REM “--markup no” — disable print file content to console:
 	@REM http://api.html-tidy.org/tidy/quickref_next.html#markup
-	tidy -q --markup no --warn-proprietary-attributes no %%f
+	tidy -config ../tidy.conf --markup no %%f
 	@REM Error level:
 	@REM https://stackoverflow.com/a/334893/5951529
 	IF "!ERRORLEVEL!"=="0" (

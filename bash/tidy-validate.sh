@@ -14,8 +14,10 @@ shopt -s globstar
 validall=true
 # Using variables in script:
 # http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-7.html
-for f in output/**/*.html; do
-	if tidy -q --markup no --warn-proprietary-attributes no "$f"; then
+for f in output/**/*.html
+	do
+	if tidy -config ./tidy.conf --markup no "$f"
+		then
 		echo "$f" valid
 	else
 		validall=false

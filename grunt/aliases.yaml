@@ -5,12 +5,12 @@
 # default — reviewing with relative paths,
 # publish — before publishing with absolute paths,
 # git — add, commit and push to GitHub,
+# screenshot — make site screenshots,
 # update — update Node.js, Python and git,
-# validatesource — sources validation,
-# validateoutput — output validation,
-# remote — Continuous Integration only,
-# travis — Travis CI only.
-# If “default”, you need run only “grunt” in command prompt, not “grunt default”:
+# validatesource — sources and output validation,
+# remote — Continuous Integration, not local,
+# travis — Travis CI, not local or another CI.
+# If “default”, you need run “grunt” in command prompt, not “grunt default”:
 # https://www.html5rocks.com/en/tutorials/tooling/supercharging-your-gruntfile/#toc-organizing
 default:
   - 'concurrent:tarb1'
@@ -20,6 +20,10 @@ default:
   - 'concurrent:tarb5'
   - 'concurrent:tarb6'
   - 'concurrent:tarb7'
+  - 'concurrent:tarb8'
+
+screenshot:
+  - 'concurrent:tarsc1'
 
 publish:
   - 'concurrent:taru1'
@@ -48,15 +52,16 @@ update:
   - 'concurrent:taru3'
   - 'concurrent:taru4'
 
-validatesource:
+validate:
   - 'concurrent:tars1'
-
-validateoutput:
   - 'concurrent:tarv1'
   - 'concurrent:tarv2'
+  - 'concurrent:tarv3'
 
 remote:
   - 'concurrent:tarr1'
+  - 'concurrent:tarr2'
 
 travis:
   - 'concurrent:tart1'
+  - 'concurrent:tart2'

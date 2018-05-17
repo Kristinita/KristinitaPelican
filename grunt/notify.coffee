@@ -9,9 +9,15 @@ module.exports =
 		success: true
 		duration: 7
 		message: 'Success!'
+	# For “grunt” command
 	default:
 		options:
 			title: 'grunt'
-	deploy:
+	# “grunt publish”
+	publish:
 		options:
-			title: 'grunt deploy'
+			title: 'grunt publish'
+	# “grunt validatesource, validateoutput, remote, travis”
+	validate:
+		options:
+			title: 'grunt validate'

@@ -47,22 +47,22 @@ Noco: 1QBY
 <ol> Вы — владелец, не собирающийся рассылать спам, размещать вредоносные коды и совершать прочие противоправные действия. Бесплатная проверка на Sasha Black может понадобиться Вам в ряде случаев:
 	<br />
 	<br />
-	<li>Решили приобрести доменное имя. А оно может быть основательно запятнано. Если именно покупаете у прежнего владельца, а не регистрируете, <a href="#Robtex">удостоверьтесь в наличии записи <span style="background-color: silver; color: black">VERIFIED</span></a>. </li>
+	<li>Решили приобрести доменное имя. А оно может быть основательно запятнано. Если именно покупаете у прежнего владельца, а не регистрируете, <a href="#Robtex">удостоверьтесь в наличии записи <em>VERIFIED</em></a>. </li>
 	<li>Подбираете хостинг. Обязательно погуглите о нём и пробейте его на Sasha Black, чтобы потом не удивлялись дорвеям в числе соседей по IP, чьё присутствие в блэклистах отразится и на Вас.</li>
 	<li>На сайте <a href="https://revisium.com/kb/virusonsite.html" target="_blank" title="Как сайт заражается вирусом?">без Вашей воли</a> <a href="https://habrahabr.ru/post/137071/" target="_blank" title="Расшифровка вредоносного Javascript"> появилось вредоносное содержимое:</a>
 		<br /> а) Заражение компьютеров посетителей,
 		<br /> б) Вероятно попадание в чёрные списки поисковых систем и антивирусных программ,
 		<br clear="all">
-		<img src="https://i.imgur.com/3PuUXoV.jpg" alt="Предупреждение_Яндекса" border="0" >
-		<img src="https://i.imgur.com/9AByUaQ.jpg" alt="Предупреждение_Аваста" border="0" >
-		<img src="https://i.imgur.com/TPcexcq.jpg" alt="Предупреждение_Dr.Web'а" border="0" >
+		<img src="https://i.imgur.com/3PuUXoV.jpg" alt="Предупреждение_Яндекса">
+		<img src="https://i.imgur.com/9AByUaQ.jpg" alt="Предупреждение_Аваста">
+		<img src="https://i.imgur.com/TPcexcq.jpg" alt="Предупреждение_Dr.Web'а">
 		<br clear="all">
-		<i>Вряд ли многие зайдут на сайт, когда высвечиваются такие предупреждения.</i>
+		<em>Вряд ли многие зайдут на сайт, когда высвечиваются такие предупреждения.</em>
 		<br />
 		<br /> в) Высок шанс оказаться и в <a href="#DNSBL">DNSBL</a> — тогда почта будет расцениваться как спам,
-		<br /> г) <b>Web of Trust</b> (WOT). Аддон согласно <a href="https://www.mywot.com/ru" target="_blank" title="Официальный сайт WOT">сведениям с официального сайта</a> по состоянию на март 2016 года установлен более 140 млн раз, так что имеет смысл относиться к нему серьёзно: красный кружок — и Ваш ресурс лишится львиной доли посетителей. Некоторые пользователи ставят отрицательные оценки на основании данных упомянутых выше блэклистов, что и указывают в комментариях.
+		<br /> г) <strong>Web of Trust</strong> (WOT). Аддон согласно <a href="https://www.mywot.com/ru" target="_blank" title="Официальный сайт WOT">сведениям с официального сайта</a> по состоянию на март 2016 года установлен более 140 млн раз, так что имеет смысл относиться к нему серьёзно: красный кружок — и Ваш ресурс лишится львиной доли посетителей. Некоторые пользователи ставят отрицательные оценки на основании данных упомянутых выше блэклистов, что и указывают в комментариях.
 		<br clear="all">
-		<img src="https://i.imgur.com/yDJ135R.jpg" alt="Предупреждение_Аваста" border="0">
+		<img src="https://i.imgur.com/yDJ135R.jpg" alt="Предупреждение_Аваста">
 		<br clear="all"> Подробнее о Web of Trust см. в <a href="#Web of Trust">посвящённом ему разделе</a>.
 		<br /> д) Окажете медвежью услугу соседям по IP и хостингу,
 		<br /> е) Приостановление предоставления услуг Вашим HSP.
@@ -89,14 +89,14 @@ Noco: 1QBY
 <a id="sasha-black-как-проверка-сторонних-сайтов"></a>
 # Sasha Black как проверка сторонних сайтов
 
-Перед обращением к Sasha Black введите в Яндекс или Гугл <span style="background-color: silver; color: black">"testsite.com"</span> или <span style="background-color: silver; color: black">"testsite.com"&nbsp;отзывы</span> и обратите внимание на аргументированность мнений о сайте.
+Перед обращением к Sasha Black введите в Яндекс или Гугл <em>"testsite.com" </em>или <em>"testsite.com"&nbsp;отзывы </em>и обратите внимание на аргументированность мнений о сайте.
 <br /> Что сразу не показывают поисковики, иногда находится непосредственно на <a href="#Web of Trust">WOT</a>.
 <br clear="all">
-<img src="https://i.imgur.com/HqMe6gh.jpg" alt="WOT_проверяет_usenet.nl" border="0" >
+<img src="https://i.imgur.com/HqMe6gh.jpg" alt="WOT_проверяет_usenet.nl">
 <br clear="all"> Sucuri и MX Toolbox же не видят ничего подозрительного на данном явно мошенническом ресурсе.
 <br clear="all">
-<img src="https://i.imgur.com/3kwq7rM.jpg" alt="Sucuri_сканирует_usenet.nl" border="0" >
-<img src="https://i.imgur.com/ycS0w43.jpg" alt="MX_Toolbox_проверяет_usenet.nl" border="0" >
+<img src="https://i.imgur.com/3kwq7rM.jpg" alt="Sucuri_сканирует_usenet.nl">
+<img src="https://i.imgur.com/ycS0w43.jpg" alt="MX_Toolbox_проверяет_usenet.nl">
 <br clear="all"> Зато опасным посчитал Sucuri сайт Kristinita.ru , который Вы сейчас читаете, из-за <a href="https://pip.qip.ru/" target="_blank" title="Кнопки QIP">виджета социальных закладок</a>, а alfavika.ru почему-то оказалась в чёрном списке Dr.Web'а — обе проблемы разрешились <a href="#Recommendations">обычным обращением в техподдержку</a> . Автоматическим службам в составе Sasha Black — «Онлайн-сканерам» и проверке в «Блэклистах» — можно доверять, если набирается с десяток предупреждений, единичные скорее свидетельствуют о проблемах в алгоритмах внесения/вынесения внёсших с. сервисов. Мы то с вами об этом знаем, а вот большинство привыкло во всём полагаться на довольно несовершенную технику.
 <br />
 <br />Примеры:
@@ -129,7 +129,7 @@ Noco: 1QBY
 
 Согласно <a href="http://bezopasnostpc.ru/sites/site-protection/proverka-sayta-na-virusyi-na-servise-quttera" target="_blank" title="Описание Quterra">описанию на сайте «Безопасность ПК»,</a> «сервисом используется метод эвристического обнаружения вредоносного ПО, который способен распознать и защитить от различных видов интернет-угроз. Применяется метод несигнатурного исследования и аналитические методы, позволяющие определить наличие атак, эксплойтов, уязвимостей, методы обфускации JavaScript и наличие упаковщиков, которые используются для скрытия вредоносного кода.»
 <br clear="all">
-<img src="https://i.imgur.com/qXeMAem.jpg" alt="Quttera" border="0" >
+<img src="https://i.imgur.com/qXeMAem.jpg" alt="Quttera">
 
 <a id="sucuri"></a>
 ## Sucuri
@@ -137,15 +137,15 @@ Noco: 1QBY
 <blockquote>Если домен уже диагностировался в Sucuri, показывается информация c последней проверки. Запуск новой осуществляется кликом по ссылке «Force a Re-scan».</blockquote>
 <a href="http://darkzona.com/sucuri/" target="_blank" title="Описание Sucuri">Краткий обзор</a>.
 <br clear="all">
-<img src="https://i.imgur.com/QqRtVuL.jpg" alt="Sucuri" border="0" >
-<br clear="all"> По поводу жёлтой строки «Website Firewall» — «Not Found». Kristinita.ru — статический сайт из HTML-страниц, <a href="http://www.thejethost.com/hosting/bezopasnost_sayta.html" target="_blank" title="Безопасность статического сайта 1">относительно</a> <a href="http://dizems.ru/v-chem-otlichie-staticheskix-sajtov-ot-dinamicheskix" target="_blank" title="Безопасность статического сайта 2">более</a> <a href="http://forum.e-proficom.ru/viewtopic.php?f=83&t=1702" target="_blank" title="Безопасность статического сайта 3">защищённый</a> от разного рода хакерских атак, неиспользование файервола не столь критично. Располагается Kristinita.ru на GitHub Pages, где <a href="http://ru.stackoverflow.com/questions/501519/%D0%91%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D1%81%D0%B0%D0%B9%D1%82%D0%B0-%D0%BD%D0%B0-github-pages" target="_blank" title="Безопасность сайта на GitHub Pages">уязвимым место является разве что домен</a>.
+<img src="https://i.imgur.com/QqRtVuL.jpg" alt="Sucuri">
+<br clear="all"> По поводу жёлтой строки «Website Firewall» — «Not Found». Kristinita.ru — статический сайт из HTML-страниц, <a href="http://www.thejethost.com/hosting/bezopasnost_sayta.html" target="_blank" title="Безопасность статического сайта 1">относительно</a> <a href="http://dizems.ru/v-chem-otlichie-staticheskix-sajtov-ot-dinamicheskix" target="_blank" title="Безопасность статического сайта 2">более</a> <a href="http://forum.e-proficom.ru/viewtopic.php?f=83&amp;t=1702" target="_blank" title="Безопасность статического сайта 3">защищённый</a> от разного рода хакерских атак, неиспользование файервола не столь критично. Располагается Kristinita.ru на GitHub Pages, где <a href="http://ru.stackoverflow.com/questions/501519/%D0%91%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D1%81%D0%B0%D0%B9%D1%82%D0%B0-%D0%BD%D0%B0-github-pages" target="_blank" title="Безопасность сайта на GitHub Pages">уязвимым место является разве что домен</a>.
 
 <a id="is-it-hacked"></a>
 ## Is It Hacked?
 
 Как следует из названия, производится сканирование на предмет взлома. <a href="http://www.Is It Hacked.com/" target="_blank" title="Описание Is It Hacked? от первого лица">Утверждается</a>, что сервис применим к с., выполненным на любых языках программирования вне зависимости от CMS или фреймворка.
 <br clear="all">
-<img src="https://i.imgur.com/BNt4XxO.jpg" alt="Is It Hacked?" border="0" >
+<img src="https://i.imgur.com/BNt4XxO.jpg" alt="Is It Hacked?">
 <br clear="all">
 
 <a id="virustotal"></a>
@@ -154,15 +154,15 @@ Noco: 1QBY
 <blockquote>«URL-адрес» — Введите заново URL — «Проверить»</blockquote>
 <a href="http://optimakomp.ru/virustotal-totalnoe-skanirovanie-fajjlov-i-sajjtov-desyatkami-antivirusov/" target="_blank" title="Описание VirusTotal">Описание</a>. Бесплатная проверка сразу 67 (по состоянию на март 2016) антивирусными программами.
 <br clear="all">
-<img src="https://i.imgur.com/R8vbbYp.jpg" alt="VirusTotal" border="0" >
+<img src="https://i.imgur.com/R8vbbYp.jpg" alt="VirusTotal">
 <br clear="all">
 
 <a id="Блэклисты"></a>
 # Блэклисты
 
 Сервисы, представленные в этой категории, не сканируют сайты самостоятельно, а проверяют их на наличие в разного рода чёрных списках.
-<blockquote>Хуже спама только борьба со спамом — <i><a href="http://www.old.hostobzor.ru/doc/spam.php" target="_blank" title="Спам или без вины виноватые">народная мудрость</a>.</i></blockquote>
-В основном, происходит проверка по DNS blacklists (DNSBL), попадание в которые означает восприятие почты как спама. <a href="https://geektimes.ru/post/59598/" target="_blank" title="Что такое DNSBL">Что это такое, как снизить шансы на попадание и выбраться оттуда</a>. Настраивать у себя <a href="http://wolandblog.com/3-pochemu-ya-ne-ispolzuyu-dnsbl-v-pomoshh-nachinayushhemu-postmasteru/" target="_blank" title="Почему не рекомендуется использовать DNSBL">не рекомендуется</a> без взвешенной оценки всех факторов из-за частого попадания в чс честных релеев. <a href="http://wayback.archive.org/web/20140209073704/http://spamlinks.net/filter-dnsbl-lists.htm" target="_blank" title="Список DNSBL">Большой список DNSBL</a>. Для защиты ссылок <span style="background-color: silver; color: black">mailto:</span> от спам-ботов <a href="http://ru.stackoverflow.com/a/501219/199934" target="_blank" title="MailLink">воспользуйтесь инструментом MailLink</a>.
+<blockquote>Хуже спама только борьба со спамом — <em><a href="http://www.old.hostobzor.ru/doc/spam.php" target="_blank" title="Спам или без вины виноватые">народная мудрость</a>.</em></blockquote>
+В основном, происходит проверка по DNS blacklists (DNSBL), попадание в которые означает восприятие почты как спама. <a href="https://geektimes.ru/post/59598/" target="_blank" title="Что такое DNSBL">Что это такое, как снизить шансы на попадание и выбраться оттуда</a>. Настраивать у себя <a href="http://wolandblog.com/3-pochemu-ya-ne-ispolzuyu-dnsbl-v-pomoshh-nachinayushhemu-postmasteru/" target="_blank" title="Почему не рекомендуется использовать DNSBL">не рекомендуется</a> без взвешенной оценки всех факторов из-за частого попадания в чс честных релеев. <a href="http://wayback.archive.org/web/20140209073704/http://spamlinks.net/filter-dnsbl-lists.htm" target="_blank" title="Список DNSBL">Большой список DNSBL</a>. Для защиты ссылок <em>mailto:</em> от спам-ботов <a href="http://ru.stackoverflow.com/a/501219/199934" target="_blank" title="MailLink">воспользуйтесь инструментом MailLink</a>.
 
 <a id="robtex"></a>
 ## Robtex
@@ -173,33 +173,33 @@ Noco: 1QBY
 <ol>
 	<li>Помимо белых и чёрных списков DNS показывается присутствие в <a href="http://seoslim.ru/interesno/kak-dobavit-sajt-v-katalog-dmoz.html" target="_blank" title="Как попасть в DMOZ 2">пополняемом вручную</a> <a href="https://devaka.ru/articles/dmoz" target="_blank" title="Как попасть в DMOZ">каталоге DMOZ</a>, Web of Trust (если имеется репутация), блэклистах Гугла и Яндекса, <a href="https://www.projecthoneypot.org/" target="_blank" title="">проекта Honey Pot</a> — крупнейшего веб-сообщества по борьбе со спамом.</li>
 	<br clear="all">
-	<img src="https://i.imgur.com/CbcypA7.jpg" alt="Robtex1" border="0" >
+	<img src="https://i.imgur.com/CbcypA7.jpg" alt="Robtex1">
 	<br clear="all">
 	<li>В отличие от прочих <a href="http://wwhois.ru/whois.php" target="_blank" title="Что такое Whois сервисы">Whois сервисов</a> иногда случается узнать контактный адрес не только регистратора домена, но и владельца с. собственной персоной, что полезно, если Вам нужно лично связаться с ним. Сайт Kristinita.ru изначально был зарегистрирован на почту SashaChernykhEmpress(собака)aeterna.ru .</li>
 	<br clear="all">
-	<img src="https://i.imgur.com/GKZHiN3.jpg" alt="Robtex2" border="0" >
+	<img src="https://i.imgur.com/GKZHiN3.jpg" alt="Robtex2">
 	<br clear="all">
 	<br />
-	<li>При покупке домена обращайте внимание на графу <span style="background-color: silver; color: black">state:</span> . Напротив неё должно быть записано <span style="background-color: silver; color: black">REGISTERED, DELEGATED, VERIFIED</span> . <span style="background-color: silver; color: black">VERIFIED</span> означает, что владение сайтом подтверждено документально, обычно сканами паспортных данных. Домены со статусом <span style="background-color: silver; color: black">UNVERIFIED</span> <a href="http://www.introweb.ru/inews/chronicle/news9487.php" target="_blank" title="UNVERIFIED">нельзя переоформить на другое лицо или перепродать</a>.</li>
+	<li>При покупке домена обращайте внимание на графу <em>state:</em>. Напротив неё должно быть записано <em>REGISTERED, DELEGATED, VERIFIED</em> . <em>VERIFIED</em> означает, что владение сайтом подтверждено документально, обычно сканами паспортных данных. Домены со статусом <em>UNVERIFIED</em> <a href="http://www.introweb.ru/inews/chronicle/news9487.php" target="_blank" title="UNVERIFIED">нельзя переоформить на другое лицо или перепродать</a>.</li>
 	<br clear="all">
-	<img src="https://i.imgur.com/W9uaM4K.jpg" alt="Robtex3" border="0" >
+	<img src="https://i.imgur.com/W9uaM4K.jpg" alt="Robtex3">
 	<br clear="all">
 	<li>Ещё несколько DNSBL.</li>
 </ol>
 <br clear="all">
-<img src="https://i.imgur.com/8fzz0Ay.jpg" alt="Robtex4" border="0" >
+<img src="https://i.imgur.com/8fzz0Ay.jpg" alt="Robtex4">
 
 <a id="mx-toolbox"></a>
 ## MX Toolbox
 
 <br clear="all">
-<img src="https://i.imgur.com/IcbKOdp.jpg" alt="MX Toolbox" border="0" >
+<img src="https://i.imgur.com/IcbKOdp.jpg" alt="MX Toolbox">
 
 <a id="rosinstrument"></a>
 ## Rosinstrument
 
 <br clear="all">
-<img src="https://i.imgur.com/1NpClsm.jpg" alt="Rosinstrument" border="0" >
+<img src="https://i.imgur.com/1NpClsm.jpg" alt="Rosinstrument">
 <br clear="all">
 
 <a id="url-void"></a>
@@ -208,12 +208,12 @@ Noco: 1QBY
 <blockquote>Когда домен уже проверялся в URL Void, показывается информация c последней проверки. Можно запустить новую, кликнув по кнопке «Update Report».</blockquote>
 Внимание! Не следует всегда слепо доверять положительным результам с этого сервиса. На скринах демонстрация, как URL Void показывает, якобы Quterra, Sucuri и MyWOT ничего не видят по проверяемому сайту floranimal.ru , тогда как это не так:
 <br clear="all">
-<img src="https://i.imgur.com/FoFhf3P.jpg" alt="URL_Void_сканирует_флоранимал1" border="0" >
-<img src="https://i.imgur.com/SuASwNe.jpg" alt="URL_Void_сканирует_флоранимал1" border="0" >
-<img src="https://i.imgur.com/Sxdo7JT.jpg" alt="URL_Void_сканирует_флоранимал2" border="0" >
-<img src="https://i.imgur.com/mbgstMb.jpg" alt="Quttera_сканирует_флоранимал" border="0" >
-<img src="https://i.imgur.com/RKZbtwk.jpg" alt="Sucuri_сканирует_флоранимал" border="0" >
-<img src="https://i.imgur.com/8ejwKsE.jpg" alt="WOT_сканирует_флоранимал" border="0" >
+<img src="https://i.imgur.com/FoFhf3P.jpg" alt="URL_Void_сканирует_флоранимал1">
+<img src="https://i.imgur.com/SuASwNe.jpg" alt="URL_Void_сканирует_флоранимал1">
+<img src="https://i.imgur.com/Sxdo7JT.jpg" alt="URL_Void_сканирует_флоранимал2">
+<img src="https://i.imgur.com/mbgstMb.jpg" alt="Quttera_сканирует_флоранимал">
+<img src="https://i.imgur.com/RKZbtwk.jpg" alt="Sucuri_сканирует_флоранимал">
+<img src="https://i.imgur.com/8ejwKsE.jpg" alt="WOT_сканирует_флоранимал">
 <br clear="all">
 
 <a id="vurl"></a>
@@ -221,7 +221,7 @@ Noco: 1QBY
 
 Диагностирует внесение в базы <a href="http://zoom.cnews.ru/rnd/news/line/issledovana_mudrost_tolpy_v_borbe_s_fishingom" target="_blank" title="PhishTank">PhishTank</a> — сообщества по борьбе с фишингом, hpHosts, Malware Domain List и китайской компании <a href="https://habrahabr.ru/post/63518/" target="_blank" title="KnownSec">KnownSec</a>.
 <br clear="all">
-<img src="https://i.imgur.com/SumFWO9.jpg" alt="vURL" border="0" >
+<img src="https://i.imgur.com/SumFWO9.jpg" alt="vURL">
 <br clear="all">
 
 <a id="Пользовательские-оценки"></a>
@@ -234,9 +234,9 @@ Noco: 1QBY
 
 Ресурс также известен как MyWOT и WOT.
 <br clear="all">
-<img src="https://i.imgur.com/iNtKY2w.jpg" alt="WOT_badges" border="0" >
-<img src="https://i.imgur.com/ASraA2U.jpg" alt="WOT_плашка" border="0" >
-<img src="https://i.imgur.com/58sqcRm.jpg" alt="Web_of_Trust" border="0" >
+<img src="https://i.imgur.com/iNtKY2w.jpg" alt="WOT_badges">
+<img src="https://i.imgur.com/ASraA2U.jpg" alt="WOT_плашка">
+<img src="https://i.imgur.com/58sqcRm.jpg" alt="Web_of_Trust">
 <br clear="all">
 
 <a id="webutation"></a>
@@ -245,10 +245,10 @@ Noco: 1QBY
 <blockquote>Если появляется надпись «Security: Review unknown domain» с предложением вести капчу, закрывайте вкладку с Webutation — никакой информации по запрашиваемому домену в этой онлайн-службе нет.</blockquote>
 <a href="http://blog.virustotal.com/2012/09/virustotal-webutation.html" target="_blank" title="Описание Webutation">Описание (на английском)</a>. MyWOT, наличие статьи в Википедии + несколько других сервисов. Можно оставлять отзывы и непосредственно на самом Webutation.
 <br clear="all">
-<img src="https://i.imgur.com/F4ZbJsa.jpg" alt="Webutation" border="0" >
+<img src="https://i.imgur.com/F4ZbJsa.jpg" alt="Webutation">
 <br clear="all"> Разработаны расширения для браузеров.
 <br clear="all">
-<img src="https://i.imgur.com/jmFia8l.jpg" alt="Аддон_Webutation" border="0" >
+<img src="https://i.imgur.com/jmFia8l.jpg" alt="Аддон_Webutation">
 <br clear="all">
 
 <a id="trustpilot"></a>
@@ -257,14 +257,14 @@ Noco: 1QBY
 <blockquote>Ошибка 404 — значит, к сайту ещё никто не оставлял комментариев.</blockquote>
 Основанный в Дании отзовик для коммерческих веб-ресурсов: если Ваш сайт не таков, то и знать о Trustpilot особо незачем. <a href="http://www.3dnews.ru/573758" target="_blank" title="Принцип работы Trustpilot">Принцип работы</a> — общая оценка складывается из отдельных пользовательских, владельцам сайтов предоставляется право ответа.
 <br clear="all">
-<img src="https://i.imgur.com/kDIa9vW.jpg" alt="Ответ владельца сайта в Trustpilot" border="0" >
-<img src="https://i.imgur.com/fZoBVaI.jpg" alt="Оценивание Trustpilot" border="0" >
+<img src="https://i.imgur.com/kDIa9vW.jpg" alt="Ответ владельца сайта в Trustpilot">
+<img src="https://i.imgur.com/fZoBVaI.jpg" alt="Оценивание Trustpilot">
 <br clear="all">
-<i>Система не очень понятна: так, сайту на скрине выше выставлены только 100-процентные отзывы, а оценка 7,9.</i>
+<em>Система не очень понятна: так, сайту на скрине выше выставлены только 100-процентные отзывы, а оценка 7,9.</em>
 <br />
 <br /> Лишь для Chrome выпущен <a href="https://chrome.google.com/webstore/detail/trustpilot/meagmjlgkihmljnchdjagbcgfclobkho" target="_blank" title="Аддон Trustpilot">аддон</a>: после установки справа от активных ссылок на сайты, о которых оставлены отзывы на Trustpilot, в поисковой выдаче расположится индикатор репутации. Веб-интерфейс сервиса не поддерживается некоторыми не столь уж и устаревшими браузерами: после регистрации как пользователя вместо содержимого сайта могут показываться только чёрный и белый блоки. <a href="https://en.wikipedia.org/wiki/Trustpilot#Criticism" target="_blank" title="Критика Trustpilot">Критикуется за фейковые отзывы</a>.
 <br clear="all">
-<img src="https://i.imgur.com/Cqlny1p.jpg" alt="Trustpilot" border="0" >
+<img src="https://i.imgur.com/Cqlny1p.jpg" alt="Trustpilot">
 <br clear="all">
 
 <a id="Не-включены-в-sasha-black"></a>
@@ -276,40 +276,40 @@ Noco: 1QBY
 	<li> Диагностика загруженных файлов, а не сайтов. </li>
 	<li> При действующем <a href="#VirusTotal">VirusTotal</a> отдельные инструменты онлайн-сканирования на с. антивирусных компаний. Удалось нагуглить таковую только у Dr.Web:
 		<br clear="all">
-		<img src="https://i.imgur.com/YDL2gC4.jpg" alt="Dr.Web" border="0" >
+		<img src="https://i.imgur.com/YDL2gC4.jpg" alt="Dr.Web">
 		<br clear="all">
 		<br />
 		<a href="https://safeweb.norton.com/" target="_blank" title="Norton Safe Web">Norton Safe Web</a> не сканирует сайты, а только проверяет их нахождение в своих базах. Остальные, видимо, поняли бесперспективность конкуренции с VirusTotal.
 		<br clear="all">
-		<img src="https://i.imgur.com/WE22WUz.jpg" alt="Avast!" border="0" ></li>
+		<img src="https://i.imgur.com/WE22WUz.jpg" alt="Avast!"></li>
 	<br clear="all">
 	<br />
 	<li> Сервисы с меньшим функционалом в сравнении с теми, что включены в Sasha Black,
 		<br clear="all">
-		<img src="https://i.imgur.com/d3GTJJS.jpg" alt="2IP" border="0" >
-		<img src="https://i.imgur.com/Tic5HSg.jpg" alt="TAG.Hosting" border="0" >
-		<img src="https://i.imgur.com/o8zUxSE.jpg" alt="XSeo" border="0" >
-		<img src="https://i.imgur.com/o8zUxSE.jpg" alt="urlQuery" border="0" >
+		<img src="https://i.imgur.com/d3GTJJS.jpg" alt="2IP">
+		<img src="https://i.imgur.com/Tic5HSg.jpg" alt="TAG.Hosting">
+		<img src="https://i.imgur.com/o8zUxSE.jpg" alt="XSeo">
+		<img src="https://i.imgur.com/o8zUxSE.jpg" alt="urlQuery">
 		<br clear="all">
-		<i> <a href="https://2ip.ru/site-virus-scaner/" target="_blank" title="2IP">2IP</a>, <a href="taghosting.ru/online_services/antivirus" target="_blank" title="Tag.Hosting">Tag.Hosting</a>, <a href="http://xseo.in/viruscan" target="_blank" title="Xseo">Xseo</a>, <a href="https://urlquery.net/" target="_blank" title="urlQuery">urlQuery</a>. </i>
+		<em> <a href="https://2ip.ru/site-virus-scaner/" target="_blank" title="2IP">2IP</a>, <a href="taghosting.ru/online_services/antivirus" target="_blank" title="Tag.Hosting">Tag.Hosting</a>, <a href="http://xseo.in/viruscan" target="_blank" title="Xseo">Xseo</a>, <a href="https://urlquery.net/" target="_blank" title="urlQuery">urlQuery</a>. </em>
 	</li>
 	<li> Альтернативы, явно не привносящие ничего нового. Из похожих служб выбираются те, куда на результаты по интересующему сайту доступен переход сразу из Sasha Black, т.е. значение имеет изменчивость адресной строки.
 		<br clear="all">
-		<img src="https://i.imgur.com/huRlPet.jpg" alt="DNSBL.info" border="0" >
+		<img src="https://i.imgur.com/huRlPet.jpg" alt="DNSBL.info">
 		<br clear="all">
-		<i> Какой адрес бы не просматривали на DNSBL.info , URL <a href="http://www.dnsbl.info/dnsbl-database-check.php" target="_blank" title="DNSBL.info">http://www.dnsbl.info/dnsbl-database-check.php</a> остаётся прежним, а значит прямую ссылку мы не получим.</i>
+		<em> Какой адрес бы не просматривали на DNSBL.info , URL <a href="http://www.dnsbl.info/dnsbl-database-check.php" target="_blank" title="DNSBL.info">http://www.dnsbl.info/dnsbl-database-check.php</a> остаётся прежним, а значит прямую ссылку мы не получим.</em>
 	</li>
 	<li> Больше не функционирующие инструменты:
 		<br clear="all">
-		<img src="https://i.imgur.com/PNvN774.jpg" alt="Gimpel" border="0" >
+		<img src="https://i.imgur.com/PNvN774.jpg" alt="Gimpel">
 		<br clear="all">
-		<i> В сети встречается много призывов воспользоваться «<a href="http://gimpel.comss.ru/" target="_blank" title="Gimpel">Снегирём</a>», да, по всей вероятности, его поддержка прекращена. При попытке введения любого адреса и нажатия на «Начать проверку» происходит только удаление текста из формы ввода.</i>
+		<em> В сети встречается много призывов воспользоваться «<a href="http://gimpel.comss.ru/" target="_blank" title="Gimpel">Снегирём</a>», да, по всей вероятности, его поддержка прекращена. При попытке введения любого адреса и нажатия на «Начать проверку» происходит только удаление текста из формы ввода.</em>
 	</li>
 	<li> Службы, оценивающие такие показатели, как PageRank, тИЦ, ссылочную массу, место в <a href="http://ktonanovenkogo.ru/seo/tic-pr-alexa/alexa-rank-ocenka-poseshhaemosti-sajta-alexa-toolbar-statistika-vidzhety-alexa-rank.html" target="_blank" title="Alexa Rank">Alexa</a> и т. д. . Оценки, рассчитанные для небольших и новых сайтов, выглядят весьма удручающе, и у воспользовавшихся проверками на таких сервисах может сложиться в корне неверное представление о на самом деле порядочном с. .
 		<br clear="all">
-		<img src="https://i.imgur.com/kQR3a0m.jpg" alt="TrustScam" border="0" >
+		<img src="https://i.imgur.com/kQR3a0m.jpg" alt="TrustScam">
 		<br clear="all">
-		<i> Конкретно в <a href="https://trustscam.com/ru/" target="_blank" title="TrustScan">TrustScan</a> придётся трижды жать на «Scan now». </i>
+		<em> Конкретно в <a href="https://trustscam.com/ru/" target="_blank" title="TrustScan">TrustScan</a> придётся трижды жать на «Scan now». </em>
 	</li>
 </ol>
 
@@ -336,7 +336,7 @@ eval(unescape('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%27%3c%61%20%68%72%6
 <br />
 <br /> Вы же можете поблагодарить за Sasha Black на вышеупомянутом Web of Trust. Зарегистрировавшись, перейдите по <a href="https://www.mywot.com/ru/scorecard/kristinita.ru" target="_blank" title="MyWOT Kristinita.ru">ссылке</a>, кликните в самый правый край зелёных блоков и поставьте галочку напротив «Хороший сайт». Ага, регистрация занимает время, почему сайты недосчитываются положительных отзывов.
 <br clear="all">
-<img src="https://i.imgur.com/zQCJLOX.jpg" alt="Оценить Kristinita.ru на Web of Trust" border="0" >
+<img src="https://i.imgur.com/zQCJLOX.jpg" alt="Оценить Kristinita.ru на Web of Trust">
 <br clear="all">
 <br />
 <br />

@@ -7,7 +7,7 @@
 ## grunt-newer ##
 #################
 # grunt-newer
-# Run task, only if src files change.
+# Run task, if src files change.
 # https://www.npmjs.com/package/grunt-newer
 # https://www.html5rocks.com/en/tutorials/tooling/supercharging-your-gruntfile/#toc-buildtime
 module.exports =
@@ -34,11 +34,20 @@ module.exports =
 	# [BUG] grunt-newer doesn't work with purifycss:
 	# Warning: Cannot read property 'forEach' of undefined Use --force to continue.
 	# https://github.com/purifycss/grunt-purifycss/issues/26
-	tarb4: ['newer:string-replace'
+	tarb4: ['newer:string-replace:dist'
+			'newer:uglify'
 			'purifycss']
-	tarb5: ['shell:tidymodify']
-	tarb6: ['shell:eclintfix']
-	tarb7: ['notify:default']
+	tarb5: ['newer:cssnano'
+			'shell:tidymodify']
+	tarb6: ['newer:jsbeautifier']
+	tarb7: ['shell:eclintfix']
+	tarb8: ['notify:default']
+	#
+	# For screenshots, “target screenshot”.
+	#
+	# Grunt-pageres works incorrect with absolute URLs. I use local URLs with “grunt-http-server”:
+	# I need build site with localhost URLs → make screenshots → build site with absolute URLs.
+	tarsc1: ['pageres']
 	#
 	# For publishing, “target publish”.
 	#
@@ -66,14 +75,16 @@ module.exports =
 			'unused'
 			'copy']
 	tarp6: ['clean'
+			'imagemin'
 			'purifycss'
-			'imagemin']
+			'uglify']
 	tarp7: ['postcss'
 			'string-replace']
-	tarp8: ['shell:tidymodify']
-	tarp9: ['jsbeautifier']
+	tarp8: ['cssnano'
+			'shell:tidymodify']
+	tarp9: ['minifyHtml']
 	tarp10: ['shell:eclintfix']
-	tarp11: ['notify:deploy']
+	tarp11: ['notify:publish']
 	#
 	# For updating dependencies, “target update”.
 	#
@@ -89,13 +100,18 @@ module.exports =
 	#
 	#
 	tars1: ['coffeelint:source'
-			'markdownlint']
+			'markdownlint'
+			'shell:bashate']
 	# For validating output, “target validate”.
 	#
-	tarv1: ['coffeelint:output'
+	tarv1: ['coffeelint:personal'
+			'coffeelint:theme'
+			'htmllint'
 			'path_validator'
-			'shell:tidyvalidate']
+			'shell:tidyvalidate'
+			'stylint']
 	tarv2: ['shell:eclintcheck']
+	tarv3: ['notify:validate']
 	#
 	# For Continuous Integration tasks, “target remote”.
 	# If task in this secton, please, give reasons, why not local:
@@ -106,6 +122,7 @@ module.exports =
 	# ShellCheck needs extra dependency scoop for Windows:
 	# https://github.com/koalaman/shellcheck#installing
 	tarr1: ['shell:shellcheck']
+	tarr2: ['notify:validate']
 	# [BUG] Travis Client doesn't recognized APT addon:
 	# https://github.com/travis-ci/travis-yaml/issues/58
 	# https://github.com/travis-ci/travis.rb/issues/422
@@ -120,3 +137,4 @@ module.exports =
 	# 2. Doesn't work in AppVeyor or another CI, Travis-specific:
 	# https://github.com/marionebl/commitlint/blob/master/%40commitlint/travis-cli/src/cli.js
 	tart1: ['shell:commitlint']
+	tart2: ['notify:validate']

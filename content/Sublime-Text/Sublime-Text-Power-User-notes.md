@@ -20,27 +20,27 @@ Noco: 1EBY
 <br /> Many thanks for your huge work on writing of the book! Sincerely, <a href="http://ru.stackoverflow.com/tags/sublime-text/topusers">leader in Sublime Text tag rating on Russian Stack Overflow</a>, Sasha Chernykh.
 <br />
 <br />
-<br /><br /><b>13</b>
+<br /><br /><strong>13</strong>
 <br /> I think we can talk about the final transition from Sublime Text 2 to 3.
-<br /><br /><b>14</b>
+<br /><br /><strong>14</strong>
 <br />
 <blockquote>1. Open the console by hitting the key combination
 	<kbd>Ctrl + \</kbd>
 </blockquote>
 Now by default
 <kbd>Ctrl+`</kbd>.
-<br /><br /><b>16</b>
+<br /><br /><strong>16</strong>
 <br />
 <br />
 <img src="https://i.imgur.com/62uCZBa.png" alt="Alt attribute fish"><br />
 If to use Portable version, it isn't necessary to specify
 <dfn>%APPDATA%</dfn>.
-<br /><br /><b>45</b>
+<br /><br /><strong>45</strong>
 <br /> On <a href="https://johnblackbourn.com/sublimecodeintel-st3">https://johnblackbourn.com/sublimecodeintel-st3</a> page now <a href="https://github.com/spectacles/CodeComplice">reccomend</a> CodeComplice use, but for me CodeComplice is some bugs and undesirable behavior, <a href="https://github.com/spectacles/CodeComplice/issues/51">example</a>.
-<br /><br /><b>50</b>
+<br /><br /><strong>50</strong>
 <br />
 <dfn>-(std in)</dfn> only for OSX users, see <a href="http://docs.sublimetext.info/en/latest/command_line/command_line.html#invocations">unofficial documentation</a>, but in the book of it it isn't specified.
-<br /><br /><b>52</b>
+<br /><br /><strong>52</strong>
 <br />
 <blockquote>
 	<dfn>-a</dfn> or
@@ -52,11 +52,11 @@ This command is only for folders, but not for files, see <a href="http://docs.su
 <dfn>subl -a test.txt</dfn> =
 <dfn>subl test.txt</dfn>, both of these commands open a test.txt file in a new tab of the active window. The example below is also incorrect.
 <br />
-<br /><br /><b>68</b>
+<br /><br /><strong>68</strong>
 <br /> This method does not work for me. It is necessary, or hold down the middle mouse button or
 <kbd>Ctrl+Alt+↓/↑</kbd> . See <a href="https://forum.sublimetext.com/t/solved-how-to-quick-select-in-every-line-between-first-and-last-for-me/21688">forum thread</a>.
 <br />
-<br /><br /><b>77</b>
+<br /><br /><strong>77</strong>
 <br />
 <blockquote>go to
 	<kbd>Tools</kbd> —►
@@ -66,7 +66,7 @@ In the <kbd>Tools</kbd> menu there is no point <kbd>New snippet ...</kbd> .
 <br />
 <br />
 <img src="https://i.imgur.com/K3YqJ4S.png" alt="Alt attribute fish">
-<br /><br /><b>80</b>
+<br /><br /><strong>80</strong>
 <br />
 <blockquote>If you are having trouble finding the scope, an easy way to find it is to open your packages folder
 	<kbd>Preferences</kbd> →
@@ -78,52 +78,52 @@ In the <kbd>Tools</kbd> menu there is no point <kbd>New snippet ...</kbd> .
 
 <kbd>Preferences</kbd> →
 <kbd>Browse Packages...</kbd> .
-<br /><br /><b>84</b>
+<br /><br /><strong>84</strong>
 <br /> Now
 <kbd>Ctrl+G</kbd> is <dfn>Goto Line...</dfn> .
-<br /><br /><b>92</b>
+<br /><br /><strong>92</strong>
 <br /> Empty section «Moving Lines and Code Blocks»
 <br />
 <br />
 <img src="https://i.imgur.com/x1tF1mG.png" alt="Alt attribute fish">
-<br /><br /><b>94</b>
+<br /><br /><strong>94</strong>
 <br />
 <blockquote>Using
 	<kbd>Ctrl+K</kbd> without the shift key will delete from the caret to the end of the current line.</blockquote>
 Using
 <kbd>Ctrl+K, Ctrl+K</kbd>.
-<br /><br /><b>94</b>
+<br /><br /><strong>94</strong>
 <br /> On Windows forward delete words-by-words is
 <kbd>Ctrl+Delete</kbd>.
-<br /><br /><b>95</b>
+<br /><br /><strong>95</strong>
 <br />
 <blockquote>Just press space and keep typing!</blockquote>
 If you only press the spacebar,
 <dfn>p</dfn> tag was removed.
-	<br /><br /><b>95</b>
+	<br /><br /><strong>95</strong>
 	<br />
 	<kbd>Ctrl+↑/↓</kbd> on Windows is jump to the beginning/end of word, not line.
 	<br />
 	<br />
 	<img src="https://i.imgur.com/u3zjnlJ.png" alt="Alt attribute fish">
-	<br /><br /><b>96</b>
+	<br /><br /><strong>96</strong>
 	<br /> All hotkeys in this image is not work for me.
 	<br />
 	<br />
 	<img src="https://i.imgur.com/li2YjO9.png" alt="Alt attribute fish">
-	<br /><br /><b>103</b>
+	<br /><br /><strong>103</strong>
 	<br />
 	<blockquote>(Windows users use
 		<kbd>Ctrl+Shift</kbd>)</blockquote>
 	Windows users use
 	<kbd>Ctrl+Shift+[</kbd>.
-	<br /><br /><b>104</b>
+	<br /><br /><strong>104</strong>
 	<br />
 	<blockquote>The keyboard shortcut for this is a little different. We need to hold down (
 		<kbd>Ctrl</kbd> on Windows/Linux) and then tap
 			<kbd>K</kbd>.</blockquote>
 	Not working on Windows.
-	<br /><br /><b>108</b>
+	<br /><br /><strong>108</strong>
 	<br />
 	<br />
 	<img src="https://i.imgur.com/nlEMn8q.png" alt="Alt attribute fish"><br /> I think that once you have a slash at the beginning. Not
@@ -136,51 +136,51 @@ If you only press the spacebar,
 	<dfn>"Dictionaries"</dfn> or
 	<dfn>"./Dictionaries"</dfn> or
 	<dfn>"../User/Dictionaries"</dfn>, But I do not understand how to specify the relative path with a slash at the beginning of.
-	<br /><br /><b>128</b>
+	<br /><br /><strong>128</strong>
 	<br /> Incorrect example, see <a href="https://forum.sublimetext.com/t/not-automatic-change-of-build-system/21745">forum thread</a>.
-	<br /><br /><b>142</b>
+	<br /><br /><strong>142</strong>
 	<br /> Sublimerge 3 — paid plugin, I believe that it is necessary to specify in the book.
-	<br /><br /><b>143</b>
+	<br /><br /><strong>143</strong>
 	<br />
 	<br />
 	<img src="https://i.imgur.com/1Vfnz56.png" alt="Alt attribute fish">
 	<br /> Hotkeys not work for me.
-	<br /><br /><b>154</b>
+	<br /><br /><strong>154</strong>
 	<br /> Not
 	<dfn>c#badda55.3</dfn>, correct is
 	<dfn>c#badda5.3</dfn>. Emmet still indicate the right color, but in my opinion, do not result in the book of incorrect examples.
-	<br /><br /><b>155</b>
+	<br /><br /><strong>155</strong>
 	<br /> Now
 	<kbd>Ctrl+Shift+G</kbd>, not
 	<kbd>Ctrl+W</kbd> by default.
-	<br /><br /><b>158</b>
+	<br /><br /><strong>158</strong>
 	<br /> Now
 	<kbd>Ctrl+'</kbd>, not
 	<kbd>Ctrl+Shift+D</kbd> by default.
-	<br /><br /><b>161</b>
+	<br /><br /><strong>161</strong>
 	<br /> Now
 	<kbd>Ctrl+Alt+J</kbd>, not
 	<kbd>Ctrl+Shift+T</kbd> by default.
-	<br /><br /><b>165</b>
+	<br /><br /><strong>165</strong>
 	<br /> Now
 	<kbd>View in SublimeServer</kbd>, not
 	<kbd>View This File in the Browser</kbd>.
-	<br /><br /><b>175</b>
+	<br /><br /><strong>175</strong>
 	<br /> Transmit Dosksend <a href="https://packagecontrol.io/packages/Transmit%20Docksend">only for Sublime Text 2 and OSX</a>.
-	<br /><br /><b>176</b>
+	<br /><br /><strong>176</strong>
 	<br /> Bower need <a href="https://github.com/benschwarz/sublime-bower#installation">Git</a> for Windows users.
-	<br /><br /><b>180</b>
-	<br /> «mode at a lang<b>ua</b>ge»
-	<br /><br /><b>180</b>
+	<br /><br /><strong>180</strong>
+	<br /> «mode at a lang<strong>ua</strong>ge»
+	<br /><br /><strong>180</strong>
 	<br />
 	<blockquote>You can also turn on Vintage mode at a langauge level by adding
 		<dfn>"ignored_packages": []</dfn> to your language specific settings file — more on this in the settings section.</blockquote>
 	Where is settings section?
-	<br /><br /><b>183</b>
+	<br /><br /><strong>183</strong>
 	<br /> Package CSS3 Syntax has been replaced by <a href="https://github.com/y0ssar1an/CSS3_Syntax#announcement-for-st3-users-this-package-has-been-replaced-by-css3-this-package-will-be-removed-some-time-after-sublime-text-3-is-released">CSS3</a>.
-	<br /><br /><b>189</b>
+	<br /><br /><strong>189</strong>
 	<br /> Pretty JSON <a href="https://github.com/dzhibas/SublimePrettyJson/issues/70">does not work</a> with files that contain comments. This is a serious drawback, in my opinion it is necessary to mention in the book.
-	<br /><br /><b>197</b>
+	<br /><br /><strong>197</strong>
 	<br /> By default in TOC will be
 	<dfn>[about]</dfn> and
 	<dfn>[growing-up]</dfn>, not
@@ -191,14 +191,14 @@ If you only press the spacebar,
 	<img src="https://packagecontrol.io/readmes/img/b64bfa89d42bf72a062e070872a03f6832d62ae5.gif" alt="Alt attribute fish"><br /> To make as at you on the picture, it is necessary to add in the file
 	<kbd>MarkdownTOC</kbd> →
 	<kbd>Settings - User</kbd> line <dfn>{ "default_bracket": "round", }</dfn>.
-	<br /><br /><b>198</b>
+	<br /><br /><strong>198</strong>
 	<br /> SublimeTODO plugin wasn't updated long ago, TODO Review is <a href="https://github.com/robcowie/SublimeTODO">recommended</a> to use.
-	<br /><br /><b>200</b>
+	<br /><br /><strong>200</strong>
 	<br />
 	<blockquote>If the language supports block commenting, add in
 		<kbd>option/alt</kbd> into the mix to block comment multiple lines of selected code.</blockquote>
 	Multi-line comments are added to the Windows hotkey
 	<kbd>Ctrl+Shift+/</kbd>, <kbd>Alt</kbd> is not used.
-	<br /><br /><b>201</b>
+	<br /><br /><strong>201</strong>
 	<br /> You have not written, how to call Fullscreen Mode, in my opinion, you need to specify the hot keys —
 	<kbd>Shift+F11</kbd>.
