@@ -2,13 +2,13 @@
 # @Author: Kristinita
 # @Date:   2018-03-07 14:33:18
 # @Last Modified by:   Kristinita
-# @Last Modified time: 2018-04-28 10:41:59
+# @Last Modified time: 2018-05-17 20:32:00
 #############
 # HTML Tidy #
 #############
 # Fix errors and warnings in HTML files:
 # Modifying HTML: doesn't show warnings or errors.
-# I need use variable, that contains 1 letter; “f” — “filename”.
+# I need use variable, that contains 1 letter; "f" — "filename".
 shopt -s globstar
 for f in output/**/*.html
 	do

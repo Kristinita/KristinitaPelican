@@ -13,13 +13,13 @@
 # https://unix.stackexchange.com/questions/427410#comment771128_427415
 # [NOTE] Grunt tasks needs grunt-cli globally:
 # https://stackoverflow.com/a/21133609/5951529
-# [WARNING] Don't paste any comments after “parallel :::”, parallel will not work:
+# [WARNING] Don't paste any comments "after parallel :::", parallel will not work:
 # https://travis-ci.org/Kristinita/SashaScrutinizer/builds/363772800
 # [WARNING] apt-get HTML Tidy version outdated, build HTML tidy on Ubuntu from sources:
 # https://github.com/htacg/tidy-html5/blob/next/README/BUILD.md
 # https://github.com/htacg/tidy-html5/issues/721
 # https://codeyarns.com/2016/06/06/how-to-build-and-install-html-tidy/
-# [NOTE] “sudo make install” — mandatory command:
+# [NOTE] "sudo make install" — mandatory command:
 # https://travis-ci.org/Kristinita/SashaTidyDebugging/builds/369420036
 # [BUG] Warnings in console, when HTML Tidy build:
 # https://github.com/htacg/tidy-html5/issues/721

@@ -22,7 +22,7 @@ default:
   - 'concurrent:tarb7'
   - 'concurrent:tarb8'
 
-screenshot:
+screenshots:
   - 'concurrent:tarsc1'
 
 publish:

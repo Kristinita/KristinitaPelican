@@ -37,13 +37,13 @@ environment:
     # https://help.appveyor.com/discussions/problems/4629-how-to-use-appveyor-environment-variable
     # https://help.appveyor.com/discussions/questions/15163-multiuple-build-matrix-dimensions-from-environment-variables
   - PYTHON: C:\Python36-x64
-    PYTHON_VERSION: 3.6.4
+    PYTHON_VERSION: 3.6.5
     PYTHON_ARCH: 64
     # “grunt default” = “grunt”;
     # AppVeyor support blank value.
     GRUNT_COMMAND:
   - PYTHON: C:\Python36-x64
-    PYTHON_VERSION: 3.6.4
+    PYTHON_VERSION: 3.6.5
     PYTHON_ARCH: 64
     GRUNT_COMMAND: default && grunt http-server screenshots && grunt publish
 

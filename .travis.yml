@@ -135,7 +135,7 @@ deploy:
     branch: master
     # Deploy site, if “grunt publish”, else “grunt” — not deploy:
     # https://docs.travis-ci.com/user/deployment#Conditional-Releases-with-on%3A
-    condition: $GRUNT_COMMAND = publish
+    condition: $GRUNT_COMMAND = default && grunt http-server screenshots && grunt publish
   # [DONE]
   # # [FIXME] Downgrade dpl for correct deploying to GitHub Pages:
   # # https://github.com/travis-ci/travis-ci/issues/9312
