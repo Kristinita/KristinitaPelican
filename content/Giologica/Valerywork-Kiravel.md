@@ -15,6 +15,7 @@ ClipboardJs: true
 Customcss: true
 Customcss1: giologica/valerywork-kiravel
 Noco: 159d5
+Opengraphimage: https://i.imgur.com/5atSEHP.jpg
 
 <!-- MarkdownTOC -->
 

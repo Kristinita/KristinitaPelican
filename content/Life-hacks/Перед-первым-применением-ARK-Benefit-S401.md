@@ -15,6 +15,7 @@ ClipboardJs: true
 Customcss: true
 Customcss1: Life-hacks/default-portable-browser
 Noco: 1vWK5
+Opengraphimage: https://s.4pda.to/I5lB3s6bjRPdAAqOH9ucARYLxz211Mfez2txLI9OoxjRQqqGIAGK.jpg
 
 # Введение
 

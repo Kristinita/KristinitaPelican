@@ -13,6 +13,7 @@ Category: Sublime Notes
 Tooltipster: false
 ClipboardJs: true
 Noco: 1EBY
+Opengraphimage: https://i.imgur.com/K3YqJ4S.png
 
 <!-- MarkdownTOC -->
 

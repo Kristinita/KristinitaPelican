@@ -12,6 +12,7 @@ Category: Giologica
 Tooltipster: false
 ClipboardJs: true
 Noco: 159d5
+Opengraphimage: https://i.imgur.com/oavt5Lf.jpg
 
 <!-- MarkdownTOC -->
 

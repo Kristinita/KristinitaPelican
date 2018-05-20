@@ -1,12 +1,14 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2018-05-19 12:59:34 -->
+<!-- @Last Modified time: 2018-05-20 08:33:35 -->
 {% extends 'base.html' %}
 
 <!--==========================
 =            Head            =
 ===========================-->
 
+
+{% block base_language %}{{ article.lang }}{% endblock %}
 <!-- Title phrase -->
 {% block base_pagetitle %}{{ article.pagetitle }}{% endblock %}
 <!-- Content of attribute <meta content="|"> -->

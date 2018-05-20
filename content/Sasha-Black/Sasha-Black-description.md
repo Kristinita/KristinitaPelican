@@ -12,6 +12,7 @@ Category: Sasha Black
 Tooltipster: false
 ClipboardJs: true
 Noco: 1QBY
+Opengraphimage: https://kristinita.ru/images/logo/SashaBlackLogo.jpg
 
 <!-- MarkdownTOC -->
 

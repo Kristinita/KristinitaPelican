@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2018-05-19 12:59:48 -->
+<!-- @Last Modified time: 2018-05-20 08:33:40 -->
 <!-- Differences pages and articles:
 1. In pages disable categories.
 2. Replace any files with “articles”. -->
@@ -10,6 +10,7 @@
 =            Head            =
 ===========================-->
 
+{% block base_language %}{{ page.lang }}{% endblock %}
 <!-- Title phrase -->
 {% block base_pagetitle %}{{ page.pagetitle }}{% endblock %}
 <!-- Content of attribute <meta content="|"> -->

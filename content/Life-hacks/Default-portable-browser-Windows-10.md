@@ -14,6 +14,7 @@ ClipboardJs: true
 Customcss: true
 Customcss1: Life-hacks/default-portable-browser
 Noco: 1vWK5
+Opengraphimage: https://i.imgur.com/DjwBc2Q.png
 
 <!-- MarkdownTOC -->
 
@@ -46,7 +47,7 @@ Noco: 1vWK5
 
 1. Чтобы просмотреть созданные файлы Pale Moon и/или изменить их через проводник Windows либо файловый менеджер, в инсталлированной версии браузера придётся переходить по пути <dfn>C:\Users\SashaGoddess\AppData\Roaming\Moonchild Productions\Pale Moon</dfn>, используя переносимую — <dfn>E:\Pale Moon</dfn>. Лично для меня второй вариант много удобнее.
 
-1. Дополнительное подспорье к безопасности ваших данных. Известные мне[стилеры](http://tophope.ru/threads/%D0%A7%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D1%81%D1%82%D0%B8%D0%BB%D0%B5%D1%80-%D1%81%D1%82%D0%B8%D0%BB%D0%BB%D0%B5%D1%80-stealer-%D0%B8-%D0%B1%D0%BE%D1%80%D1%8C%D0%B1%D0%B0-%D1%81-%D0%BD%D0%B8%D0%BC.1965/), в том числе встроенные в «[ратники](http://www.spy-soft.net/chto-takoe-rat/)», не воруют пароли из portable программ.
+1. Дополнительное подспорье к безопасности ваших данных. Известные мне [стилеры](http://tophope.ru/threads/%D0%A7%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D1%81%D1%82%D0%B8%D0%BB%D0%B5%D1%80-%D1%81%D1%82%D0%B8%D0%BB%D0%BB%D0%B5%D1%80-stealer-%D0%B8-%D0%B1%D0%BE%D1%80%D1%8C%D0%B1%D0%B0-%D1%81-%D0%BD%D0%B8%D0%BC.1965/), в том числе встроенные в «[ратники](http://www.spy-soft.net/chto-takoe-rat/)», не воруют пароли из portable программ.
 
 <a id="Почему-pale-moon"></a>
 # Почему Pale Moon?

@@ -13,6 +13,7 @@ IconLeftOrRight: right
 Tooltipster: true
 ClipboardJs: true
 Noco: 1g9b6
+Opengraphimage: https://i.imgur.com/ljT5eJp.png
 
 <p>
 	<a href="{filename}/images/donate_files/Bitcoin-HTML-Redirect.html"><img src="{filename}/images/donate_files/Bitcoin-Donate-button.png" alt="Bitcoin Donate Button" class="SashaInline" /></a>

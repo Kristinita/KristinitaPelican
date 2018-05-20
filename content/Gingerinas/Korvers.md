@@ -13,6 +13,7 @@ Category: Логика в джинджеринах
 Tooltipster: false
 ClipboardJs: true
 Noco: 1EBY
+Opengraphimage: https://i21.servimg.com/u/f21/17/58/26/07/korver10.jpg
 
 <!-- MarkdownTOC -->
 
