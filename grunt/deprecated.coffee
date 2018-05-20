@@ -296,3 +296,17 @@
 # 			src: ["<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/css/aside/*.css"]
 # 			dest: "."
 # 		]
+
+# [DEPRECATED] Doesn't allow to have comments in JSON configuration files:
+# #############################
+# # grunt-strip-json-comments #
+# #############################
+# # Delete comments in JSON files
+# # https://www.npmjs.com/package/strip-json-comments
+# # https://www.npmjs.com/package/grunt-strip-json-comments
+# stripJsonComments:
+# 	dist:
+# 		options:
+# 			whitespace: false
+# 		files:
+# 			'.jsbeautifyrc': '.jsbeautifyrc'

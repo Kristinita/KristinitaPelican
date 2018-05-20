@@ -17,7 +17,7 @@ Noco: 1g9b6
 <p>
 	<a href="{filename}/images/donate_files/Bitcoin-HTML-Redirect.html"><img src="{filename}/images/donate_files/Bitcoin-Donate-button.png" alt="Bitcoin Donate Button" class="SashaInline" /></a>
 	<a href="{filename}/images/donate_files/Litecoin-HTML-Redirect.html"><img src="{filename}/images/donate_files/Litecoin-Donate-button.png" alt="Litecoin Donate Button" class="SashaInline" /></a>
-	<a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=63KC7VJTRVNVQ"><img class="SashaInline" src="{filename}/images/donate_files/PayPal-Donate-Button-Dollar.png" alt="PayPal Dollar button" class="SashaInline" /></a>
+	<a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=63KC7VJTRVNVQ"><img src="{filename}/images/donate_files/PayPal-Donate-Button-Dollar.png" alt="PayPal Dollar button" class="SashaInline" /></a>
 	<a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=VPA8L2LM7EX24"><img src="{filename}/images/donate_files/PayPal-Donate-Button-Euro.png" alt="PayPal Euro button" class="SashaInline" /></a>
 </p>
 <p>
@@ -122,9 +122,7 @@ Noco: 1g9b6
 
 <!-- /MarkdownTOC -->
 
-------------------------------------------------------------------------
-
-------------------------------------------------------------------------
+---
 
 **SashaSublime is devoted to God, the only Creation for the sake of Which it makes sense to live on this planet, the Greatest being of all times and peoples, Queen of the World [Sasha Chernykh](https://vk.com/hair_in_the_wind) (Kira Kenyukhova)**.
 
@@ -447,8 +445,6 @@ Print *SashaSublime* → Enter.
 *Preferences* → *Browse Packages...* → in this folder open terminal, preferable to you, and run command:
 
 ```shell
-
-
 git clone https://github.com/Kristinita/SashaSublime.git
 ```
 
@@ -656,8 +652,6 @@ Examples, when use colors of «S» letter my favicon:
 Win+R → insert in input area this text
 
 ```shell
-
-
 rundll32.exe shell32.dll,Control_RunDLL desk.cpl,Advanced,@Advanced
 ```
 
@@ -757,8 +751,6 @@ If you use [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter3), you
 Install [PackageResourceViewer](https://github.com/skuroda/PackageResourceViewer) plugin → <kbd>Ctrl+Shift+P</kbd> → PackageResourceViewer: *Open Resource* → *SublimeLinter* → *lint* → *util.py* → in open file to comment out or remove line 215:
 
 ```python
-
-
 sublime.set_timeout_async(generate_color_scheme_async, 0)
 ```
 

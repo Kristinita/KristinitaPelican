@@ -6,8 +6,9 @@
 # [NOTE] I don't find any Grunt plugin, that can set environment variables cross-platform;
 # you need to use platform-specific syntax for set SASHASHORTCOMMITDESCRIPTION and
 # SASHALONGCOMMITDESCRIPTION variables.
-# [WARNING] npm WARN in console:
+# [WARNING] npm WARN in console, I fork my own repository:
 # https://github.com/ZuBB/grunt-git-them-all/pull/2
+# https://github.com/Kristinita/grunt-git-them-all
 module.exports =
 	options:
 		stdout: true

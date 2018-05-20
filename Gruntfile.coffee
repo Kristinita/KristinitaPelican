@@ -23,6 +23,16 @@
 
 module.exports = (grunt) ->
 
+	###
+	Rename “htmllint” task of grunt-html to “html-vnu”,
+	because same name have task of grunt-htmllint:
+	https://stackoverflow.com/a/13880658/5951529
+	https://gruntjs.com/api/grunt.task#grunt.task.renametask
+	###
+	grunt.loadNpmTasks 'grunt-html'
+	# Comma required, I can't get similar behavior, use indentation:
+	grunt.renameTask 'htmllint', 'html-nu'
+
 	#######################
 	## load-grunt-config ##
 	#######################
@@ -34,11 +44,11 @@ module.exports = (grunt) ->
 	# doesn't write “grunt.loadNpmTasks 'task'” each time
 	# [WARNING] Do not use grunt-lazyload! It conflicting plugin
 	# https://www.npmjs.com/package/grunt-lazyload
-	require('load-grunt-config')(grunt)
+	require('load-grunt-config') grunt
 
 	################
 	## grunt-time ##
 	################
 	# Show time for Grunt tasks:
 	# https://github.com/sindresorhus/time-grunt
-	require('time-grunt')(grunt)
+	require('time-grunt') grunt

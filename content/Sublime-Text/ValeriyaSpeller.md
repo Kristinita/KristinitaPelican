@@ -92,7 +92,6 @@ You can to give detailed output, example:
 
 ```json
 
-
 SublimeLinter: valeriyaspeller: TheChorusGirl.Chekhov ['C:\\Users\\SashaChernykh\\AppData\\Roaming\\npm\\yaspeller.cmd', '--check-yo', '--find-repeat-words', '--ignore-digits', '--ignore-latin', '--ignore-roman-numerals', '--ignore-uppercase', '--ignore-urls']
 SublimeLinter: valeriyaspeller output:
 Checking finished: 1.154 sec.

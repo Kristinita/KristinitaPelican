@@ -34,7 +34,8 @@ module.exports =
 	# [BUG] grunt-newer doesn't work with purifycss:
 	# Warning: Cannot read property 'forEach' of undefined Use --force to continue.
 	# https://github.com/purifycss/grunt-purifycss/issues/26
-	tarb4: ['newer:string-replace:dist'
+	tarb4: ['newer:string-replace:all'
+			'newer:string-replace:dev'
 			'newer:uglify'
 			'purifycss']
 	tarb5: ['newer:cssnano'
@@ -79,7 +80,10 @@ module.exports =
 			'purifycss'
 			'uglify']
 	tarp7: ['postcss'
-			'string-replace']
+			'string-replace:all'
+			'string-replace:absoluteinsidehtmlimages'
+			'string-replace:asideimages'
+			'string-replace:backgroundimages']
 	tarp8: ['cssnano'
 			'shell:tidymodify']
 	tarp9: ['minifyHtml']
@@ -106,7 +110,7 @@ module.exports =
 	#
 	tarv1: ['coffeelint:personal'
 			'coffeelint:theme'
-			'htmllint'
+			'html-nu'
 			'path_validator'
 			'shell:tidyvalidate'
 			'stylint']
@@ -126,15 +130,22 @@ module.exports =
 	# [BUG] Travis Client doesn't recognized APT addon:
 	# https://github.com/travis-ci/travis-yaml/issues/58
 	# https://github.com/travis-ci/travis.rb/issues/422
+	# [BUG] “matrix.include” warnings:
+	# https://github.com/travis-ci/travis.rb/issues/376
 	# tarr2: ['shell:travislint']
 	#
 	# For Travis CI specific tasks, not for local or another CI — “target travis”.
 	# If task in this section, please, give reasons, why not local or another CI:
 	#
-	# 1. Doesn't need in local, because commitlint+husky lints commit,
+	# Doesn't need in local, because commitlint+husky lints commit,
 	# when I make it locally:
 	# http://marionebl.github.io/commitlint/#/guides-local-setup
-	# 2. Doesn't work in AppVeyor or another CI, Travis-specific:
+	tart1: ['shell:commitlint'
+			# [BUG] HTML Tidy doesn't modify files with Cyrillic names in AppVeyor →
+			# files still contains errors:
+			# https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/1.0.37/job/vjjwi959rqgfm6da
+			# https://github.com/appveyor/ci/issues/2107
+			'htmllint']
+	# Doesn't work in AppVeyor or another CI, Travis-specific:
 	# https://github.com/marionebl/commitlint/blob/master/%40commitlint/travis-cli/src/cli.js
-	tart1: ['shell:commitlint']
 	tart2: ['notify:validate']

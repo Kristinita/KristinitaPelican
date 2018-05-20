@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-05-16 20:38:02
+# @Last Modified time: 2018-05-19 13:02:49
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -64,6 +64,16 @@ GITHUB_OUTPUT_URL = YAMLCONFIG['github_output_url']
 # ****************************************************************************
 # *                                Generation                                *
 # ****************************************************************************
+
+# Date format, that datetime HTML attribute will be correct:
+# https://www.w3schools.com/tags/att_time_datetime.asp
+# http://docs.getpelican.com/en/latest/settings.html?highlight=DEFAULT_DATE_FORMAT#time-and-date
+# http://www.strfti.me/?f=%25Y-%25m-%25dT%25H%3A%25M%3A%25S%25z
+# [WARNING] TZD format — “%z”, “%:z” not support in Python:
+# https://stackoverflow.com/q/26081853/5951529
+# [WARNING] datetime attribute doesn't support “isoformat()”:
+# https://stackoverflow.com/a/37492671/5951529
+DEFAULT_DATE_FORMAT = '%Y-%m-%dT%H:%M:%S%z'
 
 # Delete old site before building
 # I don't get bugs, if true.

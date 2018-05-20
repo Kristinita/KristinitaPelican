@@ -41,15 +41,29 @@ language: python
 
 python: 3.6
 
-# Multiple scripts
-# https://docs.travis-ci.com/user/speeding-up-the-build/#Parallelizing-your-builds-across-virtual-machines
-env:
-# “grunt default” = “grunt”;
-# Travis CI support blank value.
-- GRUNT_COMMAND=
-# If http-server run in background, “pipenv run pelican content -s publishconf.py” command can't move “theme” folder.
-# I can't find method for http-server stop
-- GRUNT_COMMAND=default && grunt http-server screenshots && grunt publish
+# [DEPRECATED] Doesn't work on Travis CI, needs “matrix.include”:
+# https://github.com/travis-ci/travis-ci/issues/9634
+# # Multiple scripts
+# # https://docs.travis-ci.com/user/speeding-up-the-build/#Parallelizing-your-builds-across-virtual-machines
+# env:
+# # “grunt default” = “grunt”;
+# # Travis CI support blank value.
+# - GRUNT_COMMAND=
+# # If http-server run in background, “pipenv run pelican content -s publishconf.py”
+# # command can't move “theme” folder.
+# # I can't find method for http-server stop
+# - GRUNT_COMMAND=default && grunt http-server screenshots && grunt publish
+
+# “matrix.include”:
+# https://docs.travis-ci.com/user/customizing-the-build#Explicitly-Including-Jobs
+matrix:
+  include:
+  - script:
+    - grunt
+    - grunt validate remote travis
+  - script:
+    - grunt default && grunt http-server screenshots && grunt publish
+    - grunt validate remote travis
 
 # Sections:
 # https://docs.travis-ci.com/user/customizing-the-build/#The-Build-Lifecycle
@@ -88,7 +102,7 @@ before_install:
 # https://jcutrer.com/howto/dev/python/pipenv-pipfile
 # “setx PIPENV_VENV_IN_PROJECT 1” for Windows
 - export PIPENV_VENV_IN_PROJECT=1
-# Ignore already existing virtual environments:
+# Ignore existing virtual environments:
 # https://github.com/menzenski/pipenv-travis-test/blob/develop/.travis.yml
 - export PIPENV_IGNORE_VIRTUALENVS=1
 # That script run for “master” branch, not for “HEAD”;
@@ -106,18 +120,20 @@ install:
 - sudo apt-get install parallel
 - bash bash/travis-install.sh
 
-script:
-- grunt $GRUNT_COMMAND
-# [WARNING] Don't move these commands to “after_success” section,
-# exit code = 0 in this section always:
-# https://blog.travis-ci.com/after_script_behavior_changes/
-# https://github.com/travis-ci/travis-ci/issues/758
-# https://travis-ci.org/Kristinita/KristinitaPelican/jobs/368968780
-# [WARNING] I don't use Build Stages, because each stage run in new virtual machine,
-# no data persistence → it takes a lot of time, that install and compile all dependencies before stages.
-# This is unnecessary in my case.
-# https://docs.travis-ci.com/user/build-stages/#Data-persistence-between-stages-and-jobs
-- grunt validate remote travis
+# [DEPRECATED] Doesn't work on Travis CI, needs “matrix.include”:
+# https://github.com/travis-ci/travis-ci/issues/9634
+# script:
+# - grunt $GRUNT_COMMAND
+# # [WARNING] Don't move these commands to “after_success” section,
+# # exit code = 0 in this section always:
+# # https://blog.travis-ci.com/after_script_behavior_changes/
+# # https://github.com/travis-ci/travis-ci/issues/758
+# # https://travis-ci.org/Kristinita/KristinitaPelican/jobs/368968780
+# # [WARNING] I don't use Build Stages, because each stage run in new virtual machine,
+# # no data persistence → it takes a lot of time, that install and compile all dependencies before stages.
+# # This is unnecessary in my case.
+# # https://docs.travis-ci.com/user/build-stages/#Data-persistence-between-stages-and-jobs
+# - grunt validate remote travis
 
 # Automatically deploy site to GitHub Pages:
 # https://docs.travis-ci.com/user/deployment

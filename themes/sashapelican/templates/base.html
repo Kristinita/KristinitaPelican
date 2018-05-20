@@ -134,13 +134,15 @@
 				<div class="SashaVersion">Version {% block base_version %}{% endblock %}</div>
 				<div class="SashaVersion">
 					Posted —
+					{# Multiple blocks with same name —
+					https://stackoverflow.com/a/1245030/5951529 #}
 					<time datetime="{% block base_date %}{% endblock %}">{{ self.base_date() }}</time>
 				</div>
 				<div class="SashaVersion">
 					<!-- pubdate attribute is obsolete, use itemprop: datePublished
 					https://stackoverflow.com/a/24455070/5951529 -->
 					Last modified —
-					<time itemprop="datePublished" datetime="{% block base_date_displayed %}{% endblock %}">{{ self.base_date_displayed() }}</time>
+					<time itemprop="datePublished" datetime="{% block base_date_modified %}{% endblock %}">{{ self.base_date_modified() }}</time>
 				</div>
 			</header>
 			{% block base_epigraph %}{% endblock %}

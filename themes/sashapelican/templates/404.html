@@ -9,10 +9,10 @@
 	<title>
 		404 error
 	</title>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script>
 	<script src="//cdn.jsdelivr.net/npm/gemini-scrollbar/index.js" defer></script>
 	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Gemini/gemini-non-scrollbar.js" defer></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js" defer></script>
 	<script src="https://kristinita.ru/theme/js/Slick/slick.js" defer></script>
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/hide-scrollbar.min.css" />
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gemini-scrollbar/gemini-scrollbar.css" />
@@ -34,7 +34,10 @@
 				greatest Creature of all time
 			</a> !
 	</div>
-	<section class="slider">
+	{# <section> tag require headers, replace <section> → <div>:
+	https://stackoverflow.com/a/6941170/5951529
+	https://stackoverflow.com/q/24155024/5951529 #}
+	<div class="slider">
 		<div class="SashaCenter">
 			<img data-lazy="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/404/SashaNose.png" src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/interface-images/transparent-one-pixel.png" alt="SashaNose" />
 		</div>
@@ -56,7 +59,7 @@
 		<div class="SashaCenter">
 			<img data-lazy="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/404/SashaWeddingOfFriends.png" src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/interface-images/transparent-one-pixel.png" alt="SashaWeddingOfFriends" />
 		</div>
-	</section>
+	</div>
 </body>
 
 </html>

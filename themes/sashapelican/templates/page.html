@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2018-05-11 20:49:14 -->
+<!-- @Last Modified time: 2018-05-19 12:59:48 -->
 <!-- Differences pages and articles:
 1. In pages disable categories.
 2. Replace any files with “articles”. -->
@@ -114,8 +114,8 @@ Article metadata variable -->
 {% block base_h1 %}{{ page.pagetitle }}{% endblock %}
 {% block base_noco %}{{ page.noco }}{% endblock %}
 {% block base_version %}{{ page.version }}{% endblock %}
-{% block base_date %}{{ page.date }}{% endblock %}
-{% block base_date_displayed %}{{ page.modified }}{% endblock %}
+{% block base_date %}{{ page.locale_date }}{% endblock %}
+{% block base_date_modified %}{{ page.locale_modified }}{% endblock %}
 
 <!-- Epigraph -->
 {% block base_epigraph -%}

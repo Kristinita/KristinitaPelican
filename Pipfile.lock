@@ -104,11 +104,11 @@
         },
         "gitpython": {
             "hashes": [
-                "sha256:05069e26177c650b3cb945dd543a7ef7ca449f8db5b73038b465105673c1ef61",
-                "sha256:c47cc31af6e88979c57a33962cbc30a7c25508d74a1b3a19ec5aa7ed64b03129"
+                "sha256:1ec4c44846cf76a1e55769560673a97731849c9d05401e035e607495f10db959",
+                "sha256:b60b045cf64a321e5b620debb49890099fa6c7be6dfb7fb249027e5d34227301"
             ],
             "index": "pypi",
-            "version": "==2.1.9"
+            "version": "==2.1.10"
         },
         "idna": {
             "hashes": [
@@ -187,10 +187,10 @@
         },
         "pbr": {
             "hashes": [
-                "sha256:4e8a0ed6a8705a26768f4c3da26026013b157821fe5f95881599556ea9d91c19",
-                "sha256:dae4aaa78eafcad10ce2581fc34d694faa616727837fd8e55c1a00951ad6744f"
+                "sha256:680bf5ba9b28dd56e08eb7c267991a37c7a5f90a92c2e07108829931a50ff80a",
+                "sha256:6874feb22334a1e9a515193cba797664e940b763440c88115009ec323a7f2df5"
             ],
-            "version": "==4.0.2"
+            "version": "==4.0.3"
         },
         "pelican": {
             "hashes": [
@@ -293,11 +293,11 @@
         },
         "pymdown-extensions": {
             "hashes": [
-                "sha256:7ad77ecffc5b5c01e688f9989c2ac55135222950aa1ea75a7f27ea6b345f20f1",
-                "sha256:e7a66111268046e3cd3d95aa4651c73fd33753424942e324842dc37ba6616e7a"
+                "sha256:499dd1da42bcb0849f4b7ab5c60040268145973be95a70233de05284503a8f44",
+                "sha256:ce65a4e876f507a9593f080634d33751bfc26375a7f15f94790d848b5ad7589e"
             ],
             "index": "pypi",
-            "version": "==4.10.1"
+            "version": "==4.10.2"
         },
         "pyparsing": {
             "hashes": [

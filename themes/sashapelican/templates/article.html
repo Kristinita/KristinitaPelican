@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2018-05-11 20:49:50 -->
+<!-- @Last Modified time: 2018-05-19 12:59:34 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -135,8 +135,9 @@ https://webref.ru/html/link/rel
 {% block base_h1 %}{{ article.pagetitle }}{% endblock %}
 {% block base_noco %}{{ article.noco }}{% endblock %}
 {% block base_version %}{{ article.version }}{% endblock %}
-{% block base_date %}{{ article.date }}{% endblock %}
-{% block base_date_displayed %}{{ article.modified }}{% endblock %}
+{# “locale_date” and “locale_modified” variables as in notmyidea theme #}
+{% block base_date %}{{ article.locale_date }}{% endblock %}
+{% block base_date_modified %}{{ article.locale_modified }}{% endblock %}
 
 <!-- Epigraph -->
 {% block base_epigraph -%}
