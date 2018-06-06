@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "1b36aa329a3406b11af84efe4cd4a1413e028ac4a94561c152a32b804c27e22d"
+            "sha256": "7b327bcde22b35ef49918f80db23c6ffe07772193e18d87faf1aa62c927d9079"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -26,10 +26,10 @@
         },
         "babel": {
             "hashes": [
-                "sha256:8ce4cb6fdd4393edd323227cba3a077bceb2a6ce5201c902c65e730046f41f14",
-                "sha256:ad209a68d7162c4cff4b29cdebe3dec4cef75492df501b0049a9433c96ce6f80"
+                "sha256:6778d85147d5d85345c14a26aada5e478ab04e39b078b0745ee6870c2b5cf669",
+                "sha256:8cba50f48c529ca3fa18cf81fa9403be176d374ac4d60738b839122dfaaa3d23"
             ],
-            "version": "==2.5.3"
+            "version": "==2.6.0"
         },
         "bashate": {
             "hashes": [
@@ -74,6 +74,10 @@
                 "sha256:fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"
             ],
             "version": "==3.0.4"
+        },
+        "csvlexer": {
+            "editable": true,
+            "git": "https://github.com/Kristinita/PygmentsCSVLexer.git"
         },
         "docutils": {
             "hashes": [

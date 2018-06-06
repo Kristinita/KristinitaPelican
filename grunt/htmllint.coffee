@@ -12,6 +12,8 @@
 # https://github.com/htmllint/grunt-htmllint/issues/25
 # [BUG] “opts” argument erroneous:
 # https://github.com/htmllint/grunt-htmllint/pull/24
+# “attr-bans” modified, because Progressbar needs “style” attribute:
+# https://github.com/facelessuser/pymdown-extensions/issues/293
 module.exports =
 	options:
 		# For correct exit codes for builds:

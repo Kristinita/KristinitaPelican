@@ -28,6 +28,7 @@ pip-licenses = "*"
 gitpython = "*"
 pyyaml = "*"
 bashate = "*"
+csvlexer = {git = "https://github.com/Kristinita/PygmentsCSVLexer.git", editable = true}
 
 [requires]
 python_version = "3.6"

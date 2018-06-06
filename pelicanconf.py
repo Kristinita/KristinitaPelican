@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-05-19 13:02:49
+# @Last Modified time: 2018-06-05 19:55:02
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -133,8 +133,13 @@ PLUGINS = [
     # 'feed_summary',
     'filetime_from_git',
     'interlinks',
+    # [WARNING] Doesn't work with “article” or “page” templates:
+    # https://github.com/getpelican/pelican-plugins/issues/983
+    # 'jinja2content',
     'just_table',
     'liquid_tags.gram',
+    # [BUG] Template doesn't work
+    # 'loadcsv',
     'neighbors',
     # [FIXME] Different colors for different designs
     # 'pelican-linkclass',
