@@ -23,9 +23,6 @@
     "contributors": [
         "Sasha Chernykh"
     ],
-    "scripts": {
-        "commitmsg": "commitlint -e $GIT_PARAMS"
-    },
     "dependencies": {},
     "devDependencies": {
         "@commitlint/cli": "^7.2.1",

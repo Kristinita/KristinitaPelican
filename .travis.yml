@@ -24,6 +24,13 @@
 # https://travis-ci.org/Kristinita/SashaScrutinizer/builds/370122401
 sudo: enabled
 
+# Needs Xenial, not Trusty for Python 3.7 works:
+# https://travis-ci.community/t/unable-to-download-python-3-7-archive-on-travis-ci/639/2
+# https://github.com/travis-ci/travis-ci/issues/9815#issuecomment-425867404
+# Differences between Xenial and Trusty:
+# https://docs.travis-ci.com/user/reference/xenial/#differences-from-the-trusty-images
+dist: xenial
+
 # Don't download all repository history, that save a time:
 # https://docs.travis-ci.com/user/customizing-the-build/#Git-Clone-Depth
 git:
@@ -39,7 +46,7 @@ git:
 # https://github.com/travis-ci/travis-ci/issues/9180
 language: python
 
-python: 3.6.5
+python: 3.7.1
 
 # [DEPRECATED] Doesn't work on Travis CI, needs “matrix.include”:
 # https://github.com/travis-ci/travis-ci/issues/9634

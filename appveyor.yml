@@ -37,13 +37,13 @@ environment:
     # https://help.appveyor.com/discussions/problems/4629-how-to-use-appveyor-environment-variable
     # https://help.appveyor.com/discussions/questions/15163-multiuple-build-matrix-dimensions-from-environment-variables
   - PYTHON: C:\Python36-x64
-    PYTHON_VERSION: 3.6.5
+    PYTHON_VERSION: 3.7.1
     PYTHON_ARCH: 64
     # “grunt default” = “grunt”;
     # AppVeyor support blank value.
     GRUNT_COMMAND:
   - PYTHON: C:\Python36-x64
-    PYTHON_VERSION: 3.6.5
+    PYTHON_VERSION: 3.7.1
     PYTHON_ARCH: 64
     # Spaces before “&&” doesn't need, compare:
     # https://ci.appveyor.com/project/Kristinita/sashatravis/build/job/5oqxucp76bpsr51o
