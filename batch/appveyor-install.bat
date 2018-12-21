@@ -20,7 +20,9 @@ START /B CMD /C "choco install html-tidy -y -ignoredependencies"
 @REM “PermissionError: [WinError 5] Access is denied”:
 @REM https://pip.pypa.io/en/stable/installing/#upgrading-pip
 @REM https://pythonhosted.org/CodeChat/appveyor.yml.html
-START /B CMD /C "python -m pip install --upgrade pip & pip install pipenv & pipenv install --dev"
+@REM [BUG] Temporary downgrade pipenv, because locking bug in newest versions:
+@REM https://github.com/pypa/pipenv/issues/3391
+START /B CMD /C "python -m pip install --upgrade pip & pip install pipenv==11.10.2 & pipenv install --dev"
 START /B CMD /C "choco install nodejs -y & npm install -g grunt-cli & npm install"
 START /B CMD /C "gem install travis"
 @REM [NOTE] ShellCheck installation via Scoop — fast way for Windows:

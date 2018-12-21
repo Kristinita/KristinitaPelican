@@ -1,6 +1,7 @@
 Title: Korvers
 Version: 0.0.1
 Author: Sasha Chernykh
+Slug: Korvers
 Lang: ru
 Summary: Техника мышления в джинджеринах
 Pagetitle: 4 14 7. 4 корвера, 14 аксаксов, 7 гарниромизов

@@ -1,34 +1,35 @@
-# [BUG] Not use quotation marks in Pipfile!
-# https://github.com/appveyor/ci/issues/2129
-# [NOTE] Don't modify values of "url", "verify_ssl" and "name" parameters.
-# These parameters for repository, from where the download is made.
-# https://pipenv.readthedocs.io/en/latest/advanced/#specifying-package-indexes
-
 [[source]]
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-[packages]
-
 [dev-packages]
 pelican = "*"
 markdown = "*"
-"beautifulsoup4" = "*"
+beautifulsoup4 = "*"
 pymdown-extensions = "*"
 pyembed-markdown = "*"
-markdown-newtab = {git = "https://github.com/Undeterminant/markdown-newtab.git", editable = true}
 md-environ = "*"
 markdown-blockdiag = "*"
 pip-review = "*"
-mdx-cite = {git = "https://github.com/aleray/mdx_cite.git", editable = true}
-mdx-custom-span-class = {git = "https://github.com/exaroth/mdx_custom_span_class.git", editable = true}
-markdown-downheader = "*"
 pip-licenses = "*"
 gitpython = "*"
 pyyaml = "*"
 bashate = "*"
-csvlexer = {git = "https://github.com/Kristinita/PygmentsCSVLexer.git", editable = true}
+mdx-video = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"
+
+[dev-packages.mdx-custom-span-class]
+git = "https://github.com/exaroth/mdx_custom_span_class.git"
+editable = true
+
+[dev-packages.csvlexer]
+git = "https://github.com/Kristinita/PygmentsCSVLexer.git"
+editable = true
+
+[packages.mdx_downheader]
+git = "https://github.com/Kristinita/mdx_downheader.git"
+editable = true
+ref = "KiraPatch"

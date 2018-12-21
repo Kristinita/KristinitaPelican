@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2018-06-04 09:40:19 -->
+<!-- @Last Modified time: 2018-12-21 18:59:43 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -123,7 +123,11 @@ https://webref.ru/html/link/rel
 -->
 {% block base_atom_feed -%}
 	<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" rel="alternate" type="application/atom+xml">
-	<link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" rel="alternate" type="application/atom+xml">
+	<!-- [NOTE] For Pelican 4.0+ we need to replace CATEGORY_FEED_ATOM|format(category.slug) to CATEGORY_FEED_ATOM|format(slug=category.slug):
+	https://github.com/getpelican/pelican/blob/master/docs/changelog.rst#401-2018-11-30  -->
+	{# Use dot, no pipe:
+	https://github.com/getpelican/pelican/issues/2442#issuecomment-449426117 #}
+	<link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM.format(slug=category.slug) }}" rel="alternate" type="application/atom+xml">
 {%- endblock %}
 
 <!--=============================

@@ -19,12 +19,16 @@ def fix_pages(generator):
     Arguments:
         generator {pages} -- correct path for pages.
     """
-    for page in chain(generator.translations, generator.pages,
-                      generator.hidden_translations, generator.hidden_pages):
+    for page in chain(
+        generator.translations,
+        generator.pages,
+        generator.hidden_translations,
+        generator.hidden_pages,
+    ):
         # Получаем путь исходника относительно каталога content
         source_path = page.get_relative_source_path()
         # Заменяем расширение на html
-        new_path = source_path.rsplit('.', 1)[0] + '.html'
+        new_path = source_path.rsplit(".", 1)[0] + ".html"
         # И пихаем в страницу вместо родных путей относительно output
         page.override_url = new_path
         page.override_save_as = new_path
@@ -38,12 +42,11 @@ def fix_articles(generator):
     Arguments:
         generator {articles} -- correct path for articles.
     """
-    for article in chain(generator.translations,
-                         generator.articles):
+    for article in chain(generator.translations, generator.articles):
         # Получаем путь исходника относительно каталога content
         source_path = article.get_relative_source_path()
         # Заменяем расширение на html
-        article_path = source_path.rsplit('.', 1)[0] + '.html'
+        article_path = source_path.rsplit(".", 1)[0] + ".html"
         # И пихаем в страницу вместо родных путей относительно output
         article.override_url = article_path
         article.override_save_as = article_path

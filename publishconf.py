@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-04-30 10:30:13
+# @Last Modified time: 2018-12-20 18:46:34
 """Pelican configuration file.
 
 For publishing. pelicanconf.py — for development.
@@ -13,7 +13,7 @@ import sys
 
 # Doesn't need “os” module
 # https://github.com/getpelican/pelican-blog/blob/master/publishconf.py
-sys.path.append('.')
+sys.path.append(".")
 
 """pelicanconf module.
 
@@ -31,19 +31,19 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # Absolute path, if site publish
 # Don't use relative paths for publishing!
-SITEURL = YAMLCONFIG['siteurl']
+SITEURL = YAMLCONFIG["siteurl"]
 RELATIVE_URLS = False
 
 PLUGINS = [
     # Temporary disable, when bugs not fixed
     # 'deadlinks',
-    'filetime_from_git',
-    'just_table',
-    'interlinks',
-    'neighbors',
-    'putsashi',
-    'section_number',
-    'sitemap',
+    "filetime_from_git",
+    "just_table",
+    "interlinks",
+    "neighbors",
+    "putsashi",
+    "section_number",
+    "sitemap",
 ]
 
 # ****************************************************************************
@@ -60,9 +60,17 @@ LOAD_CONTENT_CACHE = False
 # Feed generation, perhaps, not desired when developing
 FEED_DOMAIN = SITEURL
 
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
-TRANSLATION_FEED_ATOM = 'feeds/all-%s.atom.xml'
+# [NOTE] Atom is obsolete technology, it doesn't support in Firefox 64:
+# https://www.theregister.co.uk/2018/10/13/mozilla_firefox_kills_rss/
+# Use addons, for example:
+# https://addons.mozilla.org/ru/firefox/addon/feed-preview
+FEED_ALL_ATOM = "feeds/all.atom.xml"
+# [NOTE] %s usage in CATEGORY_FEED_ATOM is deprecated, use {slug} instead:
+# https://github.com/getpelican/pelican/blob/master/docs/changelog.rst#401-2018-11-30
+CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
+# [NOTE] %s usage in TRANSLATION_FEED_ATOM is deprecated, use {lang} instead:
+# https://github.com/getpelican/pelican/blob/master/docs/changelog.rst#401-2018-11-30
+TRANSLATION_FEED_ATOM = "feeds/all-{lang}.atom.xml"
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 

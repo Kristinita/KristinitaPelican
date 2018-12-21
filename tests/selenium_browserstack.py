@@ -15,19 +15,20 @@ import time
 from selenium import webdriver
 
 desired_cap = {
-    'os': 'OS X',
-    'os_version': 'High Sierra',
-    'browser': 'Safari',
-    'browser_version': '11.0',
-    'project': 'Simple Kristinita\'s Search',
-    'browserstack.local': 'false',
-    'browserstack.debug': 'true',
-    'browserstack.selenium_version': '3.10.0'
+    "os": "OS X",
+    "os_version": "High Sierra",
+    "browser": "Safari",
+    "browser_version": "11.0",
+    "project": "Simple Kristinita's Search",
+    "browserstack.local": "false",
+    "browserstack.debug": "true",
+    "browserstack.selenium_version": "3.10.0",
 }
 
 driver = webdriver.Remote(
-    command_executor='http://bsuser43877:sAKeQiprjVUqpWyaxcyp@hub.browserstack.com:80/wd/hub',
-    desired_capabilities=desired_cap)
+    command_executor="http://bsuser43877:sAKeQiprjVUqpWyaxcyp@hub.browserstack.com:80/wd/hub",
+    desired_capabilities=desired_cap,
+)
 
 driver.get("https://kristinita.ru")
 if "Поиск Кристиниты" not in driver.title:

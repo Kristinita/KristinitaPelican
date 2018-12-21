@@ -20,12 +20,15 @@ from .mdx_liquid_tags import LiquidTags
 
 SYNTAX = "{% speakerdeck id %}"
 
-@LiquidTags.register('speakerdeck')
+
+@LiquidTags.register("speakerdeck")
 def speakerdeck(preprocessor, tag, markup):
     speakerdeck_out = """
 <script async class="speakerdeck-embed" data-id="{id}"
 data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
-        """.format(id=markup)
+        """.format(
+        id=markup
+    )
 
     return speakerdeck_out
 

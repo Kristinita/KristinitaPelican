@@ -23,7 +23,9 @@
 # https://travis-ci.org/Kristinita/SashaTidyDebugging/builds/369420036
 # [BUG] Warnings in console, when HTML Tidy build:
 # https://github.com/htacg/tidy-html5/issues/721
-parallel ::: 'pip install --upgrade pip && pip install pipenv && pipenv install --dev' \
+# [BUG] Temporary downgrade pipenv, because locking bug in newest versions:
+# https://github.com/pypa/pipenv/issues/3391
+parallel ::: 'pip install --upgrade pip && pip install pipenv==11.10.2 && pipenv install --dev' \
 	'npm install --global npm && npm install -g grunt-cli && npm install' \
 	'git clone https://github.com/htacg/tidy-html5.git && cd tidy-html5 && cd build/cmake && cmake ../.. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIB:BOOL=OFF && make && sudo make install' \
 	'gem install travis'

@@ -20,22 +20,24 @@ Output
 from .mdx_liquid_tags import LiquidTags
 import re
 import json
+
 try:
     from urllib.request import urlopen
 except ImportError:
     from urllib import urlopen
 
 
-SYNTAX = '{% soundcloud track_url %}'
-PARSE_SYNTAX = re.compile(r'(?P<track_url>https?://soundcloud.com/[\S]+)')
+SYNTAX = "{% soundcloud track_url %}"
+PARSE_SYNTAX = re.compile(r"(?P<track_url>https?://soundcloud.com/[\S]+)")
 
 
 def get_widget(track_url):
     r = urlopen(
-        'http://soundcloud.com/oembed',
-        data='format=json&url={}'.format(track_url).encode('utf-8'))
+        "http://soundcloud.com/oembed",
+        data="format=json&url={}".format(track_url).encode("utf-8"),
+    )
 
-    return json.loads(r.read().decode('utf-8'))['html']
+    return json.loads(r.read().decode("utf-8"))["html"]
 
 
 def match_it(markup):
@@ -43,13 +45,14 @@ def match_it(markup):
     if match:
         return match.groupdict()
     else:
-        raise ValueError('Error processing input. '
-                         'Expected syntax: {}'.format(SYNTAX))
+        raise ValueError(
+            "Error processing input. " "Expected syntax: {}".format(SYNTAX)
+        )
 
 
-@LiquidTags.register('soundcloud')
+@LiquidTags.register("soundcloud")
 def soundcloud(preprocessor, tag, markup):
-    track_url = match_it(markup)['track_url']
+    track_url = match_it(markup)["track_url"]
 
     return get_widget(track_url)
 

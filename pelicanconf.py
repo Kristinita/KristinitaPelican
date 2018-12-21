@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-06-05 19:55:02
+# @Last Modified time: 2018-12-21 18:44:14
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
 """
+from datetime import date
+
 # Parse YAML configuration file:
 # https://stackoverflow.com/q/41974628/5951529
 # Require PyYAML module:
@@ -14,7 +16,6 @@ import yaml
 
 # Insert current year to templates:
 # https://bernhard.scheirle.de/posts/2016/February/29/how-to-keep-your-copyright-year-up-to-date-using-jinja-filters/
-from datetime import date
 CURRENTYEAR = date.today().year
 
 # [DEPRECATED] All warnings fixed:
@@ -326,7 +327,7 @@ http://blockdiag.com/en/blockdiag/index.html
 
 markdown_newtab — add target='_blank' for all links
 Attribute don't add for local anchors
-https://github.com/Undeterminant/markdown-newtab/blob/master/run_tests.py
+https://github.com/Undeterminant/markdown-newtab
 
 md_environ — add own environment variables to text
 https://github.com/cmacmackin/md-environ
@@ -336,6 +337,10 @@ https://github.com/aleray/mdx_cite
 
 mdx_custom_span_class — custom !!classes!! for span tag
 https://github.com/exaroth/mdx_custom_span_class
+
+mdx_video — embed YouTube videos
+https://github.com/getpelican/pelican/issues/1099#issuecomment-25209351
+https://github.com/italomaia/mdx-video
 
 pyembed — embed videos/images from different popular sites
 https://pyembed.github.io/usage/markdown/
@@ -368,10 +373,9 @@ MARKDOWN = {
         'pymdownx.escapeall': {},
         'pymdownx.highlight': {},
         'pymdownx.inlinehilite': {
+            # [DEPRECATED] 'use_codehilite_settings' in 3.0 pymdown-extensions version
             'css_class': 'SashaInlineHighlight',
             'style_plain_text': True
-            # [DEPRECATED] in 3.0 pymdown-extensions version
-            # 'use_codehilite_settings': False,
         },
         'pymdownx.magiclink': {
             'hide_protocol': True,
@@ -396,12 +400,26 @@ MARKDOWN = {
         #
         # 4. Other extensions
         #
-        'downheader': {},
         'markdown_blockdiag': {},
-        'markdown_newtab': {},
+        # [BUG] Deleted by author, replaced to JQuery solution:
+        # http://bit.ly/2SjqOLq
+        # 'markdown_newtab': {},
         'md_environ.environ': {},
-        'mdx_cite': {},
+        # [BUG] Unneeded “configs” for Markdown 3:
+        # https://github.com/aleray/mdx_cite/pull/2
+        # 'mdx_cite': {},
         'mdx_custom_span_class': {},
+        # [BUG] Original repository dosen't support Markdown 3:
+        # Tempopary use fork:
+        # https://github.com/cprieto/mdx_downheader/pull/6
+        # https://github.com/linevych/mdx_downheader/tree/markdown3_support
+        # https://github.com/pypa/pipenv/pull/2702/files
+        # I create my own fork, that plugin doesn't update from original repository:
+        # https://github.com/Kristinita/mdx_downheader/blob/KiraPatch/setup.py
+        'mdx_downheader': {},
+        # [NOTE] Desable, because obsolete attributes “allowfullscreen” and “frameborder”:
+        # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#Attributes
+        # 'mdx_video': {},
         'pyembed.markdown': {}
     },
     'output_format': 'html5',

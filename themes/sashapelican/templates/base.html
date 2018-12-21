@@ -55,6 +55,10 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	{# No browser-update, because some issues:
 	https://github.com/browser-update/browser-update/issues #}
 	<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script>
+	{# target-blank
+	Add “target="_blank"” for all external links:
+	https://bogdandragomir.com/blog/2016/12/add-target-_blank-attribute-external-anchors-page-javascript-jquery-one-single-line/ #}
+	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/target-blank/target-blank.min.js" defer></script>
 	<!-- Gemini -->
 	<script src="//cdn.jsdelivr.net/npm/gemini-scrollbar/index.js" defer></script>
 	<!-- No smooth scrolling, if JQuery Lazy:
