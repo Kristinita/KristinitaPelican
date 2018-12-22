@@ -69,7 +69,10 @@ matrix:
     - grunt
     - grunt validate remote travis
   - script:
-    - grunt default && grunt http-server screenshots && grunt publish
+    # [BUG] pageres doesn't work with Node.js 11:
+    # https://github.com/sindresorhus/pageres/issues/344
+    # - grunt default && grunt http-server screenshots && grunt publish
+    - grunt publish
     - grunt validate remote travis
     # Deploy, if production, not dev build:
     # https://travis-ci.org/Kristinita/SashaTravis/builds/381271402

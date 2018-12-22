@@ -48,7 +48,10 @@ environment:
     # Spaces before “&&” doesn't need, compare:
     # https://ci.appveyor.com/project/Kristinita/sashatravis/build/job/5oqxucp76bpsr51o
     # https://ci.appveyor.com/project/Kristinita/sashatravis/build/1.0.38/job/s52ko615e3fpxr9b
-    GRUNT_COMMAND: default&& grunt http-server screenshots&& grunt publish
+    # [BUG] pageres doesn't work with Node.js 11:
+    # https://github.com/sindresorhus/pageres/issues/344
+    # GRUNT_COMMAND: default&& grunt http-server screenshots&& grunt publish
+    GRUNT_COMMAND: publish
 
 # [NOTE] I'm doesn't support 32-bit Windows:
 # https://www.appveyor.com/docs/appveyor-yml/
