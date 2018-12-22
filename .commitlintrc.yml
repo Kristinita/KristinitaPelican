@@ -55,9 +55,10 @@ rules:
     - always
     - 1
 
+  # https://marionebl.github.io/commitlint/#/reference-rules?id=references-empty
   references-empty:
-    - 2
-    - always
+    - 0
+    - never
 
   scope-enum:
     - 0
