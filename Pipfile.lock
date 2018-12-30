@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0d69dd9bad9e25d4fe792b8377772ed16140f371bf4823cd199767b024ba6646"
+            "sha256": "63f493b872b96c9343aa37f92eb6a9fbc7d9f23d52a75265a22c7f8ae8a7331d"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -15,20 +15,7 @@
             }
         ]
     },
-    "default": {
-        "markdown": {
-            "hashes": [
-                "sha256:c00429bd503a47ec88d5e30a751e147dcb4c6889663cd3e2ba0afe858e009baa",
-                "sha256:d02e0f9b04c500cde6637c11ad7c72671f359b87b9fe924b2383649d8841db7c"
-            ],
-            "version": "==3.0.1"
-        },
-        "mdx-downheader": {
-            "editable": true,
-            "git": "https://github.com/Kristinita/mdx_downheader.git",
-            "ref": "KiraPatch"
-        }
-    },
+    "default": {},
     "develop": {
         "actdiag": {
             "hashes": [
@@ -146,6 +133,7 @@
                 "sha256:c00429bd503a47ec88d5e30a751e147dcb4c6889663cd3e2ba0afe858e009baa",
                 "sha256:d02e0f9b04c500cde6637c11ad7c72671f359b87b9fe924b2383649d8841db7c"
             ],
+            "index": "pypi",
             "version": "==3.0.1"
         },
         "markdown-blockdiag": {
@@ -198,6 +186,11 @@
         "mdx-custom-span-class": {
             "editable": true,
             "git": "https://github.com/exaroth/mdx_custom_span_class.git"
+        },
+        "mdx-downheader": {
+            "editable": true,
+            "git": "https://github.com/Kristinita/mdx_downheader.git",
+            "ref": "KiraPatch"
         },
         "mdx-video": {
             "hashes": [
@@ -292,11 +285,11 @@
         },
         "pip-licenses": {
             "hashes": [
-                "sha256:5331544561ab190b95cb4f09c78d1ba2c3f3360885c5a217aa78ccdbc9770b1d",
-                "sha256:de82dc28114dfcffd0e52a3ee41db2c465b2bd7a8bc51b4dfd19fd66c01c36cc"
+                "sha256:440feae58056ccf11f907219161adeacde1905978af11aadcbbd79952015e8a2",
+                "sha256:acef5113f12296563a0b1cd880922d8d5679497b509409a01fe643b230fa02c4"
             ],
             "index": "pypi",
-            "version": "==1.9.0"
+            "version": "==1.10.0"
         },
         "pip-review": {
             "hashes": [

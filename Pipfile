@@ -3,6 +3,8 @@ url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[packages]
+
 [dev-packages]
 pelican = "*"
 markdown = "*"
@@ -29,7 +31,7 @@ editable = true
 git = "https://github.com/Kristinita/PygmentsCSVLexer.git"
 editable = true
 
-[packages.mdx_downheader]
+[dev-packages.mdx_downheader]
 git = "https://github.com/Kristinita/mdx_downheader.git"
 editable = true
 ref = "KiraPatch"
