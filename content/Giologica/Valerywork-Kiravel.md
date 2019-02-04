@@ -2,20 +2,19 @@ Title: Вэлериворк и Киравэл
 Date: 2017-02-13 19:15:15
 Author: Sasha Chernykh
 Lang: ru
-Summary:
+Summary: Понятия Вэлериворка и Киравэла
 Pagetitle: Вэлериворк &amp; Киравэл
-Metacontent: Вэлериворк и Киравэл
 Pagecolors: giologica-blue
 Asideimage: SashaBlueEyes
 Iconleftorright: right
 Tags: giologica
-Category: Giologica
 Tooltipster: false
 ClipboardJs: true
 Customcss: true
 Customcss1: giologica/valerywork-kiravel
 Noco: 159d5
-Opengraphimage: https://i.imgur.com/5atSEHP.jpg
+Og_image: https://i.imgur.com/5atSEHP.jpg
+Schemaorgtype: ScholarlyArticle
 
 <!-- MarkdownTOC -->
 

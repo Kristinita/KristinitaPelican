@@ -1,20 +1,18 @@
 Title: Korvers
 Version: 0.0.1
 Author: Sasha Chernykh
-Slug: Korvers
 Lang: ru
-Summary: Техника мышления в джинджеринах
+Summary: Техники поиска версий в джинджеринах
 Pagetitle: 4 14 7. 4 корвера, 14 аксаксов, 7 гарниромизов
-Metacontent: Логика и оценка риска в джинджеринах
 Pagecolors: gingerinas
 Asideimage: SashaFluffy
 Iconleftorright: right
 Tags: gingerinas
-Category: Логика в джинджеринах
 Tooltipster: false
 ClipboardJs: true
 Noco: 1EBY
-Opengraphimage: https://i21.servimg.com/u/f21/17/58/26/07/korver10.jpg
+Og_image: https://i21.servimg.com/u/f21/17/58/26/07/korver10.jpg
+Schemaorgtype: ScholarlyArticle
 
 <!-- MarkdownTOC -->
 

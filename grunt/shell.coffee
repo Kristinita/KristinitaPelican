@@ -24,14 +24,13 @@ module.exports =
 
 	# [DEPRECATED] If “pipenv --update”, users have bug:
 	# https://github.com/pypa/pipenv/issues/1761
-	# ############
-	# ## pipenv ##
-	# ############
 	# # Update Pip and Pipenv
 	# pipenvupdate:
 	# 	command: 'pipenv --update'
 
-
+	############
+	## pipenv ##
+	############
 	# Update all Python Pipenv packages:
 	# https://stackoverflow.com/a/16269635/5951529
 	# https://github.com/jgonggrijp/pip-review#pip-review
@@ -202,3 +201,15 @@ module.exports =
 			command: '"batch/bashate.bat"'
 		else
 			command: 'bash bash/bashate.sh'
+
+
+	#################
+	# LocalAppVeyor #
+	#################
+	# Validate “appveyor.yml” file:
+	# https://github.com/joaope/LocalAppVeyor
+	# Get system environment variables:
+	# https://stackoverflow.com/a/14089064/5951529
+	# https://gruntjs.com/creating-tasks#cli-options-environment
+	localappveyor:
+		command: 'LocalAppVeyor lint --token <%= templates.tokens.api_key_appveyor %>'

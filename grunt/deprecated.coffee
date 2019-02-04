@@ -279,6 +279,7 @@
 # 	else
 # 		command: 'pipenv run lice mit -o "Sasha Chernykh" --file output/LICENSE.md'
 
+
 # [DEPRECATED] Doesn't work for CSS paths
 # #########################
 # # grunt-path-absolutely #
@@ -297,6 +298,7 @@
 # 			dest: "."
 # 		]
 
+
 # [DEPRECATED] Doesn't allow to have comments in JSON configuration files:
 # #############################
 # # grunt-strip-json-comments #
@@ -310,3 +312,33 @@
 # 			whitespace: false
 # 		files:
 # 			'.jsbeautifyrc': '.jsbeautifyrc'
+
+# [DEPRECATED] I don't see plugins, that can come in handy
+# ####################
+# ## grunt-posthtml ##
+# ####################
+# # PostHTML support for Grunt:
+# # https://github.com/posthtml/posthtml
+# # https://www.npmjs.com/package/grunt-juwain-posthtml
+# # [WARNING] Use “juwain-posthtml”, not native “posthtml” version:
+# # https://github.com/TCotton/grunt-posthtml/issues/3
+# module.exports =
+# 	options:
+# 		use: [
+# 			#############
+# 			# ARIA Tabs #
+# 			#############
+# 			# Add WAI-ARIA attributes:
+# 			# http://prgssr.ru/development/ispolzovanie-aria-v-html5.html
+# 			# http://jonathantneal.github.io/posthtml-aria-tabs/
+# 			# [WARNING] Disable, because I use “ul/li” for progressive enhancements:
+# 			# http://jonathantneal.github.io/posthtml-aria-tabs/#caveats
+# 			# require('posthtml-aria-tabs')()
+# 		]
+# 	build:
+# 		files: [
+# 			expand: true
+# 			cwd: "<%= templates.paths.output_path %>"
+# 			src: ['**/*.html']
+# 			dest: "<%= templates.paths.output_path %>"
+# 			]

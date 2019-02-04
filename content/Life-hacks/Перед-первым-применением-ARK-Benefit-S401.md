@@ -2,20 +2,19 @@ Title: Перед-первым-запуском-ARK-Benefit-S401
 Date: 2017-02-13 19:15:15
 Author: Sasha Chernykh
 Lang: ru
-Summary:
+Summary: ARK Benefit S401 for dummies
 Pagetitle: Портативный браузер по умолчанию в Windows 10
-Metacontent: Description, how to make Pale Moon default browser in Windows
 Pagecolors: it-articles
 Asideimage: SashaGreenSweater
 Iconleftorright: left
 Tags: ROM, android
-Category: Life-hacks,
 Tooltipster: true
 ClipboardJs: true
 Customcss: true
 Customcss1: Life-hacks/default-portable-browser
 Noco: 1vWK5
-Opengraphimage: https://s.4pda.to/I5lB3s6bjRPdAAqOH9ucARYLxz211Mfez2txLI9OoxjRQqqGIAGK.jpg
+Og_image: https://s.4pda.to/I5lB3s6bjRPdAAqOH9ucARYLxz211Mfez2txLI9OoxjRQqqGIAGK.jpg
+Schemaorgtype: HowTo
 
 # Введение
 

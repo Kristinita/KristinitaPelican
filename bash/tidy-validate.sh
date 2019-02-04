@@ -6,13 +6,13 @@
 #############
 # HTML Tidy #
 #############
-# Validation all HTML files:
+# [INFO] Validation all HTML files:
 # https://unix.stackexchange.com/a/428022/237999
-# Recursive glob:
+# [INFO] Recursive glob:
 # https://unix.stackexchange.com/a/49917/237999
 shopt -s globstar
 validall=true
-# Using variables in script:
+# [INFO] Using variables in script:
 # http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-7.html
 for f in output/**/*.html
 	do

@@ -4,19 +4,18 @@ Author: Sasha Chernykh
 Lang: en
 Summary: Sublime Text 3 package, that wrap the selected text to DuckDuckGo or Google top query URL <br><br> ![KristinitaLuckyLink](https://i.imgur.com/TuyxneV.png)
 Pagetitle: KristinitaLuckyLink
-Metacontent: Wrap selected text with top DuckDuckGo or Google URL
 Pagecolors: programs
 Asideimage: KristinaGold
 Titleimage: true
 Titleimagename: KristinitaLuckyLink
 Iconleftorright: right
 Tags: programs, sublime-text
-Category: Programs
 Noco: 1g9b6
 Tooltipster: true
 Clipboardjs: true
 Visualize: false
-Opengraphimage: https://i.imgur.com/TuyxneV.png
+Og_image: https://i.imgur.com/TuyxneV.png
+Schemaorgtype: SoftwareApplication
 
 <!-- MarkdownTOC -->
 

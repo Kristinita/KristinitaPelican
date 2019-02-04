@@ -5,19 +5,18 @@ Author: Sasha Chernykh
 Lang: en
 Summary: Features, problems and it solutions, that not described in official typo-reporter Readme. <br><br> ![English typo-reporter form](https://i.imgur.com/U8pIw0a.png)
 Pagetitle: typo-reporter
-Metacontent: Features, problems and it solutions, that not described in official typo-reporter Readme.
 Pagecolors: it-articles
 Asideimage: SashaGreenSweater
 Iconleftorright: left
 Tags: it-articles, spelling
-Category: IT-articles
 Noco: 1vWK5
 Tooltipster: false
 Clipboardjs: false
 Visualize: false
-Opengraphimage: https://i.imgur.com/U8pIw0a.png
+Og_image: https://i.imgur.com/U8pIw0a.png
 Customjs: false
 Customcss: false
+Schemaorgtype: HowTo
 
 <!-- MarkdownTOC -->
 

@@ -1,20 +1,19 @@
 Title: Установка портативной версии Pale Moon в качестве браузера по умолчанию в Windows 10
 Author: Sasha Chernykh
 Lang: ru
-Summary:
+Summary: Description, how to make Pale Moon default browser in Windows
 Pagetitle: Портативный браузер по умолчанию в Windows 10
-Metacontent: Description, how to make Pale Moon default browser in Windows
 Pagecolors: it-articles
 Asideimage: SashaGreenSweater
 Iconleftorright: left
 Tags: life-hacks, pale-moon
-Category: Life-hacks
 Tooltipster: true
 ClipboardJs: true
 Customcss: true
 Customcss1: Life-hacks/default-portable-browser
 Noco: 1vWK5
-Opengraphimage: https://i.imgur.com/DjwBc2Q.png
+Og_image: https://i.imgur.com/DjwBc2Q.png
+Schemaorgtype: HowTo
 
 <!-- MarkdownTOC -->
 
@@ -43,7 +42,7 @@ Opengraphimage: https://i.imgur.com/DjwBc2Q.png
 	+ восстанавливают не всё-всё, как было,
 	+ перенос отнимает время.
 
-    В силу причин <dfn>а</dfn> и <dfn>в</dfn> я вообще стараюсь не использовать программы, сохраняющие какие-либо пользовательские данные на системном диске.
+	В силу причин <dfn>а</dfn> и <dfn>в</dfn> я вообще стараюсь не использовать программы, сохраняющие какие-либо пользовательские данные на системном диске.
 
 1. Чтобы просмотреть созданные файлы Pale Moon и/или изменить их через проводник Windows либо файловый менеджер, в инсталлированной версии браузера придётся переходить по пути <dfn>C:\Users\SashaGoddess\AppData\Roaming\Moonchild Productions\Pale Moon</dfn>, используя переносимую — <dfn>E:\Pale Moon</dfn>. Лично для меня второй вариант много удобнее.
 

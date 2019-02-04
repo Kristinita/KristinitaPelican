@@ -14,7 +14,7 @@
 # https://github.com/clutchski/coffeelint/issues/194#issuecomment-111058595
 
 ###
-# For all ignored levels in default configuration I set warning level:
+For all ignored levels in default configuration I set warning level:
 Custom options:
 “colon_assignment_spacing” — extra spacing
 “indentation” 1 needs for tabs indentation
@@ -26,6 +26,10 @@ https://softwareengineering.stackexchange.com/a/72/264224
 “no_unnecessary_double_quotes” ignore, because BetterCoffeeScript
 highlight templates between double quotes, not between single:
 https://packagecontrol.io/packages/Better%20CoffeeScript
+[FIXME] “missing_fat_arrows” — ignore:
+FancyBox coffee error
+https://stackoverflow.com/a/15422322/5951529
+https://github.com/clutchski/coffeelint/blob/master/src/rules/missing_fat_arrows.coffee
 ###
 module.exports =
 	options:

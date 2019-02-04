@@ -2,13 +2,15 @@
 # @Date:   2017-04-05 20:11:18
 # @Last Modified time: 2017-04-11 08:20:09
 
+# Grunt apply for files dynamically:
+# https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
+
+# [DONE]
+# https://superuser.com/q/1198421/572069
 # [BUG] In ConEmu background color = Grunt output color
 # https://github.com/gruntjs/grunt/issues/1589
 # Temporarily solution — using --no-color argument
 # https://stackoverflow.com/a/23550493/5951529
-
-# Grunt apply for files dynamically:
-# https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
 
 # [DONE]
 # Node.js 10.0.0 bugs:

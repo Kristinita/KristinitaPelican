@@ -1,19 +1,18 @@
 Title: SashaSublime
-Tags: Sublime Text
+Tags: sublime-text
 Date: 2017-01-31 09:13:30
 Status: published
 Author: Sasha Chernykh
 PageTitle: SashaSublime
-Summary: Theme and color scheme for Sublime Text, where all colors have good visible. <br><br> ![Hex Viewer](https://i.imgur.com/c0t0Iqy.png) <br><br> ![GoTo Anything](https://i.imgur.com/2hRinyv.png) <br><br> ![JSON](https://i.imgur.com/N2LvbNZ.png)
-MetaContent: SashaSublime — theme and color scheme for Sublime Text 3, where all elements are good visible
-Category: Programs
+Summary: Theme and color scheme for Sublime Text, where all colors have good visible <br><br> ![Hex Viewer](https://i.imgur.com/c0t0Iqy.png) <br><br> ![GoTo Anything](https://i.imgur.com/2hRinyv.png) <br><br> ![JSON](https://i.imgur.com/N2LvbNZ.png)
 Pagecolors: programs
 Asideimage: SashaChocolate
 IconLeftOrRight: right
 Tooltipster: true
 ClipboardJs: true
 Noco: 1g9b6
-Opengraphimage: https://i.imgur.com/ljT5eJp.png
+Og_image: https://i.imgur.com/ljT5eJp.png
+Schemaorgtype: SoftwareApplication
 
 <p>
 	<a href="{static}/images/donate_files/Bitcoin-HTML-Redirect.html"><img src="{static}/images/donate_files/Bitcoin-Donate-button.png" alt="Bitcoin Donate Button" class="SashaInline" /></a>
@@ -26,7 +25,7 @@ Opengraphimage: https://i.imgur.com/ljT5eJp.png
 	<img src="https://img.shields.io/badge/Release-1.3.1-orange.svg" alt="Release" class="SashaInline" />
 	<img src="https://img.shields.io/github/stars/Kristinita/SashaSublime.svg" alt="Stars" />
 	<img src="https://img.shields.io/github/forks/Kristinita/SashaSublime.svg" alt="Forks" />
-	<img src="https://img.shields.io/maintenance/STATUS/2018.svg" alt="Maintained" />
+	<img src="https://img.shields.io/maintenance/STATUS/2019.svg" alt="Maintained" />
 	<a href="https://packagecontrol.io/packages/SashaSublime"><img src="https://packagecontrol.herokuapp.com/downloads/SashaSublime.svg?style=flat-square" alt="Package Control" /></a>
 	<a href="https://github.com/Kristinita/SashaSublime/issues"><img src="https://img.shields.io/github/issues/Kristinita/SashaSublime.svg" alt="GitHub issues" /></a>
 </p>

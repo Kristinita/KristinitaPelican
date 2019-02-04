@@ -65,12 +65,13 @@ module.exports =
 				}
 				# Relative path
 				# Fancybox and JQueryLazy images
+				# [WARNING] You need use same images 2 time: in “href” and “data-src”
 				{
 				pattern: /<img alt="([^"]+?)" src="(.+?)"( \/)?>/g
-				replacement: '<a class="fancybox" href="$2"><img class="SashaLazy" \
+				replacement: '<img class="SashaLazy" \
 								src="../<%= templates.paths.theme_static_dir %>\
 								/images/interface-images/transparent-one-pixel.png" \
-								data-src="$2" alt="$1"></a>'
+								data-src="$2" alt="$1">'
 				}
 			]
 	######################

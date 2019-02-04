@@ -4,18 +4,17 @@ Author: Sasha Chernykh
 Lang: en
 Summary: Tutorial, how you can make release and changelog, use only one command <br><br> ![Package Control messages](https://i.imgur.com/J5AuHmX.png) <br><br> ![*CHANGELOG.md* and *messages.json*](https://i.imgur.com/12fFJsX.png) <br><br> ![*messages/&lt;version&gt;.txt* and *package.json*](https://i.imgur.com/kkKjiv5.png) <br><br> ![Releases page](https://i.imgur.com/FwPHBZS.png)
 Pagetitle: Fastest way to add new version of your Sublime Text package
-Metacontent: Tutorial, how you can make release and changelog, use one command
 Pagecolors: it-articles
 Asideimage: SashaGreenSweater
 Iconleftorright: left
 Tags: it-articles, sublime-text, release
-Category: IT-articles
 Noco: 1vWK5
 Tooltipster: true
 Clipboardjs: true
-Opengraphimage: https://i.imgur.com/12fFJsX.png
+Og_image: https://i.imgur.com/12fFJsX.png
 Customjs: false
 Customcss: false
+Schemaorgtype: HowTo
 
 <!-- MarkdownTOC -->
 

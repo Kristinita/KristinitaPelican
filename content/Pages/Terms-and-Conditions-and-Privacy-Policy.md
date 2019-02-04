@@ -12,7 +12,7 @@ Noco: 1QCqM6
 Tooltipster: true
 Clipboardjs: true
 Visualize: false
-Opengraphimage: https://i.imgur.com/URzYb4S.jpg
+Og_image: https://i.imgur.com/URzYb4S.jpg
 
 <!-- MarkdownTOC -->
 

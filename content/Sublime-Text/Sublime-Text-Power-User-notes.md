@@ -2,18 +2,17 @@ Title: Sublime-Text-Power-User-notes
 Date: 2017-02-13 19:15:15
 Author: Sasha Chernykh
 Lang: en
-Summary:
+Summary: Notes of book “Sublime Text Power User”
 Pagetitle: “Sublime Text Power User” notes
-Metacontent: Notes of book “Sublime Text Power User”
 Pagecolors: programs
 Asideimage: SashaChocolate
 Iconleftorright: right
 Tags: sublime-text
-Category: Sublime Notes
 Tooltipster: false
 ClipboardJs: true
 Noco: 1EBY
-Opengraphimage: https://i.imgur.com/K3YqJ4S.png
+Og_image: https://i.imgur.com/K3YqJ4S.png
+Schemaorgtype: Review
 
 <!-- MarkdownTOC -->
 

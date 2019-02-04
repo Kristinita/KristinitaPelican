@@ -3,6 +3,9 @@
 #############
 # Continuous integration for Ubuntu:
 # https://travis-ci.org/
+# [WARNING] If Travis CI doesn't create build for your latest commit,
+# your “.travis.yml” file is not valid. Example:
+# https://github.com/Kristinita/SashaTravisDebugging/commits/KiraLocalAppVeyor/.travis.yml
 # [WARNING] “group: travis_latest” doesn't work at April 2018, read end of article:
 # https://blog.travis-ci.com/2017-12-01-new-update-schedule-for-linux-build-images
 
@@ -46,7 +49,7 @@ git:
 # https://github.com/travis-ci/travis-ci/issues/9180
 language: python
 
-python: 3.7.1
+python: 3.7
 
 # [DEPRECATED] Doesn't work on Travis CI, needs “matrix.include”:
 # https://github.com/travis-ci/travis-ci/issues/9634
@@ -67,7 +70,7 @@ matrix:
   include:
   - script:
     - grunt
-    - grunt validate remote travis
+    - grunt validatedev validate remote travis
   - script:
     # [BUG] pageres doesn't work with Node.js 11:
     # https://github.com/sindresorhus/pageres/issues/344
@@ -96,6 +99,8 @@ matrix:
 # https://github.com/travis-ci/apt-package-whitelist
 # [NOTE] ShellCheck default in Travis CI configuration:
 # https://github.com/koalaman/shellcheck#travis-ci
+# PhantomJS is preinstalled on Travis:
+# https://docs.travis-ci.com/user/gui-and-headless-browsers/#using-phantomjs
 addons:
   apt:
     packages:
@@ -120,6 +125,16 @@ before_install:
 # Ignore existing virtual environments:
 # https://github.com/menzenski/pipenv-travis-test/blob/develop/.travis.yml
 - export PIPENV_IGNORE_VIRTUALENVS=1
+# Add LocalAppVeyor directory to the end of the PATH environment variable:
+# https://unix.stackexchange.com/a/26067/237999
+# http://www.troubleshooters.com/linux/prepostpath.htm
+# “.dotnet/tools” must be added to PATH:
+# https://github.com/dotnet/cli/issues/9208#issuecomment-386851831
+# DotNet user profile is “USERPROFILE” on Windows and “HOME” on Linux:
+# https://github.com/dotnet/cli/issues/7569#issuecomment-329280924
+# “$HOME” is “/home/travis” on Travis Linux:
+# https://docs.travis-ci.com/user/environment-variables/#default-environment-variables
+- PATH=$PATH:$HOME/.dotnet/tools
 # That script run for “master” branch, not for “HEAD”;
 # Needs, that “grunt-checkbranch” works correct:
 # https://stackoverflow.com/a/18866140/5951529

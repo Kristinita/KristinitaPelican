@@ -12,7 +12,7 @@ Noco: 1QCqM6
 Tooltipster: true
 Clipboardjs: true
 Visualize: false
-Opengraphimage: https://i.imgur.com/2blY7dI.png
+Og_image: https://i.imgur.com/2blY7dI.png
 
 <!-- MarkdownTOC -->
 
@@ -26,6 +26,8 @@ Opengraphimage: https://i.imgur.com/2blY7dI.png
 		1. [Windows](#windows)
 		1. [UNIX and macOS](#unix-and-macos)
 	1. [Installation](#installation)
+		1. [Environment variables](#environment-variables)
+			1. [AppVeyor](#appveyor)
 		1. [Windows](#windows-1)
 			1. [Terminal selection](#terminal-selection)
 			1. [Batch file](#batch-file)
@@ -59,18 +61,18 @@ Developer of this site doesn't support:
 <a id="testing"></a>
 # Testing
 
-Site tested via [BrowserStack](https://www.browserstack.com) on these devices and latest browsers version at May 2018:
+Site tested via [BrowserStack](https://www.browserstack.com) on these latest devices and latest browsers version at January 2019:
 
-+ macOS High Sierra, Safari 11.1
++ macOS Mojave, Safari 12.0
 + [Windows 10 64-bit](https://www.browserstack.com/question/621)
 	+ Firefox
 	+ Opera
 	+ Edge
 	+ Chrome
-+ iPhone X
-+ iPad 5th
-	+ ([iOS and Safari](https://www.lifewire.com/check-the-version-number-of-safari-446563)) 11
-+ Samsung Galaxy S8, Chrome
++ iPhone XS Max
++ iPad Pro 12.9.2018
+	+ ([iOS and Safari](https://www.lifewire.com/check-the-version-number-of-safari-446563)) 12
++ Samsung Galaxy S9 Plus, Chrome
 
 <a id="devices-and-browsers"></a>
 # Devices and browsers
@@ -117,6 +119,37 @@ You must install in your machine latest versions:
 <a id="installation"></a>
 ## Installation
 
+<a id="environment-variables"></a>
+### Environment variables
+
+<a id="appveyor"></a>
+#### AppVeyor
+
+Get [AppVeyor API token](https://www.appveyor.com/docs/api/). Register on AppVeyor, if already no → <https://ci.appveyor.com/api-keys> → *API keys* → *Generate new API token* → copy your token.
+
+![AppVeyor token](https://i.imgur.com/WiFtUMD.png)
+
+Add environment variable to your local PC:
+
++ Windows:
+
+```batch
+SETX API_KEY_APPVEYOR your_token
+```
+
++ Linux:
+
+```bash
+export API_KEY_APPVEYOR your_token
+```
+
+Replace *your_token* to token, that you get.
+
+<!-- [FIXME] gtools — https://github.com/chocolatey/chocolatey-package-requests/issues/532  -->
+
+!!! warning
+	Windows users needs also manually add path to *LocalAppVeyor.exe* — *%USERPROFILE%/.dotnet/tools* — as value of *PATH* environment variable. Use [Rapid Environment Editor](https://ru.stackoverflow.com/a/596341/199934) or [pathed](http://www.p-nand-q.com/download/gtools/pathed.html). Don't use *SETX*, [you can lose](https://stackoverflow.com/a/28778358/5951529) your *PATH* data.
+
 <a id="windows-1"></a>
 ### Windows
 
@@ -142,10 +175,11 @@ Environment variables will update automatically in current session, but that app
 
 ```batch
 SETX PIPENV_VENV_IN_PROJECT 1
+SETX PIPENV_IGNORE_VIRTUALENVS 1
 CALL RefreshEnv.cmd
 git clone --depth=1 --branch=master https://github.com/Kristinita/KristinitaPelican.git
 CD KristinitaPelican
-START /B CMD /C "choco install html-tidy -y -ignoredependencies"
+START /B CMD /C "choco install phantomjs html-tidy -y -ignoredependencies"
 START /B CMD /C "python -m pip install --upgrade pip & pip install pipenv & pipenv install --dev"
 START /B CMD /C "npm install -g grunt-cli & npm install"
 ```
@@ -156,10 +190,12 @@ START /B CMD /C "npm install -g grunt-cli & npm install"
 
 ```batch
 SETX PIPENV_VENV_IN_PROJECT 1
+SETX PIPENV_IGNORE_VIRTUALENVS 1
+SETX path "%path%;D:\Kristinita"
 CALL RefreshEnv.cmd
 git clone --depth=1 --branch=master https://github.com/Kristinita/KristinitaPelican.git
 CD KristinitaPelican
-choco install html-tidy -y -ignoredependencies
+choco install phantomjs html-tidy -y -ignoredependencies
 python -m pip install --upgrade pip
 pip install pipenv
 pipenv install --dev
@@ -179,11 +215,13 @@ See comments to the script in files:
 
 ```shell
 export PIPENV_VENV_IN_PROJECT=1
+export PIPENV_IGNORE_VIRTUALENVS=1
+PATH=$PATH:$HOME/.dotnet/tools
 git clone --depth=1 --branch=master https://github.com/Kristinita/KristinitaPelican.git
 cd KristinitaPelican
 wait
 parallel ::: 'pip install --upgrade pip && pip install pipenv && pipenv install --dev' \
-				'npm install --global npm && npm install -g grunt-cli && npm install'
+				'npm install --global npm && npm install -g grunt-cli phantomjs-prebuilt && npm install'
 ```
 
 **Except** [*pexpect.exceptions.TIMEOUT*](https://github.com/pypa/pipenv/issues/65):
@@ -192,6 +230,8 @@ parallel ::: 'pip install --upgrade pip && pip install pipenv && pipenv install 
 
 ```shell
 export PIPENV_VENV_IN_PROJECT=1
+export PIPENV_IGNORE_VIRTUALENVS=1
+PATH=$PATH:$HOME/.dotnet/tools
 git clone --depth=1 --branch=master https://github.com/Kristinita/KristinitaPelican.git
 cd KristinitaPelican
 wait
@@ -199,7 +239,7 @@ pip install --upgrade pip
 pip install pipenv
 pipenv install --dev
 npm install --global npm
-npm install -g grunt-cli
+npm install -g grunt-cli phantomjs-prebuilt
 npm install
 ```
 
@@ -297,7 +337,7 @@ For all Sasha Chernykh projects:
 
 [jtable]
 Type|Checking tool|Rules description|Configuration file
-commits|[commitlint](http://marionebl.github.io/commitlint/)|[1](http://marionebl.github.io/commitlint/#/reference-rules), WARNING — [no default levels for rules](https://github.com/marionebl/commitlint/issues/316#issuecomment-385708769)|[.commitlintrc.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/.commitlintrc)
+commits|[commitlint](http://marionebl.github.io/commitlint/) + [Husky](https://www.npmjs.com/package/husky) |[1](http://marionebl.github.io/commitlint/#/reference-rules), WARNING — [no default levels for rules](https://github.com/marionebl/commitlint/issues/316#issuecomment-385708769)|[.commitlintrc.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/.commitlintrc.yml), [.huckyrc.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/.huskyrc.yml)
 all files and folders names|[grunt-path-validator](https://www.npmjs.com/package/grunt-path-validator) (for Grunt projects, I can't find tool for all project types)|no whitespace characters in names — it accept in files/folder naming conventions — [1](https://superuser.com/q/29111/572069), [2](https://portal.slac.stanford.edu/sites/inc_public/Pages/folder-file-names.aspx), [3](https://www.reddit.com/r/linux/comments/1kpzxz/what_are_your_file_naming_conventions/), [4](https://www2.le.ac.uk/services/research-data/organise-data/naming-files), [5](https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming)|[path_validator.coffee](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/path_validator.coffee) (for Grunt projects, I can't find tool for all project types)
 all files|[EditorConfig](http://editorconfig.org/)|[1](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties)|[.editorconfig](https://github.com/Kristinita/KristinitaPelican/blob/master/.editorconfig)
 supported browsers|[Browserslist](https://www.npmjs.com/package/browserslist)|[1](https://github.com/browserslist/browserslist#queries)|[browserslist](https://github.com/Kristinita/KristinitaPelican/blob/master/browserslist)
@@ -314,6 +354,7 @@ Bash|[ShellCheck](https://www.shellcheck.net/)|[1](https://github.com/koalaman/s
 Bash|[bashate](https://docs.openstack.org/bashate/latest/readme)|[1](https://docs.openstack.org/bashate/latest/readme#currently-supported-checks)|[bashate.sh](https://github.com/Kristinita/KristinitaPelican/blob/master/bash/bashate.sh) ([no configuration file for bashate](https://bugs.launchpad.net/bash8/+bug/1395391))
 YAML|[yamllint](http://yamllint.readthedocs.io/en/latest/)|[1](http://yamllint.readthedocs.io/en/latest/configuration.html)|[.yamllint](https://github.com/Kristinita/KristinitaPelican/blob/master/.yamllint)
 .travis.yml|[Travis CI Client](https://github.com/travis-ci/travis.rb#lint)|[1](https://docs.travis-ci.com/user/customizing-the-build)|—
+appveyor.yml|[LocalAppVeyor](https://github.com/joaope/LocalAppVeyor#-lint-command)|[1](https://www.appveyor.com/docs/appveyor-yml/)|—
 [/jtable]
 
 <a id="non-used-tools"></a>

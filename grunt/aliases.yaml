@@ -7,61 +7,66 @@
 # git — add, commit and push to GitHub,
 # screenshot — make site screenshots,
 # update — update Node.js, Python and git,
-# validatesource — sources and output validation,
+# validate — sources and output validation,
+# validatedev — using only for development build,
 # remote — Continuous Integration, not local,
 # travis — Travis CI, not local or another CI.
 # If “default”, you need run “grunt” in command prompt, not “grunt default”:
 # https://www.html5rocks.com/en/tutorials/tooling/supercharging-your-gruntfile/#toc-organizing
 default:
-  - 'concurrent:tarb1'
-  - 'concurrent:tarb2'
-  - 'concurrent:tarb3'
-  - 'concurrent:tarb4'
-  - 'concurrent:tarb5'
-  - 'concurrent:tarb6'
-  - 'concurrent:tarb7'
-  - 'concurrent:tarb8'
+- 'concurrent:tarb1'
+- 'concurrent:tarb2'
+- 'concurrent:tarb3'
+- 'concurrent:tarb4'
+- 'concurrent:tarb5'
+- 'concurrent:tarb6'
+- 'concurrent:tarb7'
+- 'concurrent:tarb8'
 
 screenshots:
-  - 'concurrent:tarsc1'
+- 'concurrent:tarsc1'
 
 publish:
-  - 'concurrent:taru1'
-  - 'concurrent:taru2'
-  - 'concurrent:taru3'
-  - 'concurrent:tarp1'
-  - 'concurrent:tarp2'
-  - 'concurrent:tarp3'
-  - 'concurrent:tarp4'
-  - 'concurrent:tarp5'
-  - 'concurrent:tarp6'
-  - 'concurrent:tarp7'
-  - 'concurrent:tarp8'
-  - 'concurrent:tarp9'
-  - 'concurrent:tarp10'
-  - 'concurrent:tarp11'
+- 'concurrent:taru1'
+- 'concurrent:taru2'
+- 'concurrent:taru3'
+- 'concurrent:tarp1'
+- 'concurrent:tarp2'
+- 'concurrent:tarp3'
+- 'concurrent:tarp4'
+- 'concurrent:tarp5'
+- 'concurrent:tarp6'
+- 'concurrent:tarp7'
+- 'concurrent:tarp8'
+- 'concurrent:tarp9'
+- 'concurrent:tarp10'
+- 'concurrent:tarp11'
 
 git:
-  - 'gta:add'
-  - 'gta:commit'
-  - 'gta:push'
+- 'gta:add'
+- 'gta:commit'
+- 'gta:push'
 
 update:
-  - 'concurrent:taru1'
-  - 'concurrent:taru2'
-  - 'concurrent:taru3'
-  - 'concurrent:taru4'
+- 'concurrent:taru1'
+- 'concurrent:taru2'
+- 'concurrent:taru3'
+- 'concurrent:taru4'
 
 validate:
-  - 'concurrent:tars1'
-  - 'concurrent:tarv1'
-  - 'concurrent:tarv2'
-  - 'concurrent:tarv3'
+- 'concurrent:tars1'
+- 'concurrent:tarv1'
+- 'concurrent:tarv2'
+- 'concurrent:tarv3'
+
+validatedev:
+- 'concurrent:tard1'
+- 'concurrent:tard2'
 
 remote:
-  - 'concurrent:tarr1'
-  - 'concurrent:tarr2'
+- 'concurrent:tarr1'
+- 'concurrent:tarr2'
 
 travis:
-  - 'concurrent:tart1'
-  - 'concurrent:tart2'
+- 'concurrent:tart1'
+- 'concurrent:tart2'

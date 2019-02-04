@@ -13,7 +13,6 @@ Epigraph: true
 Epigraphtext: Посвящено <a href="https://vk.com/id152198389">Наталье Степуриной (Шмелёвой)</a>, <br>никогда не оставлявшую меня в трудную минуту. <br>Названо в честь <a href="http://www.history.com/topics/native-american-history/sacagawea">Её игрового никнейма</a>.
 Iconleftorright: right
 Tags: sublime-text, gingerinas, what-where-when
-Category: Programs
 Noco: 1g9b6
 Stylesheets: personal/
 Javascripts: personal/
@@ -21,6 +20,7 @@ Tooltipster: true
 Clipboardjs: true
 ProgressBar: false
 OpenGraphImage: https://i.imgur.com/cVITpm1.jpg
+Schemaorgtype: SoftwareApplication
 
 `“What? Where? When?” has great popularity in the Russian language, not English, so the description of the package in Russian.`
 

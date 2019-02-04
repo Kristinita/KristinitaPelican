@@ -8,17 +8,40 @@
 	</title>
 	<!-- Описание страницы, изменение названия Эксплорера и адаптация для разных экранов -->
 	<meta charset="utf-8" />
-	<meta name="description" content="Sasha_Black — сервис проверки сайта на возможно вредоносное содержимое, наличие в вирусных и спам-базах, репутации на основе пользовательских оценок." />
+	<meta name="description" content="Sasha_Black — сервис проверки сайта на возможно вредоносное содержимое, наличие в вирусных и спам-базах, репутации на основе пользовательских оценок" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<script src="//cdn.jsdelivr.net/npm/gemini-scrollbar/index.js" defer></script>
+	<meta property="og:title" content="Sasha Black" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{{SITEURL}}/Sasha-Black" />
+	<meta property="og:image" content="{{SITEURL}}/images/logo/SashaBlackLogo.jpg" />
+	<meta property="og:description" content="Sasha_Black — сервис проверки сайта на возможно вредоносное содержимое, наличие в вирусных и спам-базах, репутации на основе пользовательских оценок" />
+	<meta property="og:site_name" content="{{SITENAME}}" />
+	{# [INFO] JSON-LD for Web Applications:
+	https://www.darrenlester.com/blog/json-ld-structured-data-for-web-applications
+	[WARNING] Google required “aggregateRating” and “offers” keys:
+	https://search.google.com/structured-data/testing-tool #}
+	<script type='application/ld+json'>
+	{
+		"@context": "http://schema.org/",
+		"@type": "WebApplication",
+		"applicationCategory": "Validator",
+		"applicationSubCategory": "Site checker",
+		"browserRequirements": "Requires HTML5, JavaScript",
+		"screenshot": "{{SITEURL}}/images/logo/SashaBlackLogo.jpg",
+		"description": "Sasha_Black — сервис проверки сайта на возможно вредоносное содержимое, наличие в вирусных и спам-базах, репутации на основе пользовательских оценок",
+		"name": "Sasha Black",
+		"operatingSystem": "All",
+	}
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/gemini-scrollbar/index.js" defer></script>
 	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Gemini/gemini-non-scrollbar.min.js" defer></script>
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/hide-scrollbar.min.css" />
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/sasha-black.min.css" />
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/sasha-black-description.min.css" />
 	<!-- Шрифты -->
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/fonts.min.css" />
-	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gemini-scrollbar/gemini-scrollbar.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gemini-scrollbar/gemini-scrollbar.css" />
 	<!-- Конец полей, отступов, оптимизации для мобильных устройств, растягивания бэкграунда и ширины картинок, не превышающей ширину экрана-->
 	<!-- Иконочка Сашеньки -->
 	<link rel="icon" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/icons/SashaBlack.ico" type="image/x-icon" />

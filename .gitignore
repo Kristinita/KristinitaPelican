@@ -23,6 +23,7 @@ desktop.ini
 # Pelican cache
 
 pelican_cache/
+.sublime-grunt.cache
 
 # [NOTE] I don't need add to .gitignore files as Pipfile.lock and package-lock.json:
 # https://stackoverflow.com/a/46303305/5951529

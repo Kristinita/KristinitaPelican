@@ -47,7 +47,7 @@ MD026:
   punctuation: ".,;:!"
 # Pelican features needs inline HTML support
 MD033: false
-# I use bare URL for Pelican article metadata variable “Opengraphimage”.
+# I use bare URL for Pelican article metadata variable “Og_image”.
 # Open Graph — http://ruogp.me/
 # Also, I use bare URL for magiclink:
 # http://facelessuser.github.io/pymdown-extensions/extensions/magiclink/

@@ -31,14 +31,16 @@ module.exports =
 	tarb2: ['newer:move']
 	tarb3: ['newer:coffee'
 			'newer:stylus']
-	# [BUG] grunt-newer doesn't work with purifycss:
+	# [FIXME] grunt-newer doesn't work with purifycss:
 	# Warning: Cannot read property 'forEach' of undefined Use --force to continue.
 	# https://github.com/purifycss/grunt-purifycss/issues/26
 	tarb4: ['newer:string-replace:all'
 			'newer:string-replace:dev'
-			'newer:uglify'
+			'newer:move:jstheme'
+			'newer:move:jspersonal'
 			'purifycss']
-	tarb5: ['newer:cssnano'
+	tarb5: ['newer:move:csstheme'
+			'newer:move:csspersonal'
 			'shell:tidymodify']
 	tarb6: ['newer:jsbeautifier']
 	tarb7: ['shell:eclintfix']
@@ -59,7 +61,8 @@ module.exports =
 	#######################
 	# Check, that you in right branch:
 	# https://www.npmjs.com/package/grunt-checkbranch
-	tarp1: ['checkbranch:master']
+	tarp1: ['checkbranch:master'
+			'chmod']
 	tarp2: ['shell:deploy']
 	# Don't use “newer” for “move”! Files from “root-html” doesn't move.
 	# Don't use “newer” with “realFavicon”! “index.html” will not changed!
@@ -70,7 +73,8 @@ module.exports =
 			'shell:licensegenerator'
 			'shell:covgen'
 			'shell:piplicenses']
-	tarp4: ['move']
+	tarp4: ['move:thirdpartylicenses'
+			'move:outputlicense']
 	tarp5: ['stylus'
 			'coffee'
 			'unused'
@@ -120,15 +124,24 @@ module.exports =
 	tarv2: ['shell:eclintcheck']
 	tarv3: ['notify:validate']
 	#
+	# For validating only in development mode, “target validate development”.
+	#
+	# [NOTE] clean-console only for development:
+	# Site developer can create new files → absolute links will not works in production →
+	# clean-console will shown errors. So only for development.
+	tard1: ['clean-console']
+	tard2: ['notify:validate']
+	#
 	# For Continuous Integration tasks, “target remote”.
-	# If task in this secton, please, give reasons, why not local:
+	# Use, if big dependencies needest for task running.
 	#
 	# [NOTE] At April 2018 exists Ruby version of Travis Client, not versions for another languages →
 	# user need to install Ruby virtual environment locally:
 	# lint “.travis.yml” — small improvement, that install Ruby virtual environment.
 	# ShellCheck needs extra dependency scoop for Windows:
 	# https://github.com/koalaman/shellcheck#installing
-	tarr1: ['shell:shellcheck']
+	tarr1: ['shell:localappveyor'
+			'shell:shellcheck']
 	tarr2: ['notify:validate']
 	# [BUG] Travis Client doesn't recognized APT addon:
 	# https://github.com/travis-ci/travis-yaml/issues/58

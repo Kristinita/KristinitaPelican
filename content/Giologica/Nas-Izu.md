@@ -1,18 +1,17 @@
 Title: Нас Изу
 Author: Sasha Chernykh
 Lang: ru
-Summary:
 Pagetitle: Нас Изу
-Metacontent: Книги для общего развития, психологии прокачки определённых тем, специфические и интересных фактов
+Summary: Акронимы для прерывания или окончания дискуссии
 Pagecolors: giologica
 Asideimage: SashaBrazil
 Iconleftorright: left
 Tags: giologica, gingerinas-training
-Category: Giologica
 Tooltipster: false
 ClipboardJs: true
 Noco: 159d5
-Opengraphimage: https://i.imgur.com/oavt5Lf.jpg
+Og_image: https://i.imgur.com/oavt5Lf.jpg
+Schemaorgtype: ScholarlyArticle
 
 <!-- MarkdownTOC -->
 

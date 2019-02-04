@@ -1,26 +1,25 @@
 Title: АльFAQ
 Version: 0.1.1
-Modified: 2018-12-28 20:22:34
+Modified: 2019-02-02 16:35:09
 Date: 2018-12-17 16:51:59
 Author: Sasha Chernykh
 Lang: ru
 Summary: Ответы на надоевшие повторяющиеся фразы Alfy
 Pagetitle: FAQ для Alfy Centauri
-Metacontent: Ответы на надоевшие повторяющиеся фразы Alfy
 Pagecolors: gingerinas
 Asideimage: SashaFluffy
 Titleimage: https://pp.userapi.com/c629527/v629527520/2a28d/IlJfMAMc36Y.jpg
 Iconleftorright: right
 Tags: gingerinas, gingerinas-analysis
-Category: Alfy, Erics-Rooms
 Noco: 1EBY
 Tooltipster: true
 Clipboardjs: true
-Opengraphimage: https://pp.userapi.com/c834302/v834302492/3b6c3/KyRKq062sXE.jpg
+Og_image: https://pp.userapi.com/c834302/v834302492/3b6c3/KyRKq062sXE.jpg
 Customjs: false
 Customcss: false
 Progressbar: false
 Visualize: false
+Schemaorgtype: Review
 
 <!-- MarkdownTOC -->
 

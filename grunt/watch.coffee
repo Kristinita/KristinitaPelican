@@ -5,15 +5,17 @@
 # https://www.npmjs.com/package/grunt-contrib-watch
 # Run in console “grunt watch” → change files → tasks will run
 module.exports =
-	# CoffeeScript compile and minify
+	# CoffeeScript compile and move
 	coffee:
 		files: "<%= templates.yamlconfig.output_path %>/**/*.coffee"
 		# grunt-newes — compile changed files, not another:
 		# https://stackoverflow.com/a/19722900/5951529
 		tasks: ['newer:coffee'
-				'newer:uglify']
-	# Stylus compile and minify
+				'newer:move:jstheme'
+				'newer:move:jspersonal']
+	# Stylus compile and move
 	stylus:
 		files: "<%= templates.yamlconfig.output_path %>/**/*.styl"
 		tasks: ['newer:stylus'
-				'newer:cssnano']
+				'newer:move:csstheme'
+				'newer:move:csspersonal']

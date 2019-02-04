@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2018-12-20 18:46:34
+# @Last Modified time: 2019-02-01 20:24:51
 """Pelican configuration file.
 
 For publishing. pelicanconf.py — for development.
@@ -41,6 +41,7 @@ PLUGINS = [
     "just_table",
     "interlinks",
     "neighbors",
+    "pelican-open_graph",
     "putsashi",
     "section_number",
     "sitemap",
@@ -56,6 +57,12 @@ LOAD_CONTENT_CACHE = False
 # ****************************************************************************
 # *                               Sharing                                    *
 # ****************************************************************************
+
+# Feed generation works for absolute domains:
+# http://docs.getpelican.com/en/latest/faq.html#i-m-getting-a-warning-about-feeds-generated-without-siteurl-being-set-properly
+# Disable feed generation in developing process
+# http://docs.getpelican.com/en/latest/faq.html#what-if-i-want-to-disable-feed-generation
+# [BUG] I get in console: “TypeError: not all arguments converted during string formatting”
 
 # Feed generation, perhaps, not desired when developing
 FEED_DOMAIN = SITEURL
@@ -78,7 +85,6 @@ AUTHOR_FEED_RSS = None
 # https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
 # [Deprecated] — https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
 FEED_USE_SUMMARY = True
-
 
 # Blogroll
 # LINKS = (('Pelican', 'http://getpelican.com/'),

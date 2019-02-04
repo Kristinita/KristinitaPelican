@@ -1,18 +1,17 @@
-Title: Sasha Black — проверка репутации сайта, на наличие его в чёрных списках
+Title: Sasha Black — проверка репутации сайта
 Author: Sasha Chernykh
 Lang: ru
 Summary: Sasha Black — проверка репутации сайта, на наличие его в чёрных списках
 Pagetitle: Sasha Black
-Metacontent: Sasha_Black — удобный сервис проверки сайта на возможно вредоносное содержимое, наличие в вирусных и спам-базах, репутации на основе пользовательских оценок.
 Pagecolors: sasha-black-description
 Asideimage: SashaInflatedSponges
 Iconleftorright: right
 Tags: sasha-black
-Category: Sasha Black
 Tooltipster: false
 ClipboardJs: true
 Noco: 1QBY
-Opengraphimage: https://kristinita.ru/images/logo/SashaBlackLogo.jpg
+Og_image: https://kristinita.ru/images/logo/SashaBlackLogo.jpg
+Schemaorgtype: SoftwareApplication
 
 <!-- MarkdownTOC -->
 
@@ -50,18 +49,18 @@ Opengraphimage: https://kristinita.ru/images/logo/SashaBlackLogo.jpg
 1. Подбираете хостинг. Обязательно погуглите о нём и пробейте его на Sasha Black, чтобы потом не удивлялись дорвеям в числе соседей по IP, чьё присутствие в блэклистах отразится и на Вас.
 1. На сайте [без Вашей воли](https://revisium.com/kb/virusonsite.html "Как сайт заражается вирусом?") [появилось вредоносное содержимое](https://habrahabr.ru/post/137071/ "Расшифровка вредоносного Javascript"):
 
-    1. Заражение компьютеров посетителей
-    1. Вероятно попадание в чёрные списки поисковых систем и антивирусных программ,
+	1. Заражение компьютеров посетителей
+	1. Вероятно попадание в чёрные списки поисковых систем и антивирусных программ,
 
-    ![Предупреждение_Яндекса](https://i.imgur.com/3PuUXoV.jpg)
+	![Предупреждение_Яндекса](https://i.imgur.com/3PuUXoV.jpg)
 
-    ![Предупреждение_Аваста](https://i.imgur.com/9AByUaQ.jpg)
+	![Предупреждение_Аваста](https://i.imgur.com/9AByUaQ.jpg)
 
-    ![Предупреждение_Dr.Web'а](https://i.imgur.com/TPcexcq.jpg)
+	![Предупреждение_Dr.Web'а](https://i.imgur.com/TPcexcq.jpg)
 
-    Вряд ли многие зайдут на сайт, когда высвечиваются такие предупреждения.
+	Вряд ли многие зайдут на сайт, когда высвечиваются такие предупреждения.
 
-    1. Высок шанс оказаться и в [DNSBL](#dnsbl) — тогда почта будет расцениваться как спам,
+	1. Высок шанс оказаться и в [DNSBL](#dnsbl) — тогда почта будет расцениваться как спам,
 
 1. **Web of Trust** (WOT). Аддон согласно [сведениям с официального сайта](https://www.mywot.com/ru "Официальный сайт WOT") по состоянию на март 2016 года установлен более 140 млн раз, так что имеет смысл относиться к нему серьёзно: красный кружок — и Ваш ресурс лишится львиной доли посетителей. Некоторые пользователи ставят отрицательные оценки на основании данных упомянутых выше блэклистов, что и указывают в комментариях.
 
@@ -266,11 +265,11 @@ _Система не очень понятна: так, сайту на скри
 1. Диагностика загруженных файлов, а не сайтов.
 1. При действующем [VirusTotal](#virustotal) отдельные инструменты онлайн-сканирования на с. антивирусных компаний. Удалось нагуглить таковую только у Dr.Web:
 
-    ![Dr.Web](https://i.imgur.com/YDL2gC4.jpg)
+	![Dr.Web](https://i.imgur.com/YDL2gC4.jpg)
 
-    [Norton Safe Web](https://safeweb.norton.com/ "Norton Safe Web") не сканирует сайты, а только проверяет их нахождение в своих базах.
+	[Norton Safe Web](https://safeweb.norton.com/ "Norton Safe Web") не сканирует сайты, а только проверяет их нахождение в своих базах.
 
-    ![Avast!](https://i.imgur.com/WE22WUz.jpg)
+	![Avast!](https://i.imgur.com/WE22WUz.jpg)
 
 1. Сервисы с меньшим функционалом в сравнении с теми, что включены в Sasha Black:
 

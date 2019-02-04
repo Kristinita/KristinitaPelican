@@ -4,21 +4,20 @@ Author: Sasha Chernykh
 Lang: en
 Summary: Add to command palette commands from external Sublime Text packages
 Pagetitle: PaletteMira
-Metacontent: Add to command palette commands from external Sublime Text packages.
 Pagecolors: programs
 Iconleftorright: right
 Epigraph: true
-Epigraphtext: PaletteMira is devoted the most goodhearted creation — <a href="https://vk.com/id193658076">Ekaterina Zakharova</a>.<br><br> Mira from “PaletteMira” — name of <a href="https://vk.com/id388308587">Her account</a> in social network.
+Epigraphtext: PaletteMira is devoted the most goodhearted creation — [Ekaterina Zakharova](https://vk.com/id193658076). <br><br> Mira from “PaletteMira” — name of [Her account](https://vk.com/id388308587) in social network.
 Titleimage: true
 Titleimagename: KateZGirlfriend
 Asideimage: KateZakharova
 Tags: programs, sublime-text
-Category: Programs
 Noco: 1g9b6
 Tooltipster: false
 Clipboardjs: false
 Visualize: false
-Opengraphimage: https://i.imgur.com/kqrsFwc.jpg
+Og_image: https://i.imgur.com/kqrsFwc.jpg
+Schemaorgtype: SoftwareApplication
 
 <!-- MarkdownTOC -->
 

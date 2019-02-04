@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2018-12-21 18:59:43 -->
+<!-- @Last Modified time: 2019-02-03 10:41:01 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -12,9 +12,11 @@
 <!-- Title phrase -->
 {% block base_pagetitle %}{{ article.pagetitle }}{% endblock %}
 <!-- Content of attribute <meta content="|"> -->
-{% block base_metacontent %}{{ article.metacontent }}{% endblock %}
+{% block base_summary_striptags %}{{ article.summary|striptags}}{% endblock %}
 <!-- Open Graph image -->
 {% block base_opengraphimage %}{{ article.opengraphimage }}{% endblock %}
+{# JSON-LD #}
+{% block base_json_ld %}{% include 'includes/json-ld-articles.html' %}{% endblock %}
 
 <!--=============================
 =            Scripts            =
@@ -22,7 +24,7 @@
 
 <!-- typo-reporter -->
 {% block base_typoreporter -%}
-	<script src="//npmcdn.com/typo-reporter/lib/TypoReporter.min.js" defer></script>
+	<script src="https://npmcdn.com/typo-reporter/lib/TypoReporter.min.js" defer></script>
 	{%- if article.lang == 'ru' -%}
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/typo-reporter/typo-reporter-ru.min.js" defer></script>
 	{% else %}
@@ -33,9 +35,9 @@
 <!-- Tooltipster -->
 {% block base_tooltipster -%}
 	{%- if article.tooltipster == 'true' -%}
-		<script src="//cdn.jsdelivr.net/jquery.tooltipster/latest/js/tooltipster.bundle.min.js" defer></script>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.tooltipster/latest/css/tooltipster.bundle.min.css" />
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" />
+		<script src="https://cdn.jsdelivr.net/jquery.tooltipster/latest/js/tooltipster.bundle.min.js" defer></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.tooltipster/latest/css/tooltipster.bundle.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" />
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Tooltipster/tooltip.min.js" defer></script>
 	{%- endif -%}
 {%- endblock %}
@@ -43,13 +45,10 @@
 <!-- Clipboard.js -->
 {% block base_clipboardjs -%}
 	{%- if article.clipboardjs == 'true' -%}
-		<script src="//cdn.jsdelivr.net/clipboard.js/latest/clipboard.min.js" defer></script>
+		<script src="https://cdn.jsdelivr.net/clipboard.js/latest/clipboard.min.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Clipboard-js/Clipboard.min.js" defer></script>
 	{%- endif -%}
 {%- endblock %}
-
-<!-- ProgressBar -->
-
 
 <!-- Visualize -->
 {# JavaScript pie and bar charts:
@@ -57,7 +56,7 @@ http://www.kellyking.me/projects/visualize/
 https://github.com/kellyk/visualize #}
 {% block base_visualize -%}
 	{%- if article.visualize == 'true' -%}
-		<script src="//gitcdn.xyz/repo/kellyk/visualize/master/visualize.js" defer></script>
+		<script src="https://gitcdn.xyz/repo/kellyk/visualize/master/visualize.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-bar-chart.min.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-pie-chart.min.js" defer></script>
 	{%- endif -%}

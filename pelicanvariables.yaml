@@ -53,3 +53,6 @@ article_paths:
 # GitHub repository URL of this source:
 github_sources_url: https://github.com/Kristinita/KristinitaPelican
 github_output_url: https://github.com/Kristinita/Kristinita.github.io
+# MailerLite:
+mailerlite_account_id: 1389796
+mailerlite_account_key: z8r4g9c0m9

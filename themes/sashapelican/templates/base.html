@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-{# Needs same language, that text in article/page:
+{# [WARNING] Needs same language, that text in article/page:
 https://webref.ru/css/lang
 https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
- #}
+#}
 <html lang="{% block base_language %}{% endblock %}">
 
 <head>
@@ -18,17 +18,39 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	<!-- Description, EDGE-compatible, different screens.
 	Needs for validation name="description", see:
 	https://stackoverflow.com/a/11202372/5951529 -->
-	<meta name="description" content="{% block base_metacontent %}{% endblock %}">
+	<meta name="description" content="{% block base_summary_striptags %}{% endblock %}">
 	<!-- Needs for validation name="viewport", see: https://teamtreehouse.com/community/ive-received-the-following-errors-and-warnings-for-my-code-yet-im-not-sure-what-im-missing -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!-- Open Graph, http://ruogp.me/
-	Jinja2, ≥ 2 blocks, http://stackoverflow.com/a/1245030/5951529 -->
-	<meta property="og:title" content="{{ self.base_pagetitle() }}" />
-	<meta property="og:type" content="website" />
+	{# Open Graph:
+	http://ruogp.me
+	[WARNING] All basic metadata required;
+	Yandex Structured data validator gives errors, if no all:
+	https://webmaster.yandex.com/tools/microtest/
+	https://ruogp.me/#metadata
+	[INFO] In Jinja2 you can use blocks multiple times:
+	http://stackoverflow.com/a/1245030/5951529
+	#}
+	{# [INFO] See full types list for 2018:
+	https://stackoverflow.com/a/50273929/5951529 #}
+{# 	<meta property="og:type" content="article" />
+	<meta property="og:title" content="{{self.base_pagetitle()}}" />
 	<meta property="og:image" content="{% block base_opengraphimage %}{% endblock %}" />
-	<meta property="og:description" content="{{ self.base_metacontent() }}" />
+	<meta property="og:description" content="{{self.base_metacontent()}}" />
 	<meta property="og:site_name" content="{{SITENAME}}" />
+	<meta property="og:url" content="{{SITEURL}}/{{article.get_relative_source_path()[:-3]}}.html" /> #}
+	{% if article %}
+	{% for tag in article.ogtags %}
+	<meta property="{{tag[0]}}" content="{{tag[1]|striptags|e}}" />
+	{% endfor %}
+	{% endif %}
+
+	{% if page  %}
+	{% for tag in page.ogtags %}
+	<meta property="{{tag[0]}}" content="{{tag[1]|striptags|e}}" />
+	{% endfor %}
+	{% endif %}
+	{% block base_json_ld %}{% endblock %}
 
 	<!--============================
 	=       Miscellaneous          =
@@ -38,7 +60,7 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	<link rel="shortcut icon" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/icons/Sasha.ico" type="image/x-icon">
 	<link rel="icon" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/Sasha.ico" type="image/x-icon">
 	<!-- Atom feed -->
-	{% block base_atom_feed -%}{% endblock %}
+	{% block base_atom_feed %}{% endblock %}
 
 	<!--=============================
 	=            Scripts            =
@@ -54,30 +76,32 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	-->
 	{# No browser-update, because some issues:
 	https://github.com/browser-update/browser-update/issues #}
-	<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script>
+	{# [NOTE] Don't use protocol-relative URLs:
+	https://stackoverflow.com/a/54386928/5951529 #}
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script>
 	{# target-blank
 	Add “target="_blank"” for all external links:
 	https://bogdandragomir.com/blog/2016/12/add-target-_blank-attribute-external-anchors-page-javascript-jquery-one-single-line/ #}
-	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/target-blank/target-blank.min.js" defer></script>
+	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/target-blank/target-blank.min.js" defer></script>
 	<!-- Gemini -->
-	<script src="//cdn.jsdelivr.net/npm/gemini-scrollbar/index.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/gemini-scrollbar/index.js" defer></script>
 	<!-- No smooth scrolling, if JQuery Lazy:
 	https://github.com/eisbehr-/jquery.lazy/issues/98#issuecomment-376064894 -->
-	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Gemini/GeminiAndJQueryLazy.min.js" defer></script>
+	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Gemini/GeminiAndJQueryLazy.min.js" defer></script>
 	<!-- JQuery Lazy -->
-	<script src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.min.js" defer></script>
-	<script src="//cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.plugins.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.plugins.min.js" defer></script>
 	{# Browser-Update #}
 	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Browser-Update/browser-update.min.js" defer></script>
 	<!-- typo-reporter -->
-	{% block base_typoreporter -%}{% endblock %}
+	{% block base_typoreporter %}{% endblock %}
 	<!-- Fancybox
 	Obsolete version in JSDelivr
 	https://www.jsdelivr.com/package/npm/fancybox
 	[BUG] In CDNJS doesn't possible latest version
 	https://stackoverflow.com/q/14801334/5951529
 	-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" defer></script>
 	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Fancybox/fancybox.min.js" defer></script>
 	<!-- Tooltipster, see http://ru.stackoverflow.com/a/584718/199934 -->
 	{% block base_tooltipster %}{% endblock %}
@@ -85,6 +109,11 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	{% block base_clipboardjs %}{% endblock %}
 	<!-- Visualize, see https://github.com/kellyk/visualize -->
 	{% block base_visualize %}{% endblock %}
+	{# AddToAny, see https://www.addtoany.com #}
+	<script src="https://static.addtoany.com/menu/page.js" defer></script>
+	{# async required #}
+	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/AddToAny/addtoany.min.js" async></script>
+	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/MailerLite/mailerlite.min.js" async></script>
 	<!-- Custom JavaScript -->
 	{% block base_customjs %}{% endblock %}
 
@@ -101,7 +130,7 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 
 	<!-- Gemini
 	[NOTE] Gemini styles must load first, otherwise bugs on page -->
-	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gemini-scrollbar/gemini-scrollbar.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gemini-scrollbar/gemini-scrollbar.min.css">
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Gemini/gemini.min.css">
 	<!-- SashaPelican theme -->
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/basic.min.css">
@@ -111,7 +140,7 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{% block base_pagecolors %}{% endblock %}.min.css">
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/aside/{% block base_asideimage %}{% endblock %}.min.css">
 	<!-- External -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/typo-reporter/typo-reporter.min.css">
 	<!-- Admonition: note, warning etc. blocks, see
 	https://python-markdown.github.io/extensions/admonition/
@@ -120,22 +149,45 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	<!-- Material icons font for icons -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<!-- ProgressBar -->
-	{% block base_progressbar -%}{% endblock %}
+	{% block base_progressbar %}{% endblock %}
 	<!-- Custom CSS -->
 	{% block base_customcss %}{% endblock %}
 </head>
 
 <body>
-	{# Message, if JavaScript disabled #}
-	{% block base_noscript %}{% endblock %}
-	<!-- Background aside -->
-	<aside>
-		<!-- Header aside -->
+	{# Message, if JavaScript disabled
+	ARIA roles:
+	http://prgssr.ru/development/ispolzovanie-aria-v-html5.html#heading-aria #}
+	<section role="alert">
+		{% block base_noscript %}{% endblock %}
+	</section>
+	{# AddToAny buttons.
+	aside — a tag for these buttons:
+	https://stackoverflow.com/a/18974422/5951529
+	Using multiple aside is possible:
+	https://stackoverflow.com/a/27688129/5951529 #}
+	<aside role="presentation">
+		<div class="a2a_kit a2a_kit_size_17 a2a_floating_style a2a_vertical_style">
+			<a class="a2a_button_mastodon"></a>
+			<a class="a2a_button_diaspora"></a>
+			<a class="a2a_button_telegram"></a>
+			<a class="a2a_button_care2_news"></a>
+			<a class="a2a_button_printfriendly"></a>
+			<a class="a2a_dd"></a>
+		</div>
+	</aside>
+	<aside class="SashaIconAside">
 		<div class="SashaBottomAside">{% block base_asidetitle %}{% endblock %}</div>
 	</aside>
 	<!-- Content -->
-	<main itemscope>
-		<div class="SashaMargin">
+	{# [INFO] “Main” must include “article” and “aside”:
+	https://webref.ru/html/main
+	http://disq.us/p/16r46ia #}
+	<main>
+		{# Article must included header and footer:
+		https://webref.ru/html/article
+		https://html.spec.whatwg.org/multipage/sections.html#the-article-element #}
+		<article>
 			<header>
 				<h1 class="SashaTopHeader">{% block base_h1 %}{% endblock %}</h1>
 				<img class="SashaPageLoading" src="https://2no.co/{% block base_noco %}{% endblock %}.png" alt="Page loading, please, little wait">
@@ -147,22 +199,26 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 					<time datetime="{% block base_date %}{% endblock %}">{{ self.base_date() }}</time>
 				</div>
 				<div class="SashaVersion">
-					<!-- pubdate attribute is obsolete, use itemprop: datePublished
+					<!-- [WARNING] pubdate attribute is obsolete, use itemprop: datePublished
 					https://stackoverflow.com/a/24455070/5951529 -->
 					Last modified —
 					<time itemprop="datePublished" datetime="{% block base_date_modified %}{% endblock %}">{{ self.base_date_modified() }}</time>
 				</div>
 			</header>
-			{% block base_epigraph %}{% endblock %}
-			{% block base_titleimage %}{% endblock %}
-			{% block base_content %}{% endblock %}
+			<section>
+				{% block base_epigraph %}{% endblock %}
+				{% block base_titleimage %}{% endblock %}
+			</section>
+			<section>
+				{% block base_content %}{% endblock %}
+			</section>
 			<footer>
-				{% block base_neighbors -%}{% endblock %}
+				{% block base_neighbors %}{% endblock %}
 				<div class="SashaClearBoth"></div>
 				{% block base_new_russian %}{% endblock %}
 				<div class="WorkOnYourself">Работайте над собой</div>
 			</footer>
-		</div>
+		</article>
 	</main>
 </body>
 

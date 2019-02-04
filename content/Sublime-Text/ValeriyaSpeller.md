@@ -2,20 +2,19 @@ Title: ValeriyaSpeller
 Version: 0.1.0
 Author: Sasha Chernykh
 Lang: en
-Summary: Spellchecker for Russian texts <br><br> ![ValeriyaSpeller](https://i.imgur.com/bqRl8eD.png)
+Summary: yaspeller implementation for Sublime Text <br><br> ![ValeriyaSpeller](https://i.imgur.com/bqRl8eD.png)
 Pagetitle: ValeriyaSpeller
-Metacontent: Implementation yaspeller for Sublime Text
 Pagecolors: programs
 Asideimage: SashaChocolate
 Titleimage: true
 Titleimagename: ValeriaEarring
 Iconleftorright: right
 Tags: sublime-text, yaspeller
-Category: Programs
 Noco: 1g9b6
 Tooltipster: true
 Clipboardjs: true
 OpenGraphImage: https://i.imgur.com/iciGBgN.jpg
+Schemaorgtype: SoftwareApplication
 
 <div class="SashaEpigraph">
 <em>i express my gratitude to Her <br>

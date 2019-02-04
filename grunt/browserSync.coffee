@@ -12,7 +12,7 @@ module.exports =
 			# Doesn't open “http://localhost:3001/” tab, when BrowserSync start:
 			# https://browsersync.io/docs/options#option-open
 			open: false
-			port: 3000
+			port: 3014
 			server:
 				baseDir: "<%= templates.paths.output_path %>"
 			###############
@@ -33,15 +33,23 @@ module.exports =
 				# https://www.npmjs.com/package/bs-html-injector
 				# JavaScript needs refresh:
 				# https://stackoverflow.com/q/30762114/5951529
-				# If I change HTML or CSS in HTML file, I need save file, that to see changes in browser.
-				# Else I change JavaScript in HTML file, I need save file 2 times,
+				# [NOTE] If I change HTML or CSS in HTML file, I need save file, that to see changes in browser.
+				# Else I change JavaScript or, in some cases, HTML in HTML file, I need save file 2 times,
 				# that HTML page reload in browser and I can to see changes in browser.
 				module: "bs-html-injector"
 				options:
-					files: "<%= templates.paths.html %>"
+					files: "<%= templates.paths.output_path %>/**/*.html"
 				]
 			# Ingegrate “watch” task:
 			# https://browsersync.io/docs/grunt#grunt-watch
 			# [NOTE] Needs run “grunt browserSync watch”, not “grunt browserSync”, that it works:
 			# https://seenukarthi.com/devtools/2016/02/19/jekyll-livereload-with-grunt/
 			watchTask: true
+			# Disable popups:
+			# [FIX] “NotFoundError: Node was not found”:
+			# https://github.com/BrowserSync/browser-sync/issues/1597#issuecomment-420569151
+			# https://www.browsersync.io/docs/options#option-notify
+			notify: false
+			# “logLevel” for debugging:
+			# https://www.browsersync.io/docs/options#option-logLevel
+			# logLevel: "debug"
