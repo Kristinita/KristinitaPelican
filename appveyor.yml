@@ -15,21 +15,28 @@ platform: x64
 clone_depth: 1
 
 init:
+- SETX PIPENV_IGNORE_VIRTUALENVS 1
 - SETX PIPENV_VENV_IN_PROJECT 1
-# Needs, because will get messages as:
+# [FIXME] Use pathed instead of SETX;
+# user can loss data, if PATH contains more than 1024 symbols:
+# https://superuser.com/a/939256/572069
+# [LEARN] SETX PATH:
+# https://stackoverflow.com/a/26947177/5951529
+# https://superuser.com/a/939256/572069
+# [WARNING] Needs, because will get messages as:
 # «flake8 is not recognized»
 # https://github.com/ogrisel/python-appveyor-demo/blob/master/appveyor.yml
 # Python 2 by default, see:
 # https://www.appveyor.com/docs/build-environment/#python
 # https://ci.appveyor.com/project/Kristinita/erichek/build/1.0.3
-- SETX PATH=%PYTHON%;%PYTHON%\Scripts;%PATH%
+- SETX PATH "%PATH%;%PYTHON%;%PYTHON%\Scripts"
 # Needs AppVeyor console set, see:
 # https://stackoverflow.com/a/48093971/5951529
-- SETX PYTHONIOENCODING=utf-8
+- SETX PYTHONIOENCODING utf-8
 # Set latest Ruby version at the time:
 # https://www.appveyor.com/docs/lang/ruby/
 # https://www.appveyor.com/docs/build-environment/#ruby
-- SETX PATH=C:\Ruby25-x64\bin;%PATH%
+- SETX PATH "%PATH%;C:\Ruby25-x64\bin"
 # [INFO] Remove .NET Core SDK telemetry
 - SETX DOTNET_CLI_TELEMETRY_OPTOUT 1
 # Use “CALL Refreshenv.cmd” for local installation:
@@ -37,7 +44,7 @@ init:
 # https://ss64.com/nt/call.html
 - refreshenv
 
-# Configuration
+# [INFO] Configuration
 # https://www.appveyor.com/blog/2018/04/25/specialized-build-matrix-configuration-in-appveyor/
 # “Debug” configuration is default
 configuration:
@@ -65,7 +72,7 @@ environment:
   # https://www.appveyor.com/docs/api/
   # https://ci.appveyor.com/api-keys
   API_KEY_APPVEYOR:
-    # Secure variables:
+    # [INFO] Secure variables:
     # https://www.appveyor.com/docs/build-configuration/#secure-variables
     secure: +tAYCLWvKpNefBmIFHBZzSdFnN8mu71hBU1MqYbrjlY=
 

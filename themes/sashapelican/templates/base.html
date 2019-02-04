@@ -113,7 +113,10 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	<script src="https://static.addtoany.com/menu/page.js" defer></script>
 	{# async required #}
 	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/AddToAny/addtoany.min.js" async></script>
-	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/MailerLite/mailerlite.min.js" async></script>
+	{# [FIXME] MailerLite bugs for RSS and CoffeeScript:
+	# https://github.com/Kristinita/SashaMiscellaneous/issues/18
+	# https://github.com/Kristinita/SashaMiscellaneous/issues/19
+	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/MailerLite/mailerlite.min.js" async></script> #}
 	<!-- Custom JavaScript -->
 	{% block base_customjs %}{% endblock %}
 

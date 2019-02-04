@@ -20,9 +20,13 @@ module.exports = (grunt) ->
 		theme_static_paths: "<%= templates.yamlconfig.theme_static_paths %>"
 	site:
 		siteurl: "<%= templates.yamlconfig.siteurl %>"
-	mailerlite:
-		mailerlite_account_id: "<%= templates.yamlconfig.mailerlite_account_id %>"
-		mailerlite_account_key: "<%= templates.yamlconfig.mailerlite_account_key %>"
+	# MailerLite:
+	# [FIXME] MailerLite bugs for RSS and CoffeeScript:
+	# https://github.com/Kristinita/SashaMiscellaneous/issues/18
+	# https://github.com/Kristinita/SashaMiscellaneous/issues/19
+	# mailerlite:
+	# 	mailerlite_account_id: "<%= templates.yamlconfig.mailerlite_account_id %>"
+	# 	mailerlite_account_key: "<%= templates.yamlconfig.mailerlite_account_key %>"
 	tokens:
 		# Get system environment variables:
 		# https://stackoverflow.com/a/14089064/5951529
