@@ -17,9 +17,9 @@ module.exports =
 	# https://robots.thoughtbot.com/how-to-manage-your-python-projects-with-pipenv
 	# “--fatal” — exit(1), if any warning or error
 	generate:
-		command: 'pipenv run pelican content -s pelicanconf.py --fatal warnings'
+		command: 'pipenv run pelican content -s pelicanconf.py --fatal warnings --debug'
 	deploy:
-		command: 'pipenv run pelican content -s publishconf.py --fatal warnings'
+		command: 'pipenv run pelican content -s publishconf.py --fatal warnings --debug'
 
 
 	# [DEPRECATED] If “pipenv --update”, users have bug:

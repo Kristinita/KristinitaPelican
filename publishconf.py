@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2019-02-01 20:24:51
+# @Last Modified time: 2019-02-04 14:28:10
 """Pelican configuration file.
 
 For publishing. pelicanconf.py — for development.
@@ -40,8 +40,8 @@ PLUGINS = [
     "filetime_from_git",
     "just_table",
     "interlinks",
+    "open_graph",
     "neighbors",
-    "pelican-open_graph",
     "putsashi",
     "section_number",
     "sitemap",

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2019-01-18 20:28:46
-# @Last Modified time: 2019-02-01 16:25:00
+# @Last Modified time: 2019-02-04 14:27:46
 # ****************************************************************************
 # *                                  Plugins                                 *
 # ****************************************************************************
@@ -39,7 +39,7 @@ PLUGINS = [
     # Open_graph:
     # Add open_graph to HTML:
     # https://github.com/whiskyechobravo/pelican-open_graph
-    'pelican-open_graph',
+    'open_graph',
     # [FIXME] Different colors for different designs
     # 'pelican-linkclass',
     # [DONE]
