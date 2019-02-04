@@ -125,6 +125,10 @@ before_install:
 # Ignore existing virtual environments:
 # https://github.com/menzenski/pipenv-travis-test/blob/develop/.travis.yml
 - export PIPENV_IGNORE_VIRTUALENVS=1
+# [INFO] Remove .NET Core SDK telemetry:
+# https://docs.microsoft.com/en-us/dotnet/core/tools/telemetry#disclosure
+# https://stackoverflow.com/a/39307563/5951529
+- export DOTNET_CLI_TELEMETRY_OPTOUT=1
 # Add LocalAppVeyor directory to the end of the PATH environment variable:
 # https://unix.stackexchange.com/a/26067/237999
 # http://www.troubleshooters.com/linux/prepostpath.htm
@@ -147,7 +151,6 @@ install:
 # [NOTE] Parallelshell works, but no time economy, diff:
 # https://travis-ci.org/Kristinita/SashaPelicanTest/jobs/347254717
 # https://travis-ci.org/Kristinita/SashaPelicanTest/jobs/347267767
-- sudo apt-get install parallel
 - bash bash/travis-install.sh
 
 # [DEPRECATED] Doesn't work on Travis CI, needs “matrix.include”:

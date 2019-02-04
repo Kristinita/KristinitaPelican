@@ -176,6 +176,7 @@ Environment variables will update automatically in current session, but that app
 ```batch
 SETX PIPENV_VENV_IN_PROJECT 1
 SETX PIPENV_IGNORE_VIRTUALENVS 1
+SETX DOTNET_CLI_TELEMETRY_OPTOUT 1
 CALL RefreshEnv.cmd
 git clone --depth=1 --branch=master https://github.com/Kristinita/KristinitaPelican.git
 CD KristinitaPelican
@@ -191,6 +192,7 @@ START /B CMD /C "npm install -g grunt-cli & npm install"
 ```batch
 SETX PIPENV_VENV_IN_PROJECT 1
 SETX PIPENV_IGNORE_VIRTUALENVS 1
+SETX DOTNET_CLI_TELEMETRY_OPTOUT 1
 SETX path "%path%;D:\Kristinita"
 CALL RefreshEnv.cmd
 git clone --depth=1 --branch=master https://github.com/Kristinita/KristinitaPelican.git
@@ -216,6 +218,7 @@ See comments to the script in files:
 ```shell
 export PIPENV_VENV_IN_PROJECT=1
 export PIPENV_IGNORE_VIRTUALENVS=1
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 PATH=$PATH:$HOME/.dotnet/tools
 git clone --depth=1 --branch=master https://github.com/Kristinita/KristinitaPelican.git
 cd KristinitaPelican
@@ -231,6 +234,7 @@ parallel ::: 'pip install --upgrade pip && pip install pipenv && pipenv install 
 ```shell
 export PIPENV_VENV_IN_PROJECT=1
 export PIPENV_IGNORE_VIRTUALENVS=1
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 PATH=$PATH:$HOME/.dotnet/tools
 git clone --depth=1 --branch=master https://github.com/Kristinita/KristinitaPelican.git
 cd KristinitaPelican
