@@ -13,7 +13,7 @@
         "README.md"
     ],
     "engines": {
-        "node": ">=10"
+        "node": ">=11"
     },
     "keywords": [
         "Kristinita",

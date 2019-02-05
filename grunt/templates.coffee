@@ -3,7 +3,7 @@
 #####################
 # https://quickleft.com/blog/grunt-js-tips-tricks/
 module.exports = (grunt) ->
-	# Frequent paths in plugins configuration.
+	# [INFO] Frequent paths in plugins configuration.
 	# Grunt parsing YAML configuration file:
 	# https://stackoverflow.com/a/49901700/5951529
 	yamlconfig: grunt.file.readYAML("pelicanvariables.yaml")
@@ -28,7 +28,11 @@ module.exports = (grunt) ->
 	# 	mailerlite_account_id: "<%= templates.yamlconfig.mailerlite_account_id %>"
 	# 	mailerlite_account_key: "<%= templates.yamlconfig.mailerlite_account_key %>"
 	tokens:
-		# Get system environment variables:
+		# [INFO] Get system environment variables:
 		# https://stackoverflow.com/a/14089064/5951529
 		# https://gruntjs.com/creating-tasks#cli-options-environment
 		api_key_appveyor: process.env.API_KEY_APPVEYOR
+	# [FIXME] Check all HTML, when tags and categories will works normally:
+	# https://stackoverflow.com/q/54388924/5951529
+	# getFiles: ->
+	# 	grunt.file.expand 'output/**/*.html'

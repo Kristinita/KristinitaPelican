@@ -60,14 +60,14 @@ environment:
   PYTHON_ARCH: 64
   # “grunt default” = “grunt”;
   # AppVeyor support blank value.
-  # Spaces before “&&” doesn't need, compare:
+  # [NOTE] Spaces before “&&” doesn't need, compare:
   # https://ci.appveyor.com/project/Kristinita/sashatravis/build/job/5oqxucp76bpsr51o
   # https://ci.appveyor.com/project/Kristinita/sashatravis/build/1.0.38/job/s52ko615e3fpxr9b
   # [BUG] pageres doesn't work with Node.js 11:
   # https://github.com/sindresorhus/pageres/issues/344
   # GRUNT_COMMAND: default&& grunt http-server screenshots&& grunt publish
   GRUNT_BUILD:
-  GRUNT_TEST: validatedev validate remote
+  GRUNT_TEST: grunt http-server validatedev&& grunt validate remote
   # API key required for LocalAppVeyor:
   # https://www.appveyor.com/docs/api/
   # https://ci.appveyor.com/api-keys

@@ -7,9 +7,9 @@ module.exports =
 	favicons:
 		src: "<%= templates.yamlconfig.theme %>/<%= templates.yamlconfig.theme_static_paths %>\
 				/images/icons/kristinita-favicon.png"
-		dest: "output"
+		dest: "<%= templates.yamlconfig.output_path %>"
 		options:
-			iconsPath: "."
+			iconsPath: "<%= templates.site.siteurl %>"
 			html: ["<%= templates.yamlconfig.output_path %>/index.html"]
 			design:
 				ios:

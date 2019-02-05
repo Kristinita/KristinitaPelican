@@ -129,6 +129,8 @@ module.exports =
 	# [NOTE] clean-console only for development:
 	# Site developer can create new files → absolute links will not works in production →
 	# clean-console will shown errors. So only for development.
+	# [NOTE] clean-console works with http-server — “grunt http-server clean-console”.
+	# See “clean-console.coffee” for details.
 	tard1: ['clean-console']
 	tard2: ['notify:validate']
 	#
