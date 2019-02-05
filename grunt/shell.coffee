@@ -208,7 +208,7 @@ module.exports =
 	#################
 	# Validate “appveyor.yml” file:
 	# https://github.com/joaope/LocalAppVeyor
-	# Get system environment variables:
+	# [INFO] Get system environment variables:
 	# https://stackoverflow.com/a/14089064/5951529
 	# https://gruntjs.com/creating-tasks#cli-options-environment
 	localappveyor:

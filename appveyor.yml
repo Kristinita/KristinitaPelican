@@ -20,6 +20,7 @@ init:
 # [FIXME] Use pathed instead of SETX;
 # user can loss data, if PATH contains more than 1024 symbols:
 # https://superuser.com/a/939256/572069
+# http://www.p-nand-q.com/download/gtools/pathed.html
 # [LEARN] SETX PATH:
 # https://stackoverflow.com/a/26947177/5951529
 # https://superuser.com/a/939256/572069
@@ -37,6 +38,10 @@ init:
 # https://www.appveyor.com/docs/lang/ruby/
 # https://www.appveyor.com/docs/build-environment/#ruby
 - SETX PATH "%PATH%;C:\Ruby25-x64\bin"
+# [INFO] Set LocalAppVeyor Windows path:
+# DotNet user profile is “USERPROFILE” on Windows and “HOME” on Linux:
+# https://github.com/dotnet/cli/issues/7569#issuecomment-329280924
+- SETX PATH "%PATH%;%USERPROFILE%\.dotnet\tools"
 # [INFO] Remove .NET Core SDK telemetry
 - SETX DOTNET_CLI_TELEMETRY_OPTOUT 1
 # Use “CALL Refreshenv.cmd” for local installation:
@@ -67,7 +72,7 @@ environment:
   # https://github.com/sindresorhus/pageres/issues/344
   # GRUNT_COMMAND: default&& grunt http-server screenshots&& grunt publish
   GRUNT_BUILD:
-  GRUNT_TEST: grunt http-server validatedev&& grunt validate remote
+  GRUNT_TEST: http-server validatedev&& grunt validate remote
   # API key required for LocalAppVeyor:
   # https://www.appveyor.com/docs/api/
   # https://ci.appveyor.com/api-keys

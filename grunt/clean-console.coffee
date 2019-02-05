@@ -31,7 +31,7 @@ module.exports =
 				  "http://localhost:4147/<%= templates.paths.output_path %>/Sasha-Black.html"
 				  "http://localhost:4147/<%= templates.paths.output_path %>/Gingerinas/\
 				  %D0%94%D0%B6%D0%B8%D0%BD%D0%B4%D0%B6%D0%B5%D1%80%D0%B8%D0%BD%D1%8B.html"
-				  "http://localhost:4147/<%= templates.paths.output_path %>/IT-Articles/\
+				  "http://localhost:4147/<%= templates.paths.output_path %>/IT-articles/\
 				  How-to-publish-your-package-to-PyPI-2018.html"
 				  "http://localhost:4147/<%= templates.paths.output_path %>/Pages/About-for-developers.html"
 				  "http://localhost:4147/<%= templates.paths.output_path %>/Programs/KristinitaLuckyLink.html"
