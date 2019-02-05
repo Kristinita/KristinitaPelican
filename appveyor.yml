@@ -10,38 +10,43 @@
 # https://www.appveyor.com/docs/appveyor-yml/
 platform: x64
 
-# Don't download all repository history, that save a time:
+# [INFO] Don't download all repository history, that save a time:
 # https://www.appveyor.com/docs/how-to/repository-shallow-clone/#setting-depth-of-git-clone-command
 clone_depth: 1
 
 init:
-- SETX PIPENV_IGNORE_VIRTUALENVS 1
-- SETX PIPENV_VENV_IN_PROJECT 1
-# [FIXME] Use pathed instead of SETX;
+# [FIXME] Use pathed instead of SET for PATH;
 # user can loss data, if PATH contains more than 1024 symbols:
 # https://superuser.com/a/939256/572069
 # http://www.p-nand-q.com/download/gtools/pathed.html
 # [LEARN] SETX PATH:
 # https://stackoverflow.com/a/26947177/5951529
 # https://superuser.com/a/939256/572069
+# [LEARN] SET PATH:
+# https://stackoverflow.com/a/9546345/5951529
+# [BUG] SETX doesn't work with “configuration” step, compare:
+# https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/22144071
+# https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/22144311
+- SETX PIPENV_IGNORE_VIRTUALENVS 1
+- SETX PIPENV_VENV_IN_PROJECT 1
 # [WARNING] Needs, because will get messages as:
 # «flake8 is not recognized»
 # https://github.com/ogrisel/python-appveyor-demo/blob/master/appveyor.yml
 # Python 2 by default, see:
 # https://www.appveyor.com/docs/build-environment/#python
 # https://ci.appveyor.com/project/Kristinita/erichek/build/1.0.3
-- SETX PATH "%PATH%;%PYTHON%;%PYTHON%\Scripts"
+- SET PATH=%PATH%;%PYTHON%;%PYTHON%\Scripts
 # Needs AppVeyor console set, see:
 # https://stackoverflow.com/a/48093971/5951529
 - SETX PYTHONIOENCODING utf-8
 # Set latest Ruby version at the time:
 # https://www.appveyor.com/docs/lang/ruby/
 # https://www.appveyor.com/docs/build-environment/#ruby
-- SETX PATH "%PATH%;C:\Ruby25-x64\bin"
+- SET PATH=%PATH%;C:\Ruby25-x64\bin
 # [INFO] Set LocalAppVeyor Windows path:
 # DotNet user profile is “USERPROFILE” on Windows and “HOME” on Linux:
 # https://github.com/dotnet/cli/issues/7569#issuecomment-329280924
-- SETX PATH "%PATH%;%USERPROFILE%\.dotnet\tools"
+- SET PATH=%PATH%;%USERPROFILE%\.dotnet\tools
 # [INFO] Remove .NET Core SDK telemetry
 - SETX DOTNET_CLI_TELEMETRY_OPTOUT 1
 # Use “CALL Refreshenv.cmd” for local installation:
@@ -63,7 +68,7 @@ environment:
   PYTHON: C:\Python37-x64
   PYTHON_VERSION: 3.7
   PYTHON_ARCH: 64
-  # “grunt default” = “grunt”;
+  # [INFO] “grunt default” = “grunt”;
   # AppVeyor support blank value.
   # [NOTE] Spaces before “&&” doesn't need, compare:
   # https://ci.appveyor.com/project/Kristinita/sashatravis/build/job/5oqxucp76bpsr51o
