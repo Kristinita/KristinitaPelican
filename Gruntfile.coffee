@@ -46,6 +46,8 @@ module.exports = (grunt) ->
 	# doesn't write “grunt.loadNpmTasks 'task'” each time
 	# [WARNING] Do not use grunt-lazyload! It conflicting plugin
 	# https://www.npmjs.com/package/grunt-lazyload
+	# [WARNING] Not possible use subtasks in separate files:
+	# https://github.com/firstandthird/load-grunt-config/issues/178
 	require('load-grunt-config') grunt
 
 	################

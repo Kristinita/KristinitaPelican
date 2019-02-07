@@ -1,11 +1,11 @@
 @REM @Author: Kristinita
 @REM @Date:   2018-02-28 19:42:16
 @REM @Last Modified by:   Kristinita
-@REM Modified time: 2019-02-05 17:14:58
-@REM Install all AppVeyor dependencies for building and validation.
-@REM Use REM comments:
+@REM Modified time: 2019-02-07 09:01:12
+@REM [INFO] Install all AppVeyor dependencies for building and validation.
+@REM [LEARN] Use REM comments:
 @REM https://stackoverflow.com/a/12407934/5951529
-@REM Hide REM lines from showing, use @ symbol:
+@REM [LEARN] Hide REM lines from showing, use @ symbol:
 @REM https://www.computerhope.com/issues/ch001313.htm
 @REM https://jpsoft.com/help/rem.htm
 @REM CMD command /C option run another console; without /C option command doesn't work:
@@ -22,7 +22,16 @@ START /B CMD /C "choco install html-tidy -y -ignoredependencies"
 @REM https://pythonhosted.org/CodeChat/appveyor.yml.html
 @REM [BUG] Temporary downgrade pipenv, because locking bug in newest versions:
 @REM https://github.com/pypa/pipenv/issues/3391
-START /B CMD /C "python -m pip install --upgrade pip & pip install pipenv==11.10.2 & pipenv install --dev"
+@REM [WARNING] Use “pip3”, not “pip”, because Python 2 is default for February 2019:
+@REM https://www.appveyor.com/docs/windows-images-software/#python
+@REM [WARNING] Needs “%PYTHON%\\python”, that Python 3, not Python 2 will run:
+@REM Required:
+@REM 1. quotes
+@REM 2. slash escaping
+@REM “python3” command deprecated in Python 3.7
+@REM https://github.com/ogrisel/python-appveyor-demo/blob/master/appveyor.yml
+@REM https://packaging.python.org/guides/supporting-windows-using-appveyor/
+START /B CMD /C "%PYTHON%\\python -m pip install --upgrade pip & pip3 install pipenv==11.10.2 & pipenv install --dev"
 START /B CMD /C "choco install nodejs phantomjs -y & npm install -g grunt-cli & npm install"
 START /B CMD /C "gem install travis"
 @REM [WARNING] In local machine you need install dotnetcore:

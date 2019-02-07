@@ -75,7 +75,7 @@ module.exports =
 	###############
 	## HTML Tidy ##
 	###############
-	# Validate and fix HTMl files:
+	# Validate and fix HTML files:
 	# http://www.html-tidy.org/
 	# Description:
 	# http://api.html-tidy.org/tidy/tidylib_api_next/index.html
