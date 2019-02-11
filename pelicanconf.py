@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2019-01-27 13:56:23
+# @Last Modified time: 2019-02-07 10:36:13
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -38,7 +38,7 @@ from pelican_plugins_settings import *  # noqa
 # https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/jhtr2opsnckg214g
 YAMLCONFIG = yaml.load(open('pelicanvariables.yaml', encoding='utf-8'))
 
-PATH = YAMLCONFIG['path']
+PATH = YAMLCONFIG['content_path']
 OUTPUT_PATH = YAMLCONFIG['output_path']
 THEME = YAMLCONFIG['theme']
 THEME_STATIC_DIR = YAMLCONFIG['theme_static_dir']

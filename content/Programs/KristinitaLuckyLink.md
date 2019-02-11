@@ -19,51 +19,51 @@ Schemaorgtype: SoftwareApplication
 
 <!-- MarkdownTOC -->
 
-1. [Description](#description)
-	1. [Reason](#reason)
-	1. [Demonstration](#demonstration)
-	1. [Examples](#examples)
-	1. [Saving time](#saving-time)
-	1. [Supported search engines](#supported-search-engines)
-	1. [Supported markups](#supported-markups)
-	1. [Features](#features)
-1. [Limitations](#limitations)
-1. [Installation](#installation)
-	1. [Depenedencies](#depenedencies)
-	1. [KristinitaLuckyLink](#kristinitaluckylink)
-		1. [Stable version](#stable-version)
-		1. [Development version](#development-version)
-1. [Activation](#activation)
-	1. [Environment variable](#environment-variable)
-	1. [Commands and hotkeys](#commands-and-hotkeys)
-	1. [Restart](#restart)
-1. [Usage](#usage)
-	1. [Shortcuts](#shortcuts)
-	1. [Command palette](#command-palette)
-1. [Documentation](#documentation)
-1. [Tricks](#tricks)
-	1. [Clarify](#clarify)
-1. [Testing environment](#testing-environment)
-1. [TODO](#todo)
-1. [Known bugs and another problems](#known-bugs-and-another-problems)
-	1. [KristinitaLuckyLink](#kristinitaluckylink-1)
-	1. [External](#external)
-1. [Troubleshooting](#troubleshooting)
-	1. [Incorrect links](#incorrect-links)
-		1. [SublimeREPL](#sublimerepl)
-		1. [DuckDuckGo](#duckduckgo)
-		1. [Google](#google)
-1. [Contributing](#contributing)
-1. [Thanks](#thanks)
-1. [Terms and conditions](#terms-and-conditions)
-1. [License](#license)
+1. [Description](#Description)
+	1. [Reason](#Reason)
+	1. [Demonstration](#Demonstration)
+	1. [Examples](#Examples)
+	1. [Saving time](#Saving-time)
+	1. [Supported search engines](#Supported-search-engines)
+	1. [Supported markups](#Supported-markups)
+	1. [Features](#Features)
+1. [Limitations](#Limitations)
+1. [Installation](#Installation)
+	1. [Depenedencies](#Depenedencies)
+	1. [KristinitaLuckyLink](#KristinitaLuckyLink)
+		1. [Stable version](#Stable-version)
+		1. [Development version](#Development-version)
+1. [Activation](#Activation)
+	1. [Environment variable](#Environment-variable)
+	1. [Commands and hotkeys](#Commands-and-hotkeys)
+	1. [Restart](#Restart)
+1. [Usage](#Usage)
+	1. [Shortcuts](#Shortcuts)
+	1. [Command palette](#Command-palette)
+1. [Documentation](#Documentation)
+1. [Tricks](#Tricks)
+	1. [Clarify](#Clarify)
+1. [Testing environment](#Testing-environment)
+1. [TODO](#TODO)
+1. [Known bugs and another problems](#Known-bugs-and-another-problems)
+	1. [KristinitaLuckyLink](#KristinitaLuckyLink-1)
+	1. [External](#External)
+1. [Troubleshooting](#Troubleshooting)
+	1. [Incorrect links](#Incorrect-links)
+		1. [SublimeREPL](#SublimeREPL)
+		1. [DuckDuckGo](#DuckDuckGo)
+		1. [Google](#Google)
+1. [Contributing](#Contributing)
+1. [Thanks](#Thanks)
+1. [Terms and conditions](#Terms-and-conditions)
+1. [License](#License)
 
 <!-- /MarkdownTOC -->
 
-<a id="description"></a>
+<a id="Description"></a>
 # Description
 
-<a id="reason"></a>
+<a id="Reason"></a>
 ## Reason
 
 I insert to my texts links to external sites. Before using KristinitaLuckyLink, that insert link, I need to make these actions:
@@ -77,12 +77,12 @@ I insert to my texts links to external sites. Before using KristinitaLuckyLink, 
 
 It may take a lot of time. Use KristinitaLuckyLink I can make all these actions, **press one shortcut**.
 
-<a id="demonstration"></a>
+<a id="Demonstration"></a>
 ## Demonstration
 
 <div class="SashaVideo"><iframe class="SashaLazy" data-src="https://streamable.com/s/bj22k/ykgkws"></iframe></div>
 
-<a id="examples"></a>
+<a id="Examples"></a>
 ## Examples
 
 Conversion examples:
@@ -97,7 +97,7 @@ Conversion examples:
 
 ![KristinitaLuckyLink example](https://i.imgur.com/1KsfoM6.png)
 
-<a id="saving-time"></a>
+<a id="Saving-time"></a>
 ## Saving time
 
 When I wrote this article, I get these links, use KristinitaLuckyLink:
@@ -111,34 +111,39 @@ When I wrote this article, I get these links, use KristinitaLuckyLink:
 1. [keith-hall](https://github.com/keith-hall),
 1. [facelessuser](https://github.com/facelessuser).
 
-I save few minutes of my time.
+I save minutes of my time.
 
-<a id="supported-search-engines"></a>
+<a id="Supported-search-engines"></a>
 ## Supported search engines
 
 1. DuckDuckGo,
 1. Google.com.
 
-<a id="supported-markups"></a>
+<a id="Supported-markups"></a>
 ## Supported markups
 
 1. Markdown
 
-<a id="features"></a>
+<a id="Features"></a>
 ## Features
 
-1. Must work with selection text, contains any UTF-8 symbols.
+1. Must work with selection text has any UTF-8 symbols.
 
-<a id="limitations"></a>
+<a id="Limitations"></a>
 # Limitations
 
-1. Use KristinitaLuckyLink you can get only top link of search engines. I'm sorry, if in top link not that you want.
+1. Use KristinitaLuckyLink you can get alone top link of search engines. I'm sorry, if in top link not that you want.
+
 1. I'm not affiliated with Google Search or DuckDuckGo Developers. I am not responsible for the fact that there is one or another result in the top of SERP. You can get unexpected link.
 
 	But if in top of SERP one link, but KristinitaLuckyLink out another link, please make [these actions](#incorrect-links).
 
 1. If you don't want by some reasons make actions from [installation](#installation) and [activation](#activation) section, please, don't install KristinitaLuckyLink.
-1. Copy from [here](https://github.com/aviaryan/python-gsearch#warning): “Overusing KristinitaLuckyLink might lead to your IP being blocked by Google Search servers. Searches through browser might still work but KristinitaLuckyLink will stop working. I recommend keeping a 5 seconds gap after each usage of this library. In most cases, much lower gaps or even continuous use of the library will still work but still this is something to be kept in mind. If you see a 'rate limit' or a 503 error, it's best to stop using the library and try back after some time (~1 minute).”
+
+1. Copy from [here](https://github.com/aviaryan/python-gsearch#warning):
+
+	> Overusing KristinitaLuckyLink might lead to your IP being blocked by Google Search servers. Searches through browser might still work but KristinitaLuckyLink will stop working. I recommend keeping a 5 seconds gap after each usage of this library. In most cases, much lower gaps or even continuous use of the library will still work but still this is something to be kept in mind. If you see a 'rate limit' or a 503 error, it's best to stop using the library and try back after some time (~1 minute).
+
 1. At the time supported:
 
 	1. Markdown link style,
@@ -146,10 +151,10 @@ I save few minutes of my time.
 
 Personally I use Markdown markup for my articles and Google and DuckDuckGo enough for me. If you use another markups and/or search engines, [pull requests welcome](#contributing).
 
-<a id="installation"></a>
+<a id="Installation"></a>
 # Installation
 
-<a id="depenedencies"></a>
+<a id="Depenedencies"></a>
 ## Depenedencies
 
 1. You need to install Python 3 with pip to your computer, if no.
@@ -157,25 +162,25 @@ Personally I use Markdown markup for my articles and Google and DuckDuckGo enoug
 1. `pip install pygoogling` — install [pygoogling](https://github.com/essanpupil/pygoogling) module.
 1. Install [Sublime Suricate](https://github.com/nsubiron/SublimeSuricate) package [via Package Control](https://stackoverflow.com/a/19598084/5951529).
 
-<a id="kristinitaluckylink"></a>
+<a id="KristinitaLuckyLink"></a>
 ## KristinitaLuckyLink
 
-<a id="stable-version"></a>
+<a id="Stable-version"></a>
 ### Stable version
 
-<kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> for Mac) → _Package Control: Add Repository_ → paste in opened input field `https://github.com/Kristinita/KristinitaLuckyLink` → <kbd>Enter</kbd> → _Package Control: Install Package_ → print _KristinitaLuckyLink_ → <kbd>Enter</kbd>.
+<kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> for Mac) → *Package Control: Add Repository* → paste in opened input field `https://github.com/Kristinita/KristinitaLuckyLink` → <kbd>Enter</kbd> → *Package Control: Install Package* → print *KristinitaLuckyLink* → <kbd>Enter</kbd>.
 
-<a id="development-version"></a>
+<a id="Development-version"></a>
 ### Development version
 
-As [stable version](#stable-version). Only replace `https://github.com/Kristinita/KristinitaLuckyLink` to `https://github.com/Kristinita/KristinitaLuckyLink/tree/SashaDevelop` in instruction above.
+As [stable version](#stable-version). Solely replace `https://github.com/Kristinita/KristinitaLuckyLink` to `https://github.com/Kristinita/KristinitaLuckyLink/tree/SashaDevelop` in instruction above.
 
 You will get all changes from `SashaDevelop` branch in each Sublime Text start.
 
-<a id="activation"></a>
+<a id="Activation"></a>
 # Activation
 
-<a id="environment-variable"></a>
+<a id="Environment-variable"></a>
 ## Environment variable
 
 In your operating system add environment variable `PYTHONPACKAGES` with value — your Python `site-packages` folder, if already no. To find out your path, see “[How installation works](https://docs.python.org/3/install/index.html#how-installation-works)” item of Python documentation.
@@ -192,27 +197,27 @@ See [examples](https://www.schrodinger.com/kb/1842), how you can add environment
 
 If you know, how possible develop a plugin without adding new environment variable, please, answer to [this question](https://stackoverflow.com/q/48276861/5951529).
 
-<a id="commands-and-hotkeys"></a>
+<a id="Commands-and-hotkeys"></a>
 ## Commands and hotkeys
 
-<kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> for Mac) → _Suricate: Add Profile_ → select _KristinitaLuckyLink_ → <kbd>Enter</kbd>.
+<kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> for Mac) → *Suricate: Add Profile* → select *KristinitaLuckyLink* → <kbd>Enter</kbd>.
 
-<a id="restart"></a>
+<a id="Restart"></a>
 ## Restart
 
 After all installation and activation actions restart Sublime Text. Operating system restart may be necessary.
 
 KristinitaLuckyLink must successful works.
 
-<a id="usage"></a>
+<a id="Usage"></a>
 # Usage
 
-Select text, for which you want to get link and...
+Select text, for which you want to get link and…
 
-<a id="shortcuts"></a>
+<a id="Shortcuts"></a>
 ## Shortcuts
 
-... press hotkey. Wait a moment to get the result.
+… press hotkey. Wait a moment to get the result.
 
 Default hotkeys for platforms:
 
@@ -222,7 +227,7 @@ Windows and Linux|<kbd>Ctrl+Shift+Alt+D</kbd>|<kbd>Ctrl+Shift+Alt+D</kbd>
 macOS|<kbd>⌘⇧⌥d</kbd>|<kbd>⌘⇧⌥g</kbd>
 [/jtable]
 
-If these hotkeys used in you another packages or you don't want use default hotkeys by another reasons: _Preferences_ → _Browse packages..._ → _User_ → create a file _Default.suricate-profile_, if no, and add to them these lines:
+If these hotkeys used in you another packages or you don't want use default hotkeys by another reasons: *Preferences* → *Browse packages…* → *User* → create a file *Default.suricate-profile*, if no, and add to them these lines:
 
 ```json
 {
@@ -245,10 +250,10 @@ Replace `super+keypad8` and `<c>+super+browser_home` from example to your prefer
 
 For detailed information about Suricate key bindings see [Sublime Suricate documentation](https://readthedocs.org/projects/sublime-suricate/).
 
-<a id="command-palette"></a>
+<a id="Command-palette"></a>
 ## Command palette
 
-... use [command palette](https://www.youtube.com/watch?v=VYNkebGdl9Q). Wait a moment to get the result.
+… use [command palette](https://www.youtube.com/watch?v=VYNkebGdl9Q). Wait a moment to … the result.
 
 Captions:
 
@@ -257,17 +262,17 @@ Captions:
 
 ![Command palette](https://i.imgur.com/SjWzTcb.png)
 
-<a id="documentation"></a>
+<a id="Documentation"></a>
 # Documentation
 
 <!-- [NOTE:] escapeall facelessuser plugin -->
 
-_\#FuckTheDocs_.
++ *\#FuckTheDocs*.
 
-<a id="tricks"></a>
+<a id="Tricks"></a>
 # Tricks
 
-<a id="clarify"></a>
+<a id="Clarify"></a>
 ## Clarify
 
 To increase the probability of the expected result сlarify search queries as you clarify, when search in search engines.
@@ -280,7 +285,7 @@ Kristina Kiva|<https://www.facebook.com/public/Kristina-Kiva>
 Kristina Kiva Marbella|<https://www.instagram.com/kristinitaluckylife/>
 [/jtable]
 
-<a id="testing-environment"></a>
+<a id="Testing-environment"></a>
 # Testing environment
 
 1. Windows 10 Enterprise LTSB 64-bit EN_
@@ -291,38 +296,38 @@ Kristina Kiva Marbella|<https://www.instagram.com/kristinitaluckylife/>
 
 KristinitaLuckyLink must be works in new versions macOS and Linux.
 
-<a id="todo"></a>
+<a id="TODO"></a>
 # TODO
 
 1. unit tests,
 1. add plugin to Package Control.
 
-<a id="known-bugs-and-another-problems"></a>
+<a id="Known-bugs-and-another-problems"></a>
 # Known bugs and another problems
 
-<a id="kristinitaluckylink-1"></a>
+<a id="KristinitaLuckyLink-1"></a>
 ## KristinitaLuckyLink
 
-<a id="external"></a>
+<a id="External"></a>
 ## External
 
-<a id="troubleshooting"></a>
+<a id="Troubleshooting"></a>
 # Troubleshooting
 
 About all detected bugs please report to [issues](https://github.com/Kristinita/KristinitaLuckyLink/issues) page. Please, add information about your operation system, Sublime Text 3 and KristinitaLuckyLink versions.
 
-<a id="incorrect-links"></a>
+<a id="Incorrect-links"></a>
 ## Incorrect links
 
 If use KristinitaLuckyLink you get not top link of Google or DuckDuckGo SERP, please, make actions below.
 
-<a id="sublimerepl"></a>
+<a id="SublimeREPL"></a>
 ### SublimeREPL
 
 1. Install [SublimeREPL](https://github.com/wuub/SublimeREPL) via Package Control.
-1. <kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> for Mac) → _SublimeREPL: Python_. Paste to opened tab code below.
+1. <kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> for Mac) → *SublimeREPL: Python*. Paste to opened tab code below.
 
-<a id="duckduckgo"></a>
+<a id="DuckDuckGo"></a>
 ### DuckDuckGo
 
 Replace `Кристина Кива` to your real selection text.
@@ -337,7 +342,7 @@ Press <kbd>Enter</kbd>.
 
 If link, that you get via KristinitaLuckyLink, and this link match; it [DuckDuckGo](https://github.com/crazedpsyc/python-duckduckgo) module problem.
 
-<a id="google"></a>
+<a id="Google"></a>
 ### Google
 
 Replace `Кристина Кива` to your real selection text.
@@ -354,26 +359,26 @@ Press <kbd>Enter</kbd>.
 
 If link, that you get via KristinitaLuckyLink, and this link match; it [pygoogling](https://github.com/essanpupil/pygoogling) module problem.
 
-<a id="contributing"></a>
+<a id="Contributing"></a>
 # Contributing
 
 Pull requests welcome! But, please, adhere to the following rules.
 
-1. Please, not add inside this package external modules. My code “philosophy” is that all modules must be installed separately.
+1. Please, not add inside this package external modules. My code “philosophy” is that all modules must installed separately.
 1. Code must match [PEP8](https://www.python.org/dev/peps/pep-0008/) rules. Max line length — 120 symbols. Desirable, 100% for [Lintly](https://lintly.com/).
 
-<a id="thanks"></a>
+<a id="Thanks"></a>
 # Thanks
 
 + [keith-hall](https://github.com/keith-hall),
 + [facelessuser](https://github.com/facelessuser).
 
-<a id="terms-and-conditions"></a>
+<a id="Terms-and-conditions"></a>
 # Terms and conditions
 
 By using this package, you agree that the KristinitaLuckyLink, Sublime Text, Python DuckDuckGo and pygoogling authors won't be responsible for any damage that comes to you and/or your property. You hereby agree to take all responsibilities for using this package. The author is merely a developer who created this package but you are the one who is using it.
 
-<a id="license"></a>
+<a id="License"></a>
 # License
 
 + [MIT](https://github.com/Kristinita/KristinitaLuckyLink/blob/SashaDevelop/License.md).

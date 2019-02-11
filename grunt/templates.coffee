@@ -12,7 +12,7 @@ module.exports = (grunt) ->
 		# https://gruntjs.com/creating-plugins#avoid-changing-the-current-working-directory:-process.cwd
 		# https://stackoverflow.com/q/28755625/5951529
 		cwd: process.cwd()
-		path: "<%= templates.yamlconfig.path %>"
+		content_path: "<%= templates.yamlconfig.content_path %>"
 		output_path: "<%= templates.yamlconfig.output_path %>"
 		html_all: "<%= templates.yamlconfig.output_path %>/**/*.html"
 		theme: "<%= templates.yamlconfig.theme %>"

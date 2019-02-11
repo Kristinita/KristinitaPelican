@@ -16,37 +16,37 @@ Og_image: https://i.imgur.com/2blY7dI.png
 
 <!-- MarkdownTOC -->
 
-1. [Unsupported](#unsupported)
-1. [Testing](#testing)
-1. [Devices and browsers](#devices-and-browsers)
-1. [Site building](#site-building)
-	1. [Demonstration](#demonstration)
-	1. [Pre-installation](#pre-installation)
-		1. [All operating systems](#all-operating-systems)
-		1. [Windows](#windows)
-		1. [UNIX and macOS](#unix-and-macos)
-	1. [Installation](#installation)
-		1. [Environment variables](#environment-variables)
-			1. [AppVeyor](#appveyor)
-		1. [Windows](#windows-1)
-			1. [Terminal selection](#terminal-selection)
-			1. [Batch file](#batch-file)
-		1. [UNIX and macOS](#unix-and-macos-1)
-	1. [Build](#build)
-1. [Linting and validation](#linting-and-validation)
-	1. [General rules](#general-rules)
-	1. [Glossary for table heading](#glossary-for-table-heading)
-		1. [Type](#type)
-		1. [Checking tool](#checking-tool)
-		1. [Rules description](#rules-description)
-		1. [Configuration file](#configuration-file)
+1. [Unsupported](#Unsupported)
+1. [Testing](#Testing)
+1. [Devices and browsers](#Devices-and-browsers)
+1. [Site building](#Site-building)
+	1. [Demonstration](#Demonstration)
+	1. [Pre-installation](#Pre-installation)
+		1. [All operating systems](#All-operating-systems)
+		1. [Windows](#Windows)
+		1. [UNIX and macOS](#UNIX-and-macOS)
+	1. [Installation](#Installation)
+		1. [Environment variables](#Environment-variables)
+			1. [AppVeyor](#AppVeyor)
+		1. [Windows](#Windows-1)
+			1. [Terminal selection](#Terminal-selection)
+			1. [Batch file](#Batch-file)
+		1. [UNIX and macOS](#UNIX-and-macOS-1)
+	1. [Build](#Build)
+1. [Linting and validation](#Linting-and-validation)
+	1. [General rules](#General-rules)
+	1. [Glossary for table heading](#Glossary-for-table-heading)
+		1. [Type](#Type)
+		1. [Checking tool](#Checking-tool)
+		1. [Rules description](#Rules-description)
+		1. [Configuration file](#Configuration-file)
 		1. [comments, issue](#comments-issue)
-	1. [Validation table](#validation-table)
-		1. [Non-used tools](#non-used-tools)
+	1. [Validation table](#Validation-table)
+		1. [Non-used tools](#Non-used-tools)
 
 <!-- /MarkdownTOC -->
 
-<a id="unsupported"></a>
+<a id="Unsupported"></a>
 # Unsupported
 
 Developer of this site doesn't support:
@@ -58,7 +58,7 @@ Developer of this site doesn't support:
 1. [JavaScript turn off](https://www.reddit.com/r/webdev/comments/48z7jz/do_you_take_into_account_those_who_disable/d0nxftd/)
 1. [32-bit Windows](https://www.howtogeek.com/56701/htg-explains-whats-the-difference-between-32-bit-and-64-bit-windows-7/)
 
-<a id="testing"></a>
+<a id="Testing"></a>
 # Testing
 
 Site tested via [BrowserStack](https://www.browserstack.com) on these latest devices and latest browsers version at January 2019:
@@ -74,7 +74,7 @@ Site tested via [BrowserStack](https://www.browserstack.com) on these latest dev
 	+ ([iOS and Safari](https://www.lifewire.com/check-the-version-number-of-safari-446563)) 12
 + Samsung Galaxy S9 Plus, Chrome
 
-<a id="devices-and-browsers"></a>
+<a id="Devices-and-browsers"></a>
 # Devices and browsers
 
 2 latest stable versions of these browsers:
@@ -84,45 +84,45 @@ Site tested via [BrowserStack](https://www.browserstack.com) on these latest dev
 + Safari
 + Chrome
 
-<a id="site-building"></a>
+<a id="Site-building"></a>
 # Site building
 
-<a id="demonstration"></a>
+<a id="Demonstration"></a>
 ## Demonstration
 
 1. [AppVeyor](https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/1.0.8/job/xupi280mw74lrnnx),
 1. [Travis CI](https://travis-ci.org/Kristinita/KristinitaPelican/jobs/360627297).
 
-<a id="pre-installation"></a>
+<a id="Pre-installation"></a>
 ## Pre-installation
 
 You must install in your machine latest versions:
 
-<a id="all-operating-systems"></a>
+<a id="All-operating-systems"></a>
 ### All operating systems
 
 + Python 3,
 + Node.js,
 + Git (even if you use another VCS).
 
-<a id="windows"></a>
+<a id="Windows"></a>
 ### Windows
 
 + [Chocolatey](https://chocolatey.org/install#installing-chocolatey).
 
-<a id="unix-and-macos"></a>
+<a id="UNIX-and-macOS"></a>
 ### UNIX and macOS
 
 + [GNU Parallel](https://askubuntu.com/a/634835/582218),
 + [HTML Tidy](https://codeyarns.com/2016/06/06/how-to-build-and-install-html-tidy/).
 
-<a id="installation"></a>
+<a id="Installation"></a>
 ## Installation
 
-<a id="environment-variables"></a>
+<a id="Environment-variables"></a>
 ### Environment variables
 
-<a id="appveyor"></a>
+<a id="AppVeyor"></a>
 #### AppVeyor
 
 Get [AppVeyor API token](https://www.appveyor.com/docs/api/). Register on AppVeyor, if already no → <https://ci.appveyor.com/api-keys> → *API keys* → *Generate new API token* → copy your token.
@@ -150,17 +150,17 @@ Replace *your_token* to token, that you get.
 !!! warning
 	Windows users needs also manually add path to *LocalAppVeyor.exe* — *%USERPROFILE%/.dotnet/tools* — as value of *PATH* environment variable. Use [Rapid Environment Editor](https://ru.stackoverflow.com/a/596341/199934) or [pathed](http://www.p-nand-q.com/download/gtools/pathed.html). Don't use *SETX*, [you can lose](https://stackoverflow.com/a/28778358/5951529) your *PATH* data.
 
-<a id="windows-1"></a>
+<a id="Windows-1"></a>
 ### Windows
 
-<a id="terminal-selection"></a>
+<a id="Terminal-selection"></a>
 #### Terminal selection
 
 Run batch file below from:
 
 1. File Explorer or [alternatives](https://alternativeto.net/software/windows-explorer/?license=opensource&platform=windows),
 1. Default Windows console (*cmd.exe*),
-1. Your preferred terminal, if you sure, that [refreshenv](https://stackoverflow.com/a/32420542/5951529) update your environment variables for current session or environment variables are updated for current session automatically.
+1. Your preferred terminal, if you sure, that [refreshenv](https://stackoverflow.com/a/32420542/5951529) update your environment variables for current session or terminal update them automatically.
 
 In Far Manager you need <kbd>F9</kbd> → *Options* → *System settings* → mark settings *Automatic update of environment variables* and *Auto save setup*.
 
@@ -168,7 +168,7 @@ In Far Manager you need <kbd>F9</kbd> → *Options* → *System settings* → ma
 
 Environment variables will update automatically in current session, but that apply updated environment variables for another session, you need to make [another actions](https://github.com/FarGroup/FarManager/issues/31).
 
-<a id="batch-file"></a>
+<a id="Batch-file"></a>
 #### Batch file
 
 **Try** run this batch file:
@@ -210,7 +210,7 @@ See comments to the script in files:
 + [appveyor.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/appveyor.yml),
 + [appveyor-install.bat](https://github.com/Kristinita/KristinitaPelican/blob/master/ci/appveyor-install.bat).
 
-<a id="unix-and-macos-1"></a>
+<a id="UNIX-and-macOS-1"></a>
 ### UNIX and macOS
 
 **Try** run this shell file:
@@ -252,7 +252,7 @@ See comments to the script in files:
 + [.travis.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/.travis.yml),
 + [travis-install.sh](https://github.com/Kristinita/KristinitaPelican/blob/master/ci/travis-install.sh).
 
-<a id="build"></a>
+<a id="Build"></a>
 ## Build
 
 For build site run in *KristinitaPelican* folder:
@@ -271,7 +271,7 @@ grunt publish
 
 See comments in [files of *grunt* folder](https://github.com/Kristinita/KristinitaPelican/tree/master/grunt).
 
-<a id="linting-and-validation"></a>
+<a id="Linting-and-validation"></a>
 # Linting and validation
 
 **All original files and commits of Sasha Chernykh repositories must be 100% valid.**
@@ -280,7 +280,7 @@ Please, consider this, if you make a pull request.
 
 “Original” — not from third-party frameworks, libraries, packages, scripts and so on. I'm not responsible, if third-party files not valid.
 
-<a id="general-rules"></a>
+<a id="General-rules"></a>
 ## General rules
 
 Accept for all files, if no exceptions.
@@ -290,15 +290,13 @@ Accept for all files, if no exceptions.
 1. [Line lenght — 120 in syntaxes, where needed](https://stackoverflow.com/a/111015/5951529)
 1. [Syntactic sugar](https://www.computerhope.com/jargon/s/syntactic-sugar.htm) welcome
 
-<a id="glossary-for-table-heading"></a>
+<a id="Glossary-for-table-heading"></a>
 ## Glossary for table heading
 
 For validating table below.
 
-<a id="type"></a>
+<a id="Type"></a>
 ### Type
-
-Type of object.
 
 If in this column name of markup or programming language — I mean files, specific for this language.
 
@@ -307,17 +305,17 @@ Example:
 + *Python* — check all files with *.py* extension
 + *Markdown* — all files with *.md*, *.mdown* and *.markdown* extensions
 
-<a id="checking-tool"></a>
+<a id="Checking-tool"></a>
 ### Checking tool
 
 Checking/linting/validating tool.
 
-<a id="rules-description"></a>
+<a id="Rules-description"></a>
 ### Rules description
 
 Link(s) to detailed description of checking tool rules.
 
-<a id="configuration-file"></a>
+<a id="Configuration-file"></a>
 ### Configuration file
 
 File for checking tool, if I use non-default rules.
@@ -334,7 +332,7 @@ Some linters use JSON for configuration files (I think, [this is bad](https://ar
 + *comments* — file, where comments about options in configuration JSON file
 + *issue* — feature request for support non-JSON configuration format
 
-<a id="validation-table"></a>
+<a id="Validation-table"></a>
 ## Validation table
 
 For all Sasha Chernykh projects:
@@ -349,6 +347,7 @@ browsers console errors|[clean-console](https://www.npmjs.com/package/clean-cons
 Python|[Flake8](http://flake8.pycqa.org/en/latest/)|[1](http://flake8.pycqa.org/en/latest/user/configuration.html)|[.flake8](https://github.com/Kristinita/KristinitaPelican/blob/master/.flake8)
 Python|[pydocstyle](http://www.pydocstyle.org/en/latest/usage.html)|[1](http://www.pydocstyle.org/en/latest/usage.html#configuration-files)|—
 Markdown|[Markdownlint](https://www.npmjs.com/package/markdownlint)|[1](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md)|[.markdownlint.yaml](https://github.com/Kristinita/KristinitaPelican/blob/master/.markdownlint.yaml)
+Markdown|[remark](https://remark.js.org/)|[1](https://github.com/remarkjs/remark-lint/blob/master/doc/rules.md#list-of-rules), [2](https://github.com/remarkjs/remark-lint#list-of-external-rules)|[.remarkrc.yaml](https://github.com/Kristinita/KristinitaPelican/blob/master/.remarkrc.yaml)
 HTML, CSS, JavaScript (not minified)|[JS Beautifier](http://jsbeautifier.org/)|[1](https://www.npmjs.com/package/js-beautify#options)|[.jsbeautifyrc](https://github.com/Kristinita/KristinitaPelican/blob/master/.jsbeautifyrc), [comments](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/jsbeautifier.coffee), [issue](https://github.com/beautify-web/js-beautify/issues/1181)
 HTML|[The Nu Html Checker](https://validator.github.io/validator)|[no regulated rules list](https://stackoverflow.com/a/35646026/5951529)|—
 HTML|[HTML Tidy](http://www.html-tidy.org/)|[1](http://api.html-tidy.org/tidy/tidylib_api_next/tidy_config.html)|[tidy.conf](https://github.com/Kristinita/KristinitaPelican/blob/master/tidy.conf)
@@ -362,7 +361,7 @@ YAML|[yamllint](http://yamllint.readthedocs.io/en/latest/)|[1](http://yamllint.r
 appveyor.yml|[LocalAppVeyor](https://github.com/joaope/LocalAppVeyor#-lint-command)|[1](https://www.appveyor.com/docs/appveyor-yml/)|—
 [/jtable]
 
-<a id="non-used-tools"></a>
+<a id="Non-used-tools"></a>
 ### Non-used tools
 
 In this section checking/linting/validation tools, that I don't use. Required argumentation.

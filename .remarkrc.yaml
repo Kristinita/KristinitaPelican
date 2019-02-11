@@ -1,0 +1,122 @@
+##########
+# remark #
+##########
+# remark — Markdown linter:
+# https://remark.js.org/
+# Example file:
+# https://github.com/zemanlx/container-structure-test-image/blob/master/.remarkrc.yaml
+# CLI usage:
+# https://github.com/remarkjs/remark/tree/master/packages/remark-cli#cli
+
+###########
+# Presets #
+###########
+# https://github.com/remarkjs/remark-lint#list-of-presets
+# [NOTE] I don't use “consistent” preset; these are not strict rules
+# https://github.com/remarkjs/remark-lint/tree/master/packages/remark-preset-lint-consistent
+plugins:
+  preset-lint-recommended:
+  preset-lint-markdown-style-guide:
+
+  ###########
+  # Plugins #
+  ###########
+  # https://github.com/remarkjs/remark/blob/master/doc/plugins.md#list-of-plugins
+  ##################
+  # validate-links #
+  ##################
+  # Validate relative links plugin:
+  # https://www.npmjs.com/package/remark-validate-links
+  # [WARNING] I disable this plugin, because many unexpected warnings:
+  # https://github.com/remarkjs/remark-validate-links/issues/32
+  # https://github.com/remarkjs/remark-validate-links/issues/33
+  # validate-links:
+  ###################
+  # lint-write-good #
+  ###################
+  # Use write-good for remark
+  # https://www.npmjs.com/package/remark-lint-write-good
+  # [WARNING] Disable, because links citations and proper names:
+  # https://github.com/zerok/remark-lint-write-good/issues/5
+  # lint-write-good:
+    # [INFO] Explanations:
+    # https://github.com/btford/write-good/blob/master/write-good.js#L12-L22
+    # [NOTE] Example, how disable specific explanations:
+    # illusion: false
+
+  #########
+  # Rules #
+  #########
+  # Remark rules:
+  # https://github.com/remarkjs/remark-lint/blob/master/doc/rules.md#list-of-rules
+  # External rules:
+  # https://github.com/remarkjs/remark-lint#list-of-external-rules
+  # [NOTE] WTF. Markdown is markup for articles, not for code. User can write as much as he wants.
+  lint-maximum-line-length: false
+  # [INFO] Use “+” as unordered lists marker style:
+  # https://github.com/remarkjs/remark-lint/tree/master/packages/remark-lint-unordered-list-marker-style
+  # Possible change all:
+  # https://github.com/remarkjs/remark-lint/tree/master/packages/remark-lint-unordered-list-marker-style#fix
+  lint-unordered-list-marker-style: +
+  # [NOTE] I use mdx_downheader, that downgrade headers
+  # https://github.com/cprieto/mdx_downheader
+  lint-no-multiple-toplevel-headings: false
+  # [FIXME] Needs plugin, that redirect lowercase to mixed case:
+  # [NOTE] You need use lowercase in URLs:
+  # https://webmasters.stackexchange.com/a/56180/71131
+  # https://www.quora.com/Should-URLs-ever-have-capital-letters
+  # [INFO] Oppose opinion — mixed letters in URLs:
+  # https://stackoverflow.com/a/33489532/5951529
+  # https://webmasters.stackexchange.com/a/56177/71131
+  # [INFO] The domain part is not case sensitive. GoOgLe.CoM works.
+  # https://stackoverflow.com/a/13511455/5951529
+  lint-no-file-name-mixed-case: false
+  # [NOTE] Google: Using non-English URLs for non-English websites is fine
+  # https://searchengineland.com/google-using-non-english-urls-non-english-websites-fine-294758
+  # [INFO] Reserved characters:
+  # https://webmasters.stackexchange.com/a/508/71131
+  lint-no-file-name-irregular-characters: false
+  # [NOTE] I can use literal URLs in Pelican metadata:
+  # https://github.com/remarkjs/remark-lint/tree/master/packages/remark-lint-no-literal-urls
+  lint-no-literal-urls: false
+  # [NOTE] I prefer tabs, not spaces:
+  # https://softwareengineering.stackexchange.com/a/2037/264224
+  # https://github.com/remarkjs/remark-lint/tree/master/packages/remark-lint-list-item-indent
+  lint-list-item-content-indent: false
+  # [NOTE] Sublime MarkdownTOC add unique ids for headers:
+  # https://packagecontrol.io/packages/MarkdownTOC
+  # https://github.com/naokazuterada/MarkdownTOC#auto-anchoring-when-heading-has-anchor-defined
+  # https://github.com/remarkjs/remark-lint/tree/master/packages/remark-lint-no-duplicate-headings
+  lint-no-duplicate-headings: false
+  # [WARNING] I don't think, that blank lines needest, if elements of nested list have
+  # no more, than one line:
+  # https://github.com/cirosantilli/markdown-style-guide/issues/4
+  # https://github.com/remarkjs/remark-lint/issues/78
+  lint-list-item-spacing: false
+  # [NOTE] Rationale unconvincing to me:
+  # https://github.com/cirosantilli/markdown-style-guide/issues/5
+  # http://www.cirosantilli.com/markdown-style-guide/#header-length
+  # [NOTE] But title size there should be no more than 70 symbols:
+  # https://webmasters.stackexchange.com/a/92011/71131
+  # https://www.hildamateiu.com/docs/search-engine-optimization-starter-guide.pdf
+  # https://www.tutorialrepublic.com/faq/what-is-the-maximum-length-of-title-and-meta-description-tag.php
+  lint-maximum-heading-length: false
+  # [NOTE] Symbol after list marker. For “space” value:
+  # Valid:
+  # 1. Kira list item
+  # Non-valid:
+  # 1.  Kira list item
+  # https://github.com/remarkjs/remark-lint/tree/master/packages/remark-lint-list-item-indent
+  lint-list-item-indent: 'space'
+  # [WARNING] Both disabled, because jtable syntax not support:
+  # https://github.com/remarkjs/remark-lint/issues/202
+  # [FIXME] Add remark-macro and remark-stringify to config:
+  # https://github.com/remarkjs/remark-lint/issues/202#issuecomment-462050887
+  lint-no-shortcut-reference-link: false
+  lint-no-undefined-references: false
+  # [WARNING] Disable, because EscapeAll syntax not support:
+  # https://github.com/remarkjs/remark-lint/issues/202
+  lint-no-inline-padding: false
+  # [WARNING] Disable, because Admonition syntax not support:
+  # https://github.com/remarkjs/remark-lint/issues/202
+  lint-code-block-style: false

@@ -20,7 +20,7 @@ Schemaorgtype: HowTo
 
 ## Для чего предназначена данная инструкция
 
-__[Стоковая прошивка](http://fb.ru/article/254999/stokovaya-proshivka-chto-eto-takoe) телефона ARK Benefit S401 содержит вредоносное ПО__ — без Вашего согласия на телефон будут устанавливаться программы. Данная проблема возникла не только у меня, но и у многих прочих участников форума 4PDA, см., например, сообщения [1](http://4pda.ru/forum/index.php?showtopic=788444&st=340#entry67671845), [2](http://4pda.ru/forum/index.php?showtopic=788444&st=340#entry67600967), [3](http://4pda.ru/forum/index.php?showtopic=788444&st=300#entry64686674), [4](http://4pda.ru/forum/index.php?showtopic=788444&st=300#entry63816408), [5](http://4pda.ru/forum/index.php?showtopic=788444&st=300#entry63247178), [5](http://4pda.ru/forum/index.php?showtopic=788444&st=280#entry61611283), [6](http://4pda.ru/forum/index.php?showtopic=788444&st=280#entry60787829), [7](http://4pda.ru/forum/index.php?showtopic=788444&st=220#entry58263044).
+**[Стоковая прошивка](http://fb.ru/article/254999/stokovaya-proshivka-chto-eto-takoe) телефона ARK Benefit S401 содержит вредоносное ПО** — без Вашего согласия на телефон будут устанавливаться программы. Данная проблема возникла не только у меня, но и у многих прочих участников форума 4PDA, см., например, сообщения [1](http://4pda.ru/forum/index.php?showtopic=788444&st=340#entry67671845), [2](http://4pda.ru/forum/index.php?showtopic=788444&st=340#entry67600967), [3](http://4pda.ru/forum/index.php?showtopic=788444&st=300#entry64686674), [4](http://4pda.ru/forum/index.php?showtopic=788444&st=300#entry63816408), [5](http://4pda.ru/forum/index.php?showtopic=788444&st=300#entry63247178), [6](http://4pda.ru/forum/index.php?showtopic=788444&st=280#entry61611283), [7](http://4pda.ru/forum/index.php?showtopic=788444&st=280#entry60787829), [8](http://4pda.ru/forum/index.php?showtopic=788444&st=220#entry58263044).
 
 ![Вирусы Dr.Web](https://i.imgur.com/t27DFhh.png)
 
@@ -90,11 +90,11 @@ __[Стоковая прошивка](http://fb.ru/article/254999/stokovaya-pros
 
 ### Установка драйверов
 
-я делал так. С выключенным телефоном заходил в Device Manager → подключил выключенный телефон по USB → в Device Manager на время около секунды появлялся пункт _Ports (COM &amp; LPT)_ → _Preloader USB VCOM Port (COM6)_.
+я делал так. С выключенным телефоном заходил в Device Manager → подключил выключенный телефон по USB → в Device Manager на время около секунды появлялся пункт *Ports (COM &amp; LPT)* → *Preloader USB VCOM Port (COM6)*.
 
 ![Preloader](https://i.imgur.com/vAN4BIQ.png)
 
-Успевал кликнуть на _Preloader USB VCOM Port (COM6)_ → _Driver_ → _Update Driver..._ → _Browse my computer for driver software_ → выбирал папку с драйверами, которую скачал в инструкции, → Поставил галочку на _Include subfolders_ → _Next_ → получал окно _The best driver software for your device is already installed_.
+Успевал кликнуть на *Preloader USB VCOM Port (COM6)* → *Driver* → *Update Driver…* → *Browse my computer for driver software* → выбирал папку с драйверами, которую скачал в инструкции, → Поставил галочку на *Include subfolders* → *Next* → получал окно *The best driver software for your device is already installed*.
 
 ![Best driver](https://i.imgur.com/6tEn7ka.png)
 
@@ -102,7 +102,7 @@ __[Стоковая прошивка](http://fb.ru/article/254999/stokovaya-pros
 
 ### Кнопка Download
 
-После пункта инструкции _Снимаем все галки кроме recovery, и нажав на путь в той же строке, выбираем в открывшемся окне скачанный ранее образ кастомного рекавери._ следует нажать на большую зелёную кнопку _Download_
+После пункта инструкции *Снимаем все галки кроме recovery, и нажав на путь в той же строке, выбираем в открывшемся окне скачанный ранее образ кастомного рекавери.* следует нажать на большую зелёную кнопку *Download*
 
 ![Download](https://i.imgur.com/Wl8pHW9.png)
 
@@ -124,7 +124,7 @@ __[Стоковая прошивка](http://fb.ru/article/254999/stokovaya-pros
 
 ### Вайпы
 
-После пункта _Качаем прошивку из шапки, из раздела "Неофициальные прошивки" и кладём на карту памяти_, вероятно, лучше [сделать вайпы](https://archive.li/IWlGw) _data/Factory reset_, _Cache Partition_, _Dalvik Cache_ через кастомное recovery.
+После пункта *Качаем прошивку из шапки, из раздела "Неофициальные прошивки" и кладём на карту памяти*, вероятно, лучше [сделать вайпы](https://archive.li/IWlGw) *data/Factory reset*, *Cache Partition*, *Dalvik Cache* через кастомное recovery.
 
 ### Форматирование раздела system
 

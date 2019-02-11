@@ -19,21 +19,21 @@ Schemaorgtype: HowTo
 
 <!-- MarkdownTOC -->
 
-1. [Overview](#overview)
-1. [Audience](#audience)
-1. [Relevance](#relevance)
-1. [Motivation](#motivation)
-1. [Demonstration](#demonstration)
-1. [Features](#features)
-1. [Limitations](#limitations)
-1. [Installation](#installation)
-1. [Configuration](#configuration)
-	1. [Files](#files)
+1. [Overview](#Overview)
+1. [Audience](#Audience)
+1. [Relevance](#Relevance)
+1. [Motivation](#Motivation)
+1. [Demonstration](#Demonstration)
+1. [Features](#Features)
+1. [Limitations](#Limitations)
+1. [Installation](#Installation)
+1. [Configuration](#Configuration)
+	1. [Files](#Files)
 	1. [&#95;&#95;init&#95;&#95;.py](#9595init9595py)
-	1. [License](#license)
-	1. [README](#readme)
-		1. [README.md](#readmemd)
-		1. [README.rst](#readmerst)
+	1. [License](#License)
+	1. [README](#README)
+		1. [README.md](#READMEmd)
+		1. [README.rst](#READMErst)
 	1. [setup.cfg](#setupcfg)
 		1. [long_description](#long_description)
 		1. [classifiers](#classifiers)
@@ -41,41 +41,41 @@ Schemaorgtype: HowTo
 		1. [packages](#packages)
 		1. [console_scripts](#console_scripts)
 		1. [bdist_wheel](#bdist_wheel)
-	1. [Dependencies](#dependencies)
-		1. [Difference between requirements.txt and install_requires](#difference-between-requirementstxt-and-install_requires)
+	1. [Dependencies](#Dependencies)
+		1. [Difference between requirements.txt and install_requires](#Difference-between-requirementstxt-and-install_requires)
 			1. [install_requires](#install_requires)
 			1. [requirements.txt](#requirementstxt)
 		1. [setup.py](#setuppy)
 		1. [requirements.txt](#requirementstxt-1)
-		1. [MANIFEST.in](#manifestin)
+		1. [MANIFEST.in](#MANIFESTin)
 	1. [pyroma](#pyroma)
-1. [TestPyPI](#testpypi)
-	1. [What is TestPyPI](#what-is-testpypi)
-	1. [Registration](#registration)
-	1. [Twine settings](#twine-settings)
-	1. [Build package](#build-package)
-	1. [Publish to TestPyPI](#publish-to-testpypi)
-	1. [Visit TestPyPI](#visit-testpypi)
+1. [TestPyPI](#TestPyPI)
+	1. [What is TestPyPI](#What-is-TestPyPI)
+	1. [Registration](#Registration)
+	1. [Twine settings](#Twine-settings)
+	1. [Build package](#Build-package)
+	1. [Publish to TestPyPI](#Publish-to-TestPyPI)
+	1. [Visit TestPyPI](#Visit-TestPyPI)
 	1. [virtualenv](#virtualenv)
-		1. [Why virtual environment?](#why-virtual-environment)
-		1. [Using virtualenv and virtualenvwrapper](#using-virtualenv-and-virtualenvwrapper)
-		1. [Checking](#checking)
-1. [PyPI](#pypi)
-1. [Updating](#updating)
-1. [Automatic updating, release and changelog](#automatic-updating-release-and-changelog)
-	1. [Demonstration](#demonstration-1)
-	1. [Features](#features-1)
-	1. [Limitations](#limitations-1)
-	1. [Installation and setting-up](#installation-and-setting-up)
+		1. [Why virtual environment?](#Why-virtual-environment)
+		1. [Using virtualenv and virtualenvwrapper](#Using-virtualenv-and-virtualenvwrapper)
+		1. [Checking](#Checking)
+1. [PyPI](#PyPI)
+1. [Updating](#Updating)
+1. [Automatic updating, release and changelog](#Automatic-updating-release-and-changelog)
+	1. [Demonstration](#Demonstration-1)
+	1. [Features](#Features-1)
+	1. [Limitations](#Limitations-1)
+	1. [Installation and setting-up](#Installation-and-setting-up)
 		1. [.release-it.json](#release-itjson)
-	1. [Usage](#usage)
-1. [Testing environment](#testing-environment)
+	1. [Usage](#Usage)
+1. [Testing environment](#Testing-environment)
 
 <!-- /MarkdownTOC -->
 
 <!-- [TODO] HTTPError: 400 Client Error: User 'Sasha_Chernykh' does not have a verified primary email address. Please add a verified primary email before attempting to upload to PyPI. See https://pypi.org/help/#verified-email for more information.for more information. for url: https://upload.pypi.org/legacy/ -->
 
-<a id="overview"></a>
+<a id="Overview"></a>
 # Overview
 
 Tutorial, how you can add your Python package to [PyPI — Python Package Index](https://en.wikipedia.org/wiki/Python_Package_Index).
@@ -91,7 +91,7 @@ Read this article.
 !!! info
 	In this article I wrote the most common method at February 2018. But you can consider another tools as [flit](https://github.com/takluyver/flit) and [poet](https://github.com/sdispater/poet).
 
-<a id="audience"></a>
+<a id="Audience"></a>
 # Audience
 
 Python developers, that:
@@ -99,12 +99,12 @@ Python developers, that:
 1. publish package to PyPI first time,
 1. already published packages to PyPI, but want to do it more qualitatively.
 
-<a id="relevance"></a>
+<a id="Relevance"></a>
 # Relevance
 
 This article is relevant for February 2018. In the future, the data in this article may be obsolete.
 
-<a id="motivation"></a>
+<a id="Motivation"></a>
 # Motivation
 
 One more article? Why?
@@ -113,7 +113,7 @@ I read some articles about PyPI publishing → I think, that articles, which I r
 
 1. outdated;
 1. not show real examples and demonstrations;
-1. not all-in-one; I was forced to read other resources;
+1. not all-in-one; I needed force read other resources;
 1. They do not describe all the difficulties the developer has encountered, when try to publish package on PyPI.
 
 I don't want, that another beginner Python developers take a lot of time for PyPI publishing as me. And I try to write an article, that:
@@ -123,7 +123,7 @@ I don't want, that another beginner Python developers take a lot of time for PyP
 1. all-in-one; I try to add in my article all information, that I need for first PyPI publishing;
 1. described all problems, to solve that personally I spent my time.
 
-<a id="demonstration"></a>
+<a id="Demonstration"></a>
 # Demonstration
 
 For examples in this article, I select my Erichek package.
@@ -148,19 +148,19 @@ If you want to have similar behavior, read on.
 
 If I have explained something incomprehensibly, see files of [Erichek GitHub repository](https://github.com/Kristinita/Erichek).
 
-<a id="features"></a>
+<a id="Features"></a>
 # Features
 
 1. This article — cross platform solution.
 
-<a id="limitations"></a>
+<a id="Limitations"></a>
 # Limitations
 
 1. You must be able to write working Python packages.
-1. Erichek and another my packages only for Python 3. I don't want support Python 2. If you want support Python 2, possibly, you will need some other action.
+1. Erichek and another my packages solely for Python 3. I don't want support Python 2. If you want support Python 2, possibly, you will need some other action.
 1. If you can have a configuration different, that Erichek, possibly, you will need in another actions.
 
-<a id="installation"></a>
+<a id="Installation"></a>
 # Installation
 
 Please, install via pip (*pip install &lt;package&gt;*):
@@ -172,10 +172,10 @@ Please, install via pip (*pip install &lt;package&gt;*):
 1. [pyroma](https://pypi.python.org/pypi/pyroma/),
 1. update your [setuptools](https://pypi.python.org/pypi/setuptools), to be sure, that [pyroma works correct](https://github.com/regebro/pyroma/issues/16) — `pip install -U setuptools`.
 
-<a id="configuration"></a>
+<a id="Configuration"></a>
 # Configuration
 
-<a id="files"></a>
+<a id="Files"></a>
 ## Files
 
 Simplify configuration. Real project configuration see in [Erichek GitHub repository](https://github.com/Kristinita/Erichek).
@@ -210,17 +210,17 @@ In [Software Engineering site recommends](https://softwareengineering.stackexcha
 
 See [answer](https://stackoverflow.com/a/4116384/5951529), why *\_\_init\_\_.py* need. This file may be blank or contains content.
 
-<a id="license"></a>
+<a id="License"></a>
 ## License
 
 Add text of license for your package to *LICENSE.md* file.
 
 If your editor is [Sublime Text 3](https://www.sublimetext.com/3), you can use [License Snippets](https://packagecontrol.io/packages/Licence%20Snippets) package.
 
-<a id="readme"></a>
+<a id="README"></a>
 ## README
 
-<a id="readmemd"></a>
+<a id="READMEmd"></a>
 ### README.md
 
 If you preferred write README in Markdown, you can have problems.
@@ -230,7 +230,7 @@ At February 2018 [PyPI doesn't support Readme.md](https://github.com/pypa/wareho
 !!! hint
 	You can [convert Markdown to reStructuredText](https://bfroehle.com/2013/04/26/converting-md-to-rst/) use [Pandoc](http://pandoc.org).
 
-<a id="readmerst"></a>
+<a id="READMErst"></a>
 ### README.rst
 
 I recommend write README in [reStructuredText](http://docutils.sourceforge.net/rst.html) — you need use file *README.rst*. I add to [my README.rst](https://github.com/Kristinita/Erichek/blob/master/README.rst) next information:
@@ -265,7 +265,7 @@ Set your README file as value. Letters [must be in same register as in file](htt
 <a id="classifiers"></a>
 ### classifiers
 
-You can use only classifiers from [this list](https://pypi.python.org/pypi?%3Aaction=list_classifiers). If no, you can't publish your package to PyPI.
+You can use solely classifiers from [this list](https://pypi.python.org/pypi?%3Aaction=list_classifiers). If no, you can't publish your package to PyPI.
 
 Possibly, UNIX users can select classifiers via [pypi-classifiers GUI](https://github.com/mbr/pypi-classifiers), but [I can't set this program for Windows 10](https://github.com/mbr/pypi-classifiers/issues/2).
 
@@ -278,7 +278,7 @@ my value:
 zip_safe = False
 ```
 
-If you build your package use Wheels, [you don't need this parameter](https://stackoverflow.com/a/16541150/5951529), but pyroma [will show lower value](https://github.com/regebro/pyroma/issues/19). So I recommend add `#!ini zip_safe = False` or `#!ini zip_safe = True` (unimportant) to your *setup.cfg* file.
+If you build your package use Wheels, [you don't need this parameter](https://stackoverflow.com/a/16541150/5951529), but pyroma [will show lower value](https://github.com/regebro/pyroma/issues/19). And so I recommend add `#!ini zip_safe = False` or `#!ini zip_safe = True` (unimportant) to your *setup.cfg* file.
 
 <a id="packages"></a>
 ### packages
@@ -300,7 +300,7 @@ What is it. If Erichek user want run Erichek, he/she wrote in console:
 python "path/to/__main__.py"
 ```
 
-But since *console_scripts* exist in *setup.cfg*, Erichek user can use simply command, that get same behavior:
+But since *console_scripts* exist in *setup.cfg*, Erichek user merely can use command, that get same behavior:
 
 ```shell
 erichek
@@ -338,7 +338,7 @@ Erichek — Python 3 package, so I have `#!ini python-tag = py3`. If your packag
 universal = 1
 ```
 
-<a id="dependencies"></a>
+<a id="Dependencies"></a>
 ## Dependencies
 
 In this section I tell, what you need, that dependencies of your package from file *requirements.txt* automatically install for user. You don't need to write same dependencies in *requirements.txt* and *setup.cfg*/*setup.py*.
@@ -346,7 +346,7 @@ In this section I tell, what you need, that dependencies of your package from fi
 !!! caution
 	Some developers [criticize this method](https://stackoverflow.com/a/33685899/5951529). If you need different dependencies for *requirements.txt* and *install_requires*, please, add list of your dependencies in *requirements.txt* and *setup.cfg* both.
 
-<a id="difference-between-requirementstxt-and-install_requires"></a>
+<a id="Difference-between-requirementstxt-and-install_requires"></a>
 ### Difference between requirements.txt and install_requires
 
 Simplified definition.
@@ -354,7 +354,7 @@ Simplified definition.
 <a id="install_requires"></a>
 #### install_requires
 
-*install_requires* parameter in *setup.cfg* or *setup.py* show, which packages will install additionally, if user install your package via pip. For example, user install [clize package](https://pypi.org/project/sasha/):
+*install_requires* parameter in *setup.cfg* or *setup.py* show, which packages will install, if user install your package via pip. For example, user install [clize package](https://pypi.org/project/sasha/):
 
 ```shell
 pip install clize
@@ -399,14 +399,14 @@ For example, I am Python package developer and have local dependencies for my pa
 	pip install -r requirements.txt -t . --upgrade
 	```
 
-	my local dependencies are updated.
+	it update my local dependencies.
 
 1. Services as [Dependabot](https://dependabot.com/) or [Pyup](https://pyup.io/) check dependencies from *requirements.txt* and update numbers of outdated versions.
 
 <a id="setuppy"></a>
 ### setup.py
 
-In this and 2 next sections I wrote, how you can get [install\_requires behavior](#installrequires), use only *requirements.txt* file. You don't need additional add your dependencies to install\_requires.
+In this and 2 next sections I wrote, how you can get [install\_requires behavior](#installrequires), use solely *requirements.txt* file. You don't need add your dependencies to install\_requires.
 
 Add [this code](https://stackoverflow.com/a/16624700/5951529) to your *setup.py*:
 
@@ -441,7 +441,7 @@ setup(
 
 [Add list of your dependencies](https://pip.readthedocs.io/en/1.1/requirements.html) to *requirements.txt*.
 
-<a id="manifestin"></a>
+<a id="MANIFESTin"></a>
 ### MANIFEST.in
 
 Add a line to *MANIFEST.in* file:
@@ -482,22 +482,22 @@ Your cheese is so fresh most people think it's a cream: Mascarpone
 
 If no 10/10, please, see pyroma messages and try fix your package.
 
-<a id="testpypi"></a>
+<a id="TestPyPI"></a>
 # TestPyPI
 
-<a id="what-is-testpypi"></a>
+<a id="What-is-TestPyPI"></a>
 ## What is TestPyPI
 
 If you publish your package first time or not sure that everything is doing right, I recommend at first publish package to [TestPyPI](https://test.pypi.org/). TestPyPI — is a service, where you can test uploading, downloading and display your package on PyPI site before you share package to PyPI.
 
-<a id="registration"></a>
+<a id="Registration"></a>
 ## Registration
 
 Please, register on [TestPyPI](https://testpypi.python.org) and [PyPI](https://pypi.python.org/pypi) sites.
 
 It would be nice, if you will use same username and password for both sites, that [Twine](#twine-settings) works correct.
 
-<a id="twine-settings"></a>
+<a id="Twine-settings"></a>
 ## Twine settings
 
 [Add environment variables](https://github.com/pypa/twine#options)
@@ -511,7 +511,7 @@ See, how you can add environment variables for:
 !!! caution
 	Also [you can add](http://peterdowns.com/posts/first-time-with-pypi.html) your username and password to *.pypirc* file, but it [not recommended](https://packaging.python.org/tutorials/distributing-packages/#create-an-account).
 
-<a id="build-package"></a>
+<a id="Build-package"></a>
 ## Build package
 
 Print in your terminal:
@@ -526,7 +526,7 @@ python setup.py bdist_wheel
 !!! info
 	If by some reasons you don't want use Wheels, [you can build your package](https://packaging.python.org/tutorials/distributing-packages/#source-distributions), use command `python setup.py sdist`
 
-<a id="publish-to-testpypi"></a>
+<a id="Publish-to-TestPyPI"></a>
 ## Publish to TestPyPI
 
 [Enter in your terminal](https://packaging.python.org/guides/using-testpypi/#using-testpypi-with-twine):
@@ -540,7 +540,7 @@ If no errors in your configuration, package must successful upload to TestPyPI.
 !!! bug
 	[Known bug](https://github.com/pypa/packaging-problems/issues/74) at February 2018 — in PyPI and TestPyPI you never can't overwrite specific version of your package, even if you delete your package. I.e., for example, you publish to PyPI or TestPyPI version *4.14.7* of your package *mypackage* → you delete *mypackage* from PyPI and/or TestPyPI → you can't upload *4.14.7* version of *mypackage* again.
 
-<a id="visit-testpypi"></a>
+<a id="Visit-TestPyPI"></a>
 ## Visit TestPyPI
 
 After uploading visit 2 pages:
@@ -563,7 +563,7 @@ Examples for Erichek at February 2018:
 If the result suits you, in next step install package, that you upload, use virtual environment.
 
 !!! caution
-	You can't find your package, if you use search form on <https://test.pypi.org> or <https://pypi.org>. [The search indexes are not immediately updated, it may take \~24 hours for a new package or deleted package to appear in a search](https://github.com/pypa/warehouse/issues/2899#issuecomment-364150430).
+	You can't find your package, if you use search form on <https://test.pypi.org> or <https://pypi.org>. [The search indexes may update \~24 hours for a new package or deleted package to appear in a search](https://github.com/pypa/warehouse/issues/2899#issuecomment-364150430).
 
 !!! note
 	On <https://testpypi.python.org> can't show last version of your package. That fix it, login at <https://testpypi.python.org> → visit `https://testpypi.python.org/pypi?%3Aaction=pkg_edit&name=<your_package>` (<https://testpypi.python.org/pypi?%3Aaction=pkg_edit&name=erichek> for Erichek) → [set *Hide? No*](https://i.imgur.com/bGjKHzS.png) for latest version.
@@ -575,7 +575,7 @@ If the result suits you, in next step install package, that you upload, use virt
 
 I recommend install your TestPyPI package, use virtual environment.
 
-<a id="why-virtual-environment"></a>
+<a id="Why-virtual-environment"></a>
 ### Why virtual environment?
 
 Citation from [Pro Python Best Practices](https://www.apress.com/us/book/9781484222409) book:
@@ -589,7 +589,7 @@ Reasons of use virtual environment for TestPyPI installation:
 1. You can have bugs in your package. Bugs may have a negative impact of your environment. If you will use virtual environment, these bugs does not affect your global Python environment.
 1. You can have some globally dependencies in your environment, but users of your package may haven't them. If you use virtual environment, you see, how your package will install and works without, possibly, pre-installed global dependencies on your machine.
 
-<a id="using-virtualenv-and-virtualenvwrapper"></a>
+<a id="Using-virtualenv-and-virtualenvwrapper"></a>
 ### Using virtualenv and virtualenvwrapper
 
 !!! caution
@@ -627,7 +627,7 @@ Where:
 
 	You may need wait ~10 minutes, that 4.14.7 version index on TestPyPI. You can have a similar problem for PyPI.
 
-<a id="checking"></a>
+<a id="Checking"></a>
 ### Checking
 
 If you can't have bugs in installation process, check, that you package works correct. For example, Erichek check, contains errors in *.txt* files in a folder or no. I run *erichek* console command.
@@ -670,7 +670,7 @@ http://pygments.org/docs/lexers/#pygments.lexers.special.TextLexer -->
 C:\Users\SashaChernykh>
 ```
 
-<a id="pypi"></a>
+<a id="PyPI"></a>
 # PyPI
 
 If all actions from [TestPyPI section](#testpypi) success for you, you can publish your package to PyPI and then install it.
@@ -695,7 +695,7 @@ If all okay, **congratulations! You successful publish your package to PyPI!**
 
 ![Congratulations](https://i.imgur.com/4cvn8jX.jpg)
 
-<a id="updating"></a>
+<a id="Updating"></a>
 # Updating
 
 That update your package in PyPI:
@@ -703,7 +703,7 @@ That update your package in PyPI:
 1. Make new changes,
 1. Make same actions as in [section above](#pypi).
 
-<a id="automatic-updating-release-and-changelog"></a>
+<a id="Automatic-updating-release-and-changelog"></a>
 # Automatic updating, release and changelog
 
 !!! note
@@ -716,7 +716,7 @@ That update your package in PyPI:
 	+ Differences in my and your environment;
 	+ Different versions of tools from this article can do another behavior, [example](https://github.com/webpro/release-it/issues/233)
 
-<a id="demonstration-1"></a>
+<a id="Demonstration-1"></a>
 ## Demonstration
 
 I enter command to the terminal:
@@ -743,17 +743,17 @@ I get [behavior](https://github.com/Kristinita/Erichek/commit/be58c1d53bbc8aeb76
 
 If you want to have same behavior, read on.
 
-<a id="features-1"></a>
+<a id="Features-1"></a>
 ## Features
 
 See [these features](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#features).
 
-<a id="limitations-1"></a>
+<a id="Limitations-1"></a>
 ## Limitations
 
 See [these limitations](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#limitations).
 
-<a id="installation-and-setting-up"></a>
+<a id="Installation-and-setting-up"></a>
 ## Installation and setting-up
 
 1. you need to install all from [this section](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#installation) except *tee*, *cat*, *mv* and *js-beautify*;
@@ -803,12 +803,12 @@ Where:
 
 See [here](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#release-itjson-1), if you want to know details about another parts of *.release-it.json*.
 
-<a id="usage"></a>
+<a id="Usage"></a>
 ## Usage
 
 See [usage instructions](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#usage).
 
-<a id="testing-environment"></a>
+<a id="Testing-environment"></a>
 # Testing environment
 
 + Windows 10 Enterprise LTSB 64-bit EN,

@@ -12,7 +12,7 @@
 # Not recommended change it without the need.
 # http://docs.getpelican.com/en/stable/settings.html
 # Source path
-path: content
+content_path: content
 # Build path
 output_path: output
 # Theme path

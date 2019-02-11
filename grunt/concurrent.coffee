@@ -108,11 +108,12 @@ module.exports =
 	#
 	tars1: ['coffeelint:source'
 			'markdownlint'
+			'remark'
 			'shell:bashate']
 	#
 	# For validating output, “target validate”.
 	#
-	# [TEMP] “html-nu” temporary disabled, because footnotes obsolete syntax:
+	# [FIXME] “html-nu” temporary disabled, because footnotes obsolete syntax:
 	# https://github.com/Python-Markdown/markdown/issues/768
 	# https://travis-ci.org/Kristinita/KristinitaPelican/jobs/471091236#L1220
 	tarv1: ['coffeelint:personal'

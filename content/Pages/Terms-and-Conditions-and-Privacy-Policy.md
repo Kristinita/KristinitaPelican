@@ -46,7 +46,7 @@ By accessing this web site, you are agreeing to be bound by these web site Terms
 	1. attempt to decompile or reverse engineer any software contained on Sasha Chernykh's web site;
 	1. remove any copyright or other proprietary notations from the materials; or
 	1. transfer the materials to another person or "mirror" the materials on any other server.
-2. This license shall automatically terminate if you violate any of these restrictions and may be terminated by Sasha Chernykh at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.
+1. This license shall automatically terminate if you violate any of these restrictions and may be terminated by Sasha Chernykh at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.
 
 <a id="disclaimer"></a>
 ## Disclaimer

@@ -7,7 +7,7 @@ Pagetitle: PaletteMira
 Pagecolors: programs
 Iconleftorright: right
 Epigraph: true
-Epigraphtext: PaletteMira is devoted the most goodhearted creation — [Ekaterina Zakharova](https://vk.com/id193658076). <br><br> Mira from “PaletteMira” — name of [Her account](https://vk.com/id388308587) in social network.
+Epigraphtext: I dedicated PaletteMira the most goodhearted creation — [Ekaterina Zakharova](https://vk.com/id193658076). <br><br> Mira from “PaletteMira” — name of [Her account](https://vk.com/id388308587) in social network.
 Titleimage: true
 Titleimagename: KateZGirlfriend
 Asideimage: KateZakharova
@@ -21,60 +21,60 @@ Schemaorgtype: SoftwareApplication
 
 <!-- MarkdownTOC -->
 
-1. [Overview](#overview)
-1. [Limitations](#limitations)
-1. [Motivation](#motivation)
-1. [Installation](#installation)
-	1. [Dependencies](#dependencies)
-	1. [PaletteMira](#palettemira)
-1. [Activation](#activation)
-1. [Usage](#usage)
-1. [Known problems and bugs](#known-problems-and-bugs)
-	1. [PaletteMira](#palettemira-1)
-	1. [Dependencies](#dependencies-1)
+1. [Overview](#Overview)
+1. [Limitations](#Limitations)
+1. [Motivation](#Motivation)
+1. [Installation](#Installation)
+	1. [Dependencies](#Dependencies)
+	1. [PaletteMira](#PaletteMira)
+1. [Activation](#Activation)
+1. [Usage](#Usage)
+1. [Known problems and bugs](#Known-problems-and-bugs)
+	1. [PaletteMira](#PaletteMira-1)
+	1. [Dependencies](#Dependencies-1)
 
 <!-- /MarkdownTOC -->
 
-<a id="overview"></a>
+<a id="Overview"></a>
 # Overview
 
 Sublime Text package, that add to [command palette](http://docs.sublimetext.info/en/latest/reference/command_palette.html) existing commands from third-party packages, if author(s) of them did not do this.
 
 I include to PaletteMira commands of all known packages, that doesn't have command palette caption, not obsolete and haven't critical errors.
 
-<a id="limitations"></a>
+<a id="Limitations"></a>
 # Limitations
 
 1. You must be Sublime Text user.
 
-<a id="motivation"></a>
+<a id="Motivation"></a>
 # Motivation
 
 1. \#SashaHateKeyBindings,
 1. \#SashaHateContextMenu,
 1. \#SashaHateNoSuricate.
 
-<a id="installation"></a>
+<a id="Installation"></a>
 # Installation
 
-<a id="dependencies"></a>
+<a id="Dependencies"></a>
 ## Dependencies
 
 1. Install [Suricate](https://packagecontrol.io/packages/Suricate) [via Package Control](https://packagecontrol.io/docs/usage).
 
-<a id="palettemira"></a>
+<a id="PaletteMira"></a>
 ## PaletteMira
 
 Install PaletteMira, using [*Package Control: Add Repository*](https://stackoverflow.com/a/44441455/5951529) with tree <https://github.com/Kristinita/PaletteMira/tree/SashaDevelop>.
 
-<a id="activation"></a>
+<a id="Activation"></a>
 # Activation
 
 <kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> for Mac) → *Suricate: Add Profile* → Select *PaletteMira* → <kbd>Enter</kbd>.
 
 ![Activate PaletteMira](https://i.imgur.com/LAS3eTl.png)
 
-<a id="usage"></a>
+<a id="Usage"></a>
 # Usage
 
 After activation, you can run commands of packages from list. Print package name in command palette → you get result: *Suricate: &#60;Your Package&#62;*.
@@ -83,11 +83,11 @@ Example for [Sublime OpenInclude](https://github.com/titoBouzout/Open-Include) p
 
 ![OpenInclude](https://i.imgur.com/EQNWf9y.png)
 
-<a id="known-problems-and-bugs"></a>
+<a id="Known-problems-and-bugs"></a>
 # Known problems and bugs
 
-<a id="palettemira-1"></a>
+<a id="PaletteMira-1"></a>
 ## PaletteMira
 
-<a id="dependencies-1"></a>
+<a id="Dependencies-1"></a>
 ## Dependencies

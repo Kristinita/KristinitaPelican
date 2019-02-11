@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2019-01-18 20:14:23
-# @Last Modified time: 2019-02-03 19:16:06
+# @Last Modified time: 2019-02-07 15:59:57
 # ****************************************************************************
 # *                                 Markdown                                 *
 # ****************************************************************************
@@ -174,6 +174,8 @@ MARKDOWN = {
         'pymdownx.snippets': {
             'base_path': 'content/Snippets'
         },
+        # [LEARN] “text” pygmets lexer for Plain text format:
+        # http://pygments.org/docs/lexers/#pygments.lexers.special.TextLexer
         'pymdownx.superfences': {
             'css_class': 'SashaBlockHighlight',
             # Doesn't convert tabs to spaces in code blocks:
