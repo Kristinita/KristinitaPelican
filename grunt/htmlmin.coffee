@@ -36,11 +36,19 @@ module.exports =
 			minifyCSS: true
 			# [INFO] Minfy JavaScript in <script> tag use UglifyJS2:
 			# http://lisperator.net/uglifyjs/
-			minifyJS: true
+			# [NOTE] Preserve quotes:
+			# https://github.com/kangax/html-minifier/issues/438#issuecomment-172877224
+			# https://github.com/gruntjs/grunt-contrib-uglify/issues/293
+			# https://github.com/gruntjs/grunt-contrib-uglify/commit/f180390af65e4c442560a64de66f058e0affb8a8
+			# That fix Htmllint E005:
+			# https://travis-ci.org/Kristinita/KristinitaPelican/jobs/496070586#L2176
+			minifyJS:
+				quote_style: 1
 			# [FIXME] No examples, how use minifyURLs:
 			# https://github.com/kangax/html-minifier/issues/667
 			# https://www.npmjs.com/package/html-minifier#options-quick-reference
 			# https://www.npmjs.com/package/relateurl
+			# See example, how it works in “minifyJS” option.
 			# minifyURLs: ("<%= templates.site.siteurl %>
 			# 			<%= templates.paths.cwd %>/<%= templates.site.output_path %>")
 			# [INFO] Minify JSON-LD, not preserve it:
@@ -50,7 +58,7 @@ module.exports =
 			# http://perfectionkills.com/experimenting-with-html-minifier/#remove_attribute_quotes
 			# http://jkorpela.fi/qattr.html
 			# https://www.w3schools.com/html/html_attributes.asp
-			removeAttributeQuotes: false
+			preventAttributesEscaping: true
 			removeComments: true
 			# [INFO] http://perfectionkills.com/experimenting-with-html-minifier/#remove_empty_or_blank_attributes
 			removeEmptyAttributes: true
