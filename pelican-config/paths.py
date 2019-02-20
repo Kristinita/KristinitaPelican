@@ -4,6 +4,8 @@
 """paths settings."""
 
 # Relative paths for development.
+# [INFO] No page speed difference, absolute or relative path use:
+# https://webmasters.stackexchange.com/a/96963/71131
 SITEURL = '.'
 
 # Non-modified files and folders

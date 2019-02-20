@@ -46,6 +46,8 @@
 	<!-- Иконочка Сашеньки -->
 	<link rel="icon" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/icons/SashaBlack.ico" type="image/x-icon" />
 	<link rel="shortcut icon" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/icons/SashaBlack.ico" type="image/x-icon" />
+	{# Xolonium font #}
+	<link rel="stylesheet" href="https://fontlibrary.org/face/xolonium">
 	<!-- Иконочка Сашеньки вставлена -->
 	<script src="{{SITEURL}}/js/personal/Sasha-Black/Sasha-Black.min.js" defer></script>
 	<!-- Бэкграунд -->
@@ -54,65 +56,69 @@
 		<!-- Конец бэкграунда -->
 		<!-- Логотип -->
 		<p class="SashaCenter">
-			<img src="{{SITEURL}}/images/logo/SashaBlackLogo.jpg" alt="Логотип" />
+			<picture>
+				<source srcset="{{SITEURL}}/images/logo/SashaBlackLogo.webp" type="image/webp">
+			  	<img src="{{SITEURL}}/images/logo/SashaBlackLogo.jpg" alt="Sasha Black logo">
+			</picture>
 		</p>
 		<br/>
 		<img src="https://2no.co/1QBY.png" alt="Page loading, please, little wait" />
 		<br/>
 		<!-- Поле ввода -->
 		<p class="SashaCenter">
-			<input class="SashaBorderInput" value="" name="sitename" id="sitename" required="" placeholder="Введите URL сайта" autofocus/>
+			<input class="SashaBorderInput" name="sitename" id="sitename" placeholder="Введите URL сайта" autofocus/>
 		</p>
 		<!-- Кнопки-->
 		<br/>
 		<br/>
-		<span class="SashaCategory">
-				Онлайн-сканеры:
-			</span>
-		<a onclick="SashaFunction(document.all.sitename.value, 'http://quttera.com/sitescan/');" class="SashaButtonCategory SashaButtonLightSkyBlue">
-				&nbsp;Quttera&nbsp;
-			</a>
-		<a onclick="SashaFunction(document.all.sitename.value, 'http://sitecheck.sucuri.net/results/');" class="SashaButtonCategory SashaButtonLimeGreen">
-				&nbsp;Sucuri&nbsp;
-			</a>
-		<a onclick="SashaFunction(document.all.sitename.value, 'http://www.isithacked.com/check/');" class="SashaButtonCategory SashaButtonPlum">
-				&nbsp;Is&nbsp;It&nbsp;Hacked?&nbsp;
-			</a>
-		<a onclick="SashaFunction(document.all.sitename.value, 'https://www.virustotal.com/ru/');" class="SashaButtonCategory SashaButtonSnow">
-				&nbsp;VirusTotal&nbsp;
-			</a>
+		{# [LEARN][JINJA] Replace multiple values in single template:
+		http://jinja.pocoo.org/docs/latest/tricks/#highlighting-active-menu-items
+		Use tuples in list:
+		https://realpython.com/python-lists-tuples/#python-tuples
+		[LEARN][JINJA] Use macros for nested variables:
+		http://jinja.pocoo.org/docs/latest/templates/#macros
+		https://stackoverflow.com/a/54695689/5951529
+		[LEARN][JINJA] If minus sign, blank lines will removed:
+		http://jinja.pocoo.org/docs/latest/templates/#whitespace-control
+		#}
+		{% macro kira_site_type(type) -%}
+		    <span class="SashaCategory">{{type}}:</span>
+		{%- endmacro %}
+		{{ kira_site_type('Онлайн-сканеры') }}
+		{% macro kira_checker(url, color, sitename) -%}
+			<a onclick="KiraFunction(document.all.sitename.value, '{{url}}');" class="SashaButtonCategory {{color}}">&nbsp;{{sitename}}&nbsp;</a>
+		{%- endmacro %}
+		{% set kira_online_scaners = [
+		    ('http://quttera.com/sitescan/', 'SashaButtonLightSkyBlue', 'Quttera'),
+		    ('http://sitecheck.sucuri.net/results/', 'SashaButtonLimeGreen', 'Sucuri'),
+		    ('http://www.isithacked.com/check/', 'SashaButtonPlum', 'Is&nbsp;It&nbsp;Hacked?'),
+		    ('https://www.virustotal.com/ru/', 'SashaButtonSnow', 'VirusTotal')
+		] %}
+		{% for url, color, sitename in kira_online_scaners %}
+		    {{ kira_checker(url, color, sitename) }}
+		{% endfor %}
+		<br>
+		{{ kira_site_type('Блэклисты') }}
+		{% set kira_blacklists = [
+		    ('https://www.robtex.com/dns-lookup/', 'SashaButtonBisque', 'Robtex'),
+		    ('http://mxtoolbox.com/SuperTool.aspx?action=blacklist%3a', 'SashaButtonOrange', 'MX&nbsp;Toolbox'),
+		    ('http://rosinstrument.com/cgi-bin/blqw.pl?key=', 'SashaButtonYellow', 'Rosinstrument'),
+		    ('http://www.urlvoid.com/scan/', 'SashaButtonDarkOrange', 'URL&nbsp;Void'),
+		    ('http://vurl.mysteryfcm.co.uk/default.asp?btnvURL=Dissect&amp;selUAStr=1&amp;selServer=0&amp;ref=&amp;cbxSource=on&amp;cbxBlacklist=on&amp;url=http%3A%2F%2F', 'SashaButtonSilver', 'vURL')
+		] %}
+		{% for url, color, sitename in kira_blacklists %}
+		    {{ kira_checker(url, color, sitename) }}
+		{% endfor %}
 		<br/>
-		<span class="SashaCategory">
-				Блэклисты:
-			</span>
-		<a onclick="SashaFunction(document.all.sitename.value, 'https://www.robtex.com/en/advisory/dns/');" class="SashaButtonCategory SashaButtonBisque">
-				&nbsp;Robtex&nbsp;
-			</a>
-		<a onclick="SashaFunction(document.all.sitename.value, 'http://mxtoolbox.com/SuperTool.aspx?action=blacklist%3a');" class="SashaButtonCategory SashaButtonOrange">
-				&nbsp;MX&nbsp;Toolbox&nbsp;
-			</a>
-		<a onclick="SashaFunction(document.all.sitename.value, 'http://rosinstrument.com/cgi-bin/blqw.pl?key=');" class="SashaButtonCategory SashaButtonYellow">
-				&nbsp;Rosinstrument&nbsp;
-			</a>
-		<a onclick="SashaFunction(document.all.sitename.value, 'http://www.urlvoid.com/scan/');" class="SashaButtonCategory SashaButtonDarkOrange">
-				&nbsp;URL&nbsp;Void&nbsp;
-			</a>
-		<a onclick="SashaFunction(document.all.sitename.value, 'http://vurl.mysteryfcm.co.uk/default.asp?btnvURL=Dissect&amp;selUAStr=1&amp;selServer=0&amp;ref=&amp;cbxSource=on&amp;cbxBlacklist=on&amp;url=http%3A%2F%2F');" class="SashaButtonCategory SashaButtonSilver">
-				&nbsp;vURL&nbsp;
-			</a>
-		<br/>
-		<span class="SashaCategory">
-				Пользовательские оценки:
-			</span>
-		<a onclick="SashaFunction(document.all.sitename.value, 'http://www.mywot.com/en/scorecard/');" class="SashaButtonCategory SashaButtonTomato">
-				&nbsp;Web&nbsp;of&nbsp;Trust&nbsp;
-			</a>
-		<a onclick="SashaFunction(document.all.sitename.value, 'http://www.webutations.net/go/review/');" class="SashaButtonCategory SashaButtonSeagreen">
-				&nbsp;Webutation&nbsp;
-			</a>
-		<a onclick="SashaFunction(document.all.sitename.value, 'https://ru.trustpilot.com/review/');" class="SashaButtonCategory SashaButtonChocolate">
-				&nbsp;Trustpilot&nbsp;
-			</a>
+		{{ kira_site_type('Пользовательские оценки') }}
+		{% set kira_user_ratings = [
+		    ('http://www.mywot.com/en/scorecard/', 'SashaButtonTomato', 'Web&nbsp;of&nbsp;Trust'),
+		    ('http://www.webutations.net/go/review/', 'SashaButtonSeagreen', 'Webutation'),
+		    ('https://ru.trustpilot.com/review/', 'SashaButtonChocolate', 'Trustpilot')
+		] %}
+		{% for url, color, sitename in kira_user_ratings %}
+		    {{ kira_checker(url, color, sitename) }}
+		{% endfor %}
 		<br/>
 		<br/>
 		<br/>
@@ -131,9 +137,7 @@
 					<br/>
 					2. Нажимайте на кнопки, и по ссылкам всё должно быть понятно. Если нет, читайте
 					<a href="{{SITEURL}}/Sasha-Black/Sasha-Black-description" target="_blank" class="SashaReadHelp" title="Описание Sasha Black">
-						справку
-					</a>
-					.
+						справку</a>.
 				</span>
 		</div>
 	</body>

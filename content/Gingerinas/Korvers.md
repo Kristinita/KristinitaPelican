@@ -8,8 +8,6 @@ Pagecolors: gingerinas
 Asideimage: SashaFluffy
 Iconleftorright: right
 Tags: gingerinas
-Tooltipster: false
-ClipboardJs: true
 Noco: 1EBY
 Og_image: https://i21.servimg.com/u/f21/17/58/26/07/korver10.jpg
 Schemaorgtype: ScholarlyArticle

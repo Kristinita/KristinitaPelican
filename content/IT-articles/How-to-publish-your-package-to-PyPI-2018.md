@@ -13,8 +13,6 @@ Noco: 1vWK5
 Tooltipster: true
 Clipboardjs: true
 Og_image: https://i.imgur.com/mO0Fnsk.jpg
-Customjs: false
-Customcss: false
 Schemaorgtype: HowTo
 
 <!-- MarkdownTOC -->
@@ -771,7 +769,7 @@ Create a file *.release-it.json* in root folder of your repository with content:
 	"changelogCommand": "changelog -f -",
 	"github": {
 		"release": true,
-		"tokenRef": "GITHUB_TOKEN"
+		"tokenRef": "TOKEN_GITHUB_FOR_RELEASE_IT"
 	},
 	"npm": {
 		"publish": false

@@ -28,7 +28,12 @@ module.exports =
 	# [NOTE] Don't use “newer:” for shell tasks!
 	# grunt-newer check, that your source (src) not change and doesn't run build process.
 	tarb1: ['shell:generate']
-	tarb2: ['newer:move']
+	tarb2: [
+			# [NOTE] newer doesn't work for cwebp
+			'cwebp'
+			'modernizr'
+			'newer:move'
+			]
 	tarb3: ['newer:coffee'
 			'newer:stylus']
 	# [FIXME] grunt-newer doesn't work with purifycss:
@@ -73,7 +78,9 @@ module.exports =
 			'shell:licensegenerator'
 			'shell:covgen'
 			'shell:piplicenses']
-	tarp4: ['move:thirdpartylicenses'
+	tarp4: ['cwebp'
+			'modernizr'
+			'move:thirdpartylicenses'
 			'move:outputlicense']
 	tarp5: ['stylus'
 			'coffee'
@@ -83,14 +90,12 @@ module.exports =
 			'imagemin'
 			'purifycss'
 			'uglify']
-	tarp7: ['postcss'
-			'string-replace:all'
+	tarp7: ['string-replace:all'
 			'string-replace:absoluteinsidehtmlimages'
-			'string-replace:asideimages'
 			'string-replace:backgroundimages']
 	tarp8: ['cssnano'
 			'shell:tidymodify']
-	tarp9: ['minifyHtml']
+	tarp9: ['htmlmin']
 	tarp10: ['shell:eclintfix']
 	tarp11: ['notify:publish']
 	#
@@ -120,8 +125,12 @@ module.exports =
 			'coffeelint:theme'
 			# 'html-nu'
 			'path_validator'
+			'postcss'
 			'shell:tidyvalidate'
 			'stylint']
+	# [DONE]
+	# [FIXME] eclint doesn't fix leading spaces:
+	# https://github.com/jedmao/eclint/issues/155
 	tarv2: ['shell:eclintcheck']
 	tarv3: ['notify:validate']
 	#
@@ -132,7 +141,9 @@ module.exports =
 	# clean-console will shown errors. So only for development.
 	# [NOTE] clean-console works with http-server — “grunt http-server clean-console”.
 	# See “clean-console.coffee” for details.
-	tard1: ['clean-console']
+	tard1: ['clean-console'
+			# [NOTE] Files by absolute paths may not exists
+			'pageres']
 	tard2: ['notify:validate']
 	#
 	# For Continuous Integration tasks, “target remote”.

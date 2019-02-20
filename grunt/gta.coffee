@@ -13,7 +13,7 @@ module.exports =
 	options:
 		stdout: true
 		stderr: true
-	# git add -A
+	# [LEARN][GIT] git add -A
 	# https://stackoverflow.com/a/572660/5951529
 	add:
 		command: 'add -A'

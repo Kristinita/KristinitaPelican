@@ -106,20 +106,21 @@ module.exports =
 								data-src="$2" alt="$1"></a>'
 				}
 			]
-	# Convert relative paths to absolute in aside images
-	asideimages:
-		files: [
-			expand: true
-			cwd: "<%= templates.paths.output_path %>/<%= templates.paths.theme_static_dir %>/stylus/aside"
-			src: '*.styl'
-			dest: "<%= templates.paths.output_path %>/<%= templates.paths.theme_static_dir %>/stylus/aside"
-		]
-		options:
-			replacements: [
-				pattern: /(url\(")(\.\.\/\.\.)(\/images\/aside\/(.+?)"\))/g
-				replacement: "$1<%= templates.site.siteurl %>/<%= templates.paths.theme_static_dir %>$3"
-			]
+	# [DEPRECATED] I add paths to images in HTML, that Jinja2 templates will support.
 	# Convert relative paths to absolute in background images
+	# Convert relative paths to absolute in aside images
+	# asideimages:
+	# 	files: [
+	# 		expand: true
+	# 		cwd: "<%= templates.paths.output_path %>/<%= templates.paths.theme_static_dir %>/stylus/aside"
+	# 		src: '*.styl'
+	# 		dest: "<%= templates.paths.output_path %>/<%= templates.paths.theme_static_dir %>/stylus/aside"
+	# 	]
+	# 	options:
+	# 		replacements: [
+	# 			pattern: /(url\(")(\.\.\/\.\.)(\/images\/aside\/(.+?)"\))/g
+	# 			replacement: "$1<%= templates.site.siteurl %>/<%= templates.paths.theme_static_dir %>$3"
+	# 		]
 	backgroundimages:
 		files: [
 			expand: true

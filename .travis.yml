@@ -34,10 +34,49 @@ sudo: enabled
 # https://docs.travis-ci.com/user/reference/xenial/#differences-from-the-trusty-images
 dist: xenial
 
-# Don't download all repository history, that save a time:
+# [INFO] Don't download all repository history, that save a time:
 # https://docs.travis-ci.com/user/customizing-the-build/#Git-Clone-Depth
 git:
   depth: 1
+
+# Environment:
+# [INFO] Using secure variables for Travis CI:
+# https://docs.travis-ci.com/user/environment-variables/#defining-encrypted-variables-in-travisyml
+# [INFO] Encrypt variables locally:
+# https://docs.travis-ci.com/user/environment-variables/#encrypting-environment-variables
+env:
+  global:
+    # [INFO] Needs get GitHub token with “public_repo” scope:
+    # https://docs.travis-ci.com/user/deployment/pages/#setting-the-github-token
+    # [INFO] YAML multiline strings:
+    # https://stackoverflow.com/a/21699210/5951529
+    # https://yaml-multiline.info/
+    # [INFO] Equivalent: TOKEN_GITHUB_FOR_TRAVIS_DEPLOY = my real token
+    secure: >
+      "EXm44fDtI7y2hCnp6uK3gIFMWUMUink3dO9qCXXfd5LwoK53fcXhoDtF+/
+      xve7jKFLsUSm5EAJxPiGiNILyOymJkOthTmz+Bohnd1B27jaZepCbh10wxalj7Aw405hBux+z0l2pq21YlbFZl+QyvU/
+      8KMms7VVeBDYSCQTFQEmHb5BmA+U2lxJ1hQLJmYK8oV96hKSD/
+      kxgL80EfshoNELXvquC16GwNceJNNeb5cYPMUgb6hdDWEez3mtD9htJO8aFx4XV1/5a7Wu55UOHO/i79o8aT/
+      O94/bDrtOgHBT3btTmQteeZ1ThAWoHf42mfLxNLxLkAO4YgEOXifkCRp56klfRQ6lwg0fe1/nufiPXuxQDKq/OKqWXgYDQ3Jip5u/
+      hcqyQQXnruSszFJT8vW6Ggd0Rr9yRNzATfxgjDEQ15tx/gIWLrLrofbUfcmOn/
+      fO4zDWyH4fcs+HJ10qY42UH0OanZe2eOCheC6eYkUOS1RlmY0CDH43c6xJ1SWVnhj6ybuopoJImcaEkk/
+      OfjHmtWltGi71IPcyccfji6Uy41wg37D4DUq4cs3T0WX0tD3WfmKc98WtI9/
+      iIUEWZhNleS6lCjGIapFdso23hwzKILzCx+tO9KGAenhTGbarq+Fyqfa/
+      TmzyHNAk1KwZGgaOrGgCLNPZx3aT7bibx+6JI="
+    # [INFO] Equivalent: API_KEY_APPVEYOR = my real key:
+    # https://kristinita.ru/Pages/About-for-developers#AppVeyor
+    secure: >
+      "qE2c+aZb9QGtPF9VG6WhAP2iT0mTDAnmueEiqWUctgalhAFAJ4wdSqvHNNv+F2178wE92WcpT3/
+      chmJltlBj1Qqx6vWevJR2ff1uNbQnwGHYBw+1c8JOvx7mUvisp/nzU1eIpU50/
+      uDMF6PnUQ7j269nE1seEjUo7aP98rVHDXZ1uYaOVIEKq40HhLMOlfQg4mhpN1zxQLL7eCy7YgQWXDUb4yRT6TU1BxI3uIC9y8LVgv0le3L8hikD2yR
+      ++wJwFHSu9nTm9/
+      liSxCb4TINZ/mILZ7nzC4UWfNqwRgzz+5n4klcHxeuDORRh9dFQnN3EGsdrScf0Re1oDdUezdYkvgCRzWIgYYPn0FNnmuZl3ccg6JDhRyV+
+      LzTv+XiosDojqdHr7R10ae/
+      2gyExR+uARIvf0dFnTIBztVnKRtzuPYdsPOkU7R6rM8FnMAjK4G5yjJO4QcZqMo+BzY8O2gqWFba6nxhDk1OBWj/14+jU2pfkW8cR4vq3Us/
+      upPuNJhHdtv+S5vuuF9/
+      CksWBqUi3QMQYkSMT5Xkv5YcTeWqQe6W4U2hVg7+Tl1jesn2WP6nM6j
+      +I2W5fJwYWIKB7U0hP6WR0jkrHDvMNfWgaB8VZCxYoVUFvCMf5IBnXgRGkYjJn9KkQv3pfODC5aUdep2mCWL+cYiHBukRncS66bs/
+      EAE="
 
 # Needs “language: bash” for multilanguage projects:
 # https://github.com/travis-ci/travis-ci/issues/4895
@@ -64,7 +103,7 @@ python: 3.7
 # # I can't find method for http-server stop
 # - GRUNT_COMMAND=default && grunt http-server screenshots && grunt publish
 
-# “matrix.include”:
+# [INFO] “matrix.include”:
 # https://docs.travis-ci.com/user/customizing-the-build#Explicitly-Including-Jobs
 matrix:
   include:
@@ -168,10 +207,10 @@ install:
 # # https://docs.travis-ci.com/user/build-stages/#Data-persistence-between-stages-and-jobs
 # - grunt validate remote travis
 
-# Automatically deploy site to GitHub Pages:
+# [INFO] Automatically deploy site to GitHub Pages:
 # https://docs.travis-ci.com/user/deployment
 # https://docs.travis-ci.com/user/deployment/pages/
-# Changes not deploy, if pull request:
+# [INFO] Changes not deploy, if pull request:
 # https://docs.travis-ci.com/user/deployment#Pull-Requests
 # If “script” failed, deploying doesn't run;
 # else “pelican_scaffold”, deploy run, even if “script” failed, don't use “pelican_scaffold”:
@@ -199,18 +238,19 @@ deploy:
   target-branch: master
   local-dir: output
   repo: Kristinita/Kristinita.github.io
-  # “GITHUB_TOKEN” is secure variable, that set in repository settings:
+  # “TOKEN_GITHUB_FOR_TRAVIS_DEPLOY” is secure variable, that set in repository settings:
   # https://docs.travis-ci.com/user/environment-variables#Defining-Variables-in-Repository-Settings
   # https://docs.travis-ci.com/user/deployment/pages/#Setting-the-GitHub-token
   # [WARNING] You need set secure variables for each repository,
   # variables for all repositories not possible at the time:
   # https://github.com/travis-ci/travis-ci/issues/2069
-  github-token: $GITHUB_TOKEN
+  github-token: $TOKEN_GITHUB_FOR_TRAVIS_DEPLOY
   # Name and e-mail of committer:
   # https://docs.travis-ci.com/user/deployment/pages/#Further-configuration
   committer-from-gh: true
+  # [INFO] For custom domains only
   # Automatically generate CNAME for custom domain:
-  fqdn: Kristinita.ru
+  # fqdn: Kristinita.ru
   # [WARNING] Don't use single quotes in “project-name”:
   # https://github.com/travis-ci/travis-ci/issues/9325
   project-name: Поиск Кристиниты

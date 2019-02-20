@@ -42,4 +42,4 @@ module.exports =
 			src: ["<%= templates.yamlconfig.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/coffee/**/*.coffee"]
 	personal:
 		files:
-			src: ["<%= templates.paths.output_path %>/coffee/**/**/*.coffee"]
+			src: ["<%= templates.paths.output_path %>/coffee/**/*.coffee"]

@@ -8,8 +8,6 @@ Pagecolors: programs
 Asideimage: SashaChocolate
 Iconleftorright: right
 Tags: sublime-text
-Tooltipster: false
-ClipboardJs: true
 Noco: 1EBY
 Og_image: https://i.imgur.com/K3YqJ4S.png
 Schemaorgtype: Review

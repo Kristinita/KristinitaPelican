@@ -20,6 +20,14 @@ end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
+# [INFO] ECLint — ignore leading spaces in comments:
+# https://www.npmjs.com/package/eclint#support-for-doc-comments
+# https://www.npmjs.com/package/eclint#block_comment_start
+# [WARNING] Leading spaces doesn't deleted:
+# https://github.com/jedmao/eclint/issues/155
+block_comment_start = /*
+block_comment = *
+block_comment_end = */
 
 # Markdown support trailing spaces:
 # http://markdown-guide.readthedocs.io/en/latest/basics.html#line-return

@@ -9,7 +9,7 @@
 */
 
 /*
-* For correct gemini-scrollbar displaying, see “body tag” section:
+* [INFO] For correct gemini-scrollbar displaying, see “body tag” section:
 * https://github.com/noeldelgado/gemini-scrollbar#notes
 * [NOTE] Use “overflow: hidden”! If no, you will get bugs with anchors: scrollbar scroll in begin ofthe page.
 * [NOTE] Both html and body must include for correct gemini-scrollbar working.
@@ -29,7 +29,15 @@ $SashaHTMLBody
 */
 $SashaNoHorizontalScrollbar
 	overflow-wrap break-word
+	/*
+	* [INFO] doiuse just-in-file comments for disabling specific checks:
+	* https://www.npmjs.com/package/doiuse#ignoring-file-specific-rules
+	*/
+	// [NOTE] Partial support — “break-all” support → I can disable doiuse:
+	// https://caniuse.com/#search=word-break
+	/* doiuse-disable word-break */
 	word-break break-all
+	/* doiuse-enable word-break */
 
 /*
 * Permalinks visible on hover
@@ -66,3 +74,6 @@ $SashaMargin5Rem
 $SashaFontSizeChildLink
 	a
 		font-size 2rem
+
+$SashaXolonium
+	font-family "XoloniumRegular"

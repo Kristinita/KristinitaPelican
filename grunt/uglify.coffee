@@ -13,7 +13,10 @@
 # https://github.com/gmarty/grunt-closure-compiler
 module.exports =
 	options:
-		sourceMap: false
+		# [LEARN][CSS][JAVASCRIPT] Sourcemaps
+		# make debugging simply, if styles and scripts combine and compress:
+		# https://blog.teamtreehouse.com/introduction-source-maps
+		sourceMap: true
 	uglifypersonal:
 		files: [
 			expand: true

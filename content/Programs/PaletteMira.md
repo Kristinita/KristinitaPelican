@@ -13,9 +13,6 @@ Titleimagename: KateZGirlfriend
 Asideimage: KateZakharova
 Tags: programs, sublime-text
 Noco: 1g9b6
-Tooltipster: false
-Clipboardjs: false
-Visualize: false
 Og_image: https://i.imgur.com/kqrsFwc.jpg
 Schemaorgtype: SoftwareApplication
 
@@ -91,3 +88,5 @@ Example for [Sublime OpenInclude](https://github.com/titoBouzout/Open-Include) p
 
 <a id="Dependencies-1"></a>
 ## Dependencies
+
+In progress.

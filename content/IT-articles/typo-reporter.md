@@ -10,12 +10,7 @@ Asideimage: SashaGreenSweater
 Iconleftorright: left
 Tags: it-articles, spelling
 Noco: 1vWK5
-Tooltipster: false
-Clipboardjs: false
-Visualize: false
 Og_image: https://i.imgur.com/U8pIw0a.png
-Customjs: false
-Customcss: false
 Schemaorgtype: HowTo
 
 <!-- MarkdownTOC -->
@@ -92,12 +87,15 @@ I use typo-reporter, not [Orphus](https://orphus.ru/en/) or another alternatives
 1. Open source,
 1. Active maintained ([jquery.textmistake](http://tarampampam.github.io/jquery.textmistake/) project [closed](https://github.com/tarampampam/jquery.textmistake))
 1. [Have technical support](https://github.com/psmb/typo-reporter/issues) ([Orphus community](https://orphus.ru/community/) spammed),
-1. Support CDN — you need paste to your web page `#!html <script src="https://npmcdn.com/typo-reporter/lib/TypoReporter.min.js"></script>` ([CDN vs. local files](https://webmasters.stackexchange.com/a/92103/71131)).
+1. Support CDN — you need paste to your web page `#!html <script src="https://cdn.jsdelivr.net/npm/typo-reporter/lib/TypoReporter.min.js"></script>` ([CDN vs. local files](https://webmasters.stackexchange.com/a/92103/71131)).
+
+	!!! warning
+		NpmCDN, that [described in official documentation](https://www.npmjs.com/package/typo-reporter#install-via-plain-old-html-tag) hangs for me. I use [JSDelivr](https://www.jsdelivr.com/) CD instead.
 
 <a id="Getting-formId"></a>
 # Getting formId
 
-!!! caution
+!!! warning
 	If you try get *formId* use [this method](https://productforums.google.com/forum/#!topic/docs/eoPN9F6KTs4), typo-reporter [will not work](https://github.com/psmb/typo-reporter/issues/4).
 
 [Create your spreadsheet](https://www.npmjs.com/package/typo-reporter#create-a-target-google-form-to-gather-feedback) → *Form* → *Edit form* → *Send* → click to link icon → copy link below:

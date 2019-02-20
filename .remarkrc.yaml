@@ -7,6 +7,8 @@
 # https://github.com/zemanlx/container-structure-test-image/blob/master/.remarkrc.yaml
 # CLI usage:
 # https://github.com/remarkjs/remark/tree/master/packages/remark-cli#cli
+# Inline ignoring rules for specific blocks:
+# https://github.com/remarkjs/remark-lint#configuring-remark-lint
 
 ###########
 # Presets #
@@ -93,7 +95,8 @@ plugins:
   # https://github.com/cirosantilli/markdown-style-guide/issues/4
   # https://github.com/remarkjs/remark-lint/issues/78
   lint-list-item-spacing: false
-  # [NOTE] Rationale unconvincing to me:
+  # [FIXME] Maximum line-heigth not needed, if I use Sublime MarkdownTOC,
+  # but needed for Pelican generation.
   # https://github.com/cirosantilli/markdown-style-guide/issues/5
   # http://www.cirosantilli.com/markdown-style-guide/#header-length
   # [NOTE] But title size there should be no more than 70 symbols:
@@ -114,9 +117,10 @@ plugins:
   # https://github.com/remarkjs/remark-lint/issues/202#issuecomment-462050887
   lint-no-shortcut-reference-link: false
   lint-no-undefined-references: false
-  # [WARNING] Disable, because EscapeAll syntax not support:
+  # [INFO] Disable, because EscapeAll syntax not support:
   # https://github.com/remarkjs/remark-lint/issues/202
-  lint-no-inline-padding: false
+  # [INFO] Enable, because exceptions are rare; inline ignoring possible:
+  lint-no-inline-padding: true
   # [WARNING] Disable, because Admonition syntax not support:
   # https://github.com/remarkjs/remark-lint/issues/202
   lint-code-block-style: false

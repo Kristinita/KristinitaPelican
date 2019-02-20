@@ -6,16 +6,12 @@ Summary: Tutorial, how to get some variable parameters for your Sublime Text <br
 Pagetitle: How to get current … in Sublime Text
 Pagecolors: it-articles
 Iconleftorright: right
-Epigraph: false
 Asideimage: SashaGreenSweater
 Tags: sublime-text
 Noco: 1vWK5
 Tooltipster: true
 Clipboardjs: true
-Visualize: false
 Og_image: https://i.imgur.com/nwNgLkR.png
-Customjs: false
-Customcss: false
 Schemaorgtype: HowTo
 
 <!-- MarkdownTOC -->

@@ -11,7 +11,6 @@ Iconleftorright: right
 Noco: 1QCqM6
 Tooltipster: true
 Clipboardjs: true
-Visualize: false
 Og_image: https://i.imgur.com/2blY7dI.png
 
 <!-- MarkdownTOC -->

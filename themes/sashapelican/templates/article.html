@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2019-02-05 08:10:12 -->
+<!-- @Last Modified time: 2019-02-18 12:32:01 -->
 {% extends 'base.html' %}
 
 <!--==========================
@@ -24,7 +24,8 @@
 
 <!-- typo-reporter -->
 {% block base_typoreporter -%}
-	<script src="https://npmcdn.com/typo-reporter/lib/TypoReporter.min.js" defer></script>
+	{# [NOTE] Migrate from npmcdn to JSDelivr; npmcdn hangs #}
+	<script src="https://cdn.jsdelivr.net/npm/typo-reporter/lib/TypoReporter.min.js" defer></script>
 	{%- if article.lang == 'ru' -%}
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/typo-reporter/typo-reporter-ru.min.js" defer></script>
 	{% else %}
@@ -34,7 +35,7 @@
 
 <!-- Tooltipster -->
 {% block base_tooltipster -%}
-	{%- if article.tooltipster == 'true' -%}
+	{%- if article.tooltipster -%}
 		<script src="https://cdn.jsdelivr.net/jquery.tooltipster/latest/js/tooltipster.bundle.min.js" defer></script>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.tooltipster/latest/css/tooltipster.bundle.min.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" />
@@ -44,7 +45,7 @@
 
 <!-- Clipboard.js -->
 {% block base_clipboardjs -%}
-	{%- if article.clipboardjs == 'true' -%}
+	{%- if article.clipboardjs -%}
 		<script src="https://cdn.jsdelivr.net/clipboard.js/latest/clipboard.min.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Clipboard-js/Clipboard.min.js" defer></script>
 	{%- endif -%}
@@ -55,7 +56,7 @@
 http://www.kellyking.me/projects/visualize/
 https://github.com/kellyk/visualize #}
 {% block base_visualize -%}
-	{%- if article.visualize == 'true' -%}
+	{%- if article.visualize -%}
 		<script src="https://gitcdn.xyz/repo/kellyk/visualize/master/visualize.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-bar-chart.min.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-pie-chart.min.js" defer></script>
@@ -76,7 +77,7 @@ https://github.com/kellyk/visualize #}
 <!-- Custom JavaScript, specific for article
 Metadata variable -->
 {% block base_customjs -%}
-	{%- if article.customjs == 'true' -%}
+	{%- if article.customjs -%}
 		<script src="{{SITEURL}}/js/personal/{{article.customjs1}}.min.js" defer></script>
 	{%- endif -%}
 {%- endblock %}
@@ -91,17 +92,50 @@ Metadata variable -->
 <!-- CSS of pages -->
 {% block base_pagecolors %}{{ article.pagecolors }}{% endblock %}
 <!-- Aside image -->
-{% block base_asideimage %}{{ article.asideimage }}{% endblock %}
+{# [INFO] Use webp for browsers, that support it and jpg for others:
+https://stackoverflow.com/a/54223755/5951529
+https://andywalpole.me/blog/142790/using-webp-image-format
+[WARNING] I don't use Modernizr, because it only self-hosted, CDNs not supported:
+https://css-tricks.com/using-webp-images/
+https://modernizr.com/download/
+https://github.com/Modernizr/Modernizr/issues/2214
+#}
+{% block base_modernizr %}
+	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Modernizr/modernizr-custom.min.js" defer></script>
+	{#
+	[DEPRECATED]
+	Use modernizr; grunt-modernizr generate custom modernizr file automatically
+	https://www.npmjs.com/package/grunt-modernizr
+	Solution from https://stackoverflow.com/a/54223755/5951529 doesn't work for Safari in 2019:
+	Safari support “-webkit-image-set”, but doesn't support “webp” →
+	Safari doesn't show images.
+	// [LEARN][STYLUS] Using templates in URLs
+	// https//github.com/stylus/stylus/issues/2147#issuecomment-197338391
+	// [NOTE] 1x — for normal display, 2x — for high-res
+	// https//www.hongkiat.com/blog/css-image-set/
+	// [NOTE] Use “-webkit-image-set” below “url” last property have higher priority
+	// https//stackoverflow.com/a/1637380/5951529
+	#}
+	<style>
+		.webp .SashaIconAside {
+			background-image: url({{SITEURL}}/{{THEME_STATIC_DIR}}/images/aside/{{article.asideimage}}.webp)
+		}
+
+		.no-webp .SashaIconAside {
+			background-image: url({{SITEURL}}/{{THEME_STATIC_DIR}}/images/aside/{{article.asideimage}}.jpg)
+		}
+	</style>
+{% endblock %}
 
 {% block base_progressbar -%}
-	{%- if article.progressbar == 'true' -%}
-		<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/ProgressBar/progressbar.min.css">
+	{%- if article.progressbar -%}
+		<link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/css/script-colors/ProgressBar/progressbar.min.css">
 	{%- endif -%}
 {%- endblock %}
 
 <!-- Custom CSS, specific for article -->
 {% block base_customcss -%}
-	{%- if article.customcss == 'true' -%}
+	{%- if article.customcss -%}
 		<link rel="stylesheet" href="{{SITEURL}}/css/personal/{{article.customcss1}}.min.css">
 	{%- endif -%}
 {%- endblock %}
@@ -146,7 +180,7 @@ https://webref.ru/html/link/rel
 
 <!-- Epigraph -->
 {% block base_epigraph -%}
-	{%- if article.epigraph == 'true' -%}
+	{%- if article.epigraph -%}
 	<div class="SashaEpigraph">
 		<em>{{ article.epigraphtext }}</em>
 	</div>
@@ -155,8 +189,16 @@ https://webref.ru/html/link/rel
 
 <!-- Title image -->
 {% block base_titleimage -%}
-	{%- if article.titleimage == 'true' -%}
-		<p><img alt="Header image" src="{{SITEURL}}/images/header/{{ article.titleimagename }}.jpg"></p>
+	{# [LEARN][JINJA] “if article.titleimage” = “if article.titleimage == 'true'” #}
+	{%- if article.titleimage -%}
+		{# Picture tag:
+		https://ru.stackoverflow.com/a/915298/199934 #}
+		<p>
+			<picture>
+				<source srcset="{{SITEURL}}/images/header/{{article.titleimagename}}.webp" type="image/webp">
+			  	<img src="{{SITEURL}}/images/header/{{article.titleimagename}}.jpg" alt="Header image">
+			</picture>
+		</p>
 	{% endif %}
 {%- endblock %}
 

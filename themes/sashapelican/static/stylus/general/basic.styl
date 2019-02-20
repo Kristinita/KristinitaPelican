@@ -119,17 +119,12 @@ a
 
 h1
 	@extend $SashaVisiblePermalinks
-	font-family "Истина"
 	font-size 1.9375rem
 	font-weight lighter
 	font-style normal
-	/* Decrease text brightness */
-	-webkit-filter brightness(97%)
-	filter brightness(97%)
 
 h2
 	@extend $SashaVisiblePermalinks
-	font-family "Мечта"
 	font-size 1.4rem
 
 h3
@@ -540,9 +535,20 @@ pre
 	white-space pre-wrap
 	padding .5rem
 	font-size 1.1875rem
-	-moz-tab-size 4
-	-o-tab-size 4
+	/*
+	* [NOTE] Edge not support tab-size:
+	* https://developer.microsoft.com/en-us/microsoft-edge/platform/status/csstabsizeproperty/
+	* https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/6524689-tab-size-property
+	* But BrowserStack testing show, that it no serious problem.
+	* [NOTE] Partial support integer, not length values → I can disable doiuse:
+	* https://caniuse.com/#search=tab-size
+	* [LEARN][CSS] Length values:
+	* https://tympanus.net/codrops/css_reference/length/
+	* https://tympanus.net/codrops/css_reference/tab-size/
+	*/
+	/* doiuse-disable css3-tabsize */
 	tab-size 4
+	/* doiuse-enable css3-tabsize */
 
 
 /* ==========================================================================

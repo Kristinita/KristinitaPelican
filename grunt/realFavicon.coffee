@@ -40,7 +40,7 @@ module.exports =
 					themeColor: "#ffffff"
 					manifest:
 						name: "Kristinita\'s Search"
-						startUrl: "https://Kristinita.ru"
+						startUrl: "https://kristinita.github.io"
 						display: "standalone"
 						orientation: "notSet"
 						onConflict: "override"

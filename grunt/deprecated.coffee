@@ -313,6 +313,7 @@
 # 		files:
 # 			'.jsbeautifyrc': '.jsbeautifyrc'
 
+
 # [DEPRECATED] I don't see plugins, that can come in handy
 # ####################
 # ## grunt-posthtml ##
@@ -341,4 +342,57 @@
 # 			cwd: "<%= templates.paths.output_path %>"
 # 			src: ['**/*.html']
 # 			dest: "<%= templates.paths.output_path %>"
+# 			]
+
+
+# [DEPRECATED][BUG] grunt-coffee-format make files wrong:
+# https://github.com/NotBobTheBuilder/grunt-coffee-format/issues/3
+# #######################
+# # grunt-coffee-format #
+# #######################
+# # Formatter for CoffeeScript files:
+# # https://www.npmjs.com/package/coffee-fmt
+# # Grunt adapter:
+# # https://www.npmjs.com/package/grunt-coffee-format
+# module.exports =
+# 	options:
+# 		# [INFO] Use tabs, not spaces:
+# 		# https://www.npmjs.com/package/grunt-coffee-format#optionstab
+# 		tab: '\t'
+# 	theme:
+# 		files:
+# 			src: ["<%= templates.yamlconfig.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/coffee/**/*.coffee"]
+# 	personal:
+# 		files:
+# 			src: ["<%= templates.paths.output_path %>/coffee/**/*.coffee"]
+
+
+# [DEPRECATED] I migrate to HTML-minifier, arguments:
+# [LINK] “htmlmin.coffee”
+# ############
+# # minimize #
+# ############
+# # Minify HTML:
+# # https://www.npmjs.com/package/minimize
+# # https://www.npmjs.com/package/grunt-minify-html
+# # [NOTE] Use HTML parser, grunt-contrib-htmlmin use regexes.
+# # grunt-htmlclean simply than grunt-minify-html:
+# # https://github.com/anseki/htmlclean/issues/11#issuecomment-389386676
+# module.exports =
+# 	# https://github.com/Swaagie/minimize#options-1
+# 	# All set false by default:
+# 	# https://github.com/Swaagie/minimize#options
+# 	options:
+# 		# [INFO] I'm not support spare attirbutes for older browsers:
+# 		# https://github.com/Swaagie/minimize#spare
+# 		spare: false
+# 		# [INFO] W3C recommends quotes:
+# 		# https://www.w3schools.com/html/html_attributes.asp
+# 		quotes: true
+# 	minimize:
+# 		files: [
+# 			expand: true
+# 			cwd: "."
+# 			src: ["<%= templates.paths.output_path %>/**/*.html"]
+# 			dest: "."
 # 			]

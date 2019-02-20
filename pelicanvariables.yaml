@@ -18,6 +18,8 @@ output_path: output
 # Theme path
 theme: themes/sashapelican
 # Theme directory in the output path
+# [NOTE] Name correct; “theme_static_dir” in output directory:
+# https://docs.getpelican.com/en/latest/settings.html#THEME_STATIC_DIR
 theme_static_dir: theme
 # Static paths in theme
 theme_static_paths:
@@ -36,7 +38,7 @@ sitename: Поиск Кристиниты
 timezone: Europe/Moscow
 default_lang: en
 # Site URL. Absolute path for publishing.
-siteurl: https://kristinita.ru
+siteurl: https://kristinita.github.io
 page_paths:
 - Pages
 - 404.md

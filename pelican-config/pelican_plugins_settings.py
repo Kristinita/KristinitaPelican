@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2019-01-18 20:28:46
-# @Last Modified time: 2019-02-04 14:27:46
+# @Last Modified time: 2019-02-20 07:02:22
 # ****************************************************************************
 # *                                  Plugins                                 *
 # ****************************************************************************
@@ -114,5 +114,5 @@ SECTION_NUMBER_MAX = 5
 # Interlinks for generate links for frequently used sites
 # https://github.com/getpelican/pelican-plugins/tree/master/interlinks
 INTERLINKS = {
-    'kristinita': 'https://kristinita.ru/#gsc.tab=0&gsc.q='
+    'kristinita': 'https://kristinita.github.io/#gsc.tab=0&gsc.q='
 }

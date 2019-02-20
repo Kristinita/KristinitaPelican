@@ -4,7 +4,7 @@
 # Remove unused CSS for Kristinita.ru design
 # https://www.npmjs.com/package/purify-css
 # https://www.npmjs.com/package/grunt-purifycss
-# [NOTE] Needs separate task for each style. Because different styles in Kristinita.ru
+# [NOTE] Needs separate task for each style. Because theme use different styles:
 # [BUG] Doesn't work with grunt-newer:
 # https://github.com/purifycss/grunt-purifycss/issues/30
 module.exports =
@@ -23,8 +23,8 @@ module.exports =
 				'<%= templates.paths.output_path %>/Sublime-Text/*.html'
 				'<%= templates.paths.output_path %>/Programs/*.html'
 				]
-		css: ['<%= templates.paths.output_path %>/theme/css/sections/sublime-text.css']
-		dest: '<%= templates.paths.output_path %>/theme/css/sections/sublime-text.css'
+		css: ['<%= templates.paths.output_path %>/theme/css/sections/programs.css']
+		dest: '<%= templates.paths.output_path %>/theme/css/sections/programs.css'
 	gingerinastarget:
 		src: ['<%= templates.paths.output_path %>/Gingerinas/*.html']
 		css: ['<%= templates.paths.output_path %>/theme/css/sections/gingerinas.css']

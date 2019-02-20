@@ -4,6 +4,7 @@
 # Run chains Grunt commands:
 # default — reviewing with relative paths,
 # publish — before publishing with absolute paths,
+# onlypublish — publish without updating,
 # git — add, commit and push to GitHub,
 # screenshot — make site screenshots,
 # update — update Node.js, Python and git,
@@ -42,6 +43,19 @@ publish:
 - 'concurrent:tarp10'
 - 'concurrent:tarp11'
 
+onlypublish:
+- 'concurrent:tarp1'
+- 'concurrent:tarp2'
+- 'concurrent:tarp3'
+- 'concurrent:tarp4'
+- 'concurrent:tarp5'
+- 'concurrent:tarp6'
+- 'concurrent:tarp7'
+- 'concurrent:tarp8'
+- 'concurrent:tarp9'
+- 'concurrent:tarp10'
+- 'concurrent:tarp11'
+
 git:
 - 'gta:add'
 - 'gta:commit'
@@ -57,6 +71,9 @@ validate:
 - 'concurrent:tars1'
 - 'concurrent:tarv1'
 - 'concurrent:tarv2'
+# [DONE]
+# [FIXME] eclint doesn't fix leading spaces:
+# https://github.com/jedmao/eclint/issues/155
 - 'concurrent:tarv3'
 
 validatedev:

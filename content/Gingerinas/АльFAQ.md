@@ -1,6 +1,6 @@
 Title: АльFAQ
 Version: 0.1.1
-Modified: 2019-02-07 18:26:01
+Modified: 2019-02-18 11:35:36
 Date: 2018-12-17 16:51:59
 Author: Sasha Chernykh
 Lang: ru
@@ -15,10 +15,6 @@ Noco: 1EBY
 Tooltipster: true
 Clipboardjs: true
 Og_image: https://pp.userapi.com/c834302/v834302492/3b6c3/KyRKq062sXE.jpg
-Customjs: false
-Customcss: false
-Progressbar: false
-Visualize: false
 Schemaorgtype: Review
 
 <!-- MarkdownTOC -->

@@ -12,8 +12,6 @@ Noco: 1vWK5
 Tooltipster: true
 Clipboardjs: true
 Og_image: https://i.imgur.com/12fFJsX.png
-Customjs: false
-Customcss: false
 Schemaorgtype: HowTo
 
 <!-- MarkdownTOC -->
@@ -193,7 +191,7 @@ Replace *SashaSublime* and *4.14.7* to your real values.
 	"changelogCommand": "changelog -f -",
 	"github": {
 		"release": true,
-		"tokenRef": "GITHUB_TOKEN"
+		"tokenRef": "TOKEN_GITHUB_FOR_RELEASE_IT"
 	},
 	"npm": {
 		"publish": false
@@ -317,7 +315,7 @@ release-it -n -V
 
 + *changelogCommand* — command, that generate changelog to `https://github.com/<your username>/<your repository>/releases`. Command must stdout to console.
 + `#!json "release": true,` — [post changelog](https://www.npmjs.com/package/release-it#%EF%B8%8F-configuration) to `https://github.com/<your username>/<your repository>/releases`.
-+ *GITHUB_TOKEN* — your [*GITHUB_TOKEN* environment variable](#github-token),
++ *TOKEN_GITHUB_FOR_RELEASE_IT* — your [*TOKEN_GITHUB_FOR_RELEASE_IT* environment variable](#github-token),
 + `#!json "npm": {"publish": false},` — don't publish release to [npm](https://www.npmjs.com/). We are writing Sublime Text package, not npm modules, so needs this parameter.
 + `#!json "safeBump": false,` — that correct version in `https://github.com/<your username>/<your repository>/releases`; see [issue](https://github.com/webpro/release-it/issues/218) for details.
 + `#!json "addUntrackedFiles": true,` — add [untracked file](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository) *messages/&lt;version&gt;.txt* [to release commit](https://github.com/webpro/release-it/issues/233).

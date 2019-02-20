@@ -13,7 +13,6 @@ Tags: programs, sublime-text
 Noco: 1g9b6
 Tooltipster: true
 Clipboardjs: true
-Visualize: false
 Og_image: https://i.imgur.com/TuyxneV.png
 Schemaorgtype: SoftwareApplication
 

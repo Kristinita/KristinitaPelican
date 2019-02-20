@@ -11,33 +11,32 @@ Iconleftorright: right
 Noco: 1QCqM6
 Tooltipster: true
 Clipboardjs: true
-Visualize: false
 Og_image: https://i.imgur.com/URzYb4S.jpg
 
 <!-- MarkdownTOC -->
 
-1. [Web Site Terms and Conditions of Use](#web-site-terms-and-conditions-of-use)
-	1. [Terms](#terms)
-	1. [Use License](#use-license)
-	1. [Disclaimer](#disclaimer)
-	1. [Limitations](#limitations)
-	1. [Revisions and Errata](#revisions-and-errata)
-	1. [Links](#links)
-	1. [Site Terms of Use Modifications](#site-terms-of-use-modifications)
-	1. [Governing Law](#governing-law)
-1. [Privacy Policy](#privacy-policy)
+1. [Web Site Terms and Conditions of Use](#Web-Site-Terms-and-Conditions-of-Use)
+	1. [Terms](#Terms)
+	1. [Use License](#Use-License)
+	1. [Disclaimer](#Disclaimer)
+	1. [Limitations](#Limitations)
+	1. [Revisions and Errata](#Revisions-and-Errata)
+	1. [Links](#Links)
+	1. [Site Terms of Use Modifications](#Site-Terms-of-Use-Modifications)
+	1. [Governing Law](#Governing-Law)
+1. [Privacy Policy](#Privacy-Policy)
 
 <!-- /MarkdownTOC -->
 
-<a id="web-site-terms-and-conditions-of-use"></a>
+<a id="Web-Site-Terms-and-Conditions-of-Use"></a>
 # Web Site Terms and Conditions of Use
 
-<a id="terms"></a>
+<a id="Terms"></a>
 ## Terms
 
 By accessing this web site, you are agreeing to be bound by these web site Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this web site are protected by applicable copyright and trade mark law.
 
-<a id="use-license"></a>
+<a id="Use-License"></a>
 ## Use License
 
 1. Permission is granted to temporarily download one copy of the materials (information or software) on Sasha Chernykh's web site for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
@@ -48,39 +47,39 @@ By accessing this web site, you are agreeing to be bound by these web site Terms
 	1. transfer the materials to another person or "mirror" the materials on any other server.
 1. This license shall automatically terminate if you violate any of these restrictions and may be terminated by Sasha Chernykh at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.
 
-<a id="disclaimer"></a>
+<a id="Disclaimer"></a>
 ## Disclaimer
 
 1. The materials on Sasha Chernykh's web site are provided "as is". Sasha Chernykh makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, Sasha Chernykh does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet web site or otherwise relating to such materials or on any sites linked to this site.
 
-<a id="limitations"></a>
+<a id="Limitations"></a>
 ## Limitations
 
 In no event shall Sasha Chernykh or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption,) arising out of the use or inability to use the materials on Sasha Chernykh's Internet site, even if Sasha Chernykh or a Sasha Chernykh authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
 
-<a id="revisions-and-errata"></a>
+<a id="Revisions-and-Errata"></a>
 ## Revisions and Errata
 
 The materials appearing on Sasha Chernykh's web site could include technical, typographical, or photographic errors. Sasha Chernykh does not warrant that any of the materials on its web site are accurate, complete, or current. Sasha Chernykh may make changes to the materials contained on its web site at any time without notice. Sasha Chernykh does not, however, make any commitment to update the materials.
 
-<a id="links"></a>
+<a id="Links"></a>
 ## Links
 
 Sasha Chernykh has not reviewed all of the sites linked to its Internet web site and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Sasha Chernykh of the site. Use of any such linked web site is at the user's own risk.
 
-<a id="site-terms-of-use-modifications"></a>
+<a id="Site-Terms-of-Use-Modifications"></a>
 ## Site Terms of Use Modifications
 
 Sasha Chernykh may revise these terms of use for its web site at any time without notice. By using this web site you are agreeing to be bound by the then current version of these Terms and Conditions of Use.
 
-<a id="governing-law"></a>
+<a id="Governing-Law"></a>
 ## Governing Law
 
 Any claim relating to Sasha Chernykh's web site shall be governed by the laws of Russia without regard to its conflict of law provisions.
 
 General Terms and Conditions applicable to Use of a Web Site.
 
-<a id="privacy-policy"></a>
+<a id="Privacy-Policy"></a>
 # Privacy Policy
 
 Your privacy is very important to us. Accordingly, we have developed this Policy in order for you to understand how we collect, use, communicate and disclose and make use of personal information. The following outlines our privacy policy.

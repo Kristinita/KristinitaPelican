@@ -1,6 +1,6 @@
 <!-- @Author: Kristinita -->
 <!-- @Date:   2017-04-15 17:42:59 -->
-<!-- @Last Modified time: 2019-02-02 16:01:40 -->
+<!-- @Last Modified time: 2019-02-18 12:28:10 -->
 <!-- Differences pages and articles:
 1. In pages disable categories.
 2. Replace any files with “articles”. -->
@@ -24,7 +24,7 @@
 
 <!-- typo-reporter -->
 {% block base_typoreporter -%}
-	<script src="https://npmcdn.com/typo-reporter/lib/TypoReporter.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/typo-reporter/lib/TypoReporter.min.js" defer></script>
 	{%- if page.lang == 'ru' -%}
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/typo-reporter/typo-reporter-ru.min.js" defer></script>
 	{% else %}
@@ -34,7 +34,7 @@
 
 <!-- Tooltipster -->
 {% block base_tooltipster -%}
-	{%- if page.tooltipster == 'true' -%}
+	{%- if page.tooltipster -%}
 		<script src="https://cdn.jsdelivr.net/jquery.tooltipster/latest/js/tooltipster.bundle.min.js" defer></script>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.tooltipster/latest/css/tooltipster.bundle.min.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" />
@@ -44,7 +44,7 @@
 
 <!-- Clipboard.js -->
 {% block base_clipboardjs -%}
-	{%- if page.clipboardjs == 'true' -%}
+	{%- if page.clipboardjs -%}
 		<script src="https://cdn.jsdelivr.net/clipboard.js/latest/clipboard.min.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Clipboard-js/Clipboard.min.js" defer></script>
 	{%- endif -%}
@@ -55,7 +55,7 @@
 http://www.kellyking.me/projects/visualize/
 https://github.com/kellyk/visualize #}
 {% block base_visualize -%}
-	{%- if page.visualize == 'true' -%}
+	{%- if page.visualize -%}
 		<script src="https://gitcdn.xyz/repo/kellyk/visualize/master/visualize.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-bar-chart.min.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-pie-chart.min.js" defer></script>
@@ -76,7 +76,7 @@ https://github.com/kellyk/visualize #}
 <!-- Custom JavaScript, specific for article
 Article metadata variable -->
 {% block base_customjs -%}
-	{%- if page.customjs == 'true' -%}
+	{%- if page.customjs -%}
 		<script src="{{SITEURL}}/js/personal/{{page.customjs1}}.min.js" defer></script>
 	{%- endif -%}
 {%- endblock %}
@@ -91,11 +91,22 @@ Article metadata variable -->
 <!-- CSS of pages -->
 {% block base_pagecolors %}{{ page.pagecolors }}{% endblock %}
 <!-- Aside image -->
-{% block base_asideimage %}{{ page.asideimage }}{% endblock %}
+{% block base_modernizr %}
+<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Modernizr/modernizr-custom.min.js" defer></script>
+<style>
+	.webp .SashaIconAside {
+		background-image: url({{SITEURL}}/{{THEME_STATIC_DIR}}/images/aside/{{page.asideimage}}.webp)
+	}
+
+	.no-webp .SashaIconAside {
+		background-image: url({{SITEURL}}/{{THEME_STATIC_DIR}}/images/aside/{{page.asideimage}}.jpg)
+	}
+</style>
+{% endblock %}
 
 <!-- Custom CSS, specific for article -->
 {% block base_customcss -%}
-	{%- if page.customcss == 'true' -%}
+	{%- if page.customcss -%}
 		<link rel="stylesheet" href="{{SITEURL}}/css/personal/{{page.customcss1}}.min.css">
 	{%- endif -%}
 {%- endblock %}
@@ -120,7 +131,7 @@ Article metadata variable -->
 
 <!-- Epigraph -->
 {% block base_epigraph -%}
-	{%- if page.epigraph == 'true' -%}
+	{%- if page.epigraph -%}
 	<div class="SashaEpigraph">
 		<em>{{ page.epigraphtext }}</em>
 	</div>
@@ -129,7 +140,7 @@ Article metadata variable -->
 
 <!-- Title image -->
 {% block base_titleimage -%}
-	{%- if page.titleimage == 'true' -%}
+	{%- if page.titleimage -%}
 		<p><img alt="Header image" src="{{SITEURL}}/images/header/{{ page.titleimagename }}.jpg"></p>
 	{% endif %}
 {%- endblock %}

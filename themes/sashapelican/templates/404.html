@@ -11,12 +11,21 @@
 	</title>
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/gemini-scrollbar/index.js" defer></script>
-	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Gemini/gemini-non-scrollbar.min.js" defer></script>
+	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Gemini/gemini-non-scrollbar.min.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js" defer></script>
-	<script src="https://kristinita.ru/theme/js/Slick/slick.js" defer></script>
+	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Slick/slick.min.js" defer></script>
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/hide-scrollbar.min.css" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gemini-scrollbar/gemini-scrollbar.css" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
+	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Modernizr/modernizr-custom.min.js" defer></script>
+	<style>
+		.webp body {
+			background: url("{{SITEURL}}/{{THEME_STATIC_DIR}}/images/backgrounds/SashaHangerBackground.webp") no-repeat center center/cover fixed
+		}
+		.no-webp body {
+			background: url("{{SITEURL}}/{{THEME_STATIC_DIR}}/images/backgrounds/SashaHangerBackground.jpg") no-repeat center center/cover fixed
+		}
+	</style>
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/404.min.css" />
 </head>
 
@@ -29,36 +38,21 @@
 		I'm sorry, possibly, I share a link to this page, but I make I typo or move page. If yes, I try fix shared link soon.
 	</div>
 	<div class="Sasha404Description">
-		Enjoy the icons of the
-		<a href="https://vk.com/hair_in_the_wind">
-				greatest Creature of all time
-			</a> !
+		Enjoy the icons of the <a href="https://vk.com/hair_in_the_wind">greatest Creature of all time</a> !
 	</div>
-	{# <section> tag require headers, replace <section> → <div>:
+	{# [LEARN][HTML][HTML-SEMANTIC] <section> tag require headers, replace <section> → <div>:
 	https://stackoverflow.com/a/6941170/5951529
 	https://stackoverflow.com/q/24155024/5951529 #}
-	<div class="slider">
-		<div class="SashaCenter">
-			<img data-lazy="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/404/SashaNose.png" src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/interface-images/transparent-one-pixel.png" alt="SashaNose" />
-		</div>
-		<div class="SashaCenter">
-			<img data-lazy="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/404/SashaRiver.png" src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/interface-images/transparent-one-pixel.png" alt="SashaRiver" />
-		</div>
-		<div class="SashaCenter">
-			<img data-lazy="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/404/SashaBlueHairs.png" src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/interface-images/transparent-one-pixel.png" alt="SashaBlueHairs" />
-		</div>
-		<div class="SashaCenter">
-			<img data-lazy="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/404/SashaBow.png" src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/interface-images/transparent-one-pixel.png" alt="SashaBow" />
-		</div>
-		<div class="SashaCenter">
-			<img data-lazy="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/404/SashaPigeon.png" src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/interface-images/transparent-one-pixel.png" alt="SashaPigeon" />
-		</div>
-		<div class="SashaCenter">
-			<img data-lazy="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/404/SashaShimskyNovgorodDestrict.png" src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/interface-images/transparent-one-pixel.png" alt="SashaShimskyNovgorodDestrict" />
-		</div>
-		<div class="SashaCenter">
-			<img data-lazy="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/404/SashaWeddingOfFriends.png" src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/images/interface-images/transparent-one-pixel.png" alt="SashaWeddingOfFriends" />
-		</div>
+	<div class="KiraSlider">
+		{# [LEARN][JINJA] Loop for each list element:
+		https://overiq.com/flask-101/basics-of-jinja-template-language/#for-loop #}
+		{% set kira_404_icons = ['SashaNose', 'SashaRiver', 'SashaBlueHairs', 'SashaBow', 'SashaPigeon', 'SashaShimskyNovgorodDestrict', 'SashaWeddingOfFriends'] %}
+		{% for icon in kira_404_icons %}
+			<picture>
+				<source data-lazy-srcset="{{SITEURL}}/{{THEME_STATIC_DIR}}/images/404/{{icon}}.webp" type="image/webp">
+				<img data-lazy="{{SITEURL}}/{{THEME_STATIC_DIR}}/images/404/{{icon}}.png" src="{{SITEURL}}/{{THEME_STATIC_DIR}}/images/interface-images/transparent-one-pixel.png" alt="KiraIcon" />
+			</picture>
+		{% endfor %}
 	</div>
 </body>
 
