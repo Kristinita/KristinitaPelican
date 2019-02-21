@@ -46,13 +46,13 @@ git:
 # https://docs.travis-ci.com/user/environment-variables/#encrypting-environment-variables
 env:
   global:
-    # [INFO] Needs get GitHub token with “public_repo” scope:
-    # https://docs.travis-ci.com/user/deployment/pages/#setting-the-github-token
-    # [INFO] YAML multiline strings:
-    # https://stackoverflow.com/a/21699210/5951529
-    # https://yaml-multiline.info/
-    # [INFO] Equivalent: TOKEN_GITHUB_FOR_TRAVIS_DEPLOY = my real token
-    secure: >
+  # [INFO] Needs get GitHub token with “public_repo” scope:
+  # https://docs.travis-ci.com/user/deployment/pages/#setting-the-github-token
+  # [INFO] YAML multiline strings:
+  # https://stackoverflow.com/a/21699210/5951529
+  # https://yaml-multiline.info/
+  # [INFO] Equivalent: TOKEN_GITHUB_FOR_TRAVIS_DEPLOY = my real token
+  - secure: >
       "EXm44fDtI7y2hCnp6uK3gIFMWUMUink3dO9qCXXfd5LwoK53fcXhoDtF+/
       xve7jKFLsUSm5EAJxPiGiNILyOymJkOthTmz+Bohnd1B27jaZepCbh10wxalj7Aw405hBux+z0l2pq21YlbFZl+QyvU/
       8KMms7VVeBDYSCQTFQEmHb5BmA+U2lxJ1hQLJmYK8oV96hKSD/
@@ -63,9 +63,9 @@ env:
       OfjHmtWltGi71IPcyccfji6Uy41wg37D4DUq4cs3T0WX0tD3WfmKc98WtI9/
       iIUEWZhNleS6lCjGIapFdso23hwzKILzCx+tO9KGAenhTGbarq+Fyqfa/
       TmzyHNAk1KwZGgaOrGgCLNPZx3aT7bibx+6JI="
-    # [INFO] Equivalent: API_KEY_APPVEYOR = my real key:
-    # https://kristinita.ru/Pages/About-for-developers#AppVeyor
-    secure: >
+  # [INFO] Equivalent: API_KEY_APPVEYOR = my real key:
+  # https://kristinita.ru/Pages/About-for-developers#AppVeyor
+  - secure: >
       "qE2c+aZb9QGtPF9VG6WhAP2iT0mTDAnmueEiqWUctgalhAFAJ4wdSqvHNNv+F2178wE92WcpT3/
       chmJltlBj1Qqx6vWevJR2ff1uNbQnwGHYBw+1c8JOvx7mUvisp/nzU1eIpU50/
       uDMF6PnUQ7j269nE1seEjUo7aP98rVHDXZ1uYaOVIEKq40HhLMOlfQg4mhpN1zxQLL7eCy7YgQWXDUb4yRT6TU1BxI3uIC9y8LVgv0le3L8hikD2yR
@@ -144,7 +144,7 @@ addons:
   apt:
     packages:
     - parallel
-    # For HTML Tidy building:
+    # [INFO] For HTML Tidy building:
     # https://askubuntu.com/a/1027128/582218
     - xsltproc
 
