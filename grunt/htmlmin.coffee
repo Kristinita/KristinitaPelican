@@ -24,9 +24,12 @@ module.exports =
 			# [INFO] Short links as “readonly="readonly"”:
 			# http://perfectionkills.com/experimenting-with-html-minifier/#collapse_boolean_attributes
 			collapseBooleanAttributes: true
-			# [INFO] Remove spaces:
+			# [INFO] Remove spaces in inline HTML elements:
+			# [WARNING] set “false”, because content of “a” tag mix with another text:
+			# https://i.imgur.com/aglSVyk.png
+			collapseInlineTagWhitespace: false
+			# [INFO] Remove extra spaces:
 			# http://perfectionkills.com/experimenting-with-html-minifier/#collapse_whitespace
-			collapseInlineTagWhitespace: true
 			collapseWhitespace: true
 			# [INFO] I want remove whitespaces for better minification
 			conservativeCollapse: false
