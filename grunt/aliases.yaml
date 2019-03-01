@@ -1,19 +1,12 @@
 ##################
 ## registerTask ##
 ##################
-# Run chains Grunt commands:
-# default — reviewing with relative paths,
-# publish — before publishing with absolute paths,
-# onlypublish — publish without updating,
-# git — add, commit and push to GitHub,
-# screenshot — make site screenshots,
-# update — update Node.js, Python and git,
-# validate — sources and output validation,
-# validatedev — using only for development build,
-# remote — Continuous Integration, not local,
-# travis — Travis CI, not local or another CI.
-# If “default”, you need run “grunt” in command prompt, not “grunt default”:
+# Run chains of Grunt commands:
+
+# [LEARN][GRUNT] If “default”, you need run “grunt” in command prompt, not “grunt default”:
 # https://www.html5rocks.com/en/tutorials/tooling/supercharging-your-gruntfile/#toc-organizing
+
+# [INFO] eviewing with relative paths,
 default:
 - 'concurrent:tarb1'
 - 'concurrent:tarb2'
@@ -24,9 +17,16 @@ default:
 - 'concurrent:tarb7'
 - 'concurrent:tarb8'
 
+# [INFO] Minimal set of tasks, that site works; for development
+minimal:
+- 'concurrent:tarb1'
+- 'concurrent:tarp7'
+
+# [INFO] Make site screenshots
 screenshots:
 - 'concurrent:tarsc1'
 
+# [INFO] Before publishing with absolute paths,
 publish:
 - 'concurrent:taru1'
 - 'concurrent:taru2'
@@ -43,6 +43,7 @@ publish:
 - 'concurrent:tarp10'
 - 'concurrent:tarp11'
 
+# [INFO] Publish without updating
 onlypublish:
 - 'concurrent:tarp1'
 - 'concurrent:tarp2'
@@ -56,34 +57,37 @@ onlypublish:
 - 'concurrent:tarp10'
 - 'concurrent:tarp11'
 
+# [INFO] Add, commit and push to GitHub
 git:
 - 'gta:add'
 - 'gta:commit'
 - 'gta:push'
 
+# [INFO] Update Node.js, Python and git
 update:
 - 'concurrent:taru1'
 - 'concurrent:taru2'
 - 'concurrent:taru3'
 - 'concurrent:taru4'
 
+# [INFO] Sources and output validation
 validate:
 - 'concurrent:tars1'
 - 'concurrent:tarv1'
 - 'concurrent:tarv2'
-# [DONE]
-# [FIXME] eclint doesn't fix leading spaces:
-# https://github.com/jedmao/eclint/issues/155
 - 'concurrent:tarv3'
 
+# [INFO] Validate for development builds
 validatedev:
 - 'concurrent:tard1'
 - 'concurrent:tard2'
 
+# [INFO] Continuous integration, not local
 remote:
 - 'concurrent:tarr1'
 - 'concurrent:tarr2'
 
+# [INFO] Travis CI, not AppVeyor
 travis:
 - 'concurrent:tart1'
 - 'concurrent:tart2'

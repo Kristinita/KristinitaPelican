@@ -112,6 +112,9 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	<script src="https://static.addtoany.com/menu/page.js" defer></script>
 	{# [INFO] async required #}
 	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/AddToAny/addtoany.min.js" async></script>
+	{# [INFO] Wildfire #}
+	<script src="../theme/js/Wildfire/wildfire.min.js" async></script>
+	<script src="https://cdn.jsdelivr.net/npm/wildfire/dist/wildfire.auto.js" defer></script>
 	{# [FIXME] MailerLite bugs for RSS and CoffeeScript:
 	# https://github.com/Kristinita/SashaMiscellaneous/issues/18
 	# https://github.com/Kristinita/SashaMiscellaneous/issues/19
@@ -216,7 +219,9 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 				{% block base_content %}{% endblock %}
 			</section>
 			<footer>
+				<div class="clearfix">
 				{% block base_neighbors %}{% endblock %}
+				</div>
 				<div class="SashaClearBoth"></div>
 				{% block base_new_russian %}{% endblock %}
 				<div class="WorkOnYourself">Работайте над собой</div>

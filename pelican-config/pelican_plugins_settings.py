@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2019-01-18 20:28:46
-# @Last Modified time: 2019-02-20 07:02:22
+# @Last Modified time: 2019-02-21 20:43:11
 # ****************************************************************************
 # *                                  Plugins                                 *
 # ****************************************************************************
@@ -31,6 +31,9 @@ PLUGINS = [
     # [WARNING] Doesn't work with “article” or “page” templates:
     # https://github.com/getpelican/pelican-plugins/issues/983
     # 'jinja2content',
+    # [BUG] json_feed doesn't work:
+    # https://github.com/andrewheiss/pelican_json_feed/issues/6
+    # 'json_feed',
     'just_table',
     'liquid_tags.gram',
     # [BUG] Template doesn't work

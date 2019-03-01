@@ -61,3 +61,7 @@ github_output_url: https://github.com/Kristinita/Kristinita.github.io
 # https://github.com/Kristinita/SashaMiscellaneous/issues/19
 # mailerlite_account_id: 1389796
 # mailerlite_account_key: z8r4g9c0m9
+api_key_wildfire_firebase: AIzaSyBcqG96euym190CIuOLFO3PQx2a6cNcpwY
+wildfire_firebase_project: kirawildfirefirebase
+wildfire_messaging_sender_id: "545427878052"
+form_id_typo_reporter: 1FAIpQLSfu5tnuHYKNPjH0n1fR9EmWDHwlFESzJj7JQFu_O5IS8G5R2A

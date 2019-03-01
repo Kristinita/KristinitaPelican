@@ -32,6 +32,13 @@ module.exports = (grunt) ->
 		# https://stackoverflow.com/a/14089064/5951529
 		# https://gruntjs.com/creating-tasks#cli-options-environment
 		api_key_appveyor: process.env.API_KEY_APPVEYOR
+		# [FIXME][NOTE] Not possible get user environment variables from browser:
+		# https://stackoverflow.com/q/21315708/5951529
+		api_key_wildfire_firebase: "<%= templates.yamlconfig.api_key_wildfire_firebase %>"
+		form_id_typo_reporter: "<%= templates.yamlconfig.form_id_typo_reporter %>"
+	databases:
+		wildfire_firebase_project: "<%= templates.yamlconfig.wildfire_firebase_project %>"
+		wildfire_messaging_sender_id: "<%= templates.yamlconfig.wildfire_messaging_sender_id %>"
 	# [FIXME] Check all HTML, when tags and categories will works normally:
 	# https://stackoverflow.com/q/54388924/5951529
 	# getFiles: ->

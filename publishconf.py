@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2019-02-04 14:28:10
+# @Last Modified time: 2019-02-21 19:36:09
 """Pelican configuration file.
 
 For publishing. pelicanconf.py — for development.
@@ -85,6 +85,17 @@ AUTHOR_FEED_RSS = None
 # https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
 # [Deprecated] — https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
 FEED_USE_SUMMARY = True
+
+# [INFO] FeedBurner use:
+# https://github.com/getpelican/pelican/wiki/FeedBurner-Configuration
+# [NOTE] FeedBurner is obsolete:
+# https://www.plagiarismtoday.com/2013/04/03/google-will-you-please-kill-feedburner/
+# https://www.wpbeginner.com/opinion/stop-using-feedburner-move-to-feedburner-alternatives/
+# https://css-tricks.com/lets-say-feedburner-shuts-down/
+
+# [BUG][LINK] pelican-plugin-settings, json_feed
+# FEED_ALL_JSON = 'feeds/all.json'
+# CATEGORY_FEED_JSON = 'feeds/%s.json'
 
 # Blogroll
 # LINKS = (('Pelican', 'http://getpelican.com/'),

@@ -39,8 +39,7 @@ module.exports =
 	# [FIXME] grunt-newer doesn't work with purifycss:
 	# Warning: Cannot read property 'forEach' of undefined Use --force to continue.
 	# https://github.com/purifycss/grunt-purifycss/issues/26
-	tarb4: ['newer:string-replace:all'
-			'newer:string-replace:dev'
+	tarb4: ['newer:string-replace'
 			'newer:move:jstheme'
 			'newer:move:jspersonal'
 			'purifycss']
@@ -90,9 +89,7 @@ module.exports =
 			'imagemin'
 			'purifycss'
 			'uglify']
-	tarp7: ['string-replace:all'
-			'string-replace:absoluteinsidehtmlimages'
-			'string-replace:backgroundimages']
+	tarp7: ['string-replace']
 	tarp8: ['cssnano'
 			'shell:tidymodify']
 	tarp9: ['htmlmin']

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2019-02-07 10:36:13
+# @Last Modified time: 2019-02-22 10:36:54
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
@@ -62,3 +62,6 @@ ARTICLE_PATHS = YAMLCONFIG['article_paths']
 
 GITHUB_SOURCES_URL = YAMLCONFIG['github_sources_url']
 GITHUB_OUTPUT_URL = YAMLCONFIG['github_output_url']
+
+PELICAN_COMMENT_SYSTEM = True
+PELICAN_COMMENT_SYSTEM_IDENTICON_DATA = ('author',)

@@ -20,6 +20,7 @@ gitpython = "*"
 pyyaml = "*"
 bashate = "*"
 mdx-video = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.7"

@@ -27,7 +27,8 @@
     "devDependencies": {
         "@commitlint/cli": "^7.5.2",
         "@commitlint/travis-cli": "^7.5.2",
-        "autoprefixer": "^9.4.8",
+        "@fullhuman/postcss-purgecss": "^1.1.0",
+        "autoprefixer": "^9.4.9",
         "browser-sync": "^2.26.3",
         "bs-html-injector": "^3.0.3",
         "covgen": "^3.1.0",
@@ -72,6 +73,7 @@
         "grunt-postcss": "^0.9.0",
         "grunt-prettify": "^0.4.0",
         "grunt-project-update": "^0.2.4",
+        "grunt-purgecss": "^1.0.0",
         "grunt-purifycss": "^0.1.2",
         "grunt-real-favicon": "^0.2.3",
         "grunt-remark": "^7.0.0",

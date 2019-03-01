@@ -40,3 +40,8 @@ not op_mini all > 0
 # https://caniuse.com/usage-table
 # http://bit.ly/2BGZD7k
 not bb > 0
+# [INFO] Links to UC, QQ and Baidu browsers:
+# https://github.com/Fyrd/caniuse/issues/4463#issuecomment-420143525
+# [NOTE] Outdated QQ Browser version in Can I use:
+# https://github.com/Fyrd/caniuse/issues/4463#issuecomment-468143487
+not and_qq > 0
