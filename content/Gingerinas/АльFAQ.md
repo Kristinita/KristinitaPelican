@@ -1,6 +1,6 @@
 Title: АльFAQ
 Version: 0.1.1
-Modified: 2019-02-18 11:35:36
+Modified: 2019-03-01 17:47:37
 Date: 2018-12-17 16:51:59
 Author: Sasha Chernykh
 Lang: ru
@@ -8,7 +8,6 @@ Summary: Ответы на надоевшие повторяющиеся фра�
 Pagetitle: FAQ для Alfy Centauri
 Pagecolors: gingerinas
 Asideimage: SashaFluffy
-Titleimage: https://pp.userapi.com/c629527/v629527520/2a28d/IlJfMAMc36Y.jpg
 Iconleftorright: right
 Tags: gingerinas, gingerinas-analysis
 Noco: 1EBY

@@ -414,3 +414,25 @@
 # gnetrg="_oynax">r-znvy</n>'.replace(/[a-zA-Z]/g, (c) ->
 # 	String.fromCharCode if (if c <= 'Z' then 90 else 122) >= (c = c.charCodeAt(0) + 13) then c else c - 26
 # )
+
+
+# [DEPRECATED] Compress files as cssnano; don't remove duplicates
+#############
+# css-purge #
+#############
+# Compress CSS:
+# http://rbtech.github.io/css-purge/
+# Grunt wrapper:
+# https://github.com/dominikwilkowski/grunt-css-purge
+# Options:
+# https://www.npmjs.com/package/css-purge#config-options
+# module.exports =
+# 	task:
+# 		files: [
+# 			expand: true
+# 			cwd: "<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/css"
+# 			src: ['!**/**/*.css'
+# 					'**/**/*.min.css']
+# 			dest: "<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/css"
+# 			ext: '.min.css'
+# 			]

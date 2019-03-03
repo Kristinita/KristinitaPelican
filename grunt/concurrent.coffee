@@ -120,6 +120,7 @@ module.exports =
 	# https://travis-ci.org/Kristinita/KristinitaPelican/jobs/471091236#L1220
 	tarv1: ['coffeelint:personal'
 			'coffeelint:theme'
+			'htmlhint'
 			# 'html-nu'
 			'path_validator'
 			'postcss'

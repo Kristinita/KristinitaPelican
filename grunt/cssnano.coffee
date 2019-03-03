@@ -27,8 +27,8 @@ module.exports =
 		files: [
 			expand: true
 			cwd: "<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/css"
-			src: ['**/*.css'
-					'!**/*.min.css']
+			src: ['!**/*.css'
+					'**/*.min.css']
 			dest: "<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/css"
 			# Extensions in filepaths:
 			# https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically

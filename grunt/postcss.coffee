@@ -35,4 +35,4 @@ module.exports =
 		# doiuse will show errors in minified files.
 		src: ["<%= templates.paths.output_path %>/<%= templates.paths.theme_static_dir %>/css/**/*.css"
 				"<%= templates.paths.output_path %>/css/personal/**/*.css"
-				'!**/*.min.css']
+				"!**/*.min.css"]

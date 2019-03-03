@@ -12,7 +12,7 @@
 
 # [INFO] Passing plugins arguments:
 # https://www.npmjs.com/package/poststylus#passing-arguments-to-plugins
-doiuse = require('doiuse')
+# doiuse = require('doiuse')
 
 # [INFO] PostStylus Grunt usage:
 # https://www.npmjs.com/package/poststylus#grunt
@@ -23,6 +23,8 @@ postcss = ->
 		################
 		# Automatically add browser prefixes:
 		# https://www.npmjs.com/package/autoprefixer
+		# [BUG] AutoPrefixer add duplicates, if one property for multiple selectors:
+		# https://github.com/postcss/autoprefixer/issues/1196
 		'autoprefixer'
 		# [FIXME][SO] Build passed, if any warning; I need use PostCSS:
 		# https://github.com/seaneking/poststylus/issues/26

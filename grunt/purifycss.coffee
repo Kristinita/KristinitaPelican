@@ -21,10 +21,24 @@ module.exports =
 					# https://github.com/clutchski/coffeelint/issues
 					# [INFO] Wildfire classes
 					# [INFO] “div” for parent classes not required.
-					".tooltipster-box"
-					".wf.wf-theme-dark"
+					# [FIXME] Migrate to PurgeCSS, that not add each Wildfire class separately:
+					# https://github.com/FullHuman/grunt-purgecss/issues/9
 					".animate-flicker"
 					".ivu-modal-body"
+					".ivu-btn"
+					".ivu-tabs-tabpane"
+					".wf"
+					".ivu-btn-primary"
+					".wf-separator"
+					".wf-no-content-tip"
+					":not(.v-transfer-dom)"
+					".ivu-menu-submenu-title-icon"
+					".ivu-input-wrapper"
+					".wf-post-btn"
+					".ivu-menu-horizontal"
+					".ivu-menu-light"
+					".ivu-icon-heart-broken"
+					".ivu-icon-heart"
 					# [INFO] Tooltipster classes.
 					# [NOTE] Use parent classes:
 					# For:

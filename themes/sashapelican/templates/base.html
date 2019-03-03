@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-{# [WARNING] Needs same language, that text in article/page:
+{# [NOTE] DOCTYPE must be declared first:
+https://stackoverflow.com/a/4897850/5951529
+[WARNING] Needs same language, that text in article/page:
 https://webref.ru/css/lang
 https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 #}
@@ -153,7 +155,7 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Admonition/admonition.min.css">
 	<!-- Material icons font for icons -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<!-- ProgressBar -->
+	{# Progressbar #}
 	{% block base_progressbar %}{% endblock %}
 	<!-- Custom CSS -->
 	{% block base_customcss %}{% endblock %}
