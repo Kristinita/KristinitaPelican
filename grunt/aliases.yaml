@@ -6,7 +6,7 @@
 # [LEARN][GRUNT] If “default”, you need run “grunt” in command prompt, not “grunt default”:
 # https://www.html5rocks.com/en/tutorials/tooling/supercharging-your-gruntfile/#toc-organizing
 
-# [INFO] eviewing with relative paths,
+# [INFO] Reviewing with relative paths
 default:
 - 'concurrent:tarb1'
 - 'concurrent:tarb2'
@@ -87,7 +87,12 @@ remote:
 - 'concurrent:tarr1'
 - 'concurrent:tarr2'
 
-# [INFO] Travis CI, not AppVeyor
+# [INFO] Travis CI specific
 travis:
 - 'concurrent:tart1'
 - 'concurrent:tart2'
+
+# [INFO] Not in AppVeyor because of AppVeyor bugs
+notappveyor:
+- 'concurrent:tarna1'
+- 'concurrent:tarna2'

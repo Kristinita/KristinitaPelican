@@ -22,11 +22,12 @@ module.exports =
 		# https://www.npmjs.com/package/grunt-concurrent#limit
 		limit: 7
 
-	#
-	# For development, “target build”.
-	#
-	# [NOTE] Don't use “newer:” for shell tasks!
-	# grunt-newer check, that your source (src) not change and doesn't run build process.
+	###
+	For development, “target build”.
+
+	[NOTE] Don't use “newer:” for shell tasks!
+	grunt-newer check, that your source (src) not change and doesn't run build process.
+	###
 	tarb1: ['shell:generate']
 	tarb2: [
 			# [NOTE] newer doesn't work for cwebp
@@ -49,17 +50,19 @@ module.exports =
 	tarb6: ['newer:jsbeautifier']
 	tarb7: ['shell:eclintfix']
 	tarb8: ['notify:default']
-	#
-	# For screenshots, “target screenshot”.
-	#
-	# Grunt-pageres works incorrect with absolute URLs. I use local URLs with “grunt-http-server”:
-	# I need build site with localhost URLs → make screenshots → build site with absolute URLs.
+	###
+	For screenshots, “target screenshot”.
+
+	Grunt-pageres works incorrect with absolute URLs. I use local URLs with “grunt-http-server”:
+	I need build site with localhost URLs → make screenshots → build site with absolute URLs.
+	###
 	tarsc1: ['pageres']
-	#
-	# For publishing, “target publish”.
-	#
-	# Don't use “newer” for publishing, because output directory deleted →
-	# all src files will newer.
+	###
+	For publishing, “target publish”.
+
+	[NOTE] Don't use “newer” for publishing, because output directory deleted →
+	all src files will newer.
+	###
 	#######################
 	## grunt-checkbranch ##
 	#######################
@@ -95,9 +98,9 @@ module.exports =
 	tarp9: ['htmlmin']
 	tarp10: ['shell:eclintfix']
 	tarp11: ['notify:publish']
-	#
-	# For updating dependencies, “target update”.
-	#
+	###
+	For updating dependencies, “target update”.
+	###
 	taru1: ['devUpdate'
 			'shell:gitreflog']
 	taru2: ['projectUpdate'
@@ -105,22 +108,22 @@ module.exports =
 			'shell:gitgarbagecollector']
 	taru3: ['shell:pipenvcleanunused']
 	taru4: ['shell:pipenvupdatepipfilelock']
-	#
-	# For validating sources, “target sources”.
-	#
+	###
+	For validating sources, “target sources”.
+	###
 	tars1: ['coffeelint:source'
 			'markdownlint'
 			'remark'
 			'shell:bashate']
-	#
-	# For validating output, “target validate”.
-	#
-	# [FIXME] “html-nu” temporary disabled, because footnotes obsolete syntax:
-	# https://github.com/Python-Markdown/markdown/issues/768
-	# https://travis-ci.org/Kristinita/KristinitaPelican/jobs/471091236#L1220
+	###
+	For validating output, “target validate”.
+
+	[FIXME] “html-nu” temporary disabled, because footnotes obsolete syntax:
+	https://github.com/Python-Markdown/markdown/issues/768
+	https://travis-ci.org/Kristinita/KristinitaPelican/jobs/471091236#L1220
+	###
 	tarv1: ['coffeelint:personal'
 			'coffeelint:theme'
-			'htmlhint'
 			# 'html-nu'
 			'path_validator'
 			'postcss'
@@ -131,27 +134,29 @@ module.exports =
 	# https://github.com/jedmao/eclint/issues/155
 	tarv2: ['shell:eclintcheck']
 	tarv3: ['notify:validate']
-	#
-	# For validating only in development mode, “target validate development”.
-	#
-	# [NOTE] clean-console only for development:
-	# Site developer can create new files → absolute links will not works in production →
-	# clean-console will shown errors. So only for development.
-	# [NOTE] clean-console works with http-server — “grunt http-server clean-console”.
-	# See “clean-console.coffee” for details.
+	###
+	For validating only in development mode, “target validate development”.
+
+	[NOTE] clean-console only for development:
+	Site developer can create new files → absolute links will not works in production →
+	clean-console will shown errors. So only for development.
+	[NOTE] clean-console works with http-server — “grunt http-server clean-console”.
+	See “clean-console.coffee” for details.
+	###
 	tard1: ['clean-console'
 			# [NOTE] Files by absolute paths may not exists
 			'pageres']
 	tard2: ['notify:validate']
-	#
-	# For Continuous Integration tasks, “target remote”.
-	# Use, if big dependencies needest for task running.
-	#
-	# [NOTE] At April 2018 exists Ruby version of Travis Client, not versions for another languages →
-	# user need to install Ruby virtual environment locally:
-	# lint “.travis.yml” — small improvement, that install Ruby virtual environment.
-	# ShellCheck needs extra dependency scoop for Windows:
-	# https://github.com/koalaman/shellcheck#installing
+	###
+	For Continuous Integration tasks, “target remote”.
+	Use, if big dependencies needest for task running.
+
+	[NOTE] At April 2018 exists Ruby version of Travis Client, not versions for another languages →
+	user need to install Ruby virtual environment locally:
+	lint “.travis.yml” — small improvement, that install Ruby virtual environment.
+	ShellCheck needs extra dependency scoop for Windows:
+	https://github.com/koalaman/shellcheck#installing
+	###
 	tarr1: ['shell:localappveyor'
 			'shell:shellcheck']
 	tarr2: ['notify:validate']
@@ -161,19 +166,24 @@ module.exports =
 	# [BUG] “matrix.include” warnings:
 	# https://github.com/travis-ci/travis.rb/issues/376
 	# tarr2: ['shell:travislint']
-	#
-	# For Travis CI specific tasks, not for local or another CI — “target travis”.
-	# If task in this section, please, give reasons, why not local or another CI:
-	#
-	# Doesn't need in local, because commitlint+husky lints commit,
-	# when I make it locally:
-	# http://marionebl.github.io/commitlint/#/guides-local-setup
-	tart1: ['shell:commitlint'
-			# [BUG] HTML Tidy doesn't modify files with Cyrillic names in AppVeyor →
-			# files still contains errors:
-			# https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/1.0.37/job/vjjwi959rqgfm6da
-			# https://github.com/appveyor/ci/issues/2107
-			'htmllint']
-	# Doesn't work in AppVeyor or another CI, Travis-specific:
-	# https://github.com/marionebl/commitlint/blob/master/%40commitlint/travis-cli/src/cli.js
+	###
+	For Travis CI specific tasks, not for local or another CI — “target travis”.
+	If task in this section, please, give reasons, why not local or another CI:
+	[NOTE] Doesn't need in local, because commitlint+husky lints commit,
+	when I make it locally:
+	http://marionebl.github.io/commitlint/#/guides-local-setup
+	Doesn't work in AppVeyor or another CI, Travis-specific:
+	https://github.com/marionebl/commitlint/blob/master/%40commitlint/travis-cli/src/cli.js
+	###
+	tart1: ['shell:commitlint']
 	tart2: ['notify:validate']
+	###
+	For validating tasks, that doesn't work in AppVeyor from behind AppVeyor bugs — “target not appveyor”:
+	[BUG] HTML Tidy doesn't modify files with Cyrillic names in AppVeyor →
+	files still contains errors:
+	https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/1.0.37/job/vjjwi959rqgfm6da
+	https://github.com/appveyor/ci/issues/2107
+	###
+	tarna1: ['htmlhint'
+			'htmllint']
+	tarna2: ['notify:validate']

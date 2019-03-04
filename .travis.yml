@@ -109,7 +109,7 @@ matrix:
   include:
   - script:
     - grunt
-    - grunt http-server validatedev && grunt validate remote travis
+    - grunt http-server validatedev && grunt validate remote notappveyor travis
   - script:
     # [BUG] pageres doesn't work with Node.js 11:
     # https://github.com/sindresorhus/pageres/issues/344
