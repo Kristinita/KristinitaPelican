@@ -25,9 +25,16 @@ desktop.ini
 pelican_cache/
 .sublime-grunt.cache
 
-# [NOTE] I don't need add to .gitignore files as Pipfile.lock and package-lock.json:
+# [NOTE] Not recommended add to .gitignore files as Pipfile.lock and package-lock.json:
 # https://stackoverflow.com/a/46303305/5951529
 # https://stackoverflow.com/a/44210813/5951529
+# But I do it anyway, because:
+# 1. I use latest packages versions, not specific
+# 2. Extra big files in repository
+# 3. Modernizr CI bugs:
+# https://travis-ci.org/Kristinita/KristinitaPelican/jobs/501409924#L340-L342
+Pipfile.lock
+package-lock.json
 
 ###Python###
 
