@@ -72,6 +72,7 @@
         "grunt-notify": "^0.4.5",
         "grunt-pageres": "^4.0.1",
         "grunt-path-validator": "^2.0.2",
+        "grunt-penthouse": "^1.0.0",
         "grunt-postcss": "^0.9.0",
         "grunt-prettify": "^0.4.0",
         "grunt-project-update": "^0.2.4",

@@ -27,7 +27,8 @@ module.exports =
 					".ivu-modal-body"
 					".ivu-btn"
 					".ivu-tabs-tabpane"
-					".wf"
+					# [NOTE] Adjoining classes required in this case.
+					".wf.wf-theme-dark"
 					".ivu-btn-primary"
 					".wf-separator"
 					".wf-no-content-tip"
@@ -39,14 +40,17 @@ module.exports =
 					".ivu-menu-light"
 					".ivu-icon-heart-broken"
 					".ivu-icon-heart"
+					".wf-inactive"
+					".ivu-icon-at"
+					".ivu-menu-item-selected"
 					# [INFO] Tooltipster classes.
 					# [NOTE] Use parent classes:
 					# For:
 					# 	.tooltipster-punk-aquamarine .tooltipster-box
 					# 	.tooltipster-punk-purple .tooltipster-box
 					# “.tooltipster-box” in “whitelist” option will not works
-					".tooltipster-punk-purple"
-					".tooltipster-punk-aquamarine"
+					".tooltipster-punk-purple .tooltipster-box"
+					".tooltipster-punk-aquamarine .tooltipster-box"
 					]
 	sublimetexttarget:
 		src: [

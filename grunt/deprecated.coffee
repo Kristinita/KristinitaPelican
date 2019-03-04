@@ -436,3 +436,20 @@
 # 			dest: "<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/css"
 # 			ext: '.min.css'
 # 			]
+
+
+# [DEPRECATED] UNCSS build all CSS files to single;
+# behavior not similar as PurgeCSS and PurifyCSS
+###############
+# grunt-uncss #
+###############
+# module.exports =
+# 	options:
+# 		uncssrc: ".uncssrc"
+# 	sublimetexttarget:
+# 		src: [
+# 				"<%= templates.paths.output_path %>/Sublime-Text/*.html"
+# 				"<%= templates.paths.output_path %>/Programs/*.html"
+# 				]
+# 		css: ["<%= templates.paths.output_path %>/theme/css/sections/programs.css"]
+# 		dest: "<%= templates.paths.output_path %>/theme/css/sections/programs.css"
