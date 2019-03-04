@@ -7,6 +7,7 @@
 # https://www.npmjs.com/package/grunt-htmlhint
 # Rules:
 # https://github.com/htmlhint/HTMLHint/wiki/Rules
+# [NOTE] All options in “.htmlhintrc” required
 module.exports =
 	options:
 		# [NOTE] I prefer tabs, not spaces.
