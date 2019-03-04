@@ -137,7 +137,14 @@
 					1. Введите URL заглавной страницы. Неважно, в каком виде: kristinita.ru , https://kristinita.ru , kristinita.ru/ или www.kristinita.ru .
 					<br/>
 					2. Нажимайте на кнопки, и по ссылкам всё должно быть понятно. Если нет, читайте
-					<a href="{{SITEURL}}/Sasha-Black/Sasha-Black-description" target="_blank" class="SashaReadHelp" title="Описание Sasha Black">
+					{# [LEARN][HTML] Use “rel="noopener"” for “target="_blank"”:
+					https://mathiasbynens.github.io/rel-noopener/
+					Htmllint require it:
+					https://github.com/htmllint/htmllint/issues/232
+					[WARNING] Edge not support it:
+					https://caniuse.com/#search=noopener
+					https://github.com/MicrosoftEdge/Status/issues/450 #}
+					<a href="{{SITEURL}}/Sasha-Black/Sasha-Black-description" target="_blank" rel="noopener" class="SashaReadHelp" title="Описание Sasha Black">
 						справку</a>.
 				</span>
 		</div>

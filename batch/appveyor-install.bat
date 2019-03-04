@@ -1,7 +1,7 @@
 @REM @Author: Kristinita
 @REM @Date:   2018-02-28 19:42:16
 @REM @Last Modified by:   Kristinita
-@REM Modified time: 2019-02-07 09:01:12
+@REM Modified time: 2019-03-04 18:41:15
 @REM [INFO] Install all AppVeyor dependencies for building and validation.
 @REM [LEARN] Use REM comments:
 @REM https://stackoverflow.com/a/12407934/5951529
@@ -33,7 +33,12 @@ START /B CMD /C "choco install html-tidy -y -ignoredependencies"
 @REM https://packaging.python.org/guides/supporting-windows-using-appveyor/
 START /B CMD /C "%PYTHON%\\python -m pip install --upgrade pip & pip3 install pipenv==11.10.2 & pipenv install --dev"
 START /B CMD /C "choco install nodejs phantomjs -y & npm install -g grunt-cli & npm install"
-START /B CMD /C "gem install travis"
+@REM [FIXME] Incorrect lint “.travis.yml” file:
+@REM https://github.com/travis-ci/travis.rb/issues/422
+@REM https://github.com/travis-ci/travis-yaml/issues/58
+@REM [WARNING] Old Ruby 1.9.3 default by March 2019:
+@REM https://www.appveyor.com/docs/windows-images-software/#ruby
+@REM START /B CMD /C "gem install travis"
 @REM [WARNING] In local machine you need install dotnetcore:
 @REM https://chocolatey.org/packages/dotnetcore
 START /B CMD /C "dotnet tool install -g localappveyor --version 0.5.0-alpha.10"

@@ -43,6 +43,8 @@ module.exports =
 					".wf-inactive"
 					".ivu-icon-at"
 					".ivu-menu-item-selected"
+					".ivu-menu"
+					"svg"
 					# [INFO] Tooltipster classes.
 					# [NOTE] Use parent classes:
 					# For:

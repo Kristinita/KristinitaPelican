@@ -115,7 +115,7 @@ matrix:
     # https://github.com/sindresorhus/pageres/issues/344
     # - grunt default && grunt http-server screenshots && grunt publish
     - grunt publish
-    - grunt validate remote travis
+    - grunt validate remote notappveyor travis
     # Deploy, if production, not dev build:
     # https://travis-ci.org/Kristinita/SashaTravis/builds/381271402
     # Make as cotila:
