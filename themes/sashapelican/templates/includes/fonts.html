@@ -1,3 +1,56 @@
+{# Google Fonts:
+https://medium.freecodecamp.org/how-to-use-google-fonts-in-your-next-web-design-project-e1ad48f1adfa
+Open Fonts License for fonts:
+https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web
+
+[NOTE] I migrate from FontLibrary to Google Fonts:
+1. FontLibrary haven't CDN and load to page more slow:
+https://i.imgur.com/mH0qSvs.png
+2. FontLibrary fonts no cached:
+https://i.imgur.com/ZeRnQnS.png
+Requests for Google Fonts CSS assets arec cached for 1 day:
+https://developers.google.com/fonts/faq#what_does_using_the_google_fonts_api_mean_for_the_privacy_of_my_users
+3. FontLibrary can't remove non-used languages:
+https://i.imgur.com/Y0j0lnn.png
+4. FontLibrary haven't open issue tracker.
+Tracker for Google Fonts:
+https://github.com/google/fonts
+
+Play for h1 headers:
+https://fonts.google.com/specimen/Play
+https://github.com/google/fonts/tree/master/ofl/play
+
+El-Messiri for links:
+https://fontlibrary.org/en/font/el-messiri
+https://github.com/Gue3bara/El-Messiri
+
+Scada for h2 headers:
+https://www.fontsquirrel.com/fonts/scada
+https://fonts.google.com/specimen/Scada
+https://github.com/googlefonts/scada
+
+Fira Mono for code:
+http://mozilla.github.io/Fira/
+https://github.com/mozilla/Fira
+
+Marck Script for “Работайте над собой”:
+https://fonts.google.com/specimen/Marck+Script
+https://github.com/google/fonts/tree/master/ofl/marckscript
+
+[INFO] Needs combine fonts for leverage browser caching:
+https://stackoverflow.com/a/34356311/5951529
+
+[WARNING] Not all browsers support “font-display” at March 2019:
+https://caniuse.com/#search=font-display
+
+[FIXME] Script instead of link required, because Google Fonts doesn't support “font-display”:
+https://css-tricks.com/google-fonts-and-font-display/
+https://github.com/google/fonts/issues/358
+#}
+
+{# <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play:700|El+Messiri|Scada:700i|Fira+Mono|Marck+Script&amp;subset=cyrillic&font-display=swap">
+#}
+
 {# Open source fonts from Font Library:
 https://fontlibrary.org/en
 Documentation:
@@ -5,21 +58,21 @@ https://fontlibrary.org/en/guidebook
 Licenses:
 https://fontlibrary.org/en/guidebook/font_licensing
 [NOTE] Select fonts, that support Cyrillic symbols.
-#}
-{# Xolonium for h1 headers:
-https://fontlibrary.org/en/font/xolonium #}
+
+Xolonium for h1 headers:
+https://fontlibrary.org/en/font/xolonium
 <link rel="stylesheet" href="https://fontlibrary.org/face/xolonium">
-{# Sansus-webissimo for h2 headers:
-https://fontlibrary.org/en/font/sansus-webissimo #}
+Sansus-webissimo for h2 headers:
+https://fontlibrary.org/en/font/sansus-webissimo
 <link rel="stylesheet" href="https://fontlibrary.org/face/sansus-webissimo">
-{# el-messiri for links:
+el-messiri for links:
 https://fontlibrary.org/en/font/el-messiri
-https://github.com/Gue3bara/El-Messiri #}
+https://github.com/Gue3bara/El-Messiri
 <link rel="stylesheet" href="https://fontlibrary.org/face/el-messiri">
-{# inconsolata-lgc for code:
+inconsolata-lgc for code:
 https://fontlibrary.org/en/font/inconsolata-lgc
-https://github.com/DeLaGuardo/Inconsolata-LGC #}
+https://github.com/DeLaGuardo/Inconsolata-LGC
 <link rel="stylesheet" href="https://fontlibrary.org/face/inconsolata-lgc">
-{# miama-nueva for “Работайте над собой”:
-https://fontlibrary.org/en/font/miama-nueva #}
-<link rel="stylesheet" href="https://fontlibrary.org/face/miama-nueva">
+miama-nueva for “Работайте над собой”:
+https://fontlibrary.org/en/font/miama-nueva
+<link rel="stylesheet" href="https://fontlibrary.org/face/miama-nueva"> #}

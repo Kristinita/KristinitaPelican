@@ -26,6 +26,7 @@ Og_image: https://i.imgur.com/2blY7dI.png
 		1. [UNIX and macOS](#UNIX-and-macOS)
 	1. [Installation](#Installation)
 		1. [Environment variables](#Environment-variables)
+			1. [PageSpeed Insights](#PageSpeed-Insights)
 			1. [AppVeyor](#AppVeyor)
 		1. [Windows](#Windows-1)
 			1. [Terminal selection](#Terminal-selection)
@@ -120,6 +121,27 @@ You must install in your machine latest versions:
 
 <a id="Environment-variables"></a>
 ### Environment variables
+
+<a id="PageSpeed-Insights"></a>
+#### PageSpeed Insights
+
+[Get PageSpeed Insights API key](https://developers.google.com/speed/docs/insights/v5/get-started#key)
+
+Add environment variable to your local PC:
+
++ Windows:
+
+```batch
+SETX API_KEY_PAGESPEED_INSIGHTS_V5 your_token
+```
+
++ Linux:
+
+```bash
+export API_KEY_PAGESPEED_INSIGHTS_V5 your_token
+```
+
+Replace *your_token* to token, that you get.
 
 <a id="AppVeyor"></a>
 #### AppVeyor
@@ -338,11 +360,13 @@ For all Sasha Chernykh projects:
 
 [jtable]
 Type|Checking tool|Rules description|Configuration file
-commits|[commitlint](http://marionebl.github.io/commitlint/) + [Husky](https://www.npmjs.com/package/husky) |[1](http://marionebl.github.io/commitlint/#/reference-rules), WARNING — [no default levels for rules](https://github.com/marionebl/commitlint/issues/316#issuecomment-385708769)|[.commitlintrc.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/.commitlintrc.yml), [.huckyrc.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/.huskyrc.yml)
+English language|[write-good](https://www.npmjs.com/package/write-good) + [remark-lint-write-good](https://www.npmjs.com/package/remark-lint-write-good)|[1](https://github.com/Kristinita/write-good/tree/SashaGoddess#checks), WARNING — [no in default repository](https://github.com/btford/write-good/pull/65)|[.remarkrc.yaml](https://github.com/Kristinita/KristinitaPelican/blob/master/.remarkrc.yaml)
+commits|[commitlint](http://marionebl.github.io/commitlint/) + [Husky](https://www.npmjs.com/package/husky)|[1](http://marionebl.github.io/commitlint/#/reference-rules), WARNING — [no default levels for rules](https://github.com/marionebl/commitlint/issues/316#issuecomment-385708769)|[.commitlintrc.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/.commitlintrc.yml), [.huckyrc.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/.huskyrc.yml)
 all files and folders names|[grunt-path-validator](https://www.npmjs.com/package/grunt-path-validator) (for Grunt projects, I can't find tool for all project types)|no whitespace characters in names — it accept in files/folder naming conventions — [1](https://superuser.com/q/29111/572069), [2](https://portal.slac.stanford.edu/sites/inc_public/Pages/folder-file-names.aspx), [3](https://www.reddit.com/r/linux/comments/1kpzxz/what_are_your_file_naming_conventions/), [4](https://www2.le.ac.uk/services/research-data/organise-data/naming-files), [5](https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming)|[path_validator.coffee](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/path_validator.coffee) (for Grunt projects, I can't find tool for all project types)
 all files|[EditorConfig](http://editorconfig.org/)|[1](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties)|[.editorconfig](https://github.com/Kristinita/KristinitaPelican/blob/master/.editorconfig)
 supported browsers|[Browserslist](https://www.npmjs.com/package/browserslist)|[1](https://github.com/browserslist/browserslist#queries)|[browserslist](https://github.com/Kristinita/KristinitaPelican/blob/master/browserslist)
 browsers console errors|[clean-console](https://www.npmjs.com/package/clean-console)|No errors in browsers console|[clean-console.coffee](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/clean-console.coffee)
+site performance|[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)|[1](https://developers.google.com/web/tools/lighthouse/)|—
 Python|[Flake8](http://flake8.pycqa.org/en/latest/)|[1](http://flake8.pycqa.org/en/latest/user/configuration.html)|[.flake8](https://github.com/Kristinita/KristinitaPelican/blob/master/.flake8)
 Python|[pydocstyle](http://www.pydocstyle.org/en/latest/usage.html)|[1](http://www.pydocstyle.org/en/latest/usage.html#configuration-files)|—
 Markdown|[Markdownlint](https://www.npmjs.com/package/markdownlint)|[1](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md)|[.markdownlint.yaml](https://github.com/Kristinita/KristinitaPelican/blob/master/.markdownlint.yaml)

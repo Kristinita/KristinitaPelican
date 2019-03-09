@@ -116,7 +116,7 @@ module.exports =
 	# https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b
 	# https://stackoverflow.com/a/45164863/5951529
 	covgen:
-		command: 'npx covgen SashaChernykhEmpressOfUniverse$kristinita.github.io'
+		command: 'npx covgen kristinita$cock.li'
 
 
 	##################

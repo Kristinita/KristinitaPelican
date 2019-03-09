@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2019-01-18 20:46:53
-# @Last Modified time: 2019-02-02 16:22:02
+# @Last Modified time: 2019-03-07 07:27:45
 # ****************************************************************************
 # *                                Generation                                *
 # ****************************************************************************
@@ -32,6 +32,8 @@ CONTENT_CACHING_LAYER = 'reader'
 LOAD_CONTENT_CACHE = True
 
 # Relative URLs for developing
+# [INFO] Absolute vs relative URL's doesn't matter for SEO:
+# https://www.seroundtable.com/google-absolute-vs-relative-urls-26001.html
 RELATIVE_URLS = True
 
 # Original format without rendering. If true, md rendering to md,

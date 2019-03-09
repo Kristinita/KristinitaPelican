@@ -54,6 +54,10 @@ module.exports =
 					".tooltipster-punk-purple .tooltipster-box"
 					".tooltipster-punk-aquamarine .tooltipster-box"
 					]
+	indextarget:
+		src: ["<%= templates.paths.output_path %>/index.html"]
+		css: ["<%= templates.paths.output_path %>/theme/css/sections/kristinita.css"]
+		dest: "<%= templates.paths.output_path %>/theme/css/sections/kristinita.css"
 	sublimetexttarget:
 		src: [
 				"<%= templates.paths.output_path %>/Sublime-Text/*.html"

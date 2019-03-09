@@ -7,8 +7,13 @@
 # https://github.com/zemanlx/container-structure-test-image/blob/master/.remarkrc.yaml
 # CLI usage:
 # https://github.com/remarkjs/remark/tree/master/packages/remark-cli#cli
-# Inline ignoring rules for specific blocks:
+# Inline ignoring rules:
 # https://github.com/remarkjs/remark-lint#configuring-remark-lint
+# [WARNING] Ignoring specific rules as “lint disable no-duplicate-headings” doesn't work;
+# use “lint disnable” and “lint enable”
+# No issue, because remark author close my previous issues, but not solve them:
+# https://github.com/remarkjs/remark-validate-links/issues/33
+# https://github.com/remarkjs/remark-validate-links/issues/32
 
 ###########
 # Presets #
@@ -36,11 +41,11 @@ plugins:
   ###################
   # lint-write-good #
   ###################
-  # Use write-good for remark
+  # Prose linter
+  # https://www.npmjs.com/package/write-good
+  # Remark wrapper
   # https://www.npmjs.com/package/remark-lint-write-good
-  # [WARNING] Disable, because links citations and proper names:
-  # https://github.com/zerok/remark-lint-write-good/issues/5
-  # lint-write-good:
+  lint-write-good:
     # [INFO] Explanations:
     # https://github.com/btford/write-good/blob/master/write-good.js#L12-L22
     # [NOTE] Example, how disable specific explanations:

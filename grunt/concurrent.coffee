@@ -50,6 +50,7 @@ module.exports =
 	tarb6: ['newer:jsbeautifier']
 	tarb7: ['shell:eclintfix']
 	tarb8: ['notify:default']
+
 	###
 	For screenshots, “target screenshot”.
 
@@ -57,6 +58,7 @@ module.exports =
 	I need build site with localhost URLs → make screenshots → build site with absolute URLs.
 	###
 	tarsc1: ['pageres']
+
 	###
 	For publishing, “target publish”.
 
@@ -88,16 +90,19 @@ module.exports =
 			'coffee'
 			'unused'
 			'copy']
-	tarp6: ['clean'
+	tarp6: ['string-replace']
+	tarp7: ['clean'
+			'curl'
 			'imagemin'
-			'purifycss'
+			'purifycss']
+	tarp8: ['critical'
 			'uglify']
-	tarp7: ['string-replace']
-	tarp8: ['cssnano'
+	tarp9: ['cssnano'
 			'shell:tidymodify']
-	tarp9: ['htmlmin']
-	tarp10: ['shell:eclintfix']
-	tarp11: ['notify:publish']
+	tarp10: ['htmlmin']
+	tarp11: ['shell:eclintfix']
+	tarp12: ['notify:publish']
+
 	###
 	For updating dependencies, “target update”.
 	###
@@ -108,6 +113,7 @@ module.exports =
 			'shell:gitgarbagecollector']
 	taru3: ['shell:pipenvcleanunused']
 	taru4: ['shell:pipenvupdatepipfilelock']
+
 	###
 	For validating sources, “target sources”.
 	###
@@ -115,6 +121,7 @@ module.exports =
 			'markdownlint'
 			'remark'
 			'shell:bashate']
+
 	###
 	For validating output, “target validate”.
 
@@ -134,6 +141,7 @@ module.exports =
 	# https://github.com/jedmao/eclint/issues/155
 	tarv2: ['shell:eclintcheck']
 	tarv3: ['notify:validate']
+
 	###
 	For validating only in development mode, “target validate development”.
 
@@ -147,6 +155,7 @@ module.exports =
 			# [NOTE] Files by absolute paths may not exists
 			'pageres']
 	tard2: ['notify:validate']
+
 	###
 	For Continuous Integration tasks, “target remote”.
 	Use, if big dependencies needest for task running.
@@ -166,6 +175,7 @@ module.exports =
 	# [BUG] “matrix.include” warnings:
 	# https://github.com/travis-ci/travis.rb/issues/376
 	# tarr2: ['shell:travislint']
+
 	###
 	For Travis CI specific tasks, not for local or another CI — “target travis”.
 	If task in this section, please, give reasons, why not local or another CI:
@@ -177,6 +187,7 @@ module.exports =
 	###
 	tart1: ['shell:commitlint']
 	tart2: ['notify:validate']
+
 	###
 	For validating tasks, that doesn't work in AppVeyor from behind AppVeyor bugs — “target not appveyor”:
 	[BUG] HTML Tidy doesn't modify files with Cyrillic names in AppVeyor →
@@ -187,3 +198,10 @@ module.exports =
 	tarna1: ['htmlhint'
 			'htmllint']
 	tarna2: ['notify:validate']
+
+	###
+	For tasks after site deploy — “target after deploy”:
+	[INFO] PageSpeed require remote site;
+	I can't fix “Serve static assets with an efficient cache policy” for localhost
+	###
+	tarad1: ['pagespeed']

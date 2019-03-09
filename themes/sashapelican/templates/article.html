@@ -54,7 +54,7 @@ http://www.kellyking.me/projects/visualize/
 https://github.com/kellyk/visualize #}
 {% block base_visualize -%}
 	{%- if article.visualize -%}
-		<script src="https://gitcdn.xyz/repo/kellyk/visualize/master/visualize.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-bar-chart.min.js" defer></script>
 		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-pie-chart.min.js" defer></script>
 	{%- endif -%}

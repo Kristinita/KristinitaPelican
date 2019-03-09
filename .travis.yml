@@ -9,15 +9,14 @@
 # [WARNING] “group: travis_latest” doesn't work at April 2018, read end of article:
 # https://blog.travis-ci.com/2017-12-01-new-update-schedule-for-linux-build-images
 
-# Trusty by default:
+# [INFO] Trusty by default:
 # https://stackoverflow.com/a/21133609/5951529
 # https://blog.travis-ci.com/2017-07-11-trusty-as-default-linux-is-coming
 # Travis CI doesn't support 32-bit platforms:
 # https://stackoverflow.com/a/37087813/5951529
-# I use Trusty with sudo required:
-# https://docs.travis-ci.com/user/reference/overview/#Virtualisation-Environment-vs-Operating-System
-# Possibly, Trusty — more modern, so by default:
+# Trusty — more modern:
 # https://docs.travis-ci.com/user/reference/trusty/#Image-differences-from-Precise
+# https://docs.travis-ci.com/user/reference/overview/#Virtualisation-Environment-vs-Operating-System
 # https://blog.travis-ci.com/2017-08-31-trusty-as-default-status
 
 # Needs for correct APT addon usage:
@@ -64,7 +63,7 @@ env:
       iIUEWZhNleS6lCjGIapFdso23hwzKILzCx+tO9KGAenhTGbarq+Fyqfa/
       TmzyHNAk1KwZGgaOrGgCLNPZx3aT7bibx+6JI="
   # [INFO] Equivalent: API_KEY_APPVEYOR = my real key:
-  # https://kristinita.ru/Pages/About-for-developers#AppVeyor
+  # https://kristinita.github.io/Pages/About-for-developers#AppVeyor
   - secure: >
       "qE2c+aZb9QGtPF9VG6WhAP2iT0mTDAnmueEiqWUctgalhAFAJ4wdSqvHNNv+F2178wE92WcpT3/
       chmJltlBj1Qqx6vWevJR2ff1uNbQnwGHYBw+1c8JOvx7mUvisp/nzU1eIpU50/
@@ -77,6 +76,16 @@ env:
       CksWBqUi3QMQYkSMT5Xkv5YcTeWqQe6W4U2hVg7+Tl1jesn2WP6nM6j
       +I2W5fJwYWIKB7U0hP6WR0jkrHDvMNfWgaB8VZCxYoVUFvCMf5IBnXgRGkYjJn9KkQv3pfODC5aUdep2mCWL+cYiHBukRncS66bs/
       EAE="
+  # [INFO] Equivalent: API_KEY_PAGESPEED_INSIGHTS_V5 = my real key
+  - secure: >
+      "u4bZ1LyhoUDKvng6cwQRlrKzR0EgFpnHSk0+zVH8entxT2tP8Ltir7IDrhY+v2+a7EXn3c/
+      61ukV3QpF3qCBA9zBk7awfG4cW6DIVE1ZyQPFcVeT/LGqD5kAzHOM3m06k2HD0LS97FxQF9b5de1Edx6vAwtdLBILneXtGpMwENCKYT/
+      FHkMLdRywIUSPAoQSuJRxX1OTxN7n5DA4nQ6YqOi4kZs2sWfFe3nGlIYjHtbJEnh11OBuwY5j2V8AoT/
+      DBpsXOJAtXI+aQ0rRYIdZvcchHjiV8bp3jNgbpWAeWKqwfgU8fCMx16poizGzqzlw4n4uCFuc7Rv5TSbkwDYy5eR/
+      vlBe+5XnbGCQcyefkpQabSYOXCNVeABGUc32snN8XdSq69m+lyO5+uSi7/
+      gLHg+7yEcR8nA3g+ZC2cFWLA92HTqM7tMhAbNjQ+V9rqJLqAHYQtaItFiCXveoe6p3f628RU/
+      lmIISg0P2VtPLZIw4sCSJ9ts3dnOtADkYDiruXF1laoKmw4+73TpbNsvxNTYitSnWFsAOKoZqzCX3+t5v+swkb7gc7i+pXKDwuLaF6pF1lemV/
+      3bpq7yay5d6KmMIPpDwW+rBNLhCbzxPLpGdG40xd9Gs+w6iRoRXIlChh6PuGohDAPcA/oMofXtHic3hx5ViAPDcxsoB5pjc8CM="
 
 # Needs “language: bash” for multilanguage projects:
 # https://github.com/travis-ci/travis-ci/issues/4895
@@ -123,10 +132,10 @@ matrix:
     - MATRIX_DEPLOY=1
 
 # Sections:
-# https://docs.travis-ci.com/user/customizing-the-build/#The-Build-Lifecycle
+# https://docs.travis-ci.com/user/job-lifecycle
 # https://stackoverflow.com/a/34384262/5951529
 # Exit codes:
-# https://docs.travis-ci.com/user/customizing-the-build/#Breaking-the-Build
+# https://docs.travis-ci.com/user/job-lifecycle#breaking-the-build
 
 # Addons:
 # https://docs.travis-ci.com/user/addons/
@@ -255,3 +264,18 @@ deploy:
   # https://github.com/travis-ci/travis-ci/issues/9325
   project-name: Поиск Кристиниты
   verbose: true
+
+# [INFO] Run command after site deployment.
+# [NOTE] exit_codes doesn't work for after_deploy:
+# https://docs.travis-ci.com/user/job-lifecycle#breaking-the-build
+# https://github.com/travis-ci/travis-ci/issues/1574
+# travis_terminate needs:
+# https://github.com/travis-ci/travis-ci/issues/1574#issuecomment-451787844
+# https://travis-ci.org/Kristinita/SashaTravis/builds/502952826
+# https://travis-ci.org/Kristinita/SashaTravis/builds/502951558
+# https://github.com/travis-ci/docs-travis-ci-com/issues/1899
+# http://bit.ly/2UkR2y9
+after_deploy: >
+  if ! grunt afterdeploy
+    then travis_terminate 1
+  fi

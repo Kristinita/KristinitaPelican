@@ -32,6 +32,9 @@ module.exports = (grunt) ->
 		# https://stackoverflow.com/a/14089064/5951529
 		# https://gruntjs.com/creating-tasks#cli-options-environment
 		api_key_appveyor: process.env.API_KEY_APPVEYOR
+		# [INFO] Google developers API keys:
+		# https://developers.google.com/apis-explorer/#p/pagespeedonline/v5/
+		api_key_pagespeed_insights_v5: process.env.API_KEY_PAGESPEED_INSIGHTS_V5
 		# [FIXME][NOTE] Not possible get user environment variables from browser:
 		# https://stackoverflow.com/q/21315708/5951529
 		api_key_wildfire_firebase: "<%= templates.yamlconfig.api_key_wildfire_firebase %>"

@@ -57,8 +57,6 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	=============================-->
 
 	<!-- Sasha icon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="{{SITEURL}}/favicon-32x32.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="{{SITEURL}}/favicon-16x16.png"/>
     <link rel="shortcut icon" href="{{SITEURL}}/favicon.ico"/>
 	<!-- Atom feed -->
 	{% block base_atom_feed %}{% endblock %}
@@ -85,13 +83,15 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	https://bogdandragomir.com/blog/2016/12/add-target-_blank-attribute-external-anchors-page-javascript-jquery-one-single-line/ #}
 	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/target-blank/target-blank.min.js" defer></script>
 	<!-- Gemini -->
-	<script src="https://cdn.jsdelivr.net/npm/gemini-scrollbar/index.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/gemini-scrollbar/index.min.js" defer></script>
 	<!-- No smooth scrolling, if JQuery Lazy:
 	https://github.com/eisbehr-/jquery.lazy/issues/98#issuecomment-376064894 -->
 	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Gemini/GeminiAndJQueryLazy.min.js" defer></script>
 	<!-- JQuery Lazy -->
 	<script src="https://cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.min.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.plugins.min.js" defer></script>
+	{# Fonts #}
+	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/font-display/font-display.min.js" async></script>
 	{# Browser-Update #}
 	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Browser-Update/browser-update.min.js" defer></script>
 	<!-- typo-reporter -->
@@ -153,13 +153,10 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	https://python-markdown.github.io/extensions/admonition/
 	https://squidfunk.github.io/mkdocs-material/extensions/admonition/ -->
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Admonition/admonition.min.css">
-	<!-- Material icons font for icons -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	{# Progressbar #}
 	{% block base_progressbar %}{% endblock %}
 	<!-- Custom CSS -->
 	{% block base_customcss %}{% endblock %}
-	{% include 'includes/fonts.html' %}
 </head>
 
 <body>

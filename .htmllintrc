@@ -2,6 +2,6 @@
 	"attr-bans": ["align", "background", "bgcolor", "border", "frameborder", "longdesc", "marginwidth", "marginheight", "scrolling", "width"],
 	"id-class-style": false,
 	"indent-style": "tabs",
-	"indent-width": false,
+	"raw-ignore-regex": "/(\\<script\\>.*\\<\/script\\>|\\<style\\>.*\\<\/style\\>)/",
 	"tag-bans": ["b", "i"]
 }

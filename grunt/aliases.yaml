@@ -20,7 +20,7 @@ default:
 # [INFO] Minimal set of tasks, that site works; for development
 minimal:
 - 'concurrent:tarb1'
-- 'concurrent:tarp7'
+- 'string-replace'
 
 # [INFO] Make site screenshots
 screenshots:
@@ -42,6 +42,7 @@ publish:
 - 'concurrent:tarp9'
 - 'concurrent:tarp10'
 - 'concurrent:tarp11'
+- 'concurrent:tarp12'
 
 # [INFO] Publish without updating
 onlypublish:
@@ -56,6 +57,7 @@ onlypublish:
 - 'concurrent:tarp9'
 - 'concurrent:tarp10'
 - 'concurrent:tarp11'
+- 'concurrent:tarp12'
 
 # [INFO] Add, commit and push to GitHub
 git:
@@ -96,3 +98,7 @@ travis:
 notappveyor:
 - 'concurrent:tarna1'
 - 'concurrent:tarna2'
+
+# [INFO] For deployed site
+afterdeploy:
+- 'concurrent:tarad1'

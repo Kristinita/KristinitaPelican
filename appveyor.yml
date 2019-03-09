@@ -86,8 +86,12 @@ environment:
   # https://ci.appveyor.com/api-keys
   API_KEY_APPVEYOR:
     # [INFO] Secure variables:
+    # Encrypt in remote AppVeyor site, not locally:
     # https://www.appveyor.com/docs/build-configuration/#secure-variables
     secure: +tAYCLWvKpNefBmIFHBZzSdFnN8mu71hBU1MqYbrjlY=
+  # API key for PageSpeed Insights:
+  API_KEY_PAGESPEED_INSIGHTS_V5:
+    secure: 0xjbRl5LLYt8QPnzOLNdYFmFMT6j97EnU8Jj97BmRRW9FLebRfeUMrqOulXa3gDi
 
 # Build configuration:
 # https://www.appveyor.com/docs/build-configuration/#build-pipeline
@@ -127,4 +131,6 @@ for:
     - configuration: Release
   environment:
     GRUNT_BUILD: publish
-    GRUNT_TEST: validate remote
+    # [NOTE] Travis CI build run parallel and end before AppVeyor,
+    # so “afterdeploy” will run after site deployment.
+    GRUNT_TEST: validate remote afterdeploy
