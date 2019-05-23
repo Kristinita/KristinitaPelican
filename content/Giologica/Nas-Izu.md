@@ -1,5 +1,7 @@
 Title: Нас Изу
 Author: Sasha Chernykh
+Date: 2017-03-15 14:39:14
+Modified: 2019-05-23 12:23:04
 Lang: ru
 Pagetitle: Нас Изу
 Summary: Акронимы для прерывания или окончания дискуссии

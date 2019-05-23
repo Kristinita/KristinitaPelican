@@ -45,17 +45,17 @@ module.exports =
 	themecompile:
 		files: [
 			expand: true
-			cwd: "<%= templates.paths.output_path %>/<%= templates.paths.theme_static_dir %>/stylus/"
+			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/"
 			src: '**/*.styl'
-			dest: "<%= templates.paths.output_path %>/<%= templates.paths.theme_static_dir %>/css/"
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css/"
 			ext: '.css'
 			]
 	personalcompile:
 		files: [
 			expand: true
-			cwd: "<%= templates.paths.output_path %>/stylus"
+			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/stylus"
 			src: '**/**/*.styl'
-			dest: "<%= templates.paths.output_path %>/css"
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/css"
 			# [LEARN][GRUNT] Extensions in filepaths:
 			# https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
 			ext: '.css'

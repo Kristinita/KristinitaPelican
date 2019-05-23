@@ -1,0 +1,27 @@
+#######
+# dev #
+#######
+# Settings, specific for development, not production version
+
+# [INFO] Not delete output directory
+# 1. Save time
+# 2. No problems with “Permission denied”
+DELETE_OUTPUT_DIRECTORY: false
+
+# [INFO] Relative paths for development.
+# [INFO] No page speed difference, absolute or relative path use:
+# https://webmasters.stackexchange.com/a/96963/71131
+SITEURL: "."
+
+# Relative URLs for developing
+# [INFO] Absolute vs relative URL's doesn't matter for SEO:
+# https://www.seroundtable.com/google-absolute-vs-relative-urls-26001.html
+RELATIVE_URLS: true
+
+# [INFO] Cache settings
+# http://docs.getpelican.com/en/latest/settings.html?highlight=cache
+# [NOTE] If experiments with Pelican settings, use --ignore-cache option
+# http://docs.getpelican.com/en/latest/settings.html#settings
+# [INFO] For more speed
+CACHE_CONTENT: true
+LOAD_CONTENT_CACHE: true

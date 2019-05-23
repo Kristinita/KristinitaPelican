@@ -1,7 +1,7 @@
 Title: АльFAQ
 Version: 0.1.1
-Modified: 2019-03-01 17:47:37
 Date: 2018-12-17 16:51:59
+Modified: 2019-05-23 12:03:32
 Author: Sasha Chernykh
 Lang: ru
 Summary: Ответы на надоевшие повторяющиеся фразы Alfy

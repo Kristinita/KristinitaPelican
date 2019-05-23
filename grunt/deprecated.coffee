@@ -222,7 +222,7 @@
 # # https://github.com/shama/grunt-gulp/issues/13
 # module.exports =
 # 	gulptidy:
-# 		gulp.src('<%= templates.paths.html %>', base: ".")
+# 		gulp.src('<%= templates.paths.html_all %>', base: ".")
 # 		.pipe(htmltidy(
 # 			doctype: 'html5'
 # 			indent: true
@@ -257,7 +257,7 @@
 # 		debug: true
 # 	files:
 # 		[
-# 			"<%= templates.paths.html %>"
+# 			"<%= templates.paths.html_all %>"
 # 		]
 
 
@@ -294,7 +294,7 @@
 # 		files: [
 # 			expand: true
 # 			cwd: "."
-# 			src: ["<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/css/aside/*.css"]
+# 			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css/aside/*.css"]
 # 			dest: "."
 # 		]
 
@@ -339,9 +339,9 @@
 # 	build:
 # 		files: [
 # 			expand: true
-# 			cwd: "<%= templates.paths.output_path %>"
+# 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>"
 # 			src: ['**/*.html']
-# 			dest: "<%= templates.paths.output_path %>"
+# 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>"
 # 			]
 
 
@@ -361,10 +361,10 @@
 # 		tab: '\t'
 # 	theme:
 # 		files:
-# 			src: ["<%= templates.yamlconfig.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/coffee/**/*.coffee"]
+# 			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/coffee/**/*.coffee"]
 # 	personal:
 # 		files:
-# 			src: ["<%= templates.paths.output_path %>/coffee/**/*.coffee"]
+# 			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/coffee/**/*.coffee"]
 
 
 # [DEPRECATED] I migrate to HTML-minifier, arguments:
@@ -393,7 +393,7 @@
 # 		files: [
 # 			expand: true
 # 			cwd: "."
-# 			src: ["<%= templates.paths.output_path %>/**/*.html"]
+# 			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.html"]
 # 			dest: "."
 # 			]
 
@@ -430,10 +430,10 @@
 # 	task:
 # 		files: [
 # 			expand: true
-# 			cwd: "<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/css"
+# 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css"
 # 			src: ['!**/**/*.css'
 # 					'**/**/*.min.css']
-# 			dest: "<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/css"
+# 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css"
 # 			ext: '.min.css'
 # 			]
 
@@ -448,8 +448,70 @@
 # 		uncssrc: ".uncssrc"
 # 	sublimetexttarget:
 # 		src: [
-# 				"<%= templates.paths.output_path %>/Sublime-Text/*.html"
-# 				"<%= templates.paths.output_path %>/Programs/*.html"
+# 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Sublime-Text/*.html"
+# 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/*.html"
 # 				]
-# 		css: ["<%= templates.paths.output_path %>/theme/css/sections/programs.css"]
-# 		dest: "<%= templates.paths.output_path %>/theme/css/sections/programs.css"
+# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/programs.css"]
+# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/programs.css"
+
+
+# [DEPRECATED]
+# Virtual environment and Pipenv doesn't support:
+# https://github.com/btholt/grunt-flake8/issues/1
+# [WARNING] All linting passed, if flake8 no installed:
+# https://github.com/btholt/grunt-flake8/issues/3#issuecomment-473383610
+# ##########
+# # flake8 #
+# ##########
+# module.exports =
+# 	dist:
+# 		src: ["*.py"
+# 				"personal-plugins/**/*.py"]
+
+
+# [DEPRECATED]
+# Google Fonts support “font-display: swap” from May 2019:
+# https://www.zachleat.com/web/google-fonts-display/
+# ###
+# Load Google Fonts
+
+# [NOTE] Script required, because Google Fonts doesn't support “font-display”:
+# https://css-tricks.com/google-fonts-and-font-display/
+# https://github.com/google/fonts/issues/358
+
+# [INFO] “font-display: swap”, that:
+# 1. Default font will show to site visitors before Google font
+# 2. Fix “Ensure text remains visible during webfont load” of PageSpeed Insights
+# https://web.dev/fast/avoid-invisible-text
+# https://developers.google.com/web/updates/2016/02/font-display
+# [INFO] If “font-display: swap”, sit visitor see text without any delay:
+# https://font-display.glitch.me/
+
+# [LEARN][COFFEESCRIPT] For converting EcmaScript 6 to CoffeeScript:
+# 1. Convert EcmaScript 6 to JavaScript. Online converter — https://babeljs.io/en/repl .
+# 2. Convert JavaScript to CoffeeScript via js2coffee.
+# https://github.com/js2coffee/js2coffee/issues/449#issuecomment-470128539
+# ###
+# loadFont = (url) ->
+# 	# [LEARN][COFFEESCRIPT] Wrap constructor to parens (parentheses, round brackets),
+# 	# if CoffeeLint warnings:
+# 	# https://github.com/clutchski/coffeelint/blob/master/src/rules/non_empty_constructor_needs_parens.coffee
+# 	# https://github.com/clutchski/coffeelint/blob/master/src/rules/empty_constructor_needs_parens.coffee
+# 	xhr = new (XMLHttpRequest)
+# 	xhr.open 'GET', url, true
+
+# 	xhr.onreadystatechange = ->
+# 		if xhr.readyState is 4 and xhr.status is 200
+# 			css = xhr.responseText
+# 			css = css.replace(/}/g, 'font-display: swap; }')
+# 			head = document.getElementsByTagName('head')[0]
+# 			style = document.createElement('style')
+# 			style.appendChild document.createTextNode(css)
+# 			head.appendChild style
+# 		return
+
+# 	xhr.send()
+# 	return
+
+# loadFont 'https://fonts.googleapis.com/css?family=Play:700\
+# |El+Messiri|Scada:700i|Fira+Mono|Marck+Script&amp;subset=cyrillic&display=swap'

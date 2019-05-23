@@ -22,9 +22,9 @@ module.exports =
 		files: [
 			expand: true
 			cwd: '.'
-			src: ["<%= templates.paths.output_path %>/images/**/*.{png,jpg,jpeg,gif,svg}",
-				  "<%= templates.paths.output_path %>/<%= templates.paths.theme_static_dir %>\
-				  /images/**/*.{png,jpg,jpeg,gif,svg}"]
+			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/images/**/*.{png,jpg,jpeg,gif,svg}",
+					"<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>\
+					/images/**/*.{png,jpg,jpeg,gif,svg}"]
 			dest: '.'
 			]
 	webp:
@@ -43,7 +43,7 @@ module.exports =
 		files: [
 			expand: true
 			cwd: '.'
-			src: ["<%= templates.paths.output_path %>/<%= templates.paths.theme_static_dir %>\
+			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>\
 					/images/**/*.webp"]
 			dest: '.'
 			]

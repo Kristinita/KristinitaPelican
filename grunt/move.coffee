@@ -21,10 +21,10 @@ module.exports =
 			# If you don't set “expand:true”, cwd will not work properly.
 			# https://stackoverflow.com/questions/18966485#comment38703354_23670172
 			expand: true
-			cwd: "<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/css"
+			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css"
 			src: ['**/**/*.css'
 					'!**/**/*.min.css']
-			dest: "<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/css"
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css"
 			# Extensions in filepaths:
 			# https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
 			ext: '.min.css'
@@ -32,30 +32,30 @@ module.exports =
 	csspersonal:
 		files: [
 			expand: true
-			cwd: "<%= templates.paths.output_path %>/css/personal"
+			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/css/personal"
 			src: ['**/**/*.css'
 					'!**/**/*.min.css']
-			dest: "<%= templates.paths.output_path %>/css/personal"
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/css/personal"
 			ext: '.min.css'
 		]
 	jstheme:
 		files: [
 			expand: true
-			cwd: "<%= templates.paths.output_path %>/js/personal"
+			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/js/personal"
 			# “!” symbol — exclude paths:
 			# https://stackoverflow.com/a/28277841/5951529
 			src: ['**/**/*.js'
 					'!**/**/*.min.js']
-			dest: "<%= templates.paths.output_path %>/js/personal"
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/js/personal"
 			ext: '.min.js'
 		]
 	jspersonal:
 		files: [
 			expand: true
-			cwd: "<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/js"
+			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/js"
 			src: ['**/**/*.js'
 					'!**/**/*.min.js']
-			dest: "<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/js"
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/js"
 			ext: '.min.js'
 		]
 	##############
@@ -69,7 +69,7 @@ module.exports =
 		]
 		# [NOTE] Use “licenses/”, not “licenses”, otherwise a file “licenses” will create
 		# [NOTE] grunt-move create a needest folder, if no
-		dest: "<%= templates.paths.output_path %>/licenses/"
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/licenses/"
 	# Move license for output repository.
 	# [NOTE] grunt-move support different file names:
 	# “LICENSE” → “LICENSE.md”.
@@ -78,4 +78,4 @@ module.exports =
 	# 2. root folder already have “LICENSE.md” file for sources.
 	outputlicense:
 		src: "LICENSE"
-		dest: "<%= templates.paths.output_path %>/LICENSE.md"
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/LICENSE.md"

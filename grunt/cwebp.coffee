@@ -14,7 +14,7 @@ module.exports =
 		files: [
 			expand: true
 			cwd: '.'
-			src: ["<%= templates.paths.output_path %>/<%= templates.paths.theme_static_dir %>\
-					/images/**/*.{png,jpg,jpeg}", "<%= templates.paths.output_path %>/images/**/*.{png,jpg,jpeg}"]
+			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>\
+					/images/**/*.{png,jpg,jpeg}", "<%= templates.yamlconfig.OUTPUT_PATH %>/images/**/*.{png,jpg,jpeg}"]
 			dest: '.'
 			]

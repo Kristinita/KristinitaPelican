@@ -11,6 +11,9 @@ module.exports =
 	# and Wildfire scripts — https://cdn.jsdelivr.net/npm/wildfire/dist/wildfire.auto.js — already minified
 	# Visualize:
 	# https://github.com/kellyk/visualize/pull/1
+	# [NOTE] Use GitHub Raw, not GitCDN or another GitHub CDN,
+	# because CDN — additional resource, that may not work:
+	# https://github.com/schme16/gitcdn.xyz/issues/49#issuecomment-493354294
 	visualize:
-		src: "https://gitcdn.xyz/repo/kellyk/visualize/master/visualize.js"
-		dest: "<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/js/Visualize/visualize.js"
+		src: "https://raw.githubusercontent.com/kellyk/visualize/master/visualize.js"
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/js/Visualize/visualize.js"

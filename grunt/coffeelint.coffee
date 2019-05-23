@@ -39,7 +39,7 @@ module.exports =
 			src: ["grunt/*.coffee"]
 	theme:
 		files:
-			src: ["<%= templates.yamlconfig.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/coffee/**/*.coffee"]
+			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/coffee/**/*.coffee"]
 	personal:
 		files:
-			src: ["<%= templates.paths.output_path %>/coffee/**/*.coffee"]
+			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/coffee/**/*.coffee"]

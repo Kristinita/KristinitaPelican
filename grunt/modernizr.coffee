@@ -13,7 +13,7 @@ module.exports =
 	dist:
 		# [INFO] Full options list:
 		# https://github.com/modernizr/customizr#config-file
-		dest: "<%= templates.yamlconfig.output_path %>/<%= templates.yamlconfig.theme_static_dir %>\
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>\
 				/js/Modernizr/modernizr-custom.min.js"
 		# Doesn't crawl project
 		crawl: false

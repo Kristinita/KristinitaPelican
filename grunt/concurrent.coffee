@@ -40,7 +40,8 @@ module.exports =
 	# [FIXME] grunt-newer doesn't work with purifycss:
 	# Warning: Cannot read property 'forEach' of undefined Use --force to continue.
 	# https://github.com/purifycss/grunt-purifycss/issues/26
-	tarb4: ['newer:string-replace'
+	tarb4: ['curl'
+			'newer:string-replace'
 			'newer:move:jstheme'
 			'newer:move:jspersonal'
 			'purifycss']
@@ -76,7 +77,9 @@ module.exports =
 	# Don't use “newer” for “move”! Files from “root-html” doesn't move.
 	# Don't use “newer” with “realFavicon”! “index.html” will not changed!
 	tarp3: ['license_finder'
-			'realFavicon'
+			# [FIXME] realFavicon doesn't work after upgrade to Node.js 12:
+			# https://github.com/RealFaviconGenerator/grunt-real-favicon/issues/46
+			# 'realFavicon'
 			'humans_txt'
 			'robotstxt'
 			'shell:licensegenerator'
@@ -125,13 +128,14 @@ module.exports =
 	###
 	For validating output, “target validate”.
 
+	[DONE]
 	[FIXME] “html-nu” temporary disabled, because footnotes obsolete syntax:
 	https://github.com/Python-Markdown/markdown/issues/768
 	https://travis-ci.org/Kristinita/KristinitaPelican/jobs/471091236#L1220
 	###
 	tarv1: ['coffeelint:personal'
 			'coffeelint:theme'
-			# 'html-nu'
+			'html-nu'
 			'path_validator'
 			'postcss'
 			'shell:tidyvalidate'

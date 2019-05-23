@@ -1,6 +1,8 @@
 Title: PaletteMira
 Version: 0.0.1
 Author: Sasha Chernykh
+Date: 2018-04-04 16:33:14
+Modified: 2019-05-23 14:42:05
 Lang: en
 Summary: Add to command palette commands from external Sublime Text packages
 Pagetitle: PaletteMira

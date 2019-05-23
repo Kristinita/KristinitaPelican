@@ -1,0 +1,154 @@
+###################
+# Pelican plugins #
+###################
+# Pelican plugins configuration:
+# https://github.com/getpelican/pelican-plugins
+
+# [BUG] Automatic plugins installation doesn't work;
+# pelican-plugin-installer is deprecated:
+# https://github.com/kplaube/pelican-plugin-installer/issues/6
+
+PLUGINS:
+
+# [BUG] Not all links display correct:
+# https://github.com/silentlamb/pelican-deadlinks/issues/4
+# https://github.com/silentlamb/pelican-deadlinks/
+# 'deadlinks'
+
+# [DEPRECATED], now by default
+# https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
+# 'feed_summary'
+
+# [DEPRECATED]
+# Post last push data, if CI deploy:
+# https://github.com/travis-ci/dpl/issues/813
+# https://github.com/getpelican/pelican/issues/2497
+# [FIXME] Temporary solution — add “Date” and “Modified” manually
+# Add “date” and “modified” varables from Git:
+# If plugin exist: you don't need add “Date:” and “Modified:” variables for
+# your each article:
+# https://github.com/getpelican/pelican-plugins/tree/master/filetime_from_git
+# - filetime_from_git
+
+# Links to queries for specific sites:
+# https://github.com/getpelican/pelican-plugins/tree/master/interlinks
+- interlinks
+
+# [WARNING] Doesn't work with “article” or “page” templates; not needed;
+# https://github.com/getpelican/pelican-plugins/issues/983
+# 'jinja2content'
+
+# [BUG] json_feed doesn't work:
+# https://github.com/andrewheiss/pelican_json_feed/issues/6
+# 'json_feed'
+
+# Simple tables:
+# https://github.com/burakkose/just_table
+- just_table
+
+# [NOTE] Plugin works, but I don't use it:
+# Add videos/images from popular sites:
+# For Instagram images, without another frames data:
+# https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags
+# - liquid_tags.gram
+
+# [BUG] Template doesn't work:
+# https://github.com/e9t/pelican-loadcsv/issues/1
+# 'loadcsv'
+
+# Previous/next links for articles:
+# https://github.com/getpelican/pelican-plugins/tree/master/neighbors
+- neighbors
+
+# Add open_graph to HTML:
+# https://github.com/whiskyechobravo/pelican-open_graph
+- open_graph
+
+# [FIXME] Different colors for different designs
+# 'pelican-linkclass'
+
+# [NOTE] Anchors not support, but all my internal links with anchors; not needed
+# https://github.com/getpelican/pelican-plugins/issues/1025
+# 'permalinks'
+
+# [NOTE] Not possible place gallery to any place of article; not needed
+# https://github.com/getpelican/pelican-plugins/issues/983
+# 'photos'
+
+# [WARNING] Disable, because:
+# 1. Plugin create duplicates of files
+# 2. Incorrect paths — http://bit.ly/2pZdyk0
+# 'pelican_javascript'
+
+# Save folders architecture:
+# https://ru.stackoverflow.com/a/619397/199934
+- putsashi
+
+# [BUG] Incorrect Cyrillic URL's:
+# https://github.com/getpelican/pelican-plugins/issues/1010
+# 'random_article'
+
+# Add section numbers to headers:
+# https://github.com/getpelican/pelican-plugins/tree/master/section_number
+- section_number
+
+# Generate sitemap:
+# https://github.com/getpelican/pelican-plugins/tree/master/sitemap
+- sitemap
+
+
+#############
+# deadlinks #
+#############
+# DEADLINK_VALIDATION: true
+# DEADLINK_OPTS:
+#     # [INFO] Replace dead link to Internet Archive link
+#     archive: true
+#     classes:
+#     - SashaDeadlink
+#     # Disable «403» or «404» text after link in generated HTML
+#     labels: false
+
+#####################
+# filetime_from_git #
+#####################
+# https://github.com/getpelican/pelican-plugins/tree/master/filetime_from_git#other-options
+GIT_HISTORY_FOLLOWS_RENAME: true
+# GIT_GENERATE_PERMALINK = True
+GIT_SHA_METADATA: true
+GIT_FILETIME_FROM_GIT: true
+
+##############
+# Interlinks #
+##############
+INTERLINKS:
+    kristinita: https://kristinita.github.io/#gsc.tab=0&gsc.q=
+
+##############
+# just_table #
+##############
+# [WARNING] Unwanted <p> tag:
+# https://github.com/burakkose/just_table/issues/5
+# HTML Tidy fix it
+# [NOTE] Quotes required:
+JTABLE_SEPARATOR: "|"
+
+##################
+# section_number #
+##################
+SECTION_NUMBER_MAX: 5
+
+###########
+# sitemap #
+###########
+SITEMAP:
+  format: xml
+  priorities:
+    articles: 1
+    # [INFO] Zero not required
+    indexes: .5
+    pages: .5
+  changefreqs:
+    articles: always
+    indexes: weekly
+    pages: always

@@ -1,67 +1,48 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2019-02-22 10:36:54
+# @Last Modified time: 2019-03-12 15:25:08
 """Pelican configuration file.
 
 For development. publishconf.py — for publishing.
 """
-import os
 import sys
-# Parse YAML configuration file:
-# https://stackoverflow.com/q/41974628/5951529
-# Require PyYAML module:
-# http://pyyaml.org/wiki/PyYAML
-import yaml
 
-# Import custom settings:
-# https://stackoverflow.com/a/44891159/5951529
-CONFIG_DIR = "pelican-config"
+from datetime import date
 
-sys.path.append(os.path.abspath(CONFIG_DIR))
+# [INFO] Enable import from current working directory.
+# [NOTE] Doesn't need “os” module:
+# https://github.com/getpelican/pelican-blog/blob/master/publishconf.py
+# [WARNING] I can't find better solution for it:
+# https://stackoverflow.com/a/28154841/5951529
+sys.path.append(".")
 
-from generation import *  # noqa
-from markdown_plugins_settings import *  # noqa
-from other import *  # noqa
-from paths import *  # noqa
-from pelican_plugins_settings import *  # noqa
+# [LEARN][PYTHON] Use IPython %load and %whos, that view variables of current file:
+# https://ipython.readthedocs.io/en/stable/interactive/magics.html#built-in-magic-commands
+# https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-loadpy
+# https://stackoverflow.com/a/21034906/5951529
+# https://stackoverflow.com/a/634581/5951529
 
-# ****************************************************************************
-# *                                 Relative                                 *
-# ****************************************************************************
 
-# Relative settings, that user can change
-# Configuration from YAML files.
-# [BUG] Needs add encoding for AppVeyor:
-# https://stackoverflow.com/a/16347110/5951529
-# https://github.com/appveyor/ci/issues/2129
-# https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/jhtr2opsnckg214g
-YAMLCONFIG = yaml.load(open('pelicanvariables.yaml', encoding='utf-8'))
+# [INFO] Disable flake8 errors:
+# https://stackoverflow.com/a/38338146/5951529
+# [NOTE] “noqa”, not “NOQA” works for Anaconda:
+# https://stackoverflow.com/a/46759770/5951529
+# [INFO] Disable pylint errors:
+# https://stackoverflow.com/a/48836605/5951529
 
-PATH = YAMLCONFIG['content_path']
-OUTPUT_PATH = YAMLCONFIG['output_path']
-THEME = YAMLCONFIG['theme']
-THEME_STATIC_DIR = YAMLCONFIG['theme_static_dir']
-THEME_STATIC_PATHS = YAMLCONFIG['theme_static_paths']
-PLUGIN_PATHS = YAMLCONFIG['plugin_paths']
+# pylint: disable=wrong-import-position
 
-AUTHOR = YAMLCONFIG['author']
-SITENAME = YAMLCONFIG['sitename']
-TIMEZONE = YAMLCONFIG['timezone']
-DEFAULT_LANG = YAMLCONFIG['default_lang']
-CACHE_PATH = YAMLCONFIG['cache_path']
+from pelican_settings_loader import DEV_SETTINGS  # noqa: E402
+from pelican_settings_loader import kira_load_settings  # noqa: E402
 
-# Path for pages
-# [Hack] That exclude articles, include non-exicting folder.
-# «ARTICLE_PATHS = None» — critical error, integer parameter
-PAGE_PATHS = YAMLCONFIG['page_paths']
-# Path for articles
-# Don't set “PAGE_PATHS = ['']”! See
-# https://github.com/getpelican/pelican/issues/2123
-ARTICLE_PATHS = YAMLCONFIG['article_paths']
+# pylint: enable=wrong-import-position
 
-GITHUB_SOURCES_URL = YAMLCONFIG['github_sources_url']
-GITHUB_OUTPUT_URL = YAMLCONFIG['github_output_url']
+# [INFO] Insert current year to templates:
+# https://bernhard.scheirle.de/posts/2016/February/29/how-to-keep-your-copyright-year-up-to-date-using-jinja-filters/
+CURRENTYEAR = date.today().year
 
-PELICAN_COMMENT_SYSTEM = True
-PELICAN_COMMENT_SYSTEM_IDENTICON_DATA = ('author',)
+# [INFO] Convert Python dictionary to variables.
+# [NOTE] “locals()” and “globals” is a bad idea:
+# https://stackoverflow.com/a/36059129/5951529
+globals().update(kira_load_settings(DEV_SETTINGS))

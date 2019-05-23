@@ -1,6 +1,8 @@
 Title: Fastest way to add new version of your Sublime Text package
 Version: 0.3.0
 Author: Sasha Chernykh
+Date: 2018-01-23 10:43:14
+Modified: 2019-05-23 12:27:43
 Lang: en
 Summary: Tutorial, how you can make release and changelog, use only one command <br><br> ![Package Control messages](https://i.imgur.com/J5AuHmX.png) <br><br> ![*CHANGELOG.md* and *messages.json*](https://i.imgur.com/12fFJsX.png) <br><br> ![*messages/&lt;version&gt;.txt* and *package.json*](https://i.imgur.com/kkKjiv5.png) <br><br> ![Releases page](https://i.imgur.com/FwPHBZS.png)
 Pagetitle: Fastest way to add new version of your Sublime Text package

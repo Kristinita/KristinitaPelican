@@ -1,6 +1,8 @@
 Title: For developers
 Version: 0.0.3
 Author: Sasha Chernykh
+Date: 2018-03-27 7:55:14
+Modified: 2019-05-23 14:36:53
 Lang: en
 Summary: Information for developers about Kristinita's Search
 Pagetitle: For developers
@@ -367,6 +369,7 @@ all files|[EditorConfig](http://editorconfig.org/)|[1](https://github.com/editor
 supported browsers|[Browserslist](https://www.npmjs.com/package/browserslist)|[1](https://github.com/browserslist/browserslist#queries)|[browserslist](https://github.com/Kristinita/KristinitaPelican/blob/master/browserslist)
 browsers console errors|[clean-console](https://www.npmjs.com/package/clean-console)|No errors in browsers console|[clean-console.coffee](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/clean-console.coffee)
 site performance|[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)|[1](https://developers.google.com/web/tools/lighthouse/)|—
+Python|[pylint](https://www.pylint.org)|[1](http://pylint-messages.wikidot.com/)|—
 Python|[Flake8](http://flake8.pycqa.org/en/latest/)|[1](http://flake8.pycqa.org/en/latest/user/configuration.html)|[.flake8](https://github.com/Kristinita/KristinitaPelican/blob/master/.flake8)
 Python|[pydocstyle](http://www.pydocstyle.org/en/latest/usage.html)|[1](http://www.pydocstyle.org/en/latest/usage.html#configuration-files)|—
 Markdown|[Markdownlint](https://www.npmjs.com/package/markdownlint)|[1](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md)|[.markdownlint.yaml](https://github.com/Kristinita/KristinitaPelican/blob/master/.markdownlint.yaml)

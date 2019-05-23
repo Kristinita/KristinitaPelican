@@ -55,41 +55,41 @@ module.exports =
 					".tooltipster-punk-aquamarine .tooltipster-box"
 					]
 	indextarget:
-		src: ["<%= templates.paths.output_path %>/index.html"]
-		css: ["<%= templates.paths.output_path %>/theme/css/sections/kristinita.css"]
-		dest: "<%= templates.paths.output_path %>/theme/css/sections/kristinita.css"
+		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/index.html"]
+		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/kristinita.css"]
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/kristinita.css"
 	sublimetexttarget:
 		src: [
-				"<%= templates.paths.output_path %>/Sublime-Text/*.html"
-				"<%= templates.paths.output_path %>/Programs/*.html"
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/Sublime-Text/*.html"
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/*.html"
 				]
-		css: ["<%= templates.paths.output_path %>/theme/css/sections/programs.css"]
-		dest: "<%= templates.paths.output_path %>/theme/css/sections/programs.css"
+		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/programs.css"]
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/programs.css"
 	gingerinastarget:
-		src: ["<%= templates.paths.output_path %>/Gingerinas/*.html"]
-		css: ["<%= templates.paths.output_path %>/theme/css/sections/gingerinas.css"]
-		dest: "<%= templates.paths.output_path %>/theme/css/sections/gingerinas.css"
+		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/Gingerinas/*.html"]
+		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/gingerinas.css"]
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/gingerinas.css"
 	itarticlestarget:
-		src: ["<%= templates.paths.output_path %>/IT-articles/*.html"]
-		css: ["<%= templates.paths.output_path %>/theme/css/sections/it-articles.css"]
-		dest: "<%= templates.paths.output_path %>/theme/css/sections/it-articles.css"
+		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/IT-articles/*.html"]
+		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/it-articles.css"]
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/it-articles.css"
 	giologicabluetarget:
-		src: ["<%= templates.paths.output_path %>/Giologica/Valerywork-Kiravel.html"]
-		css: ["<%= templates.paths.output_path %>/theme/css/sections/giologica-blue.css"]
-		dest: "<%= templates.paths.output_path %>/theme/css/sections/giologica-blue.css"
+		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/Giologica/Valerywork-Kiravel.html"]
+		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica-blue.css"]
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica-blue.css"
 	giologicatarget:
-		src: ["<%= templates.paths.output_path %>/Giologica/*.html"]
-		css: ["<%= templates.paths.output_path %>/theme/css/sections/giologica.css"]
-		dest: "<%= templates.paths.output_path %>/theme/css/sections/giologica.css"
+		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/Giologica/*.html"]
+		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica.css"]
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica.css"
 	sashablacktarget:
 		# Pages and Sasha Black
 		src: [
-				"<%= templates.paths.output_path %>/Sasha-Black/*.html"
-				"<%= templates.paths.output_path %>/Pages/*.html"
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/Sasha-Black/*.html"
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/Pages/*.html"
 				]
-		css: ["<%= templates.paths.output_path %>/theme/css/sections/sasha-black-description.css"]
-		dest: "<%= templates.paths.output_path %>/theme/css/sections/sasha-black-description.css"
+		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/sasha-black-description.css"]
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/sasha-black-description.css"
 	smertsvobodetarget:
-		src: ["<%= templates.paths.output_path %>/Smert-svobode/*.html"]
-		css: ["<%= templates.paths.output_path %>/theme/css/sections/smert-svobode.css"]
-		dest: "<%= templates.paths.output_path %>/theme/css/sections/smert-svobode.css"
+		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/Smert-svobode/*.html"]
+		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/smert-svobode.css"]
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/smert-svobode.css"

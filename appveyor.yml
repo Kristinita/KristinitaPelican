@@ -15,11 +15,10 @@ platform: x64
 clone_depth: 1
 
 init:
-# [FIXME] Use pathed instead of SET for PATH;
+# [DONE][FIXME] Use pathed instead of SET for PATH;
 # [WARNING] Don't use SETX!
 # You can loss PATH data, if PATH contains more than 1024 symbols:
 # https://superuser.com/a/939256/572069
-# http://www.p-nand-q.com/download/gtools/pathed.html
 # [LEARN] SETX PATH:
 # https://stackoverflow.com/a/26947177/5951529
 # https://superuser.com/a/939256/572069
@@ -30,34 +29,25 @@ init:
 # https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/22144311
 - SETX PIPENV_IGNORE_VIRTUALENVS 1
 - SETX PIPENV_VENV_IN_PROJECT 1
-# [WARNING] Needs, because Python 2 by default at February 2019:
-# https://github.com/ogrisel/python-appveyor-demo/blob/master/appveyor.yml
-# https://www.appveyor.com/docs/windows-images-software/#python
-# https://ci.appveyor.com/project/Kristinita/erichek/build/1.0.3
-- SET PATH=%PATH%;%PYTHON%;%PYTHON%\Scripts
 # [WARNING] Needs AppVeyor console set, see:
 # https://stackoverflow.com/a/48093971/5951529
 - SETX PYTHONIOENCODING utf-8
-# [INFO] Set latest Ruby version at the time:
-# https://www.appveyor.com/docs/lang/ruby/
-# https://www.appveyor.com/docs/build-environment/#ruby
-# https://www.appveyor.com/docs/lang/ruby/#installation
-- SET PATH=%PATH%;C:\Ruby25-x64\bin
-# [INFO] Set LocalAppVeyor Windows path:
-# DotNet user profile is “USERPROFILE” on Windows and “HOME” on Linux:
-# https://github.com/dotnet/cli/issues/7569#issuecomment-329280924
-- SET PATH=%PATH%;%USERPROFILE%\.dotnet\tools
 # [INFO] Remove .NET Core SDK telemetry
 - SETX DOTNET_CLI_TELEMETRY_OPTOUT 1
+# [INFO] Don't install pylint from grunt-pylint
+# https://www.npmjs.com/package/grunt-pylint#getting-started
+- SETX GRUNT_PYLINT_SKIP_POSTINSTALL yes
 # [NOTE] Use “CALL Refreshenv.cmd” for local installation:
 # https://github.com/chocolatey/choco/issues/1461#issuecomment-348136706
 # https://ss64.com/nt/call.html
-# [WARNING] Don't use refreshenv in AppVeyor! You loss your environment variables:
+# [WARNING] Don't use refreshenv in AppVeyor, if you use “SET” instead of “pathed”!
+# You loss your environment variables:
 # https://github.com/appveyor/ci/issues/1755
 # Compare (difference — only refreshenv step):
 # https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/22187235
 # https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/22187272
 # - refreshenv
+# [NOTE] 2 “refreshenv” required, if you use pathed instead of SET.
 
 # [INFO] Configuration
 # https://www.appveyor.com/blog/2018/04/25/specialized-build-matrix-configuration-in-appveyor/

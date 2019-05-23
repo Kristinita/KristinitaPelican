@@ -13,16 +13,16 @@ module.exports =
 	personalcompile:
 		files: [
 			expand: true
-			cwd: "<%= templates.paths.output_path %>/coffee"
+			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/coffee"
 			src: '**/**/*.coffee'
-			dest: "<%= templates.paths.output_path %>/js"
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/js"
 			ext: '.js'
 			]
 	themecompile:
 		files: [
 			expand: true
-			cwd: "<%= templates.yamlconfig.output_path %>/<%= templates.paths.theme_static_dir %>/coffee/"
+			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/coffee/"
 			src: '**/*.coffee'
-			dest: "<%= templates.yamlconfig.output_path %>/<%= templates.paths.theme_static_dir %>/js"
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/js"
 			ext: '.js'
 			]

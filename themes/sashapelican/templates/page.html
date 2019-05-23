@@ -138,7 +138,7 @@ Article metadata variable -->
 <!-- Title image -->
 {% block base_titleimage -%}
 	{%- if page.titleimage -%}
-		<p><img alt="Header image" src="{{SITEURL}}/images/header/{{ page.titleimagename }}.jpg"></p>
+		<p><a class="fancybox" href="{{SITEURL}}/images/header/{{ page.titleimagename }}.jpg"><img class="SashaLazy" src="//images/interface-images/transparent-one-pixel.png" data-src="{{SITEURL}}/images/header/{{ page.titleimagename }}.jpg" alt="Header image"></a></p>
 	{% endif %}
 {%- endblock %}
 

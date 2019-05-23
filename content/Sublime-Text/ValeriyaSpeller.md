@@ -1,6 +1,8 @@
 Title: ValeriyaSpeller
 Version: 0.1.0
 Author: Sasha Chernykh
+Date: 2017-04-03 11:17:14
+Modified: 2019-05-23 14:46:46
 Lang: en
 Summary: yaspeller implementation for Sublime Text <br><br> ![ValeriyaSpeller](https://i.imgur.com/bqRl8eD.png)
 Pagetitle: ValeriyaSpeller

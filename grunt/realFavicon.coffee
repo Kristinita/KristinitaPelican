@@ -5,12 +5,12 @@
 # https://www.npmjs.com/package/grunt-real-favicon
 module.exports =
 	favicons:
-		src: "<%= templates.yamlconfig.theme %>/<%= templates.yamlconfig.theme_static_paths %>\
+		src: "<%= templates.yamlconfig.THEME %>/<%= templates.yamlconfig.THEME_STATIC_PATHS %>\
 				/images/icons/kristinita-favicon.png"
-		dest: "<%= templates.yamlconfig.output_path %>"
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>"
 		options:
-			iconsPath: "<%= templates.site.siteurl %>"
-			html: ["<%= templates.yamlconfig.output_path %>/index.html"]
+			iconsPath: "<%= templates.yamlconfig.SITEURL %>"
+			html: ["<%= templates.yamlconfig.OUTPUT_PATH %>/index.html"]
 			design:
 				ios:
 					pictureAspect: "noChange"

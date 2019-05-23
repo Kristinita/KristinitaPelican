@@ -6,15 +6,15 @@
 module.exports =
 	dev:
 		bsFiles:
-			src: ["<%= templates.yamlconfig.output_path %>/**/**/*.min.css"
-					"<%= templates.yamlconfig.output_path %>/**/*.min.js"]
+			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.min.css"
+					"<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.min.js"]
 		options:
 			# Doesn't open “http://localhost:3001/” tab, when BrowserSync start:
 			# https://browsersync.io/docs/options#option-open
 			open: false
 			port: 3014
 			server:
-				baseDir: "<%= templates.paths.output_path %>"
+				baseDir: "<%= templates.yamlconfig.OUTPUT_PATH %>"
 			###############
 			# Localtunnel #
 			###############
@@ -38,7 +38,7 @@ module.exports =
 				# that HTML page reload in browser and I can to see changes in browser.
 				module: "bs-html-injector"
 				options:
-					files: "<%= templates.paths.output_path %>/**/*.html"
+					files: "<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.html"
 				]
 			# Ingegrate “watch” task:
 			# https://browsersync.io/docs/grunt#grunt-watch

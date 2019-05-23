@@ -13,4 +13,4 @@
 # If folder name contains space, grunt-path-validator show warning.
 module.exports =
 	spaces:
-		src: ["<%= templates.paths.output_path %>/**/* *"]
+		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/* *"]

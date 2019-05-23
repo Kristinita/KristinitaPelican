@@ -36,7 +36,7 @@ module.exports =
 		# [INFO] Template before paths; PageSpeed will check
 		# “url/404.html”, “url/Sasha-Black.html” and so on:
 		# https://www.npmjs.com/package/grunt-pagespeed#url
-		url: "<%= templates.site.siteurl %>/"
+		url: "<%= templates.yamlconfig.SITEURL %>/"
 	prod:
 		options:
 			paths: [

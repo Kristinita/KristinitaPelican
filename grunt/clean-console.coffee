@@ -26,19 +26,19 @@ module.exports =
 			# https://stackoverflow.com/q/54388924/5951529
 			# [BUG] “https” doesn't support, use “http”:
 			# Error code: 6. Description: SSL handshake failed
-			url: ["http://localhost:4147/<%= templates.paths.output_path %>/index.html"
-				  "http://localhost:4147/<%= templates.paths.output_path %>/404.html"
-				  "http://localhost:4147/<%= templates.paths.output_path %>/Sasha-Black.html"
-				  "http://localhost:4147/<%= templates.paths.output_path %>/Gingerinas/\
-				  %D0%94%D0%B6%D0%B8%D0%BD%D0%B4%D0%B6%D0%B5%D1%80%D0%B8%D0%BD%D1%8B.html"
-				  "http://localhost:4147/<%= templates.paths.output_path %>/IT-articles/\
-				  How-to-publish-your-package-to-PyPI-2018.html"
-				  "http://localhost:4147/<%= templates.paths.output_path %>/Pages/About-for-developers.html"
-				  "http://localhost:4147/<%= templates.paths.output_path %>/Programs/KristinitaLuckyLink.html"
-				  "http://localhost:4147/<%= templates.paths.output_path %>/Sasha-Black/Sasha-Black-description.html"
-				  "http://localhost:4147/<%= templates.paths.output_path %>/Smert-svobode/\
-				  %D0%9D%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BD%D0%B5%D0%B4%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5\
-				  -%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5.html"
-				  "http://localhost:4147/<%= templates.paths.output_path %>/Sublime-Text/Sacagawea.html"]
+			url: ["http://localhost:4147/<%= templates.yamlconfig.OUTPUT_PATH %>/index.html"
+					"http://localhost:4147/<%= templates.yamlconfig.OUTPUT_PATH %>/404.html"
+					"http://localhost:4147/<%= templates.yamlconfig.OUTPUT_PATH %>/Sasha-Black.html"
+					"http://localhost:4147/<%= templates.yamlconfig.OUTPUT_PATH %>/Gingerinas/\
+					%D0%94%D0%B6%D0%B8%D0%BD%D0%B4%D0%B6%D0%B5%D1%80%D0%B8%D0%BD%D1%8B.html"
+					"http://localhost:4147/<%= templates.yamlconfig.OUTPUT_PATH %>/IT-articles/\
+					How-to-publish-your-package-to-PyPI-2018.html"
+					"http://localhost:4147/<%= templates.yamlconfig.OUTPUT_PATH %>/Pages/About-for-developers.html"
+					"http://localhost:4147/<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/KristinitaLuckyLink.html"
+					"http://localhost:4147/<%= templates.yamlconfig.OUTPUT_PATH %>/Sasha-Black/Sasha-Black-description.html"
+					"http://localhost:4147/<%= templates.yamlconfig.OUTPUT_PATH %>/Smert-svobode/\
+					%D0%9D%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BD%D0%B5%D0%B4%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5\
+					-%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5.html"
+					"http://localhost:4147/<%= templates.yamlconfig.OUTPUT_PATH %>/Sublime-Text/Sacagawea.html"]
 			# Second to wait any error
 			timeout: 4

@@ -15,10 +15,10 @@ module.exports =
 	nanopersonal:
 		files: [
 			expand: true
-			cwd: "<%= templates.paths.output_path %>/css/personal"
+			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/css/personal"
 			src: ['**/*.css'
 					'!**/*.min.css']
-			dest: "<%= templates.paths.output_path %>/css/personal"
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/css/personal"
 			# Extensions in filepaths:
 			# https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
 			ext: '.min.css'
@@ -26,10 +26,10 @@ module.exports =
 	nanotheme:
 		files: [
 			expand: true
-			cwd: "<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/css"
+			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css"
 			src: ['**/*.css'
 					'!**/*.min.css']
-			dest: "<%= templates.paths.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/css"
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css"
 			# Extensions in filepaths:
 			# https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
 			ext: '.min.css'

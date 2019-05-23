@@ -1,5 +1,7 @@
 Title: Установка портативной версии Pale Moon в качестве браузера по умолчанию в Windows 10
 Author: Sasha Chernykh
+Date: 2017-03-15 0:11:14
+Modified: 2019-05-23 14:34:04
 Lang: ru
 Summary: Description, how to make Pale Moon default browser in Windows
 Pagetitle: Портативный браузер по умолчанию в Windows 10
@@ -18,8 +20,8 @@ Schemaorgtype: HowTo
 <!-- MarkdownTOC -->
 
 1. [Почему портативный браузер?](#Почему-портативный-браузер)
-1. [Почему Pale Moon?](#Почему-pale-moon)
-1. [Установка Pale Moon браузером по умолчанию обычными методами](#Установка-pale-moon-браузером-по-умолчанию-обычными-методами)
+1. [Почему Pale Moon?](#Почему-Pale-Moon)
+1. [Установка Pale Moon браузером по умолчанию обычными методами](#Установка-Pale-Moon-браузером-по-умолчанию-обычными-методами)
 1. [Решение](#Решение)
 
 <!-- /MarkdownTOC -->
@@ -48,12 +50,12 @@ Schemaorgtype: HowTo
 
 1. Дополнительное подспорье к безопасности ваших данных. Известные мне [стилеры](http://tophope.ru/threads/%D0%A7%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D1%81%D1%82%D0%B8%D0%BB%D0%B5%D1%80-%D1%81%D1%82%D0%B8%D0%BB%D0%BB%D0%B5%D1%80-stealer-%D0%B8-%D0%B1%D0%BE%D1%80%D1%8C%D0%B1%D0%B0-%D1%81-%D0%BD%D0%B8%D0%BC.1965/), в том числе встроенные в «[ратники](http://www.spy-soft.net/chto-takoe-rat/)», не воруют пароли из portable программ.
 
-<a id="Почему-pale-moon"></a>
+<a id="Почему-Pale-Moon"></a>
 # Почему Pale Moon?
 
 Pale Moon я рассматриваю как оптимизированную под низкое — по личному опыту, меньшее, нежели у Firefox, Chrome, Opera, Avant, Maxthon и SeaMonkey — потребление оперативной памяти версию Firefox — наиболее функционального на мой взгляд браузера. Аддоны для Mozilla поддерживаются Pale Moon.
 
-<a id="Установка-pale-moon-браузером-по-умолчанию-обычными-методами"></a>
+<a id="Установка-Pale-Moon-браузером-по-умолчанию-обычными-методами"></a>
 # Установка Pale Moon браузером по умолчанию обычными методами
 
 ![Alt attribute fish](https://i.imgur.com/gQywm8B.png)

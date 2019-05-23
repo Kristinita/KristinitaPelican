@@ -36,6 +36,15 @@ pelican_cache/
 Pipfile.lock
 package-lock.json
 
+# Peru cache
+
+.peru/
+
+# Pelican third-party plugins
+# Installed use peru
+
+pelican-plugins/
+
 ###Python###
 
 # Byte-compiled / optimized / DLL files

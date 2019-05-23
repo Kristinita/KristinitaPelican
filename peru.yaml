@@ -1,0 +1,24 @@
+########
+# peru #
+########
+# Package manager for including other peoples code in project:
+# https://github.com/buildinspace/peru
+# I use peru for downloading pelican plugins:
+# https://iranzo.github.io/blog/2018/09/25/peru/
+# [WARNING] Big time for first launch:
+# https://github.com/buildinspace/peru/issues/204
+imports:
+  pelican-plugins: pelican-plugins/
+
+git module pelican-plugins:
+  url: https://github.com/getpelican/pelican-plugins
+  # [WARNING] Needs duplicates with “site_variables.yaml”:
+  # https://github.com/buildinspace/peru/issues/206
+  pick:
+  - filetime_from_git
+  - interlinks
+  - just_table
+  - neighbors
+  - pelican-open_graph
+  - section_number
+  - sitemap

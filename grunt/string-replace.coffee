@@ -10,9 +10,9 @@ module.exports =
 	html:
 		files: [
 			expand: true
-			cwd: "<%= templates.paths.output_path %>"
+			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>"
 			src: '**/*.html'
-			dest: "<%= templates.paths.output_path %>"
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>"
 		]
 		options:
 			replacements: [
@@ -48,9 +48,9 @@ module.exports =
 	html_and_css:
 		files: [
 			expand: true
-			cwd: "<%= templates.paths.output_path %>"
+			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>"
 			src: '**/*.{html,css}'
-			dest: "<%= templates.paths.output_path %>"
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>"
 		]
 		options:
 			replacements: [
@@ -64,7 +64,7 @@ module.exports =
 					# no line breaks between them!
 					pattern: /(<pre>)(((.|\n|\r)+?)?)(<\/pre>((\s+?)?)<\/div>)/g
 					replacement: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" \
-								src="<%= templates.site.siteurl %>/<%= templates.paths.theme_static_dir %>\
+								src="<%= templates.yamlconfig.SITEURL %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>\
 								/images/interface-images/clippy.svg" \
 								alt="Clipboard button"></button>$2$5'
 				}
@@ -73,7 +73,7 @@ module.exports =
 				{
 					pattern: /<img alt="([^"]+?)" src="(.+?)"( \/)?>/g
 					replacement: '<a class="fancybox" href="$2"><img class="SashaLazy" \
-								src="<%= templates.site.siteurl %>/<%= templates.paths.theme_static_dir %>\
+								src="<%= templates.yamlconfig.SITEURL %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>\
 								/images/interface-images/transparent-one-pixel.png" \
 								data-src="$2" alt="$1"></a>'
 				}
@@ -84,35 +84,35 @@ module.exports =
 	# asideimages:
 	# 	files: [
 	# 		expand: true
-	# 		cwd: "<%= templates.paths.output_path %>/<%= templates.paths.theme_static_dir %>/stylus/aside"
+	# 		cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/aside"
 	# 		src: '*.styl'
-	# 		dest: "<%= templates.paths.output_path %>/<%= templates.paths.theme_static_dir %>/stylus/aside"
+	# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/aside"
 	# 	]
 	# 	options:
 	# 		replacements: [
 	# 			pattern: /(url\(")(\.\.\/\.\.)(\/images\/aside\/(.+?)"\))/g
-	# 			replacement: "$1<%= templates.site.siteurl %>/<%= templates.paths.theme_static_dir %>$3"
+	# 			replacement: "$1<%= templates.yamlconfig.SITEURL %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>$3"
 	# 		]
 	# backgroundimages:
 	# 	files: [
 	# 		expand: true
-	# 		cwd: "<%= templates.paths.output_path %>/<%= templates.paths.theme_static_dir %>/stylus/sections"
+	# 		cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/sections"
 	# 		src: '*.styl'
-	# 		dest: "<%= templates.paths.output_path %>/<%= templates.paths.theme_static_dir %>/stylus/sections"
+	# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/sections"
 	# 	]
 	# 	options:
 	# 		replacements: [
 	# 			pattern: /(url\(")(\.\.\/\.\.)(\/images\/backgrounds\/(.+?)"\))/g
-	# 			replacement: "$1<%= templates.site.siteurl %>/<%= templates.paths.theme_static_dir %>$3"
+	# 			replacement: "$1<%= templates.yamlconfig.SITEURL %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>$3"
 	# 		]
 
 
 	coffeescript:
 		files: [
 			expand: true
-			cwd: "<%= templates.paths.output_path %>"
+			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>"
 			src: '**/*.js'
-			dest: "<%= templates.paths.output_path %>"
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>"
 		]
 		options:
 			replacements: [
@@ -124,21 +124,21 @@ module.exports =
 				# [INFO] Firebase API key
 				{
 					pattern: /<%= api_key_wildfire_firebase %>/g
-					replacement: "<%= templates.tokens.api_key_wildfire_firebase %>"
+					replacement: "<%= templates.yamlconfig.API_KEY_WILDFIRE_FIREBASE %>"
 				}
 				# [INFO] Firebase project name
 				{
 					pattern: /<%= wildfire_firebase_project %>/g
-					replacement: "<%= templates.databases.wildfire_firebase_project %>"
+					replacement: "<%= templates.yamlconfig.WILDFIRE_FIREBASE_PROJECT %>"
 				}
 				# [INFO] Firebase messagingSenderId
 				{
 					pattern: /<%= wildfire_messaging_sender_id %>/g
-					replacement: "<%= templates.databases.wildfire_messaging_sender_id %>"
+					replacement: "<%= templates.yamlconfig.WILDFIRE_MESSAGING_SENDER_ID %>"
 				}
 				# [INFO] typo-reporter formId
 				{
 					pattern: /<%= form_id_typo_reporter %>/g
-					replacement: "<%= templates.tokens.form_id_typo_reporter %>"
+					replacement: "<%= templates.yamlconfig.FORM_ID_TYPO_REPORTER %>"
 				}
 			]

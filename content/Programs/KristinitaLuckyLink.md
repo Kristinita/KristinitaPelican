@@ -1,6 +1,8 @@
 Title: KristinitaLuckyLink
 Version: 0.1.0
 Author: Sasha Chernykh
+Date: 2018-01-09 19:27:14
+Modified: 2019-05-23 14:41:15
 Lang: en
 Summary: Sublime Text 3 package, that wrap the selected text to DuckDuckGo or Google top query URL <br><br> ![KristinitaLuckyLink](https://i.imgur.com/TuyxneV.png)
 Pagetitle: KristinitaLuckyLink

@@ -1,0 +1,207 @@
+##############################
+# Python Markdown extensions #
+##############################
+# Using Python Markdown extensions in Pelican:
+# http://docs.getpelican.com/en/latest/settings.html?highlight=MARKDOWN#basic-settings
+# https://pythonhosted.org/Markdown/extensions/#third-party-extensions
+# http://romeogolf.github.io/pelican-i-modul-python-markdown.html
+
+# [INFO] CLI usage for debugging:
+# https://python-markdown.github.io/cli/#using-extensions
+# Example: “python -m markdown -x pymdownx.superfences -c config.yml SashaSuperFences.md”
+
+# [INFO] Officially support extensions doesn't need extra installation:
+# https://python-markdown.github.io/extensions/#officially-supported-extensions
+
+MARKDOWN:
+  extension_configs:
+    #
+    # 1. extra
+    #
+
+    # Extensions list:
+    # https://python-markdown.github.io/extensions/#officially-supported-extensions
+
+    # Attribute List — add id and classes in Markdown
+    # https://python-markdown.github.io/extensions/extra/
+
+    # Definition List — add dl, dd, dt tags
+    # https://python-markdown.github.io/extensions/definition_lists/
+    # https://webref.ru/html/dd
+
+    # Fenced code blocks — correct display multiline code blocks
+    # https://python-markdown.github.io/extensions/fenced_code_blocks/
+
+    # Tables — simple tables
+    # https://python-markdown.github.io/extensions/tables/
+
+    # [LEARN][YAML] Braces required for empty dictionary:
+    # https://stackoverflow.com/a/33510095/5951529
+    markdown.extensions.extra: {}
+
+    #
+    # 2. Other default extensions
+    #
+
+    # Extensions list:
+    # https://python-markdown.github.io/extensions/#officially-supported-extensions
+
+    # Notes in Markdown:
+    # https://python-markdown.github.io/extensions/admonition/
+    markdown.extensions.admonition: {}
+
+    # New line without 2 br in line end;
+    # Like GitHub, not like Stack Overflow:
+    # https://python-markdown.github.io/extensions/nl
+    # [BUG] just_table conflict, just_table tables display incorrect.
+    # nl2br — extension, without which I can work.
+    # markdown.extensions.nl2br:
+
+    # Mix ordered/unordered list:
+    # https://python-markdown.github.io/extensions/sane_lists/
+    markdown.extensions.sane_lists: {}
+
+    # [DEPRECATED] “section_number” disabling bug:
+    # https://github.com/waylan/Python-Markdown/issues/560
+    # Now I use regex replacing in Gruntfile.coffee and don't need this extension:
+    # markdown.extensions.toc:
+    #   permalink: true
+
+    #
+    # 3. facelessuser extensions
+    #
+
+    # Extensions list:
+    # https://facelessuser.github.io/pymdown-extensions/
+
+    # Fix ** and __ symbols:
+    # http://facelessuser.github.io/pymdown-extensions/extensions/betterem/
+    pymdownx.betterem: {}
+
+    # Underline, if ^^ symbols:
+    # http://facelessuser.github.io/pymdown-extensions/extensions/caret/
+    pymdownx.caret: {}
+
+    # Critic Markup support:
+    # http://criticmarkup.com/
+    # http://facelessuser.github.io/pymdown-extensions/extensions/critic/
+    pymdownx.critic: {}
+
+    # Don't convert spaces, octotorps and another symbols:
+    # http://facelessuser.github.io/pymdown-extensions/extensions/escapeall/
+    # https://github.com/waylan/Python-Markdown/issues/564#issuecomment-299681538
+    pymdownx.escapeall: {}
+
+    # Highlight code blocks:
+    # https://facelessuser.github.io/pymdown-extensions/extensions/highlight/
+    pymdownx.highlight: {}
+
+    # Inline highlight code:
+    # http://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/
+    # https://pythonhosted.org/Markdown/extensions/code_hilite.html#step-2-add-css-classes
+    pymdownx.inlinehilite:
+      # [DEPRECATED] 'use_codehilite_settings' in 3.0 pymdown-extensions version
+      css_class: SashaInlineHighlight
+      style_plain_text: true
+
+    # Clickable Bare URL:
+    # http://facelessuser.github.io/pymdown-extensions/extensions/magiclink/
+    pymdownx.magiclink:
+      hide_protocol: true
+      repo_url_shortener: true
+
+    # Insert mark tag:
+    # https://facelessuser.github.io/pymdown-extensions/extensions/mark/
+    pymdownx.mark: {}
+
+    # Candy Progress Bar:
+    # http://facelessuser.github.io/pymdown-extensions/extensions/progressbar/
+    # [INFO] Bars change colors in each 10%:
+    # https://github.com/facelessuser/pymdown-extensions/pull/208
+    pymdownx.progressbar:
+      level_class: true
+      progress_increment: 10
+
+    # Replace symbols to correct:
+    # Example: (c) → ©
+    # http://facelessuser.github.io/pymdown-extensions/extensions/smartsymbols/
+    pymdownx.smartsymbols: {}
+
+    # Insert HTML to another HTML:
+    # http://facelessuser.github.io/pymdown-extensions/extensions/snippets/
+    pymdownx.snippets:
+      base_path: content/Snippets
+
+    # Different block highlights:
+    # http://pygments.org/docs/lexers/
+    # http://facelessuser.github.io/pymdown-extensions/extensions/superfences/
+    # [INFO] “text” pygments lexer for Plain text format:
+    # http://pygments.org/docs/lexers/#pygments.lexers.special.TextLexer
+    pymdownx.superfences:
+      css_class: SashaBlockHighlight
+      # [INFO] Doesn't convert tabs to spaces in code blocks:
+      # https://github.com/marionebl/commitlint/issues/316
+      preserve_tabs: true
+
+    # ~~delete~~ and sub support:
+    # http://facelessuser.github.io/pymdown-extensions/extensions/tilde/
+    pymdownx.tilde: {}
+
+    #
+    # 4. Other extensions
+    #
+
+    # Extensions list:
+    # https://github.com/Python-Markdown/markdown/wiki/Third-Party-Extensions
+
+    # Diagrams in Markdown:
+    # https://github.com/gisce/markdown-blockdiag
+    # http://blockdiag.com/en/blockdiag/index.html
+    markdown_blockdiag: {}
+
+    # Add target='_blank' for all links:
+    # Attribute don't add for local anchors.
+    # https://github.com/Undeterminant/markdown-newtab
+    # [BUG] Deleted by author, I replace plugin to JQuery solution:
+    # http://bit.ly/2SjqOLq
+    # markdown_newtab:
+
+    # Add own environment variables to text:
+    # https://github.com/cmacmackin/md-environ
+    md_environ.environ: {}
+
+    # “cite” tag:
+    # https://github.com/aleray/mdx_cite
+    # [BUG] Unneeded “configs” for Markdown 3:
+    # https://github.com/aleray/mdx_cite/pull/2
+    # mdx_cite:
+
+    # Custom !!classes!! for span tag:
+    # https://github.com/exaroth/mdx_custom_span_class
+    mdx_custom_span_class: {}
+
+    # Down headers to 1 item, that Markdownlint MD002 is good:
+    # https://github.com/cprieto/mdx_downheader
+    # [DONE]
+    # [BUG] Original repository doesn't support Markdown 3:
+    # Tempopary use fork:
+    # https://github.com/cprieto/mdx_downheader/pull/6
+    # https://github.com/linevych/mdx_downheader/tree/markdown3_support
+    # https://github.com/pypa/pipenv/pull/2702/files
+    # I create my own fork, that plugin doesn't update from original repository:
+    # https://github.com/Kristinita/mdx_downheader/blob/KiraPatch/setup.py
+    mdx_downheader: {}
+
+    # Embed YouTube videos:
+    # https://github.com/getpelican/pelican/issues/1099#issuecomment-25209351
+    # https://github.com/italomaia/mdx-video
+    # [NOTE] Disable, because obsolete attributes “allowfullscreen” and “frameborder”:
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#Attributes
+    # mdx_video:
+
+    # Embed videos/images from different popular sites:
+    # https://pyembed.github.io/usage/markdown/
+    pyembed.markdown: {}
+
+  # http://docs.getpelican.com/en/latest/settings.html#PATH
+  output_format: html5

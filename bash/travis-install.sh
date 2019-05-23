@@ -13,7 +13,7 @@
 # https://www.gnu.org/software/parallel/
 # [WARNING] On Windows works in Cygwin, not in default console:
 # https://savannah.gnu.org/forum/forum.php?forum_id=7581
-# Parallel npm and pip tasks:
+# [INFO] Parallel npm and pip tasks:
 # https://unix.stackexchange.com/a/427419/237999
 # [WARNING] Default UNIX parallel commands doesn't work for Travis CI:
 # https://unix.stackexchange.com/questions/427410#comment771128_427415
@@ -43,7 +43,7 @@
 # "sudo apt-get install dotnet-sdk" will not works
 # [WARNING] You need specific LocalAppVeyor version, because no stable versions at January 2019,
 # and user get a bug: "error NU1103: Unable to find a stable package localappveyor with version"
-parallel ::: 'pip install --upgrade pip && pip install pipenv==11.10.2 && pipenv install --dev' \
+parallel ::: 'pip install --upgrade pip && pip install pipenv==11.10.2 && pipenv install --dev && pipenv run peru sync && python rename_pelican_plugins_folder.py' \
 	'npm install --global npm && npm install -g grunt-cli && npm install' \
 	'git clone https://github.com/htacg/tidy-html5.git && cd tidy-html5 && cd build/cmake && cmake ../.. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIB:BOOL=OFF && make && sudo make install' \
 	'gem install travis' \

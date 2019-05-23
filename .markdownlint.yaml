@@ -59,3 +59,6 @@ MD034: false
 # In Pelican articles and pages first line — is Metadata,
 # then TOC, then <a id="value"></a>, not header
 MD041: false
+# [INFO] I use Admonition, where I can use indented text:
+# https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md046
+MD046: false

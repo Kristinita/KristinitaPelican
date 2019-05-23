@@ -1,0 +1,43 @@
+#################
+# feeds settings #
+#################
+# Site feeds:
+# https://docs.getpelican.com/en/latest/settings.html#feed-settings
+
+# [INFO] Feed generation works for absolute domains:
+# http://bit.ly/2UwtnuT
+# [INFO] Disable feed generation in developing process
+# http://docs.getpelican.com/en/latest/faq.html#what-if-i-want-to-disable-feed-generation
+
+# [NOTE] Atom doesn't support in Firefox 64:
+# https://www.theregister.co.uk/2018/10/13/mozilla_firefox_kills_rss/
+# Use addons, for example:
+# https://addons.mozilla.org/ru/firefox/addon/feed-preview
+FEED_ALL_ATOM: feeds/all.atom.xml
+# [NOTE] %s usage in CATEGORY_FEED_ATOM is deprecated, use {slug} instead:
+# https://github.com/getpelican/pelican/blob/master/docs/changelog.rst#401-2018-11-30
+CATEGORY_FEED_ATOM: feeds/{slug}.atom.xml
+# [NOTE] %s usage in TRANSLATION_FEED_ATOM is deprecated, use {lang} instead:
+# https://github.com/getpelican/pelican/blob/master/docs/changelog.rst#401-2018-11-30
+TRANSLATION_FEED_ATOM: feeds/all-{lang}.atom.xml
+# [LEARN][YAML] Blank value convert to “None”:
+# https://stackoverflow.com/a/30136595/5951529
+AUTHOR_FEED_ATOM:
+AUTHOR_FEED_RSS:
+
+# [DEPRECATED] From Pelican 3.7 by default:
+# https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
+# # Feed summary — short RSS feed by content «Summary» metadata tag
+# # https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
+# # FEED_USE_SUMMARY: true
+
+# [INFO] FeedBurner use:
+# https://github.com/getpelican/pelican/wiki/FeedBurner-Configuration
+# [DEPRECATED] FeedBurner is obsolete:
+# https://www.plagiarismtoday.com/2013/04/03/google-will-you-please-kill-feedburner/
+# https://www.wpbeginner.com/opinion/stop-using-feedburner-move-to-feedburner-alternatives/
+# https://css-tricks.com/lets-say-feedburner-shuts-down/
+
+# [BUG][LINK] pelican-plugin-settings, json_feed
+# FEED_ALL_JSON = 'feeds/all.json'
+# CATEGORY_FEED_JSON = 'feeds/%s.json'

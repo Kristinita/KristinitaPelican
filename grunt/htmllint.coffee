@@ -37,4 +37,4 @@ module.exports =
 		force: false
 		# Support configuration file “.htmllintrc”
 		htmllintrc: true
-	src: ["<%= templates.paths.output_path %>/**/*.html"]
+	src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.html"]

@@ -124,8 +124,10 @@ module.exports =
 	##################
 	# Output licenses of all PyPI packages:
 	# https://pypi.org/project/pip-licenses/
+	# Options:
+	# https://pypi.org/project/pip-licenses/#command-line-options
 	piplicenses:
-		command: 'pipenv run pip-licenses --format-markdown > python.md'
+		command: 'pipenv run pip-licenses --with-authors --with-urls --with-description --format=markdown > python.md'
 
 
 	##########################
@@ -164,10 +166,10 @@ module.exports =
 	# [BUG] 2 blank lines in end of file “CODE_OF_CONDUCT.md”, needs fix it:
 	# https://github.com/ContributorCovenant/contributor_covenant/issues/528
 	eclintfix:
-		command: "npx eclint fix CODE_OF_CONDUCT.md && cd <%= templates.paths.output_path %> \
+		command: "npx eclint fix CODE_OF_CONDUCT.md && cd <%= templates.yamlconfig.OUTPUT_PATH %> \
 					&& npx eclint fix && cd <%= templates.paths.cwd %>"
 	eclintcheck:
-		command: "cd <%= templates.paths.output_path %> && npx eclint check && cd <%= templates.paths.cwd %>"
+		command: "cd <%= templates.yamlconfig.OUTPUT_PATH %> && npx eclint check && cd <%= templates.paths.cwd %>"
 
 
 	#####################

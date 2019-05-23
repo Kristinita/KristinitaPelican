@@ -1,6 +1,8 @@
 Title: Korvers
 Version: 0.0.1
 Author: Sasha Chernykh
+Date: 2017-02-13 09:24:30
+Modified: 2019-05-23 12:16:07
 Lang: ru
 Summary: Техники поиска версий в джинджеринах
 Pagetitle: 4 14 7. 4 корвера, 14 аксаксов, 7 гарниромизов

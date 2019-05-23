@@ -1,6 +1,8 @@
 Title: Sacagawea
 Version: 0.1.0
 Author: Keith Hall
+Date: 2017-05-05 6:49:14
+Modified: 2019-05-23 14:45:10
 Lang: ru
 Summary: Timer for Russian gingerinas.
 Pagetitle: Sacagawea

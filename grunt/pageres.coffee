@@ -17,7 +17,7 @@ module.exports =
 	screenshots:
 		options:
 			delay: 4
-			dest: "<%= templates.yamlconfig.output_path %>/screenshots"
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/screenshots"
 			# [WARNING] Viewport sizes is obsolete:
 			# http://viewportsizes.com
 			# I use 2 most popular screen resolutions for PC:
@@ -41,12 +41,12 @@ module.exports =
 					]
 			# [FIXME] Add cwd for templates, that no duplicate template:
 			# https://github.com/sindresorhus/pageres/issues/352#issuecomment-464048880
-			urls: ["<%= templates.yamlconfig.output_path %>/index.html"
-					"<%= templates.yamlconfig.output_path %>/404.html"
-					"<%= templates.yamlconfig.output_path %>/Sasha-Black.html"
-					"<%= templates.yamlconfig.output_path %>/Pages/About-for-developers.html"
-					"<%= templates.yamlconfig.output_path %>/Smert-svobode/Новые-недовольные-русские.html"
-					"<%= templates.yamlconfig.output_path %>/Programs/KristinitaLuckyLink.html"
-					"<%= templates.yamlconfig.output_path %>/IT-articles/typo-reporter.html"
-					"<%= templates.yamlconfig.output_path %>/Gingerinas/Тао.html"
-					"<%= templates.yamlconfig.output_path %>/Giologica/Nas-Izu.html"]
+			urls: ["<%= templates.yamlconfig.OUTPUT_PATH %>/index.html"
+					"<%= templates.yamlconfig.OUTPUT_PATH %>/404.html"
+					"<%= templates.yamlconfig.OUTPUT_PATH %>/Sasha-Black.html"
+					"<%= templates.yamlconfig.OUTPUT_PATH %>/Pages/About-for-developers.html"
+					"<%= templates.yamlconfig.OUTPUT_PATH %>/Smert-svobode/Новые-недовольные-русские.html"
+					"<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/KristinitaLuckyLink.html"
+					"<%= templates.yamlconfig.OUTPUT_PATH %>/IT-articles/typo-reporter.html"
+					"<%= templates.yamlconfig.OUTPUT_PATH %>/Gingerinas/Тао.html"
+					"<%= templates.yamlconfig.OUTPUT_PATH %>/Giologica/Nas-Izu.html"]

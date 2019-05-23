@@ -7,7 +7,7 @@
 module.exports =
 	# CoffeeScript compile and move
 	coffee:
-		files: "<%= templates.yamlconfig.output_path %>/**/*.coffee"
+		files: "<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.coffee"
 		# grunt-newes — compile changed files, not another:
 		# https://stackoverflow.com/a/19722900/5951529
 		tasks: ['newer:coffee'
@@ -15,7 +15,7 @@ module.exports =
 				'newer:move:jspersonal']
 	# Stylus compile and move
 	stylus:
-		files: "<%= templates.yamlconfig.output_path %>/**/*.styl"
+		files: "<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.styl"
 		tasks: ['newer:stylus'
 				'newer:move:csstheme'
 				'newer:move:csspersonal']

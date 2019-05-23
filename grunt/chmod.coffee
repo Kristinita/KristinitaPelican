@@ -21,4 +21,4 @@ module.exports =
 	kiratarget:
 		# All folders and files recursive, include current:
 		# https://gruntjs.com/configuring-tasks#globbing-patterns
-		src: ["<%= templates.paths.output_path %>/**"]
+		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**"]

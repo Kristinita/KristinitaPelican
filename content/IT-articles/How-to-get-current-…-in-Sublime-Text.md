@@ -1,6 +1,8 @@
 Title: How to get current … in Sublime Text
 Version: 0.2.0
 Author: Sasha Chernykh
+Date: 2018-04-05 7:30:14
+Modified: 2019-05-23 14:28:48
 Lang: en
 Summary: Tutorial, how to get some variable parameters for your Sublime Text <br><br> ![Color scheme and theme](https://i.imgur.com/nwNgLkR.png)
 Pagetitle: How to get current … in Sublime Text
@@ -194,7 +196,7 @@ In image below:
 ![Color scheme and theme](https://i.imgur.com/nwNgLkR.png)
 
 !!! hint
-	Also, some parameters contains in [*Preferences.sublime-settings*](https://www.sublimetext.com/docs/3/settings.html) and *stTheme* files. [*stTheme*](https://stackoverflow.com/a/19582360/5951529) highlight and stylize regular expressions and another elements in input areas of your [“Find”, “Find in Files” and “Replace panels”](https://www.sublimetext.com/docs/3/themes.html#elements-panels).
+	Also, some parameters has in [*Preferences.sublime-settings*](https://www.sublimetext.com/docs/3/settings.html) and *stTheme* files. [*stTheme*](https://stackoverflow.com/a/19582360/5951529) highlight and stylize regular expressions and another elements in input areas of your [“Find”, “Find in Files” and “Replace panels”](https://www.sublimetext.com/docs/3/themes.html#elements-panels).
 
 	![stTheme](https://i.imgur.com/icfjatQ.png)
 

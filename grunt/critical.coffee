@@ -34,18 +34,18 @@ module.exports =
 		files: [
 			expand: true
 			cwd: "."
-			src: ["<%= templates.paths.output_path %>/**/*.html"
+			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.html"
 					# [INFO] HTML for Bitcoin images
-					"!<%= templates.paths.output_path %>/images/**/*.html"
+					"!<%= templates.yamlconfig.OUTPUT_PATH %>/images/**/*.html"
 					# [FIXME] Templates for Pelican
-					"!<%= templates.paths.output_path %>/author/*.html"
-					"!<%= templates.paths.output_path %>/category/*.html"
-					"!<%= templates.paths.output_path %>/tag/*.html"
-					"!<%= templates.paths.output_path %>/archives.html"
-					"!<%= templates.paths.output_path %>/authors.html"
-					"!<%= templates.paths.output_path %>/categories.html"
+					"!<%= templates.yamlconfig.OUTPUT_PATH %>/author/*.html"
+					"!<%= templates.yamlconfig.OUTPUT_PATH %>/category/*.html"
+					"!<%= templates.yamlconfig.OUTPUT_PATH %>/tag/*.html"
+					"!<%= templates.yamlconfig.OUTPUT_PATH %>/archives.html"
+					"!<%= templates.yamlconfig.OUTPUT_PATH %>/authors.html"
+					"!<%= templates.yamlconfig.OUTPUT_PATH %>/categories.html"
 					]
 			dest: "."
 			]
-		# src: "<%= templates.paths.output_path %>/Programs/KristinitaLuckyLink.html"
-		# dest: "<%= templates.paths.output_path %>/Programs/KristinitaLuckyLink.html"
+		# src: "<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/KristinitaLuckyLink.html"
+		# dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/KristinitaLuckyLink.html"

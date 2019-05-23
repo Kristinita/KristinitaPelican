@@ -33,6 +33,6 @@ module.exports =
 		# but doiuse support another format:
 		# https://www.npmjs.com/package/doiuse#ignoring-file-specific-rules
 		# doiuse will show errors in minified files.
-		src: ["<%= templates.paths.output_path %>/<%= templates.paths.theme_static_dir %>/css/**/*.css"
-				"<%= templates.paths.output_path %>/css/personal/**/*.css"
+		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css/**/*.css"
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/css/personal/**/*.css"
 				"!**/*.min.css"]

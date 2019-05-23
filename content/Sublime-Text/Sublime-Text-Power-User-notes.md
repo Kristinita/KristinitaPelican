@@ -1,7 +1,8 @@
 Title: Sublime-Text-Power-User-notes
 Date: 2017-02-13 19:15:15
-Author: Sasha Chernykh
+Modified: 2019-05-23 14:46:03
 Lang: en
+Author: Sasha Chernykh
 Summary: Notes of book “Sublime Text Power User”
 Pagetitle: “Sublime Text Power User” notes
 Pagecolors: programs

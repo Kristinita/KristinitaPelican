@@ -34,7 +34,7 @@ sudo: enabled
 dist: xenial
 
 # [INFO] Don't download all repository history, that save a time:
-# https://docs.travis-ci.com/user/customizing-the-build/#Git-Clone-Depth
+# https://docs.travis-ci.com/user/customizing-the-build/#git-clone-depth
 git:
   depth: 1
 
@@ -97,6 +97,9 @@ env:
 # https://github.com/travis-ci/travis-ci/issues/9180
 language: python
 
+# [NOTE] Python 3.7.3 or higher required, Python 3.7.2 have a bug:
+# ModuleNotFoundError: No module named '_contextvars'
+# https://stackoverflow.com/a/55759519/5951529
 python: 3.7
 
 # [DEPRECATED] Doesn't work on Travis CI, needs “matrix.include”:
@@ -177,6 +180,9 @@ before_install:
 # https://docs.microsoft.com/en-us/dotnet/core/tools/telemetry#disclosure
 # https://stackoverflow.com/a/39307563/5951529
 - export DOTNET_CLI_TELEMETRY_OPTOUT=1
+# [INFO] Don't install pylint from grunt-pylint
+# https://www.npmjs.com/package/grunt-pylint#getting-started
+- export GRUNT_PYLINT_SKIP_POSTINSTALL=yes
 # Add LocalAppVeyor directory to the end of the PATH environment variable:
 # https://unix.stackexchange.com/a/26067/237999
 # http://www.troubleshooters.com/linux/prepostpath.htm

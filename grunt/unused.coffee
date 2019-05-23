@@ -10,8 +10,8 @@
 # in your HTML file, grunt-unused delete this image.
 module.exports =
 	options:
-		reference: "<%= templates.paths.output_path %>/images/"
-		directory: ["<%= templates.paths.output_path %>/**/*.html"]
+		reference: "<%= templates.yamlconfig.OUTPUT_PATH %>/images/"
+		directory: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.html"]
 		days: false
 		remove: true
 		reportOutput: false

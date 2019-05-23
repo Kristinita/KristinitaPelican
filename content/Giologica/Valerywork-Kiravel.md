@@ -1,5 +1,6 @@
 Title: Вэлериворк и Киравэл
 Date: 2017-02-13 19:15:15
+Modified: 2019-05-23 12:23:46
 Author: Sasha Chernykh
 Lang: ru
 Summary: Понятия Вэлериворка и Киравэла

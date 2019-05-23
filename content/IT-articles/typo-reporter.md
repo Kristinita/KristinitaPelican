@@ -2,6 +2,8 @@ Title: typo-reporter
 Status: published
 Version: 0.2.1
 Author: Sasha Chernykh
+Date: 2018-03-22 7:52:14
+Modified: 2019-05-23 14:32:22
 Lang: en
 Summary: Features, problems and it solutions, that not described in official typo-reporter Readme. <br><br> ![English typo-reporter form](https://i.imgur.com/U8pIw0a.png)
 Pagetitle: typo-reporter

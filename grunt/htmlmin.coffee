@@ -52,8 +52,8 @@ module.exports =
 			# https://www.npmjs.com/package/html-minifier#options-quick-reference
 			# https://www.npmjs.com/package/relateurl
 			# See example, how it works in “minifyJS” option.
-			# minifyURLs: ("<%= templates.site.siteurl %>
-			# 			<%= templates.paths.cwd %>/<%= templates.site.output_path %>")
+			# minifyURLs: ("<%= templates.yamlconfig.SITEURL %>
+			# 			<%= templates.paths.cwd %>/<%= templates.yamlconfig.OUTPUT_PATH %>")
 			# [INFO] Minify JSON-LD, not preserve it:
 			# https://www.npmjs.com/package/html-minifier#options-quick-reference
 			processScripts: ['application/ld+json']
@@ -93,6 +93,6 @@ module.exports =
 		files: [
 			expand: true
 			cwd: "."
-			src: ["<%= templates.paths.output_path %>/**/*.html"]
+			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.html"]
 			dest: "."
 			]

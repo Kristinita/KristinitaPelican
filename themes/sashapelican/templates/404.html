@@ -49,7 +49,11 @@
 		{% set kira_404_icons = ['SashaNose', 'SashaRiver', 'SashaBlueHairs', 'SashaBow', 'SashaPigeon', 'SashaShimskyNovgorodDestrict', 'SashaWeddingOfFriends'] %}
 		{% for icon in kira_404_icons %}
 			<picture>
-				<source data-lazy-srcset="{{SITEURL}}/{{THEME_STATIC_DIR}}/images/404/{{icon}}.webp" type="image/webp">
+				{# [FIXME][WARNING] “srcset” transparent pixel required:
+				"Element “source” is missing required attribute “srcset”."
+				https://github.com/whatwg/html/issues/4649
+				#}
+				<source srcset="{{SITEURL}}/{{THEME_STATIC_DIR}}/images/interface-images/transparent-one-pixel.png" data-lazy-srcset="{{SITEURL}}/{{THEME_STATIC_DIR}}/images/404/{{icon}}.webp" type="image/webp">
 				<img data-lazy="{{SITEURL}}/{{THEME_STATIC_DIR}}/images/404/{{icon}}.png" src="{{SITEURL}}/{{THEME_STATIC_DIR}}/images/interface-images/transparent-one-pixel.png" alt="KiraIcon" />
 			</picture>
 		{% endfor %}

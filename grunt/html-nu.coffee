@@ -10,4 +10,4 @@
 # Official: https://stackoverflow.com/a/32675273/5951529
 # More details: https://rocketvalidator.com/articles/w3c-validator-is-legacy-long-live-validator-nu
 module.exports =
-	src: ["<%= templates.paths.output_path %>/**/*.html"]
+	src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.html"]

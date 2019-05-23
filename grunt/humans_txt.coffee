@@ -44,4 +44,4 @@ module.exports = (grunt) ->
 				'License': "<%= humans_txt.options.pkg.license %>"
 			]
 	task:
-		dest: "<%= templates.paths.output_path %>/humans.txt"
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/humans.txt"

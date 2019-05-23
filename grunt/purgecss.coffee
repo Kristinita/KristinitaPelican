@@ -24,42 +24,42 @@ module.exports =
 		whitelistPatternsChildren: [/^\.tooltipster.+/]
 	programs:
 		options:
-			content: ["<%= templates.paths.output_path %>/Sublime-Text/*.html"
-						"<%= templates.paths.output_path %>/Programs/*.html"]
+			content: ["<%= templates.yamlconfig.OUTPUT_PATH %>/Sublime-Text/*.html"
+						"<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/*.html"]
 			# whitelist: [".SashaGingerinasExample"]
 			# whitelistPatterns: [/^\.SashaGingerinasExample$/]
 		files:
-			"<%= templates.paths.output_path %>/theme/css/sections/programs.css": \
-			["<%= templates.paths.output_path %>/theme/css/sections/programs.css"]
+			"<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/programs.css": \
+			["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/programs.css"]
 	gingerinas:
 		options:
-			content: ["<%= templates.paths.output_path %>/Gingerinas/*.html"]
+			content: ["<%= templates.yamlconfig.OUTPUT_PATH %>/Gingerinas/*.html"]
 			files:
-				"<%= templates.paths.output_path %>/theme/css/sections/gingerinas.css": \
-				["<%= templates.paths.output_path %>/theme/css/sections/gingerinas.css"]
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/gingerinas.css": \
+				["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/gingerinas.css"]
 	itarticles:
-		src: ["<%= templates.paths.output_path %>/IT-articles/*.html"]
-		css: ["<%= templates.paths.output_path %>/theme/css/sections/it-articles.css"]
-		dest: "<%= templates.paths.output_path %>/theme/css/sections/it-articles.css"
+		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/IT-articles/*.html"]
+		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/it-articles.css"]
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/it-articles.css"
 	giologicablue:
-		src: ["<%= templates.paths.output_path %>/Giologica/Valerywork-Kiravel.html"]
-		css: ["<%= templates.paths.output_path %>/theme/css/sections/giologica-blue.css"]
-		dest: "<%= templates.paths.output_path %>/theme/css/sections/giologica-blue.css"
+		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/Giologica/Valerywork-Kiravel.html"]
+		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica-blue.css"]
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica-blue.css"
 	giologica:
 		options:
-			content: ["<%= templates.paths.output_path %>/Giologica/*.html"]
+			content: ["<%= templates.yamlconfig.OUTPUT_PATH %>/Giologica/*.html"]
 			files:
-				"<%= templates.paths.output_path %>/theme/css/sections/giologica.css": \
-				["<%= templates.paths.output_path %>/theme/css/sections/giologica.css"]
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica.css": \
+				["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica.css"]
 	sashablack:
 		# Pages and Sasha Black
 		src: [
-				"<%= templates.paths.output_path %>/Sasha-Black/*.html"
-				"<%= templates.paths.output_path %>/Pages/*.html"
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/Sasha-Black/*.html"
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/Pages/*.html"
 				]
-		css: ["<%= templates.paths.output_path %>/theme/css/sections/sasha-black-description.css"]
-		dest: "<%= templates.paths.output_path %>/theme/css/sections/sasha-black-description.css"
+		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/sasha-black-description.css"]
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/sasha-black-description.css"
 	smertsvobode:
-		src: ["<%= templates.paths.output_path %>/Smert-svobode/*.html"]
-		css: ["<%= templates.paths.output_path %>/theme/css/sections/smert-svobode.css"]
-		dest: "<%= templates.paths.output_path %>/theme/css/sections/smert-svobode.css"
+		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/Smert-svobode/*.html"]
+		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/smert-svobode.css"]
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/smert-svobode.css"

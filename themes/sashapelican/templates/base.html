@@ -115,7 +115,7 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	{# [INFO] async required #}
 	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/AddToAny/addtoany.min.js" async></script>
 	{# [INFO] Wildfire #}
-	<script src="../theme/js/Wildfire/wildfire.min.js" async></script>
+	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/theme/js/Wildfire/wildfire.min.js" async></script>
 	<script src="https://cdn.jsdelivr.net/npm/wildfire/dist/wildfire.auto.js" defer></script>
 	{# [FIXME] MailerLite bugs for RSS and CoffeeScript:
 	# https://github.com/Kristinita/SashaMiscellaneous/issues/18
@@ -157,15 +157,34 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	{% block base_progressbar %}{% endblock %}
 	<!-- Custom CSS -->
 	{% block base_customcss %}{% endblock %}
+	{# [DEPRECATED]
+	[NOTE] Script required, because Google Fonts doesn't support “font-display”:
+	https://css-tricks.com/google-fonts-and-font-display/
+	https://github.com/google/fonts/issues/358
+
+	[INFO] Material icons font for admonition:
+	https://google.github.io/material-design-icons/
+	[NOTE] “display: swap” required at May 2019, not default as in this article:
+	https://www.zachleat.com/web/google-fonts-display/
+	[NOTE] “|” character must be replace in fonts URL for validator:
+	https://stackoverflow.com/a/22469221/5951529
+	[NOTE] “&” → “&amp;” replace required for HTML Tidy:
+	https://stackoverflow.com/a/15606103/5951529
+	#}
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play:700%7CEl+Messiri%7CScada:700i%7CFira+Mono%7CMaterial+Icons%7CMarck+Script&amp;subset=cyrillic&amp;display=swap">
 </head>
 
 <body>
 	{# Message, if JavaScript disabled
 	ARIA roles:
-	http://prgssr.ru/development/ispolzovanie-aria-v-html5.html#heading-aria #}
-	<section role="alert">
+	http://prgssr.ru/development/ispolzovanie-aria-v-html5.html#heading-aria
+	[NOTE] “section” tag incorrect in this case, I use “div” instead it:
+	“Section lacks heading. Consider using “h2”-“h6” elements to add identifying headings to all sections.”
+	https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/alert/index.html
+	#}
+	<div role="alert">
 		{% block base_noscript %}{% endblock %}
-	</section>
+	</div>
 	{# AddToAny buttons.
 	aside — a tag for these buttons:
 	https://stackoverflow.com/a/18974422/5951529
@@ -198,22 +217,20 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 				<img class="SashaPageLoading" src="https://2no.co/{% block base_noco %}{% endblock %}.png" alt="Page loading, please, little wait">
 				<div class="SashaVersion">Version {% block base_version %}{% endblock %}</div>
 				<div class="SashaVersion">
-					Posted —
-					{# Multiple blocks with same name —
+					{# [LEARN][JINJA] Multiple blocks with same name —
 					https://stackoverflow.com/a/1245030/5951529 #}
-					<time datetime="{% block base_date %}{% endblock %}">{{ self.base_date() }}</time>
+					Posted — {{ self.base_date() }}
 				</div>
 				<div class="SashaVersion">
-					<!-- [WARNING] pubdate attribute is obsolete, use itemprop: datePublished
-					https://stackoverflow.com/a/24455070/5951529 -->
-					Last modified —
-					<time itemprop="datePublished" datetime="{% block base_date_modified %}{% endblock %}">{{ self.base_date_modified() }}</time>
+					{# [WARNING] pubdate attribute is obsolete, use itemprop: datePublished
+					https://stackoverflow.com/a/24455070/5951529 #}
+					Last modified — {{ self.base_date_modified() }}
+				</div>
+				<div>
+					{% block base_epigraph %}{% endblock %}
+					{% block base_titleimage %}{% endblock %}
 				</div>
 			</header>
-			<section>
-				{% block base_epigraph %}{% endblock %}
-				{% block base_titleimage %}{% endblock %}
-			</section>
 			<section>
 				{% block base_content %}{% endblock %}
 			</section>

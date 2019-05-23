@@ -1,6 +1,8 @@
 Title: SashaSublime
 Tags: sublime-text
 Date: 2017-01-31 09:13:30
+Modified: 2019-05-23 14:45:37
+Lang: en
 Status: published
 Author: Sasha Chernykh
 PageTitle: SashaSublime
@@ -54,9 +56,9 @@ Schemaorgtype: SoftwareApplication
 		1. [BracketHighlighter](#BracketHighlighter)
 		1. [Emmet](#Emmet)
 		1. [Color Helper](#Color-Helper)
-		1. [dr\_months\_calendar](#dr_months_calendar)
+		1. [dr\_months\_calendar](#drmonthscalendar)
 		1. [Suricate](#Suricate)
-		1. [sublime\_unicode\_nbsp](#sublime_unicode_nbsp)
+		1. [sublime\_unicode\_nbsp](#sublimeunicodenbsp)
 	1. [Selected text](#Selected-text)
 		1. [Selected text example](#Selected-text-example)
 		1. [Selected text when the carriage is not on text field](#Selected-text-when-the-carriage-is-not-on-text-field)
@@ -253,7 +255,7 @@ In a theme/scheme the smallest details are well visible.
 
 ![Color Helper](https://i.imgur.com/ZcmyymH.png)
 
-<a id="dr_months_calendar"></a>
+<a id="drmonthscalendar"></a>
 ### [dr\_months\_calendar](https://github.com/dragon/dr_months_calendar)
 
 ![dr\_months\_calendar](https://i.imgur.com/Pq1HXC7.png)
@@ -265,7 +267,7 @@ In a theme/scheme the smallest details are well visible.
 
 If *"popup\_style\_file": "Packages/Suricate/css/dark.css",* in Suricate settings.
 
-<a id="sublime_unicode_nbsp"></a>
+<a id="sublimeunicodenbsp"></a>
 ### [sublime\_unicode\_nbsp](https://github.com/possan/sublime_unicode_nbsp)
 
 ![sublime\_unicode\_nbsp](https://i.imgur.com/LCTE0Y2.png)

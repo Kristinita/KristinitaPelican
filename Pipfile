@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pelican = "*"
 
 [dev-packages]
 pelican = "*"
@@ -17,10 +16,12 @@ markdown-blockdiag = "*"
 pip-review = "*"
 pip-licenses = "*"
 gitpython = "*"
-pyyaml = "*"
 bashate = "*"
 mdx-video = "*"
 pillow = "*"
+"ruamel.yaml" = "*"
+peru = "*"
+pylint = "*"
 
 [requires]
 python_version = "3.7"

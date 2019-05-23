@@ -53,5 +53,5 @@ module.exports =
 	options:
 		# [WARNING] If true, grunt-stylint will not show any errors/warnings:
 		quiet: false
-	src: ["<%= templates.yamlconfig.output_path %>/<%= templates.yamlconfig.theme_static_dir %>/stylus/**/*.styl"
-			"<%= templates.yamlconfig.output_path %>/stylus/**/*.styl"]
+	src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/**/*.styl"
+			"<%= templates.yamlconfig.OUTPUT_PATH %>/stylus/**/*.styl"]

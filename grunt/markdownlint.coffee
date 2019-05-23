@@ -12,7 +12,7 @@ module.exports = (grunt) ->
 		[
 			"*.md"
 			".github/*.md"
-			"<%= templates.paths.content_path %>/**/*.md"
+			"<%= templates.yamlconfig.CONTENT_PATH %>/**/*.md"
 			"tidy/*.md"
 			# [NOTE] I disable remark and markdownlint for generated, not personal files
 			"!CODE_OF_CONDUCT.md"

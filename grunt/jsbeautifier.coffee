@@ -18,6 +18,6 @@ module.exports =
 						".stylintrc"
 						]
 	files: [
-			"<%= templates.yamlconfig.output_path %>/**/*.{html,css,js,json}"
-			"!<%= templates.yamlconfig.output_path %>/**/*.min.{css,js}"
+			"<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.{html,css,js,json}"
+			"!<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.min.{css,js}"
 			]

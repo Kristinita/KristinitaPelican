@@ -1,0 +1,17 @@
+##############
+# production #
+##############
+# Settings, specific for production, not development version
+
+# [INFO] Delete extra artifacts from development process
+DELETE_OUTPUT_DIRECTORY: true
+
+# [INFO] Absolute paths for publishing; that users can copy sources of my site
+RELATIVE_URLS: false
+
+# [INFO] About caching:
+# https://docs.getpelican.com/en/latest/settings.html#reading-only-modified-content
+# [INFO] Changes may be not visible, if cache enabled:
+# https://docs.getpelican.com/en/latest/faq.html#changes-to-the-settings-file-take-no-effect
+CACHE_CONTENT: false
+LOAD_CONTENT_CACHE: false
