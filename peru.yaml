@@ -12,7 +12,7 @@ imports:
 
 git module pelican-plugins:
   url: https://github.com/getpelican/pelican-plugins
-  # [WARNING] Needs duplicates with “site_variables.yaml”:
+  # [WARNING] Needs duplicates with "site_variables.yaml":
   # https://github.com/buildinspace/peru/issues/206
   pick:
   - filetime_from_git
