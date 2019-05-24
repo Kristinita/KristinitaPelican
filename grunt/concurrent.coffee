@@ -198,9 +198,13 @@ module.exports =
 	files still contains errors:
 	https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/1.0.37/job/vjjwi959rqgfm6da
 	https://github.com/appveyor/ci/issues/2107
+	[BUG] pylint compare:
+	https://ci.appveyor.com/project/Kristinita/sashagruntdebugging/builds/24778420
+	https://travis-ci.org/Kristinita/SashaGruntDebugging/builds/536620396
 	###
 	tarna1: ['htmlhint'
-			'htmllint']
+			'htmllint'
+			'pylint']
 	tarna2: ['notify:validate']
 
 	###

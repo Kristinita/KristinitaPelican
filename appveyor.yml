@@ -98,6 +98,11 @@ install:
 # “Set-ExecutionPolicy RemoteSigned -scope CurrentUser”
 # http://scoop.sh/
 - ps: iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+# [NOTE] Required PATH changes to separated file, because PATH must be set before grunt-pylint installation, compare:
+# https://ci.appveyor.com/project/Kristinita/sashagruntdebugging/builds/24778322
+# https://ci.appveyor.com/project/Kristinita/sashagruntdebugging/builds/24778353
+- '%APPVEYOR_BUILD_FOLDER%/batch/appveyor-pathed.bat'
+- refreshenv
 # [WARNING] npm parallel doesn't work, example:
 # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.25/job/70x5h1qq2d6j8gyp
 # [WARNING] start command doesn't work without batch file:
@@ -105,6 +110,11 @@ install:
 # Project folder:
 # https://github.com/vim/vim-win32-installer/blob/master/appveyor.yml
 - '%APPVEYOR_BUILD_FOLDER%/batch/appveyor-install.bat'
+- pathed /APPEND %USERPROFILE%\.dotnet\tools /USER
+# [NOTE] “refreshenv” after install script required, compare:
+# https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/24763413
+# https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/24763463
+- refreshenv
 
 build_script:
 - grunt %GRUNT_BUILD%
