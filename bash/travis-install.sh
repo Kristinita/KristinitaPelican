@@ -21,8 +21,8 @@
 # https://stackoverflow.com/a/21133609/5951529
 # [WARNING] Don't paste any comments "after parallel :::", parallel will not work:
 # https://travis-ci.org/Kristinita/SashaScrutinizer/builds/363772800
-# [NOTE] “pipenv run python rename_pelican_plugins_folder.py” required, not
-# “python rename_pelican_plugins_folder.py”:
+# [NOTE] "pipenv run python rename_pelican_plugins_folder.py" required, not
+# "python rename_pelican_plugins_folder.py":
 # https://travis-ci.org/Kristinita/KristinitaPelican/jobs/536312994#L483
 # [WARNING] apt-get HTML Tidy version outdated, build HTML tidy on Ubuntu from sources:
 # https://github.com/htacg/tidy-html5/blob/next/README/BUILD.md
