@@ -22,8 +22,8 @@ module.exports =
 			# https://stackoverflow.com/questions/18966485#comment38703354_23670172
 			expand: true
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css"
-			src: ['**/**/*.css'
-					'!**/**/*.min.css']
+			src: ['**/*.css'
+					'!**/*.min.css']
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css"
 			# Extensions in filepaths:
 			# https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
@@ -33,8 +33,8 @@ module.exports =
 		files: [
 			expand: true
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/css/personal"
-			src: ['**/**/*.css'
-					'!**/**/*.min.css']
+			src: ['**/*.css'
+					'!**/*.min.css']
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/css/personal"
 			ext: '.min.css'
 		]
@@ -42,10 +42,10 @@ module.exports =
 		files: [
 			expand: true
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/js/personal"
-			# “!” symbol — exclude paths:
+			# [LEARN][GRUNT] “!” symbol — exclude paths:
 			# https://stackoverflow.com/a/28277841/5951529
-			src: ['**/**/*.js'
-					'!**/**/*.min.js']
+			src: ['**/*.js'
+					'!**/*.min.js']
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/js/personal"
 			ext: '.min.js'
 		]
@@ -53,8 +53,8 @@ module.exports =
 		files: [
 			expand: true
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/js"
-			src: ['**/**/*.js'
-					'!**/**/*.min.js']
+			src: ['**/*.js'
+					'!**/*.min.js']
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/js"
 			ext: '.min.js'
 		]

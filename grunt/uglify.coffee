@@ -23,8 +23,8 @@ module.exports =
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/js/personal"
 			# “!” symbol — exclude paths:
 			# https://stackoverflow.com/a/28277841/5951529
-			src: ['**/**/*.js'
-					'!**/**/*.min.js']
+			src: ['**/*.js'
+					'!**/*.min.js']
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/js/personal"
 			# [LEARN][GRUNT] Extensions in filepaths:
 			# https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
@@ -34,8 +34,8 @@ module.exports =
 		files: [
 			expand: true
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/js"
-			src: ['**/**/*.js'
-					'!**/**/*.min.js']
+			src: ['**/*.js'
+					'!**/*.min.js']
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/js"
 			ext: '.min.js'
 			]

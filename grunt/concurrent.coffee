@@ -102,9 +102,10 @@ module.exports =
 			'uglify']
 	tarp9: ['cssnano'
 			'shell:tidymodify']
-	tarp10: ['htmlmin']
-	tarp11: ['shell:eclintfix']
-	tarp12: ['notify:publish']
+	tarp10: ['cacheBust']
+	tarp11: ['htmlmin']
+	tarp12: ['shell:eclintfix']
+	tarp13: ['notify:publish']
 
 	###
 	For updating dependencies, “target update”.

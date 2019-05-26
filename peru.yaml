@@ -15,7 +15,6 @@ git module pelican-plugins:
   # [WARNING] Needs duplicates with "site_variables.yaml":
   # https://github.com/buildinspace/peru/issues/206
   pick:
-  - filetime_from_git
   - interlinks
   - just_table
   - neighbors

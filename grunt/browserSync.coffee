@@ -6,8 +6,7 @@
 module.exports =
 	dev:
 		bsFiles:
-			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.min.css"
-					"<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.min.js"]
+			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.min.{css,js}"]
 		options:
 			# Doesn't open “http://localhost:3001/” tab, when BrowserSync start:
 			# https://browsersync.io/docs/options#option-open

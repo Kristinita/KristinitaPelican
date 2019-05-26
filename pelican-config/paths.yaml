@@ -18,6 +18,8 @@ EXTRA_PATH_METADATA:
     path: README.md
   extra/opensearch.xml:
     path: opensearch.xml
+  extra/netlify.toml:
+    path: netlify.toml
 
 # [INFO] Folder name = category name:
 # https://docs.getpelican.com/en/latest/settings.html#basic-settings
