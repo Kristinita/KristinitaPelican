@@ -35,4 +35,6 @@ module.exports =
 		# doiuse will show errors in minified files.
 		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css/**/*.css"
 				"<%= templates.yamlconfig.OUTPUT_PATH %>/css/personal/**/*.css"
-				"!**/*.min.css"]
+				# [INFO] Ignore files: minified and with hash in name
+				"!**/*.min.css"
+				"!**/*.min.*.css"]
