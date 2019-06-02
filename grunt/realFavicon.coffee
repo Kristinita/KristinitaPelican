@@ -40,7 +40,7 @@ module.exports =
 					themeColor: "#ffffff"
 					manifest:
 						name: "Kristinita\'s Search"
-						startUrl: "https://kristinita.github.io"
+						startUrl: "https://kristinita.netlify.com"
 						display: "standalone"
 						orientation: "notSet"
 						onConflict: "override"

@@ -24,7 +24,7 @@ module.exports =
 				# # 3. Cloudflare download source from gitcdn.xyz slow
 				# {
 				# pattern: /https:\/\/kristinita.ru\/(.+?)\.(js|css|ico|xml)/g
-				# replacement: '//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/$1.$2'
+				# replacement: '//gitcdn.xyz/repo/Kristinita/Kristinita.netlify.com/master/$1.$2'
 				# }
 				# Header permalink
 				{

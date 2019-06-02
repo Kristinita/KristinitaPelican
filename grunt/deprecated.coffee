@@ -72,17 +72,18 @@
 # 		# no line breaks between them!
 # 			from: /(<pre>)((.|\n|\r)+?)(<\/pre>(\s+?)<\/div>)/g
 # 			to: '$1<button class="SashaButton SashaTooltip"><img class="SashaNotModify" \
-# 			src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface-images/clippy.svg" \
+# 			src="//gitcdn.xyz/repo/Kristinita/Kristinita.netlify.com/master/images/interface-images/clippy.svg" \
 # 			alt="Clipboard button" width="13"></button>$2$4'
 # 		# Fancybox and JQueryLazy images,
 # 			from: /<img alt="([^"]+?)" src="(.+?)"( \/)?>/g
 # 			to: '<a class="fancybox" href="$2"><img class="SashaLazy" \
-# 			src="//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/images/interface-images/transparent-one-pixel.png" \
+# 			src="//gitcdn.xyz/repo/Kristinita/Kristinita.netlify.com\
+# 			/master/images/interface-images/transparent-one-pixel.png" \
 # 			data-src="$2" alt="$1"></a>'
 # 		# GitCDN
 # 		# https://github.com/schme16/gitcdn.xyz
 # 			from: /http:\/\/kristinita.ru\/(.+?)\.(js|css|ico|xml)/g
-# 			to: '//gitcdn.xyz/repo/Kristinita/Kristinita.github.io/master/$1.$2'
+# 			to: '//gitcdn.xyz/repo/Kristinita/Kristinita.netlify.com/master/$1.$2'
 # 		# Header permalink
 # 			from: /(<p>\s*?<a name="(.+?)" id="(.+?)"><\/a>\s*?<\/p>\s+?<h\d+?>((.|\n|\r)+?))(<\/h\d+?>)/g
 # 			to: '$1 <a class="headerlink" href="#$2" title="Permanent link">¶</a>$6'

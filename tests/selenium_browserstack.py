@@ -1,6 +1,6 @@
 # @Author: Kristinita
 # @Date: 2018-04-28 18:35:24
-# @Last Modified time: 2019-02-20 07:03:31
+# @Last Modified time: 2019-05-26 18:53:27
 """BrowserStack + Selenium example test.
 
 Demonstration test:
@@ -30,7 +30,7 @@ driver = webdriver.Remote(
     desired_capabilities=desired_cap,
 )
 
-driver.get("https://kristinita.github.io")
+driver.get("https://kristinita.netlify.com")
 if "Поиск Кристиниты" not in driver.title:
     raise Exception("Unable to load google page!")
 elem = driver.find_element_by_tag_name("input")

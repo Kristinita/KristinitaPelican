@@ -63,7 +63,7 @@ env:
       iIUEWZhNleS6lCjGIapFdso23hwzKILzCx+tO9KGAenhTGbarq+Fyqfa/
       TmzyHNAk1KwZGgaOrGgCLNPZx3aT7bibx+6JI="
   # [INFO] Equivalent: API_KEY_APPVEYOR = my real key:
-  # https://kristinita.github.io/Pages/About-for-developers#AppVeyor
+  # https://kristinita.netlify.com/Pages/About-for-developers#AppVeyor
   - secure: >
       "qE2c+aZb9QGtPF9VG6WhAP2iT0mTDAnmueEiqWUctgalhAFAJ4wdSqvHNNv+F2178wE92WcpT3/
       chmJltlBj1Qqx6vWevJR2ff1uNbQnwGHYBw+1c8JOvx7mUvisp/nzU1eIpU50/
