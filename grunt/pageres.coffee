@@ -48,5 +48,5 @@ module.exports =
 					"<%= templates.yamlconfig.OUTPUT_PATH %>/Smert-svobode/Новые-недовольные-русские.html"
 					"<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/KristinitaLuckyLink.html"
 					"<%= templates.yamlconfig.OUTPUT_PATH %>/IT-articles/typo-reporter.html"
-					"<%= templates.yamlconfig.OUTPUT_PATH %>/Gingerinas/Тао.html"
+					"<%= templates.yamlconfig.OUTPUT_PATH %>/Erics-Rooms/Тао.html"
 					"<%= templates.yamlconfig.OUTPUT_PATH %>/Giologica/Nas-Izu.html"]
