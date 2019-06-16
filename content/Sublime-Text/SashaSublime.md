@@ -1,7 +1,7 @@
 Title: SashaSublime
 Tags: sublime-text
 Date: 2017-01-31 09:13:30
-Modified: 2019-05-23 14:45:37
+Modified: 2019-06-14 15:37:21
 Lang: en
 Status: published
 Author: Sasha Chernykh
@@ -422,7 +422,7 @@ SashaSublime has in tens times more than parameters, than a default theme Monoka
 <a id="Downloading-and-installation"></a>
 # Downloading and installation
 
-After installation, you need to activate SashaSublime, see [Activation](#activation) section. Sublime Text no needs restart after installation SashaSublime.
+After installation, you need to activate SashaSublime, see [Activation](#Activation) section. Sublime Text no needs restart after installation SashaSublime.
 
 <a id="Package-Control"></a>
 ## Package Control
@@ -723,8 +723,8 @@ After updates, SashaSublime your changes will lost. You will need to copy the mo
 <a id="Steps-1"></a>
 ### Steps
 
-1. **Theme file** *Preferences* → *Browse Packages...* → *User* → create file *Example.sublime-theme*, if you want to make a changes in theme. Instead of *Example* you can name your file by any other name. Copy the contents of the file *SashaSublime.sublime-theme* into *Example.sublime-theme* make a changes and save *Example.sublime-theme* file. Via [Themr](#themr-and-schemr) select Example theme.
-1. **Scheme file** *Preferences* → *Browse Packages...* → *User* → create file *Example.tmTheme*. Instead of *Example* you can name your file by any other name. Copy the contents of the file *SashaSublime.tmTheme* into *Example.tmTheme* make a changes and save *Example.tmTheme* file. Via [Schemr](#themr-and-schemr) select Example scheme.
+1. **Theme file** *Preferences* → *Browse Packages...* → *User* → create file *Example.sublime-theme*, if you want to make a changes in theme. Instead of *Example* you can name your file by any other name. Copy the contents of the file *SashaSublime.sublime-theme* into *Example.sublime-theme* make a changes and save *Example.sublime-theme* file. Via [Themr](#Themr-and-Schemr) select Example theme.
+1. **Scheme file** *Preferences* → *Browse Packages...* → *User* → create file *Example.tmTheme*. Instead of *Example* you can name your file by any other name. Copy the contents of the file *SashaSublime.tmTheme* into *Example.tmTheme* make a changes and save *Example.tmTheme* file. Via [Schemr](#Themr-and-Schemr) select Example scheme.
 
 <a id="Problem-1"></a>
 ### Problem

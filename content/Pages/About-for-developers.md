@@ -2,7 +2,7 @@ Title: For developers
 Version: 0.0.3
 Author: Sasha Chernykh
 Date: 2018-03-27 7:55:14
-Modified: 2019-05-23 14:36:53
+Modified: 2019-06-14 21:33:45
 Lang: en
 Summary: Information for developers about Kristinita's Search
 Pagetitle: For developers
@@ -378,7 +378,7 @@ HTML, CSS, JavaScript (not minified)|[JS Beautifier](http://jsbeautifier.org/)|[
 HTML|[The Nu Html Checker](https://validator.github.io/validator)|[no regulated rules list](https://stackoverflow.com/a/35646026/5951529)|—
 HTML|[HTML Tidy](http://www.html-tidy.org/)|[1](http://api.html-tidy.org/tidy/tidylib_api_next/tidy_config.html)|[tidy.conf](https://github.com/Kristinita/KristinitaPelican/blob/master/tidy.conf)
 HTML|[htmllint](http://htmllint.github.io/)|[1](https://github.com/htmllint/htmllint/wiki/Options)|[.htmllintrc](https://github.com/Kristinita/KristinitaPelican/blob/master/.htmllintrc), [comments](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/htmllint.coffee), [issue](https://github.com/htmllint/htmllint/issues/244)
-HTML|[HTMLHint](https://htmlhint.io/)|[1](https://github.com/htmlhint/HTMLHint/wiki/Rules)||[.htmlhintrc](https://github.com/Kristinita/KristinitaPelican/blob/master/.htmllintrc), [comments](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/htmlhint.coffee), [issue](https://github.com/htmlhint/HTMLHint/issues/126)
+HTML|[HTMLHint](https://htmlhint.io/)|[1](https://github.com/htmlhint/HTMLHint/wiki/Rules)|[.htmlhintrc](https://github.com/Kristinita/KristinitaPelican/blob/master/.htmllintrc), [comments](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/htmlhint.coffee), [issue](https://github.com/htmlhint/HTMLHint/issues/126)
 Stylus|[Stylint](https://simenb.github.io/stylint/)|[1](https://www.npmjs.com/package/stylint#excluding-files-directories-and-code-blocks-from-the-linter)|[.stylintrc](https://github.com/Kristinita/KristinitaPelican/blob/master/.stylintrc), [comments](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/stylint.coffee), [issue](https://github.com/SimenB/stylint/issues/434)
 CSS|[doiuse](https://doiuse.herokuapp.com/)|[1](https://caniuse.com/)|[browserslist](https://github.com/Kristinita/KristinitaPelican/blob/master/browserslist)
 CoffeeScript|[CoffeeLint](http://www.coffeelint.org/)|[1](http://www.coffeelint.org/#options)|[coffeelint.json](https://github.com/Kristinita/KristinitaPelican/blob/master/coffeelint.json), [comments](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/coffeelint.coffee), [issue](https://github.com/clutchski/coffeelint/issues/638)

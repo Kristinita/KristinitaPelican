@@ -27,7 +27,7 @@ USE_FOLDER_AS_CATEGORY: true
 
 # [INFO] Extra path metadata
 # http://manos.im/blog/static-site-pelican-grunt-travis-github-pages/
-# [NOTE] Quotes required for "{slug}.html" and not required for category/{slug}.html
+# [NOTE] Quotes required for "{slug}.html" and not required for "category/{slug}.html"
 ARTICLE_URL: "{slug}.html"
 # [LEARN][YAML] Anchors and aliases:
 # https://medium.com/@kinghuang/docker-compose-anchors-aliases-extensions-a1e4105d70bd

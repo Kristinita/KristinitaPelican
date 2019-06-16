@@ -2,7 +2,7 @@ Title: How to get current … in Sublime Text
 Version: 0.2.0
 Author: Sasha Chernykh
 Date: 2018-04-05 7:30:14
-Modified: 2019-05-23 14:28:48
+Modified: 2019-06-14 21:25:18
 Lang: en
 Summary: Tutorial, how to get some variable parameters for your Sublime Text <br><br> ![Color scheme and theme](https://i.imgur.com/nwNgLkR.png)
 Pagetitle: How to get current … in Sublime Text
@@ -122,7 +122,7 @@ You should get  console output, **example**:
 <a id="What-should-you-do"></a>
 ### What should you do?
 
-[Actions 1, 4, 5](#console-actions).
+[Actions 1, 4, 5](#Console-actions).
 
 <a id="Method"></a>
 ### Method
@@ -168,7 +168,7 @@ I'm not recommend this, arguments:
 <a id="What-should-you-do-1"></a>
 ### What should you do?
 
-[Actions 1, 2, 4, 5](#console-actions).
+[Actions 1, 2, 4, 5](#Console-actions).
 
 <a id="Method-1"></a>
 ### Method
@@ -185,7 +185,7 @@ view.settings().get('syntax')
 
 Please, do not confuse theme and color scheme:
 
-1. **color scheme** — file, that design your Sublime Text [syntaxes](#syntax); it zone — area of your opened files
+1. **color scheme** — file, that design your Sublime Text [syntaxes](#Syntax); it zone — area of your opened files
 1. **theme** — file, that design your Sublime Text UI; almost everyone else, that not highlight color scheme
 
 In image below:
@@ -203,7 +203,7 @@ In image below:
 <a id="What-should-you-do-2"></a>
 ### What should you do?
 
-[Actions 1, 2, 4, 5](#console-actions).
+[Actions 1, 2, 4, 5](#Console-actions).
 
 <a id="Method-2"></a>
 ### Method
@@ -218,12 +218,12 @@ view.settings().get('theme')
 <a id="What-is-it-3"></a>
 ### What is it?
 
-+ [\#theme](#theme).
++ [\#theme](#Theme).
 
 <a id="What-should-you-do-3"></a>
 ### What should you do?
 
-[Actions 1, 2, 4, 5](#console-actions).
+[Actions 1, 2, 4, 5](#Console-actions).
 
 <a id="Method-3"></a>
 ### Method
@@ -239,7 +239,7 @@ view.settings().get('color_scheme')
 ## Scope
 
 !!! caution
-	“Scope”, “syntax scope”, “syntax type scope” unconventional, not official terms. Please, read [links below](#what-is-it-4) for more detailed information.
+	“Scope”, “syntax scope”, “syntax type scope” unconventional, not official terms. Please, read [links below](#What-is-it-4) for more detailed information.
 
 <a id="What-is-it-4"></a>
 ### What is it?
@@ -258,7 +258,7 @@ kira.genius kira.error |kira.genius|kira
 <a id="What-should-you-do-4"></a>
 ### What should you do?
 
-[Actions 1, 2, 3, 4, 5](#console-actions).
+[Actions 1, 2, 3, 4, 5](#Console-actions).
 
 <a id="Method-4"></a>
 ### Method
@@ -288,12 +288,12 @@ I not recommend it, arguments:
 <a id="What-is-it-5"></a>
 ### What is it?
 
-Syntax scope — for [syntax](#syntax): part of any [scope](#scope-selector) before first space symbol. Details [read above](#what-is-it-4).
+Syntax scope — for [syntax](#Syntax): part of any [scope](#Scope) before first space symbol. Details [read above](#What-is-it-4).
 
 <a id="What-should-you-do-5"></a>
 ### What should you do?
 
-[Actions 1, 2, 4, 5](#console-actions).
+[Actions 1, 2, 4, 5](#Console-actions).
 
 <a id="Method-5"></a>
 ### Method

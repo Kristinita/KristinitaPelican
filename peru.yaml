@@ -16,7 +16,9 @@ git module pelican-plugins:
   # https://github.com/buildinspace/peru/issues/206
   pick:
   - interlinks
-  - just_table
+  # [FIXME] I move just_table to personal plugins, because issue didn't solved:
+  # https://github.com/burakkose/just_table/issues/7
+  # - just_table
   - neighbors
   - pelican-open_graph
   - section_number

@@ -14,6 +14,10 @@ module.exports =
 			port: 3014
 			server:
 				baseDir: "<%= templates.yamlconfig.OUTPUT_PATH %>"
+				# [INFO] Remove “.html” extension:
+				# https://github.com/BrowserSync/browser-sync/issues/1055#issuecomment-224293199
+				serveStaticOptions:
+					extensions: ["html"]
 			###############
 			# Localtunnel #
 			###############

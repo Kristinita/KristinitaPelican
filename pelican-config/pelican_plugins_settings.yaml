@@ -10,6 +10,11 @@
 
 PLUGINS:
 
+# [NOTE] Put this plugin before another plugins, because it overwrite “save_as” and “url” settings:
+# Save folders architecture:
+# https://ru.stackoverflow.com/a/619397/199934
+- putkiry
+
 # [BUG] Not all links display correct:
 # https://github.com/silentlamb/pelican-deadlinks/issues/4
 # https://github.com/silentlamb/pelican-deadlinks/
@@ -79,10 +84,6 @@ PLUGINS:
 # 1. Plugin create duplicates of files
 # 2. Incorrect paths — http://bit.ly/2pZdyk0
 # 'pelican_javascript'
-
-# Save folders architecture:
-# https://ru.stackoverflow.com/a/619397/199934
-- putsashi
 
 # [BUG] Incorrect Cyrillic URL's:
 # https://github.com/getpelican/pelican-plugins/issues/1010

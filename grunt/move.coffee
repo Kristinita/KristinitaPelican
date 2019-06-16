@@ -38,7 +38,7 @@ module.exports =
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/css/personal"
 			ext: '.min.css'
 		]
-	jstheme:
+	jspersonal:
 		files: [
 			expand: true
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/js/personal"
@@ -49,7 +49,7 @@ module.exports =
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/js/personal"
 			ext: '.min.js'
 		]
-	jspersonal:
+	jstheme:
 		files: [
 			expand: true
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/js"

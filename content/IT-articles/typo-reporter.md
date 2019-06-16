@@ -3,7 +3,7 @@ Status: published
 Version: 0.2.1
 Author: Sasha Chernykh
 Date: 2018-03-22 7:52:14
-Modified: 2019-05-23 14:32:22
+Modified: 2019-06-14 16:27:02
 Lang: en
 Summary: Features, problems and it solutions, that not described in official typo-reporter Readme. <br><br> ![English typo-reporter form](https://i.imgur.com/U8pIw0a.png)
 Pagetitle: typo-reporter
@@ -142,6 +142,6 @@ After filter creating I recommend to make sure, that:
 
 [jtable]
 Send|Expected behavior for your forwarding e-mail
-Example typo report on your site|Get [similar message](#demonstration)
+Example typo report on your site|Get [similar message](#Demonstration)
 Any another message from another e-mail to your GMail mail|Don't get any message
 [/jtable]

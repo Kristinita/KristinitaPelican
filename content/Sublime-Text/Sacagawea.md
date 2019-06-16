@@ -2,7 +2,7 @@ Title: Sacagawea
 Version: 0.1.0
 Author: Keith Hall
 Date: 2017-05-05 6:49:14
-Modified: 2019-05-23 14:45:10
+Modified: 2019-06-14 21:23:59
 Lang: ru
 Summary: Timer for Russian gingerinas.
 Pagetitle: Sacagawea
@@ -125,8 +125,8 @@ Sacagawea можно использовать, например, ведущем�
 При записи видео с экрана помимо [вышеупомянутых](#Режим-БлицСуперблицБрейн-Ринг) использовались следующие приложения:
 
 + [TabCinema](https://addons.mozilla.org/en-us/firefox/addon/tabcinema/) — дополнение для Firefox, разворачивающее видео в размеры окна, не экрана;
-+ [AutoHotkey](#autohotkey);
-+ [nnCron](#nncron).
++ [AutoHotkey](#AutoHotkey);
++ [nnCron](#nnCron).
 
 <a id="Установка-и-настройка"></a>
 # Установка и настройка
@@ -159,7 +159,7 @@ Sacagawea можно использовать, например, ведущем�
 ### Опционально
 
 1. Пакет [Preferences Editor](https://packagecontrol.io/packages/Preferences%20Editor) — если пожелаете использовать звуки, отличные от звуков по умолчанию.
-1. [AutoHotkey](https://www.autohotkey.com/), [Sublime AutoHotkey](https://github.com/ahkscript/SublimeAutoHotkey), [nnCron](http://nncron.ru/) — для пользователей Windows и Firefox, [см.](#autohotkey) [ниже](#nncron).
+1. [AutoHotkey](https://www.autohotkey.com/), [Sublime AutoHotkey](https://github.com/ahkscript/SublimeAutoHotkey), [nnCron](http://nncron.ru/) — для пользователей Windows и Firefox, [см.](#AutoHotkey) [ниже](#nnCron).
 
 <a id="Настройка"></a>
 ## Настройка

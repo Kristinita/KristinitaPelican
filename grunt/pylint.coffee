@@ -18,7 +18,7 @@ module.exports =
 		# [INFO] Use pylint from pipenv
 		externalPylint: true
 		# [INFO] Path to pipenv virtual environment; pipenv packages doesn't work without it:
-		# https://travis-ci.org/Kristinita/SashaGruntDebugging/builds/506827879
+		# https://travis-ci.org/Kristinita/SashaGruntDebugging/builds/506827879\
 		virtualenv: ".venv"
 	# [INFO] Lint Pelican configuration files
 	pelicanconfig:
@@ -28,4 +28,7 @@ module.exports =
 		# [INFO] Get list item in Grunt template:
 		# https://oncletom.io/2013/dynamic-grunt-targets-using-templates/
 		# [INFO] Path for personal plugins
-		src: "<%= templates.yamlconfig.PLUGIN_PATHS[1] %>/**/*.py"
+		src: ["<%= templates.yamlconfig.PLUGIN_PATHS[1] %>/**/*.py"
+			# [NOTE] just_table is not my plugin, but I move to my, because issue doesn't solved:
+			# https://github.com/burakkose/just_table/issues/7
+			"!<%= templates.yamlconfig.PLUGIN_PATHS[1] %>/**/just_table.py"]

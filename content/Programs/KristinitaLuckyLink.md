@@ -2,7 +2,7 @@ Title: KristinitaLuckyLink
 Version: 0.1.0
 Author: Sasha Chernykh
 Date: 2018-01-09 19:27:14
-Modified: 2019-05-23 14:41:15
+Modified: 2019-06-14 15:44:14
 Lang: en
 Summary: Sublime Text 3 package, that wrap the selected text to DuckDuckGo or Google top query URL <br><br> ![KristinitaLuckyLink](https://i.imgur.com/TuyxneV.png)
 Pagetitle: KristinitaLuckyLink
@@ -137,9 +137,9 @@ I save minutes of my time.
 
 1. I'm not affiliated with Google Search or DuckDuckGo Developers. I am not responsible for the fact that there is one or another result in the top of SERP. You can get unexpected link.
 
-	But if in top of SERP one link, but KristinitaLuckyLink out another link, please make [these actions](#incorrect-links).
+	But if in top of SERP one link, but KristinitaLuckyLink out another link, please make [these actions](#Incorrect-links).
 
-1. If you don't want by some reasons make actions from [installation](#installation) and [activation](#activation) section, please, don't install KristinitaLuckyLink.
+1. If you don't want by some reasons make actions from [installation](#Installation) and [activation](#Activation) section, please, don't install KristinitaLuckyLink.
 
 1. Copy from [here](https://github.com/aviaryan/python-gsearch#warning):
 
@@ -150,7 +150,7 @@ I save minutes of my time.
 	1. Markdown link style,
 	1. English DuckDuckGo and Google search engines.
 
-Personally I use Markdown markup for my articles and Google and DuckDuckGo enough for me. If you use another markups and/or search engines, [pull requests welcome](#contributing).
+Personally I use Markdown markup for my articles and Google and DuckDuckGo enough for me. If you use another markups and/or search engines, [pull requests welcome](#Contributing).
 
 <a id="Installation"></a>
 # Installation
@@ -174,7 +174,7 @@ Personally I use Markdown markup for my articles and Google and DuckDuckGo enoug
 <a id="Development-version"></a>
 ### Development version
 
-As [stable version](#stable-version). Solely replace `https://github.com/Kristinita/KristinitaLuckyLink` to `https://github.com/Kristinita/KristinitaLuckyLink/tree/SashaDevelop` in instruction above.
+As [stable version](#Stable-version). Solely replace `https://github.com/Kristinita/KristinitaLuckyLink` to `https://github.com/Kristinita/KristinitaLuckyLink/tree/SashaDevelop` in instruction above.
 
 You will get all changes from `SashaDevelop` branch in each Sublime Text start.
 

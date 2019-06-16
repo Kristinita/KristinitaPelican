@@ -19,14 +19,14 @@
 # https://docs.travis-ci.com/user/reference/overview/#Virtualisation-Environment-vs-Operating-System
 # https://blog.travis-ci.com/2017-08-31-trusty-as-default-status
 
-# Needs for correct APT addon usage:
+# [INFO] Needs for correct APT addon usage:
 # https://docs.travis-ci.com/user/reference/overview/
 # Diff:
 # https://travis-ci.org/Kristinita/SashaScrutinizer/builds/370138075
 # https://travis-ci.org/Kristinita/SashaScrutinizer/builds/370122401
 sudo: enabled
 
-# Needs Xenial, not Trusty for Python 3.7 works:
+# [INFO] Needs Xenial, not Trusty for Python 3.7 works:
 # https://travis-ci.community/t/unable-to-download-python-3-7-archive-on-travis-ci/639/2
 # https://github.com/travis-ci/travis-ci/issues/9815#issuecomment-425867404
 # Differences between Xenial and Trusty:

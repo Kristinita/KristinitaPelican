@@ -2,7 +2,7 @@ Title: How to publish your package to PyPI, 2018
 Version: 0.1.0
 Author: Sasha Chernykh
 Date: 2018-01-27 10:59:14
-Modified: 2019-05-23 14:30:08
+Modified: 2019-06-14 16:10:22
 Lang: en
 Summary: Tutorial, how you can publish your Python package to PyPI <br><br> ![Erichek on pypi.python.org](https://i.imgur.com/IzSH7BK.png) <br><br> ![Erichek on pypi.org](https://i.imgur.com/4P3w8TP.png) <br><br> ![Erichek on pypi.org 2](https://i.imgur.com/IxsUDu4.png)
 Pagetitle: How to publish your package to PyPI, 2018
@@ -406,7 +406,7 @@ For example, I am Python package developer and have local dependencies for my pa
 <a id="setuppy"></a>
 ### setup.py
 
-In this and 2 next sections I wrote, how you can get [install\_requires behavior](#installrequires), use solely *requirements.txt* file. You don't need add your dependencies to install\_requires.
+In this and 2 next sections I wrote, how you can get [install\_requires behavior](#install_requires), use solely *requirements.txt* file. You don't need add your dependencies to install\_requires.
 
 Add [this code](https://stackoverflow.com/a/16624700/5951529) to your *setup.py*:
 
@@ -495,7 +495,7 @@ If you publish your package first time or not sure that everything is doing righ
 
 Please, register on [TestPyPI](https://testpypi.python.org) and [PyPI](https://pypi.python.org/pypi) sites.
 
-It would be nice, if you will use same username and password for both sites, that [Twine](#twine-settings) works correct.
+It would be nice, if you will use same username and password for both sites, that [Twine](#Twine-settings) works correct.
 
 <a id="Twine-settings"></a>
 ## Twine settings
@@ -673,7 +673,7 @@ C:\Users\SashaChernykh>
 <a id="PyPI"></a>
 # PyPI
 
-If all actions from [TestPyPI section](#testpypi) success for you, you can publish your package to PyPI and then install it.
+If all actions from [TestPyPI section](#TestPyPI) success for you, you can publish your package to PyPI and then install it.
 
 1. change version in your *setup.cfg* file (it must be [semver](https://semver.org/)-compatible);
 1. in root folder of your package open terminal and print:
@@ -682,14 +682,14 @@ If all actions from [TestPyPI section](#testpypi) success for you, you can publi
 	python setup.py bdist_wheel && twine upload dist/*
 	```
 
-1. visit `https://pypi.python.org/pypi/<your_package>` and `https://pypi.org/project/<your_package>`, as you [visit TestPyPI](#visit-testpypi) and check, is everything okay;
+1. visit `https://pypi.python.org/pypi/<your_package>` and `https://pypi.org/project/<your_package>`, as you [visit TestPyPI](#Visit-TestPyPI) and check, is everything okay;
 1. install your package, use pip:
 
 	```shell
 	pip install <your_package>
 	```
 
-1. check, that your package works correct [as in previous section](#checking).
+1. check, that your package works correct [as in previous section](#Checking).
 
 If all okay, **congratulations! You successful publish your package to PyPI!**
 
@@ -701,7 +701,7 @@ If all okay, **congratulations! You successful publish your package to PyPI!**
 That update your package in PyPI:
 
 1. Make new changes,
-1. Make same actions as in [section above](#pypi).
+1. Make same actions as in [section above](#PyPI).
 
 <a id="Automatic-updating-release-and-changelog"></a>
 # Automatic updating, release and changelog
@@ -746,18 +746,18 @@ If you want to have same behavior, read on.
 <a id="Features-1"></a>
 ## Features
 
-See [these features](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#features).
+See [these features](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#Features).
 
 <a id="Limitations-1"></a>
 ## Limitations
 
-See [these limitations](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#limitations).
+See [these limitations](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#Limitations).
 
 <a id="Installation-and-setting-up"></a>
 ## Installation and setting-up
 
-1. you need to install all from [this section](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#installation) except *tee*, *cat*, *mv* and *js-beautify*;
-1. please, follow [these](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#github-token), [these](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#upstream-branch) and [these](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#changelogmd) instructions;
+1. you need to install all from [this section](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#Installation) except *tee*, *cat*, *mv* and *js-beautify*;
+1. please, follow [these](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#Github-token), [these](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#Upstream-branch) and [these](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#CHANGELOGmd) instructions;
 1. [create a file *package.json*](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#packagejson) in root folder of your repository.
 
 <a id="release-itjson"></a>
@@ -786,7 +786,7 @@ Where:
 
 	![Version in setup.cfg](https://i.imgur.com/4C1jnLm.png)
 
-+ `python setup.py bdist_wheel && twine upload dist\/*` — [build and publish](#pypi) your package.
++ `python setup.py bdist_wheel && twine upload dist\/*` — [build and publish](#PyPI) your package.
 
 !!! note
 	[In *.release-it.json* of real Erichek repository](https://github.com/Kristinita/Erichek/blob/master/.release-it.json) I add also next text:
@@ -806,7 +806,7 @@ See [here](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#release-itjs
 <a id="Usage"></a>
 ## Usage
 
-See [usage instructions](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#usage).
+See [usage instructions](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#Usage).
 
 <a id="Testing-environment"></a>
 # Testing environment

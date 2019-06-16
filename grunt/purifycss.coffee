@@ -60,13 +60,17 @@ module.exports =
 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/kristinita.css"
 	sublimetexttarget:
 		src: [
-				"<%= templates.yamlconfig.OUTPUT_PATH %>/Sublime-Text/*.html"
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/Erics-Rooms/*.html"
 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/*.html"
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/Sublime-Text/*.html"
 				]
 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/programs.css"]
 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/programs.css"
 	gingerinastarget:
-		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/Gingerinas/*.html"]
+		src: [
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/Erics-Rooms/*.html"
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/Gingerinas/*.html"
+				]
 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/gingerinas.css"]
 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/gingerinas.css"
 	itarticlestarget:

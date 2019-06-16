@@ -2,7 +2,7 @@ Title: Fastest way to add new version of your Sublime Text package
 Version: 0.3.0
 Author: Sasha Chernykh
 Date: 2018-01-23 10:43:14
-Modified: 2019-05-23 12:27:43
+Modified: 2019-06-14 15:47:18
 Lang: en
 Summary: Tutorial, how you can make release and changelog, use only one command <br><br> ![Package Control messages](https://i.imgur.com/J5AuHmX.png) <br><br> ![*CHANGELOG.md* and *messages.json*](https://i.imgur.com/12fFJsX.png) <br><br> ![*messages/&lt;version&gt;.txt* and *package.json*](https://i.imgur.com/kkKjiv5.png) <br><br> ![Releases page](https://i.imgur.com/FwPHBZS.png)
 Pagetitle: Fastest way to add new version of your Sublime Text package
@@ -134,7 +134,7 @@ You need to create all files from this section in root folder of your package re
 You can see configuration files of real package in [SashaSublime repository](https://github.com/Kristinita/SashaSublime).
 
 !!! caution
-	I recommend in first do actions from [Activation](#activation) and [Usage](#usage) sections in the test repository, not real. Argumentation:
+	I recommend in first do actions from [Activation](#Activation) and [Usage](#Usage) sections in the test repository, not real. Argumentation:
 
 	+ You or I can make a typo(s);
 	+ Differences in my and your environments;
@@ -276,7 +276,7 @@ Now run [one of command](https://www.npmjs.com/package/release-it#%EF%B8%8F-usag
 
 Also you can [create pre-releases](https://www.npmjs.com/package/release-it).
 
-Example result see in [demonstration](#demonstration) section.
+Example result see in [demonstration](#Demonstration) section.
 
 <a id="Details"></a>
 # Details
@@ -317,7 +317,7 @@ release-it -n -V
 
 + *changelogCommand* — command, that generate changelog to `https://github.com/<your username>/<your repository>/releases`. Command must stdout to console.
 + `#!json "release": true,` — [post changelog](https://www.npmjs.com/package/release-it#%EF%B8%8F-configuration) to `https://github.com/<your username>/<your repository>/releases`.
-+ *TOKEN_GITHUB_FOR_RELEASE_IT* — your [*TOKEN_GITHUB_FOR_RELEASE_IT* environment variable](#github-token),
++ *TOKEN_GITHUB_FOR_RELEASE_IT* — your [*TOKEN_GITHUB_FOR_RELEASE_IT* environment variable](#Github-token),
 + `#!json "npm": {"publish": false},` — don't publish release to [npm](https://www.npmjs.com/). We are writing Sublime Text package, not npm modules, so needs this parameter.
 + `#!json "safeBump": false,` — that correct version in `https://github.com/<your username>/<your repository>/releases`; see [issue](https://github.com/webpro/release-it/issues/218) for details.
 + `#!json "addUntrackedFiles": true,` — add [untracked file](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository) *messages/&lt;version&gt;.txt* [to release commit](https://github.com/webpro/release-it/issues/233).
