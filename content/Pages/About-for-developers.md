@@ -2,7 +2,7 @@ Title: For developers
 Version: 0.0.3
 Author: Sasha Chernykh
 Date: 2018-03-27 7:55:14
-Modified: 2019-06-14 21:33:45
+Modified: 2019-06-28 16:18:50
 Lang: en
 Summary: Information for developers about Kristinita's Search
 Pagetitle: For developers
@@ -11,6 +11,7 @@ Pagecolors: sasha-black-description
 Asideimage: SashaInflatedSponges
 Iconleftorright: right
 Noco: 1QCqM6
+Table: standard
 Tooltipster: true
 Clipboardjs: true
 Og_image: https://i.imgur.com/2blY7dI.png

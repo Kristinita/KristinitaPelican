@@ -178,6 +178,8 @@ MARKDOWN:
 
     # Custom !!classes!! for span tag:
     # https://github.com/exaroth/mdx_custom_span_class
+    # [FIXME] Plugin doesn't work, if “!” symbol in constructions:
+    # https://github.com/exaroth/mdx_custom_span_class/pull/3
     mdx_custom_span_class: {}
 
     # Down headers to 1 item, that Markdownlint MD002 is good:

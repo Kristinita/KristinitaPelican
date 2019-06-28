@@ -77,7 +77,7 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	https://github.com/browser-update/browser-update/issues #}
 	{# [NOTE] Don't use protocol-relative URLs:
 	https://stackoverflow.com/a/54386928/5951529 #}
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" defer></script>
 	{# target-blank
 	Add “target="_blank"” for all external links:
 	https://bogdandragomir.com/blog/2016/12/add-target-_blank-attribute-external-anchors-page-javascript-jquery-one-single-line/ #}
@@ -90,6 +90,8 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	<!-- JQuery Lazy -->
 	<script src="https://cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.min.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.plugins.min.js" defer></script>
+	{# jquery-responsive-tables #}
+	{% block base_responsive_tables %}{% endblock %}
 	{# Browser-Update #}
 	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Browser-Update/browser-update.min.js" defer></script>
 	<!-- typo-reporter -->

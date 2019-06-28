@@ -19,6 +19,17 @@
 =            Scripts            =
 ==============================-->
 
+{# jquery-responsive-tables #}
+{% block base_responsive_tables -%}
+	{%- if page.table == 'standard' -%}
+		<script src="https://cdn.jsdelivr.net/npm/jquery-responsive-tables/js/jquery.responsive-tables.min.js" defer></script>
+		<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/jquery-responsive-tables/jquery-responsive-tables.min.js" defer></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-responsive-tables/css/responsive-tables.min.css" />
+	{%- elif page.table == 'onecolumn' -%}
+		<link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/css/general/one-column-table.min.css">
+	{%- endif -%}
+{%- endblock %}
+
 <!-- typo-reporter -->
 {% block base_typoreporter -%}
 	<script src="https://cdn.jsdelivr.net/npm/typo-reporter/lib/TypoReporter.min.js" defer></script>

@@ -1,11 +1,12 @@
 # @Author: andreymal
 # @Date:   2017-01-25 18:48:20
 # @Last Modified by:   Kristinita
-# @Last Modified time: 2019-06-16 16:37:08
+# @Last Modified time: 2019-06-18 08:28:06
 """Preserve paths for Pelican articles and pages.
 
 Based on @andreymal answer:
 https://ru.stackoverflow.com/a/619397/199934
+
 Example:
     Input page path: content/SashaFolder/SashaFile.md
     Output page path: output/SashaFolder/SashaFile.html
@@ -18,12 +19,9 @@ from pelican.generators import PagesGenerator
 
 
 def putkiry(instance):
-    """fix_articles function.
+    """Putkiry function.
 
-    Same as fix_pages, for articles
-
-    Arguments:
-        generator {articles} -- correct path for articles.
+    Overwrite articles and pages paths in output.
     """
     # Get relative (regarding the “content” folder) path:
     source_path = instance.get_relative_source_path()
