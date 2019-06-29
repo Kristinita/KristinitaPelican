@@ -74,7 +74,10 @@ module.exports =
 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/gingerinas.css"]
 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/gingerinas.css"
 	itarticlestarget:
-		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/IT-articles/*.html"]
+		src: [
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/Erics-Rooms/*.html"
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/IT-articles/*.html"
+				]
 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/it-articles.css"]
 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/it-articles.css"
 	giologicabluetarget:
