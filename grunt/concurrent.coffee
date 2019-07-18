@@ -98,10 +98,10 @@ module.exports =
 			'curl'
 			'imagemin'
 			'purifycss']
-	tarp8: ['critical'
+	tarp8: ['shell:tidymodify'
 			'uglify']
 	tarp9: ['cssnano'
-			'shell:tidymodify']
+			'critical']
 	tarp10: ['cacheBust']
 	tarp11: ['htmlmin']
 	tarp12: ['shell:eclintfix']
@@ -138,7 +138,8 @@ module.exports =
 			'coffeelint:theme'
 			'html-nu'
 			'path_validator'
-			'postcss'
+			# [FIXME] “No source files were found” error
+			# 'postcss'
 			'shell:tidyvalidate'
 			'stylint']
 	# [DONE]
