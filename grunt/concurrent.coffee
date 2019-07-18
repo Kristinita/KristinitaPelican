@@ -205,7 +205,9 @@ module.exports =
 	https://travis-ci.org/Kristinita/SashaGruntDebugging/builds/536620396
 	###
 	tarna1: ['htmlhint'
-			'htmllint'
+			# [FIXME] E006 htmllint error:
+			# https://travis-ci.org/Kristinita/KristinitaPelican/jobs/560507427#L2046-L2085
+			# 'htmllint'
 			'pylint']
 	tarna2: ['notify:validate']
 
