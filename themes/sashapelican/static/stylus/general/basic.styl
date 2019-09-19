@@ -153,8 +153,12 @@ em
 	========================================================================== */
 
 kbd
-	font-weight bold
-	border-radius .1875rem
+	@extend $KiraKbd
+
+// [INFO] GRights tag
+.KiraGRights
+	@extend $KiraKbd
+	font-style italic
 
 /* >> noscript
 	========================================================================== */
@@ -175,7 +179,6 @@ noscript
 	position fixed
 	top 0
 	z-index 900
-
 
 /* ==========================================================================
 	> Tables
@@ -199,9 +202,7 @@ table
 td
 th
 	padding .5rem
-	/* doiuse-disable word-break */
-	word-break break-all
-	/* doiuse-enable word-break */
+	@extend $SashaNoHorizontalScrollbar
 
 /*
 * [FIXME] I can't make responsive tables:
@@ -234,12 +235,14 @@ ul {
 
 // Left margin in nested lists
 
+ol
 ul
-	li
-		margin-left 1rem
+	> li
+		@extend $SashaNoHorizontalScrollbar
+		@extend $KiraOptimalMarginLeft
 
 .SashaOlMargin
-	margin-left 1rem
+	@extend $KiraOptimalMarginLeft
 
 /* >> TOC
 	========================================================================== */

@@ -2,7 +2,7 @@ Title: Fastest way to add new version of your Sublime Text package
 Version: 0.3.0
 Author: Sasha Chernykh
 Date: 2018-01-23 10:43:14
-Modified: 2019-06-14 15:47:18
+Modified: 2019-08-02 19:06:59
 Lang: en
 Summary: Tutorial, how you can make release and changelog, use only one command <br><br> ![Package Control messages](https://i.imgur.com/J5AuHmX.png) <br><br> ![*CHANGELOG.md* and *messages.json*](https://i.imgur.com/12fFJsX.png) <br><br> ![*messages/&lt;version&gt;.txt* and *package.json*](https://i.imgur.com/kkKjiv5.png) <br><br> ![Releases page](https://i.imgur.com/FwPHBZS.png)
 Pagetitle: Fastest way to add new version of your Sublime Text package
@@ -299,7 +299,7 @@ release-it -n -V
 <a id="buildCommand"></a>
 ### buildCommand
 
-+ *changelog -f -* — generate changelog. *-* — argument, that changelog [stdout to console](https://unix.stackexchange.com/a/419416/237999),
++ *changelog -f -* — generate changelog. “*-*” — argument, that changelog [stdout to console](https://unix.stackexchange.com/a/419416/237999),
 + `-u https:\/\/${repo.host}\/${repo.repository}` — support URL's in changelog, that the user can quick go to the commit link. `${repo.host}` — github.com. `${repo.repository}` — `<your username>/<your repository>`, `Kristinita/SashaSublime` for my example.
 
 	Example:

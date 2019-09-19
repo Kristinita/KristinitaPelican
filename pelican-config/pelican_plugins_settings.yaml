@@ -137,7 +137,11 @@ JTABLE_SEPARATOR: "|"
 ##################
 # section_number #
 ##################
-SECTION_NUMBER_MAX: 5
+# [INFO] Section levels:
+# https://github.com/getpelican/pelican-plugins/tree/master/section_number#settings
+# [INFO] Maximum value is 6 — Markdown specification:
+# https://daringfireball.net/projects/markdown/syntax#header
+SECTION_NUMBER_MAX: 6
 
 ###########
 # sitemap #

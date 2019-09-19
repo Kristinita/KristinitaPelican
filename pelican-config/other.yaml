@@ -24,7 +24,7 @@ DEFAULT_DATE_FORMAT: "%Y-%m-%dT%H:%M:%S%z"
 # https://lingoport.com/internationalization-of-facebook-open-graph-apps/
 # [WARNING] Using country/region abbreviations instead of locale names:
 # https://github.com/getpelican/pelican/issues/2525
-# LOCALE = ('en_US', 'ru_RU', 'en-US', 'ru-RU')
+# LOCALE: ('en_US', 'ru_RU', 'en-US', 'ru-RU')
 
 # [INFO] Pagination — division of articles
 DEFAULT_PAGINATION: false

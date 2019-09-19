@@ -37,6 +37,13 @@ module.exports =
 					pattern: / markdown="1"/g
 					replacement: ''
 				}
+				# [INFO] Wrap GRights abbreviations to KiraGRights class
+				# [INFO] Regex for punctuation marks from here:
+				# https://www.regular-expressions.info/posixbrackets.html
+				{
+					pattern: /(GR:.+?)(?=(\s|[!"\#$%&'()*+,\-./:;<=>?@\[\\\]^_`{|}~]))/g
+					replacement: '<span class="KiraGRights">$1</span>'
+				}
 			]
 	######################
 	# Production version #

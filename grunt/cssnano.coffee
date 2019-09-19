@@ -6,6 +6,9 @@
 # https://www.npmjs.com/package/grunt-cssnano
 # Rules:
 # http://cssnano.co/guides/optimisations/
+# [NOTE] Delete “.beautified.css” files! cssnano incorrectly minify “.css” files, example:
+# Files: output/theme/css/general/basic.beautified.css, output/theme/css/general/basic.css ->
+# output/theme/css/general/basic.min.css
 module.exports =
 	options:
 		# [LEARN][CSS][JAVASCRIPT] Sourcemaps

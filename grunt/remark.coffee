@@ -5,8 +5,10 @@
 # https://remark.js.org/
 # Grunt implementation:
 # https://www.npmjs.com/package/grunt-remark
-# [WARNING] You need to install remark plugins separately:
+# [NOTE] You need to install remark plugins separately:
 # “npm install remark-preset-lint-markdown-style-guide remark-preset-lint-recommended --save-dev”
+# [INFO] Disabling specific rules:
+# https://github.com/remarkjs/remark-lint#configuring-remark-lint
 module.exports =
 	src:
 		[

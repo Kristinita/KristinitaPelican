@@ -166,9 +166,11 @@ MARKDOWN:
     # http://bit.ly/2SjqOLq
     # markdown_newtab:
 
-    # Add own environment variables to text:
+    # [INFO] Add own environment variables to text:
     # https://github.com/cmacmackin/md-environ
-    md_environ.environ: {}
+    # [BUG][FIXME] ValueError: No item named "not_strong" exists.
+    # I don't use this extension, so disabled
+    # md_environ.environ: {}
 
     # “cite” tag:
     # https://github.com/aleray/mdx_cite

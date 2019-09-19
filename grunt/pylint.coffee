@@ -27,8 +27,6 @@ module.exports =
 	personalpluginspelican:
 		# [INFO] Get list item in Grunt template:
 		# https://oncletom.io/2013/dynamic-grunt-targets-using-templates/
-		# [INFO] Path for personal plugins
-		src: ["<%= templates.yamlconfig.PLUGIN_PATHS[1] %>/**/*.py"
-			# [NOTE] just_table is not my plugin, but I move to my, because issue doesn't solved:
-			# https://github.com/burakkose/just_table/issues/7
-			"!<%= templates.yamlconfig.PLUGIN_PATHS[1] %>/**/just_table.py"]
+		# [INFO] Path for personal plugins.
+		# [NOTE] Not for third-party plugins, that I fix, but plugins authors not apply changes.
+		src: ["<%= templates.yamlconfig.PLUGIN_PATHS[1] %>/**/*.py"]

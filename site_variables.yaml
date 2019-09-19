@@ -35,6 +35,8 @@ PLUGIN_PATHS:
 - pelican-plugins
 # [INFO] Folder with own plugins
 - personal-plugins
+# [INFO] Folder for third-party plugins, that I fix, but plugins authors not make a changes:
+- third-party-plugins
 # Cache path
 CACHE_PATH: pelican_cache
 # Path of Pelican settings
@@ -62,14 +64,16 @@ PAGE_PATHS:
 - 404.md
 - Sasha-Black.md
 ARTICLE_PATHS:
+- Books-Reviews
 - Erics-Rooms
 - Gingerinas
 - Giologica
 - IT-articles
 - Life-hacks
 - Programs
-- Smert-svobode
 - Sasha-Black
+- Smert-svobode
+- Special
 - Sublime-Text
 # GitHub repository URL of this source:
 GITHUB_SOURCES_URL: https://github.com/Kristinita/KristinitaPelican
