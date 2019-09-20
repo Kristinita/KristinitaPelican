@@ -24,6 +24,7 @@
 # [NOTE] "pipenv run python rename_pelican_plugins_folder.py" required, not
 # "python rename_pelican_plugins_folder.py":
 # https://travis-ci.org/Kristinita/KristinitaPelican/jobs/536312994#L483
+# [FIXED] I remove "python rename_pelican_plugins_folder.py" file
 # [WARNING] apt-get HTML Tidy version outdated, build HTML tidy on Ubuntu from sources:
 # https://github.com/htacg/tidy-html5/blob/next/README/BUILD.md
 # https://github.com/htacg/tidy-html5/issues/721
@@ -48,7 +49,7 @@
 # and user get a bug: "error NU1103: Unable to find a stable package localappveyor with version"
 # [FIXED] For September, 2019 specific LocalAppVeyor version not available:
 # https://www.nuget.org/packages/localappveyor/
-parallel ::: 'pip install --upgrade pip && pip install pipenv==11.10.2 && pipenv install --dev && pipenv run peru sync && pipenv run python rename_pelican_plugins_folder.py' \
+parallel ::: 'pip install --upgrade pip && pip install pipenv==11.10.2 && pipenv install --dev && pipenv run peru sync' \
 	'npm install --global npm && npm install -g grunt-cli && npm install' \
 	'git clone https://github.com/htacg/tidy-html5.git && cd tidy-html5 && cd build/cmake && cmake ../.. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIB:BOOL=OFF && make && sudo make install' \
 	'gem install travis' \

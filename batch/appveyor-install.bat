@@ -1,7 +1,7 @@
 @REM @Author: Kristinita
 @REM @Date:   2018-02-28 19:42:16
 @REM @Last Modified by:   Kristinita
-@REM Modified time: 2019-09-20 12:17:41
+@REM Modified time: 2019-09-20 14:03:12
 @REM [INFO] Install all AppVeyor dependencies for building and validation.
 @REM [LEARN] Use REM comments:
 @REM https://stackoverflow.com/a/12407934/5951529
@@ -33,7 +33,7 @@ START /B CMD /C "choco install html-tidy -y -ignoredependencies"
 @REM https://packaging.python.org/guides/supporting-windows-using-appveyor/
 @REM [NOTE] “pip3” doesn't work; use “%PYTHON%\\python -m pip”:
 @REM https://stackoverflow.com/a/42559223/5951529
-START /B CMD /C "%PYTHON%\\python -m pip install --upgrade pip & %PYTHON%\\python -m pip install pipenv==11.10.2 & pipenv install --dev & pipenv run peru sync & pipenv run python rename_pelican_plugins_folder.py"
+START /B CMD /C "%PYTHON%\\python -m pip install --upgrade pip & %PYTHON%\\python -m pip install pipenv==11.10.2 & pipenv install --dev & pipenv run peru sync"
 START /B CMD /C "choco install nodejs phantomjs -y & npm install -g grunt-cli & npm install"
 @REM [FIXME] Incorrect lint “.travis.yml” file:
 @REM https://github.com/travis-ci/travis.rb/issues/422
