@@ -150,11 +150,16 @@ matrix:
 # https://github.com/travis-ci/apt-package-whitelist
 # [NOTE] ShellCheck default in Travis CI configuration:
 # https://github.com/koalaman/shellcheck#travis-ci
-# PhantomJS is preinstalled on Travis:
+# [INFO] PhantomJS is preinstalled on Travis:
 # https://docs.travis-ci.com/user/gui-and-headless-browsers/#using-phantomjs
 addons:
   apt:
     packages:
+    # [INFO] For .NET Core SDK installation:
+    # https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/sdk-current
+    - apt-transport-https
+    # [INFO] For parallel installation:
+    # https://unix.stackexchange.com/a/427419/237999
     - parallel
     # [INFO] For HTML Tidy building:
     # https://askubuntu.com/a/1027128/582218

@@ -35,7 +35,7 @@
 # [BUG] Temporary downgrade pipenv, because locking bug in newest versions:
 # https://github.com/pypa/pipenv/issues/3391
 # [INFO] Install .NET Core and LocalAppVeyor for Ubuntu:
-# https://docs.microsoft.com/en-us/windows-server/administration/linux-package-repository-for-microsoft-software#ubuntu
+# https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/sdk-current
 # [NOTE] PhantomJS pre-installed on Travis:
 # https://docs.travis-ci.com/user/gui-and-headless-browsers/#using-phantomjs
 # [NOTE] Matrix key "dotnet" for C#, F# or Visual Basic projects.
@@ -46,8 +46,10 @@
 # "sudo apt-get install dotnet-sdk" will not works
 # [WARNING] You need specific LocalAppVeyor version, because no stable versions at January 2019,
 # and user get a bug: "error NU1103: Unable to find a stable package localappveyor with version"
+# [FIXED] For September, 2019 specific LocalAppVeyor version not available:
+# https://www.nuget.org/packages/localappveyor/
 parallel ::: 'pip install --upgrade pip && pip install pipenv==11.10.2 && pipenv install --dev && pipenv run peru sync && pipenv run python rename_pelican_plugins_folder.py' \
 	'npm install --global npm && npm install -g grunt-cli && npm install' \
 	'git clone https://github.com/htacg/tidy-html5.git && cd tidy-html5 && cd build/cmake && cmake ../.. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIB:BOOL=OFF && make && sudo make install' \
 	'gem install travis' \
-	'wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb && sudo apt-get update && sudo apt-get install dotnet-sdk-2.2 && dotnet tool install -g localappveyor --version 0.5.0-alpha.10'
+	'wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb && sudo apt-get update && sudo apt-get install dotnet-sdk-2.2 && dotnet tool install -g localappveyor'

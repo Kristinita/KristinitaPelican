@@ -1,7 +1,7 @@
 @REM @Author: Kristinita
 @REM @Date:   2018-02-28 19:42:16
 @REM @Last Modified by:   Kristinita
-@REM Modified time: 2019-05-24 10:11:42
+@REM Modified time: 2019-09-20 12:17:41
 @REM [INFO] Install all AppVeyor dependencies for building and validation.
 @REM [LEARN] Use REM comments:
 @REM https://stackoverflow.com/a/12407934/5951529
@@ -43,7 +43,7 @@ START /B CMD /C "choco install nodejs phantomjs -y & npm install -g grunt-cli & 
 @REM START /B CMD /C "gem install travis"
 @REM [WARNING] In local machine you need install dotnetcore:
 @REM https://chocolatey.org/packages/dotnetcore
-START /B CMD /C "dotnet tool install -g localappveyor --version 0.5.0-alpha.10"
+START /B CMD /C "dotnet tool install -g localappveyor"
 @REM [NOTE] ShellCheck installation via Scoop — fast way for Windows:
 @REM https://github.com/koalaman/shellcheck/issues/915#issuecomment-385049702
 @REM https://help.appveyor.com/discussions/suggestions/843-add-support-for-the-scoop-installer
