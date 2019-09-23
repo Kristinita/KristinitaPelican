@@ -48,9 +48,10 @@ module.exports =
 	tarb5: ['newer:move:csstheme'
 			'newer:move:csspersonal'
 			'shell:tidymodify']
-	tarb6: ['newer:jsbeautifier']
-	tarb7: ['shell:eclintfix']
-	tarb8: ['notify:default']
+	tarb6: ['newer:postcss:build']
+	tarb7: ['newer:jsbeautifier']
+	tarb8: ['shell:eclintfix']
+	tarb9: ['notify:default']
 
 	###
 	For screenshots, “target screenshot”.
@@ -71,8 +72,7 @@ module.exports =
 	#######################
 	# Check, that you in right branch:
 	# https://www.npmjs.com/package/grunt-checkbranch
-	tarp1: ['checkbranch:master'
-			'chmod']
+	tarp1: ['checkbranch:master']
 	tarp2: ['shell:deploy']
 	# Don't use “newer” for “move”! Files from “root-html” doesn't move.
 	# Don't use “newer” with “realFavicon”! “index.html” will not changed!
@@ -99,6 +99,7 @@ module.exports =
 			'imagemin'
 			'purifycss']
 	tarp8: ['shell:tidymodify'
+			'postcss:build'
 			'uglify']
 	tarp9: ['cssnano'
 			'critical']
@@ -121,7 +122,7 @@ module.exports =
 	###
 	For validating sources, “target sources”.
 	###
-	tars1: ['coffeelint:source'
+	tars1: ['coffeelint:configs'
 			'markdownlint'
 			'remark'
 			'shell:bashate']
@@ -134,15 +135,15 @@ module.exports =
 	https://github.com/Python-Markdown/markdown/issues/768
 	https://travis-ci.org/Kristinita/KristinitaPelican/jobs/471091236#L1220
 	###
-	tarv1: ['coffeelint:personal'
-			'coffeelint:theme'
-			'html-nu'
+	tarv1: ['coffeelint:site'
+			# 'html-nu'
 			'path_validator'
 			# [DONE]
 			# Update dependencies fix it:
 			# [FIXME] “No source files were found” error
-			'postcss'
+			'postcss:lint'
 			'shell:tidyvalidate'
+			'stylelint'
 			'stylint']
 	# [DONE]
 	# [FIXME] eclint doesn't fix leading spaces:

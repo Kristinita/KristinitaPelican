@@ -11,10 +11,12 @@ module.exports =
 			# 2. extenssion will the former, not “.webp”
 			# Not recommend it.
 			sameExt: false
+		# [NOTE] Don't use "<%= templates.paths.images %>", because it include svg, that
+		# not convert to webp
 		files: [
 			expand: true
 			cwd: '.'
-			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>\
-					/images/**/*.{png,jpg,jpeg}", "<%= templates.yamlconfig.OUTPUT_PATH %>/images/**/*.{png,jpg,jpeg}"]
+			# [LEARN][GLOB] Use “/**/”, that include “output/images/**” and “output/theme/images/**”
+			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/images/**/*.{png,jpg,jpeg,gif}"]
 			dest: '.'
-			]
+		]

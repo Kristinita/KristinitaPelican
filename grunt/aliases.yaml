@@ -16,6 +16,7 @@ default:
 - 'concurrent:tarb6'
 - 'concurrent:tarb7'
 - 'concurrent:tarb8'
+- 'concurrent:tarb9'
 
 # [INFO] Minimal set of tasks, that site works; for development
 minimal:
@@ -43,6 +44,7 @@ publish:
 - 'concurrent:tarp10'
 - 'concurrent:tarp11'
 - 'concurrent:tarp12'
+- 'concurrent:tarp13'
 
 # [INFO] Publish without updating
 onlypublish:
@@ -58,6 +60,7 @@ onlypublish:
 - 'concurrent:tarp10'
 - 'concurrent:tarp11'
 - 'concurrent:tarp12'
+- 'concurrent:tarp13'
 
 # [INFO] Add, commit and push to GitHub
 git:

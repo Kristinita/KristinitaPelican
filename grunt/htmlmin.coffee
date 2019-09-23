@@ -1,21 +1,23 @@
 #################
 # html-minifier #
 #################
-# Minify HTML:
-# https://www.npmjs.com/package/html-minifier
-# Grunt-wrapper:
-# https://www.npmjs.com/package/grunt-contrib-htmlmin
-# Online:
-# https://kangax.github.io/html-minifier/
-# [NOTE] I migrate to html-minifier from minimize:
-# 1. style tag minifying support:
-# https://github.com/kangax/html-minifier/issues/396
-# 2. More features:
-# https://www.npmjs.com/package/html-minifier#options-quick-reference
-# 3. Minification comparision:
-# https://www.npmjs.com/package/html-minifier#minification-comparison
-# [WARNING] Use “bunch of fragile regexes” instead of HTML parser:
-# https://www.npmjs.com/package/grunt-minify-html
+###
+Minify HTML:
+https://www.npmjs.com/package/html-minifier
+Grunt-wrapper:
+https://www.npmjs.com/package/grunt-contrib-htmlmin
+Online:
+https://kangax.github.io/html-minifier/
+[NOTE] I migrate to html-minifier from minimize:
+1. style tag minifying support:
+https://github.com/kangax/html-minifier/issues/396
+2. More features:
+https://www.npmjs.com/package/html-minifier#options-quick-reference
+3. Minification comparision:
+https://www.npmjs.com/package/html-minifier#minification-comparison
+[WARNING] Use “bunch of fragile regexes” instead of HTML parser:
+https://www.npmjs.com/package/grunt-minify-html
+###
 module.exports =
 	minify:
 		# Options:
@@ -93,6 +95,6 @@ module.exports =
 		files: [
 			expand: true
 			cwd: "."
-			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.html"]
+			src: "<%= templates.paths.html %>"
 			dest: "."
 			]

@@ -85,7 +85,9 @@ module.exports =
 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica-blue.css"]
 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica-blue.css"
 	giologicatarget:
-		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/Giologica/*.html"]
+		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/Giologica/*.html"
+					"<%= templates.yamlconfig.OUTPUT_PATH %>/Books-Reviews/*.html"
+					"<%= templates.yamlconfig.OUTPUT_PATH %>/Special/*.html"]
 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica.css"]
 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica.css"
 	sashablacktarget:

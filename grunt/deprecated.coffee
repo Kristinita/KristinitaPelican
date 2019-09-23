@@ -223,7 +223,7 @@
 # # https://github.com/shama/grunt-gulp/issues/13
 # module.exports =
 # 	gulptidy:
-# 		gulp.src('<%= templates.paths.html_all %>', base: ".")
+# 		gulp.src('<%= templates.paths.html %>', base: ".")
 # 		.pipe(htmltidy(
 # 			doctype: 'html5'
 # 			indent: true
@@ -258,7 +258,7 @@
 # 		debug: true
 # 	files:
 # 		[
-# 			"<%= templates.paths.html_all %>"
+# 			"<%= templates.paths.html %>"
 # 		]
 
 
@@ -516,3 +516,35 @@
 
 # loadFont 'https://fonts.googleapis.com/css?family=Play:700\
 # |El+Messiri|Scada:700i|Fira+Mono|Marck+Script&amp;subset=cyrillic&display=swap'
+
+
+# [DEPRECATED]
+# Linux — it not needed; Linux doesn't lock opened files and folders$
+# see “You Can Delete or Modify Open Files”:
+# https://www.howtogeek.com/137096/6-ways-the-linux-file-system-is-different-from-the-windows-file-system/
+# Windows — it not unlock files or folders as any another program:
+# https://superuser.com/q/1485406/572069
+###############
+# grunt-chmod #
+###############
+# # Add read and write permissions for all output folders and files:
+# # https://www.npmjs.com/package/grunt-chmod
+# # About chmod:
+# # https://ss64.com/bash/chmod.html
+# # [DESCRIPTION]
+# # I open any files → I run “publishconf.py”, that delete “output” folder →
+# # I can get errors as:
+# # ERROR: Unable to delete directory D:\Kristinita\output\stylus; OSError: [WinError 145]
+# # The directory is not empty: 'D:\\Kristinita\\output\\stylus\\personal'
+# # chmod fix this problem.
+# # [WARNING] You need close BrowserSync before publishing,
+# # because it can create new permissions.
+# module.exports =
+#   options:
+#     # [NOTE] 444 and 666 modes works in Windows:
+#     # https://www.npmjs.com/package/grunt-chmod#warnings
+#     mode: '666'
+#   kiratarget:
+#     # [LEARN][GRUNT] All folders and files recursive, include current:
+#     # https://gruntjs.com/configuring-tasks#globbing-patterns
+#     src: "<%= templates.yamlconfig.OUTPUT_PATH %>/**"

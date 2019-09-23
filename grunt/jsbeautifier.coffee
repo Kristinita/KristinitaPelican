@@ -14,7 +14,10 @@ module.exports =
 		js:
 			# Different file types:
 			# https://www.npmjs.com/package/grunt-jsbeautifier#3-beautify-files-other-than-js-json-es6-css--html
-			fileTypes: [".jsbeautifyrc"
+			fileTypes: [
+						".jsbeautifyrc"
+						".htmlhintrc"
+						".htmllintrc"
 						".stylintrc"
 						]
 	files: [

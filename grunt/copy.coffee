@@ -13,5 +13,5 @@ module.exports =
 		# If src or dest path not exist, exit code 1:
 		# https://www.npmjs.com/package/grunt-contrib-copy#troubleshooting
 		nonull: true
-		src: 'CODE_OF_CONDUCT.md'
-		dest: 'output/CODE_OF_CONDUCT.md'
+		src: "CODE_OF_CONDUCT.md"
+		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/CODE_OF_CONDUCT.md"

@@ -9,7 +9,6 @@
 * TOC
 *
 * General
-* - import wildwire
 * - Body
 * - Links
 * - Cursive
@@ -40,6 +39,7 @@
 * External plugins
 * - Progressbar
 * - AddToAny
+* - import wildwire
 */
 
 /*
@@ -58,11 +58,6 @@
 /* ==========================================================================
 	> General
 	========================================================================== */
-
-/* >> import wildwire
-	========================================================================== */
-
-@import "wildfire.styl"
 
 /* >> Body
 	========================================================================== */
@@ -140,7 +135,7 @@ img
 /*
 Kristinograd categories icons
 “min-width”, because icons decrease in mobile tables
-*/
+ */
 .SashaKristinogradIcon
 	box-shadow none
 	min-width 2rem
@@ -288,17 +283,15 @@ pre
 	========================================================================== */
 
 /* [NOTE] Needs hack, that “::selection” pseudo-element works in all browsers:
-* https://ru.stackoverflow.com/a/595809/199934
-* [NOTE] “-moz-” prefix not needed since Firefox 61:
-* https://caniuse.com/#search=selection
-* http://ru.stackoverflow.com/a/595809/199934
-*/
+ * https://ru.stackoverflow.com/a/595809/199934
+ * [NOTE] “-moz-” prefix not needed since Firefox 61:
+ * https://caniuse.com/#search=%3Aselection
+ * http://ru.stackoverflow.com/a/595809/199934
+ * [INFO] Exists “:-moz-window-inactive” solely, not “window-inactive”:
+ * https://caniuse.com/#search=window-inactive
+ */
 
 ::selection
-	color Sasha-Selection-Foreground
-	background Sasha-Selection-Background
-
-::selection:window-inactive
 	color Sasha-Selection-Foreground
 	background Sasha-Selection-Background
 
@@ -370,3 +363,14 @@ div
 	.a2a_floating_style
 	.a2a_default_style
 		background-color Sasha-Add-To-Any
+
+/* >> import wildwire
+	========================================================================== */
+
+/* Import
+[NOTE] Place import to the end of document, that “no-descending-specificity”
+Stylelint rule will be applied:
+https://stylelint.io/user-guide/rules/no-descending-specificity
+*/
+
+@import "wildfire.styl"

@@ -19,14 +19,7 @@ module.exports =
 			# [INFO] Maximum optimization:
 			# https://www.npmjs.com/package/grunt-contrib-imagemin#optimizationlevel-png
 			optimizationLevel: 7
-		files: [
-			expand: true
-			cwd: '.'
-			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/images/**/*.{png,jpg,jpeg,gif,svg}",
-					"<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>\
-					/images/**/*.{png,jpg,jpeg,gif,svg}"]
-			dest: '.'
-			]
+		files: "<%= templates.paths.images %>"
 	webp:
 		options:
 			#################

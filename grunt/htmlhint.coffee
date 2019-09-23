@@ -23,4 +23,4 @@ module.exports =
 		# "head-script-disabled": false
 		htmlhintrc: ".htmlhintrc"
 	target:
-		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.html"]
+		src: "<%= templates.paths.html %>"

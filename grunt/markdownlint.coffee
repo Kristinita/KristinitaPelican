@@ -8,13 +8,4 @@
 module.exports = (grunt) ->
 	options:
 		config: grunt.file.readYAML(".markdownlint.yaml")
-	src:
-		[
-			"*.md"
-			".github/*.md"
-			"<%= templates.yamlconfig.CONTENT_PATH %>/**/*.md"
-			"tidy/*.md"
-			# [NOTE] I disable remark and markdownlint for generated, not personal files
-			"!CODE_OF_CONDUCT.md"
-			"!LICENSE.md"
-		]
+	src: "<%= templates.paths.markdown %>"

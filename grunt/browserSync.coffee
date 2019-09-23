@@ -41,7 +41,7 @@ module.exports =
 				# that HTML page reload in browser and I can to see changes in browser.
 				module: "bs-html-injector"
 				options:
-					files: "<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.html"
+					files: "<%= templates.paths.html %>"
 				]
 			# Ingegrate “watch” task:
 			# https://browsersync.io/docs/grunt#grunt-watch

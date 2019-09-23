@@ -9,11 +9,50 @@ module.exports = (grunt) ->
 	# [INFO] Using variables: “<%= templates.yamlconfig.VARIABLE %>”
 	yamlconfig: grunt.file.readYAML("site_variables.yaml")
 	paths:
+		coffee: "<%= templates.yamlconfig.OUTPUT_PATH %>/**/coffee/**/*.coffee"
+		css: [
+			expand: true
+			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>"
+			src: [
+					"**/*.css"
+					# [LEARN][GLOB] “*” — matches any character zero or more time, except for “/”:
+					# https://github.com/begin/globbing#wildcards
+					# This pattern exclude “.min.css” and “.min.<any_symbols>.css” files,
+					# that created by cache-bust:
+					# https://www.npmjs.com/package/grunt-cache-bust
+					"!**/*.min*css"
+					]
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>"
+			]
 		# [INFO] Get current working directory of Gruntfile:
 		# https://gruntjs.com/creating-plugins#avoid-changing-the-current-working-directory:-process.cwd
 		# https://stackoverflow.com/q/28755625/5951529
 		cwd: process.cwd()
-		html_all: "<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.html"
+		images: [
+			expand: true
+			cwd: '.'
+			# [LEARN][GLOB] Use “/**/”, that include “output/images/**” and “output/theme/images/**”
+			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/images/**/*.{png,jpg,jpeg,gif,svg}"]
+			dest: '.'
+			]
+		# [NOTE] “**.html” will not works; subdirectories will not included
+		html: "<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.html"
+		markdown: [
+			"*.md"
+			".github/*.md"
+			"<%= templates.yamlconfig.CONTENT_PATH %>/**/*.md"
+			"tidy/*.md"
+			# [FIXME] I disable remark and markdownlint for generated, not personal created files
+			# Use remark-stringify:
+			# https://www.npmjs.com/package/remark-stringify
+			"!CODE_OF_CONDUCT.md"
+			"!LICENSE.md"
+			"!<%= templates.yamlconfig.CONTENT_PATH %>/Pages/Terms-and-Conditions-and-Privacy-Policy.md"
+		]
+		# [INFO] Lint Pelican personal plugins and configuration files:
+		python: ["<%= templates.yamlconfig.PLUGIN_PATHS[1] %>/**/*.py"
+							"*.py"]
+		stylus: "<%= templates.yamlconfig.OUTPUT_PATH %>/**/stylus/**/*.styl"
 	tokens:
 		# [INFO] Get system environment variables:
 		# https://stackoverflow.com/a/14089064/5951529

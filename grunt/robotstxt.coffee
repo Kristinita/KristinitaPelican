@@ -26,11 +26,11 @@ module.exports =
 				ua: 'LinkChecker'
 				allow: '/'
 			}
-				# I don't use Host directive, because Kristinita.ru haven't mirrors:
+				# I don't use Host directive, because Kristinita's Search haven't mirrors:
 				# https://yandex.ru/support/webmaster/controlling-robot/robots-txt.html#host
 				# Sitemap directive:
 				# https://yandex.ru/support/webmaster/controlling-robot/robots-txt.html#sitemap
-				sitemap: 'https://kristinita.ru/sitemap.xml'
+				sitemap: "<%= templates.yamlconfig.SITEURL %>/sitemap.xml"
 				# Crawl-delay directive:
 				# https://yandex.ru/support/webmaster/controlling-robot/robots-txt.html#crawl-delay
 				crawldelay: 1

@@ -6,7 +6,7 @@
 # https://www.npmjs.com/package/grunt-contrib-uglify
 # Options:
 # http://lisperator.net/uglifyjs/compress
-# I select it, not alternatives, because they obsolete:
+# [INFO] I selected Uglify JS, not alternatives, because they obsolete:
 # Esmangle:
 # https://github.com/estools/esmangle
 # Closure-compiler:
@@ -21,10 +21,10 @@ module.exports =
 		files: [
 			expand: true
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/js/personal"
-			# “!” symbol — exclude paths:
+			# [LEARN][GRUNT] “!” symbol — exclude paths:
 			# https://stackoverflow.com/a/28277841/5951529
 			src: ['**/*.js'
-					'!**/*.min.js']
+					'!**/*.min*js']
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/js/personal"
 			# [LEARN][GRUNT] Extensions in filepaths:
 			# https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
@@ -35,7 +35,7 @@ module.exports =
 			expand: true
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/js"
 			src: ['**/*.js'
-					'!**/*.min.js']
+					'!**/*.min*js']
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/js"
 			ext: '.min.js'
 			]

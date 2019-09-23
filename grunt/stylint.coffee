@@ -4,6 +4,8 @@
 # Lint Stylus files
 # https://simenb.github.io/stylint/
 # https://www.npmjs.com/package/grunt-stylint
+# [NOTE] Not to be confused with stylelint — CSS linter!
+# https://stylelint.io/
 # [WARNING] Needs full “.stylintrc” file, if “.stylintrc” — “{ colons: false }”,
 # Stylint will not show any errors/warnings:
 # https://travis-ci.org/Kristinita/SashaStylint/builds/374954051
@@ -53,5 +55,4 @@ module.exports =
 	options:
 		# [WARNING] If true, grunt-stylint will not show any errors/warnings:
 		quiet: false
-	src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/**/*.styl"
-			"<%= templates.yamlconfig.OUTPUT_PATH %>/stylus/**/*.styl"]
+	src: "<%= templates.paths.stylus %>"

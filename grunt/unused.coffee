@@ -11,7 +11,7 @@
 module.exports =
 	options:
 		reference: "<%= templates.yamlconfig.OUTPUT_PATH %>/images/"
-		directory: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.html"]
+		directory: "<%= templates.paths.html %>"
 		days: false
 		remove: true
 		reportOutput: false

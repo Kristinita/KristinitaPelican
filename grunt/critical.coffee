@@ -34,7 +34,7 @@ module.exports =
 		files: [
 			expand: true
 			cwd: "."
-			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.html"
+			src: ["<%= templates.paths.html %>"
 					# [INFO] HTML for Bitcoin images
 					"!<%= templates.yamlconfig.OUTPUT_PATH %>/images/**/*.html"
 					# [FIXME] Templates for Pelican

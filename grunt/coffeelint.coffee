@@ -34,12 +34,8 @@ https://github.com/clutchski/coffeelint/blob/master/src/rules/missing_fat_arrows
 module.exports =
 	options:
 		configFile: "coffeelint.json"
-	source:
+	configs:
 		files:
 			src: ["grunt/*.coffee"]
-	theme:
-		files:
-			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/coffee/**/*.coffee"]
-	personal:
-		files:
-			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/coffee/**/*.coffee"]
+	site:
+		files: "<%= templates.paths.coffee %>"
