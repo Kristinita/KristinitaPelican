@@ -85,9 +85,9 @@ rules:
     - 2
     - never
     -
-      - upper-case
+      # [INFO] Enable upper-case and sentence-case; proper names can be used in commits
+      # https://en.wikipedia.org/wiki/Letter_case#Case_styles
       - pascal-case
-      - sentence-case
       - start-case
 
   subject-empty:
