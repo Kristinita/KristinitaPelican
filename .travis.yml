@@ -261,8 +261,8 @@ deploy:
   # Don't clean output folder:
   # https://docs.travis-ci.com/user/deployment/pages/
   # skip-cleanup: true
-  target-branch: master
-  local-dir: output
+  target_branch: master
+  local_dir: output
   repo: Kristinita/Kristinita.github.io
   # “TOKEN_GITHUB_FOR_TRAVIS_DEPLOY” is secure variable, that set in repository settings:
   # https://docs.travis-ci.com/user/environment-variables#Defining-Variables-in-Repository-Settings
@@ -285,7 +285,8 @@ deploy:
   # fqdn: Kristinita.ru
   # [WARNING] Don't use single quotes in “project-name”:
   # https://github.com/travis-ci/travis-ci/issues/9325
-  project-name: Поиск Кристиниты
+  # [INFO] “project_name”, not “project-name” for dpl v.2
+  project_name: Поиск Кристиниты
   verbose: true
   # [INFO] Custom deploy message
   # [WARNING] Multiline messages doesn't supported:
@@ -299,7 +300,7 @@ deploy:
   # https://github.com/Kristinita/SashaTravis.github.io/commit/18f1790be2eb90d5949a6a9b990becd3a42d1b6d
   # https://stackoverflow.com/a/21699210/5951529
   # https://yaml-multiline.info/
-  commit_message: Commit https://github.com/%{project_name}/commit/$TRAVIS_COMMIT successfully
+  commit_message: Commit https://github.com/$TRAVIS_REPO_SLUG/commit/$TRAVIS_COMMIT successfully
      builded and checked by Travis CI build $TRAVIS_BUILD_NUMBER.
      See https://travis-ci.org/%{project_name}/builds/$TRAVIS_BUILD_ID for details.
 

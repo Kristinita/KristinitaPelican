@@ -145,7 +145,7 @@ module.exports =
 	# [FIXME] eclint doesn't fix leading spaces:
 	# https://github.com/jedmao/eclint/issues/155
 	tarv2: ['csslint'
-					'shell:eclintcheck']
+			'shell:eclintcheck']
 	tarv3: ['notify:validate']
 
 	###
