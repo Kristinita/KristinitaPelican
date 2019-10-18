@@ -548,3 +548,47 @@
 #     # [LEARN][GRUNT] All folders and files recursive, include current:
 #     # https://gruntjs.com/configuring-tasks#globbing-patterns
 #     src: "<%= templates.yamlconfig.OUTPUT_PATH %>/**"
+
+
+# [DEPRECATED]
+# 1. JSBeautifier is more powerful tool
+# 2. JSBeautifier has many options; Prettier — minimal set, see options philosophy:
+# https://prettier.io/docs/en/option-philosophy.html
+# 3. Strange HTML prettifying for Prettier
+# 4. Bug for grunt-prettier:
+# https://github.com/poalrom/grunt-prettier/issues/20
+# ############
+# # Prettier #
+# ############
+# # Prettifier for many formats, include css, javascript:
+# # https://prettier.io/
+# # Grunt wrapper:
+# # https://www.npmjs.com/package/grunt-prettier
+# # Options:
+# # https://prettier.io/docs/en/options.html
+# module.exports =
+# 	cssdebug:
+# 		# [NOTE] “ext: '.min.{css,js}'” will not work;
+# 		# Grunt will generate file “kirafile.min.{css,js}”
+# 		files: [
+# 			expand: true
+# 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>"
+# 			src: ['**/*.css'
+# 					'!**/*.min.css']
+# 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>"
+# 			]
+# 	jsdebug:
+# 		files: [
+# 			expand: true
+# 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>"
+# 			src: ['**/*.js'
+# 					'!**/*.min.js']
+# 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>"
+# 			]
+# 	# htmldebug:
+# 	# 	files: [
+# 	# 		expand: true
+# 	# 		cwd: "."
+# 	# 		src: "<%= templates.yamlconfig.OUTPUT_PATH %>/Books-Reviews/Как-читать-архитектуру.html"
+# 	# 		dest: "."
+# 	# 		]

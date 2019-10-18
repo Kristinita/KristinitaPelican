@@ -1,0 +1,10 @@
+# Prettier configuration:
+# https://prettier.io/docs/en/configuration.html#basic-configuration
+# [INFO] Line length — 120:
+# https://prettier.io/docs/en/options.html#print-width
+printWidth: 120
+# [INFO] Doesn't wrap Markdown:
+# https://prettier.io/docs/en/options.html#prose-wrap
+proseWrap: never
+# [INFO] https://prettier.io/docs/en/options.html#tab-width
+tabWidth: 4

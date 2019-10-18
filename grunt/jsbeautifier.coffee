@@ -3,6 +3,7 @@
 ########################
 # Beautify HTML, CSS and JavaScript:
 # http://jsbeautifier.org/
+# Grunt wrapper
 # https://www.npmjs.com/package/grunt-jsbeautifier
 # Options:
 # https://www.npmjs.com/package/js-beautify#options
@@ -15,6 +16,7 @@ module.exports =
 			# Different file types:
 			# https://www.npmjs.com/package/grunt-jsbeautifier#3-beautify-files-other-than-js-json-es6-css--html
 			fileTypes: [
+						".csslintrc"
 						".jsbeautifyrc"
 						".htmlhintrc"
 						".htmllintrc"
@@ -22,5 +24,4 @@ module.exports =
 						]
 	files: [
 			"<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.{html,css,js,json}"
-			"!<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.min.{css,js}"
 			]

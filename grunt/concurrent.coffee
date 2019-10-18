@@ -33,25 +33,21 @@ module.exports =
 			# [NOTE] newer doesn't work for cwebp
 			'cwebp'
 			'modernizr'
-			'newer:move'
 			]
 	tarb3: ['newer:coffee'
 			'newer:stylus']
+	tarb4: ['clean']
 	# [FIXME] grunt-newer doesn't work with purifycss:
 	# Warning: Cannot read property 'forEach' of undefined Use --force to continue.
 	# https://github.com/purifycss/grunt-purifycss/issues/26
-	tarb4: ['curl'
+	tarb5: ['curl'
 			'newer:string-replace'
-			'newer:move:jstheme'
-			'newer:move:jspersonal'
 			'purifycss']
-	tarb5: ['newer:move:csstheme'
-			'newer:move:csspersonal'
-			'shell:tidymodify']
-	tarb6: ['newer:postcss:build']
-	tarb7: ['newer:jsbeautifier']
+	tarb6: ['shell:tidymodify']
+	tarb7: ['newer:postcss:build']
 	tarb8: ['shell:eclintfix']
-	tarb9: ['notify:default']
+	tarb9: ['newer:jsbeautifier']
+	tarb10: ['notify:default']
 
 	###
 	For screenshots, “target screenshot”.
@@ -136,7 +132,7 @@ module.exports =
 	https://travis-ci.org/Kristinita/KristinitaPelican/jobs/471091236#L1220
 	###
 	tarv1: ['coffeelint:site'
-			# 'html-nu'
+			'html-nu'
 			'path_validator'
 			# [DONE]
 			# Update dependencies fix it:
@@ -148,7 +144,8 @@ module.exports =
 	# [DONE]
 	# [FIXME] eclint doesn't fix leading spaces:
 	# https://github.com/jedmao/eclint/issues/155
-	tarv2: ['shell:eclintcheck']
+	tarv2: ['csslint'
+					'shell:eclintcheck']
 	tarv3: ['notify:validate']
 
 	###

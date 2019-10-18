@@ -33,7 +33,5 @@ module.exports =
 			src: ['**/*.css'
 					'!**/*.min.css']
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css"
-			# Extensions in filepaths:
-			# https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
 			ext: '.min.css'
 			]

@@ -2,7 +2,7 @@ Title: For developers
 Version: 0.0.3
 Author: Sasha Chernykh
 Date: 2018-03-27 7:55:14
-Modified: 2019-09-23 18:34:12
+Modified: 2019-10-17 15:36:28
 Lang: en
 Summary: Information for developers about Kristinita's Search
 Pagetitle: For developers
@@ -382,6 +382,7 @@ HTML|[htmllint](http://htmllint.github.io/)|[1](https://github.com/htmllint/html
 HTML|[HTMLHint](https://htmlhint.io/)|[1](https://github.com/htmlhint/HTMLHint/wiki/Rules)|[.htmlhintrc](https://github.com/Kristinita/KristinitaPelican/blob/master/.htmllintrc), [comments](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/htmlhint.coffee), [issue](https://github.com/htmlhint/HTMLHint/issues/126)
 Stylus|[Stylint](https://simenb.github.io/stylint/)|[1](https://www.npmjs.com/package/stylint#excluding-files-directories-and-code-blocks-from-the-linter)|[.stylintrc](https://github.com/Kristinita/KristinitaPelican/blob/master/.stylintrc), [comments](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/stylint.coffee), [issue](https://github.com/SimenB/stylint/issues/434)
 CSS|[stylelint](https://stylelint.io/), [stylelint-config-recommended](https://www.npmjs.com/package/stylelint-config-recommended)|[1](https://stylelint.io/user-guide/rules)|[.stylelintrc.yaml](https://github.com/Kristinita/KristinitaPelican/blob/master/.stylelintrc.yaml)
+CSS|[CSSLint](http://csslint.net/)|[1](https://github.com/CSSLint/csslint/wiki/Rules)|[.csslintrc](https://github.com/Kristinita/KristinitaPelican/blob/master/.csslintrc), [comments enabled](https://github.com/gruntjs/grunt-contrib-csslint#csslintrc)
 CSS|[doiuse](https://doiuse.herokuapp.com/)|[1](https://caniuse.com/)|[browserslist](https://github.com/Kristinita/KristinitaPelican/blob/master/browserslist)
 CoffeeScript|[CoffeeLint](http://www.coffeelint.org/)|[1](http://www.coffeelint.org/#options)|[coffeelint.json](https://github.com/Kristinita/KristinitaPelican/blob/master/coffeelint.json), [comments](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/coffeelint.coffee), [issue](https://github.com/clutchski/coffeelint/issues/638)
 Bash|[ShellCheck](https://www.shellcheck.net/)|[1](https://github.com/koalaman/shellcheck/wiki)|—

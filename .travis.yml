@@ -19,14 +19,14 @@
 # https://docs.travis-ci.com/user/reference/overview/#Virtualisation-Environment-vs-Operating-System
 # https://blog.travis-ci.com/2017-08-31-trusty-as-default-status
 
-# [INFO] Needs for correct APT addon usage:
+# [NOTE] Needs for correct APT addon usage:
 # https://docs.travis-ci.com/user/reference/overview/
 # Diff:
 # https://travis-ci.org/Kristinita/SashaScrutinizer/builds/370138075
 # https://travis-ci.org/Kristinita/SashaScrutinizer/builds/370122401
 sudo: enabled
 
-# [INFO] Needs Xenial, not Trusty for Python 3.7 works:
+# [NOTE] Needs Xenial, not Trusty for Python 3.7 works:
 # https://travis-ci.community/t/unable-to-download-python-3-7-archive-on-travis-ci/639/2
 # https://github.com/travis-ci/travis-ci/issues/9815#issuecomment-425867404
 # Differences between Xenial and Trusty:
@@ -43,6 +43,10 @@ git:
 # https://docs.travis-ci.com/user/environment-variables/#defining-encrypted-variables-in-travisyml
 # [INFO] Encrypt variables locally:
 # https://docs.travis-ci.com/user/environment-variables/#encrypting-environment-variables
+# [WARNING] Your variables must be secured!
+# If you push to GitHub unsecured token, GitHub remove it, and you will need create new;
+# you will get message as this:
+# https://github.com/nodejs/build/issues/1353#issuecomment-397950573
 env:
   global:
   # [INFO] Needs get GitHub token with “public_repo” scope:
@@ -51,21 +55,22 @@ env:
   # https://stackoverflow.com/a/21699210/5951529
   # https://yaml-multiline.info/
   # [INFO] Equivalent: TOKEN_GITHUB_FOR_TRAVIS_DEPLOY = my real token
+  # [INFO] Quotes around variables not required
   - secure: >
-      "EXm44fDtI7y2hCnp6uK3gIFMWUMUink3dO9qCXXfd5LwoK53fcXhoDtF+/
-      xve7jKFLsUSm5EAJxPiGiNILyOymJkOthTmz+Bohnd1B27jaZepCbh10wxalj7Aw405hBux+z0l2pq21YlbFZl+QyvU/
-      8KMms7VVeBDYSCQTFQEmHb5BmA+U2lxJ1hQLJmYK8oV96hKSD/
-      kxgL80EfshoNELXvquC16GwNceJNNeb5cYPMUgb6hdDWEez3mtD9htJO8aFx4XV1/5a7Wu55UOHO/i79o8aT/
-      O94/bDrtOgHBT3btTmQteeZ1ThAWoHf42mfLxNLxLkAO4YgEOXifkCRp56klfRQ6lwg0fe1/nufiPXuxQDKq/OKqWXgYDQ3Jip5u/
-      hcqyQQXnruSszFJT8vW6Ggd0Rr9yRNzATfxgjDEQ15tx/gIWLrLrofbUfcmOn/
-      fO4zDWyH4fcs+HJ10qY42UH0OanZe2eOCheC6eYkUOS1RlmY0CDH43c6xJ1SWVnhj6ybuopoJImcaEkk/
-      OfjHmtWltGi71IPcyccfji6Uy41wg37D4DUq4cs3T0WX0tD3WfmKc98WtI9/
-      iIUEWZhNleS6lCjGIapFdso23hwzKILzCx+tO9KGAenhTGbarq+Fyqfa/
-      TmzyHNAk1KwZGgaOrGgCLNPZx3aT7bibx+6JI="
+      L2my4oDf6RtE36cchK+NOYQYovfbsDYGGKzjwnUVOYflbZMA8++p3m7jrK/43RtOZ6l0z7ITX80yc/
+      TqZk4owULulRcmU3iQsWbRYQlFUJmKZ0rKYLMz3FAK5bWBPO/ZcKC8N0egAb7+
+      OFFQV0At6nyuIpwlVMKuFMqyfYxDeHZUMRzOxj8/El1xSKf71wtC3Ms+
+      NGZojUN4ixpt5EU0e8x8INUMk4zhVpCwT2GyERpIaPA0Tdocqbbcu2JAua4+JhWXfgq/
+      W3q1F3DJgBxFawaYarlMlOOrIv8Ax4JZGTUFMaLzVRS+g2IzNNVID3fT5PTJ5Ifn8PZxuyV2WgF8+
+      iHMORFINOCdRcrA8SfyTXpcq0aJ4/I+q9oK35lwdL8fwXLb4sjQ8L/2siKPQoa58QjsWYlUrUE/EhVi+
+      Ujmi4taIjXBCLk1VZfSN1tbxIHESCzzBgvHDlrWqp3CoZHUMZx6Ay3VCOBtORcYQpSajnK9oWGhzVpphdV0gU1Ubncrt8iTSiCqMDjCCk7I1YfY+
+      S0ICg0ld84hiLP5AsSXobipyinQvxMhlBPf2yxchVTMbASo8L0mT8Q9WHNCB//
+      DcrRLq+KR6C4O3JG18KJnX+6TkbP+
+      1wmWiKrjRmRoN68YwQAyzmXcgvRXXcxKoSch8DbVIEW2AAd388Tfw5dibHk=
   # [INFO] Equivalent: API_KEY_APPVEYOR = my real key:
   # https://kristinita.netlify.com/Pages/About-for-developers#AppVeyor
   - secure: >
-      "qE2c+aZb9QGtPF9VG6WhAP2iT0mTDAnmueEiqWUctgalhAFAJ4wdSqvHNNv+F2178wE92WcpT3/
+      qE2c+aZb9QGtPF9VG6WhAP2iT0mTDAnmueEiqWUctgalhAFAJ4wdSqvHNNv+F2178wE92WcpT3/
       chmJltlBj1Qqx6vWevJR2ff1uNbQnwGHYBw+1c8JOvx7mUvisp/nzU1eIpU50/
       uDMF6PnUQ7j269nE1seEjUo7aP98rVHDXZ1uYaOVIEKq40HhLMOlfQg4mhpN1zxQLL7eCy7YgQWXDUb4yRT6TU1BxI3uIC9y8LVgv0le3L8hikD2yR
       ++wJwFHSu9nTm9/
@@ -75,17 +80,17 @@ env:
       upPuNJhHdtv+S5vuuF9/
       CksWBqUi3QMQYkSMT5Xkv5YcTeWqQe6W4U2hVg7+Tl1jesn2WP6nM6j
       +I2W5fJwYWIKB7U0hP6WR0jkrHDvMNfWgaB8VZCxYoVUFvCMf5IBnXgRGkYjJn9KkQv3pfODC5aUdep2mCWL+cYiHBukRncS66bs/
-      EAE="
+      EAE=
   # [INFO] Equivalent: API_KEY_PAGESPEED_INSIGHTS_V5 = my real key
   - secure: >
-      "u4bZ1LyhoUDKvng6cwQRlrKzR0EgFpnHSk0+zVH8entxT2tP8Ltir7IDrhY+v2+a7EXn3c/
+      u4bZ1LyhoUDKvng6cwQRlrKzR0EgFpnHSk0+zVH8entxT2tP8Ltir7IDrhY+v2+a7EXn3c/
       61ukV3QpF3qCBA9zBk7awfG4cW6DIVE1ZyQPFcVeT/LGqD5kAzHOM3m06k2HD0LS97FxQF9b5de1Edx6vAwtdLBILneXtGpMwENCKYT/
       FHkMLdRywIUSPAoQSuJRxX1OTxN7n5DA4nQ6YqOi4kZs2sWfFe3nGlIYjHtbJEnh11OBuwY5j2V8AoT/
       DBpsXOJAtXI+aQ0rRYIdZvcchHjiV8bp3jNgbpWAeWKqwfgU8fCMx16poizGzqzlw4n4uCFuc7Rv5TSbkwDYy5eR/
       vlBe+5XnbGCQcyefkpQabSYOXCNVeABGUc32snN8XdSq69m+lyO5+uSi7/
       gLHg+7yEcR8nA3g+ZC2cFWLA92HTqM7tMhAbNjQ+V9rqJLqAHYQtaItFiCXveoe6p3f628RU/
       lmIISg0P2VtPLZIw4sCSJ9ts3dnOtADkYDiruXF1laoKmw4+73TpbNsvxNTYitSnWFsAOKoZqzCX3+t5v+swkb7gc7i+pXKDwuLaF6pF1lemV/
-      3bpq7yay5d6KmMIPpDwW+rBNLhCbzxPLpGdG40xd9Gs+w6iRoRXIlChh6PuGohDAPcA/oMofXtHic3hx5ViAPDcxsoB5pjc8CM="
+      3bpq7yay5d6KmMIPpDwW+rBNLhCbzxPLpGdG40xd9Gs+w6iRoRXIlChh6PuGohDAPcA/oMofXtHic3hx5ViAPDcxsoB5pjc8CM=
 
 # Needs “language: bash” for multilanguage projects:
 # https://github.com/travis-ci/travis-ci/issues/4895
@@ -239,22 +244,23 @@ install:
 # https://github.com/travis-ci/travis-ci/issues/9287
 deploy:
   provider: pages
+  # [INFO] dpl v2:
+  # https://blog.travis-ci.com/2019-08-27-deployment-tooling-dpl-v2-preview-release
+  # https://docs.travis-ci.com/user/deployment-v2/providers/pages
+  edge: true
   on:
     branch: master
     # Deploy site, if “grunt publish”, else “grunt” — not deploy:
     # https://docs.travis-ci.com/user/deployment#Conditional-Releases-with-on%3A
     condition: $MATRIX_DEPLOY
-  # [DONE]
-  # # [FIXME] Downgrade dpl for correct deploying to GitHub Pages:
-  # # https://github.com/travis-ci/travis-ci/issues/9312
-  # edge:
-  #   branch: v1.8.47
-  # Don't overwrite commit history of destination repository:
+  # [INFO] Doesn't overwrite commit history of destination repository:
   # https://docs.travis-ci.com/user/deployment/pages/
-  keep-history: true
+  # [INFO] Git history keeping by default in dpl v2:
+  # keep-history: true
+  # [INFO] Cleanup deprecated in dpl v2, “cleanup” is “false” by default
   # Don't clean output folder:
   # https://docs.travis-ci.com/user/deployment/pages/
-  skip-cleanup: true
+  # skip-cleanup: true
   target-branch: master
   local-dir: output
   repo: Kristinita/Kristinita.github.io
@@ -264,10 +270,16 @@ deploy:
   # [WARNING] You need set secure variables for each repository,
   # variables for all repositories not possible at the time:
   # https://github.com/travis-ci/travis-ci/issues/2069
-  github-token: $TOKEN_GITHUB_FOR_TRAVIS_DEPLOY
+  # [INFO] “deploy_key” is another option instead of “token”:
+  # https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys
+  # [INFO] “token” is alias for “github_token”:
+  # https://docs.travis-ci.com/user/deployment-v2/providers/pages/#known-options
+  token: $TOKEN_GITHUB_FOR_TRAVIS_DEPLOY
   # Name and e-mail of committer:
   # https://docs.travis-ci.com/user/deployment/pages/#Further-configuration
-  committer-from-gh: true
+  # [INFO] For dpl v.2 “committer_from_gh”, not “committer-from-gh”:
+  # https://docs.travis-ci.com/user/deployment-v2/providers/pages/#known-options
+  committer_from_gh: true
   # [INFO] For custom domains only
   # Automatically generate CNAME for custom domain:
   # fqdn: Kristinita.ru
@@ -275,6 +287,21 @@ deploy:
   # https://github.com/travis-ci/travis-ci/issues/9325
   project-name: Поиск Кристиниты
   verbose: true
+  # [INFO] Custom deploy message
+  # [WARNING] Multiline messages doesn't supported:
+  # https://github.com/travis-ci/dpl/issues/1126
+  # [INFO] Available variables is:
+  # 1. Travis Environment Variables:
+  # https://docs.travis-ci.com/user/environment-variables/#default-environment-variables
+  # 2. Known options:
+  # https://docs.travis-ci.com/user/deployment-v2/providers/pages/#known-options
+  # [INFO] For deploy message I use plain YAML with leading spaces:
+  # https://github.com/Kristinita/SashaTravis.github.io/commit/18f1790be2eb90d5949a6a9b990becd3a42d1b6d
+  # https://stackoverflow.com/a/21699210/5951529
+  # https://yaml-multiline.info/
+  commit_message: Commit https://github.com/%{project_name}/commit/$TRAVIS_COMMIT successfully
+     builded and checked by Travis CI build $TRAVIS_BUILD_NUMBER.
+     See https://travis-ci.org/%{project_name}/builds/$TRAVIS_BUILD_ID for details.
 
 # [INFO] Run command after site deployment.
 # [NOTE] exit_codes doesn't work for after_deploy:

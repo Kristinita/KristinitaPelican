@@ -11,6 +11,7 @@ module.exports =
 	# https://github.com/hollandben/grunt-cache-bust/issues/184#issuecomment-194817782
 	options:
 		# [NOTE] Works solely for this combination “assets” and “baseDir”
+		# [NOTE] If “.css”, not “.min.css”, cacheBust not change HTML
 		assets: ["**/*.min.{css,js}"]
 		baseDir: "<%= templates.yamlconfig.OUTPUT_PATH %>"
 		# [INFO] Add hashes for absolute URLs filenames:

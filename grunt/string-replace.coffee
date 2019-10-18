@@ -7,6 +7,7 @@ module.exports =
 	#######################################
 	# Development and production versions #
 	#######################################
+	# Tasks for both: development and production versions
 	html:
 		files: [
 			expand: true
@@ -45,11 +46,6 @@ module.exports =
 					replacement: '<span class="KiraGRights">$1</span>'
 				}
 			]
-	######################
-	# Production version #
-	######################
-	# [WARNING] Needs files for each subtask. I can't combine “asideimages”, “backgroundimages” and
-	# “absoluteinsidehtmlimages” to one “publish” subtask.
 
 	# Absolute paths to images inside HTML
 	html_and_css:
@@ -85,34 +81,6 @@ module.exports =
 								data-src="$2" alt="$1"></a>'
 				}
 			]
-	# [DEPRECATED] I add paths to images in HTML, that Jinja2 templates will support.
-	# Convert relative paths to absolute in background images
-	# Convert relative paths to absolute in aside images
-	# asideimages:
-	# 	files: [
-	# 		expand: true
-	# 		cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/aside"
-	# 		src: '*.styl'
-	# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/aside"
-	# 	]
-	# 	options:
-	# 		replacements: [
-	# 			pattern: /(url\(")(\.\.\/\.\.)(\/images\/aside\/(.+?)"\))/g
-	# 			replacement: "$1<%= templates.yamlconfig.SITEURL %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>$3"
-	# 		]
-	# backgroundimages:
-	# 	files: [
-	# 		expand: true
-	# 		cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/sections"
-	# 		src: '*.styl'
-	# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/sections"
-	# 	]
-	# 	options:
-	# 		replacements: [
-	# 			pattern: /(url\(")(\.\.\/\.\.)(\/images\/backgrounds\/(.+?)"\))/g
-	# 			replacement: "$1<%= templates.yamlconfig.SITEURL %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>$3"
-	# 		]
-
 
 	coffeescript:
 		files: [
@@ -149,3 +117,55 @@ module.exports =
 					replacement: "<%= templates.yamlconfig.FORM_ID_TYPO_REPORTER %>"
 				}
 			]
+
+	######################
+	# Production version #
+	######################
+	# Tasks for production version only, not for dev version
+	# [WARNING] Needs files for each subtask. I can't combine “asideimages”, “backgroundimages” and
+	# “absoluteinsidehtmlimages” to one “publish” subtask.
+
+	# [DEPRECATED] I solved problem via {{MIN}} variable in production settings/
+	# [INFO] Replace “.css” and “.js” to “.min.css” and “.min.js” in HTML files
+	# html_min_extensions:
+	# 	files: [
+	# 		expand: true
+	# 		cwd: "."
+	# 		src: "<%= templates.paths.html %>"
+	# 		dest: "."
+	# 		]
+	# 	options:
+	# 		replacements: [
+	# 			{
+	# 				pattern: /("https\:\/\/kristinita\.netlify\.com\/.+)(\.(css|js)")/g
+	# 				replacement: '$1.min$2'
+	# 			}
+	# 		]
+
+	# [DEPRECATED] I add paths to images in HTML, that Jinja2 templates will support.
+	# Convert relative paths to absolute in background images
+	# Convert relative paths to absolute in aside images
+	# asideimages:
+	# 	files: [
+	# 		expand: true
+	# 		cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/aside"
+	# 		src: '*.styl'
+	# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/aside"
+	# 	]
+	# 	options:
+	# 		replacements: [
+	# 			pattern: /(url\(")(\.\.\/\.\.)(\/images\/aside\/(.+?)"\))/g
+	# 			replacement: "$1<%= templates.yamlconfig.SITEURL %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>$3"
+	# 		]
+	# backgroundimages:
+	# 	files: [
+	# 		expand: true
+	# 		cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/sections"
+	# 		src: '*.styl'
+	# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/sections"
+	# 	]
+	# 	options:
+	# 		replacements: [
+	# 			pattern: /(url\(")(\.\.\/\.\.)(\/images\/backgrounds\/(.+?)"\))/g
+	# 			replacement: "$1<%= templates.yamlconfig.SITEURL %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>$3"
+	# 		]

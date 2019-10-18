@@ -17,6 +17,7 @@ default:
 - 'concurrent:tarb7'
 - 'concurrent:tarb8'
 - 'concurrent:tarb9'
+- 'concurrent:tarb10'
 
 # [INFO] Minimal set of tasks, that site works; for development
 minimal:
@@ -68,7 +69,7 @@ git:
 - 'gta:commit'
 - 'gta:push'
 
-# [INFO] Update Node.js, Python and git
+# [INFO] Update Node.js modules, Python packages and refactor Git
 update:
 - 'concurrent:taru1'
 - 'concurrent:taru2'

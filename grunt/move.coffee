@@ -6,7 +6,7 @@
 module.exports =
 	# Options: https://www.npmjs.com/package/grunt-move#options
 	options:
-		# If incorrect src, task failed.
+		# [INFO} If incorrect src, task failed.
 		ignoreMissing: false
 	###############
 	# Development #

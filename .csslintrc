@@ -1,38 +1,41 @@
-////////////////////////////////////////////////////////////
-// I'm don't plain support old browsers versions //
-////////////////////////////////////////////////////////////
-
-
-/*----------  adjoining-classes  ----------*/
-
-// https://github.com/CSSLint/csslint/wiki/Disallow-adjoining-classes
-// I'm not want support IE6
-
-
-/*----------  fallback-colors  ----------*/
-
-// https://github.com/CSSLint/csslint/wiki/Require-fallback-colors
-// I'm don't want support IE8
-
-
-/*----------  order-alphabetical  ----------*/
-
-// https://github.com/CSSLint/csslint/wiki/Disallow-non-alphabetical
-// I'm prefer sort by type —
-// https://css-tricks.com/new-poll-how-order-css-properties/
-
-
-/*----------  outline-none  ----------*/
-
-// https://github.com/CSSLint/csslint/wiki/Disallow-outline%3Anone
-// I use external outline for links
-
-
-/*----------  gradient  ----------*/
-
-// https://github.com/CSSLint/csslint/wiki/Require-all-gradient-definitions
-// I'm don't want support old browsers
-// http://caniuse.com/#search=linear-gradient
-
-
---ignore=adjoining-classes,fallback-colors,gradient,order-alphabetical,outline-none
+// CSSLint configuration:
+// https://github.com/CSSLint/csslint/wiki/Rules
+// [INFO] Comments possible in this “.csslintrs” file:
+// https://github.com/gruntjs/grunt-contrib-csslint#csslintrc
+// [INFO] Supported devices and browsers:
+// https://kristinita.netlify.com/pages/about-for-developers#Testing
+// https://kristinita.netlify.com/pages/about-for-developers#Devices-and-browsers
+// [INFO] Old format:
+// --ignore=adjoining-classes,fallback-colors,gradient,order-alphabetical,outline-none
+{
+	// [INFO] IE8 fallback:
+	// https://github.com/CSSLint/csslint/wiki/Disallow-adjoining-classes
+	"adjoining-classes": false,
+	// [INFO] Rule for IE 6 and 7:
+	// https://github.com/CSSLint/csslint/wiki/Disallow-box-sizing
+	"box-sizing": false,
+	// [INFO] As of 2019, CSSLint is not updated tool;
+	// I use AutoPrefixer — it works with prefixes more correctly.
+	// https://github.com/CSSLint/csslint/wiki/Require-compatible-vendor-prefixes
+	"compatible-vendor-prefixes": false,
+	// [INFO] IE6 fallback:
+	// https://github.com/CSSLint/csslint/wiki/Require-fallback-colors
+	"fallback-colors": false,
+	// [INFO] Rule for supporting old browsers:
+	// https://github.com/CSSLint/csslint/wiki/Require-all-gradient-definitions
+	// http://caniuse.com/#search=linear-gradient
+	"gradient": false,
+	// [INFO] I prefer sort by type, not alphabetical:
+	// https://github.com/CSSLint/csslint/wiki/Disallow-non-alphabetical
+	// https://css-tricks.com/new-poll-how-order-css-properties/
+	"order-alphabetical": false,
+	// [INFO] I need to enable outline-none:
+	// https://github.com/CSSLint/csslint/wiki/Disallow-outline%3Anone
+	// http://outlinenone.com/
+	// https://css-tricks.com/removing-the-dotted-outline/
+	"outline-none": true,
+	// [BUG] I can't ignore this rule for specific cases:
+	// https://github.com/CSSLint/csslint/issues/759
+	// https://github.com/CSSLint/csslint/issues/80
+	"unique-headings": false
+}

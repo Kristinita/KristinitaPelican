@@ -37,7 +37,7 @@ trim_trailing_whitespace = false
 # [WARNING] YAML doesn't support tabs:
 # http://yaml.org/faq.html
 # https://stackoverflow.com/a/19976827/5951529
-[*.{yaml,yml,yamllint}]
+[*.{prettierc,yaml,yml,yamllint}]
 indent_style = space
 indent_size = 2
 

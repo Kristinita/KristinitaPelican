@@ -15,3 +15,10 @@ RELATIVE_URLS: false
 # https://docs.getpelican.com/en/latest/faq.html#changes-to-the-settings-file-take-no-effect
 CACHE_CONTENT: false
 LOAD_CONTENT_CACHE: false
+
+# [INFO] Add “.min” to stylesheets and scripts extensions in HTML files;
+# for example, replace:
+# <link rel="stylesheet" href="https://kristinita.netlify.com/theme/css/general/basic.css">
+# to
+# <link rel="stylesheet" href="https://kristinita.netlify.com/theme/css/general/basic.min.css">
+MIN: .min

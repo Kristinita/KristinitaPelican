@@ -83,19 +83,19 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	{# target-blank
 	Add “target="_blank"” for all external links:
 	https://bogdandragomir.com/blog/2016/12/add-target-_blank-attribute-external-anchors-page-javascript-jquery-one-single-line/ #}
-	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/target-blank/target-blank.min.js" defer></script>
+	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/target-blank/target-blank{{MIN}}.js" defer></script>
 	<!-- Gemini -->
 	<script src="https://cdn.jsdelivr.net/npm/gemini-scrollbar/index.min.js" defer></script>
 	<!-- No smooth scrolling, if JQuery Lazy:
 	https://github.com/eisbehr-/jquery.lazy/issues/98#issuecomment-376064894 -->
-	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Gemini/GeminiAndJQueryLazy.min.js" defer></script>
+	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Gemini/GeminiAndJQueryLazy{{MIN}}.js" defer></script>
 	<!-- JQuery Lazy -->
 	<script src="https://cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.min.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.plugins.min.js" defer></script>
 	{# jquery-responsive-tables #}
 	{% block base_responsive_tables %}{% endblock %}
 	{# Browser-Update #}
-	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Browser-Update/browser-update.min.js" defer></script>
+	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Browser-Update/browser-update{{MIN}}.js" defer></script>
 	<!-- typo-reporter -->
 	{% block base_typoreporter %}{% endblock %}
 	<!-- Fancybox
@@ -105,7 +105,7 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	https://stackoverflow.com/q/14801334/5951529
 	-->
 	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" defer></script>
-	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Fancybox/fancybox.min.js" defer></script>
+	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Fancybox/fancybox{{MIN}}.js" defer></script>
 	<!-- Tooltipster, see http://ru.stackoverflow.com/a/584718/199934 -->
 	{% block base_tooltipster %}{% endblock %}
 	<!-- Clipboard.js, see http://ru.stackoverflow.com/a/582520/199934 -->
@@ -117,14 +117,14 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	{# AddToAny, see https://www.addtoany.com #}
 	<script src="https://static.addtoany.com/menu/page.js" defer></script>
 	{# [INFO] async required #}
-	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/AddToAny/addtoany.min.js" async></script>
+	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/AddToAny/addtoany{{MIN}}.js" async></script>
 	{# [INFO] Wildfire #}
-	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Wildfire/wildfire.min.js" async></script>
+	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Wildfire/wildfire{{MIN}}.js" async></script>
 	<script src="https://cdn.jsdelivr.net/npm/wildfire/dist/wildfire.auto.js" defer></script>
 	{# [FIXME] MailerLite bugs for RSS and CoffeeScript:
 	# https://github.com/Kristinita/SashaMiscellaneous/issues/18
 	# https://github.com/Kristinita/SashaMiscellaneous/issues/19
-	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/MailerLite/mailerlite.min.js" async></script> #}
+	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/MailerLite/mailerlite{{MIN}}.js" async></script> #}
 	<!-- Custom JavaScript -->
 	{% block base_customjs %}{% endblock %}
 
@@ -142,21 +142,21 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	<!-- Gemini
 	[NOTE] Gemini styles must load first, otherwise bugs on page -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gemini-scrollbar/gemini-scrollbar.min.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Gemini/gemini.min.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Gemini/gemini{{MIN}}.css">
 	<!-- SashaPelican theme -->
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/basic.min.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/fonts.min.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/aside.min.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/basic{{MIN}}.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/fonts{{MIN}}.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/aside{{MIN}}.css">
 	{% block base_modernizr %}{% endblock %}
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/image_{% block base_iconleftorright %}{% endblock %}.min.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{% block base_pagecolors %}{% endblock %}.min.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/image_{% block base_iconleftorright %}{% endblock %}{{MIN}}.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{% block base_pagecolors %}{% endblock %}{{MIN}}.css">
 	<!-- External -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/typo-reporter/typo-reporter.min.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/typo-reporter/typo-reporter{{MIN}}.css">
 	<!-- Admonition: note, warning etc. blocks, see
 	https://python-markdown.github.io/extensions/admonition/
 	https://squidfunk.github.io/mkdocs-material/extensions/admonition/ -->
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Admonition/admonition.min.css">
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Admonition/admonition{{MIN}}.css">
 	{# Progressbar #}
 	{% block base_progressbar %}{% endblock %}
 	<!-- Custom CSS -->

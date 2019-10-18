@@ -14,31 +14,31 @@ https://github.com/Kristinita/SashaMiscellaneous/issues/21
 https://github.com/Kristinita/SashaMiscellaneous/issues/22 #}
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  {# [INFO] Full types list:
-  https://schema.org/CreativeWork
-  [INFO] I use types from 5.2 item of this issue:
-  https://github.com/Kristinita/SashaMiscellaneous/issues/22
-  #}
-  "@type": "{{article.schemaorgtype}}",
-  "name": "{{article.title}}",
-  {# [INFO] “striptags” remove all tags for meta and schema.org:
-  http://jinja.pocoo.org/docs/latest/templates/#builtin-filters
-  https://slaptijack.com/programming/using-pelicans-article-summary.html #}
-  "description": "{{article.summary|striptags}}",
-  {# [INFO] Must be same name and headline:
-  https://webmasters.stackexchange.com/a/98469/71131 #}
-  "headline": "{{article.title}}",
-  "datePublished": "{{article.date}}",
-  "dateModified": "{{article.modified}}",
-  "author": {
-    "@type": "Person",
-    "name": "{{article.author}}"
-  },
-  {# [INFO] Og_image metadata setting for images, because
-  Open Graph plugin required it:
-  https://github.com/whiskyechobravo/pelican-open_graph #}
-  "image": "{{article.og_image}}",
-  "url": "{{SITEURL}}/{{article.get_relative_source_path()[:-3]}}.html"
+		"@context": "https://schema.org",
+		{# [INFO] Full types list:
+		https://schema.org/CreativeWork
+		[INFO] I use types from 5.2 item of this issue:
+		https://github.com/Kristinita/SashaMiscellaneous/issues/22
+		#}
+		"@type": "{{article.schemaorgtype}}",
+		"name": "{{article.title}}",
+		{# [INFO] “striptags” remove all tags for meta and schema.org:
+		http://jinja.pocoo.org/docs/latest/templates/#builtin-filterss
+		https://slaptijack.com/programming/using-pelicans-article-summary.html #}
+		"description": "{{article.summary|striptags}}",
+		{# [INFO] Must be same name and headline:
+		https://webmasters.stackexchange.com/a/98469/71131 #}
+		"headline": "{{article.title}}",
+		"datePublished": "{{article.date}}",
+		"dateModified": "{{article.modified}}",
+		"author": {
+			"@type": "Person",
+			"name": "{{article.author}}"
+		},
+		{# [INFO] Og_image metadata setting for images, because
+		Open Graph plugin required it:
+		https://github.com/whiskyechobravo/pelican-open_graph #}
+		"image": "{{article.og_image}}",
+		"url": "{{SITEURL}}/{{article.get_relative_source_path()[:-3]}}.html"
 }
 </script>

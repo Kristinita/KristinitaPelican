@@ -26,7 +26,7 @@ module.exports =
 				# https://www.npmjs.com/package/postcss-combine-duplicated-selectors
 				# Stylelint doesn't allow duplicated selectors:
 				# https://stylelint.io/user-guide/rules/no-duplicate-selectors
-				# [INFO] Stylus not combine correctly “.progress”, “progress-bar”
+				# [INFO] Stylus not combine correctly “.progress”, “.progress-bar”
 				require('postcss-combine-duplicated-selectors')
 			]
 		# [LEARN][GRUNT] Use “files” multiple times:
