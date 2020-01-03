@@ -302,7 +302,7 @@ deploy:
   # https://yaml-multiline.info/
   commit_message: Commit https://github.com/$TRAVIS_REPO_SLUG/commit/$TRAVIS_COMMIT successfully
      builded and checked by Travis CI build $TRAVIS_BUILD_NUMBER.
-     See https://travis-ci.org/%{project_name}/builds/$TRAVIS_BUILD_ID for details.
+     See https://travis-ci.org/$TRAVIS_REPO_SLUG/builds/$TRAVIS_BUILD_ID for details.
 
 # [INFO] Run command after site deployment.
 # [NOTE] exit_codes doesn't work for after_deploy:

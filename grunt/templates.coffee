@@ -60,6 +60,7 @@ module.exports = (grunt) ->
 		api_key_appveyor: process.env.API_KEY_APPVEYOR
 		# [INFO] Google developers API keys:
 		# https://developers.google.com/apis-explorer/#p/pagespeedonline/v5/
+		# https://developers.google.com/speed/docs/insights/v5/get-started#key
 		api_key_pagespeed_insights_v5: process.env.API_KEY_PAGESPEED_INSIGHTS_V5
 	# [FIXME] Check all HTML, when tags and categories will works normally:
 	# https://stackoverflow.com/q/54388924/5951529

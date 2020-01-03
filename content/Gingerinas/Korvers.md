@@ -2,7 +2,7 @@ Title: Korvers
 Version: 0.0.1
 Author: Sasha Chernykh
 Date: 2017-02-13 09:24:30
-Modified: 2019-05-31 19:26:16
+Modified: 2020-01-03 18:43:06
 Lang: ru
 Summary: Техники поиска версий в джинджеринах
 Pagetitle: 4 14 7. 4 корвера, 14 аксаксов, 7 гарниромизов
@@ -612,7 +612,7 @@ Schemaorgtype: ScholarlyArticle
 
 <div class="SashaGingerinasExample" markdown="1">
 
-<div class="SashaVideo"><iframe class="SashaLazy" data-src="https://pe.ertu.be/videos/embed/70c5e546-48ef-46fc-829b-aa3aace9ea39?start=8m15s">
+<div class="SashaVideo"><iframe class="SashaLazy" data-src="https://video.ploud.fr/videos/embed/99227b93-81a4-4039-96ea-6073bdd8aff6?start=8m15s">
 
 </iframe></div>
 
