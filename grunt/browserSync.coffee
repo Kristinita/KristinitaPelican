@@ -27,7 +27,7 @@ module.exports =
 			# [FIXED]
 			# # localtunnel doesn't work, see:
 			# # https://github.com/BrowserSync/browser-sync/issues/1513
-			tunnel: true
+			tunnel: false
 			plugins: [
 				######################
 				## bs-html-injector ##

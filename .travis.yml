@@ -19,12 +19,18 @@
 # https://docs.travis-ci.com/user/reference/overview/#Virtualisation-Environment-vs-Operating-System
 # https://blog.travis-ci.com/2017-08-31-trusty-as-default-status
 
+# [DEPRECATED] “sudo” key:
+# https://blog.travis-ci.com/2018-11-19-required-linux-infrastructure-migration
 # [NOTE] Needs for correct APT addon usage:
 # https://docs.travis-ci.com/user/reference/overview/
 # Diff:
 # https://travis-ci.org/Kristinita/SashaScrutinizer/builds/370138075
 # https://travis-ci.org/Kristinita/SashaScrutinizer/builds/370122401
-sudo: enabled
+# sudo: enabled
+
+# [INFO] OS:
+# https://docs.travis-ci.com/user/reference/overview/
+os: linux
 
 # [NOTE] Needs Xenial, not Trusty for Python 3.7 works:
 # https://travis-ci.community/t/unable-to-download-python-3-7-archive-on-travis-ci/639/2
@@ -102,10 +108,13 @@ env:
 # https://github.com/travis-ci/travis-ci/issues/9180
 language: python
 
-# [NOTE] Python 3.7.3 or higher required, Python 3.7.2 have a bug:
-# ModuleNotFoundError: No module named '_contextvars'
-# https://stackoverflow.com/a/55759519/5951529
-python: 3.7
+# [DEPRECATED]
+# # [NOTE] Python 3.7.3 or higher required, Python 3.7.2 have a bug:
+# # ModuleNotFoundError: No module named '_contextvars'
+# # https://stackoverflow.com/a/55759519/5951529
+# [INFO] Python 3.8 available:
+# https://travis-ci.community/t/add-python-3-8-support/5463/4
+python: 3.8
 
 # [DEPRECATED] Doesn't work on Travis CI, needs “matrix.include”:
 # https://github.com/travis-ci/travis-ci/issues/9634
@@ -121,8 +130,10 @@ python: 3.7
 # - GRUNT_COMMAND=default && grunt http-server screenshots && grunt publish
 
 # [INFO] “matrix.include”:
-# https://docs.travis-ci.com/user/customizing-the-build#Explicitly-Including-Jobs
-matrix:
+# https://docs.travis-ci.com/user/customizing-the-build#build-matrix
+# [INFO] “matrix” key is alias for “jobs”:
+# https://github.com/travis-ci/docs-travis-ci-com/issues/1500#issuecomment-444095922
+jobs:
   include:
   - script:
     - grunt

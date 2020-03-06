@@ -132,7 +132,7 @@ module.exports =
 	https://travis-ci.org/Kristinita/KristinitaPelican/jobs/471091236#L1220
 	###
 	tarv1: ['coffeelint:site'
-			'html-nu'
+			# 'html-nu'
 			'path_validator'
 			# [DONE]
 			# Update dependencies fix it:

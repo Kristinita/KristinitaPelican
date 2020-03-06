@@ -60,7 +60,7 @@ environment:
   # [INFO] Variables:
   # https://help.appveyor.com/discussions/problems/4629-how-to-use-appveyor-environment-variable
   # https://help.appveyor.com/discussions/questions/15163-multiuple-build-matrix-dimensions-from-environment-variables
-  PYTHON: C:\Python37-x64
+  PYTHON: C:\Python38-x64
   # [INFO] “grunt default” = “grunt”;
   # AppVeyor support blank value.
   # [NOTE] Spaces before “&&” doesn't need, compare:
