@@ -10,6 +10,12 @@
 # https://www.appveyor.com/docs/appveyor-yml/
 platform: x64
 
+# [REQUIRED] Visual Studio 2019 for correct LocalAppVeyor run:
+# https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/5c8lytcray3s6u2k?fullLog=true#L139
+# https://www.appveyor.com/docs/custom-build-images/#building-shared-image-in-a-dedicated-project
+# https://www.appveyor.com/docs/windows-images-software/#net-framework
+image: Visual Studio 2019
+
 # [INFO] Don't download all repository history, that save a time:
 # https://www.appveyor.com/docs/how-to/repository-shallow-clone/#setting-depth-of-git-clone-command
 clone_depth: 1
