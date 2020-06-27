@@ -133,4 +133,7 @@ for:
     GRUNT_BUILD: publish
     # [NOTE] Travis CI build run parallel and end before AppVeyor,
     # so “afterdeploy” will run after site deployment.
-    GRUNT_TEST: validate remote afterdeploy
+    GRUNT_TEST: validate remote
+
+    # [FIXME] “grunt-pagespeed” problems
+    # GRUNT_TEST: validate remote afterdeploy

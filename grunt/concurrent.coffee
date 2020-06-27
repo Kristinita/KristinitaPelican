@@ -120,7 +120,8 @@ module.exports =
 	###
 	tars1: ['coffeelint:configs'
 			'markdownlint'
-			'remark'
+			# [FIXME] “.remarkrc.yaml” doesn't work
+			# 'remark'
 			'shell:bashate']
 
 	###
@@ -132,6 +133,7 @@ module.exports =
 	https://travis-ci.org/Kristinita/KristinitaPelican/jobs/471091236#L1220
 	###
 	tarv1: ['coffeelint:site'
+			# [FIXME] “space: none”
 			# 'html-nu'
 			'path_validator'
 			# [DONE]

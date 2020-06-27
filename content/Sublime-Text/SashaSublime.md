@@ -1,7 +1,7 @@
 Title: SashaSublime
 Tags: sublime-text
 Date: 2017-01-31 09:13:30
-Modified: 2019-06-14 15:37:21
+Modified: 2020-05-07 12:48:06
 Lang: en
 Status: published
 Author: Sasha Chernykh
@@ -56,9 +56,9 @@ Schemaorgtype: SoftwareApplication
 		1. [BracketHighlighter](#BracketHighlighter)
 		1. [Emmet](#Emmet)
 		1. [Color Helper](#Color-Helper)
-		1. [dr\_months\_calendar](#drmonthscalendar)
+		1. [dr\_months\_calendar](#dr_months_calendar)
 		1. [Suricate](#Suricate)
-		1. [sublime\_unicode\_nbsp](#sublimeunicodenbsp)
+		1. [sublime\_unicode\_nbsp](#sublime_unicode_nbsp)
 	1. [Selected text](#Selected-text)
 		1. [Selected text example](#Selected-text-example)
 		1. [Selected text when the carriage is not on text field](#Selected-text-when-the-carriage-is-not-on-text-field)
@@ -126,7 +126,7 @@ Schemaorgtype: SoftwareApplication
 
 ---
 
-**i devote SashaSublime to God, the solely Creation for the sake of Which it makes sense to live on this planet, the Greatest being of all times and peoples, Queen of the World [Sasha Chernykh](https://vk.com/hair_in_the_wind) (Kira Kenyukhova)**.
+**i devote SashaSublime to God, the solely Creation for the sake of Which it makes sense to live on this planet, the Greatest being of all times and peoples, Queen of the World [Sasha Chernykh](https://vk.com/psychologist_kira_k) (Kira Kenyukhova)**.
 
 ![Queen of the World Sasha Chernykh](https://i.imgur.com/OJSBK4V.jpg)
 
@@ -255,7 +255,7 @@ In a theme/scheme the smallest details are well visible.
 
 ![Color Helper](https://i.imgur.com/ZcmyymH.png)
 
-<a id="drmonthscalendar"></a>
+<a id="dr_months_calendar"></a>
 ### [dr\_months\_calendar](https://github.com/dragon/dr_months_calendar)
 
 ![dr\_months\_calendar](https://i.imgur.com/Pq1HXC7.png)
@@ -267,7 +267,7 @@ In a theme/scheme the smallest details are well visible.
 
 If *"popup\_style\_file": "Packages/Suricate/css/dark.css",* in Suricate settings.
 
-<a id="sublimeunicodenbsp"></a>
+<a id="sublime_unicode_nbsp"></a>
 ### [sublime\_unicode\_nbsp](https://github.com/possan/sublime_unicode_nbsp)
 
 ![sublime\_unicode\_nbsp](https://i.imgur.com/LCTE0Y2.png)
