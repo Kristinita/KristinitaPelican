@@ -119,7 +119,10 @@ module.exports =
 	For validating sources, “target sources”.
 	###
 	tars1: ['coffeelint:configs'
-			'markdownlint'
+			# [FIXME]
+			# content.trimEnd is not a function
+			# https://travis-ci.org/github/Kristinita/KristinitaPelican/jobs/702631558#L1948-L1950
+			# 'markdownlint'
 			# [FIXME] “.remarkrc.yaml” doesn't work
 			# 'remark'
 			'shell:bashate']
