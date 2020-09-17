@@ -230,7 +230,7 @@
 # 			wrap: 0)).pipe gulp.dest('./')
 
 
-# [DEPRECATED] pip-licenses more customisable
+# [DECLINED] pip-licenses more customisable
 # ############
 # ## yolk3k ##
 # ############
@@ -241,7 +241,7 @@
 # 	command: 'pipenv run yolk -l -f license > python.txt'
 
 
-# [DEPRECATED] SuperFences now preserve tabs:
+# [DECLINED] SuperFences now preserve tabs:
 # https://github.com/facelessuser/pymdown-extensions/issues/276
 # ######################
 # ## grunt-indentator ##
@@ -399,7 +399,7 @@
 # 			]
 
 
-# [DEPRECATED] I hate private discussions
+# [DECLINED] I hate private discussions
 # #########
 # # ROT13 #
 # #########
@@ -550,7 +550,7 @@
 #     src: "<%= templates.yamlconfig.OUTPUT_PATH %>/**"
 
 
-# [DEPRECATED]
+# [DECLINED]
 # 1. JSBeautifier is more powerful tool
 # 2. JSBeautifier has many options; Prettier — minimal set, see options philosophy:
 # https://prettier.io/docs/en/option-philosophy.html

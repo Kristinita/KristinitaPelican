@@ -52,7 +52,7 @@ SITENAME: Поиск Кристиниты
 TIMEZONE: Europe/Moscow
 DEFAULT_LANG: en
 # Site URL. Absolute path for publishing.
-SITEURL: &siteurl https://kristinita.netlify.com
+SITEURL: &siteurl https://kristinita.netlify.app
 # “If you have already explicitly defined SITEURL (see above)
 # and want to use the same domain for your feeds, you can just set:”
 # https://docs.getpelican.com/en/latest/settings.html#feed-settings

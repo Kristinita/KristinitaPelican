@@ -79,7 +79,7 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	https://github.com/browser-update/browser-update/issues #}
 	{# [NOTE] Don't use protocol-relative URLs:
 	https://stackoverflow.com/a/54386928/5951529 #}
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
 	{# target-blank
 	Add “target="_blank"” for all external links:
 	https://bogdandragomir.com/blog/2016/12/add-target-_blank-attribute-external-anchors-page-javascript-jquery-one-single-line/ #}
@@ -112,15 +112,16 @@ https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
 	{% block base_clipboardjs %}{% endblock %}
 	<!-- Visualize, see https://github.com/kellyk/visualize -->
 	{% block base_visualize %}{% endblock %}
-	{# Runkit, see https://runkit.com/docs/embed #}
+	{# [INFO] Runkit, see https://runkit.com/docs/embed #}
 	{% block base_runkit %}{% endblock %}
-	{# AddToAny, see https://www.addtoany.com #}
+	{# [INFO] AddToAny, see https://www.addtoany.com #}
 	<script src="https://static.addtoany.com/menu/page.js" defer></script>
 	{# [INFO] async required #}
 	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/AddToAny/addtoany{{MIN}}.js" async></script>
-	{# [INFO] Wildfire #}
+	{# [INFO] Wildfire
+	https://stackoverflow.com/a/63869810/5951529
+	#}
 	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Wildfire/wildfire{{MIN}}.js" async></script>
-	<script src="https://cdn.jsdelivr.net/npm/wildfire/dist/wildfire.auto.js" defer></script>
 	{# [FIXME] MailerLite bugs for RSS and CoffeeScript:
 	# https://github.com/Kristinita/SashaMiscellaneous/issues/18
 	# https://github.com/Kristinita/SashaMiscellaneous/issues/19

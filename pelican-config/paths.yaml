@@ -20,10 +20,12 @@ EXTRA_PATH_METADATA:
     path: opensearch.xml
   extra/netlify.toml:
     path: netlify.toml
-  # [FIXME] grunt-real-favicon doesn't work for Node.js 12:
-  # https://github.com/RealFaviconGenerator/grunt-real-favicon/issues/46#issue-445347227
-  extra/favicon.ico:
-    path: favicon.ico
+  # [DECLINED] grunt-real-favicon generate more icons:
+  # https://www.npmjs.com/package/grunt-real-favicon
+  # [INFO] Add favicon:
+  # https://stackoverflow.com/a/31270471/5951529
+  # extra/favicon.ico:
+    # path: favicon.ico
 
 # [INFO] Folder name = category name:
 # https://docs.getpelican.com/en/latest/settings.html#basic-settings

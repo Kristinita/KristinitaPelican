@@ -134,11 +134,13 @@ rules:
       - build
       # Reverts a previous commit
       - revert
-      # Personal types:
+      # [INFO] Personal types:
       # VCS changes (example scopes: bazaar, mercurial, git)
       - vcs
       # Debugging.
       - debug
+      # [INFO] Update
+      - upd
 
   type-case:
     - 2
@@ -157,7 +159,7 @@ rules:
     - 0
     - always
 
-  # Sign-off commits:
+  # [INFO] Sign-off commits:
   # https://stackoverflow.com/a/14044024/5951529
   # I'm not use it in my projects:
   # 1. gpg-sign more really certify commit author,

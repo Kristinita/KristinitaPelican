@@ -106,3 +106,4 @@ notappveyor:
 # [INFO] For deployed site
 afterdeploy:
 - 'concurrent:tarad1'
+- 'concurrent:tarad2'

@@ -73,9 +73,10 @@ module.exports =
 	# Don't use “newer” for “move”! Files from “root-html” doesn't move.
 	# Don't use “newer” with “realFavicon”! “index.html” will not changed!
 	tarp3: ['license_finder'
+			# [DONE]
 			# [FIXME] realFavicon doesn't work after upgrade to Node.js 12:
 			# https://github.com/RealFaviconGenerator/grunt-real-favicon/issues/46
-			# 'realFavicon'
+			'realFavicon'
 			'humans_txt'
 			'robotstxt'
 			'shell:licensegenerator'
@@ -107,7 +108,12 @@ module.exports =
 	###
 	For updating dependencies, “target update”.
 	###
-	taru1: ['devUpdate'
+	taru1: [
+			# [FIXME] PostStylus doesn’t work after
+			# Autoprefixer update to version 10:
+			# https://github.com/postcss/autoprefixer/issues/1358
+			# https://github.com/postcss/autoprefixer/releases/tag/10.0.0
+			# 'devUpdate'
 			'shell:gitreflog']
 	taru2: ['projectUpdate'
 			'shell:pipenvupdateall'
@@ -119,12 +125,14 @@ module.exports =
 	For validating sources, “target sources”.
 	###
 	tars1: ['coffeelint:configs'
+			# [DONE]
 			# [FIXME]
 			# content.trimEnd is not a function
 			# https://travis-ci.org/github/Kristinita/KristinitaPelican/jobs/702631558#L1948-L1950
-			# 'markdownlint'
+			'markdownlint'
+			# [DONE]
 			# [FIXME] “.remarkrc.yaml” doesn't work
-			# 'remark'
+			'remark'
 			'shell:bashate']
 
 	###
@@ -136,19 +144,14 @@ module.exports =
 	https://travis-ci.org/Kristinita/KristinitaPelican/jobs/471091236#L1220
 	###
 	tarv1: ['coffeelint:site'
-			# [FIXME] “space: none”
-			# 'html-nu'
-			'path_validator'
 			# [DONE]
-			# Update dependencies fix it:
-			# [FIXME] “No source files were found” error
+			# [FIXME] “space: none”
+			'html-nu'
+			'path_validator'
 			'postcss:lint'
 			'shell:tidyvalidate'
 			'stylelint'
 			'stylint']
-	# [DONE]
-	# [FIXME] eclint doesn't fix leading spaces:
-	# https://github.com/jedmao/eclint/issues/155
 	tarv2: ['csslint'
 			'shell:eclintcheck']
 	tarv3: ['notify:validate']
@@ -180,11 +183,21 @@ module.exports =
 	tarr1: ['shell:localappveyor'
 			'shell:shellcheck']
 	tarr2: ['notify:validate']
-	# [BUG] Travis Client doesn't recognized APT addon:
-	# https://github.com/travis-ci/travis-yaml/issues/58
-	# https://github.com/travis-ci/travis.rb/issues/422
-	# [BUG] “matrix.include” warnings:
-	# https://github.com/travis-ci/travis.rb/issues/376
+
+	###
+	[FIXME] “travis lint -x” successfully works for me,
+	but after “shell:travislint” command prompt hangs
+	###
+	###
+	[DONE]
+	https://github.com/travis-ci/travis.rb/issues/422
+	https://github.com/travis-ci/travis.rb/issues/376#issuecomment-693209274
+	[BUG] Travis Client doesn't recognized APT addon:
+	https://github.com/travis-ci/travis-yaml/issues/58
+	https://github.com/travis-ci/travis.rb/issues/422
+	[BUG] “matrix.include” warnings:
+	https://github.com/travis-ci/travis.rb/issues/376
+	###
 	# tarr2: ['shell:travislint']
 
 	###
@@ -210,12 +223,10 @@ module.exports =
 	https://travis-ci.org/Kristinita/SashaGruntDebugging/builds/536620396
 	###
 	tarna1: ['htmlhint'
-			# [DONE]
-			# https://github.com/whiskyechobravo/pelican-open_graph/pull/19#issuecomment-514927638
-			# [FIXME] E006 htmllint error:
-			# https://travis-ci.org/Kristinita/KristinitaPelican/jobs/560507427#L2046-L2085
 			'htmllint'
-			'pylint']
+			# [FIXME] AttributeError: module 'isort' has no attribute 'SortImports'
+			# 'pylint'
+			]
 	tarna2: ['notify:validate']
 
 	###
@@ -223,4 +234,11 @@ module.exports =
 	[INFO] PageSpeed require remote site;
 	I can't fix “Serve static assets with an efficient cache policy” for localhost
 	###
-	tarad1: ['pagespeed']
+	tarad1: [
+			# [NOTE] “shell:shellcheck” not needed here!
+			# Delete it after pagespeed will fixed!
+			'shell:shellcheck'
+			# [FIXME] Bug “Warning: Expected a string”
+			# 'pagespeed'
+			]
+	tarad2: ['notify:validate']

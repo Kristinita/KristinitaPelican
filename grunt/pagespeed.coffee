@@ -25,17 +25,23 @@ https://www.google.com/search?client=firefox-b-d&q=cloudflare+github+pages
 I can't fix “Serve static assets with an efficient cache policy” for localhost
 ###
 module.exports =
-	# Options:
-	# https://www.npmjs.com/package/grunt-pagespeed#options
+	###
+	[INFO] Options:
+	https://www.npmjs.com/package/grunt-pagespeed#options
+	###
 	options:
-		# [INFO] That get a key, create a project → visit API page:
-		# https://console.developers.google.com/apis
-		# → API Library → Other (in page bottom) → PageSpeed Insights API:
-		# https://console.developers.google.com/apis/library
+		###
+		[INFO] That get a key, create a project → visit API page:
+		https://console.developers.google.com/apis
+		→ API Library → Other (in page bottom) → PageSpeed Insights API:
+		https://console.developers.google.com/apis/library
+		###
 		key: "<%= templates.tokens.api_key_pagespeed_insights_v5 %>"
-		# [INFO] Template before paths; PageSpeed will check
-		# “url/404.html”, “url/Sasha-Black.html” and so on:
-		# https://www.npmjs.com/package/grunt-pagespeed#url
+		###
+		[INFO] Template before paths; PageSpeed will check
+		“url/404.html”, “url/Sasha-Black.html” and so on:
+		https://www.npmjs.com/package/grunt-pagespeed#url
+		###
 		url: "<%= templates.yamlconfig.SITEURL %>/"
 	prod:
 		options:
@@ -52,12 +58,18 @@ module.exports =
 					"Smert-svobode/Новые-недовольные-русские"
 					"Sublime-Text/Sacagawea"
 					]
-			# [NOTE] Mandatory option:
-			# https://www.npmjs.com/package/grunt-pagespeed#locale
+			###
+			[NOTE] Mandatory option:
+			https://www.npmjs.com/package/grunt-pagespeed#locale
+			###
 			locale: "en_US"
-			# [INFO] Mobile or desktop:
-			# https://www.npmjs.com/package/grunt-pagespeed#strategy
+			###
+			[INFO] Mobile or desktop:
+			https://www.npmjs.com/package/grunt-pagespeed#strategy
+			###
 			strategy: "mobile"
-			# [INFO] If PageSpeed Insights value less than threshold value, build failed:
-			# https://www.npmjs.com/package/grunt-pagespeed#threshold
+			###
+			[INFO] If PageSpeed Insights value less than threshold value, build failed:
+			https://www.npmjs.com/package/grunt-pagespeed#threshold
+			###
 			threshold: 50

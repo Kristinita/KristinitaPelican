@@ -1,7 +1,7 @@
 Title: SashaSublime
 Tags: sublime-text
 Date: 2017-01-31 09:13:30
-Modified: 2020-05-07 12:48:06
+Modified: 2020-07-10 16:50:53
 Lang: en
 Status: published
 Author: Sasha Chernykh
@@ -27,8 +27,7 @@ Schemaorgtype: SoftwareApplication
 	<img src="https://img.shields.io/badge/Release-1.3.1-orange.svg" alt="Release" class="SashaInline" />
 	<img src="https://img.shields.io/github/stars/Kristinita/SashaSublime.svg" alt="Stars" />
 	<img src="https://img.shields.io/github/forks/Kristinita/SashaSublime.svg" alt="Forks" />
-	<img src="https://img.shields.io/maintenance/STATUS/2019.svg" alt="Maintained" />
-	<a href="https://packagecontrol.io/packages/SashaSublime"><img src="https://packagecontrol.herokuapp.com/downloads/SashaSublime.svg?style=flat-square" alt="Package Control" /></a>
+	<img src="https://img.shields.io/maintenance/STATUS/2020.svg" alt="Maintained" />
 	<a href="https://github.com/Kristinita/SashaSublime/issues"><img src="https://img.shields.io/github/issues/Kristinita/SashaSublime.svg" alt="GitHub issues" /></a>
 </p>
 

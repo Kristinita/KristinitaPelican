@@ -87,7 +87,7 @@ MARKDOWN:
     # http://facelessuser.github.io/pymdown-extensions/extensions/critic/
     pymdownx.critic: {}
 
-    # Don't convert spaces, octotorps and another symbols:
+    # Don’t convert spaces, octotorps and another symbols:
     # http://facelessuser.github.io/pymdown-extensions/extensions/escapeall/
     # https://github.com/waylan/Python-Markdown/issues/564#issuecomment-299681538
     pymdownx.escapeall: {}
