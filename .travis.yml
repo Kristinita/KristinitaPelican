@@ -19,7 +19,7 @@
 # https://docs.travis-ci.com/user/reference/overview/#Virtualisation-Environment-vs-Operating-System
 # https://blog.travis-ci.com/2017-08-31-trusty-as-default-status
 
-# [DEPRECATED] “sudo” key:
+# [DECLINED] “sudo” key:
 # https://blog.travis-ci.com/2018-11-19-required-linux-infrastructure-migration
 # [NOTE] Needs for correct APT addon usage:
 # https://docs.travis-ci.com/user/reference/overview/
@@ -46,10 +46,12 @@ os: linux
 # https://docs.travis-ci.com/user/reference/linux#overview
 dist: focal
 
+
 # [INFO] Don't download all repository history, that save a time:
 # https://docs.travis-ci.com/user/customizing-the-build/#git-clone-depth
 git:
   depth: 1
+
 
 # Environment:
 # [INFO] Using secure variables for Travis CI:
@@ -105,6 +107,7 @@ env:
       lmIISg0P2VtPLZIw4sCSJ9ts3dnOtADkYDiruXF1laoKmw4+73TpbNsvxNTYitSnWFsAOKoZqzCX3+t5v+swkb7gc7i+pXKDwuLaF6pF1lemV/
       3bpq7yay5d6KmMIPpDwW+rBNLhCbzxPLpGdG40xd9Gs+w6iRoRXIlChh6PuGohDAPcA/oMofXtHic3hx5ViAPDcxsoB5pjc8CM=
 
+
 # Needs “language: bash” for multilanguage projects:
 # https://github.com/travis-ci/travis-ci/issues/4895
 # https://github.com/travis-ci/docs-travis-ci-com/issues/910
@@ -115,6 +118,7 @@ env:
 # https://github.com/travis-ci/travis-ci/issues/9180
 language: python
 
+
 # [DEPRECATED]
 # # [NOTE] Python 3.7.3 or higher required, Python 3.7.2 have a bug:
 # # ModuleNotFoundError: No module named '_contextvars'
@@ -123,18 +127,6 @@ language: python
 # https://travis-ci.community/t/add-python-3-8-support/5463/4
 python: 3.8
 
-# [DEPRECATED] Doesn't work on Travis CI, needs “matrix.include”:
-# https://github.com/travis-ci/travis-ci/issues/9634
-# # Multiple scripts
-# # https://docs.travis-ci.com/user/speeding-up-the-build/#Parallelizing-your-builds-across-virtual-machines
-# env:
-# # “grunt default” = “grunt”;
-# # Travis CI support blank value.
-# - GRUNT_COMMAND=
-# # If http-server run in background, “pipenv run pelican content -s publishconf.py”
-# # command can't move “theme” folder.
-# # I can't find method for http-server stop
-# - GRUNT_COMMAND=default && grunt http-server screenshots && grunt publish
 
 # [INFO] “matrix.include”:
 # https://docs.travis-ci.com/user/customizing-the-build#build-matrix
@@ -156,6 +148,7 @@ jobs:
     # Make as cotila:
     # https://github.com/calebzulawski/cotila/blob/master/.travis.yml
     - MATRIX_DEPLOY=1
+
 
 # Sections:
 # https://docs.travis-ci.com/user/job-lifecycle
@@ -195,6 +188,7 @@ addons:
 # https://docs.travis-ci.com/user/caching/#Build-phases
 # Cache doesn't save between “images” — new builds: new virtual machine for each build:
 # https://docs.travis-ci.com/user/caching/#Things-not-to-cache
+
 
 before_install:
 # Virtual environment inside project directory:
@@ -236,11 +230,41 @@ before_install:
 # https://stackoverflow.com/a/34549249/5951529
 - git config --global core.quotePath false
 
+
 install:
+# [NOTE] Node.js latest version required;
+# because by default it doesn’t work correctly:
+# https://travis-ci.org/github/Kristinita/KristinitaPelican/jobs/728121010
+# [LEARN][NVM] Install the latest Node.js version by NVM:
+# https://github.com/nvm-sh/nvm#usage
+# https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728253580#L187-L188
+# [INFO] David Welsh reccomends NVM installation:
+# https://davidwalsh.name/nvm
+# [NOTE] “nvm install node” must be in “.travis.yml” file, not in external files;
+# otherwise you get error “nvm: command not found”:
+# https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728278371#L182
+# https://travis-ci.org/github/Kristinita/KristinitaPelican/jobs/728274971#L238
+# https://github.com/travis-ci/travis-ci/issues/6027
+# https://github.com/travis-ci/travis-ci/issues/5999
+# [NOTE] Doesn’t work:
+# “node_js: node”:
+# https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#specifying-nodejs-versions
+# https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728248259#L182-L183
+# Node.js from apt addon:
+# https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728250645#L223-L224
+# “.nvmrc”:
+# https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#specifying-nodejs-versions-using-nvmrc
+# https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728252349#L182-L183
+# “apt-get -y install node.js”:
+# https://stackoverflow.com/a/21119945/5951529
+# https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728252818#L219-220
+- nvm install node
+
 # [NOTE] Parallelshell works, but no time economy, diff:
 # https://travis-ci.org/Kristinita/SashaPelicanTest/jobs/347254717
 # https://travis-ci.org/Kristinita/SashaPelicanTest/jobs/347267767
 - bash bash/travis-install.sh
+
 
 # [INFO] Automatically deploy site to GitHub Pages:
 # https://docs.travis-ci.com/user/deployment

@@ -25,28 +25,6 @@
 # https://travis-ci.org/Kristinita/SashaScrutinizer/builds/363772800
 
 
-# [NOTE] Node.js latest version required;
-# because by default it doesn't work correctly:
-# https://travis-ci.org/github/Kristinita/KristinitaPelican/jobs/728121010
-# [LEARN][NVM] Install the latest Node.js version by NVM:
-# https://github.com/nvm-sh/nvm#usage
-# https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728253580#L187-L188
-# [INFO] David Welsh reccomends NVM installation:
-# https://davidwalsh.name/nvm
-# [NOTE] Doesn't work:
-# "node_js: node":
-# https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#specifying-nodejs-versions
-# https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728248259#L182-L183
-# Node.js from apt addon:
-# https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728250645#L223-L224
-# ".nvmrc":
-# https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#specifying-nodejs-versions-using-nvmrc
-# https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728252349#L182-L183
-# "apt-get -y install node.js":
-# https://stackoverflow.com/a/21119945/5951529
-# https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728252818#L219-220
-
-
 # [NOTE] Grunt tasks needs grunt-cli globally:
 # https://stackoverflow.com/a/21133609/5951529
 
@@ -79,7 +57,7 @@
 # "https://packages.microsoft.com/config/ubuntu/packages-microsoft-prod.deb" and
 # "sudo apt-get install dotnet-sdk" will not works
 parallel ::: 'pip install --upgrade pip && pip install pipenv==11.10.2 && pipenv install --dev && pipenv run peru sync' \
-	'nvm install node && npm install --global npm && npm install -g grunt-cli && npm install' \
+	'npm install --global npm && npm install -g grunt-cli && npm install' \
 	'git clone https://github.com/htacg/tidy-html5.git && cd tidy-html5 && cd build/cmake && cmake ../.. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIB:BOOL=OFF && make && sudo make install' \
 	'gem install travis' \
 	'wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb && sudo apt-get update && sudo apt-get install dotnet-sdk-3.1 && dotnet tool install -g localappveyor'
