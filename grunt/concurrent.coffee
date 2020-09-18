@@ -118,6 +118,9 @@ module.exports =
 			# 2.0.0 — 21m31s
 			# I downgraded it, because AppVeyor hangs:
 			# https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/9pr390t692pr65oa#L2999
+			# [FIXME] grunt-cwebp doesn’t convert images to webp in 3.0.1;
+			# I downgraded it:
+			# https://github.com/1000ch/grunt-cwebp/issues/14
 			# 'devUpdate'
 			'shell:gitreflog']
 	taru2: ['projectUpdate'

@@ -55,7 +55,7 @@
         "grunt-css-purge": "^1.1.0",
         "grunt-cssnano": "^3.0.0",
         "grunt-curl": "^2.5.1",
-        "grunt-cwebp": "^3.0.1",
+        "grunt-cwebp": "^2.1.1",
         "grunt-dev-update": "^2.3.0",
         "grunt-git-them-all": "github:Kristinita/grunt-git-them-all",
         "grunt-html": "^14.2.0",

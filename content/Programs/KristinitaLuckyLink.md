@@ -2,7 +2,7 @@ Title: KristinitaLuckyLink
 Version: 0.1.0
 Author: Sasha Chernykh
 Date: 2018-01-09 19:27:14
-Modified: 2020-09-18 08:48:19
+Modified: 2020-09-18 19:32:55
 Lang: en
 Summary: Sublime Text 3 package, that wrap the selected text to DuckDuckGo or Google top query URL <br><br> ![KristinitaLuckyLink](https://i.imgur.com/TuyxneV.png)
 Pagetitle: KristinitaLuckyLink
@@ -81,7 +81,7 @@ It may take a lot of time. Use KristinitaLuckyLink I can make all these actions,
 <a id="Demonstration"></a>
 ## Demonstration
 
-<div class="SashaVideo"><iframe class="SashaLazy" data-src="https://streamable.com/s/bj22k/ykgkws"></iframe></div>
+<div class="SashaVideo"><iframe class="SashaLazy" data-src="https://video.ploud.fr/videos/embed/5d800b76-c468-4510-b2af-d84d28def4a9"></iframe></div>
 
 <a id="Examples"></a>
 ## Examples
@@ -261,7 +261,7 @@ Captions:
 + `Suricate: KristinitaLuckyLink: DuckDuckGo`,
 + `Suricate: KristinitaLuckyLink: Google`.
 
-![Command palette](https://i.imgur.com/SjWzTcb.png)
+	![Command palette](https://i.imgur.com/SjWzTcb.png)
 
 <a id="Documentation"></a>
 # Documentation

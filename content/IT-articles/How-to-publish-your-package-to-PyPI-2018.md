@@ -2,7 +2,7 @@ Title: How to publish your package to PyPI, 2018
 Version: 0.1.0
 Author: Sasha Chernykh
 Date: 2018-01-27 10:59:14
-Modified: 2019-06-14 16:10:22
+Modified: 2020-09-18 16:02:47
 Lang: en
 Summary: Tutorial, how you can publish your Python package to PyPI <br><br> ![Erichek on pypi.python.org](https://i.imgur.com/IzSH7BK.png) <br><br> ![Erichek on pypi.org](https://i.imgur.com/4P3w8TP.png) <br><br> ![Erichek on pypi.org 2](https://i.imgur.com/IxsUDu4.png)
 Pagetitle: How to publish your package to PyPI, 2018
@@ -582,7 +582,7 @@ Citation from [Pro Python Best Practices](https://www.apress.com/us/book/9781484
 
 > Virtualenv is like building a moat around the house. It prevents a fire from spreading — in both directions. Likewise, a virtual environment prevents that Python projects interfere with each other.
 
-![virtualenv](https://i.imgur.com/fRISif0.png)
+	![virtualenv](https://i.imgur.com/fRISif0.png)
 
 Reasons of use virtual environment for TestPyPI installation:
 

@@ -34,12 +34,12 @@ module.exports =
 							medium: true
 							big: false
 							rectangle: false
-					appName: "Kristinita\'s Search"
+					appName: "Kristinita’s Search"
 				androidChrome:
 					pictureAspect: "noChange"
 					themeColor: "#ffffff"
 					manifest:
-						name: "Kristinita\'s Search"
+						name: "Kristinita’s Search"
 						startUrl: "https://kristinita.netlify.com"
 						display: "standalone"
 						orientation: "notSet"
