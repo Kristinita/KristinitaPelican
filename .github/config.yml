@@ -97,7 +97,7 @@ newPRWelcomeComment: >
 
 
   Please, note, that all files and commits of your pull request
-  [**must be 100% valid**](https://kristinita.ru/About-for-developers#linting-and-validation).
+  [**must be 100% valid**](https://kristinita.netlify.app/About-for-developers#Linting-and-validation).
 
 # Comment to be posted to on pull requests merged by a first time user
 firstPRMergeComment: >

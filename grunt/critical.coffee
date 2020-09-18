@@ -47,5 +47,3 @@ module.exports =
 					]
 			dest: "."
 			]
-		# src: "<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/KristinitaLuckyLink.html"
-		# dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/KristinitaLuckyLink.html"

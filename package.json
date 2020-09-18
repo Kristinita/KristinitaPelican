@@ -51,7 +51,7 @@
         "grunt-contrib-stylus": "^1.2.0",
         "grunt-contrib-uglify": "^5.0.0",
         "grunt-contrib-watch": "^1.1.0",
-        "grunt-critical": "^2.0.0",
+        "grunt-critical": "^1.1.3",
         "grunt-css-purge": "^1.1.0",
         "grunt-cssnano": "^3.0.0",
         "grunt-curl": "^2.5.1",

@@ -32,12 +32,19 @@
 # https://docs.travis-ci.com/user/reference/overview/
 os: linux
 
+
+# [DEPRECATED]
 # [NOTE] Needs Xenial, not Trusty for Python 3.7 works:
 # https://travis-ci.community/t/unable-to-download-python-3-7-archive-on-travis-ci/639/2
 # https://github.com/travis-ci/travis-ci/issues/9815#issuecomment-425867404
 # Differences between Xenial and Trusty:
 # https://docs.travis-ci.com/user/reference/xenial/#differences-from-the-trusty-images
-dist: xenial
+
+
+# [INFO] Compare Travis Ubuntu environments;
+# “focal” is the latest for September 2020:
+# https://docs.travis-ci.com/user/reference/linux#overview
+dist: focal
 
 # [INFO] Don't download all repository history, that save a time:
 # https://docs.travis-ci.com/user/customizing-the-build/#git-clone-depth
@@ -204,6 +211,13 @@ before_install:
 # [INFO] Don't install pylint from grunt-pylint
 # https://www.npmjs.com/package/grunt-pylint#getting-started
 - export GRUNT_PYLINT_SKIP_POSTINSTALL=yes
+# [NOTE] Disable Node.js warnings:
+# https://nodejs.org/api/cli.html#cli_node_no_warnings_1
+# It a not the best solution, a lot of warnings from old Grunt packages
+# prevent normal viewing of output, example:
+# https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/qhr57grom9dohssp
+- export NODE_NO_WARNINGS=1
+
 # Add LocalAppVeyor directory to the end of the PATH environment variable:
 # https://unix.stackexchange.com/a/26067/237999
 # http://www.troubleshooters.com/linux/prepostpath.htm
@@ -228,21 +242,6 @@ install:
 # https://travis-ci.org/Kristinita/SashaPelicanTest/jobs/347267767
 - bash bash/travis-install.sh
 
-# [DEPRECATED] Doesn't work on Travis CI, needs “matrix.include”:
-# https://github.com/travis-ci/travis-ci/issues/9634
-# script:
-# - grunt $GRUNT_COMMAND
-# # [WARNING] Don't move these commands to “after_success” section,
-# # exit code = 0 in this section always:
-# # https://blog.travis-ci.com/after_script_behavior_changes/
-# # https://github.com/travis-ci/travis-ci/issues/758
-# # https://travis-ci.org/Kristinita/KristinitaPelican/jobs/368968780
-# # [WARNING] I don't use Build Stages, because each stage run in new virtual machine,
-# # no data persistence → it takes a lot of time, that install and compile all dependencies before stages.
-# # This is unnecessary in my case.
-# # https://docs.travis-ci.com/user/build-stages/#Data-persistence-between-stages-and-jobs
-# - grunt validate remote travis
-
 # [INFO] Automatically deploy site to GitHub Pages:
 # https://docs.travis-ci.com/user/deployment
 # https://docs.travis-ci.com/user/deployment/pages/
@@ -254,6 +253,9 @@ install:
 # [WARNING] Custom commit messages doesn't support:
 # https://github.com/travis-ci/travis-ci/issues/9287
 deploy:
+  # [INFO] Deploy strategy:
+  # https://docs.travis-ci.com/user/deployment-v2/providers/pages/#shared-options
+  strategy: git
   provider: pages
   # [INFO] dpl v2:
   # https://blog.travis-ci.com/2019-08-27-deployment-tooling-dpl-v2-preview-release
@@ -293,7 +295,7 @@ deploy:
   committer_from_gh: true
   # [INFO] For custom domains only
   # Automatically generate CNAME for custom domain:
-  # fqdn: Kristinita.ru
+  # fqdn: kristinita.netlify.app
   # [WARNING] Don't use single quotes in “project-name”:
   # https://github.com/travis-ci/travis-ci/issues/9325
   # [INFO] “project_name”, not “project-name” for dpl v.2

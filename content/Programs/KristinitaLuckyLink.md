@@ -2,7 +2,7 @@ Title: KristinitaLuckyLink
 Version: 0.1.0
 Author: Sasha Chernykh
 Date: 2018-01-09 19:27:14
-Modified: 2019-06-14 15:44:14
+Modified: 2020-09-18 08:48:19
 Lang: en
 Summary: Sublime Text 3 package, that wrap the selected text to DuckDuckGo or Google top query URL <br><br> ![KristinitaLuckyLink](https://i.imgur.com/TuyxneV.png)
 Pagetitle: KristinitaLuckyLink
@@ -89,7 +89,7 @@ It may take a lot of time. Use KristinitaLuckyLink I can make all these actions,
 Conversion examples:
 
 + `kristinitaluckylife` → `[kristinitaluckylife](https://www.instagram.com/kristinitaluckylife/)`,
-+ `Поиск Кристиниты` → `[Поиск Кристиниты](https://kristinita.ru/)`.
++ `Поиск Кристиниты` → `[Поиск Кристиниты](https://kristinita.netlify.app/)`.
 
 1. You select text,
 1. KristinitaLuckyLink get query to search engine; query = your selected text,

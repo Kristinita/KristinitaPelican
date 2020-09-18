@@ -24,7 +24,7 @@ module.exports =
 				# # 2. Scripts from gitcdn.xyz sometimes doesn't load,
 				# # 3. Cloudflare download source from gitcdn.xyz slow
 				# {
-				# pattern: /https:\/\/kristinita.ru\/(.+?)\.(js|css|ico|xml)/g
+				# pattern: /https:\/\/kristinita.netlify.app\/(.+?)\.(js|css|ico|xml)/g
 				# replacement: '//gitcdn.xyz/repo/Kristinita/Kristinita.netlify.com/master/$1.$2'
 				# }
 				# Header permalink

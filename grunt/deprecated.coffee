@@ -82,7 +82,7 @@
 # 			data-src="$2" alt="$1"></a>'
 # 		# GitCDN
 # 		# https://github.com/schme16/gitcdn.xyz
-# 			from: /http:\/\/kristinita.ru\/(.+?)\.(js|css|ico|xml)/g
+# 			from: /http:\/\/kristinita.netlify.app\/(.+?)\.(js|css|ico|xml)/g
 # 			to: '//gitcdn.xyz/repo/Kristinita/Kristinita.netlify.com/master/$1.$2'
 # 		# Header permalink
 # 			from: /(<p>\s*?<a name="(.+?)" id="(.+?)"><\/a>\s*?<\/p>\s+?<h\d+?>((.|\n|\r)+?))(<\/h\d+?>)/g
@@ -290,7 +290,7 @@
 # 	cssimages:
 # 		options:
 # 			devRoot: "."
-# 			releaseRoot: "https://kristinita.ru"
+# 			releaseRoot: "https://kristinita.netlify.app"
 # 			resourceFilter: ["*.css"]
 # 		files: [
 # 			expand: true

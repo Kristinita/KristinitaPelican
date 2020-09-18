@@ -1,7 +1,7 @@
 Title: SashaSublime
 Tags: sublime-text
 Date: 2017-01-31 09:13:30
-Modified: 2020-07-10 16:50:53
+Modified: 2020-09-18 08:48:20
 Lang: en
 Status: published
 Author: Sasha Chernykh
@@ -785,8 +785,8 @@ body#inline-error div.error a
 <a id="See-also"></a>
 # See also
 
-+ [Kristinita’s Search](https://kristinita.ru) — search engine, searching authoritative sources, materials written by experts on the subject.
-+ [Sasha Black](https://kristinita.ru/Sasha-Black) — mini-service checks the reputation of your site and the availability of the site in the blacklists.
++ [Kristinita’s Search](https://kristinita.netlify.app) — search engine, searching authoritative sources, materials written by experts on the subject.
++ [Sasha Black](https://kristinita.netlify.app/Sasha-Black) — mini-service checks the reputation of your site and the availability of the site in the blacklists.
 
 <a id="Thanks"></a>
 # Thanks

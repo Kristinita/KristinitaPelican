@@ -113,6 +113,11 @@ module.exports =
 			# Autoprefixer update to version 10:
 			# https://github.com/postcss/autoprefixer/issues/1358
 			# https://github.com/postcss/autoprefixer/releases/tag/10.0.0
+			# [FIXME] grunt-critical works too slow after upgrade to 2.0.0;
+			# 1.1.3 — 1m42s
+			# 2.0.0 — 21m31s
+			# I downgraded it, because AppVeyor hangs:
+			# https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/9pr390t692pr65oa#L2999
 			# 'devUpdate'
 			'shell:gitreflog']
 	taru2: ['projectUpdate'

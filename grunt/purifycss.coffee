@@ -1,7 +1,7 @@
 #####################
 ## grunt-purifycss ##
 #####################
-# Remove unused CSS for Kristinita.ru design
+# Remove unused CSS for kristinita.netlify.app design
 # https://www.npmjs.com/package/purify-css
 # https://www.npmjs.com/package/grunt-purifycss
 # [NOTE] Needs separate task for each style. Because theme use different styles:

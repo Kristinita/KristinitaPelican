@@ -43,6 +43,10 @@ init:
 # [INFO] Don't install pylint from grunt-pylint
 # https://www.npmjs.com/package/grunt-pylint#getting-started
 - SETX GRUNT_PYLINT_SKIP_POSTINSTALL yes
+# [NOTE] Disable preventing Node.js warnings:
+# [LINK] “.travis.yml”
+- SETX NODE_NO_WARNINGS 1
+
 # [NOTE] Use “CALL Refreshenv.cmd” for local installation:
 # https://github.com/chocolatey/choco/issues/1461#issuecomment-348136706
 # https://ss64.com/nt/call.html
