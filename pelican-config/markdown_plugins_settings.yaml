@@ -159,12 +159,56 @@ MARKDOWN:
     # http://blockdiag.com/en/blockdiag/index.html
     markdown_blockdiag: {}
 
-    # Add target='_blank' for all links:
-    # Attribute don't add for local anchors.
+
+    # [INFO] Modify attributes for all “a” links:
+    # https://github.com/Phuker/markdown_link_attr_modifier
+    # [INFO] Options:
+    # https://github.com/Phuker/markdown_link_attr_modifier#options
+    markdown_link_attr_modifier:
+
+      # [INFO] Add “target="_blank"” to all external links:
+      new_tab: true
+
+      # [INFO] Add attributes below for external links solely
+      external_only: true
+
+      # [INFO] Disable default values: “referrerpolicy="noreferrer"”
+      # and “rel="noopener noreferrer"”
+      security: false
+
+      # [INFO] I have a static site; any private information will not show to external site owners:
+      # https://web.dev/referrer-best-practices/
+      # [INFO] Default “no-referrer-when-downgrade” directive that’s fine for me.
+      # I don’t need to change “referrerpolicy”:
+      # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Directives
+
+      # [INFO] I don’t want to use “noreferrer” and. I don’t see anything wrong
+      # if site administrators will see, that their site was visited from my site.
+      # I think, it’s good:
+      # https://www.reliablesoft.net/noreferrer-noopener/#noreferrer-usage
+      # https://html.spec.whatwg.org/multipage/urls-and-fetching.html#referrer-policy-attribute
+      # https://www.w3.org/TR/referrer-policy/#referrer-policy-delivery-referrer-attribute
+
+      # [INFO] I don’t want to use “nofollow”. I find the sites I link to are usually good.
+      # I see nothing wrong with increasing their SEO ranking
+      custom_attrs:
+        # [INFO] “target="_blank"” without “rel="noopener"” is unsafe and may decrease performance:
+        # https://web.dev/external-anchors-use-rel-noopener/
+        # https://mathiasbynens.github.io/rel-noopener/
+        # https://www.reliablesoft.net/noreferrer-noopener/#noopener
+        rel: noopener
+
+
+    # [DECLINED]
+    # Markdown-link-attr-modifier is more powerful solution.
+    # [INFO] Add “target='_blank'” for all links:
+    # https://github.com/pehala/markdown-newtab
+    # [INFO] This plugin add “target='_blank'” to external and internal links both
+    #
+    # [INFO] markdown3_newtab — fork of original markdown-newtab,
+    # that deleted by author:
     # https://github.com/Undeterminant/markdown-newtab
-    # [BUG] Deleted by author, I replace plugin to JQuery solution:
-    # http://bit.ly/2SjqOLq
-    # markdown_newtab:
+    # markdown3_newtab: {}
 
     # [INFO] Add own environment variables to text:
     # https://github.com/cmacmackin/md-environ

@@ -1,10 +1,14 @@
-{% if article.prev_article_in_category %}
-	<span class="SashaPreviousNeighbor"><a href="{{ SITEURL }}/{{ article.prev_article_in_category.url }}" title="{{ article.prev_article_in_category.title }}">← Previous article</a></span>
+{# [INFO] Neighbors — a Pelican plugin that adds Next/Previous links to articles:
+https://github.com/pelican-plugins/neighbors
+#}
+{% if kira_object.prev_article_in_category %}
+	<span class="SashaPreviousNeighbor"><a href="{{SITEURL}}/{{ kira_object.prev_article_in_category.url }}" title="{{ kira_object.prev_article_in_category.title }}">← Previous article</a></span>
 {% else %}
-	<span class="SashaHeadPageLeft"><a href="{{ SITEURL }}" title="Kristinita's Search">Kristinita's Search</a></span>
+	<span class="SashaHeadPageLeft"><a href="{{SITEURL}}">Kristinita’s Search</a></span>
 {% endif %}
-{% if article.next_article_in_category %}
-	<span class="SashaNextNeighbor"><a href="{{ SITEURL }}/{{ article.next_article_in_category.url }}" title="{{ article.next_article_in_category.title }}">Next article →</a></span>
+
+{% if kira_object.next_article_in_category %}
+	<span class="SashaNextNeighbor"><a href="{{SITEURL}}/{{ kira_object.next_article_in_category.url }}" title="{{ kira_object.next_article_in_category.title }}">Next article →</a></span>
 {% else %}
-	<span class="SashaHeadPageRight"><a href="{{ SITEURL }}" title="Kristinita's Search">Kristinita's Search</a></span>
+	<span class="SashaHeadPageRight"><a href="{{SITEURL}}">Kristinita’s Search</a></span>
 {% endif %}

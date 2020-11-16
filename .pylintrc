@@ -1,0 +1,13 @@
+##########
+# pylint #
+##########
+# [ACTION] Validate Python code:
+# https://www.pylint.org/
+# [INFO] pylint configuration file:
+# https://github.com/PyCQA/pylint/blob/master/pylintrc
+# https://www.getcodeflow.com/pylint-configuration.html
+
+[FORMAT]
+
+# [LINK] “.flake8”
+max-line-length=120

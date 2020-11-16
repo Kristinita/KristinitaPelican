@@ -1,28 +1,32 @@
 ############
 # AppVeyor #
 ############
-# Continuous integration for Windows:
+# [PURPOSE] Continuous integration for Windows:
 # https://www.appveyor.com/docs/
-# Configuration:
+# [INFO] Configuration:
 # https://www.appveyor.com/docs/appveyor-yml/
 
-# [NOTE] I'm doesn't support 32-bit Windows:
+
+# [NOTE] I don’t want support 32-bit Windows:
 # https://www.appveyor.com/docs/appveyor-yml/
 platform: x64
+
 
 # [REQUIRED] Visual Studio 2019 for correct LocalAppVeyor run:
 # https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/5c8lytcray3s6u2k?fullLog=true#L139
 # https://www.appveyor.com/docs/custom-build-images/#building-shared-image-in-a-dedicated-project
 # https://www.appveyor.com/docs/windows-images-software/#net-framework
+# [INFO] It the latest AppVeyor image for October 2020
 image: Visual Studio 2019
 
-# [INFO] Don't download all repository history, that save a time:
+
+# [INFO] Don’t download all repository history, that save a time:
 # https://www.appveyor.com/docs/how-to/repository-shallow-clone/#setting-depth-of-git-clone-command
 clone_depth: 1
 
+
 init:
-# [DONE][FIXME] Use pathed instead of SET for PATH;
-# [WARNING] Don't use SETX!
+# [NOTE] Don’t use SETX for adding value of “PATH” variable!
 # You can loss PATH data, if PATH contains more than 1024 symbols:
 # https://superuser.com/a/939256/572069
 # [LEARN] SETX PATH:
@@ -30,109 +34,131 @@ init:
 # https://superuser.com/a/939256/572069
 # [LEARN] SET PATH:
 # https://stackoverflow.com/a/9546345/5951529
-# [BUG] SETX doesn't work with “configuration” step, compare:
+# [BUG] SETX doesn’t work with “configuration” step, compare:
 # https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/22144071
 # https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/22144311
+
+# [LINK] “.travis.yml”:
 - SETX PIPENV_IGNORE_VIRTUALENVS 1
 - SETX PIPENV_VENV_IN_PROJECT 1
-# [WARNING] Needs AppVeyor console set, see:
+- SETX PIPENV_SKIP_LOCK 1
+
+# [NOTE] Needs AppVeyor console set, see:
 # https://stackoverflow.com/a/48093971/5951529
 - SETX PYTHONIOENCODING utf-8
-# [INFO] Remove .NET Core SDK telemetry
+
+# [LINK] “.travs.yml”
 - SETX DOTNET_CLI_TELEMETRY_OPTOUT 1
-# [INFO] Don't install pylint from grunt-pylint
-# https://www.npmjs.com/package/grunt-pylint#getting-started
+
+# [LINK] “.travs.yml”
 - SETX GRUNT_PYLINT_SKIP_POSTINSTALL yes
+
 # [NOTE] Disable preventing Node.js warnings:
 # [LINK] “.travis.yml”
 - SETX NODE_NO_WARNINGS 1
 
+
 # [NOTE] Use “CALL Refreshenv.cmd” for local installation:
 # https://github.com/chocolatey/choco/issues/1461#issuecomment-348136706
 # https://ss64.com/nt/call.html
-# [WARNING] Don't use refreshenv in AppVeyor, if you use “SET” instead of “pathed”!
+
+# [NOTE] Don’t use refreshenv in AppVeyor, if you use “SET” instead of “pathed”!
 # You loss your environment variables:
 # https://github.com/appveyor/ci/issues/1755
 # Compare (difference — only refreshenv step):
 # https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/22187235
 # https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/22187272
 # - refreshenv
-# [NOTE] 2 “refreshenv” required, if you use pathed instead of SET.
 
-# [INFO] Configuration
+
+# [LEARN][APPVEYOR] “configuration” step:
 # https://www.appveyor.com/blog/2018/04/25/specialized-build-matrix-configuration-in-appveyor/
 # “Debug” configuration is default
 configuration:
 - Debug
 - Release
 
+
 environment:
-  # [INFO] Variables:
+  # [LEARN][APPVEYOR] Variables:
   # https://help.appveyor.com/discussions/problems/4629-how-to-use-appveyor-environment-variable
   # https://help.appveyor.com/discussions/questions/15163-multiuple-build-matrix-dimensions-from-environment-variables
-  PYTHON: C:\Python38-x64
+  # [INFO] I use the latest available Python version:
+  # https://www.appveyor.com/docs/windows-images-software/#python
+  PYTHON: C:\Python39-x64
+
   # [INFO] “grunt default” = “grunt”;
   # AppVeyor support blank value.
-  # [NOTE] Spaces before “&&” doesn't need, compare:
+
+  # [INFO] Spaces before “&&” doesn't need, compare:
   # https://ci.appveyor.com/project/Kristinita/sashatravis/build/job/5oqxucp76bpsr51o
   # https://ci.appveyor.com/project/Kristinita/sashatravis/build/1.0.38/job/s52ko615e3fpxr9b
-  # [BUG] pageres doesn't work with Node.js 11:
-  # https://github.com/sindresorhus/pageres/issues/344
-  # GRUNT_COMMAND: default&& grunt http-server screenshots&& grunt publish
   GRUNT_BUILD:
   GRUNT_TEST: http-server validatedev&& grunt validate remote
-  # API key required for LocalAppVeyor:
+
+  # [INFO] API key required for LocalAppVeyor:
   # https://www.appveyor.com/docs/api/
   # https://ci.appveyor.com/api-keys
   API_KEY_APPVEYOR:
-    # [INFO] Secure variables:
+    # [LEARN][APPVEYOR] Secure variables:
     # Encrypt in remote AppVeyor site, not locally:
     # https://www.appveyor.com/docs/build-configuration/#secure-variables
     secure: +tAYCLWvKpNefBmIFHBZzSdFnN8mu71hBU1MqYbrjlY=
-  # API key for PageSpeed Insights:
+
+  # [INFO] API key for PageSpeed Insights:
   API_KEY_PAGESPEED_INSIGHTS_V5:
     secure: 0xjbRl5LLYt8QPnzOLNdYFmFMT6j97EnU8Jj97BmRRW9FLebRfeUMrqOulXa3gDi
 
-# Build configuration:
+
+# [LEARN][APPVEYOR] Build configuration:
 # https://www.appveyor.com/docs/build-configuration/#build-pipeline
 install:
-# That script run for “master” branch, not for “HEAD”;
+
+# [REQUIRED] So that script run for “master” branch, not for “HEAD”;
 # Needs, that “grunt-checkbranch” works correct:
 # https://stackoverflow.com/a/18866140/5951529
-# Needs in “install” section, because in “init” section actions before cloning.
+# [NOTE] It needs in “install” section, because in “init” section actions before cloning.
 - git checkout master
-# [NOTE] Console (cmd.exe) is default terminal.
+
+# [LEARN][APPVEYOR] Console (cmd.exe) is default terminal in AppVeyor.
 # If needs PowerShell, “ps:” required:
 # https://www.appveyor.com/docs/appveyor-yml/
-# [WARNING] For local Scoop installation must required:
+# [NOTE] For local Scoop installation must required:
 # “Set-ExecutionPolicy RemoteSigned -scope CurrentUser”
 # http://scoop.sh/
 - ps: iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
-# [NOTE] Required PATH changes to separated file, because PATH must be set before grunt-pylint installation, compare:
+
+# [NOTE][COMPARE] Required PATH changes to separated file, because “PATH” must be set before grunt-pylint installation:
 # https://ci.appveyor.com/project/Kristinita/sashagruntdebugging/builds/24778322
 # https://ci.appveyor.com/project/Kristinita/sashagruntdebugging/builds/24778353
 - '%APPVEYOR_BUILD_FOLDER%/batch/appveyor-pathed.bat'
 - refreshenv
-# [WARNING] npm parallel doesn't work, example:
+
+# [NOTE] npm parallel doesn'’ work, example:
 # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.25/job/70x5h1qq2d6j8gyp
-# [WARNING] start command doesn't work without batch file:
+# [NOTE] start command doesn’t work without batch file:
 # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.31
-# Project folder:
+# [LEARN][APPVEYOR] Project folder:
 # https://github.com/vim/vim-win32-installer/blob/master/appveyor.yml
 - '%APPVEYOR_BUILD_FOLDER%/batch/appveyor-install.bat'
 - pathed /APPEND %USERPROFILE%\.dotnet\tools /USER
-# [NOTE] “refreshenv” after install script required, compare:
+
+# [NOTE] 2 “refreshenv” required, if you use pathed instead of “SET”.
+# [COMPARE] “refreshenv” after install script required:
 # https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/24763413
 # https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/24763463
 - refreshenv
 
+
 build_script:
 - grunt %GRUNT_BUILD%
+
 
 test_script:
 - grunt %GRUNT_TEST%
 
-# Simple working configuration:
+
+# [LEARN][APPVEYOR] Simple working configuration:
 # https://github.com/Kristinita/SashaAppVeyorDebugging/blob/7ac8c23540c737f403ae280ce6502734833bb85f/appveyor.yml
 for:
 -
@@ -143,7 +169,4 @@ for:
     GRUNT_BUILD: publish
     # [NOTE] Travis CI build run parallel and end before AppVeyor,
     # so “afterdeploy” will run after site deployment.
-    GRUNT_TEST: validate remote
-
-    # [FIXME] “grunt-pagespeed” problems
-    # GRUNT_TEST: validate remote afterdeploy
+    GRUNT_TEST: validate remote afterdeploy

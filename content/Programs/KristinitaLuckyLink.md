@@ -2,9 +2,10 @@ Title: KristinitaLuckyLink
 Version: 0.1.0
 Author: Sasha Chernykh
 Date: 2018-01-09 19:27:14
-Modified: 2020-09-18 19:32:55
+Modified: 2020-11-03 09:36:16
 Lang: en
-Summary: Sublime Text 3 package, that wrap the selected text to DuckDuckGo or Google top query URL <br><br> ![KristinitaLuckyLink](https://i.imgur.com/TuyxneV.png)
+Summary: Sublime Text 3 package, that wrap the selected text to DuckDuckGo or Google top query URL
+	![KristinitaLuckyLink](https://i.imgur.com/TuyxneV.png)
 Pagetitle: KristinitaLuckyLink
 Pagecolors: programs
 Asideimage: KristinaGold
@@ -13,8 +14,6 @@ Titleimagename: KristinitaLuckyLink
 Iconleftorright: right
 Tags: programs, sublime-text
 Noco: 1g9b6
-Tooltipster: true
-Clipboardjs: true
 Og_image: https://i.imgur.com/TuyxneV.png
 Schemaorgtype: SoftwareApplication
 
@@ -81,7 +80,7 @@ It may take a lot of time. Use KristinitaLuckyLink I can make all these actions,
 <a id="Demonstration"></a>
 ## Demonstration
 
-<div class="SashaVideo"><iframe class="SashaLazy" data-src="https://video.ploud.fr/videos/embed/5d800b76-c468-4510-b2af-d84d28def4a9"></iframe></div>
+<div class="SashaVideo"><iframe class="lazyload" title="KristinitaLuckyLink demonstration" data-src="https://video.ploud.fr/videos/embed/5d800b76-c468-4510-b2af-d84d28def4a9"></iframe></div>
 
 <a id="Examples"></a>
 ## Examples
@@ -139,9 +138,9 @@ I save minutes of my time.
 
 	But if in top of SERP one link, but KristinitaLuckyLink out another link, please make [these actions](#Incorrect-links).
 
-1. If you don't want by some reasons make actions from [installation](#Installation) and [activation](#Activation) section, please, don't install KristinitaLuckyLink.
+1. If you don’t want by some reasons make actions from [installation](#Installation) and [activation](#Activation) section, please, don’t install KristinitaLuckyLink.
 
-1. Copy from [here](https://github.com/aviaryan/python-gsearch#warning):
+1. From [Python Google Search unofficial API](https://github.com/aviaryan/python-gsearch#warning):
 
 	> Overusing KristinitaLuckyLink might lead to your IP being blocked by Google Search servers. Searches through browser might still work but KristinitaLuckyLink will stop working. I recommend keeping a 5 seconds gap after each usage of this library. In most cases, much lower gaps or even continuous use of the library will still work but still this is something to be kept in mind. If you see a 'rate limit' or a 503 error, it's best to stop using the library and try back after some time (~1 minute).
 
@@ -228,7 +227,7 @@ Windows and Linux|<kbd>Ctrl+Shift+Alt+D</kbd>|<kbd>Ctrl+Shift+Alt+D</kbd>
 macOS|<kbd>⌘⇧⌥d</kbd>|<kbd>⌘⇧⌥g</kbd>
 [/jtable]
 
-If these hotkeys used in you another packages or you don't want use default hotkeys by another reasons: *Preferences* → *Browse packages…* → *User* → create a file *Default.suricate-profile*, if no, and add to them these lines:
+If these hotkeys used in you another packages or you don’t want use default hotkeys by another reasons: *Preferences* → *Browse packages…* → *User* → create a file *Default.suricate-profile*, if no, and add to them these lines:
 
 ```json
 {
@@ -247,14 +246,14 @@ If these hotkeys used in you another packages or you don't want use default hotk
 }
 ```
 
-Replace `super+keypad8` and `<c>+super+browser_home` from example to your preferred keys. See [key name convention](http://docs.sublimetext.info/en/latest/reference/key_bindings.html#bindable-keys) in Sublime Text 3.
+Replace `super+keypad8` and `<c>+super+browser_home` from example to your preferred keys. See [key name convention](https://sublime-text-unofficial-documentation.readthedocs.io/en/latest/reference/key_bindings.html#bindable-keys) in Sublime Text 3.
 
 For detailed information about Suricate key bindings see [Sublime Suricate documentation](https://readthedocs.org/projects/sublime-suricate/).
 
 <a id="Command-palette"></a>
 ## Command palette
 
-… use [command palette](https://www.youtube.com/watch?v=VYNkebGdl9Q). Wait a moment to … the result.
+… use [command palette](https://www.tutorialspoint.com/sublime_text/sublime_text_command_palette.htm). Wait a moment to … the result.
 
 Captions:
 
@@ -366,7 +365,7 @@ If link, that you get via KristinitaLuckyLink, and this link match; it [pygoogli
 Pull requests welcome! But, please, adhere to the following rules.
 
 1. Please, not add inside this package external modules. My code “philosophy” is that all modules must installed separately.
-1. Code must match [PEP8](https://www.python.org/dev/peps/pep-0008/) rules. Max line length — 120 symbols. Desirable, 100% for [Lintly](https://lintly.com/).
+1. Code must match [PEP8](https://www.python.org/dev/peps/pep-0008/) rules. Max line length — 120 symbols.
 
 <a id="Thanks"></a>
 # Thanks

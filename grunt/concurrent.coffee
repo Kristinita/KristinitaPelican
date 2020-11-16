@@ -1,15 +1,20 @@
 ######################
 ## grunt-concurrent ##
 ######################
-# Run multiple tasks:
-# https://www.npmjs.com/package/grunt-concurrent
+###
+[ACTION] Run multiple tasks:
+https://www.npmjs.com/package/grunt-concurrent
+###
+
+
 #################
 ## grunt-newer ##
 #################
-# grunt-newer
-# Run task, if src files change.
-# https://www.npmjs.com/package/grunt-newer
-# https://www.html5rocks.com/en/tutorials/tooling/supercharging-your-gruntfile/#toc-buildtime
+###
+[ACTION] Run task, if src files change:
+https://www.npmjs.com/package/grunt-newer
+https://www.html5rocks.com/en/tutorials/tooling/supercharging-your-gruntfile/#toc-buildtime
+###
 module.exports =
 
 	options:
@@ -37,12 +42,12 @@ module.exports =
 	tarb3: ['newer:coffee'
 			'newer:stylus']
 	tarb4: ['clean']
-	# [FIXME] grunt-newer doesn't work with purifycss:
+	# [FIXME] grunt-newer doesn't work with purgecss:
 	# Warning: Cannot read property 'forEach' of undefined Use --force to continue.
-	# https://github.com/purifycss/grunt-purifycss/issues/26
+	# https://github.com/purgecss/grunt-purgecss/issues/26
 	tarb5: ['curl'
 			'newer:string-replace'
-			'purifycss']
+			'newer:purgecss']
 	tarb6: ['shell:tidymodify']
 	tarb7: ['newer:postcss:build']
 	tarb8: ['shell:eclintfix']
@@ -73,9 +78,6 @@ module.exports =
 	# Don't use “newer” for “move”! Files from “root-html” doesn't move.
 	# Don't use “newer” with “realFavicon”! “index.html” will not changed!
 	tarp3: ['license_finder'
-			# [DONE]
-			# [FIXME] realFavicon doesn't work after upgrade to Node.js 12:
-			# https://github.com/RealFaviconGenerator/grunt-real-favicon/issues/46
 			'realFavicon'
 			'humans_txt'
 			'robotstxt'
@@ -94,30 +96,38 @@ module.exports =
 	tarp7: ['clean'
 			'curl'
 			'imagemin'
-			'purifycss']
+			'purgecss']
 	tarp8: ['shell:tidymodify'
 			'postcss:build'
 			'uglify']
-	tarp9: ['cssnano'
-			'critical']
+	tarp9: ['cssnano']
 	tarp10: ['cacheBust']
-	tarp11: ['htmlmin']
-	tarp12: ['shell:eclintfix']
-	tarp13: ['notify:publish']
+	tarp11: ['critical']
+	tarp12: ['htmlmin']
+	tarp13: ['shell:eclintfix']
+	tarp14: ['notify:publish']
 
 	###
 	For updating dependencies, “target update”.
 	###
 	taru1: [
+			# [DONE]
+			# [PATCH] https://github.com/seaneking/poststylus/pull/28
+
 			# [FIXME] PostStylus doesn’t work after
 			# Autoprefixer update to version 10:
 			# https://github.com/postcss/autoprefixer/issues/1358
 			# https://github.com/postcss/autoprefixer/releases/tag/10.0.0
+
 			# [FIXME] grunt-critical works too slow after upgrade to 2.0.0;
 			# 1.1.3 — 1m42s
 			# 2.0.0 — 21m31s
 			# I downgraded it, because AppVeyor hangs:
 			# https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/9pr390t692pr65oa#L2999
+			# [NOTE] grunt-critical + grunt-pageres + grunt-load-config issue:
+			# https://github.com/bezoerb/grunt-critical/issues/65
+
+			# [DONE]
 			# [FIXME] grunt-cwebp doesn’t convert images to webp in 3.0.1;
 			# I downgraded it:
 			# https://github.com/1000ch/grunt-cwebp/issues/14
@@ -133,50 +143,51 @@ module.exports =
 	For validating sources, “target sources”.
 	###
 	tars1: ['coffeelint:configs'
-			# [DONE]
-			# [FIXME]
-			# content.trimEnd is not a function
-			# https://travis-ci.org/github/Kristinita/KristinitaPelican/jobs/702631558#L1948-L1950
 			'markdownlint'
-			# [DONE]
-			# [FIXME] “.remarkrc.yaml” doesn't work
 			'remark'
 			'shell:bashate']
 
 	###
 	For validating output, “target validate”.
-
-	[DONE]
-	[FIXME] “html-nu” temporary disabled, because footnotes obsolete syntax:
-	https://github.com/Python-Markdown/markdown/issues/768
-	https://travis-ci.org/Kristinita/KristinitaPelican/jobs/471091236#L1220
 	###
 	tarv1: ['coffeelint:site'
-			# [DONE]
-			# [FIXME] “space: none”
 			'html-nu'
 			'path_validator'
 			'postcss:lint'
 			'shell:tidyvalidate'
 			'stylelint'
 			'stylint']
-	tarv2: ['csslint'
+	tarv2: [
+			# [DEPRECATED] CSSLint is abandoned;
+			# I can’t ignore CSS parts with variables.
+			# https://github.com/CSSLint/csslint/issues/720
+			# https://github.com/CSSLint/csslint/issues/682
+			# 'csslint'
 			'shell:eclintcheck']
 	tarv3: ['notify:validate']
 
-	###
-	For validating only in development mode, “target validate development”.
 
-	[NOTE] clean-console only for development:
+	###
+	For validating solely in development mode, “target validate development”.
+
+	[INFO] I haven’t combined the tasks, because “clean-console” and “pageres” is multiprocessor
+	and can take up a lot of CPU.
+
+	[NOTE] clean-console solely for development:
 	Site developer can create new files → absolute links will not works in production →
-	clean-console will shown errors. So only for development.
+	clean-console will shown errors. Therefore, solely for development.
 	[NOTE] clean-console works with http-server — “grunt http-server clean-console”.
 	See “clean-console.coffee” for details.
 	###
-	tard1: ['clean-console'
-			# [NOTE] Files by absolute paths may not exists
-			'pageres']
-	tard2: ['notify:validate']
+	tard1: ['clean-console']
+	tard2: ['checkPages']
+	###
+	[FIXME] pageres doesn’t work with grunt-critical:
+	https://github.com/bezoerb/grunt-critical/issues/65
+
+	tard3: ['pageres']
+	###
+	tard3: ['notify:validate']
 
 	###
 	For Continuous Integration tasks, “target remote”.
@@ -192,9 +203,11 @@ module.exports =
 			'shell:shellcheck']
 	tarr2: ['notify:validate']
 
+
 	###
-	[FIXME] “travis lint -x” successfully works for me,
-	but after “shell:travislint” command prompt hangs
+	[BUG] “travis lint -x” successfully works for me,
+	but after “shell:travislint” command prompt hangs:
+	https://github.com/sindresorhus/grunt-shell/issues/121
 	###
 	###
 	[DONE]
@@ -207,6 +220,7 @@ module.exports =
 	https://github.com/travis-ci/travis.rb/issues/376
 	###
 	# tarr2: ['shell:travislint']
+
 
 	###
 	For Travis CI specific tasks, not for local or another CI — “target travis”.
@@ -232,21 +246,19 @@ module.exports =
 	###
 	tarna1: ['htmlhint'
 			'htmllint'
+			# [DONE]
 			# [FIXME] AttributeError: module 'isort' has no attribute 'SortImports'
-			# 'pylint'
+			'pylint'
 			]
 	tarna2: ['notify:validate']
 
 	###
 	For tasks after site deploy — “target after deploy”:
 	[INFO] PageSpeed require remote site;
-	I can't fix “Serve static assets with an efficient cache policy” for localhost
+	I can’t fix “Serve static assets with an efficient cache policy” for localhost
 	###
 	tarad1: [
-			# [NOTE] “shell:shellcheck” not needed here!
-			# Delete it after pagespeed will fixed!
-			'shell:shellcheck'
-			# [FIXME] Bug “Warning: Expected a string”
-			# 'pagespeed'
+			# [PATCH] https://github.com/jrcryer/grunt-pagespeed/pull/36
+			'pagespeed'
 			]
 	tarad2: ['notify:validate']

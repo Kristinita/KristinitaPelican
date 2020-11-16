@@ -1,6 +1,6 @@
 Title: Перед-первым-запуском-ARK-Benefit-S401
 Date: 2017-02-13 19:15:15
-Modified: 2019-05-23 14:35:48
+Modified: 2020-09-23 17:12:05
 Lang: ru
 Author: Sasha Chernykh
 Summary: ARK Benefit S401 for dummies
@@ -9,8 +9,6 @@ Pagecolors: it-articles
 Asideimage: SashaGreenSweater
 Iconleftorright: left
 Tags: ROM, android
-Tooltipster: true
-ClipboardJs: true
 Customcss: true
 Customcss1: Life-hacks/default-portable-browser
 Noco: 1vWK5

@@ -2,18 +2,17 @@ Title: How to publish your package to PyPI, 2018
 Version: 0.1.0
 Author: Sasha Chernykh
 Date: 2018-01-27 10:59:14
-Modified: 2020-09-18 16:02:47
+Modified: 2020-09-24 13:12:35
 Lang: en
-Summary: Tutorial, how you can publish your Python package to PyPI <br><br> ![Erichek on pypi.python.org](https://i.imgur.com/IzSH7BK.png) <br><br> ![Erichek on pypi.org](https://i.imgur.com/4P3w8TP.png) <br><br> ![Erichek on pypi.org 2](https://i.imgur.com/IxsUDu4.png)
-Pagetitle: How to publish your package to PyPI, 2018
-Metacontent: Tutorial, how you can publish your Python package to PyPI
+Summary: Tutorial, how you can publish your Python package to PyPI
+	![Erichek on pypi.python.org](https://i.imgur.com/IzSH7BK.png)
+	![Erichek on pypi.org](https://i.imgur.com/4P3w8TP.png)
+	![Erichek on pypi.org 2](https://i.imgur.com/IxsUDu4.png)
 Pagecolors: it-articles
 Asideimage: SashaGreenSweater
 Iconleftorright: left
 Tags: it-articles, python, pypi, release
 Noco: 1vWK5
-Tooltipster: true
-Clipboardjs: true
 Og_image: https://i.imgur.com/mO0Fnsk.jpg
 Schemaorgtype: HowTo
 
@@ -116,7 +115,7 @@ I read some articles about PyPI publishing → I think, that articles, which I r
 1. not all-in-one; I needed force read other resources;
 1. They do not describe all the difficulties the developer has encountered, when try to publish package on PyPI.
 
-I don't want, that another beginner Python developers take a lot of time for PyPI publishing as me. And I try to write an article, that:
+I don’t want, that another beginner Python developers take a lot of time for PyPI publishing as me. And I try to write an article, that:
 
 1. non-outdated at February 2018;
 1. show examples and demos;
@@ -157,7 +156,7 @@ If I have explained something incomprehensibly, see files of [Erichek GitHub rep
 # Limitations
 
 1. You must be able to write working Python packages.
-1. Erichek and another my packages solely for Python 3. I don't want support Python 2. If you want support Python 2, possibly, you will need some other action.
+1. Erichek and another my packages solely for Python 3. I don’t want support Python 2. If you want support Python 2, possibly, you will need some other action.
 1. If you can have a configuration different, that Erichek, possibly, you will need in another actions.
 
 <a id="Installation"></a>
@@ -201,7 +200,7 @@ In [Software Engineering site recommends](https://softwareengineering.stackexcha
 !!! question
 	I [ask a question](https://softwareengineering.stackexchange.com/questions/365410/readme-md-vs-readme-md), need I use uppercase for file extension or no? *README.rst* or *README.RST*? But I get 7 minuses and my question will delete.
 
-	I don't find standard. Personally I use lowercase for file extensions, but you can use uppercase.
+	I don’t find standard. Personally I use lowercase for file extensions, but you can use uppercase.
 
 <!-- Using HTML Entities -->
 
@@ -225,7 +224,7 @@ If your editor is [Sublime Text 3](https://www.sublimetext.com/3), you can use [
 
 If you preferred write README in Markdown, you can have problems.
 
-At February 2018 [PyPI doesn't support Readme.md](https://github.com/pypa/warehouse/issues/869) without dependencies. Possibly, [it seems like there is no easy way to use a markdown README for PyPI. Solutions involve requiring pandoc locally, which is a heavy dependency](https://github.com/dhimmel/hetio/issues/7#issuecomment-283797432).
+At February 2018 [PyPI doesn’t support Readme.md](https://github.com/pypa/warehouse/issues/869) without dependencies. Possibly, [it seems like there is no easy way to use a markdown README for PyPI. Solutions involve requiring pandoc locally, which is a heavy dependency](https://github.com/dhimmel/hetio/issues/7#issuecomment-283797432).
 
 !!! hint
 	You can [convert Markdown to reStructuredText](https://bfroehle.com/2013/04/26/converting-md-to-rst/) use [Pandoc](http://pandoc.org).
@@ -265,9 +264,9 @@ Set your README file as value. Letters [must be in same register as in file](htt
 <a id="classifiers"></a>
 ### classifiers
 
-You can use solely classifiers from [this list](https://pypi.python.org/pypi?%3Aaction=list_classifiers). If no, you can't publish your package to PyPI.
+You can use solely classifiers from [this list](https://pypi.python.org/pypi?%3Aaction=list_classifiers). If no, you can’t publish your package to PyPI.
 
-Possibly, UNIX users can select classifiers via [pypi-classifiers GUI](https://github.com/mbr/pypi-classifiers), but [I can't set this program for Windows 10](https://github.com/mbr/pypi-classifiers/issues/2).
+Possibly, UNIX users can select classifiers via [pypi-classifiers GUI](https://github.com/mbr/pypi-classifiers), but [I can’t set this program for Windows 10](https://github.com/mbr/pypi-classifiers/issues/2).
 
 <a id="zip_safe"></a>
 ### zip_safe
@@ -278,7 +277,7 @@ my value:
 zip_safe = False
 ```
 
-If you build your package use Wheels, [you don't need this parameter](https://stackoverflow.com/a/16541150/5951529), but pyroma [will show lower value](https://github.com/regebro/pyroma/issues/19). And so I recommend add `#!ini zip_safe = False` or `#!ini zip_safe = True` (unimportant) to your *setup.cfg* file.
+If you build your package use Wheels, [you don’t need this parameter](https://stackoverflow.com/a/16541150/5951529), but pyroma [will show lower value](https://github.com/regebro/pyroma/issues/19). And so I recommend add `#!ini zip_safe = False` or `#!ini zip_safe = True` (unimportant) to your *setup.cfg* file.
 
 <a id="packages"></a>
 ### packages
@@ -289,7 +288,7 @@ my value:
 packages = find:
 ```
 
-If no `#!ini packages = find:`, users doesn't download folder with your Python module.
+If no `#!ini packages = find:`, users doesn’t download folder with your Python module.
 
 <a id="console_scripts"></a>
 ### console_scripts
@@ -341,7 +340,7 @@ universal = 1
 <a id="Dependencies"></a>
 ## Dependencies
 
-In this section I tell, what you need, that dependencies of your package from file *requirements.txt* automatically install for user. You don't need to write same dependencies in *requirements.txt* and *setup.cfg*/*setup.py*.
+In this section I tell, what you need, that dependencies of your package from file *requirements.txt* automatically install for user. You don’t need to write same dependencies in *requirements.txt* and *setup.cfg*/*setup.py*.
 
 !!! caution
 	Some developers [criticize this method](https://stackoverflow.com/a/33685899/5951529). If you need different dependencies for *requirements.txt* and *install_requires*, please, add list of your dependencies in *requirements.txt* and *setup.cfg* both.
@@ -406,7 +405,7 @@ For example, I am Python package developer and have local dependencies for my pa
 <a id="setuppy"></a>
 ### setup.py
 
-In this and 2 next sections I wrote, how you can get [install\_requires behavior](#install_requires), use solely *requirements.txt* file. You don't need add your dependencies to install\_requires.
+In this and 2 next sections I wrote, how you can get [install\_requires behavior](#install_requires), use solely *requirements.txt* file. You don’t need add your dependencies to install\_requires.
 
 Add [this code](https://stackoverflow.com/a/16624700/5951529) to your *setup.py*:
 
@@ -428,7 +427,7 @@ setup(
 ```
 
 !!! note
-	Author of answer by link above doesn't add a line in answer:
+	Author of answer by link above doesn’t add a line in answer:
 
 	```python
 	from setuptools import setup
@@ -450,7 +449,7 @@ Add a line to *MANIFEST.in* file:
 include requirements.txt
 ```
 
-If no, [users can't install your package](https://stackoverflow.com/q/26319101/5951529).
+If no, [users can’t install your package](https://stackoverflow.com/q/26319101/5951529).
 
 <a id="pyroma"></a>
 ## pyroma
@@ -524,7 +523,7 @@ python setup.py bdist_wheel
 	[*python setup.py register*](http://peterdowns.com/posts/first-time-with-pypi.html) [is obsolete method](https://packaging.python.org/tutorials/distributing-packages/#uploading-your-project-to-pypi).
 
 !!! info
-	If by some reasons you don't want use Wheels, [you can build your package](https://packaging.python.org/tutorials/distributing-packages/#source-distributions), use command `python setup.py sdist`
+	If by some reasons you don’t want use Wheels, [you can build your package](https://packaging.python.org/tutorials/distributing-packages/#source-distributions), use command `python setup.py sdist`
 
 <a id="Publish-to-TestPyPI"></a>
 ## Publish to TestPyPI
@@ -538,7 +537,7 @@ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 If no errors in your configuration, package must successful upload to TestPyPI.
 
 !!! bug
-	[Known bug](https://github.com/pypa/packaging-problems/issues/74) at February 2018 — in PyPI and TestPyPI you never can't overwrite specific version of your package, even if you delete your package. I.e., for example, you publish to PyPI or TestPyPI version *4.14.7* of your package *mypackage* → you delete *mypackage* from PyPI and/or TestPyPI → you can't upload *4.14.7* version of *mypackage* again.
+	[Known bug](https://github.com/pypa/packaging-problems/issues/74) at February 2018 — in PyPI and TestPyPI you never can’t overwrite specific version of your package, even if you delete your package. I.e., for example, you publish to PyPI or TestPyPI version *4.14.7* of your package *mypackage* → you delete *mypackage* from PyPI and/or TestPyPI → you can’t upload *4.14.7* version of *mypackage* again.
 
 <a id="Visit-TestPyPI"></a>
 ## Visit TestPyPI
@@ -563,10 +562,10 @@ Examples for Erichek at February 2018:
 If the result suits you, in next step install package, that you upload, use virtual environment.
 
 !!! caution
-	You can't find your package, if you use search form on <https://test.pypi.org> or <https://pypi.org>. [The search indexes may update \~24 hours for a new package or deleted package to appear in a search](https://github.com/pypa/warehouse/issues/2899#issuecomment-364150430).
+	You can’t find your package, if you use search form on <https://test.pypi.org> or <https://pypi.org>. [The search indexes may update \~24 hours for a new package or deleted package to appear in a search](https://github.com/pypa/warehouse/issues/2899#issuecomment-364150430).
 
 !!! note
-	On <https://testpypi.python.org> can't show last version of your package. That fix it, login at <https://testpypi.python.org> → visit `https://testpypi.python.org/pypi?%3Aaction=pkg_edit&name=<your_package>` (<https://testpypi.python.org/pypi?%3Aaction=pkg_edit&name=erichek> for Erichek) → [set *Hide? No*](https://i.imgur.com/bGjKHzS.png) for latest version.
+	On <https://testpypi.python.org> can’t show last version of your package. That fix it, login at <https://testpypi.python.org> → visit `https://testpypi.python.org/pypi?%3Aaction=pkg_edit&name=<your_package>` (<https://testpypi.python.org/pypi?%3Aaction=pkg_edit&name=erichek> for Erichek) → [set *Hide? No*](https://i.imgur.com/bGjKHzS.png) for latest version.
 
 	If you have this problem for <https://pypi.python.org>, make same actions.
 
@@ -582,18 +581,18 @@ Citation from [Pro Python Best Practices](https://www.apress.com/us/book/9781484
 
 > Virtualenv is like building a moat around the house. It prevents a fire from spreading — in both directions. Likewise, a virtual environment prevents that Python projects interfere with each other.
 
-	![virtualenv](https://i.imgur.com/fRISif0.png)
+![virtualenv](https://i.imgur.com/fRISif0.png)
 
 Reasons of use virtual environment for TestPyPI installation:
 
 1. You can have bugs in your package. Bugs may have a negative impact of your environment. If you will use virtual environment, these bugs does not affect your global Python environment.
-1. You can have some globally dependencies in your environment, but users of your package may haven't them. If you use virtual environment, you see, how your package will install and works without, possibly, pre-installed global dependencies on your machine.
+1. You can have some globally dependencies in your environment, but users of your package may haven’t them. If you use virtual environment, you see, how your package will install and works without, possibly, pre-installed global dependencies on your machine.
 
 <a id="Using-virtualenv-and-virtualenvwrapper"></a>
 ### Using virtualenv and virtualenvwrapper
 
 !!! caution
-	If you on Windows, please, use [standard Windows console](https://conemu.github.io/en/Delusions.html#delusion-2) for correct virtualenvwrapper-win works or use plugin for your preferred terminal. You can't use command lines command from this section in [PowerShell](https://pypi.python.org/pypi/virtualenvwrapper-win) or [Far Manager](https://github.com/FarGroup/FarManager/issues/23).
+	If you on Windows, please, use [standard Windows console](https://conemu.github.io/en/Delusions.html#delusion-2) for correct virtualenvwrapper-win works or use plugin for your preferred terminal. You can’t use command lines command from this section in [PowerShell](https://pypi.python.org/pypi/virtualenvwrapper-win) or [Far Manager](https://github.com/FarGroup/FarManager/issues/23).
 
 Open terminal in any directory. Run these commands:
 
@@ -630,7 +629,7 @@ Where:
 <a id="Checking"></a>
 ### Checking
 
-If you can't have bugs in installation process, check, that you package works correct. For example, Erichek check, contains errors in *.txt* files in a folder or no. I run *erichek* console command.
+If you can’t have bugs in installation process, check, that you package works correct. For example, Erichek check, contains errors in *.txt* files in a folder or no. I run *erichek* console command.
 
 If error in one of text file:
 
@@ -652,7 +651,7 @@ C:\ErichekExamples>erichek
 [2018-02-08 08:51:23.841997] NOTICE: eric_body logbook: All files contains <body>
 [2018-02-08 08:51:23.843991] NOTICE: eric_asterisks logbook: All needest lines contains asterisks
 [2018-02-08 08:51:23.844992] NOTICE: eric_head logbook: All files contains correct head data
-[2018-02-08 08:51:23.844992] NOTICE: summary logbook: Congratulations! You haven't errors in your packages!
+[2018-02-08 08:51:23.844992] NOTICE: summary logbook: Congratulations! You haven’t errors in your packages!
 ```
 
 Erichek works as expected.
@@ -799,7 +798,7 @@ Where:
 
 	![Version in eric_config.py](https://i.imgur.com/xMrSbew.png)
 
-	If you don't want to have this behavior, please, do not add this text to your *.release-it.json*.
+	If you don’t want to have this behavior, please, do not add this text to your *.release-it.json*.
 
 See [here](Fastest-way-to-add-new-version-of-Sublime-Text-3-package#release-itjson-1), if you want to know details about another parts of *.release-it.json*.
 

@@ -1,6 +1,6 @@
 Title: Sublime-Text-Power-User-notes
 Date: 2017-02-13 19:15:15
-Modified: 2019-05-23 14:46:03
+Modified: 2020-09-22 12:00:02
 Lang: en
 Author: Sasha Chernykh
 Summary: Notes of book “Sublime Text Power User”
@@ -90,14 +90,14 @@ On [https://johnblackbourn.com/sublimecodeintel-st3](https://johnblackbourn.com/
 <a id="50"></a>
 ## 50
 
-<dfn>-(std in)</dfn> solely for OSX users, see [unofficial documentation](http://docs.sublimetext.info/en/latest/command_line/command_line.html#invocations), but in the book of it isn't specified.
+<dfn>-(std in)</dfn> solely for OSX users, see [unofficial documentation](https://sublime-text-unofficial-documentation.readthedocs.io/en/latest/command_line/command_line.html#invocations), but in the book of it isn't specified.
 
 <a id="52"></a>
 ## 52
 
 > <dfn>-a</dfn>or <dfn>--add</dfn>: Add the current file or folder to the active/last used sublime text window
 
-This command is solely for folders, but not for files, see [unofficial documentation](http://docs.sublimetext.info/en/latest/command_line/command_line.html#options) . <dfn>subl -a ExampleFolder</dfn> add folder <dfn>ExampleFolder</dfn> in current window, <dfn>subl ExampleFolder</dfn> in new window. But <dfn>subl -a test.txt</dfn> = <dfn>subl test.txt</dfn>, both of these commands open a test.txt file in a new tab of the active window. The example below is also incorrect.
+This command is solely for folders, but not for files, see [unofficial documentation](https://sublime-text-unofficial-documentation.readthedocs.io/en/latest/command_line/command_line.html#options) . <dfn>subl -a ExampleFolder</dfn> add folder <dfn>ExampleFolder</dfn> in current window, <dfn>subl ExampleFolder</dfn> in new window. But <dfn>subl -a test.txt</dfn> = <dfn>subl test.txt</dfn>, both of these commands open a test.txt file in a new tab of the active window. The example below is also incorrect.
 
 <a id="68"></a>
 ## 68

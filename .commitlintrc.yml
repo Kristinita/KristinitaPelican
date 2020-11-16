@@ -128,7 +128,8 @@ rules:
       - test
       # Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
       - ci
-      # Changes to the build process or auxiliary tools and libraries such as documentation generation
+      # [INFO] Tool changes, configuration changes, and changes to things that do not actually go into production at all:
+      # https://stackoverflow.com/a/26944812/5951529
       - chore
       # Building tools changes (example scopes: grunt, gulp)
       - build
@@ -141,6 +142,9 @@ rules:
       - debug
       # [INFO] Update
       - upd
+      # [INFO] Changes for linters/checkers/validators.
+      # Example scopes — “eslint”, “stylint”
+      - lint
 
   type-case:
     - 2

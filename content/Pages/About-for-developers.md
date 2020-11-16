@@ -1,19 +1,15 @@
 Title: For developers
-Version: 0.0.3
+Version: 0.0.4
 Author: Sasha Chernykh
 Date: 2018-03-27 7:55:14
-Modified: 2019-10-17 15:36:28
+Modified: 2020-11-10 12:26:17
 Lang: en
-Summary: Information for developers about Kristinita's Search
+Summary: Information for developers about Kristinita’s Search site
 Pagetitle: For developers
-Metacontent: Information for developers about Kristinita's Search
 Pagecolors: sasha-black-description
 Asideimage: SashaInflatedSponges
 Iconleftorright: right
 Noco: 1QCqM6
-Table: standard
-Tooltipster: true
-Clipboardjs: true
 Og_image: https://i.imgur.com/2blY7dI.png
 
 <!-- MarkdownTOC -->
@@ -52,7 +48,7 @@ Og_image: https://i.imgur.com/2blY7dI.png
 <a id="Unsupported"></a>
 # Unsupported
 
-Developer of this site doesn't support:
+Developer of this site doesn’t support:
 
 <!-- [FIXME] Fuck old browser -->
 
@@ -64,18 +60,18 @@ Developer of this site doesn't support:
 <a id="Testing"></a>
 # Testing
 
-Site tested via [BrowserStack](https://www.browserstack.com) on these latest devices and latest browsers version at January 2019:
+Site tested via [BrowserStack](https://www.browserstack.com) on these latest devices and latest browsers version at September 2020:
 
-+ macOS Mojave, Safari 12.0
-+ [Windows 10 64-bit](https://www.browserstack.com/question/621)
+1. macOS Catalina, Safari 13.1
+1. [Windows 10 64-bit](https://www.browserstack.com/question/621)
 	+ Firefox
 	+ Opera
 	+ Edge
 	+ Chrome
-+ iPhone XS Max
-+ iPad Pro 12.9.2018
-	+ ([iOS and Safari](https://www.lifewire.com/check-the-version-number-of-safari-446563)) 12
-+ Samsung Galaxy S9 Plus, Chrome
+1. iPhone 11 Pro Max
+1. iPad Pro 12.9.2020
+	1. ([iOS and Safari](https://www.lifewire.com/check-the-version-number-of-safari-446563)) 12
+1. Samsung Galaxy S20 Ultra, Chrome
 
 <a id="Devices-and-browsers"></a>
 # Devices and browsers
@@ -172,7 +168,7 @@ Replace *your_token* to token, that you get.
 <!-- [FIXME] gtools — https://github.com/chocolatey/chocolatey-package-requests/issues/532  -->
 
 !!! warning
-	Windows users needs also manually add path to *LocalAppVeyor.exe* — *%USERPROFILE%/.dotnet/tools* — as value of *PATH* environment variable. Use [Rapid Environment Editor](https://ru.stackoverflow.com/a/596341/199934) or [pathed](http://www.p-nand-q.com/download/gtools/pathed.html). Don't use *SETX*, [you can lose](https://stackoverflow.com/a/28778358/5951529) your *PATH* data.
+	Windows users needs also manually add path to *LocalAppVeyor.exe* — *%USERPROFILE%/.dotnet/tools* — as value of *PATH* environment variable. Use [Rapid Environment Editor](https://ru.stackoverflow.com/a/596341/199934) or [pathed](http://www.p-nand-q.com/download/gtools/pathed.html). don’t use *SETX*, [you can lose](https://stackoverflow.com/a/28778358/5951529) your *PATH* data.
 
 <a id="Windows-1"></a>
 ### Windows
@@ -344,14 +340,14 @@ Link(s) to detailed description of checking tool rules.
 
 File for checking tool, if I use non-default rules.
 
-For **each** custom option I add comment, why I doesn't use default option.
+For **each** custom option I add comment, why I doesn’t use default option.
 
 If *—* symbol in this column, I use default checking tool configuration.
 
 <a id="comments-issue"></a>
 ### comments, issue
 
-Some linters use JSON for configuration files (I think, [this is bad](https://arp242.net/weblog/json_as_configuration_files-_please_dont)) \+ [JSON doesn't support comments](https://plus.google.com/+DouglasCrockfordEsq/posts/RK8qyGVaGSr) → I can't use comments in JSON configuration files. In these cases I add *comments* and *issue* links to *Configuration file* section.
+Some linters use JSON for configuration files (I think, [this is bad](https://arp242.net/weblog/json_as_configuration_files-_please_dont)) \+ [JSON doesn’t support comments](https://plus.google.com/+DouglasCrockfordEsq/posts/RK8qyGVaGSr) → I can’t use comments in JSON configuration files. In these cases I add *comments* and *issue* links to *Configuration file* section.
 
 + *comments* — file, where comments about options in configuration JSON file
 + *issue* — feature request for support non-JSON configuration format
@@ -365,8 +361,9 @@ For all Sasha Chernykh projects:
 Type|Checking tool|Rules description|Configuration file
 English language|[write-good](https://www.npmjs.com/package/write-good) + [remark-lint-write-good](https://www.npmjs.com/package/remark-lint-write-good)|[1](https://github.com/Kristinita/write-good/tree/SashaGoddess#checks), WARNING — [no in default repository](https://github.com/btford/write-good/pull/65)|[.remarkrc.yaml](https://github.com/Kristinita/KristinitaPelican/blob/master/.remarkrc.yaml)
 commits|[commitlint](http://marionebl.github.io/commitlint/) + [Husky](https://www.npmjs.com/package/husky)|[1](http://marionebl.github.io/commitlint/#/reference-rules), WARNING — [no default levels for rules](https://github.com/marionebl/commitlint/issues/316#issuecomment-385708769)|[.commitlintrc.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/.commitlintrc.yml), [.huckyrc.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/.huskyrc.yml)
-all files and folders names|[grunt-path-validator](https://www.npmjs.com/package/grunt-path-validator) (for Grunt projects, I can't find tool for all project types)|no whitespace characters in names — it accept in files/folder naming conventions — [1](https://superuser.com/q/29111/572069), [2](https://portal.slac.stanford.edu/sites/inc_public/Pages/folder-file-names.aspx), [3](https://www.reddit.com/r/linux/comments/1kpzxz/what_are_your_file_naming_conventions/), [4](https://www2.le.ac.uk/services/research-data/organise-data/naming-files), [5](https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming)|[path_validator.coffee](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/path_validator.coffee) (for Grunt projects, I can't find tool for all project types)
+all files and folders names|[grunt-path-validator](https://www.npmjs.com/package/grunt-path-validator) (for Grunt projects, I can’t find tool for all project types)|no whitespace characters in names — it accept in files/folder naming conventions — [1](https://superuser.com/q/29111/572069), [2](https://portal.slac.stanford.edu/sites/inc_public/Pages/folder-file-names.aspx), [3](https://www.reddit.com/r/linux/comments/1kpzxz/what_are_your_file_naming_conventions/), [4](https://www2.le.ac.uk/services/research-data/organise-data/naming-files), [5](https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming)|[path_validator.coffee](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/path_validator.coffee) (for Grunt projects, I can’t find tool for all project types)
 all files|[EditorConfig](http://editorconfig.org/)|[1](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties)|[.editorconfig](https://github.com/Kristinita/KristinitaPelican/blob/master/.editorconfig)
+internal links|[check-pages](https://github.com/DavidAnson/check-pages)|[1](https://github.com/DavidAnson/check-pages#options)|[check-pages.coffee](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/checkPages.coffee)
 supported browsers|[Browserslist](https://www.npmjs.com/package/browserslist)|[1](https://github.com/browserslist/browserslist#queries)|[browserslist](https://github.com/Kristinita/KristinitaPelican/blob/master/browserslist)
 browsers console errors|[clean-console](https://www.npmjs.com/package/clean-console)|No errors in browsers console|[clean-console.coffee](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/clean-console.coffee)
 site performance|[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)|[1](https://developers.google.com/web/tools/lighthouse/)|—
@@ -382,7 +379,7 @@ HTML|[htmllint](http://htmllint.github.io/)|[1](https://github.com/htmllint/html
 HTML|[HTMLHint](https://htmlhint.io/)|[1](https://github.com/htmlhint/HTMLHint/wiki/Rules)|[.htmlhintrc](https://github.com/Kristinita/KristinitaPelican/blob/master/.htmllintrc), [comments](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/htmlhint.coffee), [issue](https://github.com/htmlhint/HTMLHint/issues/126)
 Stylus|[Stylint](https://simenb.github.io/stylint/)|[1](https://www.npmjs.com/package/stylint#excluding-files-directories-and-code-blocks-from-the-linter)|[.stylintrc](https://github.com/Kristinita/KristinitaPelican/blob/master/.stylintrc), [comments](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/stylint.coffee), [issue](https://github.com/SimenB/stylint/issues/434)
 CSS|[stylelint](https://stylelint.io/), [stylelint-config-recommended](https://www.npmjs.com/package/stylelint-config-recommended)|[1](https://stylelint.io/user-guide/rules)|[.stylelintrc.yaml](https://github.com/Kristinita/KristinitaPelican/blob/master/.stylelintrc.yaml)
-CSS|[CSSLint](http://csslint.net/)|[1](https://github.com/CSSLint/csslint/wiki/Rules)|[.csslintrc](https://github.com/Kristinita/KristinitaPelican/blob/master/.csslintrc), [comments enabled](https://github.com/gruntjs/grunt-contrib-csslint#csslintrc)
+CSS|[stylelint-no-unsupported-browser-features](https://www.npmjs.com/package/stylelint-no-unsupported-browser-features)|[1](https://caniuse.com/)|[browserslist](https://github.com/Kristinita/KristinitaPelican/blob/master/browserslist)
 CSS|[doiuse](https://doiuse.herokuapp.com/)|[1](https://caniuse.com/)|[browserslist](https://github.com/Kristinita/KristinitaPelican/blob/master/browserslist)
 CoffeeScript|[CoffeeLint](http://www.coffeelint.org/)|[1](http://www.coffeelint.org/#options)|[coffeelint.json](https://github.com/Kristinita/KristinitaPelican/blob/master/coffeelint.json), [comments](https://github.com/Kristinita/KristinitaPelican/blob/master/grunt/coffeelint.coffee), [issue](https://github.com/clutchski/coffeelint/issues/638)
 Bash|[ShellCheck](https://www.shellcheck.net/)|[1](https://github.com/koalaman/shellcheck/wiki)|—
@@ -395,9 +392,10 @@ appveyor.yml|[LocalAppVeyor](https://github.com/joaope/LocalAppVeyor#-lint-comma
 <a id="Non-used-tools"></a>
 ### Non-used tools
 
-In this section checking/linting/validation tools, that I don't use. Required argumentation.
+In this section checking/linting/validation tools, that I don’t use. Required argumentation.
 
 [jtable]
 Type|Checking tool|Argumentation
+CSS|[CSSLint](http://csslint.net/)|CSSLint [no longer maintained](https://github.com/CSSLint/csslint/issues/754). If I use CSS3 syntax, I will get CSSLint error in any case. [I can’t ignore](https://github.com/CSSLint/csslint/issues/720#issuecomment-376566968) parts of CSS files that contains [CSS3 variables](https://github.com/CSSLint/csslint/issues/720#issue-271707857).
 Python|[Python Black](https://github.com/ambv/black)|Vertical spaces format to one line ([example](https://github.com/ambv/black/issues/118#issuecomment-385318504)); author “[hate options](https://github.com/ambv/black/issues/181#issuecomment-385326100)”
 [/jtable]

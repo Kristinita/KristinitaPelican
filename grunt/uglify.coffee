@@ -11,6 +11,8 @@
 # https://github.com/estools/esmangle
 # Closure-compiler:
 # https://github.com/gmarty/grunt-closure-compiler
+# [INFO] Benchmark:
+# https://evmar.github.io/js-min-bench/
 module.exports =
 	options:
 		# [LEARN][CSS][JAVASCRIPT] Sourcemaps

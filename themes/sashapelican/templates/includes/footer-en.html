@@ -15,10 +15,13 @@
 	<ol>
 		<li>(PC only, not for mobile devices). If you find in this article typo or small error, please, report about it use <a href="{{SITEURL}}/IT-articles/typo-reporter">typo-reporter</a>. Select text with typo → press <kbd>Ctrl+Enter</kbd> (<kbd>⌘Enter</kbd> for Mac) → write comment → send typo report.</li>
 		<li>If you find more serious errors in this article and/or site, <a href="https://github.com/Kristinita/KristinitaPelican/issues/new">create GitHub issue</a>.</li>
-		<li>You can also <a href="{{GITHUB_SOURCES_URL}}/edit/master/content/{{article.get_relative_source_path()}}">edit this page yourself</a> and send <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>.</li>
+		<li>You can also <a href="{{GITHUB_SOURCES_URL}}/edit/master/content/{{kira_object.get_relative_source_path()}}">edit this page yourself</a> and send <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>.</li>
 		<li>Or write comment here. <a href="https://github.github.com/gfm/">Markdown GFM support in comments</a>. You can use <a href="https://github.com/GhostText/GhostText">GhostText</a>, that write issue in your preferred editor.</li>
-		<div class="wildfire_thread" data-loader="KiraComments"></div>
 	</ol>
+	{# [LEARN][HTML] List must contains “div” elements solely:
+	https://web.dev/list/?utm_source=lighthouse&utm_medium=devtools
+	“wildfire_thread” shouldn’t be listed. #}
+	<div class="wildfire_thread lazyload" data-script="https://cdn.jsdelivr.net/npm/wildfire/dist/wildfire.auto.js"></div>
 	<p>I hate private communication, solely open support.</p>
 	<p>If you write in the style of <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">new disgruntled Russian</a> I reserve the right to dispose of my own discretion.</p>
 	<p>All rights reserved ©.</p>

@@ -15,10 +15,13 @@
 	<ol>
 		<li>(Только для ПК, не мобильных устройств). Eсли Вы увидели на данной странице опечатку или мелкую ошибку, пожалуйста, сообщите об этом, используя <a href="{{SITEURL}}/IT-articles/typo-reporter">typo-reporter</a>. Выделите текст с опечаткой/ошибкой → нажмите <kbd>Ctrl+Enter</kbd> (<kbd>⌘Enter</kbd> для Mac) → напишите комментарий → <em>Отправить</em>.</li>
 		<li>Если Вы нашли более серьёзные недочёты для этой страницы или сайта в целом, <a href="https://github.com/Kristinita/KristinitaPelican/issues/new">создайте issue на GitHub</a>.</li>
-		<li>Также Вы можете <a href="{{GITHUB_SOURCES_URL}}/edit/master/content/{{article.get_relative_source_path()}}">самостоятельно отредактировать эту страницу</a> и отправить <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>.</li>
+		<li>Также Вы можете <a href="{{GITHUB_SOURCES_URL}}/edit/master/content/{{kira_object.get_relative_source_path()}}">самостоятельно отредактировать эту страницу</a> и отправить <a href="http://ru.stackoverflow.com/a/598162/199934">pull request</a>.</li>
 		<li>Или написать комментарий здесь. <a href="https://github.github.com/gfm/">Для комментариев поддерживается синтаксис Markdown GFM</a>. Через <a href="https://github.com/GhostText/GhostText">GhostText</a> Вы можете набирать сообщение в своём любимом Markdown-редакторе.</li>
-		<div class="wildfire_thread" data-loader="KiraComments"></div>
 	</ol>
+	{# [LEARN][HTML] List must contains “div” elements solely:
+	https://web.dev/list/?utm_source=lighthouse&utm_medium=devtools
+	“wildfire_thread” shouldn’t be listed. #}
+	<div class="wildfire_thread lazyload" data-script="https://cdn.jsdelivr.net/npm/wildfire/dist/wildfire.auto.js"></div>
 	<p>я ненавижу приватное общение, поддержка только через открытые источники.</p>
 	<p>С сообщениями в стиле <a href="{{SITEURL}}/Smert-svobode/Новые-недовольные-русские">новых недовольных русских</a> оставляю право распоряжаться по собственному усмотрению.</p>
 	<p>Все права защищены ©.</p>

@@ -3,9 +3,10 @@ Status: published
 Version: 0.2.1
 Author: Sasha Chernykh
 Date: 2018-03-22 7:52:14
-Modified: 2019-06-14 16:27:02
+Modified: 2020-09-24 13:12:49
 Lang: en
-Summary: Features, problems and it solutions, that not described in official typo-reporter Readme. <br><br> ![English typo-reporter form](https://i.imgur.com/U8pIw0a.png)
+Summary: Features, problems and it solutions, that not described in official typo-reporter Readme.
+	![English typo-reporter form](https://i.imgur.com/U8pIw0a.png)
 Pagetitle: typo-reporter
 Pagecolors: it-articles
 Asideimage: SashaGreenSweater
@@ -78,7 +79,7 @@ typo-reporter limitations:
 
 That use typo-reporter on your site you need to have:
 
-1. site, that support custom JavaScript and CSS inserting (some [website builders](https://websitesetup.org/website-builders/) don't support this),
+1. site, that support custom JavaScript and CSS inserting (some [website builders](https://websitesetup.org/website-builders/) don’t support this),
 1. Google account.
 
 <a id="Comparison"></a>
@@ -116,7 +117,7 @@ I use typo-reporter, not [Orphus](https://orphus.ru/en/) or another alternatives
 <a id="Mail-forwarding"></a>
 # Mail forwarding
 
-I don't use GMail, because GMail move to Spam non-spam messages more often than another mail services ([example](https://productforums.google.com/forum/#!msg/gmail-ru/ydfMTF7IUec/4cJLmnSUFAAJ)). But “[notifications are solely sent to the email address associated with your Google account](https://productforums.google.com/d/msg/docs/YJ09uwy-pWU/g_1AJTXZN6QJ)”. That solve this problem I use [mail forwarding](https://support.google.com/mail/answer/10957?hl=en).
+I don’t use GMail, because GMail move to Spam non-spam messages more often than another mail services ([example](https://productforums.google.com/forum/#!msg/gmail-ru/ydfMTF7IUec/4cJLmnSUFAAJ)). But “[notifications are solely sent to the email address associated with your Google account](https://productforums.google.com/d/msg/docs/YJ09uwy-pWU/g_1AJTXZN6QJ)”. That solve this problem I use [mail forwarding](https://support.google.com/mail/answer/10957?hl=en).
 
 **Example** filter:
 
@@ -143,5 +144,5 @@ After filter creating I recommend to make sure, that:
 [jtable]
 Send|Expected behavior for your forwarding e-mail
 Example typo report on your site|Get [similar message](#Demonstration)
-Any another message from another e-mail to your GMail mail|Don't get any message
+Any another message from another e-mail to your GMail mail|don’t get any message
 [/jtable]

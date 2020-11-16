@@ -1,257 +1,191 @@
-<!DOCTYPE html>
-{# [NOTE] DOCTYPE must be declared first:
+{# [INFO] Same template for articles, pages and another types without duplicates:
+http://bit.ly/pelican__articles_and_pages #}
+
+{% if article %}
+	{% set kira_object = article %}
+{% elif page %}
+	{% set kira_object = page %}
+{% endif %}
+
+<!--=============================
+=			Beginning			=
+==============================-->
+
+{# [INFO] Internet Explorer may not support сomments before DOCTYPE:
 https://stackoverflow.com/a/4897850/5951529
-[WARNING] Needs same language, that text in article/page:
-https://webref.ru/css/lang
-https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
+But I don’t want support IE.
 #}
-<html lang="{% block base_language %}{% endblock %}">
+
+<!DOCTYPE html>
+
+<!--=========================
+=			HTML			=
+==========================-->
+
+<html lang="{{ kira_object.lang }}">
+
+<!--=========================
+=			Head			=
+==========================-->
 
 <head>
 
-	<!--=======================
-	=          Meta           =
-	========================-->
+	<!--=========================
+	=			Meta			=
+	==========================-->
 
-	<!-- Encoding -->
-	<meta charset="utf-8">
-	<!-- Title phrase -->
-	<title>{% block base_pagetitle %}{% endblock %}</title>
-	<!-- Description, EDGE-compatible, different screens.
-	Needs for validation name="description", see:
-	https://stackoverflow.com/a/11202372/5951529 -->
-	<meta name="description" content="{% block base_summary_striptags %}{% endblock %}">
-	<!-- Needs for validation name="viewport", see: https://teamtreehouse.com/community/ive-received-the-following-errors-and-warnings-for-my-code-yet-im-not-sure-what-im-missing -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	{# Open Graph:
-	http://ruogp.me
-	[NOTE] All basic metadata required;
-	Yandex Structured data validator gives errors, if no all:
-	https://webmaster.yandex.com/tools/microtest/
-	https://ruogp.me/#metadata
-	[INFO] In Jinja2 you can use blocks multiple times:
-	http://stackoverflow.com/a/1245030/5951529
-	#}
-	{# [INFO] See full types list for 2018:
-	https://stackoverflow.com/a/50273929/5951529 #}
-	{# [LEARN][JINJA] “|e” filter remove HTML chars “>”, “<”, “&”, “"”, from Pelican tags:
-	http://jinja.pocoo.org/docs/latest/templates/#working-with-manual-escaping
-	https://stackoverflow.com/a/1556570/5951529
-	#}
-	{% if article %}
-		{% for tag in article.ogtags %}
-			<meta property="{{tag[0]}}" content="{{tag[1]|striptags|e}}" />
-		{% endfor %}
-	{% endif %}
+	{% include "includes/meta.html" %}
 
-	{% if page  %}
-		{% for tag in page.ogtags %}
-			<meta property="{{tag[0]}}" content="{{tag[1]|striptags|e}}" />
-		{% endfor %}
-	{% endif %}
-	{% block base_json_ld %}{% endblock %}
+	<!--=================================
+	=			Structured data			=
+	==================================-->
 
-	<!--============================
-	=       Miscellaneous          =
-	=============================-->
+	{% include "includes/structured-data.html" %}
 
-	<!-- Sasha icon -->
-	{# [INFO] Icons formats:
-	https://stackoverflow.com/a/53795508/5951529 #}
-	<link rel="shortcut icon" href="{{SITEURL}}/favicon.ico"/>
-	<!-- Atom feed -->
-	{% block base_atom_feed %}{% endblock %}
+	<!--=================================
+	=			Critical styles			=
+	==================================-->
+
+	{% include "includes/css-critical.html" %}
+
+	<!--=================
+	=		Fonts		=
+	==================-->
+
+	{% include "includes/fonts.html" %}
 
 	<!--=============================
-	=            Scripts            =
+	=		Critical scripts		=
 	==============================-->
 
-	<!-- JQuery
-	CDN vs Locally, see:
-	http://stackoverflow.com/a/3832498/5951529
-	defer preferred, than async, see:
-	https://stackoverflow.com/a/39711009/5951529
-	JQuery not a good candidate for async, see:
-	https://stackoverflow.com/a/10808243/5951529
-	-->
-	{# No browser-update, because some issues:
-	https://github.com/browser-update/browser-update/issues #}
-	{# [NOTE] Don't use protocol-relative URLs:
-	https://stackoverflow.com/a/54386928/5951529 #}
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
-	{# target-blank
-	Add “target="_blank"” for all external links:
-	https://bogdandragomir.com/blog/2016/12/add-target-_blank-attribute-external-anchors-page-javascript-jquery-one-single-line/ #}
-	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/target-blank/target-blank{{MIN}}.js" defer></script>
-	<!-- Gemini -->
-	<script src="https://cdn.jsdelivr.net/npm/gemini-scrollbar/index.min.js" defer></script>
-	<!-- No smooth scrolling, if JQuery Lazy:
-	https://github.com/eisbehr-/jquery.lazy/issues/98#issuecomment-376064894 -->
-	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Gemini/GeminiAndJQueryLazy{{MIN}}.js" defer></script>
-	<!-- JQuery Lazy -->
-	<script src="https://cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.min.js" defer></script>
-	<script src="https://cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.plugins.min.js" defer></script>
-	{# jquery-responsive-tables #}
-	{% block base_responsive_tables %}{% endblock %}
-	{# Browser-Update #}
-	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Browser-Update/browser-update{{MIN}}.js" defer></script>
-	<!-- typo-reporter -->
-	{% block base_typoreporter %}{% endblock %}
-	<!-- Fancybox
-	Obsolete version in JSDelivr
-	https://www.jsdelivr.com/package/npm/fancybox
-	[BUG] In CDNJS doesn't possible latest version
-	https://stackoverflow.com/q/14801334/5951529
-	-->
-	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" defer></script>
-	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Fancybox/fancybox{{MIN}}.js" defer></script>
-	<!-- Tooltipster, see http://ru.stackoverflow.com/a/584718/199934 -->
-	{% block base_tooltipster %}{% endblock %}
-	<!-- Clipboard.js, see http://ru.stackoverflow.com/a/582520/199934 -->
-	{% block base_clipboardjs %}{% endblock %}
-	<!-- Visualize, see https://github.com/kellyk/visualize -->
-	{% block base_visualize %}{% endblock %}
-	{# [INFO] Runkit, see https://runkit.com/docs/embed #}
-	{% block base_runkit %}{% endblock %}
-	{# [INFO] AddToAny, see https://www.addtoany.com #}
-	<script src="https://static.addtoany.com/menu/page.js" defer></script>
-	{# [INFO] async required #}
-	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/AddToAny/addtoany{{MIN}}.js" async></script>
-	{# [INFO] Wildfire:
-	https://stackoverflow.com/a/63869810/5951529 #}
-	<script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Wildfire/wildfire{{MIN}}.js" async></script>
-	{# [INFO] Ostr.io — ethical analythics:
-	https://github.com/VeliovGroup/ostrio-analytics#why-ostrio-analytics #}
-	<script src="https://analytics.ostr.io/P9KT8uEk3KHYs7PnY.js" async></script>
-	{# [FIXME] MailerLite bugs for RSS and CoffeeScript:
-	# https://github.com/Kristinita/SashaMiscellaneous/issues/18
-	# https://github.com/Kristinita/SashaMiscellaneous/issues/19
-	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/MailerLite/mailerlite{{MIN}}.js" async></script> #}
-	<!-- Custom JavaScript -->
-	{% block base_customjs %}{% endblock %}
+	{% include "includes/js-critical.html" %}
 
-	<!--============================
-	=            Styles            =
-	=============================-->
+	<!--=================================
+	=	For specific articles and pages	=
+	==================================-->
 
-	<!-- [WARNING] “link rel="preload"” instead of "stylesheet" doesn't work in Firefox 58, wait Firefox 59.
-	https://github.com/filamentgroup/loadCSS#how-to-use-loadcss-recommended-example
-	https://github.com/filamentgroup/loadCSS/issues/246
-	https://bugzilla.mozilla.org/show_bug.cgi?id=1222633
-	[WARNING] In Firefox 59 also doesn't work. Wait Firefox 60.
-	-->
+	{#
+	[INFO] These scripts and styles will run if some string will matched in HTMl files:
+	https://stackoverflow.com/a/19628156/5951529
 
-	<!-- Gemini
-	[NOTE] Gemini styles must load first, otherwise bugs on page -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gemini-scrollbar/gemini-scrollbar.min.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Gemini/gemini{{MIN}}.css">
-	<!-- SashaPelican theme -->
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/basic{{MIN}}.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/fonts{{MIN}}.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/aside{{MIN}}.css">
-	{% block base_modernizr %}{% endblock %}
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/general/image_{% block base_iconleftorright %}{% endblock %}{{MIN}}.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{% block base_pagecolors %}{% endblock %}{{MIN}}.css">
-	<!-- External -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/typo-reporter/typo-reporter{{MIN}}.css">
-	<!-- Admonition: note, warning etc. blocks, see
-	https://python-markdown.github.io/extensions/admonition/
-	https://squidfunk.github.io/mkdocs-material/extensions/admonition/ -->
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/Admonition/admonition{{MIN}}.css">
-	{# Progressbar #}
-	{% block base_progressbar %}{% endblock %}
-	<!-- Custom CSS -->
-	{% block base_customcss %}{% endblock %}
-	{# [DEPRECATED]
-	[NOTE] Script required, because Google Fonts doesn't support “font-display”:
-	https://css-tricks.com/google-fonts-and-font-display/
-	https://github.com/google/fonts/issues/358
-
-	Fonts:
-	[INFO] Material icons font for admonition:
-	https://google.github.io/material-design-icons/
-	[NOTE] “display: swap” required at May 2019, not default as in this article:
-	https://www.zachleat.com/web/google-fonts-display/
-	[NOTE] “|” character must be replace in fonts URL for validator:
-	https://stackoverflow.com/a/22469221/5951529
-	[NOTE] “&” → “&amp;” replace required for HTML Tidy:
-	https://stackoverflow.com/a/15606103/5951529
+	[INFO] Pelican/Jinja2 is looking for matches in HTML, not in Markdown files
 	#}
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play:700%7CEl+Messiri%7CScada:700i%7CFira+Mono%7CMaterial+Icons%7CMarck+Script&amp;subset=cyrillic&amp;display=swap">
+
+	<!--=================
+	=		Tables		=
+	==================-->
+
+	{% include "includes/tables.html" %}
+
+	<!--=====================
+	=		Code blocks		=
+	======================-->
+
+	{% include "includes/code-blocks.html" %}
+
+	<!--=============================
+	=		Specific scripts		=
+	==============================-->
+
+	{# [INFO] Admonition, Visualize, RunKit, ProgressBar #}
+
+	{% include "includes/js-specific.html" %}
+
+	<!--=================================
+	=		Low-priority scripts		=
+	==================================-->
+
+	{# [INFO] Scripts for each page that can be removed #}
+
+	{% include "includes/js-low-priority.html" %}
+
+	<!--=========================
+	=			base			=
+	==========================-->
+
+	{% include "includes/base-tag.html" %}
+
+	<!--=========================
+	=			Feed			=
+	==========================-->
+
+	{% block base_atom_feed %}{% endblock %}
+
 </head>
 
 <body>
-	{# Message, if JavaScript disabled
-	ARIA roles:
-	http://prgssr.ru/development/ispolzovanie-aria-v-html5.html#heading-aria
-	[NOTE] “section” tag wrong in this case, I use “div” instead it:
-	“Section lacks heading. Consider using “h2”-“h6” elements to add identifying headings to all sections.”
-	https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/alert/index.html
-	#}
-	<div role="alert">
-		{% block base_noscript %}{% endblock %}
-	</div>
-	{# AddToAny buttons.
-	aside — a tag for these buttons:
-	https://stackoverflow.com/a/18974422/5951529
-	Using multiple aside is possible:
-	https://stackoverflow.com/a/27688129/5951529 #}
-	<aside role="presentation">
-		<div class="a2a_kit a2a_kit_size_17 a2a_floating_style a2a_vertical_style">
-			<a class="a2a_button_mastodon"></a>
-			<a class="a2a_button_diaspora"></a>
-			<a class="a2a_button_telegram"></a>
-			<a class="a2a_button_care2_news"></a>
-			<a class="a2a_button_printfriendly"></a>
-			<a class="a2a_dd"></a>
-		</div>
-	</aside>
-	<aside class="SashaIconAside">
-		<div class="SashaBottomAside">{% block base_asidetitle %}{% endblock %}</div>
-	</aside>
-	<!-- Content -->
-	{# [INFO] “Main” must include “article” and “aside”:
+
+	<!--=============================
+	=			noscript			=
+	==============================-->
+
+	{% include "includes/noscript.html" %}
+
+	<!--=============================
+	=			Side icon			=
+	==============================-->
+
+	{% include "includes/side-icon.html" %}
+
+	<!--=========================
+	=			Content			=
+	==========================-->
+
+	{# [LEARN][HTML] “Main” must include “article” and “aside”:
 	https://webref.ru/html/main
 	http://disq.us/p/16r46ia #}
+
 	<main>
-		{# Article must included header and footer:
+
+		{# [LEARN][HTML] Article must include header and footer:
 		https://webref.ru/html/article
 		https://html.spec.whatwg.org/multipage/sections.html#the-article-element #}
+
 		<article>
+
+			<!--=========================
+			=			Header			=
+			==========================-->
+
 			<header>
-				<h1 class="SashaTopHeader">{% block base_h1 %}{% endblock %}</h1>
-				<img class="SashaPageLoading" src="https://2no.co/{% block base_noco %}{% endblock %}.png" alt="Page loading, please, little wait">
-				<div class="SashaVersion">Version {% block base_version %}{% endblock %}</div>
-				<div class="SashaVersion">
-					{# [LEARN][JINJA] Multiple blocks with same name —
-					https://stackoverflow.com/a/1245030/5951529 #}
-					Posted — {{ self.base_date() }}
-				</div>
-				<div class="SashaVersion">
-					{# [WARNING] pubdate attribute is obsolete, use itemprop: datePublished
-					https://stackoverflow.com/a/24455070/5951529 #}
-					Last modified — {{ self.base_date_modified() }}
-				</div>
-				<div>
-					{% block base_epigraph %}{% endblock %}
-					{% block base_titleimage %}{% endblock %}
-				</div>
+
+				{% include "includes/header.html" %}
+
 			</header>
+
+			<!--=========================
+			=			Content			=
+			==========================-->
+
 			<section>
-				{% block base_content %}{% endblock %}
+
+				{% include "includes/content.html" %}
+
 			</section>
+
+			<!--=========================
+			=			Footer			=
+			==========================-->
+
 			<footer>
-				<div class="clearfix">
+
+				{# [INFO] Previous and past articles:
+				https://github.com/pelican-plugins/neighbors #}
+
 				{% block base_neighbors %}{% endblock %}
-				</div>
-				<div class="SashaClearBoth"></div>
-				{% block base_new_russian %}{% endblock %}
-				<div class="WorkOnYourself">Работайте над собой</div>
+
+				{% include "includes/footer.html" %}
 			</footer>
+
 		</article>
 	</main>
+
+	<!--=================================
+	=			Share buttons			=
+	==================================-->
+
+	{% include "includes/share-buttons.html" %}
+
 </body>
 
 </html>

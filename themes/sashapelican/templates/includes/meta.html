@@ -1,0 +1,72 @@
+{#
+[DECLINED]
+Plugins as Pelican Open Graph still use “kira_object.title” without Jinja2 filters,
+see 5.1 item:
+https://stackoverflow.com/q/64058029/5951529
+
+[LEARN][JINJA2] Set variable:
+https://stackoverflow.com/a/4181605/5951529
+
+{% set kira_title_variable = kira_object.title|replace('-', " ") %}
+#}
+
+
+{# [INFO] Title
+So far, manually add it to the articles/pages metadata:
+https://stackoverflow.com/q/64058029/5951529
+#}
+<title>{{ kira_object.title }}</title>
+
+
+{# [INFO] Encoding #}
+<meta charset="utf-8">
+
+
+{# [INFO] Content description:
+https://stackoverflow.com/a/11202372/5951529
+
+[INFO] In meta description content of “kira_object.summary” will without images in Markdown syntax;
+but preview of RSS feed will include them, if “summary” tag in “FORMATTED_FIELDS”.
+See, how it looks:
+“%PATH_KRISTINITA%\pelican-config\generation.yaml”
+https://docs.getpelican.com/en/latest/settings.html#basic-settings
+
+[LEARN][JINJA] Remove tags from HMTL/XML:
+https://jinja.palletsprojects.com/en/master/templates/#filters
+https://jinja.palletsprojects.com/en/master/templates/#striptags
+#}
+<meta name="description" content="{{ kira_object.summary|striptags}}">
+
+
+{# [INFO] Mobile-friendly:
+https://web.dev/viewport/#how-to-add-a-viewport-meta-tag #}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+{# [DECLINED]
+Since 2015, new IE and Edge versions doesn’t required it;
+I don’t support old versions:
+https://stackoverflow.com/a/6771584/5951529
+
+[INFO] Internet Explorer/Edge support
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> #}
+
+
+{# [INFO] Hide specific pages/articles from bots:
+https://www.link-assistant.com/blog/hiding-from-indexation-part-1/
+
+[INFO] I hide these types of articles/pages:
+1. Drafts
+2. Pages with controversial content
+
+[NOTE] I use “meta” tag, no “robots.txt”:
+1. “law-abiding” bots as Google, Yahoo! and Bing bots use “robots.txt”,
+but malicious bots — no.
+“meta” tag guarantees the blocking of all robots:
+https://www.woorank.com/en/blog/robots-txt-a-beginners-guide
+2. “meta” tag solution is more automated
+#}
+{%- if kira_object.status == 'draft' or kira_object.noindex -%}
+	{# [INFO] No index page, but index third-party links #}
+	<meta name="robots" content="noindex, follow">
+{% endif %}

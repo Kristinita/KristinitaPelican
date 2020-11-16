@@ -18,7 +18,7 @@
 module.exports = (grunt) ->
 	options:
 		pkg: grunt.file.readJSON('package.json')
-		intro: 'humans.txt file for Kristinita\'s Search'
+		intro: 'humans.txt file for Kristinita’s Search'
 		commentStyle: 'c'
 		# Indentation of nested values:
 		# https://github.com/robinpokorny/grunt-humans-txt#tab
@@ -30,8 +30,8 @@ module.exports = (grunt) ->
 			team: [
 				'Web developer': "<%= humans_txt.options.pkg.author %>"
 				'Site': "<%= humans_txt.options.pkg.homepage %>"
-				'Contacts': 'https://vk.com/hair_in_the_wind'
-				'Location': 'Там, где Саша'
+				'Contacts': 'https://vk.com/psychologist_kira_k'
+				'Location': 'Там, где Кира'
 			]
 			thanks: [
 				'Name': 'Alfy Centauri'

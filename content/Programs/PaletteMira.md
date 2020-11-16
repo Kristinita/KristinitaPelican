@@ -2,14 +2,15 @@ Title: PaletteMira
 Version: 0.0.1
 Author: Sasha Chernykh
 Date: 2018-04-04 16:33:14
-Modified: 2019-05-23 14:42:05
+Modified: 2020-09-24 13:13:17
 Lang: en
 Summary: Add to command palette commands from external Sublime Text packages
 Pagetitle: PaletteMira
 Pagecolors: programs
 Iconleftorright: right
 Epigraph: true
-Epigraphtext: I dedicated PaletteMira the most goodhearted creation — [Ekaterina Zakharova](https://vk.com/id193658076). <br><br> Mira from “PaletteMira” — name of [Her account](https://vk.com/id388308587) in social network.
+Epigraphtext: I dedicated PaletteMira the most goodhearted creation — [Ekaterina Zakharova](https://vk.com/id193658076).
+	Mira from “PaletteMira” — name of [Her account](https://vk.com/id388308587) in social network.
 Titleimage: true
 Titleimagename: KateZGirlfriend
 Asideimage: KateZakharova
@@ -37,9 +38,9 @@ Schemaorgtype: SoftwareApplication
 <a id="Overview"></a>
 # Overview
 
-Sublime Text package, that add to [command palette](http://docs.sublimetext.info/en/latest/reference/command_palette.html) existing commands from third-party packages, if author(s) of them did not do this.
+Sublime Text package, that add to [command palette](https://sublime-text-unofficial-documentation.readthedocs.io/en/latest/reference/command_palette.html) existing commands from third-party packages, if author(s) of them did not do this.
 
-I include to PaletteMira commands of all known packages, that doesn't have command palette caption, not obsolete and haven't critical errors.
+I include to PaletteMira commands of all known packages, that doesn’t have command palette caption, not obsolete and haven’t critical errors.
 
 <a id="Limitations"></a>
 # Limitations

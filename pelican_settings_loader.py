@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2019-03-12 07:49:38
-# @Last Modified time: 2019-03-12 19:57:39
+# @Last Modified time: 2020-09-24 13:33:47
 """Convert YAML variables to Python.
 
 Argumentation and details:

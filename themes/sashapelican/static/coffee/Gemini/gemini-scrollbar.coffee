@@ -31,39 +31,43 @@ internals.initialize = ->
 		forceGemini: true).create()
 	internals.scrollingElement = internals.scrollbar.getViewElement()
 	internals.scrollToHash()
-	###
-	[INFO] JQuery Lazy support:
-	https://github.com/eisbehr-/jquery.lazy/issues/88#issuecomment-299138103
-	###
-	$('.SashaLazy').Lazy
-		appendScroll: $(internals.scrollbar.getViewElement())
-		###
-		[INFO] Run Gemini “update” method:
-		https://github.com/noeldelgado/gemini-scrollbar#basic-methods
-		http://jquery.eisbehr.de/lazy/example_callback-functions
-		https://github.com/eisbehr-/jquery.lazy/issues/88#issuecomment-299196388
-		###
-		afterLoad: ->
-			internals.scrollbar.update()
-			return
-	###
-	[INFO] Wildfire comments lazy loading:
-	https://stackoverflow.com/a/63869810/5951529
-	[LEARN][JQUERY_LAZY] Create custom loader:
-	https://github.com/dkern/jquery.lazy#custom-content-loaders
-	###
-	$('.wildfire_thread').Lazy
-		KiraComments: (element, response) ->
-			$.getScript 'https://cdn.jsdelivr.net/npm/wildfire/dist/wildfire.auto.js', ->
-				response true
-				return
-			return
-		# [FIXME] Duplicate code
-		appendScroll: $(internals.scrollbar.getViewElement())
-		afterLoad: ->
-			internals.scrollbar.update()
-			return
-	return
+
+
+	# [DECLINED] I migrated to Defer.js
+	# ###
+	# [INFO] JQuery Lazy support:
+	# https://github.com/eisbehr-/jquery.lazy/issues/88#issuecomment-299138103
+	# ###
+	# $('.SashaLazy').Lazy
+	# 	appendScroll: $(internals.scrollbar.getViewElement())
+	# 	###
+	# 	[INFO] Run Gemini “update” method:
+	# 	https://github.com/noeldelgado/gemini-scrollbar#basic-methods
+	# 	http://jquery.eisbehr.de/lazy/example_callback-functions
+	# 	https://github.com/eisbehr-/jquery.lazy/issues/88#issuecomment-299196388
+	# 	###
+	# 	afterLoad: ->
+	# 		internals.scrollbar.update()
+	# 		return
+
+	# [INFO] Wildfire comments lazy loading:
+	# https://stackoverflow.com/a/63869810/5951529
+	# [LEARN][JQUERY_LAZY] Create custom loader:
+	# https://github.com/dkern/jquery.lazy#custom-content-loaders
+
+	# $('.wildfire_thread').Lazy
+	# 	KiraComments: (element, response) ->
+	# 		$.getScript 'https://cdn.jsdelivr.net/npm/wildfire/dist/wildfire.auto.js', ->
+	# 			response true
+	# 			return
+	# 		return
+	# 	# [FIXME] Duplicate code
+	# 	appendScroll: $(internals.scrollbar.getViewElement())
+	# 	afterLoad: ->
+	# 		internals.scrollbar.update()
+	# 		return
+	# return
+
 
 internals.handleOrientationChange = ->
 	internals.scrollbar.update()

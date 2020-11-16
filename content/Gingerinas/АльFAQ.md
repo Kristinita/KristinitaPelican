@@ -1,7 +1,7 @@
 Title: АльFAQ
 Version: 0.1.1
 Date: 2018-12-17 16:51:59
-Modified: 2019-05-23 12:03:32
+Modified: 2020-11-03 09:36:15
 Author: Sasha Chernykh
 Lang: ru
 Summary: Ответы на надоевшие повторяющиеся фразы Alfy
@@ -11,8 +11,6 @@ Asideimage: SashaFluffy
 Iconleftorright: right
 Tags: gingerinas, gingerinas-analysis
 Noco: 1EBY
-Tooltipster: true
-Clipboardjs: true
 Og_image: https://pp.userapi.com/c834302/v834302492/3b6c3/KyRKq062sXE.jpg
 Schemaorgtype: Review
 
@@ -273,7 +271,7 @@ Schemaorgtype: Review
 
 Но в ней нет шансов сделать что-то значительное; как Вы сами же сказали, Альфа-хаб — это «игрушка». Чтобы достичь чего-то значительного где бы то ни было, будь то наука, спорт или программирование, нужно прилагать больше усилий и изменить устоявшийся уклад жизни.
 
-<div class="SashaVideo"><iframe class="SashaLazy" data-src="https://www.youtube.com/embed/SCHN3b_Utw0">
+<div class="SashaVideo"><iframe class="lazyload" title="Monologue from Monologue film" data-src="https://www.youtube.com/embed/SCHN3b_Utw0">
 
 </iframe>
 </div>

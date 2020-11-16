@@ -8,6 +8,9 @@ module.exports = (grunt) ->
 	# https://stackoverflow.com/a/49901700/5951529
 	# [INFO] Using variables: “<%= templates.yamlconfig.VARIABLE %>”
 	yamlconfig: grunt.file.readYAML("site_variables.yaml")
+
+	project_name: "Kristinita’s Search"
+
 	paths:
 		coffee: "<%= templates.yamlconfig.OUTPUT_PATH %>/**/coffee/**/*.coffee"
 		css: [
@@ -24,9 +27,11 @@ module.exports = (grunt) ->
 					]
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>"
 			]
-		# [INFO] Get current working directory of Gruntfile:
-		# https://gruntjs.com/creating-plugins#avoid-changing-the-current-working-directory:-process.cwd
-		# https://stackoverflow.com/q/28755625/5951529
+		###
+		[INFO] Get current working directory of Gruntfile:
+		https://gruntjs.com/creating-plugins#avoid-changing-the-current-working-directory:-process.cwd
+		https://stackoverflow.com/q/28755625/5951529
+		###
 		cwd: process.cwd()
 		images: [
 			expand: true
@@ -35,8 +40,22 @@ module.exports = (grunt) ->
 			src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/**/images/**/*.{png,jpg,jpeg,gif,svg}"]
 			dest: '.'
 			]
+		###
+		[LEARN][GRUNT] Grunt apply for files dynamically:
+		https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
+		###
+		js: [
+			expand: true
+			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>"
+			src: [
+					"**/*.js"
+					"!**/*.min*js"
+					]
+			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>"
+			]
 		# [NOTE] “**.html” will not works; subdirectories will not included
 		html: "<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.html"
+
 		markdown: [
 			"*.md"
 			".github/*.md"
@@ -62,7 +81,3 @@ module.exports = (grunt) ->
 		# https://developers.google.com/apis-explorer/#p/pagespeedonline/v5/
 		# https://developers.google.com/speed/docs/insights/v5/get-started#key
 		api_key_pagespeed_insights_v5: process.env.API_KEY_PAGESPEED_INSIGHTS_V5
-	# [FIXME] Check all HTML, when tags and categories will works normally:
-	# https://stackoverflow.com/q/54388924/5951529
-	# getFiles: ->
-	# 	grunt.file.expand 'output/**/*.html'

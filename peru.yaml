@@ -1,25 +1,80 @@
 ########
-# peru #
+# Peru #
 ########
-# Package manager for including other peoples code in project:
+# [PURPOSE] Package manager for including other peoples code to project:
+# It helps add to project third-party files and folders
+# including from resources such as GitLab, BitBucket and GitHub
 # https://github.com/buildinspace/peru
-# I use peru for downloading pelican plugins:
+# [INFO] Configuration:
+# https://github.com/buildinspace/peru#getting-fancy
+# https://github.com/buildinspace/peru#rules
+
+# [INFO] I use Peru for downloading Pelican plugins:
 # https://iranzo.github.io/blog/2018/09/25/peru/
-# [WARNING] Big time for first launch:
-# https://github.com/buildinspace/peru/issues/204
+
+# [NOTE] Duplicate values with “site_variables.yaml” file:
+# https://github.com/buildinspace/peru/issues/206
+
+
+# [LEARN][PERU] Directories where files will be uploaded
 imports:
-  pelican-plugins: pelican-plugins/
+  pelican-plugins: &plugins_path pelican-plugins
+  just-table: *plugins_path
+
+  # [INFO] Here I replaced original repository name
+  # “pelican-open_graph” to “open_graph”
+
+  # [LEARN][YAML][NOTE] I can’t concatenate variable and string in YAML
+  # as “*plugins_path/open_graph”:
+  # https://stackoverflow.com/a/5954748/5951529
+  open-graph: pelican-plugins/open_graph
+
 
 git module pelican-plugins:
   url: https://github.com/getpelican/pelican-plugins
-  # [WARNING] Needs duplicates with "site_variables.yaml":
-  # https://github.com/buildinspace/peru/issues/206
+
+  # [LEARN][PERU] Don’t download pelican-plugins submodules
+  # [PURPOSE] This significantly reduces the time:
+  # https://github.com/buildinspace/peru#module-types
+  # https://github.com/buildinspace/peru/issues/204
+  # [NOTE] Don’t install submodules from “getpelican/pelican-plugins”.
+  # You can’t do it if “submodules: false”.
+  # Install submodules for GitHub repositories directly
+  submodules: false
+
+  # [LEARN][PERU] Folders for downloading:
+  # https://github.com/buildinspace/peru#rules
   pick:
   - interlinks
-  # [FIXME] I move just_table to personal plugins, because issue didn't solved:
-  # https://github.com/burakkose/just_table/issues/7
-  # - just_table
   - neighbors
-  - pelican-open_graph
   - section_number
-  - sitemap
+
+  # [INFO] sitemap migrated to Pelican Plugins organization and now can installed via pip:
+  # https://github.com/pelican-plugins/sitemap
+  # [LEARN][PELICAN] It “namespace plugin” in the Pelican terminology:
+  # https://docs.getpelican.com/en/stable/plugins.html#how-to-use-plugins
+  # - sitemap
+
+
+# [DONE]
+# [PATCH] https://github.com/whiskyechobravo/pelican-open_graph/pull/19
+git module open-graph:
+  url: https://github.com/whiskyechobravo/pelican-open_graph/
+
+
+# [PATCH] https://github.com/burakkose/just_table/pull/9
+git module just-table:
+  url: https://github.com/Kristinita/just_table
+
+  # [LEARN][PERU] Specific branch, tag or commit:
+  # https://github.com/buildinspace/peru#git-hg-svn
+  rev: KiraPatchAllGenerators
+
+  # [LEARN][PERU] Rename original folder name to required:
+  # https://github.com/buildinspace/peru/issues/205#issuecomment-528948901
+  move:
+    pelican_just_table: just_table
+
+  # [REQUIRED] Moved, not original folder name here
+  # https://github.com/buildinspace/peru/commit/9258b573100c8efc208668741151be621567707b
+  pick: just_table

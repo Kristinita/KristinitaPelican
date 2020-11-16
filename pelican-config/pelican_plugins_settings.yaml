@@ -20,10 +20,6 @@ PLUGINS:
 # https://github.com/silentlamb/pelican-deadlinks/
 # 'deadlinks'
 
-# [DEPRECATED], now by default
-# https://github.com/getpelican/pelican-plugins/tree/master/feed_summary
-# 'feed_summary'
-
 # [DEPRECATED]
 # Post last push data, if CI deploy:
 # https://github.com/travis-ci/dpl/issues/813
@@ -43,9 +39,15 @@ PLUGINS:
 # https://github.com/getpelican/pelican-plugins/issues/983
 # 'jinja2content'
 
-# [BUG] json_feed doesn't work:
+
+# [BUG] Andrew Heiss’ json_feed plugin doesn’t work:
 # https://github.com/andrewheiss/pelican_json_feed/issues/6
-# 'json_feed'
+# [BUG] Ryan M plugin also doesn’t work for me,
+# I get error:
+# “AttributeError: 'NoneType' object has no attribute 'lstrip'”
+# https://ryanmo.co/2017/05/18/json-feed-in-pelican/
+# - json_feed
+
 
 # Simple tables:
 # https://github.com/burakkose/just_table
@@ -67,6 +69,7 @@ PLUGINS:
 
 # Add open_graph to HTML:
 # https://github.com/whiskyechobravo/pelican-open_graph
+# [FIXME][ISSUE] “open_graph” generate non-trimmed title
 - open_graph
 
 # [FIXME] Different colors for different designs

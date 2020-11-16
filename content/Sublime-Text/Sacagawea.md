@@ -2,24 +2,21 @@ Title: Sacagawea
 Version: 0.1.0
 Author: Keith Hall
 Date: 2017-05-05 6:49:14
-Modified: 2020-09-18 19:46:18
+Modified: 2020-11-03 09:36:17
 Lang: ru
-Summary: Timer for Russian gingerinas.
+Summary: Таймер для джинджерин “Что? Где? Когда?”, “Брейн Ринг”
 Pagetitle: Sacagawea
-Metacontent: Таймер для джинджерин “Что? Где? Когда?”, “Брейн Ринг”
 Pagecolors: programs
 Asideimage: SashaChocolate
 Titleimage: true
 Titleimagename: NatalyaMindGames
 Epigraph: true
-Epigraphtext: Посвящено <a href="https://vk.com/id152198389">Наталье Степуриной (Шмелёвой)</a>, <br>никогда не оставлявшую меня в трудную минуту. <br>Названо в честь <a href="http://www.history.com/topics/native-american-history/sacagawea">Её игрового никнейма</a>.
+Epigraphtext: Посвящено [Наталье Степуриной (Шмелёвой)](https://vk.com/id152198389),
+	никогда не оставлявшую меня в трудную минуту.
+	Названо в честь [Её игрового никнейма](http://www.history.com/topics/native-american-history/sacagawea).
 Iconleftorright: right
 Tags: sublime-text, gingerinas, what-where-when
 Noco: 1g9b6
-Stylesheets: personal/
-Javascripts: personal/
-Tooltipster: true
-Clipboardjs: true
 OpenGraphImage: https://i.imgur.com/cVITpm1.jpg
 Schemaorgtype: SoftwareApplication
 
@@ -94,7 +91,7 @@ Sacagawea можно использовать, например, ведущем�
 
 В активном окне Sublime Text 3: игрок нажимает <kbd>Ctrl+Alt+Context_Menu</kbd> — или (зная о [fuzzy-поиске](https://umaar.com/dev-tips/36-sublime-fuzzy-search/)) набирает в [command palette](https://www.youtube.com/watch?v=QDajzykRdn0) *Suricate: Sacagawea: Blitz/Supeblitz/Brain Ring* → раздаётся звук + открывается вкладка, где 20 секунд происходит обратный отсчёт времени, → за 10 секунд до окончания отсчёта раздаётся другой звук → спустя ещё 10 секунд таймер доходит до нуля + раздаётся третий звук + вкладка с таймером закрывается.
 
-<div class="SashaVideo"><iframe class="SashaLazy" data-src="https://video.ploud.fr/videos/embed/1c93a77b-371d-446c-a293-6a872a2088a9"></iframe></div>
+<div class="SashaVideo"><iframe class="lazyload" title="Sacagawea Blitz/Supeblitz/Brain Ring mode" data-src="https://video.ploud.fr/videos/embed/1c93a77b-371d-446c-a293-6a872a2088a9"></iframe></div>
 
 При записи видео с экрана использовались следующие приложения:
 
@@ -120,7 +117,7 @@ Sacagawea можно использовать, например, ведущем�
 
 Скрипт автоматически выполняет следующие действия: нажимается пробел — клавишей <kbd>Space</kbd> в web-плейерах, которые знаю, останавливается воспроизведение видео, → <kbd>Alt+Tab</kbd> — [переключение между приложениями](https://support.microsoft.com/ru-ru/help/79869/pressing-alt-tab-to-switch-between-applications), — в Sublime Text запускается процесс, [описанный в разделе «Заявленное поведение»](#Заявленное-поведение), → вновь <kbd>Alt+Tab</kbd> → происходит возвращение во вкладку браузера со «Что? Где? Когда?».
 
-<div class="SashaVideo"><iframe class="SashaLazy" data-src="https://video.ploud.fr/videos/embed/8c9305e6-671e-4d4d-9abe-e045cc9740df"></iframe></div>
+<div class="SashaVideo"><iframe class="lazyload" title="Sacagawea AutoHotkey switch between windows" data-src="https://video.ploud.fr/videos/embed/8c9305e6-671e-4d4d-9abe-e045cc9740df"></iframe></div>
 
 При записи видео с экрана помимо [вышеупомянутых](#Режим-БлицСуперблицБрейн-Ринг) использовались следующие приложения:
 
@@ -175,7 +172,7 @@ Sacagawea можно использовать, например, ведущем�
 
 → горячие клавиши активированы.
 
-Если данные хоткеи задействованы в других Ваших плагинах или программах, можете их деактивировать. В активном окне Sublime Text: <kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> для Mac) → *Suricate: Add Profile* → <kbd>Enter</kbd> → [Sacagawea](https://i.imgur.com/VNC1Kzs.png) → <kbd>Enter</kbd>.
+Если данные хоткеи задействованы в других Ваших плагинах или программах, можете их деактивировать. В активном окне Sublime Text: <kbd>Ctrl+Shift+P</kbd> (<kbd>⌘⇧p</kbd> для Mac) → *Suricate: Add Profile* → <kbd>Enter</kbd> → Sacagawea → <kbd>Enter</kbd>.
 
 <a id="AutoHotkey"></a>
 ### AutoHotkey

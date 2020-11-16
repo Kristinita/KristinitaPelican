@@ -20,6 +20,7 @@
 # examples for Android Browser, Opera Mobile and Blackberry Browser:
 # https://i.imgur.com/hokFRl6.png
 last 1 version
+
 # [INFO] Doesn't support any browser version:
 # https://github.com/browserslist/browserslist/issues/137
 # Reasons:
@@ -29,17 +30,20 @@ last 1 version
 # We need duplicates “not {browser} > 0”
 not ie > 0
 not ie_mob > 0
+
 # [NOTE] Opera Mini “is a joke, circumventing rather than supporting the intentions of web developers”:
 # https://www.quora.com/What-is-the-best-browser-for-developers/answer/Mack-Moore-1
 # https://caniuse.com/#compare=ios_saf+12.2,op_mini+all,android+67,op_mob+46,and_chr+71,and_ff+64,and_qq+1.2
 # [NOTE] For Opera Mini needs “op_mini all”:
 # https://github.com/browserslist/browserslist/issues/137#issuecomment-455494613
 not op_mini all > 0
+
 # [NOTE] 1. BlackBerry discontinued;
 # 2. Usage stats is 0.02% for February, 2019:
 # https://caniuse.com/usage-table
 # http://bit.ly/2BGZD7k
 not bb > 0
+
 # [INFO] Links to UC, QQ and Baidu browsers:
 # https://github.com/Fyrd/caniuse/issues/4463#issuecomment-420143525
 # [NOTE] Outdated QQ Browser version in Can I use:

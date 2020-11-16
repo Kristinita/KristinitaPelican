@@ -1,10 +1,3 @@
-[[source]]
-url = "https://pypi.python.org/simple"
-verify_ssl = true
-name = "pypi"
-
-[packages]
-
 [dev-packages]
 pelican = "*"
 markdown = "*"
@@ -21,19 +14,8 @@ pillow = "*"
 "ruamel.yaml" = "*"
 peru = "*"
 pylint = "*"
-
-[requires]
-python_version = "3.7"
-
-[dev-packages.mdx-custom-span-class]
-git = "https://github.com/exaroth/mdx_custom_span_class.git"
-editable = true
-
-[dev-packages.csvlexer]
-git = "https://github.com/Kristinita/PygmentsCSVLexer.git"
-editable = true
-
-[dev-packages.mdx_downheader]
-git = "https://github.com/Kristinita/mdx_downheader.git"
-editable = true
-ref = "KiraPatch"
+csvlexer = {editable = true, git = "https://github.com/Kristinita/PygmentsCSVLexer.git"}
+markdown-downheader = {editable = true, git = "https://github.com/Kristinita/mdx_downheader.git", ref = "KiraPatch"}
+mdx-customspanclass = {editable = true, git = "https://github.com/exaroth/mdx_custom_span_class.git"}
+pelican-sitemap = "*"
+markdown-link-attr-modifier = "*"

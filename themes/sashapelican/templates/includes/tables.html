@@ -1,0 +1,26 @@
+{#
+[INFO] jquery-responsive-tables — responsive tables:
+https://www.npmjs.com/package/jquery-responsive-tables
+
+[INFO] Cash-compatible, JQuery not required
+
+[NOTE] I can’t find another method make tables responsive:
+https://stackoverflow.com/q/50274179/5951529
+
+[NOTE] Collapse by orientation change (“landscape/portrait”) isn’t available:
+https://github.com/ryanwellsdotcom/jquery-responsive-tables/issues/2
+
+[FIXME] Bad tables quality:
+https://i.imgur.com/WLyEBkb.png
+
+[NOTE] Delay time is “700” and “1000”, not “400”/“700”,
+because sometimes “responsive-tables” can’t boot after cash
+and I get error in the console.
+#}
+{%- if "<table>" in kira_object.content -%}
+	<script>
+		deferstyle('https://cdn.jsdelivr.net/npm/jquery-responsive-tables/css/responsive-tables.min.css', 'responsive-tables-css', 400);
+		deferscript('https://cdn.jsdelivr.net/npm/jquery-responsive-tables/js/jquery.responsive-tables.min.js', 'responsive-tables', 700);
+		deferscript('{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/jquery-responsive-tables/jquery-responsive-tables{{MIN}}.js', 'responsive-tables-local', 1000);
+	</script>
+{%- endif -%}

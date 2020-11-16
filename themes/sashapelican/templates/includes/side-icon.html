@@ -1,0 +1,20 @@
+{# [INFO] Part of the screen area where are icons placed #}
+
+{# [INFO] Icon on the part of the screen #}
+
+<aside class="SashaIconAside">
+
+	{# [INFO] Text at the bottom of the icon #}
+	<div class="SashaBottomAside">
+
+		{# [FIXME][JINJA2]
+		Correct syntax for “if {{template}} exists print {{template}}”
+		#}
+		{% if kira_object.pagetitle %}
+			{{ kira_object.pagetitle }}
+		{% else %}
+			{{ kira_object.title }}
+		{% endif %}
+
+	</div>
+</aside>

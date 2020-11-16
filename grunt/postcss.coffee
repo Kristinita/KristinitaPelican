@@ -1,14 +1,16 @@
 ###################
 ## grunt-postcss ##
 ###################
-# PostCSS — CSS operations:
-# https://www.npmjs.com/package/postcss
-# Grunt adapter:
-# https://www.npmjs.com/package/@lodder/grunt-postcss
-# [NOTE] Original repository is abandoned, use C-Lodder fork:
-# https://github.com/nDmitry/grunt-postcss/issues/121
-# [WARNING] PostCSS doesn't support “<style>” HTML tag;
-# Don't include HTML files to “src”.
+###
+PostCSS — CSS operations:
+https://www.npmjs.com/package/postcss
+Grunt adapter:
+https://www.npmjs.com/package/@lodder/grunt-postcss
+[NOTE] Original repository is abandoned, use C-Lodder fork:
+https://github.com/nDmitry/grunt-postcss/issues/121
+[WARNING] PostCSS doesn’t support “<style>” HTML tag;
+Don’t include HTML files to “src”.
+###
 module.exports =
 	options:
 		# [NOTE] Sourcemap already created by cssnano

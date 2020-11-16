@@ -1,46 +1,47 @@
 #################
 # grunt-pageres #
 #################
-# Screenshots of site pages:
-# https://www.npmjs.com/package/pageres
-# https://www.npmjs.com/package/grunt-pageres
-# [DONE]
-# # [WARNING] PhantomJS make screenshots for old browser, that detect as Safari 4:
-# # "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"
-# # screenshots can differ a lot by real pages for modern browsers.
-# # [BUG] pageres works bad with absolute paths,
-# # I use pageres use local server via grunt-http-server
-# # [BUG] Native scrollbars displayed:
-# # https://github.com/sindresorhus/pageres/issues/331
-# [FIXME] Publish screenshots to Imgur after_success and overwrite current Imgur album
+###
+[OVERWIEW] Screenshots of site pages:
+https://www.npmjs.com/package/pageres
+
+[INFO] Grunt wrapper:
+https://www.npmjs.com/package/grunt-pageres
+
+[INFO] Options:
+https://www.npmjs.com/package/pageres#options
+
+[FIXME] Publish screenshots to Imgur “after_success” and overwrite current Imgur album:
+https://github.com/sindresorhus/pageres/issues/358
+###
 module.exports =
 	screenshots:
 		options:
 			delay: 4
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/screenshots"
-			# [WARNING] Viewport sizes is obsolete:
-			# http://viewportsizes.com
-			# I use 2 most popular screen resolutions for PC:
-			# https://www.w3counter.com/globalstats.php
 			###
-			640x360
-			1366x768
-			###
-			# And resolutions of supported mobile and tablet devices:
-			###
+			[INFO] I use 2 most popular screen resolutions for PC:
+			https://www.w3counter.com/globalstats.php
+
+			[NOTE] Viewport sizes is obsolete:
+			http://viewportsizes.com
+
+			[DECLINED] pageres will not show how web pages look on real mobile devices;
+			it will take screenshots that have nothing to do with the actual display
+			of web pages on mobile devices
+			[INFO] Add resolutions of supported mobile and tablet devices:
 			iPhone XS Max — 1242x2688
 			iPad Pro 12.9.2018 — 2048x2732
 			Samsung Galaxy S9+ — 1440x2960
 			###
 			sizes: [
-					"1024x768"
 					"1366x768"
-					"1242x2688"
-					"2048x2732"
-					"1440x2960"
+					"640x360"
 					]
-			# [FIXME] Add cwd for templates, that no duplicate template:
-			# https://github.com/sindresorhus/pageres/issues/352#issuecomment-464048880
+			###
+			[NOTE] It would be nice add “cwd” for templates, so that there are no duplicates:
+			https://github.com/sindresorhus/pageres/issues/352#issuecomment-464048880
+			###
 			urls: ["<%= templates.yamlconfig.OUTPUT_PATH %>/index.html"
 					"<%= templates.yamlconfig.OUTPUT_PATH %>/404.html"
 					"<%= templates.yamlconfig.OUTPUT_PATH %>/Sasha-Black.html"

@@ -1,0 +1,134 @@
+{# [INFO] Ostr.io — ethical analythics:
+https://github.com/VeliovGroup/ostrio-analytics#why-ostrio-analytics
+
+[NOTE] Development mode must be enabled for correct clean-console work:
+https://github.com/VeliovGroup/ostrio-analytics/issues/2#issuecomment-421593817
+#}
+
+
+{#
+[INFO] typo-reporter
+
+[NOTE] I migrated from npmcdn to JSDelivr; npmcdn hangs
+#}
+
+
+{# [INFO] AddToAny — social share buttons:
+https://www.addtoany.com
+
+[REQUIRED] “async” and “defer” as in example
+#}
+
+
+{# [INFO] Browser-Update — notification, if site visitor use old or bad browser:
+https://browser-update.org/ #}
+
+
+{# [INFO] Wildfire — comments for static sites:
+https://wildfire.js.org
+
+[WARNING] I can’t get Wildfire notifications:
+https://github.com/cheng-kang/wildfire/issues/47
+
+[INFO] Add Wildfire lazy, because it makes web pages load faster:
+https://stackoverflow.com/a/63869810/5951529 #}
+<script>
+	deferscript('https://analytics.ostr.io/P9KT8uEk3KHYs7PnY.js', 'ostr-io', 1000);
+	deferstyle('{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/script-colors/typo-reporter/typo-reporter{{MIN}}.css', 'typo-reporter-css', 6400);
+	deferscript('{{SITEURL}}/{{THEME_STATIC_DIR}}/js/AddToAny/addtoany{{MIN}}.js', 'addtoany-local', 6400);
+	deferscript('{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Browser-Update/browser-update{{MIN}}.js', 'browser-update', 7000);
+	deferscript('{{SITEURL}}/{{THEME_STATIC_DIR}}/js/Wildfire/wildfire{{MIN}}.js', 'wildfire-local', 7000);
+	deferscript('https://cdn.jsdelivr.net/npm/typo-reporter/lib/TypoReporter.min.js', 'typo-reporter', 7000);
+	deferscript('https://static.addtoany.com/menu/page.js', 'addtoany', 7000);
+</script>
+
+{%- if kira_object.lang == 'ru' -%}
+	<script>
+		deferscript('{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/typo-reporter/typo-reporter-ru{{MIN}}.js', 'typo-reporter-local-ru', 8000);
+	</script>
+{% else %}
+	<script>
+		deferscript('{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/typo-reporter/typo-reporter-en{{MIN}}.js', 'typo-reporter-local-en', 8000);
+	</script>
+{%- endif -%}
+
+
+{#
+[INFO] HesGallery — lightweight pure JavaScript lightbox library:
+https://demtario.github.io/hes-gallery/demo/
+[INFO] Options:
+https://github.com/demtario/hes-gallery#possible-options
+[NOTE] HesGallery haven’t thumbnails bar:
+https://github.com/demtario/hes-gallery/issues/10
+
+[FIXME][WARNING] hes-gallery doesn’t work for me with Defer.js
+
+[PATCH] https://github.com/demtario/hes-gallery/pull/12
+#}
+<script src="https://rawcdn.githack.com/Kristinita/hes-gallery/30e957787fbee7a08d7b872961c864c66f46bdb4/dist/hes-gallery.min.js" defer></script>
+
+
+{#
+[DECLINED]
+
+1. Fancybox doesn’t work with gemini-scrollbar
++ Fancybox author quickly closes my detailed issue:
+https://github.com/fancyapps/fancybox/issues/2186
+2. JQuery required for Fancybox
+
+[INFO] Fancybox — lightbox library for presenting various types of media:
+https://fancyapps.com/fancybox/3/
+
+[NOTE] In CDNJS not possible latest version
+https://stackoverflow.com/q/14801334/5951529
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css">
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" defer></script>
+<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Fancybox/fancybox{{MIN}}.js" defer></script>
+#}
+
+
+{#
+[DECLINED]
+
+1. Developer type — closer, see:
+https://github.com/nicolas-t/Chocolat/issues/121
+https://github.com/nicolas-t/Chocolat/issues/120
+2. hes-gallery is smaller
+[COMPARE] https://cdn.jsdelivr.net/npm/hes-gallery/dist/hes-gallery.min.js
+https://cdn.jsdelivr.net/npm/hes-gallery/dist/hes-gallery.min.js
+
+[INFO] Chocolat — vanilla js library for images zoom:
+http://chocolat.insipi.de/
+[INFO] Documentation:
+https://chocolat.gitbook.io/chocolat/
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chocolat/dist/css/chocolat.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chocolat/dist/js/chocolat.min.js" defer></script>
+<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Chocolat/chocolat{{MIN}}.js" defer></script>
+#}
+
+
+{# [DECLINED] In 2020 modern browsers supports “details/summary”:
+https://caniuse.com/#search=details
+
+[INFO] Add support for “details” and “summary” tags for old browsers:
+http://ru.stackoverflow.com/a/498984/199934
+{% block base_detailspolyfill -%}
+	{%- if kira_object.detailspolyfill == 'true' -%}
+		<script src="{{SITEURL}}/js/Details-Polyfill/details1{{MIN}}.js" defer></script>
+		<script src="{{SITEURL}}/js/Details-Polyfill/details2{{MIN}}.js" defer></script>
+	{%- endif -%}
+{%- endblock %} #}
+
+
+{# [INFO] Mailerlite — subscribe to categories/tags by RSS:
+http://help.mailerlite.com/article/show/28992-how-do-rss-campaigns-work
+
+[FIXME][ISSUE] RSS displayed not correctly in subscriber’s e-mail:
+https://github.com/Kristinita/SashaMiscellaneous/issues/18
+
+[FIXME][ISSUE] CoffeeScript doesn’t supported:
+https://github.com/Kristinita/SashaMiscellaneous/issues/19
+<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/MailerLite/mailerlite{{MIN}}.js" defer></script> #}

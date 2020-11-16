@@ -31,17 +31,24 @@ module.exports =
 	############
 	## pipenv ##
 	############
-	# Update all Python Pipenv packages:
+	# [INFO] Update all Python Pipenv packages:
 	# https://stackoverflow.com/a/16269635/5951529
 	# https://github.com/jgonggrijp/pip-review#pip-review
 	pipenvupdateall:
 		command: 'pipenv run pip-review --auto'
-	# Clean unused packages
-	# [WARNING] That “pipenv clean” doesn't remove Python Markdown extensions, you need install them in format:
-	# pipenv install -e git+https://github.com/user/package_name.git#egg=package_name --dev
-	# https://github.com/pypa/pipenv/issues/1524
-	# This is “editable” format:
-	# http://pipenv.readthedocs.io/en/latest/basics/#editable-dependencies-e-g-e
+	###
+	[INFO] Clean unused packages:
+	https://pipenv.pypa.io/en/latest/cli/#pipenv-clean
+	[NOTE] So that “pipenv clean” doesn’t remove Python Markdown git extensions, you need install them in format:
+	“pipenv install -e git+https://github.com/user/package_name.git#egg=package_name --dev”:
+	https://pipenv.pypa.io/en/latest/basics/#a-note-about-vcs-dependencies
+	https://github.com/pypa/pipenv/issues/1524
+	This is “editable” format:
+	http://pipenv.readthedocs.io/en/latest/basics/#editable-dependencies-e-g-e
+	[NOTE] Use correct “package_name” for “editable” packages,
+	so that “pipenv clean” doesn’t delete them:
+	https://github.com/pypa/pipenv/issues/1524#issuecomment-695213982
+	###
 	pipenvcleanunused:
 		command: 'pipenv clean --verbose'
 	# Update packages versions to the newest in “Pipfile.lock”, that:
@@ -49,7 +56,7 @@ module.exports =
 	# 2. Fix CI errors as https://travis-ci.org/Kristinita/KristinitaPelican/jobs/368968779#L658-L677
 	# https://docs.pipenv.org/basics/#example-pipenv-upgrade-workflow
 	pipenvupdatepipfilelock:
-		command: 'pipenv update'
+		command: 'pipenv update --verbose'
 
 
 	#########
@@ -82,13 +89,13 @@ module.exports =
 	# Options:
 	# http://api.html-tidy.org/tidy/quickref_next.html
 	tidymodify:
-		# Platform-specific tasks:
+		# [LEARN][GRUNT] Platform-specific tasks:
 		# https://stackoverflow.com/a/23848087/5951529
 		if process.platform is "win32"
 			# Need quotes, that command run:
 			command: '"batch/tidy-modify.bat"'
 		else
-			# Fix permission denied:
+			# [NOTE] Fix permission denied:
 			# https://stackoverflow.com/a/46818913/5951529
 			command: 'bash bash/tidy-modify.sh'
 	tidyvalidate:
@@ -142,10 +149,13 @@ module.exports =
 	###################
 	## Travis Client ##
 	###################
-	# Lint “.travis.yml” file locally:
-	# https://stackoverflow.com/a/35607499/5951529
-	# https://rubygems.org/gems/travis
-	# “-x” argument — exit code 1, if any warning:
+	###
+	[ACTION] Lint “.travis.yml” file locally:
+	https://stackoverflow.com/a/35607499/5951529
+	https://rubygems.org/gems/travis
+	[INFO] “-x” argument — exit code 1, if any warning:
+	https://github.com/travis-ci/travis.rb#lint
+	###
 	travislint:
 		command: 'travis lint -x'
 
@@ -214,4 +224,4 @@ module.exports =
 	# https://stackoverflow.com/a/14089064/5951529
 	# https://gruntjs.com/creating-tasks#cli-options-environment
 	localappveyor:
-		command: 'LocalAppVeyor lint --token <%= templates.tokens.api_key_appveyor %>'
+		command: "LocalAppVeyor lint --token <%= templates.tokens.api_key_appveyor %>"

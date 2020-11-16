@@ -11,10 +11,7 @@
         "expect": "never",
         "error": true
     },
-    "colors": {
-        "expect": "always",
-        "error": true
-    },
+    "colors": false,
     "commaSpace": {
         "expect": "always",
         "error": true
@@ -111,5 +108,5 @@
         "expect": "never",
         "error": true
     },
-    "zIndexNormalize": 100
+    "zIndexNormalize": 1
 }

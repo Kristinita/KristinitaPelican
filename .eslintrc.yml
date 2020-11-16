@@ -10,14 +10,14 @@ parserOptions:
     jsx: true
 rules:
   indent:
-    - error
-    - tab
+  - error
+  - tab
   linebreak-style:
-    - error
-    - windows
+  - error
+  - unix
   quotes:
-    - error
-    - double
+  - error
+  - single
   semi:
-    - error
-    - always
+  - error
+  - always

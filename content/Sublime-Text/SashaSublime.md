@@ -1,17 +1,17 @@
 Title: SashaSublime
 Tags: sublime-text
 Date: 2017-01-31 09:13:30
-Modified: 2020-09-18 08:48:20
+Modified: 2020-10-30 08:54:51
 Lang: en
-Status: published
 Author: Sasha Chernykh
 PageTitle: SashaSublime
-Summary: Theme and color scheme for Sublime Text, where all colors have good visible <br><br> ![Hex Viewer](https://i.imgur.com/c0t0Iqy.png) <br><br> ![GoTo Anything](https://i.imgur.com/2hRinyv.png) <br><br> ![JSON](https://i.imgur.com/N2LvbNZ.png)
+Summary: Theme and color scheme for Sublime Text, where all colors have good visible
+	![Hex Viewer](https://i.imgur.com/c0t0Iqy.png)
+	![GoTo Anything](https://i.imgur.com/2hRinyv.png)
+	![JSON](https://i.imgur.com/N2LvbNZ.png)
 Pagecolors: programs
 Asideimage: SashaChocolate
 IconLeftOrRight: right
-Tooltipster: true
-ClipboardJs: true
 Noco: 1g9b6
 Og_image: https://i.imgur.com/ljT5eJp.png
 Schemaorgtype: SoftwareApplication
@@ -728,7 +728,7 @@ After updates, SashaSublime your changes will lost. You will need to copy the mo
 <a id="Problem-1"></a>
 ### Problem
 
-Will update *SashaSublime.sublime-theme* and *SashaSublime.tmTheme* files, no *Example.sublime-theme* and *Example.tmTheme* files. You will not see updates, if you not select SashaSublime theme and scheme files. You will need to merge you changes from SashaSublime into your file, for example, via [Sublimerge 3](http://www.sublimerge.com/sm3/).
+Will update *SashaSublime.sublime-theme* and *SashaSublime.tmTheme* files, no *Example.sublime-theme* and *Example.tmTheme* files. You will not see updates, if you not select SashaSublime theme and scheme files. You will need to merge you changes from SashaSublime into your file, for example, via Sublimerge 3.
 
 <a id="Known-defects"></a>
 # Known defects
@@ -803,41 +803,6 @@ During the work on a theme the theme [Espresso Libre](http://colorsublime.com/th
 After the Sublime Text 3 updates, settings of the color theme [can get off](https://forum.sublimetext.com/t/changing-scopes-in-build-3114/20088?u=sasha_chernykh). Please, if you found out that colors became not such as before, [report to me](https://github.com/Kristinita/SashaSublime/issues/new) about it.
 
 If the icon for your markup language or a programming language is absent in SashaSublime, you can add it independently, having carried out the [these instructions](http://ru.stackoverflow.com/a/544861/199934) or to ask me.
-
-<a id="Donate"></a>
-# Donate
-
-<a id="Bitcoin"></a>
-## Bitcoin
-
-[![Bitcoin Donate Button]({static}/images/donate_files/Bitcoin-Donate-button.png)]({static}/images/donate_files/Bitcoin-HTML-Redirect.html)
-
-See [my answer](http://bitcoin.stackexchange.com/a/48744/41598) to Bitcoin Stack Exchange, if you want to know how to make the same button. If you Bitcoin client not supported [standard bitcoin schema URI](https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki), my Bitcoin address is:
-
-```shell
-17uctxtsWG3gpyAy6iJ8AVd5rdSjkJH2
-```
-
-<a id="Litecoin"></a>
-## Litecoin
-
-[![Litecoin Donate Button]({static}/images/donate_files/Litecoin-Donate-button.png)]({static}/images/donate_files/Litecoin-HTML-Redirect.html)
-
-If you Litecoin client not supported Litecoin schema URI, my Litecoin address is:
-
-```shell
-LLVvhNKGMLGHa8QmeRrBsjZUBjSpQMjUkP
-```
-
-<a id="Paypal-$"></a>
-## Paypal $
-
-[![PayPal Dollar button]({static}/images/donate_files/PayPal-Donate-Button-Dollar.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W6MP468ZZV66Q)
-
-<a id="Paypal-€"></a>
-## Paypal €
-
-[![PayPal Euro button]({static}/images/donate_files/PayPal-Donate-Button-Euro.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DGT7K29LDD2HQ)
 
 <a id="License"></a>
 # License

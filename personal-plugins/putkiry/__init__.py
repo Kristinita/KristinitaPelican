@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-02-26 20:15:59
-# @Last Modified time: 2019-06-16 15:23:16
+# @Last Modified time: 2020-09-28 20:19:37
 """Initialize Pelican plugin.
 
-__init__.py required:
+[REQUIRED] “__init__.py” for Pelican plugins:
 https://tamarisk.it/pelican-carousel-plugin/
 """
 from .putkiry import *  # noqa

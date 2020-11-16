@@ -8,6 +8,13 @@
 # http://docs.getpelican.com/en/stable/settings.html#logging
 # import logging
 
+# [INFO] Use filesystem timestamp (mtime):
+# https://docs.getpelican.com/en/latest/settings.html#time-and-date
+# https://github.com/getpelican/pelican/commit/e6df35330205aa6bdbe56cd40e641fab4958af8c
+# [FIXME][ISSUE][PELICAN] It not solved the problem:
+# https://github.com/getpelican/pelican/issues/2497
+DEFAULT_DATE: "fs"
+
 # [INFO] Date format, that datetime HTML attribute will be correct:
 # https://www.w3schools.com/tags/att_time_datetime.asp
 # http://docs.getpelican.com/en/latest/settings.html?highlight=DEFAULT_DATE_FORMAT#time-and-date

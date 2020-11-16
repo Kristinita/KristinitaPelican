@@ -27,16 +27,13 @@ THEME_STATIC_DIR: theme
 # Static paths in theme
 THEME_STATIC_PATHS:
 - static
-# Plugin paths
-# [NOTE] Folder with third-party plugins must be first value.
-# “rename_pelican_plugins_folder.py” get value from it.
+
+# [INFO] Plugin paths
 PLUGIN_PATHS:
 # [INFO] Third-party plugins
 - pelican-plugins
 # [INFO] Folder with own plugins
 - personal-plugins
-# [INFO] Folder for third-party plugins, that I fix, but plugins authors not make a changes:
-- third-party-plugins
 # Cache path
 CACHE_PATH: pelican_cache
 # Path of Pelican settings
@@ -49,14 +46,23 @@ CONFIG_PATH: pelican-config
 # Custom personal settings, change it
 AUTHOR: Саша Черных
 SITENAME: Поиск Кристиниты
-TIMEZONE: Europe/Moscow
-DEFAULT_LANG: en
+# [INFO] Russian by default, because most of my articles in Russian, not English
+DEFAULT_LANG: ru
 # Site URL. Absolute path for publishing.
 SITEURL: &siteurl https://kristinita.netlify.app
 # “If you have already explicitly defined SITEURL (see above)
 # and want to use the same domain for your feeds, you can just set:”
 # https://docs.getpelican.com/en/latest/settings.html#feed-settings
 FEED_DOMAIN: *siteurl
+# [REQUIRED] “If no timezone is defined, UTC is assumed.
+# This means that the generated Atom and RSS feeds will contain
+# incorrect date information if your locale is not UTC.”:
+# https://docs.getpelican.com/en/latest/settings.html#TIMEZONE
+# [INFO] Timezon list:
+# https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# [INFO] Use “TZ database name” for value of this option:
+# https://github.com/search?q=TIMEZONE+filename%3Apelicanconf.py
+TIMEZONE: 'Europe/Moscow'
 # [NOTE] Don't set “PAGE_PATHS = ['']”! Look at:
 # https://github.com/getpelican/pelican/issues/2123
 PAGE_PATHS:

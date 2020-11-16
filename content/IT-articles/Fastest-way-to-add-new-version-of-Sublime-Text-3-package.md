@@ -2,17 +2,19 @@ Title: Fastest way to add new version of your Sublime Text package
 Version: 0.3.0
 Author: Sasha Chernykh
 Date: 2018-01-23 10:43:14
-Modified: 2019-08-02 19:06:59
+Modified: 2020-09-24 13:04:22
 Lang: en
-Summary: Tutorial, how you can make release and changelog, use only one command <br><br> ![Package Control messages](https://i.imgur.com/J5AuHmX.png) <br><br> ![*CHANGELOG.md* and *messages.json*](https://i.imgur.com/12fFJsX.png) <br><br> ![*messages/&lt;version&gt;.txt* and *package.json*](https://i.imgur.com/kkKjiv5.png) <br><br> ![Releases page](https://i.imgur.com/FwPHBZS.png)
+Summary: Tutorial, how you can make release and changelog, use only one command
+	![Package Control messages](https://i.imgur.com/J5AuHmX.png)
+	![*CHANGELOG.md* and *messages.json*](https://i.imgur.com/12fFJsX.png)
+	![*messages/&lt;version&gt;.txt* and *package.json*](https://i.imgur.com/kkKjiv5.png)
+	![Releases page](https://i.imgur.com/FwPHBZS.png)
 Pagetitle: Fastest way to add new version of your Sublime Text package
 Pagecolors: it-articles
 Asideimage: SashaGreenSweater
 Iconleftorright: left
 Tags: it-articles, sublime-text, release
 Noco: 1vWK5
-Tooltipster: true
-Clipboardjs: true
 Og_image: https://i.imgur.com/12fFJsX.png
 Schemaorgtype: HowTo
 
@@ -111,7 +113,7 @@ Tutorial of this article must be support:
 <a id="Limitations"></a>
 # Limitations
 
-1. Your must host your package to GitHub. If your package on BitBucket, GitLab or another hosting, you can't make a release via [release-it](https://github.com/webpro/release-it).
+1. Your must host your package to GitHub. If your package on BitBucket, GitLab or another hosting, you can’t make a release via [release-it](https://github.com/webpro/release-it).
 1. Your commits must be must be compatible with [Conventional Commits](https://conventionalcommits.org/). [List of supported scopes](https://conventionalcommits.org/). I recommend use [commitizen](https://www.npmjs.com/package/commitizen).
 
 <a id="Installation"></a>
@@ -290,7 +292,7 @@ If you want to know, how files and commands works, please, read this section.
 release-it -n -V
 ```
 
-+ *-n* — [non-interactive mode](https://www.npmjs.com/package/release-it#-interactive-vs-non-interactive-mode). That you don't need input values each time manually.
++ *-n* — [non-interactive mode](https://www.npmjs.com/package/release-it#-interactive-vs-non-interactive-mode). That you don’t need input values each time manually.
 + *-V* — verbose. You can disable this command-line argument, but if you will get a bug, this argument may help you.
 
 <a id="release-itjson-1"></a>
@@ -318,7 +320,7 @@ release-it -n -V
 + *changelogCommand* — command, that generate changelog to `https://github.com/<your username>/<your repository>/releases`. Command must stdout to console.
 + `#!json "release": true,` — [post changelog](https://www.npmjs.com/package/release-it#%EF%B8%8F-configuration) to `https://github.com/<your username>/<your repository>/releases`.
 + *TOKEN_GITHUB_FOR_RELEASE_IT* — your [*TOKEN_GITHUB_FOR_RELEASE_IT* environment variable](#Github-token),
-+ `#!json "npm": {"publish": false},` — don't publish release to [npm](https://www.npmjs.com/). We are writing Sublime Text package, not npm modules, so needs this parameter.
++ `#!json "npm": {"publish": false},` — don’t publish release to [npm](https://www.npmjs.com/). We are writing Sublime Text package, not npm modules, so needs this parameter.
 + `#!json "safeBump": false,` — that correct version in `https://github.com/<your username>/<your repository>/releases`; see [issue](https://github.com/webpro/release-it/issues/218) for details.
 + `#!json "addUntrackedFiles": true,` — add [untracked file](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository) *messages/&lt;version&gt;.txt* [to release commit](https://github.com/webpro/release-it/issues/233).
 + `#!json "tagName": "st3-%s"` — [correct tag name](https://github.com/wbond/package_control/issues/1217#issuecomment-280041797) for Package Control. Tags for Sublime Text 3 must be in *st3-&lt;your version&gt;* format, for example — *st3-4.14.7*.
@@ -326,7 +328,7 @@ release-it -n -V
 <a id="Problems-and-non-fixed-bugs"></a>
 # Problems and non-fixed bugs
 
-1. [You can't use](https://github.com/lob/generate-changelog/issues/37) [cz-emoji](https://github.com/ngryman/cz-emoji) for commit generation. Changelog will blank.
+1. [You can’t use](https://github.com/lob/generate-changelog/issues/37) [cz-emoji](https://github.com/ngryman/cz-emoji) for commit generation. Changelog will blank.
 1. release-it [can works incorrect](https://github.com/webpro/release-it/issues/218) in *--dry-run* mode.
 1. [You can have bugs](https://github.com/webpro/release-it/issues/213), if you want to use *\${changelog}* release-it variable.
 

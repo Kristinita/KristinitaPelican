@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2019-03-15 20:03:48
+# @Last Modified time: 2020-09-24 14:14:47
 """Pelican configuration file.
 
 For publishing. pelicanconf.py — for development.
@@ -21,6 +21,7 @@ sys.path.append(".")
 from pelican_settings_loader import PRODUCTION_SETTINGS  # noqa: E402
 from pelican_settings_loader import kira_load_settings  # noqa: E402
 from pelicanconf import CURRENTYEAR  # noqa: F401
+# from pelicanconf import FILENAME_METADATA  # noqa: F401
 
 # pylint: enable=wrong-import-position, unused-import
 

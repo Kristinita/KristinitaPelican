@@ -1,11 +1,23 @@
 #############
 # stylelint #
 #############
-# Configuration:
+# [INFO] CSS checker:
+# https://stylelint.io/
+# [INFO] Configuration:
 # https://stylelint.io/user-guide/configuration
-# Recommended configuration:
+# [INFO] Recommended configuration:
 # https://www.npmjs.com/package/stylelint-config-recommended
 extends: stylelint-config-recommended
+
+
+###################################
+# no-unsupported-browser-features #
+###################################
+# [INFO] Check features for browsers that supported in “browserslist” file:
+# https://www.npmjs.com/package/stylelint-no-unsupported-browser-features
+plugins:
+- stylelint-no-unsupported-browser-features
+
 rules:
   # [INFO] Rule description:
   # https://stylelint.io/user-guide/rules/no-descending-specificity
@@ -15,3 +27,7 @@ rules:
   # [INFO] Use “null”, not “false” for disabling rule:
   # https://stylelint.io/user-guide/configuration#rules
   no-descending-specificity: null
+
+  # [REQUIRED] “plugin/plugin_name: true”
+  # https://www.npmjs.com/package/stylelint-no-unsupported-browser-features#recommendations
+  plugin/no-unsupported-browser-features: true

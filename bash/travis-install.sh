@@ -29,6 +29,7 @@
 # https://stackoverflow.com/a/21133609/5951529
 
 
+# [DONE]
 # [FIXME] Temporary downgrade pipenv, because locking bug in the newest versions:
 # https://github.com/pypa/pipenv/issues/3391
 
@@ -56,7 +57,7 @@
 # [NOTE] You need specific DotNet and Ubuntu version;
 # "https://packages.microsoft.com/config/ubuntu/packages-microsoft-prod.deb" and
 # "sudo apt-get install dotnet-sdk" will not works
-parallel ::: 'pip install --upgrade pip && pip install pipenv==11.10.2 && pipenv install --dev && pipenv run peru sync' \
+parallel ::: 'pip install --upgrade pip && pip install pipenv && pipenv install --dev && pipenv run peru sync' \
 	'npm install --global npm && npm install -g grunt-cli && npm install' \
 	'git clone https://github.com/htacg/tidy-html5.git && cd tidy-html5 && cd build/cmake && cmake ../.. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIB:BOOL=OFF && make && sudo make install' \
 	'gem install travis' \

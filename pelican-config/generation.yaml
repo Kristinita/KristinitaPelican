@@ -3,6 +3,11 @@
 ##############
 # Pelican articles and pages generation settings
 
+# [INFO] For new line in metadata fields use 4 spaces or tab;
+# I use tab instead of spaces, it worked for me:
+# https://github.com/getpelican/pelican/issues/2583
+# https://python-markdown.github.io/extensions/meta_data/#syntax
+
 # [INFO] Do not touch in generation process
 OUTPUT_RETENTION:
 # [NOTE] "Quotes" not required

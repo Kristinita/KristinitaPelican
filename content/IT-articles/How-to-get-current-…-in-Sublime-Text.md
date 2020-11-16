@@ -2,17 +2,16 @@ Title: How to get current … in Sublime Text
 Version: 0.2.0
 Author: Sasha Chernykh
 Date: 2018-04-05 7:30:14
-Modified: 2019-06-14 21:25:18
+Modified: 2020-09-24 13:12:11
 Lang: en
-Summary: Tutorial, how to get some variable parameters for your Sublime Text <br><br> ![Color scheme and theme](https://i.imgur.com/nwNgLkR.png)
+Summary: Tutorial, how to get some variable parameters for your Sublime Text
+	![Color scheme and theme](https://i.imgur.com/nwNgLkR.png)
 Pagetitle: How to get current … in Sublime Text
 Pagecolors: it-articles
 Iconleftorright: right
 Asideimage: SashaGreenSweater
 Tags: sublime-text
 Noco: 1vWK5
-Tooltipster: true
-Clipboardjs: true
 Og_image: https://i.imgur.com/nwNgLkR.png
 Schemaorgtype: HowTo
 
@@ -81,7 +80,7 @@ This article is relevant for April 2018. In the future, the data in this article
 <a id="Sublime-Text-console"></a>
 # Sublime Text console
 
-+ [“Sublime Text is Programmable”](http://docs.sublimetext.info/en/latest/basic_concepts.html#sublime-text-is-programmable)
++ [“Sublime Text is Programmable”](https://sublime-text-unofficial-documentation.readthedocs.io/en/latest/basic_concepts.html#sublime-text-is-programmable)
 + [“What is the purpose of Console in Sublime Text editor?”](https://softwareengineering.stackexchange.com/q/164225/264224)
 
 <a id="Console-actions"></a>
@@ -114,9 +113,9 @@ You should get  console output, **example**:
 <a id="What-is-it"></a>
 ### What is it?
 
-[Packages directory](http://docs.sublimetext.info/en/sublime-text-3/basic_concepts.html#the-packages-directory) — *Data/Packages* — path, where stored:
+[Packages directory](https://sublime-text-unofficial-documentation.readthedocs.io/en/latest/basic_concepts.html#the-packages-directory) — *Data/Packages* — path, where stored:
 
-1. [“user packages” except “installed packages”](http://docs.sublimetext.info/en/latest/extensibility/packages.html#types-of-packages) in Sublime Text terminology
+1. [“user packages” except “installed packages”](https://sublime-text-unofficial-documentation.readthedocs.io/en/latest/extensibility/packages.html#types-of-packages) in Sublime Text terminology
 1. *User* folder, where stored [user settings](https://www.sublimetext.com/docs/3/settings.html)
 
 <a id="What-should-you-do"></a>
@@ -132,7 +131,7 @@ sublime.packages_path()
 ```
 
 !!! note
-	That get directory of [“installed packages”](http://docs.sublimetext.info/en/latest/extensibility/packages.html#types-of-packages), use this method:
+	That get directory of [“installed packages”](https://sublime-text-unofficial-documentation.readthedocs.io/en/latest/extensibility/packages.html#types-of-packages), use this method:
 
 	```python
 	sublime.installed_packages_path()
@@ -155,7 +154,7 @@ I'm not recommend this, arguments:
 
 1. it less simple
 1. in new versions of Sublime Text and/or operating systems paths may be change
-1. it [doesn't take](http://docs.sublimetext.info/en/sublime-text-3/basic_concepts.html#the-data-directory) portable Sublime Text on Windows
+1. it [doesn’t take](https://sublime-text-unofficial-documentation.readthedocs.io/en/latest/extensibility/packages.html#types-of-packages) portable Sublime Text on Windows
 
 <a id="Syntax"></a>
 ## Syntax
@@ -233,7 +232,7 @@ view.settings().get('color_scheme')
 ```
 
 !!! hint
-	You can get your another [settings](http://docs.sublimetext.info/en/latest/customization/settings.html), use `#!python view.settings().get()`. **Example**: that get your current font face, you need `#!python view.settings().get('font_face')`.
+	You can get your another [settings](https://sublime-text-unofficial-documentation.readthedocs.io/en/latest/customization/settings.html), use `#!python view.settings().get()`. **Example**: that get your current font face, you need `#!python view.settings().get('font_face')`.
 
 <a id="Scope"></a>
 ## Scope

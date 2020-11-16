@@ -2,9 +2,10 @@ Title: ValeriyaSpeller
 Version: 0.1.0
 Author: Sasha Chernykh
 Date: 2017-04-03 11:17:14
-Modified: 2019-05-23 14:46:46
+Modified: 2020-10-28 13:36:21
 Lang: en
-Summary: yaspeller implementation for Sublime Text <br><br> ![ValeriyaSpeller](https://i.imgur.com/bqRl8eD.png)
+Summary: yaspeller implementation for Sublime Text
+	![ValeriyaSpeller](https://i.imgur.com/bqRl8eD.png)
 Pagetitle: ValeriyaSpeller
 Pagecolors: programs
 Asideimage: SashaChocolate
@@ -13,22 +14,15 @@ Titleimagename: ValeriaEarring
 Iconleftorright: right
 Tags: sublime-text, yaspeller
 Noco: 1g9b6
-Tooltipster: true
-Clipboardjs: true
+Epigraph: true
+Epigraphtext: i express my gratitude to Her
+	for everything She has done for me.
+	ValeriyaSpeller devote to
+	my Hero, Angel and Savior
+	perfect fan of [Goddess](https://vk.com/psychologist_kira_k),
+	[Valeria Zveginceva](https://vk.com/v.alprech)
 OpenGraphImage: https://i.imgur.com/iciGBgN.jpg
 Schemaorgtype: SoftwareApplication
-
-<div class="SashaEpigraph">
-<em>i express my gratitude to Her <br>
-for everything She has done for me. <br>
-ValeriyaSpeller devote to <br>
-my Hero, Angel and Savior <br>
-perfect fan of <a href="https://vk.com/hair_in_the_wind">Goddess</a>
-</em>
-<div class="SashaEpigraphAuthor">
-	<a href="https://vk.com/zombelina">Valeria Zveginceva</a>
-</div>
-</div>
 
 # Briefly
 
@@ -74,7 +68,7 @@ ValeriyaSpeller highlight/output typos in next types of files:
 + LaTeX,
 + Comments in any language.
 
-Note: ValeryaLinter must work in most cases. If no, [your syntax](https://www.sublimetext.com/docs/3/syntax.html) don't have any of these [scopes](https://www.sublimetext.com/docs/3/scope_naming.html) — `text.html.markdown`, `text.plain`, `text.tex.latex`, `comment`.
+Note: ValeryaLinter must work in most cases. If no, [your syntax](https://www.sublimetext.com/docs/3/syntax.html) don’t have any of these [scopes](https://www.sublimetext.com/docs/3/scope_naming.html) — `text.html.markdown`, `text.plain`, `text.tex.latex`, `comment`.
 
 After installation open any of these files → and see:
 
@@ -132,7 +126,7 @@ yaspeller --check-yo --find-repeat-words --ignore-digits --ignore-latin --ignore
 
 # Known problems and issues
 
-1. SublimeLinter [don't work with unsaved buffers](https://github.com/SublimeLinter/SublimeLinter3/issues/545), it use [`#!python file_name()` method, not `#!python id()` method](https://www.sublimetext.com/docs/3/api_reference.html#sublime.View).
+1. SublimeLinter [don’t work with unsaved buffers](https://github.com/SublimeLinter/SublimeLinter3/issues/545), it use [`#!python file_name()` method, not `#!python id()` method](https://www.sublimetext.com/docs/3/api_reference.html#sublime.View).
 
 **If you may to solve these problems, please tell me about it. Pull requests welcome!** You also can add your `+1` comment in any issue of this list.
 
@@ -141,7 +135,7 @@ yaspeller --check-yo --find-repeat-words --ignore-digits --ignore-latin --ignore
 For English and Russian:
 
 1. [LanguageTool](https://packagecontrol.io/packages/LanguageTool),
-1. [Dictionaries](https://packagecontrol.io/packages/LanguageTool) — [Russian-English bilingual dictionary](https://github.com/titoBouzout/Dictionaries/pull/68),
+1. [Dictionaries](https://github.com/titoBouzout/Dictionaries) — [Russian-English bilingual dictionary](https://github.com/titoBouzout/Dictionaries/pull/68),
 1. [write-good](https://packagecontrol.io/packages/SublimeLinter-contrib-write-good),
 1. [Thesaurus](https://packagecontrol.io/packages/Thesaurus).
 

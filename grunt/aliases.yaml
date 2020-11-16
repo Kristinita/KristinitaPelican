@@ -46,6 +46,7 @@ publish:
 - 'concurrent:tarp11'
 - 'concurrent:tarp12'
 - 'concurrent:tarp13'
+- 'concurrent:tarp14'
 
 # [INFO] Publish without updating
 onlypublish:
@@ -62,6 +63,7 @@ onlypublish:
 - 'concurrent:tarp11'
 - 'concurrent:tarp12'
 - 'concurrent:tarp13'
+- 'concurrent:tarp14'
 
 # [INFO] Add, commit and push to GitHub
 git:
@@ -87,6 +89,7 @@ validate:
 validatedev:
 - 'concurrent:tard1'
 - 'concurrent:tard2'
+- 'concurrent:tard3'
 
 # [INFO] Continuous integration, not local
 remote:

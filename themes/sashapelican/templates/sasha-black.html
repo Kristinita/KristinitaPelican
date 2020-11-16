@@ -17,6 +17,7 @@
 	<meta property="og:image" content="{{SITEURL}}/images/logo/SashaBlackLogo.jpg" />
 	<meta property="og:description" content="Sasha_Black — сервис проверки сайта на возможно вредоносное содержимое, наличие в вирусных и спам-базах, репутации на основе пользовательских оценок" />
 	<meta property="og:site_name" content="{{SITENAME}}" />
+	<base target="_blank">
 	{# [INFO] JSON-LD for Web Applications:
 	https://www.darrenlester.com/blog/json-ld-structured-data-for-web-applications
 	[WARNING] Google required “aggregateRating” and “offers” keys:
@@ -137,14 +138,7 @@
 					1. Введите URL заглавной страницы. Неважно, в каком виде: kristinita.netlify.app , https://kristinita.netlify.app , kristinita.netlify.app/ или www.kristinita.netlify.app .
 					<br/>
 					2. Нажимайте на кнопки, и по ссылкам всё должно быть понятно. Если нет, читайте
-					{# [LEARN][HTML] Use “rel="noopener"” for “target="_blank"”:
-					https://mathiasbynens.github.io/rel-noopener/
-					Htmllint require it:
-					https://github.com/htmllint/htmllint/issues/232
-					[WARNING] Edge not support it:
-					https://caniuse.com/#search=noopener
-					https://github.com/MicrosoftEdge/Status/issues/450 #}
-					<a href="{{SITEURL}}/Sasha-Black/Sasha-Black-description" target="_blank" rel="noopener" class="SashaReadHelp" title="Описание Sasha Black">
+					<a href="{{SITEURL}}/Sasha-Black/Sasha-Black-description" class="SashaReadHelp" title="Описание Sasha Black">
 						справку</a>.
 				</span>
 		</div>
