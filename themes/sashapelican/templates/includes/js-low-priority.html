@@ -42,7 +42,7 @@ https://stackoverflow.com/a/63869810/5951529 #}
 	deferscript('https://static.addtoany.com/menu/page.js', 'addtoany', 7000);
 </script>
 
-{%- if kira_object.lang == 'ru' -%}
+{% if kira_object.lang == 'ru' %}
 	<script>
 		deferscript('{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/typo-reporter/typo-reporter-ru{{MIN}}.js', 'typo-reporter-local-ru', 8000);
 	</script>
@@ -50,7 +50,7 @@ https://stackoverflow.com/a/63869810/5951529 #}
 	<script>
 		deferscript('{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/typo-reporter/typo-reporter-en{{MIN}}.js', 'typo-reporter-local-en', 8000);
 	</script>
-{%- endif -%}
+{% endif %}
 
 
 {#
@@ -115,12 +115,12 @@ https://caniuse.com/#search=details
 
 [INFO] Add support for “details” and “summary” tags for old browsers:
 http://ru.stackoverflow.com/a/498984/199934
-{% block base_detailspolyfill -%}
-	{%- if kira_object.detailspolyfill == 'true' -%}
+{% block base_detailspolyfill %}
+	{% if kira_object.detailspolyfill == 'true' %}
 		<script src="{{SITEURL}}/js/Details-Polyfill/details1{{MIN}}.js" defer></script>
 		<script src="{{SITEURL}}/js/Details-Polyfill/details2{{MIN}}.js" defer></script>
-	{%- endif -%}
-{%- endblock %} #}
+	{% endif %}
+{% endblock %} #}
 
 
 {# [INFO] Mailerlite — subscribe to categories/tags by RSS:

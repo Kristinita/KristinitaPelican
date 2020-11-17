@@ -207,6 +207,6 @@ but i don’t rule out using this in the future
 
 [REQUIRED] “Customjs: true” and “Customjs1: <path to script>” in article metadata
 
-{%- if kira_object.customjs -%}
+{% if kira_object.customjs %}
 	<script src="{{SITEURL}}/js/personal/{{kira_object.customjs1}}{{MIN}}.js" defer></script>
-{%- endif -%} #}
+{% endif %} #}

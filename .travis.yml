@@ -170,12 +170,16 @@ before_install:
 # https://pipenv.pypa.io/en/latest/advanced/#pipenv.environments.PIPENV_IGNORE_VIRTUALENVS
 - export PIPENV_IGNORE_VIRTUALENVS=1
 
+# [FIXME] Traceback if skip-lock:
+# https://github.com/pypa/pipenv/issues/4141
+# https://travis-ci.com/github/Kristinita/KristinitaPelican/jobs/440616814#L272-L305
+# https://ci.appveyor.com/project/Kristinita/kristinitapelican/builds/36332074/job/p7amggsx8flrw7p7#L168
 # [INFO] Disable lock feature in the Pipenv:
 # https://pipenv.pypa.io/en/latest/cli/#envvar-PIPENV_SKIP_LOCK
 # https://github.com/pypa/pipenv/issues/2200
 # 1. It the extra feature
 # 2. And too slow
-- export PIPENV_SKIP_LOCK=1
+# - export PIPENV_SKIP_LOCK=1
 
 # [INFO] Remove .NET Core SDK telemetry:
 # https://docs.microsoft.com/en-us/dotnet/core/tools/telemetry#disclosure

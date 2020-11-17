@@ -41,7 +41,7 @@ init:
 # [LINK] “.travis.yml”:
 - SETX PIPENV_IGNORE_VIRTUALENVS 1
 - SETX PIPENV_VENV_IN_PROJECT 1
-- SETX PIPENV_SKIP_LOCK 1
+# - SETX PIPENV_SKIP_LOCK 1
 
 # [NOTE] Needs AppVeyor console set, see:
 # https://stackoverflow.com/a/48093971/5951529

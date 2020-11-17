@@ -66,7 +66,7 @@ but malicious bots — no.
 https://www.woorank.com/en/blog/robots-txt-a-beginners-guide
 2. “meta” tag solution is more automated
 #}
-{%- if kira_object.status == 'draft' or kira_object.noindex -%}
+{% if kira_object.status == 'draft' or kira_object.noindex %}
 	{# [INFO] No index page, but index third-party links #}
 	<meta name="robots" content="noindex, follow">
 {% endif %}

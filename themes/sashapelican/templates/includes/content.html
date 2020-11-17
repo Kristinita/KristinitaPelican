@@ -7,9 +7,9 @@
 https://github.com/getpelican/pelican-plugins/tree/master/photos
 [NOTE] Declined, because now I don’t use this plugin at the time:
 
-{% block galleryblock -%}
+{% block galleryblock %}
 	{% if kira_object.photo_image %}
 		<img src="{{ SITEURL }}/{{ kira_object.photo_image[1] }}" />
 	{% endif %}
-{%- endblock %}
+{% endblock %}
 #}

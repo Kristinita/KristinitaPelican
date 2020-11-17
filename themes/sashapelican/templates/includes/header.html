@@ -36,7 +36,7 @@
 <div>
 
 	{# [INFO] Epigraph #}
-	{%- if kira_object.epigraph -%}
+	{% if kira_object.epigraph %}
 	<div class="SashaEpigraph">
 		<em>{{ kira_object.epigraphtext }}</em>
 	</div>
@@ -46,7 +46,7 @@
 
 	[LEARN][JINJA] “if kira_object.titleimage” = “if kira_object.titleimage == 'true'”
 	#}
-	{%- if kira_object.titleimage -%}
+	{% if kira_object.titleimage %}
 
 		{# [SOON] Safari 14 supports webp;
 		https://caniuse.com/?search=webp

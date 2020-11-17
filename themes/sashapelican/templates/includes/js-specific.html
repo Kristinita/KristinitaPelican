@@ -40,13 +40,13 @@ https://github.com/kellyk/visualize
 [FIXME] Replace to Mermaid on other tool, that generate charts in build process,
 not during page loading
 #}
-{%- if "<li class=\"visualize\"" in kira_object.content -%}
+{% if "<li class=\"visualize\"" in kira_object.content %}
 	<script>
 		deferscript('{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize{{MIN}}.js', 'visualize-local', 400);
 		deferscript('{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-bar-chart{{MIN}}.js', 'visualize-bar-chart', 700);
 		deferscript('{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-pie-chart{{MIN}}.js', 'visualize-pie-chart', 700);
 	</script>
-{%- endif -%}
+{% endif %}
 
 
 {# [INFO] RunKit — embed Node.js on any website:
@@ -54,12 +54,12 @@ https://runkit.com/docs/embed
 
 [FIXME] Update RunKit to latest versions.
 #}
-{%- if "<div id=\"SashaRunkit\"></div>" in kira_object.content -%}
+{% if "<div id=\"SashaRunkit\"></div>" in kira_object.content %}
 	<script>
 		deferscript('https://embed.runkit.com', 'runkit', 400);
 		deferscript('{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/RunKit/runkit{{MIN}}.js', 'runkit-local', 700);
 	</script>
-{%- endif -%}
+{% endif %}
 
 
 {#
@@ -72,12 +72,12 @@ https://facelessuser.github.io/pymdown-extensions/extensions/progressbar/
 https://stackoverflow.com/a/42087938/5951529
 https://stackoverflow.com/a/54350773/5951529
 
-{%- if kira_object.content is match('^\\[=\\d+% .*\\]$') -%}
+{% if kira_object.content is match('^\\[=\\d+% .*\\]$') %}
 	<link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/css/script-colors/ProgressBar/progressbar{{MIN}}.css">
-{%- endif -%}
+{% endif %}
 #}
-{%- if "<div class=\"progress-bar\"" in kira_object.content -%}
+{% if "<div class=\"progress-bar\"" in kira_object.content %}
 	<script>
 		deferstyle('{{SITEURL}}/{{THEME_STATIC_DIR}}/css/script-colors/ProgressBar/progressbar{{MIN}}.css', 'progressbar', 400);
 	</script>
-{%- endif -%}
+{% endif %}

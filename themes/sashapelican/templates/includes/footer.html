@@ -25,7 +25,7 @@ https://github.com/kura/kura.io/blob/e8f2c6801a0013201d734aa1ac48d9ac92a40b96/gh
 [INFO] Paths must be relative to “base.html”, not “footer.html”:
 “{% include 'includes/footer-en.html' %}”, not “{% include 'footer-en.html' %}”
 #}
-{%- if kira_object.lang == 'ru' -%}
+{% if kira_object.lang == 'ru' %}
 	{% include 'includes/footer-ru.html' %}
 {% else %}
 	{% include 'includes/footer-en.html' %}

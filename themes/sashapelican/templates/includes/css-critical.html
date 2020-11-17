@@ -39,6 +39,6 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1222633
 <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{{ kira_object.pagecolors }}{{MIN}}.css">
 
 {# [INFO] Custom CSS #}
-{%- if kira_object.customcss -%}
+{% if kira_object.customcss %}
 	<link rel="stylesheet" href="{{SITEURL}}/css/personal/{{kira_object.customcss1}}{{MIN}}.css">
-{%- endif -%}
+{% endif %}

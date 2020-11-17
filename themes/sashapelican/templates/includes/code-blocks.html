@@ -1,7 +1,7 @@
 {#
 [INFO] Scripts and styles, if code blocks exists on the page
 #}
-{%- if "<pre>" in kira_object.content -%}
+{% if "<pre>" in kira_object.content %}
 
 	{# [DECLINED]
 	Tooltipster + JQuery = 40 kb; it’s too big for non-critical dependency:
@@ -47,4 +47,4 @@
 		deferscript('{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/Clipboard-js/Clipboard{{MIN}}.js', 'clipboard-js-local', 700);
 		deferstyle('{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/components/code-blocks.css', 'code-block-css', 700);
 	</script>
-{%- endif -%}
+{% endif %}

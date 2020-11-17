@@ -83,13 +83,13 @@
 		[LEARN][JINJA] If minus sign, blank lines will removed:
 		http://jinja.pocoo.org/docs/latest/templates/#whitespace-control
 		#}
-		{% macro kira_site_type(type) -%}
+		{% macro kira_site_type(type) %}
 		    <span class="SashaCategory">{{type}}:</span>
-		{%- endmacro %}
+		{% endmacro %}
 		{{ kira_site_type('Онлайн-сканеры') }}
-		{% macro kira_checker(url, color, sitename) -%}
+		{% macro kira_checker(url, color, sitename) %}
 			<a onclick="KiraFunction(document.all.sitename.value, '{{url}}');" class="SashaButtonCategory {{color}}">&nbsp;{{sitename}}&nbsp;</a>
-		{%- endmacro %}
+		{% endmacro %}
 		{% set kira_online_scaners = [
 		    ('http://quttera.com/sitescan/', 'SashaButtonLightSkyBlue', 'Quttera'),
 		    ('http://sitecheck.sucuri.net/results/', 'SashaButtonLimeGreen', 'Sucuri'),
