@@ -12,8 +12,11 @@
 # [INFO] I use Peru for downloading Pelican plugins:
 # https://iranzo.github.io/blog/2018/09/25/peru/
 
-# [NOTE] Duplicate values with “site_variables.yaml” file:
+# [NOTE] Duplicate values with "site_variables.yaml" file:
 # https://github.com/buildinspace/peru/issues/206
+
+# [WARNING] Use solely ASCII symbols in this file that use Peru in AppVeyor:
+# https://github.com/appveyor/ci/issues/2129#issuecomment-728945083
 
 
 # [LEARN][PERU] Directories where files will be uploaded
@@ -22,10 +25,10 @@ imports:
   just-table: *plugins_path
 
   # [INFO] Here I replaced original repository name
-  # “pelican-open_graph” to “open_graph”
+  # "pelican-open_graph" to "open_graph"
 
-  # [LEARN][YAML][NOTE] I can’t concatenate variable and string in YAML
-  # as “*plugins_path/open_graph”:
+  # [LEARN][YAML][NOTE] I can't concatenate variable and string in YAML
+  # as "*plugins_path/open_graph":
   # https://stackoverflow.com/a/5954748/5951529
   open-graph: pelican-plugins/open_graph
 
@@ -33,12 +36,12 @@ imports:
 git module pelican-plugins:
   url: https://github.com/getpelican/pelican-plugins
 
-  # [LEARN][PERU] Don’t download pelican-plugins submodules
+  # [LEARN][PERU] Don't download pelican-plugins submodules
   # [PURPOSE] This significantly reduces the time:
   # https://github.com/buildinspace/peru#module-types
   # https://github.com/buildinspace/peru/issues/204
-  # [NOTE] Don’t install submodules from “getpelican/pelican-plugins”.
-  # You can’t do it if “submodules: false”.
+  # [NOTE] Don't install submodules from "getpelican/pelican-plugins".
+  # You can"t do it if "submodules: false".
   # Install submodules for GitHub repositories directly
   submodules: false
 
@@ -51,7 +54,7 @@ git module pelican-plugins:
 
   # [INFO] sitemap migrated to Pelican Plugins organization and now can installed via pip:
   # https://github.com/pelican-plugins/sitemap
-  # [LEARN][PELICAN] It “namespace plugin” in the Pelican terminology:
+  # [LEARN][PELICAN] It "namespace plugin" in the Pelican terminology:
   # https://docs.getpelican.com/en/stable/plugins.html#how-to-use-plugins
   # - sitemap
 

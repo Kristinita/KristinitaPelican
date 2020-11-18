@@ -13,14 +13,14 @@ https://github.com/ryanwellsdotcom/jquery-responsive-tables/issues/2
 [FIXME] Bad tables quality:
 https://i.imgur.com/WLyEBkb.png
 
-[NOTE] Delay time is “700” and “1000”, not “400”/“700”,
-because sometimes “responsive-tables” can’t boot after cash
-and I get error in the console.
+[NOTE] I don’t use Defer.js here.
+jquery-responsive-tables required Cash, but it may be loaded after Cash:
+https://travis-ci.com/github/Kristinita/KristinitaPelican/jobs/441296127#L1735
+I don’t want use big values for Defer.js timeout, because it would be nice
+if jquery-responsive-tables will loaded as soon as possible.
 #}
 {% if "<table>" in kira_object.content %}
-	<script>
-		deferstyle('https://cdn.jsdelivr.net/npm/jquery-responsive-tables/css/responsive-tables.min.css', 'responsive-tables-css', 400);
-		deferscript('https://cdn.jsdelivr.net/npm/jquery-responsive-tables/js/jquery.responsive-tables.min.js', 'responsive-tables', 700);
-		deferscript('{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/jquery-responsive-tables/jquery-responsive-tables{{MIN}}.js', 'responsive-tables-local', 1000);
-	</script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-responsive-tables/css/responsive-tables.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/jquery-responsive-tables/js/jquery.responsive-tables.min.js" defer></script>
+	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/jquery-responsive-tables/jquery-responsive-tables{{MIN}}.js" defer></script>
 {% endif %}
