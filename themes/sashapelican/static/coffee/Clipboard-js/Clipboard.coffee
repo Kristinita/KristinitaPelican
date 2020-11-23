@@ -24,9 +24,18 @@ https://github.com/kazzkiq/balloon.css/issues/152
 ###
 
 
-###
+###*
 [INFO] Activate Clipboard.js for all elements with “.SashaButton” class:
 https://stackoverflow.com/a/33758435/5951529
+
+[LEARN][COFFEESCRIPT] JsDoc in CoffeeScript:
+https://stackoverflow.com/a/24348892/5951529
+
+[LEARN][CLOSURE] Any function with “new” keyword must have “@constructor” word:
+https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler#constructor
+https://stackoverflow.com/a/5301591/5951529
+
+@constructor
 
 [DEPRECATED] Now Clipboard.js works for me without it:
 [INFO] DOM initialization

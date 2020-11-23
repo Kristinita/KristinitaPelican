@@ -106,8 +106,11 @@ module.exports = (grunt) ->
 			###
 			[INFO] Fail task, if any redirect are encountered:
 			https://www.npmjs.com/package/check-pages#noredirects
+
+			[FIXME][ISSUE][MCVE] Strange redirected link bug:
+			https://ci.appveyor.com/project/Kristinita/kristinitapelican/builds/36374275/job/gm6q5v4lehbc5em3#L7504
 			###
-			noRedirects: true
+			noRedirects: false
 
 			###
 			[INFO] Check solely internal, not third-party links:
@@ -158,8 +161,11 @@ module.exports = (grunt) ->
 			###
 			[INFO] Brief overview instead of default verbose output:
 			https://www.npmjs.com/package/check-pages#terse
+
+			[INFO] “true”, because otherwise verbose output too long:
+			https://travis-ci.com/github/Kristinita/KristinitaPelican/jobs/442165258
 			###
-			terse: false
+			terse: true
 
 			###
 			[INFO] Maximum time in milliseconds (not seconds) a page request can take a finish downloading:

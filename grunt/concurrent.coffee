@@ -1,15 +1,15 @@
-######################
-## grunt-concurrent ##
-######################
+####################
+# grunt-concurrent #
+####################
 ###
 [ACTION] Run multiple tasks:
 https://www.npmjs.com/package/grunt-concurrent
 ###
 
 
-#################
-## grunt-newer ##
-#################
+###############
+# grunt-newer #
+###############
 ###
 [ACTION] Run task, if src files change:
 https://www.npmjs.com/package/grunt-newer
@@ -18,14 +18,27 @@ https://www.html5rocks.com/en/tutorials/tooling/supercharging-your-gruntfile/#to
 module.exports =
 
 	options:
-		# [NOTE] Useless option:
-		# https://www.npmjs.com/package/grunt-concurrent#logconcurrentoutput
-		# https://github.com/sindresorhus/grunt-concurrent/issues/43#issue-37014351
+		###
+		[INFO] This option is best used with tasks that
+		don’t exit like watch and nodemon to monitor the output of long-running concurrent tasks:
+		https://www.npmjs.com/package/grunt-concurrent#logconcurrentoutput
+		https://github.com/sindresorhus/grunt-concurrent/issues/43#issue-37014351
+		###
 		logConcurrentOutput: false
-		# Improve max concurrent tasks:
-		# https://stackoverflow.com/a/20963687/5951529
-		# https://www.npmjs.com/package/grunt-concurrent#limit
-		limit: 7
+
+		###
+		[INFO] Max number of concurrent tasks:
+		https://stackoverflow.com/a/20963687/5951529
+		https://www.npmjs.com/package/grunt-concurrent#limit
+
+		[INFO] Default value — twice the number of CPU cores with a minimum of 2
+		https://www.npmjs.com/package/grunt-concurrent#limit
+		https://stackoverflow.com/a/20963687/5951529
+		I use default value
+
+		limit: require('os').cpus().length
+		###
+
 
 	###
 	For development, “target build”.
@@ -54,6 +67,7 @@ module.exports =
 	tarb9: ['newer:jsbeautifier']
 	tarb10: ['notify:default']
 
+
 	###
 	For screenshots, “target screenshot”.
 
@@ -62,15 +76,18 @@ module.exports =
 	###
 	tarsc1: ['pageres']
 
+
 	###
 	For publishing, “target publish”.
 
 	[NOTE] Don't use “newer” for publishing, because output directory deleted →
 	all src files will newer.
 	###
-	#######################
-	## grunt-checkbranch ##
-	#######################
+
+
+	#####################
+	# grunt-checkbranch #
+	#####################
 	# Check, that you in right branch:
 	# https://www.npmjs.com/package/grunt-checkbranch
 	tarp1: ['checkbranch:master']
@@ -99,13 +116,15 @@ module.exports =
 			'purgecss']
 	tarp8: ['shell:tidymodify'
 			'postcss:build'
-			'uglify']
+			'closure-compiler']
 	tarp9: ['cssnano']
 	tarp10: ['cacheBust']
 	tarp11: ['critical']
-	tarp12: ['htmlmin']
+	tarp12: ['htmlmin'
+			'merge-source-maps']
 	tarp13: ['shell:eclintfix']
 	tarp14: ['notify:publish']
+
 
 	###
 	For updating dependencies, “target update”.
@@ -139,6 +158,7 @@ module.exports =
 	taru3: ['shell:pipenvcleanunused']
 	taru4: ['shell:pipenvupdatepipfilelock']
 
+
 	###
 	For validating sources, “target sources”.
 	###
@@ -146,6 +166,7 @@ module.exports =
 			'markdownlint'
 			'remark'
 			'shell:bashate']
+
 
 	###
 	For validating output, “target validate”.
@@ -188,6 +209,7 @@ module.exports =
 	tard3: ['pageres']
 	###
 	tard3: ['notify:validate']
+
 
 	###
 	For Continuous Integration tasks, “target remote”.
@@ -234,6 +256,7 @@ module.exports =
 	tart1: ['shell:commitlint']
 	tart2: ['notify:validate']
 
+
 	###
 	For validating tasks, that doesn't work in AppVeyor from behind AppVeyor bugs — “target not appveyor”:
 	[BUG] HTML Tidy doesn't modify files with Cyrillic names in AppVeyor →
@@ -251,6 +274,7 @@ module.exports =
 			'pylint'
 			]
 	tarna2: ['notify:validate']
+
 
 	###
 	For tasks after site deploy — “target after deploy”:

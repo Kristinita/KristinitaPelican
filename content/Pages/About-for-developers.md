@@ -2,7 +2,7 @@ Title: For developers
 Version: 0.0.4
 Author: Sasha Chernykh
 Date: 2018-03-27 7:55:14
-Modified: 2020-11-10 12:26:17
+Modified: 2020-11-22 10:43:41
 Lang: en
 Summary: Information for developers about Kristinita’s Search site
 Pagetitle: For developers
@@ -244,7 +244,7 @@ git clone --depth=1 --branch=master https://github.com/Kristinita/KristinitaPeli
 cd KristinitaPelican
 wait
 parallel ::: 'pip install --upgrade pip && pip install pipenv && pipenv install --dev' \
-				'npm install --global npm && npm install -g grunt-cli phantomjs-prebuilt && npm install'
+			'npm install --global npm && npm install -g grunt-cli phantomjs-prebuilt && npm install'
 ```
 
 **Except** [*pexpect.exceptions.TIMEOUT*](https://github.com/pypa/pipenv/issues/65):
