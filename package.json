@@ -93,7 +93,7 @@
         "load-grunt-config": "^3.0.1",
         "load-grunt-tasks": "^5.1.0",
         "merge-source-maps": "^0.6.0",
-        "postcss": "^8.1.8",
+        "postcss": "^8.1.9",
         "postcss-combine-duplicated-selectors": "^10.0.2",
         "poststylus": "^1.0.1",
         "remark-lint-write-good": "^1.2.0",

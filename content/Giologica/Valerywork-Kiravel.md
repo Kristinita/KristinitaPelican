@@ -1,6 +1,6 @@
 Title: Вэлериворк и Киравэл
 Date: 2017-02-13 19:15:15
-Modified: 2020-09-18 08:48:18
+Modified: 2020-11-23 12:20:58
 Author: Sasha Chernykh
 Lang: ru
 Summary: Понятия Вэлериворка и Киравэла
@@ -10,7 +10,7 @@ Asideimage: SashaBlueEyes
 Iconleftorright: right
 Tags: giologica
 Customcss: true
-Customcss1: giologica/valerywork-kiravel
+Customcss1: Giologica/valerywork-kiravel
 Noco: 159d5
 Og_image: https://i.imgur.com/5atSEHP.jpg
 Schemaorgtype: ScholarlyArticle

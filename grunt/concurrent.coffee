@@ -62,7 +62,7 @@ module.exports =
 			'newer:string-replace'
 			'newer:purgecss']
 	tarb6: ['shell:tidymodify']
-	tarb7: ['newer:postcss:build']
+	tarb7: ['newer:postcss']
 	tarb8: ['shell:eclintfix']
 	tarb9: ['newer:jsbeautifier']
 	tarb10: ['notify:default']
@@ -115,7 +115,6 @@ module.exports =
 			'imagemin'
 			'purgecss']
 	tarp8: ['shell:tidymodify'
-			'postcss:build'
 			'closure-compiler']
 	tarp9: ['cssnano']
 	tarp10: ['cacheBust']
@@ -174,7 +173,7 @@ module.exports =
 	tarv1: ['coffeelint:site'
 			'html-nu'
 			'path_validator'
-			'postcss:lint'
+			'postcss'
 			'shell:tidyvalidate'
 			'stylelint'
 			'stylint']
@@ -201,6 +200,7 @@ module.exports =
 	See “clean-console.coffee” for details.
 	###
 	tard1: ['clean-console']
+
 	tard2: ['checkPages']
 	###
 	[FIXME] pageres doesn’t work with grunt-critical:

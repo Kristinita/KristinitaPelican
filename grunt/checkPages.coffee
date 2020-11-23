@@ -110,7 +110,7 @@ module.exports = (grunt) ->
 			[FIXME][ISSUE][MCVE] Strange redirected link bug:
 			https://ci.appveyor.com/project/Kristinita/kristinitapelican/builds/36374275/job/gm6q5v4lehbc5em3#L7504
 			###
-			noRedirects: false
+			noRedirects: true
 
 			###
 			[INFO] Check solely internal, not third-party links:

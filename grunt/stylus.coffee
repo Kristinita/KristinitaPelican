@@ -1,6 +1,6 @@
-##########################
-## grunt-contrib-stylus ##
-##########################
+########################
+# grunt-contrib-stylus #
+########################
 ###
 [OVERVIEW] Compile Stylus to CSS:
 https://www.npmjs.com/package/grunt-contrib-stylus
@@ -26,15 +26,27 @@ postcss = ->
 		################
 		# AutoPrefixer #
 		################
-		# Automatically add browser prefixes:
+		# [OVERVIEW] Automatically add browser prefixes:
 		# https://www.npmjs.com/package/autoprefixer
 		# [BUG] AutoPrefixer add duplicates, if one property for multiple selectors:
 		# https://github.com/postcss/autoprefixer/issues/1196
 		'autoprefixer'
+
 		# [FIXME][SO] Build passed, if any warning; I need use PostCSS:
 		# https://github.com/seaneking/poststylus/issues/26
 		# doiuse
+
+		################################
+		# combine-duplicated-selectors #
+		################################
+		# Combine duplicated selectors in generated CSS:
+		# https://www.npmjs.com/package/postcss-combine-duplicated-selectors
+		# Stylelint doesn’t allow duplicated selectors:
+		# https://stylelint.io/user-guide/rules/no-duplicate-selectors
+		# [INFO] Stylus itself don’t combine correctly “.progress”, “.progress-bar”
+		'postcss-combine-duplicated-selectors'
 	]
+
 
 module.exports =
 	options:

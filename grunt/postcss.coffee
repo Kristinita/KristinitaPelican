@@ -1,39 +1,43 @@
-###################
-## grunt-postcss ##
-###################
+#################
+# grunt-postcss #
+#################
 ###
-PostCSS — CSS operations:
-https://www.npmjs.com/package/postcss
-Grunt adapter:
+[OVERVIEW] PostCSS — CSS operations:
+https://postcss.org/
+
+[INFO] Grunt adapter:
 https://www.npmjs.com/package/@lodder/grunt-postcss
+
+[INFO] Options:
+https://www.npmjs.com/package/@lodder/grunt-postcss#plugin-options
+
 [NOTE] Original repository is abandoned, use C-Lodder fork:
 https://github.com/nDmitry/grunt-postcss/issues/121
-[WARNING] PostCSS doesn’t support “<style>” HTML tag;
+
+[NOTE] PostCSS doesn’t support “<style>” HTML tag;
 Don’t include HTML files to “src”.
 ###
 module.exports =
 	options:
-		# [NOTE] Sourcemap already created by cssnano
+		###
+		[INFO] I use PostCSS for doiuse linting solely, because I have unexpected behavior for PostStylus:
+		https://github.com/seaneking/poststylus/issues/26
+
+		For another actions I use PostStylus;
+		I don’t need create source maps 2 times.
+
+		[NOTE] merge-source-maps doesn’t work if we create a source map
+		in a pipeline with PostStylus + PostCSS
+		###
 		map: false
-		# [INFO] Build failed, if any warning or error of PostCSS plugin:
-		# https://www.npmjs.com/package/grunt-postcss#optionsfailonerror
+
+		###
+		[INFO] Build failed, if any warning or error of PostCSS plugin:
+		https://www.npmjs.com/package/grunt-postcss#optionsfailonerror
+		###
 		failOnError: true
-	build:
-		options:
-			processors: [
-				################################
-				# combine-duplicated-selectors #
-				################################
-				# Combine duplicated selectors in generated CSS:
-				# https://www.npmjs.com/package/postcss-combine-duplicated-selectors
-				# Stylelint doesn't allow duplicated selectors:
-				# https://stylelint.io/user-guide/rules/no-duplicate-selectors
-				# [INFO] Stylus not combine correctly “.progress”, “.progress-bar”
-				require('postcss-combine-duplicated-selectors')
-			]
-		# [LEARN][GRUNT] Use “files” multiple times:
-		# https://stackoverflow.com/q/23436631/5951529
-		files: "<%= templates.paths.css %>"
+
+
 	lint:
 		options:
 			processors: [
@@ -52,4 +56,8 @@ module.exports =
 				# doiuse will show errors in minified files.
 				require('doiuse')([])
 			]
+		###
+		[LEARN][GRUNT] Use “files” multiple times:
+		https://stackoverflow.com/q/23436631/5951529
+		###
 		files: "<%= templates.paths.css %>"

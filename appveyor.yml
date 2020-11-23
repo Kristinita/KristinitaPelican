@@ -94,7 +94,12 @@ environment:
   # https://ci.appveyor.com/project/Kristinita/sashatravis/build/job/5oqxucp76bpsr51o
   # https://ci.appveyor.com/project/Kristinita/sashatravis/build/1.0.38/job/s52ko615e3fpxr9b
   GRUNT_BUILD:
-  GRUNT_TEST: http-server validatedev&& grunt validate remote
+
+  # [NOTE] For AppVeyor I use “clean-console”, not “validatedev”.
+  # “checkPages” is a task for Travis CI solely;
+  # for AppVeyor I get bugs, possibly, because HTML not fixed correctly:
+  # https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/o5cwx0ug2htufar8#L2488
+  GRUNT_TEST: http-server clean-console&& grunt validate remote
 
   # [INFO] API key required for LocalAppVeyor:
   # https://www.appveyor.com/docs/api/
