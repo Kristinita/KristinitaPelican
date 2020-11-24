@@ -29,9 +29,9 @@
 # https://stackoverflow.com/a/21133609/5951529
 
 
-# [DONE]
-# [FIXME] Temporary downgrade pipenv, because locking bug in the newest versions:
-# https://github.com/pypa/pipenv/issues/3391
+# [NOTE] Use "--upgrade" flag for install Pipenv,
+# as of November 2020 Travis CI has outdated Pipenv version:
+# https://github.com/pypa/pipenv/issues/4141#issuecomment-728808409
 
 
 # [NOTE] apt-get HTML Tidy version outdated, build HTML tidy on Ubuntu from sources:
@@ -57,7 +57,7 @@
 # [NOTE] You need specific DotNet and Ubuntu version;
 # "https://packages.microsoft.com/config/ubuntu/packages-microsoft-prod.deb" and
 # "sudo apt-get install dotnet-sdk" will not works
-parallel ::: 'pip install --upgrade pip && pip install pipenv && pipenv install --dev && pipenv run peru sync' \
+parallel ::: 'pip install --upgrade pip pipenv && pipenv install --dev && pipenv run peru sync' \
 	'npm install --global npm && npm install -g grunt-cli && npm install' \
 	'git clone https://github.com/htacg/tidy-html5.git && cd tidy-html5 && cd build/cmake && cmake ../.. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIB:BOOL=OFF && make && sudo make install' \
 	'gem install travis' \
