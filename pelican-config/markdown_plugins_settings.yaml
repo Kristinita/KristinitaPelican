@@ -241,9 +241,21 @@ MARKDOWN:
     mdx_downheader: {}
 
 
+    # [INFO] Embed YouTube videos:
+    # https://github.com/getpelican/pelican/issues/1099#issuecomment-25209351
+    # https://github.com/italomaia/mdx-video
+    # [NOTE] Disable, because obsolete attributes “allowfullscreen” and “frameborder”:
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#Attributes
+    # mdx_video:
+
+    # Embed videos/images from different popular sites:
+    # https://pyembed.github.io/usage/markdown/
+    pyembed.markdown: {}
+
+
     # [PURPOSE] Delete “<!---” comments
     # https://stackoverflow.com/a/18377286/5951529
-    # https://github.com/ryneeverett/python-markdown-comments
+    # https://pypi.org/project/python-markdown-comments/
 
     # [EXAMPLE] Code:
     # 1. Kira first
@@ -268,19 +280,7 @@ MARKDOWN:
     # <p>Kira second</p>
     # </li>
     # </ol>
-    mkdcomments: {}
-
-
-    # [INFO] Embed YouTube videos:
-    # https://github.com/getpelican/pelican/issues/1099#issuecomment-25209351
-    # https://github.com/italomaia/mdx-video
-    # [NOTE] Disable, because obsolete attributes “allowfullscreen” and “frameborder”:
-    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#Attributes
-    # mdx_video:
-
-    # Embed videos/images from different popular sites:
-    # https://pyembed.github.io/usage/markdown/
-    pyembed.markdown: {}
+    python_markdown_comments: {}
 
   # http://docs.getpelican.com/en/latest/settings.html#PATH
   output_format: html5

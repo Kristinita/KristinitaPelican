@@ -49,8 +49,10 @@
 # https://docs.travis-ci.com/user/gui-and-headless-browsers/#using-phantomjs
 
 
-# [INFO] Install .NET Core and LocalAppVeyor for Ubuntu:
-# https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/sdk-current
+# [INFO] Install the .NET SDK or the .NET Runtime on Ubuntu:
+# https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu
+# [INFO] Install for Ubuntu 20.10:
+# https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#2010-
 # [NOTE] Matrix key "dotnet" for C#, F# or Visual Basic projects.
 # If no, you need install .NET Core manually:
 # https://docs.travis-ci.com/user/languages/csharp/
@@ -61,4 +63,4 @@ parallel ::: 'pip install --upgrade pip pipenv && pipenv install --dev && pipenv
 	'npm install --global npm && npm install -g grunt-cli && npm install' \
 	'git clone https://github.com/htacg/tidy-html5.git && cd tidy-html5 && cd build/cmake && cmake ../.. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIB:BOOL=OFF && make && sudo make install' \
 	'gem install travis' \
-	'wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb && sudo apt-get update && sudo apt-get install dotnet-sdk-3.1 && dotnet tool install -g localappveyor'
+	'wget -q https://packages.microsoft.com/config/ubuntu/20.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb && sudo apt-get update && sudo apt-get install -y dotnet-sdk-5.0 && dotnet tool install -g localappveyor'

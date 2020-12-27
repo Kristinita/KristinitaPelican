@@ -19,4 +19,4 @@ markdown-downheader = {editable = true, git = "https://github.com/Kristinita/mdx
 mdx-customspanclass = {editable = true, git = "https://github.com/exaroth/mdx_custom_span_class.git"}
 pelican-sitemap = "*"
 markdown-link-attr-modifier = "*"
-python-markdown-comments = {editable = true, git = "https://github.com/ryneeverett/python-markdown-comments.git"}
+python-markdown-comments = "*"
