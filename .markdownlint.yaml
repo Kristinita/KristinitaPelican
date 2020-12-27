@@ -45,6 +45,9 @@ MD024: false
 # https://github.com/markdownlint/markdownlint/issues/196
 MD026:
   punctuation: ".,;:!"
+
+# [FIXME][ISSUE] This rule works incorrectly, if comments above list items
+MD032: false
 # Pelican features needs inline HTML support
 MD033: false
 # I use bare URL for Pelican article metadata variable “Og_image”.

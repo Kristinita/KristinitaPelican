@@ -38,6 +38,14 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1222633
 {# [INFO] Color scheme #}
 <link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/sections/{{ kira_object.pagecolors }}{{MIN}}.css">
 
+{# [INFO] Background for text on aside images for accessibility contrast ratio
+[FIXME][JINJA2] Shorter syntax for the line below #}
+{% if kira_object.asideimage == "NeliaSchool" or kira_object.asideimage == "NeliaLeaves" %}
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/bottom-images/NeliaFirebrick{{MIN}}.css">
+{% elif kira_object.asideimage == "SashaInflatedSponges" %}
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/bottom-images/KiraDimgray{{MIN}}.css">
+{% endif %}
+
 {# [INFO] Custom CSS #}
 {% if kira_object.customcss %}
 	<link rel="stylesheet" href="{{SITEURL}}/css/personal/{{kira_object.customcss1}}{{MIN}}.css">

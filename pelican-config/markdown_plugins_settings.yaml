@@ -240,7 +240,38 @@ MARKDOWN:
     # https://github.com/Kristinita/mdx_downheader/blob/KiraPatch/setup.py
     mdx_downheader: {}
 
-    # Embed YouTube videos:
+
+    # [PURPOSE] Delete “<!---” comments
+    # https://stackoverflow.com/a/18377286/5951529
+    # https://github.com/ryneeverett/python-markdown-comments
+
+    # [EXAMPLE] Code:
+    # 1. Kira first
+    # <!--- Kira comment -->
+    # 1. Kira second
+
+    # Behavior without plugin:
+    # <ol>
+    # <li>Kira first</li>
+    # </ol>
+    # <!--- Kira comment -->
+    # <ol>
+    # <li>Kira second</li>
+    # </ol>
+
+    # Behavior with plugin:
+    # <ol>
+    # <li>
+    # <p>Kira first</p>
+    # </li>
+    # <li>
+    # <p>Kira second</p>
+    # </li>
+    # </ol>
+    mkdcomments: {}
+
+
+    # [INFO] Embed YouTube videos:
     # https://github.com/getpelican/pelican/issues/1099#issuecomment-25209351
     # https://github.com/italomaia/mdx-video
     # [NOTE] Disable, because obsolete attributes “allowfullscreen” and “frameborder”:
