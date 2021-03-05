@@ -378,6 +378,12 @@ deploy:
 # https://travis-ci.org/Kristinita/SashaTravis/builds/502951558
 # https://github.com/travis-ci/docs-travis-ci-com/issues/1899
 # http://bit.ly/2UkR2y9
+
+
+# [DONE][FIXED] https://github.com/GoogleChromeLabs/psi/issues/118
+# https://github.com/GoogleChromeLabs/psi/pull/120
+# [BUG][FIXME] “Cannot read property 'metrics' of undefined” bug:
+# https://github.com/GoogleChromeLabs/psi/issues/118
 after_deploy: >
   if ! grunt afterdeploy
     then travis_terminate 1

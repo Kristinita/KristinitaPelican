@@ -197,6 +197,17 @@ module.exports =
 					replacement: '$1 class="KiraYouTubeLink"'
 				}
 
+				# [FIXME][ISSUE] Remove “p” tag inside “<li>”:
+				# “<li><p><\p><\li>” → “<li></li>”
+				# [PURPOSE] Python Markdown adds extra “p” tag, if comment exists below list item.
+				# HTML Tidy and python_markdown_comments doesn’t fix it.
+				# [NOTE] StripHTML doesn’t remove unexpected tags:
+				# https://github.com/facelessuser/pymdown-extensions/issues/1197
+				{
+					pattern: /(<li>((\s+?)?))<p>((.|\n|\r)+?)<\/p>(((\s+?)?)<\/li>)/g
+					replacement: '$1$4$6'
+				}
+
 			]
 
 

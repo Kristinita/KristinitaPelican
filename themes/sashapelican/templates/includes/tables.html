@@ -1,4 +1,14 @@
+{# [INFO] Styles if tables exists on the page #}
+{% if "<table>" in kira_object.content %}
+	<link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/css/components/tables{{MIN}}.css">
+{% endif %}
+
+
 {#
+[DECLINED] Flexbox problems:
+https://ru.stackoverflow.com/q/1228244/199934
+https://i.imgur.com/WLyEBkb.png
+
 [INFO] jquery-responsive-tables — responsive tables:
 https://www.npmjs.com/package/jquery-responsive-tables
 
@@ -10,17 +20,9 @@ https://stackoverflow.com/q/50274179/5951529
 [NOTE] Collapse by orientation change (“landscape/portrait”) isn’t available:
 https://github.com/ryanwellsdotcom/jquery-responsive-tables/issues/2
 
-[FIXME] Bad tables quality:
-https://i.imgur.com/WLyEBkb.png
-
 [NOTE] I don’t use Defer.js here.
 jquery-responsive-tables required Cash, but it may be loaded after Cash:
 https://travis-ci.com/github/Kristinita/KristinitaPelican/jobs/441296127#L1735
 I don’t want use big values for Defer.js timeout, because it would be nice
 if jquery-responsive-tables will loaded as soon as possible.
 #}
-{% if "<table>" in kira_object.content %}
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-responsive-tables/css/responsive-tables.min.css">
-	<script src="https://cdn.jsdelivr.net/npm/jquery-responsive-tables/js/jquery.responsive-tables.min.js" defer></script>
-	<script src="{{SITEURL}}/{{ THEME_STATIC_DIR }}/js/jquery-responsive-tables/jquery-responsive-tables{{MIN}}.js" defer></script>
-{% endif %}

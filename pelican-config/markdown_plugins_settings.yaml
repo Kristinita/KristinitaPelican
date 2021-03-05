@@ -241,6 +241,14 @@ MARKDOWN:
     mdx_downheader: {}
 
 
+    # [DECLINED] It destroys the TOC structure:
+    # https://i.imgur.com/VE0xQuQ.png
+    # [PURPOSE] Fix lists problems:
+    # https://pypi.org/project/mdx-truly-sane-lists/
+    # mdx_truly_sane_lists:
+      # truly_sane: true
+
+
     # [INFO] Embed YouTube videos:
     # https://github.com/getpelican/pelican/issues/1099#issuecomment-25209351
     # https://github.com/italomaia/mdx-video
@@ -256,6 +264,12 @@ MARKDOWN:
     # [PURPOSE] Delete “<!---” comments
     # https://stackoverflow.com/a/18377286/5951529
     # https://pypi.org/project/python-markdown-comments/
+    # [INFO] Use a PyPI version, not an original GitHub version:
+    # https://github.com/ryneeverett/python-markdown-comments
+    # If you use an original version, “pipenv run pip-review --auto” (“shell:pipenvupdateall”) command
+    # will update python-markdown-comments to PyPI version → a bug will occur:
+    # https://ci.appveyor.com/project/Kristinita/kristinitapelican/builds/37013107/job/jopjxwruuectb226#L332
+    # https://ci.appveyor.com/project/Kristinita/kristinitapelican/builds/37013107/job/jopjxwruuectb226#L528
 
     # [EXAMPLE] Code:
     # 1. Kira first

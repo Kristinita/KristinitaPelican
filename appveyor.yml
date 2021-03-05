@@ -172,6 +172,10 @@ for:
     - configuration: Release
   environment:
     GRUNT_BUILD: publish
+    # [DONE][FIXED] https://github.com/GoogleChromeLabs/psi/issues/118
+    # https://github.com/GoogleChromeLabs/psi/pull/120
     # [NOTE] Travis CI build run parallel and end before AppVeyor,
     # so “afterdeploy” will run after site deployment.
+    # [BUG][FIXME] “Cannot read property 'metrics' of undefined” bug:
+    # https://github.com/GoogleChromeLabs/psi/issues/118
     GRUNT_TEST: validate remote afterdeploy
