@@ -166,15 +166,20 @@ MARKDOWN:
     # https://github.com/Phuker/markdown_link_attr_modifier#options
     markdown_link_attr_modifier:
 
-      # [INFO] Add “target="_blank"” to all external links:
-      new_tab: true
+      # [DEPRECATED] Old options names:
+      # new_tab: true
+      # external_only: true
+      # [INFO] Add “target="_blank"” and “rel="noopener"” to all external links:
 
-      # [INFO] Add attributes below for external links solely
-      external_only: true
+      # [INFO] “target="_blank"” without “rel="noopener"” is unsafe and may decrease performance:
+      # https://web.dev/external-anchors-use-rel-noopener/
+      # https://mathiasbynens.github.io/rel-noopener/
+      # https://www.reliablesoft.net/noreferrer-noopener/#noopener
+      new_tab: external_only
 
-      # [INFO] Disable default values: “referrerpolicy="noreferrer"”
-      # and “rel="noopener noreferrer"”
-      security: false
+      # [DEPRECATED] Old option name:
+      # security: false
+      # [INFO] Disable values: “referrerpolicy="noreferrer"” and “rel="noreferrer"”
 
       # [INFO] I have a static site; any private information will not show to external site owners:
       # https://web.dev/referrer-best-practices/
@@ -191,12 +196,17 @@ MARKDOWN:
 
       # [INFO] I don’t want to use “nofollow”. I find the sites I link to are usually good.
       # I see nothing wrong with increasing their SEO ranking
-      custom_attrs:
-        # [INFO] “target="_blank"” without “rel="noopener"” is unsafe and may decrease performance:
-        # https://web.dev/external-anchors-use-rel-noopener/
-        # https://mathiasbynens.github.io/rel-noopener/
-        # https://www.reliablesoft.net/noreferrer-noopener/#noopener
-        rel: noopener
+      no_referrer: off
+
+      # [ACTION] Add the same “title” attribute as text in the link.
+      # Set “off” value because it's redundant:
+      # https://blog.pope.tech/2018/08/09/results-icon-dictionary/#title_redundant
+      auto_title: off
+
+      # [DEPRECATED]
+      # Isn’t required for markdown_link_attr_modifier 0.2.0
+      # custom_attrs:
+      # rel: noopener
 
 
     # [DECLINED]

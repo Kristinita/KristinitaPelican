@@ -89,7 +89,6 @@ validate:
 validatedev:
 - 'concurrent:tard1'
 - 'concurrent:tard2'
-- 'concurrent:tard3'
 
 # [INFO] Continuous integration, not local
 remote:

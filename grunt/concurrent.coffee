@@ -201,14 +201,20 @@ module.exports =
 	###
 	tard1: ['clean-console']
 
+	###
+	[FIXME] I get “Fatal error: Maximum call stack size exceeded”
+	when CheckPages checks the file “Библиотека-непрерывного-обучения.html”
+
 	tard2: ['checkPages']
+	###
+
 	###
 	[FIXME] pageres doesn’t work with grunt-critical:
 	https://github.com/bezoerb/grunt-critical/issues/65
 
 	tard3: ['pageres']
 	###
-	tard3: ['notify:validate']
+	tard2: ['notify:validate']
 
 
 	###
