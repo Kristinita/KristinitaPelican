@@ -94,6 +94,9 @@ module.exports =
 	tarp2: ['shell:deploy']
 	# Don't use “newer” for “move”! Files from “root-html” doesn't move.
 	# Don't use “newer” with “realFavicon”! “index.html” will not changed!
+	# [FIXME] Split tasks, because max number of concurrent tasks — 4;
+	# “tarp3” currently have 7 tasks.
+	# https://travis-ci.com/github/Kristinita/KristinitaPelican/jobs/488737915#L1268-L1270
 	tarp3: ['license_finder'
 			'realFavicon'
 			'humans_txt'

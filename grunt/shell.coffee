@@ -108,10 +108,10 @@ module.exports =
 	http://api.html-tidy.org/tidy/quickref_next.html
 	###
 	tidymodify:
-		###
-		[LEARN][GRUNT] Platform-specific tasks:
-		https://stackoverflow.com/a/23848087/5951529
-		###
+		# [LEARN][GRUNT] Platform-specific tasks:
+		# https://stackoverflow.com/a/23848087/5951529
+		# [REQUIRED] Single-line comments after a colon; otherwise the error “unexpected_newline”:
+		# https://travis-ci.com/github/Kristinita/KristinitaPelican/jobs/488737915#L1945
 		if process.platform is "win32"
 			# Need quotes, that command run:
 			command: '"batch/tidy-modify.bat"'
