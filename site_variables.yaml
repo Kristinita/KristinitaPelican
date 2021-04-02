@@ -70,6 +70,7 @@ PAGE_PATHS:
 - 404.md
 - Sasha-Black.md
 ARTICLE_PATHS:
+- Books
 - Books-Reviews
 - Erics-Rooms
 - Gingerinas
@@ -81,7 +82,6 @@ ARTICLE_PATHS:
 - Programs
 - Sasha-Black
 - Smert-svobode
-- Special
 - Sublime-Text
 # GitHub repository URL of this source:
 GITHUB_SOURCES_URL: https://github.com/Kristinita/KristinitaPelican

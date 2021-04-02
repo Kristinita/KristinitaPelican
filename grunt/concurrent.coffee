@@ -115,7 +115,8 @@ module.exports =
 	tarp6: ['string-replace']
 	tarp7: ['clean'
 			'curl'
-			'imagemin'
+			# [FIXME] Warning: Error: The system cannot find the path specified.
+			# 'imagemin'
 			'purgecss']
 	tarp8: ['shell:tidymodify'
 			'closure-compiler']
@@ -278,8 +279,6 @@ module.exports =
 	###
 	tarna1: ['htmlhint'
 			'htmllint'
-			# [DONE]
-			# [FIXME] AttributeError: module 'isort' has no attribute 'SortImports'
 			'pylint'
 			]
 	tarna2: ['notify:validate']

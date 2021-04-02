@@ -116,7 +116,7 @@ module.exports =
 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Books-Reviews/*.html"
 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Giologica/*.html"
 				"<%= templates.yamlconfig.OUTPUT_PATH %>/G-Rights/*.html"
-				"<%= templates.yamlconfig.OUTPUT_PATH %>/Special/*.html"
+				"<%= templates.yamlconfig.OUTPUT_PATH %>/Books/*.html"
 			]
 		files:
 			"<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css/sections/giologica.css": \

@@ -42,12 +42,14 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1222633
 [FIXME][JINJA2] Shorter syntax for the line below #}
 {% if kira_object.asideimage == "NeliaSchool" or kira_object.asideimage == "NeliaLeaves" %}
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/bottom-images/NeliaFirebrick{{MIN}}.css">
-{% elif kira_object.asideimage == "SashaInflatedSponges" %}
-	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/bottom-images/KiraDimgray{{MIN}}.css">
 {% elif kira_object.asideimage == "SashaFluffy" %}
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/bottom-images/KiraDarkcyan{{MIN}}.css">
+{% elif kira_object.asideimage == "SashaInflatedSponges" %}
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/bottom-images/KiraDimgray{{MIN}}.css">
 {% elif kira_object.asideimage == "SashaGreenSweater" %}
 	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/bottom-images/KiraSeagreen{{MIN}}.css">
+{% elif kira_object.asideimage == "SashaBlueEyes" %}
+	<link rel="stylesheet" href="{{SITEURL}}/{{ THEME_STATIC_DIR }}/css/bottom-images/KiraSteelblue{{MIN}}.css">
 {% endif %}
 
 {# [INFO] Custom CSS #}
