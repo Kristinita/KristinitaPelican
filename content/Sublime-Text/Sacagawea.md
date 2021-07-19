@@ -2,7 +2,7 @@ Title: Sacagawea
 Version: 0.1.0
 Author: Keith Hall
 Date: 2017-05-05 6:49:14
-Modified: 2020-12-28 17:26:38
+Modified: 2021-06-06 19:46:10
 Lang: ru
 Summary: Таймер для джинджерин “Что? Где? Когда?”, “Брейн Ринг”
 Pagetitle: Sacagawea
@@ -323,9 +323,9 @@ START-APP: D:\AutoHotkey\Sacapawea-Blitz.exe
 <a id="Программное-обеспечение-при-тестировании"></a>
 # Программное обеспечение при тестировании
 
-+ Windows 10 Enterprise LTSB 64-bit EN,
-+ Sublime Text 3 Build 3126,
-+ mpg123 1.24.0.
+1. Windows 10 Enterprise LTSB 64-bit EN,
+1. Sublime Text 3 Build 3126,
+1. mpg123 1.24.0.
 
 <a id="TODO"></a>
 # TODO
@@ -343,7 +343,7 @@ START-APP: D:\AutoHotkey\Sacapawea-Blitz.exe
 <a id="Благодарности"></a>
 # Благодарности
 
-+ [@keith-hall](https://github.com/keith-hall)
+1. [@keith-hall](https://github.com/keith-hall)
 
 <a id="Лицензии"></a>
 # Лицензии

@@ -64,14 +64,14 @@ git module pelican-plugins:
 git module open-graph:
   url: https://github.com/whiskyechobravo/pelican-open_graph/
 
-
+# [DONE]
 # [PATCH] https://github.com/burakkose/just_table/pull/9
 git module just-table:
-  url: https://github.com/Kristinita/just_table
+  url: https://github.com/burakkose/just_table
 
   # [LEARN][PERU] Specific branch, tag or commit:
   # https://github.com/buildinspace/peru#git-hg-svn
-  rev: KiraPatchAllGenerators
+  # rev: KiraPatchAllGenerators
 
   # [LEARN][PERU] Rename original folder name to required:
   # https://github.com/buildinspace/peru/issues/205#issuecomment-528948901

@@ -2,7 +2,7 @@ Title: For developers
 Version: 0.0.4
 Author: Sasha Chernykh
 Date: 2018-03-27 7:55:14
-Modified: 2020-11-22 10:43:41
+Modified: 2021-06-06 18:48:44
 Lang: en
 Summary: Information for developers about Kristinita’s Search site
 Pagetitle: For developers
@@ -64,10 +64,10 @@ Site tested via [BrowserStack](https://www.browserstack.com) on these latest dev
 
 1. macOS Catalina, Safari 13.1
 1. [Windows 10 64-bit](https://www.browserstack.com/question/621)
-	+ Firefox
-	+ Opera
-	+ Edge
-	+ Chrome
+	1. Firefox
+	1. Opera
+	1. Edge
+	1. Chrome
 1. iPhone 11 Pro Max
 1. iPad Pro 12.9.2020
 	1. ([iOS and Safari](https://www.lifewire.com/check-the-version-number-of-safari-446563)) 12
@@ -78,10 +78,10 @@ Site tested via [BrowserStack](https://www.browserstack.com) on these latest dev
 
 2 latest stable versions of these browsers:
 
-+ Firefox
-+ Opera
-+ Safari
-+ Chrome
+1. Firefox
+1. Opera
+1. Safari
+1. Chrome
 
 <a id="Site-building"></a>
 # Site building
@@ -100,9 +100,9 @@ You must install in your machine latest versions:
 <a id="All-operating-systems"></a>
 ### All operating systems
 
-+ Python 3,
-+ Node.js,
-+ Git (even if you use another VCS).
+1. Python 3,
+1. Node.js,
+1. Git (even if you use another VCS).
 
 <a id="Windows"></a>
 ### Windows
@@ -112,8 +112,8 @@ You must install in your machine latest versions:
 <a id="UNIX-and-macOS"></a>
 ### UNIX and macOS
 
-+ [GNU Parallel](https://askubuntu.com/a/634835/582218),
-+ [HTML Tidy](https://codeyarns.com/2016/06/06/how-to-build-and-install-html-tidy/).
+1. [GNU Parallel](https://askubuntu.com/a/634835/582218),
+1. [HTML Tidy](https://codeyarns.com/2016/06/06/how-to-build-and-install-html-tidy/).
 
 <a id="Installation"></a>
 ## Installation
@@ -128,17 +128,17 @@ You must install in your machine latest versions:
 
 Add environment variable to your local PC:
 
-+ Windows:
+1. Windows:
 
-```batch
-SETX API_KEY_PAGESPEED_INSIGHTS_V5 your_token
-```
+	```batch
+	SETX API_KEY_PAGESPEED_INSIGHTS_V5 your_token
+	```
 
-+ Linux:
+1. Linux:
 
-```bash
-export API_KEY_PAGESPEED_INSIGHTS_V5 your_token
-```
+	```bash
+	export API_KEY_PAGESPEED_INSIGHTS_V5 your_token
+	```
 
 Replace *your_token* to token, that you get.
 
@@ -151,17 +151,17 @@ Get [AppVeyor API token](https://www.appveyor.com/docs/api/). Register on AppVey
 
 Add environment variable to your local PC:
 
-+ Windows:
+1. Windows:
 
-```batch
-SETX API_KEY_APPVEYOR your_token
-```
+	```batch
+	SETX API_KEY_APPVEYOR your_token
+	```
 
-+ Linux:
+1. Linux:
 
-```bash
-export API_KEY_APPVEYOR your_token
-```
+	```bash
+	export API_KEY_APPVEYOR your_token
+	```
 
 Replace *your_token* to token, that you get.
 
@@ -227,8 +227,8 @@ npm install
 
 See comments to the script in files:
 
-+ [appveyor.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/appveyor.yml),
-+ [appveyor-install.bat](https://github.com/Kristinita/KristinitaPelican/blob/master/ci/appveyor-install.bat).
+1. [appveyor.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/appveyor.yml),
+1. [appveyor-install.bat](https://github.com/Kristinita/KristinitaPelican/blob/master/ci/appveyor-install.bat).
 
 <a id="UNIX-and-macOS-1"></a>
 ### UNIX and macOS
@@ -269,8 +269,8 @@ npm install
 
 See comments to the script in files:
 
-+ [.travis.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/.travis.yml),
-+ [travis-install.sh](https://github.com/Kristinita/KristinitaPelican/blob/master/ci/travis-install.sh).
+1. [.travis.yml](https://github.com/Kristinita/KristinitaPelican/blob/master/.travis.yml),
+1. [travis-install.sh](https://github.com/Kristinita/KristinitaPelican/blob/master/ci/travis-install.sh).
 
 <a id="Build"></a>
 ## Build
@@ -322,8 +322,8 @@ If in this column name of markup or programming language — I mean files, speci
 
 Example:
 
-+ *Python* — check all files with *.py* extension
-+ *Markdown* — all files with *.md*, *.mdown* and *.markdown* extensions
+1. *Python* — check all files with *.py* extension
+1. *Markdown* — all files with *.md*, *.mdown* and *.markdown* extensions
 
 <a id="Checking-tool"></a>
 ### Checking tool
@@ -349,8 +349,8 @@ If *—* symbol in this column, I use default checking tool configuration.
 
 Some linters use JSON for configuration files (I think, [this is bad](https://arp242.net/weblog/json_as_configuration_files-_please_dont)) \+ [JSON doesn’t support comments](https://plus.google.com/+DouglasCrockfordEsq/posts/RK8qyGVaGSr) → I can’t use comments in JSON configuration files. In these cases I add *comments* and *issue* links to *Configuration file* section.
 
-+ *comments* — file, where comments about options in configuration JSON file
-+ *issue* — feature request for support non-JSON configuration format
+1. *comments* — file, where comments about options in configuration JSON file
+1. *issue* — feature request for support non-JSON configuration format
 
 <a id="Validation-table"></a>
 ## Validation table

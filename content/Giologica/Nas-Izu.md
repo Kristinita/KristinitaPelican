@@ -1,7 +1,7 @@
 Title: Нас Изу
 Author: Sasha Chernykh
 Date: 2017-03-15 14:39:14
-Modified: 2020-09-18 08:48:18
+Modified: 2021-06-06 20:21:56
 Lang: ru
 Pagetitle: Нас Изу
 Summary: Акронимы для прерывания или окончания дискуссии
@@ -12,6 +12,11 @@ Tags: giologica, gingerinas-training
 Noco: 159d5
 Og_image: https://i.imgur.com/oavt5Lf.jpg
 Schemaorgtype: ScholarlyArticle
+
+!!! error "Статья не базируется на научной основе"
+	Содержимое статьи не подкреплено научными данными и не имеет какой-либо ценности для кого-то кроме её автора. Оставил для истории.
+
+	6 июня 2021
 
 <!-- MarkdownTOC -->
 

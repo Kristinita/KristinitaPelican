@@ -10,11 +10,19 @@ https://stackoverflow.com/a/55099893/5951529
 
 # [INFO] Parse YAML configuration files:
 # https://stackoverflow.com/q/41974628/5951529
+
 # [INFO] Using ruamel.yaml — superset of of PyYAML.
 # PyYAML not support YAML 1.2 at March 2019:
 # https://github.com/yaml/pyyaml/issues/116
 # https://stackoverflow.com/a/38922434/5951529
-import ruamel.yaml as yaml
+
+# [FIXME] pylint consider-using-with (R1732):
+# https://pylint.pycqa.org/en/latest/technical_reference/features.html#refactoring-checker-messages
+# https://stackoverflow.com/a/67419279/5951529
+
+# [NOTE][PYLINT] Don’t use “import ruamel.yaml as yaml”:
+# https://pylint.pycqa.org/en/latest/technical_reference/features.html#imports-checker-messages
+from ruamel import yaml
 
 CONFIG_DIR = "pelican-config"
 
@@ -51,14 +59,14 @@ def kira_load_settings(pelicansettings):
     # https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/jhtr2opsnckg214g
     variables.update(
         yaml.safe_load(
-            open(
+            open(  # pylint: disable=R1732
                 'site_variables.yaml',
                 encoding='utf-8')))
     for settings_file in pelicansettings:
         # [INFO] Convert Python dictionary to variables:
         # https://stackoverflow.com/a/36059129/5951529
         # [FIXME] Duplicate variables.update() function
-        variables.update(yaml.safe_load(open(
+        variables.update(yaml.safe_load(open(  # pylint: disable=R1732
             CONFIG_DIR +
             '/' +
             settings_file +

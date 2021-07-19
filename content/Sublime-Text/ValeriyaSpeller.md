@@ -2,7 +2,7 @@ Title: ValeriyaSpeller
 Version: 0.1.0
 Author: Sasha Chernykh
 Date: 2017-04-03 11:17:14
-Modified: 2020-10-28 13:36:21
+Modified: 2021-07-19 07:54:34
 Lang: en
 Summary: yaspeller implementation for Sublime Text
 	![ValeriyaSpeller](https://i.imgur.com/bqRl8eD.png)
@@ -24,6 +24,11 @@ Epigraphtext: i express my gratitude to Her
 OpenGraphImage: https://i.imgur.com/iciGBgN.jpg
 Schemaorgtype: SoftwareApplication
 
+!!! warning "Outdated code"
+    ValeriyaSpeller worked for me in 2017, but it looks like its code isn’t compatible with newer SublimeLinter versions.
+
+    June 6 2021
+
 # Briefly
 
 Russian-language spellchecker for Sublime Text.
@@ -42,11 +47,11 @@ i need extra spellchecker for Russian-language texts.
 
 Tested on:
 
-+ Windows 10 Enterprise LTSB 64-bit EN,
-+ Sublime Text Build 3126,
-+ Node.js v7.8.0,
-+ yaspeller 3.1.0,
-+ literature works of Chekhov, Dostoyevsky, Leonid Andreyev and Oliver Sacks (in Russian translation) — favorite Valeria writers.
+1. Windows 10 Enterprise LTSB 64-bit EN,
+1. Sublime Text Build 3126,
+1. Node.js v7.8.0,
+1. yaspeller 3.1.0,
+1. literature works of Chekhov, Dostoyevsky, Leonid Andreyev and Oliver Sacks (in Russian translation) — favorite Valeria writers.
 
 Must be works in macOS and *nix operating systems.
 
@@ -63,10 +68,10 @@ Must be works in macOS and *nix operating systems.
 
 ValeriyaSpeller highlight/output typos in next types of files:
 
-+ Markdown,
-+ HTML,
-+ LaTeX,
-+ Comments in any language.
+1. Markdown,
+1. HTML,
+1. LaTeX,
+1. Comments in any language.
 
 Note: ValeryaLinter must work in most cases. If no, [your syntax](https://www.sublimetext.com/docs/3/syntax.html) don’t have any of these [scopes](https://www.sublimetext.com/docs/3/scope_naming.html) — `text.html.markdown`, `text.plain`, `text.tex.latex`, `comment`.
 
@@ -115,8 +120,6 @@ Letter Ё (Yo): 1
 [Description of yaspeller npm module](https://www.npmjs.com/package/yaspeller), [command line keys](https://www.npmjs.com/package/yaspeller#options). Default command is
 
 ```shell
-
-
 yaspeller --check-yo --find-repeat-words --ignore-digits --ignore-latin --ignore-roman-numerals --ignore-uppercase --ignore-urls
 ```
 

@@ -1,7 +1,7 @@
 Title: SashaSublime
 Tags: sublime-text
 Date: 2017-01-31 09:13:30
-Modified: 2020-10-30 08:54:51
+Modified: 2021-06-06 20:26:36
 Lang: en
 Author: Sasha Chernykh
 PageTitle: SashaSublime
@@ -16,6 +16,11 @@ Noco: 1g9b6
 Og_image: https://i.imgur.com/ljT5eJp.png
 Schemaorgtype: SoftwareApplication
 
+!!! note "Долгое отсутствие обновлений"
+	я по-прежнему ежедневно успешно пользуюсь SashaSublime, однако с февраля 2018 [не вносил изменений](https://github.com/Kristinita/SashaSublime/releases) в эту программу.
+
+	6 июня 2021
+
 <p>
 	<a href="{static}/images/donate_files/Bitcoin-HTML-Redirect.html"><img src="{static}/images/donate_files/Bitcoin-Donate-button.png" alt="Bitcoin Donate Button" class="SashaInline" /></a>
 	<a href="{static}/images/donate_files/Litecoin-HTML-Redirect.html"><img src="{static}/images/donate_files/Litecoin-Donate-button.png" alt="Litecoin Donate Button" class="SashaInline" /></a>
@@ -27,7 +32,7 @@ Schemaorgtype: SoftwareApplication
 	<img src="https://img.shields.io/badge/Release-1.3.1-orange.svg" alt="Release" class="SashaInline" />
 	<img src="https://img.shields.io/github/stars/Kristinita/SashaSublime.svg" alt="Stars" />
 	<img src="https://img.shields.io/github/forks/Kristinita/SashaSublime.svg" alt="Forks" />
-	<img src="https://img.shields.io/maintenance/STATUS/2020.svg" alt="Maintained" />
+	<img src="https://img.shields.io/maintenance/STATUS/2021.svg" alt="Maintained" />
 	<a href="https://github.com/Kristinita/SashaSublime/issues"><img src="https://img.shields.io/github/issues/Kristinita/SashaSublime.svg" alt="GitHub issues" /></a>
 </p>
 
@@ -114,11 +119,6 @@ Schemaorgtype: SoftwareApplication
 1. [See also](#See-also)
 1. [Thanks](#Thanks)
 1. [Contacts](#Contacts)
-1. [Donate](#Donate)
-	1. [Bitcoin](#Bitcoin)
-	1. [Litecoin](#Litecoin)
-	1. [Paypal $](#Paypal-$)
-	1. [Paypal €](#Paypal-€)
 1. [License](#License)
 
 <!-- /MarkdownTOC -->

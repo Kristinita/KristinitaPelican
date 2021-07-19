@@ -2,7 +2,7 @@ Title: Fastest way to add new version of your Sublime Text package
 Version: 0.3.0
 Author: Sasha Chernykh
 Date: 2018-01-23 10:43:14
-Modified: 2020-09-24 13:04:22
+Modified: 2021-07-19 07:52:59
 Lang: en
 Summary: Tutorial, how you can make release and changelog, use only one command
 	![Package Control messages](https://i.imgur.com/J5AuHmX.png)
@@ -17,6 +17,11 @@ Tags: it-articles, sublime-text, release
 Noco: 1vWK5
 Og_image: https://i.imgur.com/12fFJsX.png
 Schemaorgtype: HowTo
+
+!!! note "Possibly outdated data"
+	I wrote this article in January 2018. Some information from it may be out of date.
+
+	June 6 2021
 
 <!-- MarkdownTOC -->
 
@@ -335,13 +340,13 @@ release-it -n -V
 <a id="Testing-environment"></a>
 # Testing environment
 
-+ Windows 10 Enterprise LTSB 64-bit EN,
-+ Node.js 9.4.0,
-+ git 2.16.0.windows.2,
-+ release-it 7.3.0,
-+ changelog 1.7.0,
-+ tee (GNU coreutils) 8.26, packaged by Cygwin (8.26-1),
-+ cat (GNU coreutils) 8.26, packaged by Cygwin (8.26-1),
-+ mv (GNU coreutils) 8.26, packaged by Cygwin (8.26-1),
-+ sed (GNU sed) 4.2.2,
-+ js-beautify 1.7.5.
+1. Windows 10 Enterprise LTSB 64-bit EN,
+1. Node.js 9.4.0,
+1. git 2.16.0.windows.2,
+1. release-it 7.3.0,
+1. changelog 1.7.0,
+1. tee (GNU coreutils) 8.26, packaged by Cygwin (8.26-1),
+1. cat (GNU coreutils) 8.26, packaged by Cygwin (8.26-1),
+1. mv (GNU coreutils) 8.26, packaged by Cygwin (8.26-1),
+1. sed (GNU sed) 4.2.2,
+1. js-beautify 1.7.5.

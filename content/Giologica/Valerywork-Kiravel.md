@@ -1,10 +1,10 @@
 Title: Вэлериворк и Киравэл
 Date: 2017-02-13 19:15:15
-Modified: 2021-04-01 10:51:20
+Modified: 2021-06-06 16:55:15
 Author: Sasha Chernykh
 Lang: ru
 Summary: Понятия Вэлериворка и Киравэла
-Pagetitle: Вэлериворк &amp; Киравэл
+Pagetitle: Вэлериворк и Киравэл
 Pagecolors: giologica-blue
 Asideimage: SashaBlueEyes
 Iconleftorright: right
@@ -15,10 +15,10 @@ Noco: 159d5
 Og_image: https://i.imgur.com/5atSEHP.jpg
 Schemaorgtype: ScholarlyArticle
 
-!!! error "Необходимо полное переписывание"
-    Апрель 2021
+!!! error "Статья не базируется на научной основе"
+    Сохранил статью для себя. Когда-нибудь захочется вспомнить, как мыслил и писал много лет назад. Какой-либо прочей ценности содержимое статьи, конечно, не имеет.
 
-    Сохранил на память это отражение того, как думал много лет назад.
+    6 июня 2021
 
 <!-- MarkdownTOC -->
 

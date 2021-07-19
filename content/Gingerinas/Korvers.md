@@ -2,7 +2,7 @@ Title: Korvers
 Version: 0.0.1
 Author: Sasha Chernykh
 Date: 2017-02-13 09:24:30
-Modified: 2020-11-10 14:38:45
+Modified: 2021-06-06 20:20:12
 Lang: ru
 Summary: Техники поиска версий в джинджеринах
 Pagetitle: 4 14 7. 4 корвера, 14 аксаксов, 7 гарниромизов
@@ -13,6 +13,11 @@ Tags: gingerinas
 Noco: 1EBY
 Og_image: https://i21.servimg.com/u/f21/17/58/26/07/korver10.jpg
 Schemaorgtype: ScholarlyArticle
+
+!!! error "Статья не базируется на научной основе"
+	Переписать статью, делая упор на том, когда, при каких обстоятельствах следует применять те или иные аксаксы и прочие описанные решения.
+
+	6 июня 2021
 
 <!-- MarkdownTOC -->
 

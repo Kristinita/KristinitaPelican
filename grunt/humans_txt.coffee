@@ -39,7 +39,7 @@ module.exports = (grunt) ->
 			]
 			site: [
 				'Standards': 'HTML5, CoffeeScript, Stylus'
-				'Components': 'Pelican, Python Markdown, Grunt, JQuery and many plugins for this components'
+				'Components': 'Pelican, Python Markdown, Grunt and many plugins for this components'
 				'Software': 'Sublime Text and many plugins for Sublime Text'
 				'License': "<%= humans_txt.options.pkg.license %>"
 			]

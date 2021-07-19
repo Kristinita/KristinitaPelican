@@ -1,7 +1,7 @@
 Title: Портативный браузер по умолчанию в Windows 10
 Author: Sasha Chernykh
 Date: 2017-03-15 0:11:14
-Modified: 2020-10-01 19:18:53
+Modified: 2021-06-06 18:43:41
 Lang: ru
 Summary: Description, how to make Pale Moon default browser in Windows
 Pagetitle: Установка портативной версии Pale Moon в качестве браузера по умолчанию в Windows 10
@@ -14,6 +14,13 @@ Customcss1: Life-hacks/default-portable-browser
 Noco: 1vWK5
 Og_image: https://i.imgur.com/DjwBc2Q.png
 Schemaorgtype: HowTo
+
+!!! note "Возможно устаревшие данные"
+    Автор этой статьи перешёл с Pale Moon на Firefox спустя некоторое время после появления [Firefox Quantum](https://blog.mozilla.org/en/mozilla/introducing-firefox-quantum/), чтобы иметь доступ к новым возможностям Firefox. См. [критику Pale Moon](https://www.howtogeek.com/335712/update-why-you-shouldnt-use-waterfox-pale-moon-or-basilisk/).
+
+    я не знаю, работает ли ещё метод, о котором поведано в данном туториале.
+
+    6 июня 2021
 
 <!-- MarkdownTOC -->
 

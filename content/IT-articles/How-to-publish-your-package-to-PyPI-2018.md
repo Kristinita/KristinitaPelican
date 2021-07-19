@@ -2,7 +2,7 @@ Title: How to publish your package to PyPI, 2018
 Version: 0.1.0
 Author: Sasha Chernykh
 Date: 2018-01-27 10:59:14
-Modified: 2020-09-24 13:12:35
+Modified: 2021-07-19 07:52:59
 Lang: en
 Summary: Tutorial, how you can publish your Python package to PyPI
 	![Erichek on pypi.python.org](https://i.imgur.com/IzSH7BK.png)
@@ -15,6 +15,11 @@ Tags: it-articles, python, pypi, release
 Noco: 1vWK5
 Og_image: https://i.imgur.com/mO0Fnsk.jpg
 Schemaorgtype: HowTo
+
+!!! warning "Outdated data"
+	I wrote this tutorial in January 2018. Some information from it may be out of date. As of 2021, Warehouse replaced the previous PyPI code base shown in this article.
+
+	June 6 2021
 
 <!-- MarkdownTOC -->
 
