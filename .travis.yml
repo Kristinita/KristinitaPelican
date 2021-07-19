@@ -47,6 +47,17 @@ os: linux
 dist: focal
 
 
+# [LEARN][TRAVIS] Faster AWS Graviton2 processor:
+# https://blog.travis-ci.com/2020-09-11-arm-on-aws
+arch: arm64-graviton2
+# [REQUIRED] https://blog.travis-ci.com/2020-09-11-arm-on-aws#how-to-get-started
+group: edge
+
+# [LEARN][TRAVIS] Faster LXD container:
+# https://blog.travis-ci.com/2020-09-11-arm-on-aws#lxd-and-vm-virtualizations
+virt: lxd
+
+
 # [INFO] Don't download all repository history, that save a time:
 # https://docs.travis-ci.com/user/customizing-the-build/#git-clone-depth
 git:
@@ -264,14 +275,16 @@ install:
 # https://docs.travis-ci.com/user/customizing-the-build#build-matrix
 # [INFO] “matrix” key is alias for “jobs”:
 # https://github.com/travis-ci/docs-travis-ci-com/issues/1500#issuecomment-444095922
+# [FIXME] commitlint-travis bug
+# https://app.travis-ci.com/github/Kristinita/KristinitaPelican/jobs/525293245#L2243-L2266
 jobs:
   include:
   - script:
     - grunt
-    - grunt http-server validatedev && grunt validate remote notappveyor travis
+    - grunt http-server validatedev && grunt validate remote notappveyor
   - script:
     - grunt publish
-    - grunt validate remote notappveyor travis
+    - grunt validate remote notappveyor
     # [INFO] Deploy, if production, not dev build:
     # https://travis-ci.org/Kristinita/SashaTravis/builds/381271402
     # [INFO] I make as cotila user:
