@@ -47,15 +47,17 @@ os: linux
 dist: focal
 
 
+# [FIXME] DotNet doesn’t work correctly with AWS Graviton2:
+# https://app.travis-ci.com/github/Kristinita/KristinitaPelican/jobs/525301413#L284-L286
 # [LEARN][TRAVIS] Faster AWS Graviton2 processor:
 # https://blog.travis-ci.com/2020-09-11-arm-on-aws
-arch: arm64-graviton2
+# arch: arm64-graviton2
 # [REQUIRED] https://blog.travis-ci.com/2020-09-11-arm-on-aws#how-to-get-started
-group: edge
+# group: edge
 
 # [LEARN][TRAVIS] Faster LXD container:
 # https://blog.travis-ci.com/2020-09-11-arm-on-aws#lxd-and-vm-virtualizations
-virt: lxd
+# virt: lxd
 
 
 # [INFO] Don't download all repository history, that save a time:
