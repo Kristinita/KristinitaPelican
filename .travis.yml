@@ -137,7 +137,7 @@ language: python
 
 # [INFO] I use the latest available Python version:
 # https://docs.travis-ci.com/user/languages/python/#python-versions
-python: 3.9
+python: 3.10
 
 
 # [LEARN][TRAVIS] Addons:
@@ -379,7 +379,7 @@ deploy:
   # https://yaml-multiline.info/
   commit_message: Commit https://github.com/$TRAVIS_REPO_SLUG/commit/$TRAVIS_COMMIT successfully
      builded and checked by Travis CI build $TRAVIS_BUILD_NUMBER.
-     See https://travis-ci.org/$TRAVIS_REPO_SLUG/builds/$TRAVIS_BUILD_ID for details.
+     See https://travis-ci.com/$TRAVIS_REPO_SLUG/builds/$TRAVIS_BUILD_ID for details.
 
 
 # [INFO] Run command after site deployment.

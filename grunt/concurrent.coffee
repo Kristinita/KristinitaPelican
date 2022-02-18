@@ -158,8 +158,13 @@ module.exports =
 	taru2: ['projectUpdate'
 			'shell:pipenvupdateall'
 			'shell:gitgarbagecollector']
+	###
+	[FIXME] Command delete required Python packages:
+	importlib-metadata chardet commonmark platformdirs zipp rich typing-extensions
+
 	taru3: ['shell:pipenvcleanunused']
-	taru4: ['shell:pipenvupdatepipfilelock']
+	###
+	taru3: ['shell:pipenvupdatepipfilelock']
 
 
 	###

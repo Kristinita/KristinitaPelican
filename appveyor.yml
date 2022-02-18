@@ -85,7 +85,7 @@ environment:
   # https://help.appveyor.com/discussions/questions/15163-multiuple-build-matrix-dimensions-from-environment-variables
   # [INFO] I use the latest available Python version:
   # https://www.appveyor.com/docs/windows-images-software/#python
-  PYTHON: C:\Python39-x64
+  PYTHON: C:\Python310-x64
 
   # [INFO] “grunt default” = “grunt”;
   # AppVeyor support blank value.
