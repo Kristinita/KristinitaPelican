@@ -1,7 +1,7 @@
 @REM @Author: Kristinita
 @REM @Date:   2018-02-28 19:42:16
 @REM @Last Modified by:   Kristinita
-@REM Modified time: 2020-09-19 16:45:59
+@REM Modified time: 2022-02-19 12:10:39
 
 @REM [PURPOSE] Install all AppVeyor dependencies for building and validation.
 
@@ -42,7 +42,14 @@ START /B CMD /C "choco install html-tidy -y -ignoredependencies"
 @REM [NOTE] In this batch file required:
 @REM 1. quotes
 @REM 2. slash escaping
-START /B CMD /C "%PYTHON%\\python -m pip install --upgrade pip & %PYTHON%\\python -m pip install pipenv & pipenv install --dev & pipenv run peru sync"
+
+@REM [FIXME] Disable pip upgrade. It used to work in 2018—2021, but doesn’t work in 2022:
+@REM “%PYTHON%\\python -m pip install --upgrade pip &”
+@REM https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/7wwcotq9d18skwm4#L281
+@REM [COMPARE] https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/42637066#L76
+@REM https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/42637089#L74
+START /B CMD /C "%PYTHON%\\python -m pip install pipenv & pipenv install --dev & pipenv run peru sync"
+
 START /B CMD /C "choco install nodejs phantomjs -y & npm install -g grunt-cli & npm install"
 
 

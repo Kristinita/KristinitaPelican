@@ -12,12 +12,12 @@
 platform: x64
 
 
-# [REQUIRED] Visual Studio 2019 for correct LocalAppVeyor run:
+# [REQUIRED] Visual Studio 2022 for correct LocalAppVeyor run:
 # https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/5c8lytcray3s6u2k?fullLog=true#L139
 # https://www.appveyor.com/docs/custom-build-images/#building-shared-image-in-a-dedicated-project
 # https://www.appveyor.com/docs/windows-images-software/#net-framework
-# [INFO] It the latest AppVeyor image for October 2020
-image: Visual Studio 2019
+# [INFO] It the latest AppVeyor image for the February 2022
+image: Visual Studio 2022
 
 
 # [INFO] Don’t download all repository history, that save a time:
@@ -139,7 +139,7 @@ install:
 - '%APPVEYOR_BUILD_FOLDER%/batch/appveyor-pathed.bat'
 - refreshenv
 
-# [NOTE] npm parallel doesn'’ work, example:
+# [NOTE] npm parallel doesn’t work, example:
 # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.25/job/70x5h1qq2d6j8gyp
 # [NOTE] start command doesn’t work without batch file:
 # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.31

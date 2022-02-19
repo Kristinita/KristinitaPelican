@@ -67,9 +67,12 @@ module.exports =
 	1. Another users have newest packages versions in their environment:
 	2. Fix CI errors as https://travis-ci.org/Kristinita/KristinitaPelican/jobs/368968779#L658-L677
 	https://docs.pipenv.org/basics/#example-pipenv-upgrade-workflow
+
+	[INFO] Remove “--verbose” flag due to highly long details:
+	https://app.travis-ci.com/github/Kristinita/KristinitaPelican/jobs/560271334#L736-L1277
 	###
 	pipenvupdatepipfilelock:
-		command: 'pipenv update --verbose'
+		command: 'pipenv update'
 
 
 	#########
