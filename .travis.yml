@@ -279,11 +279,14 @@ install:
 # https://github.com/travis-ci/docs-travis-ci-com/issues/1500#issuecomment-444095922
 # [FIXME] commitlint-travis bug
 # https://app.travis-ci.com/github/Kristinita/KristinitaPelican/jobs/525293245#L2243-L2266
+
+# [FIXME] Disable clean-console for Travis CI. Travis unable to load some images:
+# https://app.travis-ci.com/github/Kristinita/KristinitaPelican/jobs/560440148#L2849-L2964
 jobs:
   include:
   - script:
     - grunt
-    - grunt http-server validatedev && grunt validate remote notappveyor
+    - grunt validate remote notappveyor
   - script:
     - grunt publish
     - grunt validate remote notappveyor

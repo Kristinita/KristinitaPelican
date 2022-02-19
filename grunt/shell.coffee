@@ -15,15 +15,19 @@ module.exports =
 	Build Pelican site:
 	http://manos.im/blog/static-site-pelican-grunt-travis-github-pages/
 	https://github.com/sindresorhus/grunt-shell
+
 	[REQUIRED] “pipenv run”, that scripts from pipenv virtual environment successful run;
 	for example, “pipenv run pelican --help”, not “pelican --help”.
 	https://robots.thoughtbot.com/how-to-manage-your-python-projects-with-pipenv
 	“--fatal” — exit(1), if any warning or error
+
+	[INFO] Disable “--debug” flag due to too detailed output:
+	https://app.travis-ci.com/github/Kristinita/KristinitaPelican/jobs/560440148#L624-L2274
 	###
 	generate:
-		command: 'pipenv run pelican content -s pelicanconf.py --fatal warnings --debug'
+		command: 'pipenv run pelican content -s pelicanconf.py --fatal warnings'
 	deploy:
-		command: 'pipenv run pelican content -s publishconf.py --fatal warnings --debug'
+		command: 'pipenv run pelican content -s publishconf.py --fatal warnings'
 
 	###
 	[DEPRECATED] If “pipenv --update”, users have bug:
