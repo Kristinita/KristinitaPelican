@@ -32,6 +32,17 @@ https://webref.ru/html/link/rel
 
 
 <!--=========================
+=		Neliateka			=
+==========================-->
+
+<!-- [INFO] Template before all Neliateka articles -->
+{% block base_neliateka_template %}
+	{% if kira_object.category == "Library-for-life" %}
+		<p><a href="Библиотека-для-жизни#Общая-информация" rel="noopener" target="_blank">Что такое Нелиатека («Библиотека для жизни»)?</a> | <a href="Библиотека-для-жизни#Литература-Нелиатеки-по-тематикам" rel="noopener" target="_blank">Литература Нелиатеки по тематикам</a> | <a href="https://raw.githubusercontent.com/Kristinita/KristinitaPelican/master/content/Library-for-life/Библиотека-для-жизни-полный-список.txt" rel="noopener" target="_blank">Полный список книг и прочих материалов Нелиатеки</a> | <a href="Библиотека-непрерывного-обучения#Описание" rel="noopener" target="_blank">Библиотека непрерывного обучения</a> | <a href="Вишлист-библиотеки-для-жизни#Описание" rel="noopener" target="_blank">Вишлист Нелиатеки</a></p>
+	{% endif %}
+{% endblock %}
+
+<!--=========================
 =			Footer			=
 ==========================-->
 

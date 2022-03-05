@@ -60,14 +60,24 @@ module.exports = (grunt) ->
 			"*.md"
 			".github/*.md"
 			"<%= templates.yamlconfig.CONTENT_PATH %>/**/*.md"
-			"tidy/*.md"
-			# [FIXME] I disable remark and markdownlint for generated, not personal created files
+		]
+
+		# [INFO] Filelist for remark
+		markdown_remark: [
+			"*.md"
+			".github/*.md"
+			"<%= templates.yamlconfig.CONTENT_PATH %>/**/*.md"
+			# [FIXME] I disable remark for generated, not personal created files, because they contain errors
 			# Use remark-stringify:
 			# https://www.npmjs.com/package/remark-stringify
 			"!CODE_OF_CONDUCT.md"
 			"!LICENSE.md"
 			"!<%= templates.yamlconfig.CONTENT_PATH %>/Pages/Terms-and-Conditions-and-Privacy-Policy.md"
+			# [INFO] I disable remark for Neliateka, because the titles of Neliateka’s books
+			# contain a dosens of words that remark doesn’t allow
+			"!<%= templates.yamlconfig.CONTENT_PATH %>/Library-for-life/*.md"
 		]
+
 		# [INFO] Lint Pelican personal plugins and configuration files:
 		python: ["<%= templates.yamlconfig.PLUGIN_PATHS[1] %>/**/*.py"
 							"*.py"]

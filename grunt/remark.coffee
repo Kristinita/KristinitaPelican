@@ -10,7 +10,7 @@
 # [INFO] Disabling specific rules:
 # https://github.com/remarkjs/remark-lint#configuring-remark-lint
 module.exports =
-	src: "<%= templates.paths.markdown %>"
+	src: "<%= templates.paths.markdown_remark %>"
 	# Full options list:
 	# https://github.com/unifiedjs/unified-engine-gulp#options
 	options:
