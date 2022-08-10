@@ -119,19 +119,31 @@ environment:
 # https://www.appveyor.com/docs/build-configuration/#build-pipeline
 install:
 
+
 # [REQUIRED] So that script run for “master” branch, not for “HEAD”;
 # Needs, that “grunt-checkbranch” works correct:
 # https://stackoverflow.com/a/18866140/5951529
 # [NOTE] It needs in “install” section, because in “init” section actions before cloning.
 - git checkout master
 
+
 # [LEARN][APPVEYOR] Console (cmd.exe) is default terminal in AppVeyor.
 # If needs PowerShell, “ps:” required:
 # https://www.appveyor.com/docs/appveyor-yml/
+
 # [NOTE] For local Scoop installation must required:
 # “Set-ExecutionPolicy RemoteSigned -scope CurrentUser”
 # http://scoop.sh/
-- ps: iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+
+# [DEPRECATED] Old Scoop installation method doesn’t work:
+# https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/o1iawbsb22eai63l#L26
+# [COMPARE] https://ci.appveyor.com/project/Kristinita/sashakristinitaappveyor/builds/44427848
+# https://ci.appveyor.com/project/Kristinita/sashakristinitaappveyor/builds/44427890
+# - ps: iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+
+# [INFO] One-line Scoop installation as admin:
+# https://github.com/ScoopInstaller/Install#for-admin
+- ps: iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
 
 # [NOTE][COMPARE] Required PATH changes to separated file, because “PATH” must be set before grunt-pylint installation:
 # https://ci.appveyor.com/project/Kristinita/sashagruntdebugging/builds/24778322

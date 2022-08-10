@@ -102,7 +102,9 @@ module.exports =
 			'humans_txt'
 			'robotstxt'
 			'shell:licensegenerator'
-			'shell:covgen'
+			# [FIXME] 2 lines in the end of the “CODE_OF_CONDUCT.md” file:
+			# https://app.travis-ci.com/github/Kristinita/KristinitaPelican/jobs/579322285#L1602
+			# 'shell:covgen'
 			'shell:piplicenses']
 	tarp4: ['cwebp'
 			'modernizr'
