@@ -151,13 +151,19 @@ MARKDOWN:
     # 4. Other extensions
     #
 
-    # Extensions list:
+    # [INFO] Extensions list:
     # https://github.com/Python-Markdown/markdown/wiki/Third-Party-Extensions
+    # [WARNING] Some old extensions incompatible with Python-Markdown 3.4 and higher:
+    # https://github.com/Python-Markdown/markdown/blob/master/docs/change_log/release-3.4.md#previously-deprecated-objects-have-been-removed
 
-    # Diagrams in Markdown:
+
+    # [DEPRECATED] Not compatible with Python-Markdown 3.4.
+    # I don’t use it, therefore delete
+    #
+    # [INFO] Diagrams in Markdown:
     # https://github.com/gisce/markdown-blockdiag
     # http://blockdiag.com/en/blockdiag/index.html
-    markdown_blockdiag: {}
+    # markdown_blockdiag: {}
 
 
     # [INFO] Modify attributes for all “a” links:
@@ -226,20 +232,31 @@ MARKDOWN:
     # I don't use this extension, so disabled
     # md_environ.environ: {}
 
+
     # “cite” tag:
     # https://github.com/aleray/mdx_cite
     # [BUG] Unneeded “configs” for Markdown 3:
     # https://github.com/aleray/mdx_cite/pull/2
     # mdx_cite:
 
-    # Custom !!classes!! for span tag:
+
+    # [DEPRECATED] Not compatible with Python-Markdown 3.4.
+    # I don’t use it, therefore delete
+    #
+    # [INFO] Custom !!classes!! for span tag:
     # https://github.com/exaroth/mdx_custom_span_class
+    #
     # [FIXME] Plugin doesn't work, if “!” symbol in constructions:
     # https://github.com/exaroth/mdx_custom_span_class/pull/3
-    mdx_custom_span_class: {}
+    # mdx_custom_span_class: {}
 
-    # Down headers to 1 item, that Markdownlint MD002 is good:
+    # [DEPRECATED] Not compatible with Python-Markdown 3.4.
+    #
+    # [MIGRATE] Headdown
+    #
+    # [INFO] Down headers to 1 item, that Markdownlint MD002 will good:
     # https://github.com/cprieto/mdx_downheader
+    #
     # [DONE]
     # [BUG] Original repository doesn't support Markdown 3:
     # Tempopary use fork:
@@ -247,8 +264,13 @@ MARKDOWN:
     # https://github.com/linevych/mdx_downheader/tree/markdown3_support
     # https://github.com/pypa/pipenv/pull/2702/files
     # I create my own fork, that plugin doesn't update from original repository:
-    # https://github.com/Kristinita/mdx_downheader/blob/KiraPatch/setup.py
-    mdx_downheader: {}
+    # https://github.com/Kristinita/mdx_downheader/tree/KiraPatch
+    # mdx_downheader: {}
+
+
+    # [PURPOSE] Down headers to 1 item, that Markdownlint MD002 will good:
+    # https://github.com/SaschaCowley/markdown-headdown
+    mdx_headdown: {}
 
 
     # [DECLINED] It destroys the TOC structure:
@@ -266,9 +288,13 @@ MARKDOWN:
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#Attributes
     # mdx_video:
 
+
+    # [DEPRECATED] Not compatible with Python-Markdown 3.4.
+    # I don’t use it, therefore delete
+    #
     # Embed videos/images from different popular sites:
     # https://pyembed.github.io/usage/markdown/
-    pyembed.markdown: {}
+    # pyembed.markdown: {}
 
 
     # [PURPOSE] Delete “<!---” comments
@@ -306,5 +332,5 @@ MARKDOWN:
     # </ol>
     python_markdown_comments: {}
 
-  # http://docs.getpelican.com/en/latest/settings.html#PATH
+  # [INFO] http://docs.getpelican.com/en/latest/settings.html#PATH
   output_format: html5

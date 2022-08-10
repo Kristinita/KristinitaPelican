@@ -5,23 +5,19 @@ name = "pypi"
 
 [dev-packages]
 pelican = "*"
-markdown = "*"
-beautifulsoup4 = "*"
 pymdown-extensions = "*"
-pyembed-markdown = "*"
-markdown-blockdiag = "*"
 pip-review = "*"
 pip-licenses = "*"
-gitpython = "*"
 bashate = "*"
-mdx-video = "*"
-pillow = "*"
 "ruamel.yaml" = "*"
 peru = "*"
 pylint = "*"
 csvlexer = {editable = true, git = "https://github.com/Kristinita/PygmentsCSVLexer.git"}
-markdown-downheader = {editable = true, git = "https://github.com/Kristinita/mdx_downheader.git", ref = "KiraPatch"}
-mdx-customspanclass = {editable = true, git = "https://github.com/exaroth/mdx_custom_span_class.git"}
 pelican-sitemap = "*"
 markdown-link-attr-modifier = "*"
 python-markdown-comments = "*"
+markdown = "*"
+markdown-headdown = "*"
+beautifulsoup4 = "*"
+
+[packages]
