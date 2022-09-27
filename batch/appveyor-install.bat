@@ -1,7 +1,7 @@
 @REM @Author: Kristinita
 @REM @Date:   2018-02-28 19:42:16
 @REM @Last Modified by:   Kristinita
-@REM Modified time: 2022-02-19 12:10:39
+@REM Modified time: 2022-09-27 22:27:00
 
 @REM [PURPOSE] Install all AppVeyor dependencies for building and validation.
 
@@ -41,6 +41,12 @@
 @REM https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/7wwcotq9d18skwm4#L281
 @REM [COMPARE] https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/42637066#L76
 @REM https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/42637089#L74
+@REM
+@REM [FIXME][BUG] I replace the native pygments-csv-lever to my patch
+@REM without “citation marks” in “README.md” due to persistent issues for AppVeyor encodings:
+@REM https://ci.appveyor.com/project/Kristinita/kristinitapelican/builds/44897793#L189
+@REM [COMPARE] https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/44899708
+@REM https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/44900052
 START /B CMD /C "%PYTHON%\\python -m pip install pipenv & pipenv install --dev & pipenv run peru sync"
 
 

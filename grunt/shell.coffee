@@ -67,7 +67,7 @@ module.exports =
 	https://github.com/pypa/pipenv/issues/1524#issuecomment-695213982
 	###
 	pipenvcleanunused:
-		command: 'pipenv clean --verbose'
+		command: 'pipenv clean'
 
 	###
 	Update packages versions to the newest in “Pipfile.lock”, that:
@@ -328,6 +328,12 @@ module.exports =
 	ignored files and spam the console with errors about each ignored file
 
 	[INFO] “--frail” — build fail if any warning
+
+	[NOTE] Don’t use template <%= templates.paths.cwd %> in the CLI command,
+	it doesn’t work for Travis:
+	https://app.travis-ci.com/github/Kristinita/KristinitaPelican/builds/256035121#L3597
+	Remark command should work without a template:
+	https://app.travis-ci.com/github/Kristinita/SashaTravis/jobs/584019226#L202
 	###
 	remark:
-		command: "npx remark <%= templates.paths.cwd %>/**/*.md --silently-ignore --frail"
+		command: "npx remark **/*.md --silently-ignore --frail"
