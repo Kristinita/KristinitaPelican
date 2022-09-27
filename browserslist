@@ -1,42 +1,58 @@
 ################
 # Browserslist #
 ################
-# Configuration for Autoprefixer, stylelint and some another tools:
+# [OVERVIEW] Supported browsers configuration for Autoprefixer, stylelint and some another tools:
 # https://www.npmjs.com/package/browserslist
-# Unofficial site:
+#
+# [INFO] Unofficial site:
 # http://browserl.ist/
-# Supported browsers:
-# https://www.npmjs.com/package/browserslist#browsers
-# Operators “and”, “not”, “or”:
-# https://www.npmjs.com/package/browserslist#query-composition
-# [INFO] Debug — run “npx browserslist” to see what browsers selected:
-# https://www.npmjs.com/package/browserslist#debug
-# [WARNING] Multiline comments doesn't support:
-# https://www.npmjs.com/package/browserslist#config-file
+#
+# [INFO] List of supported browsers:
+# https://github.com/browserslist/browserslist#browsers
+#
+# [INFO] Operators “and”, “not”, “or” in configuration file:
+# https://github.com/browserslist/browserslist#query-composition
+#
+# [INFO] Debug — run “npx browserslist” to see supported browsers:
+# https://github.com/browserslist/browserslist#debug
+#
+# [INFO] Links to UC, QQ and Baidu browsers:
+# https://github.com/Fyrd/caniuse/issues/4463#issuecomment-420143525
+#
+# [NOTE] This configuration file doesn’t support multiline comments
 
-# [NOTE] Browserslist required included versions, not only excluded.
-# [NOTE] Last 1 version, not last 2;
-# because last but one version for some mobile browsers in Can I Use is obsolete;
-# examples for Android Browser, Opera Mobile and Blackberry Browser:
+
+# [REQUIRED] Included versions, not solely excluded.
+#
+# [NOTE] Last 1 version, not last 2,
+# because last but one version for some mobile browsers in Can I Use is obsolete.
+# Examples for Android Browser, Opera Mobile and Blackberry Browser:
+# version 67 after 4.4.4, version 10 after 7, version 46 after 12.1:
 # https://i.imgur.com/hokFRl6.png
 last 1 version
 
+
 # [INFO] Doesn't support any browser version:
 # https://github.com/browserslist/browserslist/issues/137
-# Reasons:
+#
+# [INFO] I don’t support any Internet Explorer version. Reasons:
 # https://www.lifewire.com/why-do-people-hate-internet-explorer-3485786
 # https://www.quora.com/Is-Internet-Explorer-really-as-bad-as-everyone-tries-to-make-out
-# [WARNING] “not ie, ie_mob > 0”, “not ie and ie_mob > 0” or “not ie > 0 and ie_mob > 0” doesn't work
+#
+# [NOTE] “not ie, ie_mob > 0”, “not ie and ie_mob > 0” or “not ie > 0 and ie_mob > 0” doesn't work
 # We need duplicates “not {browser} > 0”
 not ie > 0
 not ie_mob > 0
 
-# [NOTE] Opera Mini “is a joke, circumventing rather than supporting the intentions of web developers”:
+
+# [INFO] Opera Mini “is a joke, circumventing rather than supporting the intentions of web developers”:
 # https://www.quora.com/What-is-the-best-browser-for-developers/answer/Mack-Moore-1
 # https://caniuse.com/#compare=ios_saf+12.2,op_mini+all,android+67,op_mob+46,and_chr+71,and_ff+64,and_qq+1.2
-# [NOTE] For Opera Mini needs “op_mini all”:
+#
+# [NOTE] “op_mini all” — ignore all versions of Opera Mini:
 # https://github.com/browserslist/browserslist/issues/137#issuecomment-455494613
 not op_mini all > 0
+
 
 # [NOTE] 1. BlackBerry discontinued;
 # 2. Usage stats is 0.02% for February, 2019:
@@ -44,8 +60,22 @@ not op_mini all > 0
 # http://bit.ly/2BGZD7k
 not bb > 0
 
-# [INFO] Links to UC, QQ and Baidu browsers:
-# https://github.com/Fyrd/caniuse/issues/4463#issuecomment-420143525
-# [NOTE] Outdated QQ Browser version in Can I use:
-# https://github.com/Fyrd/caniuse/issues/4463#issuecomment-468143487
+
+# [INFO] As of September 2022, Can I Use use an outdated 2018 year version of KaiOS:
+# https://i.imgur.com/Hw7fH4F.png
+not kaios > 0
+
+
+# [INFO] As of September 2022, Can I Use use an outdated 2016 year version of UC Browser:
+# https://i.imgur.com/VLCR0FM.png
+not and_uc > 0
+
+
+# [INFO] As of September 2022, Can I Use use an outdated 2017 year version of Baidu Browser:
+# https://i.imgur.com/0FtxTzY.png
+not baidu > 0
+
+
+# [INFO] As of September 2022, Can I Use use an outdated 2020 year version of QQ Browser:
+# https://i.imgur.com/AOcKmg5.png
 not and_qq > 0

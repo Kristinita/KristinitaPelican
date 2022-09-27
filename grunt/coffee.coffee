@@ -29,15 +29,20 @@ module.exports =
 		files: [
 			expand: true
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/coffee"
-			src: '**/*.coffee'
+			src: ["**/*.coffee"
+					# [INFO] Not compile deprecated CSS,
+					# not to have additional unnecessary problems at the build and lint stages
+					"!**/Deprecated/**/*.coffee"]
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/js"
-			ext: '.js'
+			ext: ".js"
 			]
+
 	themecompile:
 		files: [
 			expand: true
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/coffee"
-			src: '**/*.coffee'
+			src: ["**/*.coffee"
+					"!**/Deprecated/**/*.coffee"]
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/js"
-			ext: '.js'
+			ext: ".js"
 			]

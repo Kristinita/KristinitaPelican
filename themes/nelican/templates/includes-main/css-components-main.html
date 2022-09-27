@@ -1,0 +1,181 @@
+<!-- Tables -->
+
+{# [INFO] Styles if tables exists on the page #}
+{% if "<table>" in kira_object.content %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/tables{{ MIN }}.css', 'iframe', 400);
+	</script>
+{% endif %}
+
+{#
+[DECLINED] Flexbox problems:
+https://ru.stackoverflow.com/q/1228244/199934
+https://i.imgur.com/WLyEBkb.png
+
+[INFO] jquery-responsive-tables — responsive tables:
+https://www.npmjs.com/package/jquery-responsive-tables
+
+[INFO] Cash-compatible, JQuery not required
+
+[NOTE] I can’t find another method make tables responsive:
+https://stackoverflow.com/q/50274179/5951529
+
+[NOTE] Collapse by orientation change (“landscape/portrait”) isn’t available:
+https://github.com/ryanwellsdotcom/jquery-responsive-tables/issues/2
+
+[NOTE] I don’t use Defer.js here.
+jquery-responsive-tables required Cash, but it may be loaded after Cash:
+https://travis-ci.com/github/Kristinita/KristinitaPelican/jobs/441296127#L1735
+I don’t want use big values for Defer.js timeout, because it would be nice
+if jquery-responsive-tables will loaded as soon as possible.
+#}
+
+
+<!-- Blockquotes -->
+
+{# [INFO] Left border style blockquotes #}
+{% if "<blockquote>" in kira_object.content %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/Blockquotes/blockquotes-leftborderstyle{{ MIN }}.css', 'blockquotes-leftborderstyle', 400);
+	</script>
+{% endif %}
+
+{# [INFO] Blockstyle blockquotes #}
+{% if "class=\"SashaBlockquoteBlockstyle\"" in kira_object.content %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/Blockquotes/blockquotes-blockstyle{{ MIN }}.css', 'blockquotes-blockstyle', 400);
+	</script>
+{% endif %}
+
+{# [INFO] Pull quotes #}
+{% if "class=\"SashaPullQuote\"" in kira_object.content %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/Blockquotes/blockquotes-pullquotesstyle{{ MIN }}.css', 'blockquotes-pullquotes', 400);
+	</script>
+{% endif %}
+
+
+<!-- Iframes -->
+
+{# [INFO] CSS for Iframes #}
+{% if "<iframe" in kira_object.content %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/iframes{{ MIN }}.css', 'iframe', 400);
+	</script>
+{% endif %}
+
+
+<!-- Code styles -->
+
+{# [INFO] Scripts and styles, if code blocks exists on the page
+
+[INFO][REQUIRED] Both "<pre>" and "<code>":
+1. “<pre>” may be in “<pre class="mermaid">”
+2. “<code>” may be in inline code
+
+#}
+{% if kira_object.content|all(["<pre>", "<code>"]) %}
+
+	{# [DECLINED]
+	Tooltipster + JQuery = 40 kb; it’s too big for non-critical dependency:
+	https://atomiks.github.io/tippyjs/v6/motivation/#comparison-with-tooltipster
+
+	[INFO] Tooltipster — tooltips:
+	http://calebjacob.github.io/tooltipster/
+	[INFO] Usage:
+	http://ru.stackoverflow.com/a/584718/199934
+
+	<script src="https://cdn.jsdelivr.net/jquery.tooltipster/latest/js/tooltipster.bundle.min.js" defer></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.tooltipster/latest/css/tooltipster.bundle.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" />
+	<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/Tooltipster/tooltip{{ MIN }}.js" defer></script> #}
+
+
+	{# [INFO] Balloon.css — pure CSS tooltips:
+	https://kazzkiq.github.io/balloon.css/
+
+	[WARNING] Tooltips goes off a screen area! Not use big text for tooltips!
+	https://github.com/kazzkiq/balloon.css/issues/153
+	#}
+
+
+	{#
+	[INFO] Clipboard.js — copy block to clipboard without Flash:
+	https://clipboardjs.com/
+	[INFO] Usage:
+	http://ru.stackoverflow.com/a/582520/199934
+	#}
+
+
+	{#
+	[LEARN][JAVASCRIPT] “clipboard-js” must be loaded before “clipboard-js-local”
+
+	[LEARN][CSS] “balloon” must be loaded before “code-block-css”.
+	Properties in the last uploaded CSS file has a higher priority
+	https://stackoverflow.com/a/16913205/5951529
+	#}
+	<script>
+		Defer.css('https://cdn.jsdelivr.net/npm/balloon-css/balloon.min.css', 'balloon', 400);
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/Code/code-blocks.css', 'code-blocks-css', 400);
+	</script>
+{% endif %}
+
+{% if "class=\"SashaCodeInline\"" in kira_object.content %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/Code/code-inline{{ MIN }}.css', 'code-inline', 400);
+	</script>
+{% endif %}
+
+
+<!-- Small icons -->
+
+{# [INFO] YouTube logo in right of YouTube link #}
+{% if kira_object.content|any(["<a href=\"https://www.youtube.com/watch", "<a href=\"https://youtu.be"]) %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/Links/links-youtube{{ MIN }}.css', 'links-youtube', 700);
+	</script>
+{% endif %}
+
+
+{# [INFO] PDF icon in right of link to PDF.
+
+[INFO] This styles adds for links as:
+“<a href="https://kirasite.com/kirafile.pdf"” and
+“<a href="https://kirasite.com/kirafile.pdf#page=4147"”
+#}
+
+{# djlint:off T027 #}
+
+{% if kira_object.content|any([".pdf\"", ".pdf#page="]) %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/Links/links-pdf{{ MIN }}.css', 'links-pdf', 700);
+	</script>
+{% endif %}
+
+{# djlint:on #}
+
+<!-- Shadows around the text -->
+
+{# [INFO] Neon shadows around the text.
+
+[INFO] Critical, because neon shadows in the top of the page in my articles #}
+{% if "<div class=\"SashaShadowsNeonAroundText\"" in kira_object.content %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/shadows-neon-around-text{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% endif %}
+
+
+<!-- Custom CSS -->
+
+{# [INFO] Custom CSS for specific articles and pages #}
+{% if kira_object.customcss %}
+	<script>
+		Defer.css('{{ SITEURL }}/css/personal/{{ kira_object.customcss1 }}{{ MIN }}.css', 'customcss', 700);
+	</script>
+{% endif %}
+
+
+<!-- Footer for articles and pages -->
+
+<script>
+	Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/footer-main{{ MIN }}.css', 'footer-main', 700);
+</script>

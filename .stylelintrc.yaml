@@ -1,29 +1,48 @@
 #############
 # stylelint #
 #############
-# [INFO] CSS checker:
+# [OVERVIEW] CSS linter:
 # https://stylelint.io/
-# [INFO] Configuration:
+#
+# [INFO] Stylelint configuration:
 # https://stylelint.io/user-guide/configuration
-# [INFO] Recommended configuration:
+extends:
+
+#########################
+# stylelint-config-html #
+#########################
+# [OVERVIEW] Recommended configuration, checks for avoid errors:
 # https://www.npmjs.com/package/stylelint-config-recommended
-extends: stylelint-config-recommended
+#
+# [INFO] Avoid errors list:
+# https://stylelint.io/user-guide/rules/list/#avoid-errors
+- stylelint-config-recommended
+
+#########################
+# stylelint-config-html #
+#########################
+# [OVERVIEW] Configuration for using Stylelint in HTML files:
+# https://www.npmjs.com/package/stylelint-config-html
+- stylelint-config-html
 
 
 ###################################
 # no-unsupported-browser-features #
 ###################################
-# [INFO] Check features for browsers that supported in “browserslist” file:
+# [OVERVIEW] Check features for browsers that supported in “browserslist” file:
 # https://www.npmjs.com/package/stylelint-no-unsupported-browser-features
 plugins:
 - stylelint-no-unsupported-browser-features
 
+
 rules:
   # [INFO] Rule description:
   # https://stylelint.io/user-guide/rules/no-descending-specificity
+  #
   # [WARNING] Autoprefixer create duplicates → stylelint show errors:
   # https://stackoverflow.com/q/58057777/5951529
   # https://github.com/postcss/autoprefixer/issues/1196
+  #
   # [INFO] Use “null”, not “false” for disabling rule:
   # https://stylelint.io/user-guide/configuration#rules
   no-descending-specificity: null

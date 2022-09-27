@@ -1,0 +1,52 @@
+{# [INFO] Title
+So far, manually add it to the articles/pages metadata:
+https://stackoverflow.com/q/64058029/5951529
+#}
+<title>{{ kira_object.title }}</title>
+
+
+{# [INFO] Content description:
+https://stackoverflow.com/a/11202372/5951529
+
+[INFO] In meta description content of “kira_object.summary” will without images in Markdown syntax;
+but preview of RSS feed will include them, if “summary” tag in “FORMATTED_FIELDS”.
+See, how it looks:
+“%PATH_KRISTINITA%\pelican-config\generation.yaml”
+https://docs.getpelican.com/en/latest/settings.html#basic-settings
+
+[LEARN][JINJA] Remove tags from HMTL/XML:
+https://jinja.palletsprojects.com/en/master/templates/#filters
+https://jinja.palletsprojects.com/en/master/templates/#striptags
+#}
+<meta name="description" content="{{ kira_object.summary|striptags }}">
+
+
+{# [INFO] Hide specific pages/articles from bots:
+https://www.link-assistant.com/blog/hiding-from-indexation-part-1/
+
+[LEARN][PELICAN] Hidden posts:
+https://docs.getpelican.com/en/latest/content.html?#hidden-posts
+
+[LEARN][JINJA] Use list syntax for preventing duplicate code:
+Example:
+	if kira_object.status in ["draft", "hidden"]
+Instead of:
+	if kira_object.status == "draft" or kira_object.status == "hidden"
+https://documentation.bloomreach.com/engagement/docs/jinja-syntax
+
+[INFO] I hide these types of articles/pages:
+1. Drafts
+2. Hidden articles and pages
+3. Pages with controversial content
+
+[NOTE] I use “meta” tag, no “robots.txt”:
+1. “law-abiding” bots as Google, Yahoo! and Bing bots use “robots.txt”,
+but malicious bots — no.
+“meta” tag guarantees the blocking of all robots:
+https://www.woorank.com/en/blog/robots-txt-a-beginners-guide
+2. “meta” tag solution is more automated
+#}
+{% if kira_object.status in ["draft", "hidden"] or kira_object.noindex %}
+	{# [INFO] No index page, but index third-party links #}
+	<meta name="robots" content="noindex, follow">
+{% endif %}

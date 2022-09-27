@@ -1,6 +1,6 @@
 Title: Вэлериворк и Киравэл
 Date: 2017-02-13 19:15:15
-Modified: 2021-06-06 16:55:15
+Modified: 2022-09-08 19:51:05
 Author: Sasha Chernykh
 Lang: ru
 Summary: Понятия Вэлериворка и Киравэла
@@ -8,12 +8,13 @@ Pagetitle: Вэлериворк и Киравэл
 Pagecolors: giologica-blue
 Asideimage: SashaBlueEyes
 Iconleftorright: right
-Tags: giologica
+Tags: argumentation, valerywork, kiravel
 Customcss: true
 Customcss1: Giologica/valerywork-kiravel
 Noco: 159d5
 Og_image: https://i.imgur.com/5atSEHP.jpg
 Schemaorgtype: ScholarlyArticle
+Status: hidden
 
 !!! error "Статья не базируется на научной основе"
     Сохранил статью для себя. Когда-нибудь захочется вспомнить, как мыслил и писал много лет назад. Какой-либо прочей ценности содержимое статьи, конечно, не имеет.

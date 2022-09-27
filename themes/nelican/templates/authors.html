@@ -1,0 +1,23 @@
+{% extends "auxiliary.html" %}
+
+
+{% block aux_title %}
+	All authors
+{% endblock %}
+
+
+{% block aux_meta_description %}
+	<meta name="description" content="All authors of the “{{ SITENAME }}” site">
+{% endblock %}
+
+
+{% block aux_items_of_kira_object %}
+	{% for kira_single_object, null in authors|sort %}
+	    <li><a href="{{ SITEURL }}/{{ kira_single_object.url }}">{{ kira_single_object }}</a></li>
+	{% endfor %}
+{% endblock %}
+
+
+{% block aux_header_h2 %}
+	Статьи сайта по авторам
+{% endblock %}

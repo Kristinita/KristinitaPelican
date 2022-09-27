@@ -1,0 +1,120 @@
+{# [LEARN][JAVASCRIPT] Put scripts to the “head” tag, not to the bottom of “body”:
+https://stackoverflow.com/a/24070373/5951529
+https://flaviocopes.com/javascript-async-defer/
+
+[INFO] Location of scripts in the end of “body” is “antiquated recommendation”:
+“This approach has its own problem: the browser cannot
+start downloading the scripts until the entire document is parsed.
+For larger websites with large scripts & stylesheets,
+being able to download the script as soon as possible is very important for performance.
+If your website doesn’t load within 2 seconds, people will go to another website.”
+
+[INFO] CDN vs Locally, see:
+http://stackoverflow.com/a/3832498/5951529
+
+[INFO] “defer” preferred, than “async”, see:
+https://stackoverflow.com/a/39711009/5951529
+
+[INFO] Don’t use protocol-relative URLs:
+https://stackoverflow.com/a/54386928/5951529
+#}
+
+
+{# [OVERVIEW] Defer.js — deferred loading scripts, styles
+and another types of the content:
+https://appseeds.net/defer.js/demo.html
+
+[NOTE] If “async” or “defer” here, defer.js will not work
+
+[NOTE] “rel="preload"” for Defer.js doesn’t work:
+“<link rel="preload" href="https://cdn.jsdelivr.net/npm/@shinsenter/defer.js/dist/defer_plus.min.js" as="script">”
+I get errors in console:
+“Uncaught ReferenceError: Defer is not defined”
+
+[INFO] We need to place Defer.js scripts inside a “head” tag:
+https://github.com/shinsenter/defer.js/#install-to-your-page
+
+[INFO] For some scripts as hes-gallery and Mermaid,
+initialization required, to run them via Defer.js. Example:
+https://github.com/shinsenter/defer.js/issues/111#issuecomment-1229639814
+
+[INFO]
+1. No defer.js — critical scripts and styles that must be run when page loaded;
+2. 400ms — scripts and styles which need if we open a page on the specifc anchor;
+3. 1000 — analytics;
+4. 7000 — low priority scripts, which aren’t needed in the first seconds of a page loading.
+#}
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@shinsenter/defer.js/dist/defer_plus.min.js" as="script">
+<script src="https://cdn.jsdelivr.net/npm/@shinsenter/defer.js/dist/defer_plus.min.js"></script>
+
+
+{#
+[OVERVIEW] Gemini scrollbar — custom scrollbar:
+https://noeldelgado.github.io/gemini-scrollbar/
+
+[INFO] I still use Gemini Scrollbar in August 2022.
+I will consider switching to a native CSS scrollbar
+when Firefox scrollbar customization expands
+or a polyfill becomes available.
+
+1. Firefox scrollbar too little customizable:
+https://stackoverflow.com/q/6165472/5951529
+I can’t find polyfill that Firefox scrollbar supports “::-webkit-scrollbar” features
+
+2. “::-webkit-scrollbar” is customizable, but it has less features than Gemini:
+https://www.geeksforgeeks.org/how-to-change-the-position-of-scrollbar-using-css/
+
+
+[PATCH] https://github.com/noeldelgado/gemini-scrollbar/pull/67
+
+[FIXME][SO] Use local relative link instead of GitHack CDN.
+I don’t know, how I can import JavaScript files in CoffeeScript.
+“require "../../../../../node_modules/gemini-scrollbar/index.js"” doesn’t work
+
+[RAWCDN][REQUIRED] Production, not development link on the RawCDN:
+https://raw.githack.com/#what-happens-to-jerks
+
+[FIXME] Migrate to the native scrollbars:
+https://www.digitalocean.com/community/tutorials/css-scrollbars
+
+[NOTE] If I use “rel preload” for local script I get in Chrome console:
+The resource http://localhost:3014/theme/js/Gemini/gemini-scrollbar.js was preloaded
+using link preload but not used within a few seconds from the window's load event.
+Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+
+<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/Gemini/gemini-scrollbar{{ MIN }}.js" as="script">
+#}
+<link rel="preload" href="https://rawcdn.githack.com/Kristinita/gemini-scrollbar/fd4400bd136ae02e34d94db3d0570d8ebce7acf1/index.min.js" as="script">
+<script src="https://rawcdn.githack.com/Kristinita/gemini-scrollbar/fd4400bd136ae02e34d94db3d0570d8ebce7acf1/index.min.js" defer></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/Gemini/gemini-scrollbar{{ MIN }}.js" defer></script>
+
+
+{#
+[OVERVIEW] Bulma — CSS framework:
+https://bulma.io
+
+[INFO] Toggle menu by click to burger button:
+https://bulma.io/documentation/components/navbar/#navbar-menu
+#}
+<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/Bulma/bulma-navbar{{ MIN }}.js" as="script">
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/Bulma/bulma-navbar{{ MIN }}.js" defer></script>
+
+
+{# [DECLINED] I migrated to Cash, because it much smaller:
+https://github.com/fabiospampinato/cash#comparison
+
+[INFO] JQuery not a good candidate for “async”, see:
+https://stackoverflow.com/a/10808243/5951529
+
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js" defer></script>
+#}
+
+
+{# [DECLINED] Additional JavaScript — isn’t good for the web performance.
+I migrated to “markdown-link-attr-modifier”:
+https://github.com/Phuker/markdown_link_attr_modifier
+
+[INFO] Add “target="_blank"” for all external links via JQuery:
+https://bogdandragomir.com/blog/2016/12/add-target-_blank-attribute-external-anchors-page-javascript-jquery-one-single-line/
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/target-blank/target-blank{{ MIN }}.js" defer></script>
+#}

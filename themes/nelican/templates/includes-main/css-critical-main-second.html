@@ -1,0 +1,27 @@
+{# [INFO] Critical styles, which should be loaded after all other styles #}
+
+<!-- Theme -->
+
+{# [NOTE] Theme must be loaded after Bulma, otherwise styles don’t apply:
+https://i.imgur.com/scG3vKV.png #}
+<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/nelican-themes/{{ kira_object.pagecolors }}{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+
+
+<!-- Background for header on aside icon -->
+
+{# [INFO] Background for text on aside images for accessibility contrast ratio
+
+[LEARN][JINJA] Use list syntax for preventing duplicate code:
+[LINK] meta-main.html:30
+#}
+{% if kira_object.asideimage in ["NeliaSchool", "NeliaLeaves"] %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/nelican-themes-aside-header-backgrounds/NeliaFirebrick{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% elif kira_object.asideimage == "SashaFluffy" %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/nelican-themes-aside-header-backgrounds/KiraDarkcyan{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% elif kira_object.asideimage == "SashaInflatedSponges" %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/nelican-themes-aside-header-backgrounds/KiraDimgray{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% elif kira_object.asideimage == "SashaGreenSweater" %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/nelican-themes-aside-header-backgrounds/KiraSeagreen{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% elif kira_object.asideimage == "SashaBlueEyes" %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/nelican-themes-aside-header-backgrounds/KiraSteelblue{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% endif %}

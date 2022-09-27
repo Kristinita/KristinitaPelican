@@ -1,0 +1,34 @@
+# [INFO] djLint:
+# https://www.djlint.com/
+#
+# [INFO] djLint configuration for Jinja:
+# https://www.djlint.com/docs/languages/jinja/
+[tool.djlint]
+profile="jinja"
+
+
+# [NOTE] T003 — bad practice in my opinion, see 4.1 item:
+# https://github.com/Riverside-Healthcare/djLint/issues/345#issue-1345158405
+#
+# [NOTE] H014 — bad practice in my opinion:
+# https://github.com/Riverside-Healthcare/djLint/issues/341#issuecomment-1225671131
+#
+# [NOTE] H016 — I use “includes” and blocks,
+# and may not use “title” in the one page with “html lang”
+#
+# [NOTE] H017 — bad practice in my opinion, see 4.2 item:
+# https://github.com/Riverside-Healthcare/djLint/issues/345#issue-1345158405
+# Google HTML/CSS Style Guide doesn’t recommend close void elements:
+# https://google.github.io/styleguide/htmlcssguide.html#Document_Type
+#
+# [NOTE] H025 — too strange rule without a single positive inclusion for me
+#
+# [NOTE] H030 — I use “includes” and blocks,
+# and may not use meta tags in the one page with “html lang”
+#
+# [NOTE] H031 — “until 2009 for Google to publicly confirm
+# that the meta keyword tag is no longer relevant for the ranking”,
+# “Today, in contrast to the Meta Description and Meta Title,
+# the meta keywords are often no longer filled with terms.”
+# https://en.ryte.com/wiki/Meta_Keyword#General_information
+ignore="T003,H014,H016,H017,H025,H030,H031"

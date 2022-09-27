@@ -2,7 +2,7 @@ Title: For developers
 Version: 0.0.4
 Author: Sasha Chernykh
 Date: 2018-03-27 7:55:14
-Modified: 2021-06-06 18:48:44
+Modified: 2022-09-26 11:06:20
 Lang: en
 Summary: Information for developers about Kristinita’s Search site
 Pagetitle: For developers
@@ -53,30 +53,30 @@ Developer of this site doesn’t support:
 <!-- [FIXME] Fuck old browser -->
 
 1. Older than 2 last version of each browser
-1. [Any versions](https://www.quora.com/Is-Internet-Explorer-really-as-bad-as-everyone-tries-to-make-out) of [Internet Explorer](https://www.lifewire.com/why-do-people-hate-internet-explorer-3485786)
+1. [Any versions](https://www.quora.com/Is-Internet-Explorer-really-as-bad-as-everyone-tries-to-make-out) of [Internet Explorer](https://www.lifewire.com/why-do-people-hate-internet-explorer-3485786) and other deprecated browsers
 1. [JavaScript turn off](https://www.reddit.com/r/webdev/comments/48z7jz/do_you_take_into_account_those_who_disable/d0nxftd/)
 1. [32-bit Windows](https://www.howtogeek.com/56701/htg-explains-whats-the-difference-between-32-bit-and-64-bit-windows-7/)
 
 <a id="Testing"></a>
 # Testing
 
-Site tested via [BrowserStack](https://www.browserstack.com) on these latest devices and latest browsers version at September 2020:
+Site tested via [BrowserStack](https://www.browserstack.com) on these latest BrowserStack devices and browsers version at August 2022:
 
-1. macOS Catalina, Safari 13.1
-1. [Windows 10 64-bit](https://www.browserstack.com/question/621)
+1. macOS Monterey, Safari 15.3
+1. [Windows 11 64-bit](https://www.browserstack.com/question/621)
 	1. Firefox
 	1. Opera
 	1. Edge
 	1. Chrome
-1. iPhone 11 Pro Max
+1. iPhone 14
 1. iPad Pro 12.9.2020
-	1. ([iOS and Safari](https://www.lifewire.com/check-the-version-number-of-safari-446563)) 12
-1. Samsung Galaxy S20 Ultra, Chrome
+	1. ([iOS and Safari](https://www.lifewire.com/check-the-version-number-of-safari-446563)) 16
+1. Google Pixel 6 Pro, Android 13
 
 <a id="Devices-and-browsers"></a>
 # Devices and browsers
 
-2 latest stable versions of these browsers:
+2 latest stable versions of these browsers including mobile browsers:
 
 1. Firefox
 1. Opera
@@ -385,6 +385,7 @@ CoffeeScript|[CoffeeLint](http://www.coffeelint.org/)|[1](http://www.coffeelint.
 Bash|[ShellCheck](https://www.shellcheck.net/)|[1](https://github.com/koalaman/shellcheck/wiki)|—
 Bash|[bashate](https://docs.openstack.org/bashate/latest/readme)|[1](https://docs.openstack.org/bashate/latest/readme#currently-supported-checks)|[bashate.sh](https://github.com/Kristinita/KristinitaPelican/blob/master/bash/bashate.sh) ([no configuration file for bashate](https://bugs.launchpad.net/bash8/+bug/1395391))
 YAML|[yamllint](http://yamllint.readthedocs.io/en/latest/)|[1](http://yamllint.readthedocs.io/en/latest/configuration.html)|[.yamllint](https://github.com/Kristinita/KristinitaPelican/blob/master/.yamllint)
+Jinja|[djLint](https://www.djlint.com)|[1](https://www.djlint.com/docs/linter#rules)|[pyproject.toml, \[tool.djlint\] section](https://github.com/Kristinita/KristinitaPelican/blob/master/pyproject.toml)
 .travis.yml|[Travis CI Client](https://github.com/travis-ci/travis.rb#lint)|[1](https://docs.travis-ci.com/user/customizing-the-build)|—
 appveyor.yml|[LocalAppVeyor](https://github.com/joaope/LocalAppVeyor#-lint-command)|[1](https://www.appveyor.com/docs/appveyor-yml/)|—
 [/jtable]
@@ -397,5 +398,4 @@ In this section checking/linting/validation tools, that I don’t use. Required 
 [jtable]
 Type|Checking tool|Argumentation
 CSS|[CSSLint](http://csslint.net/)|CSSLint [no longer maintained](https://github.com/CSSLint/csslint/issues/754). If I use CSS3 syntax, I will get CSSLint error in any case. [I can’t ignore](https://github.com/CSSLint/csslint/issues/720#issuecomment-376566968) parts of CSS files that contains [CSS3 variables](https://github.com/CSSLint/csslint/issues/720#issue-271707857).
-Python|[Python Black](https://github.com/ambv/black)|Vertical spaces format to one line ([example](https://github.com/ambv/black/issues/118#issuecomment-385318504)); author “[hate options](https://github.com/ambv/black/issues/181#issuecomment-385326100)”
 [/jtable]

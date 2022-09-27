@@ -1,0 +1,14 @@
+{# [INFO] Neighbors — a Pelican plugin that adds Next/Previous links to articles:
+https://github.com/pelican-plugins/neighbors
+#}
+{% if kira_object.prev_article_in_category %}
+	<span class="SashaNeighborsPreviousPage"><a href="{{ SITEURL }}/{{ kira_object.prev_article_in_category.url }}" title="{{ kira_object.prev_article_in_category.title }}">← Previous article</a></span>
+{% else %}
+	<span class="SashaNeighborsMainPageLeft"><a href="{{ SITEURL }}">Kristinita’s Search</a></span>
+{% endif %}
+
+{% if kira_object.next_article_in_category %}
+	<span class="SashaNeighborsNextPage"><a href="{{ SITEURL }}/{{ kira_object.next_article_in_category.url }}" title="{{ kira_object.next_article_in_category.title }}">Next article →</a></span>
+{% else %}
+	<span class="SashaNeighborsMainPageRight"><a href="{{ SITEURL }}">Kristinita’s Search</a></span>
+{% endif %}

@@ -1,0 +1,124 @@
+{# [OVERVIEW] Bulma navbar:
+https://bulma.io/documentation/components/navbar/
+
+[FIXME][ISSUE] The “navigation” role is unnecessary for element “nav”.
+Removing “role="navigation"” from Bulma navbar example required:
+https://bulma.io/documentation/components/navbar #}
+<nav class="navbar" aria-label="main navigation">
+
+	<div class="navbar-brand">
+
+		<!-- Гамбургер -->
+
+		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+		</a>
+
+	</div>
+
+	<div class="navbar-menu">
+		<div class="navbar-start">
+
+			<!-- Библиотека для жизни -->
+
+			<div class="navbar-item has-dropdown is-hoverable">
+				<a class="navbar-link">
+					Библиотека для жизни
+				</a>
+
+				<div class="navbar-dropdown is-hidden-portrait">
+					<a class="navbar-item" href="{{ SITEURL }}/Library-for-life/Библиотека-для-жизни#Описание" rel="noopener" target="_blank">Описание библиотеки для жизни</a>
+					<a class="navbar-item" href="{{ SITEURL }}/tag/library-for-life-base" rel="noopener" target="_blank">Литература Нелиатеки по тематикам</a>
+					<a class="navbar-item" href="https://raw.githubusercontent.com/Kristinita/KristinitaPelican/master/content/Library-for-life/Библиотека-для-жизни-полный-список.txt" rel="noopener" target="_blank">Полный список книг и прочих материалов Нелиатеки</a>
+					<a class="navbar-item" href="{{ SITEURL }}/Library-for-life/Библиотека-непрерывного-обучения#Описание" rel="noopener" target="_blank">Библиотека непрерывного обучения</a>
+					<a class="navbar-item" href="{{ SITEURL }}/Library-for-life/Вишлист-библиотеки-для-жизни#Описание" rel="noopener" target="_blank">Вишлист Нелиатеки</a>
+				</div>
+			</div>
+
+			<!-- Комнаты Нели -->
+
+			<div class="navbar-item has-dropdown is-hoverable">
+				<a class="navbar-link">
+					Комнаты Нели
+				</a>
+
+				<div class="navbar-dropdown is-hidden-portrait">
+					<a class="navbar-item" href="{{ SITEURL }}/Nelias-Rooms/Комнаты-Нели#Что-это" rel="noopener" target="_blank">Описание Комнат Нели</a>
+					<a class="navbar-item" href="{{ SITEURL }}/Nelias-Rooms/Зелёная-Комната-Нели#Особенности" rel="noopener" target="_blank">Зелёная Комната Нели</a>
+					<a class="navbar-item" href="{{ SITEURL }}/Nelias-Rooms/Поиск-книг-для-Комнат-Нели#Содержание-страницы" rel="noopener" target="_blank">Вишлист Комнат Нели</a>
+					<a class="navbar-item" href="{{ SITEURL }}/category/nelias-rooms" rel="noopener" target="_blank">Все материалы категории «Комнаты Нели»</a>
+				</div>
+			</div>
+
+			<!-- Поиск Кристиниты -->
+
+			<div class="navbar-item has-dropdown is-hoverable">
+				<a class="navbar-link">
+					Поиск Кристиниты
+				</a>
+
+				<div class="navbar-dropdown is-hidden-portrait">
+					<a class="navbar-item" href="{{ SITEURL }}" rel="noopener" target="_blank">Поиск Кристиниты</a>
+					<a class="navbar-item" href="https://cyclowiki.org/wiki/Участник:Саша_Черных/Поиск_Кристиниты" rel="noopener" target="_blank">Описание Поиска Кристиниты</a>
+					<a class="navbar-item" href="https://raw.githubusercontent.com/Kristinita/KristinitaPelican/master/content/Kristinita's-Search/Kristinita's-Search__actual_catalogue.txt" rel="noopener" target="_blank">Полный каталог Поиска Кристиниты</a>
+				</div>
+			</div>
+
+			<!-- Джинджерины -->
+
+			<div class="navbar-item has-dropdown is-hoverable">
+				<a class="navbar-link">
+					Джинджерины
+				</a>
+
+				<div class="navbar-dropdown is-hidden-portrait">
+					<a class="navbar-item" href="{{ SITEURL }}/Gingerinas/Библиотека-для-джинджерин#Библиотека-для-джинджерин" rel="noopener" target="_blank">Библиотека для джинджерин</a>
+					<a class="navbar-item" href="{{ SITEURL }}/Gingerinas/КейДи#О-чём-данная-статья" rel="noopener" target="_blank">КейДи</a>
+					<a class="navbar-item" href="{{ SITEURL }}/Gingerinas/Пример-разбора-игры-СпортСИ#Вступление" rel="noopener" target="_blank">Пример разбора игр по спортивной «Своей игре»</a>
+					<a class="navbar-item" href="{{ SITEURL }}/category/gingerinas" rel="noopener" target="_blank">Все материалы категории «Джинджерины»</a>
+				</div>
+			</div>
+
+			<!-- IT -->
+
+			<div class="navbar-item has-dropdown is-hoverable">
+				<a class="navbar-link">
+					IT
+				</a>
+
+				<div class="navbar-dropdown is-hidden-portrait">
+					<a class="navbar-item" href="{{ SITEURL }}/Sublime-Text/SashaSublime#Description" rel="noopener" target="_blank">SashaSublime</a>
+					{# [NOTE] Trailing slash for “Sasha-Black” required for checkPages validation,
+					because both “Sasha-Black.html” file and “Sasha-Black” category exists #}
+					<a class="navbar-item" href="{{ SITEURL }}/Sasha-Black/" rel="noopener" target="_blank">Sasha Black</a>
+					<a class="navbar-item" href="{{ SITEURL }}/tag/it-articles" rel="noopener" target="_blank">Статьи на IT-тематику</a>
+					<a class="navbar-item" href="{{ SITEURL }}/tag/sasha-chernykh-software" rel="noopener" target="_blank">Программы и скрипты</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- О сайте -->
+
+		<div class="navbar-end">
+			<div class="navbar-item has-dropdown is-hoverable">
+				<a class="navbar-link">
+					О сайте
+				</a>
+
+				{# [INFO] Right dropdown:
+				https://bulma.io/documentation/components/navbar/#dropdown-menu #}
+				<div class="navbar-dropdown is-hidden-portrait is-right">
+					<a class="navbar-item" href="{{ SITEURL }}/Pages/Terms-and-Conditions-and-Privacy-Policy#Web-Site-Terms-and-Conditions-of-Use" rel="noopener" target="_blank">Условия использования и политика конфиденциальности</a>
+					<a class="navbar-item" href="{{ SITEURL }}/Pages/About-for-developers#Unsupported" rel="noopener" target="_blank">Информация о сайте для разработчиков</a>
+					<a class="navbar-item" href="{{ GITHUB_SOURCES_URL }}" rel="noopener" target="_blank">Открытый исходный код сайта</a>
+					<a class="navbar-item" href="{{ SITEURL }}/sitemap.xml" rel="noopener" target="_blank">Карта сайта</a>
+					<a class="navbar-item" href="{{ SITEURL }}/tag/alltags" rel="noopener" target="_blank">Все теги сайта</a>
+					<a class="navbar-item" href="{{ SITEURL }}/categories" rel="noopener" target="_blank">Все категории сайта</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</nav>

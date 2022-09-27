@@ -2,15 +2,15 @@ Title: How to get current … in Sublime Text
 Version: 0.2.0
 Author: Sasha Chernykh
 Date: 2018-04-05 7:30:14
-Modified: 2020-09-24 13:12:11
+Modified: 2022-09-11 08:38:56
 Lang: en
 Summary: Tutorial, how to get some variable parameters for your Sublime Text
 	![Color scheme and theme](https://i.imgur.com/nwNgLkR.png)
 Pagetitle: How to get current … in Sublime Text
 Pagecolors: it-articles
-Iconleftorright: right
+Iconleftorright: left
 Asideimage: SashaGreenSweater
-Tags: sublime-text
+Tags: it-articles, sublime-text
 Noco: 1vWK5
 Og_image: https://i.imgur.com/nwNgLkR.png
 Schemaorgtype: HowTo

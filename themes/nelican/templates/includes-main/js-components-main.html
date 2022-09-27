@@ -1,0 +1,36 @@
+{# [INFO] Scripts for code blocks.
+
+[INFO] For more details see the “Code blocks” section of “css-components.html” #}
+
+
+<!-- Code scripts -->
+
+{# [OVERVIEW] Cash — small alternative for JQuery and Zepto:
+https://github.com/fabiospampinato/cash
+https://kenwheeler.github.io/cash/
+https://news.ycombinator.com/item?id=19535940
+
+[INFO] Migration from JQuery to Cash:
+https://github.com/fabiospampinato/cash/blob/master/docs/migration_guide.md
+https://www.peterbe.com/plog/from-jquery-to-cash
+
+[INFO] I use Cash syntax in “../../static/coffee/ClipboardJS/Clipboard.coffee” file when I set
+Clipboard.js + Balloon.css:
+
+[FIXME][ISSUE][CASH] More help for porting third-party plugins:
+https://github.com/fabiospampinato/cash/issues/259
+https://github.com/fabiospampinato/cash/issues/75
+https://github.com/fabiospampinato/cash/issues/192
+
+[FIXME][ISSUE][CASH] Custom builds:
+https://github.com/fabiospampinato/cash/blob/master/docs/partial_builds.md
+https://github.com/fabiospampinato/cash/blob/master/docs/extending_cash.md
+#}
+{% if "<pre>" in kira_object.content and "<code>" in kira_object.content %}
+	<link rel="preload" href="https://cdn.jsdelivr.net/npm/cash-dom/dist/cash.min.js" as="script">
+	<script src="https://cdn.jsdelivr.net/npm/cash-dom/dist/cash.min.js" defer></script>
+	<script>
+		Defer.js('https://cdn.jsdelivr.net/clipboard.js/latest/clipboard.min.js', 'clipboard-js', 400);
+		Defer.js('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/ClipboardJS/clipboard{{ MIN }}.js', 'clipboard-js-local', 700);
+	</script>
+{% endif %}

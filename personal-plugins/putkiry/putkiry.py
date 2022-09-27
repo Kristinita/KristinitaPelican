@@ -1,7 +1,7 @@
 # @Author: andreymal
 # @Date:   2017-01-25 18:48:20
 # @Last Modified by:   Kristinita
-# @Last Modified time: 2020-09-28 20:05:15
+# @Last Modified time: 2022-08-19 17:15:55
 """Preserve paths for Pelican articles and pages.
 
 Based on @andreymal answer:
@@ -46,16 +46,16 @@ def run_plugin(generators):
     for generator in generators:
         if isinstance(generator, ArticlesGenerator):
             # [INFO][PELICAN] All articles types:
-            # https://github.com/getpelican/pelican/blob/8a769811377e2a3a32ba27b0a98e08f4102a0b43/pelican/generators.py#L289-L297
+            # https://github.com/getpelican/pelican/blob/2cafe926fa854b5b8c84b944d77b628574a2ec61/pelican/generators.py#L283-L296
             # [LEARN][PYTHON] itertools.chain:
             # https://stackoverflow.com/a/37683485/5951529
             for article in itertools.chain(
-                    generator.articles, generator.translations,
-                    generator.drafts, generator.drafts_translations):
+                    generator.articles, generator.translations, generator.hidden_articles,
+                    generator.hidden_translations, generator.drafts, generator.drafts_translations):
                 putkiry(article)
         elif isinstance(generator, PagesGenerator):
             # [INFO][PELICAN] All pages types:
-            # https://github.com/getpelican/pelican/blob/8a769811377e2a3a32ba27b0a98e08f4102a0b43/pelican/generators.py#L705-L710
+            # https://github.com/getpelican/pelican/blob/2cafe926fa854b5b8c84b944d77b628574a2ec61/pelican/generators.py#L717-L726
             # [NOTE] generator.all_pages doesn’t work
             for page in itertools.chain(
                     generator.pages, generator.translations, generator.hidden_pages,

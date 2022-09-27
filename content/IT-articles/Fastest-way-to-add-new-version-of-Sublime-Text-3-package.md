@@ -2,7 +2,7 @@ Title: Fastest way to add new version of your Sublime Text package
 Version: 0.3.0
 Author: Sasha Chernykh
 Date: 2018-01-23 10:43:14
-Modified: 2021-07-19 07:52:59
+Modified: 2022-09-08 20:02:40
 Lang: en
 Summary: Tutorial, how you can make release and changelog, use only one command
 	![Package Control messages](https://i.imgur.com/J5AuHmX.png)
@@ -13,7 +13,7 @@ Pagetitle: Fastest way to add new version of your Sublime Text package
 Pagecolors: it-articles
 Asideimage: SashaGreenSweater
 Iconleftorright: left
-Tags: it-articles, sublime-text, release
+Tags: it-articles, sublime-text, package-control, package-deployment
 Noco: 1vWK5
 Og_image: https://i.imgur.com/12fFJsX.png
 Schemaorgtype: HowTo

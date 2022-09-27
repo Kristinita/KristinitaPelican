@@ -1,0 +1,39 @@
+{# [DECLINED] Currently, I haven’t use cases.
+
+[INFO] Use cases:
+“These two resource hints are helpful for improving page speed
+when you know you’ll download something from a third-party domain soon,
+but you don’t know the exact URL for the resource.”:
+https://web.dev/preconnect-and-dns-prefetch/#conclusion
+https://web.dev/preconnect-and-dns-prefetch/#use-cases-for-relpreconnect
+
+
+[OVERVIEW] Preconnecting domains.
+
+
+[INFO] “preconnect”
+“You can speed up the load time by 100–500 ms by establishing
+early connections to important third-party origins.”:
+https://web.dev/preconnect-and-dns-prefetch/
+https://webdev.imgix.net/preconnect-and-dns-prefetch/preconnect.png
+
+[INFO] “Preconnecting is only effective for domains other than the origin domain,
+so you shouldn’t use it for your site.”.
+
+[INFO] “Only preconnect to critical domains you will use soon”.
+“Unnecessary preconnecting can delay other important resources,
+so limit the number of preconnected domain”:
+https://web.dev/preconnect-and-dns-prefetch/#how-to-implement-relpreconnect
+
+
+[INFO] “dns-prefetch”.
+
+[INFO] “If a page needs to make connections to many third-party domains,
+preconnecting all of them is counterproductive.
+The "preconnect" hint is best used for only the most critical connections.
+For all the rest, use "<link rel=dns-prefetch>"”:
+https://web.dev/preconnect-and-dns-prefetch/#resolve-domain-name-early-with-reldns-prefetch
+
+[INFO] Use “preconnect” and “dns-prefetch” in different tags:
+https://web.dev/preconnect-and-dns-prefetch/#resolve-domain-name-early-with-reldns-prefetch
+#}

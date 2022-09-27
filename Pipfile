@@ -1,8 +1,3 @@
-[[source]]
-url = "https://pypi.python.org/simple"
-verify_ssl = true
-name = "pypi"
-
 [dev-packages]
 pelican = "*"
 pymdown-extensions = "*"
@@ -12,12 +7,13 @@ bashate = "*"
 "ruamel.yaml" = "*"
 peru = "*"
 pylint = "*"
-csvlexer = {editable = true, git = "https://github.com/Kristinita/PygmentsCSVLexer.git"}
-pelican-sitemap = "*"
 markdown-link-attr-modifier = "*"
 python-markdown-comments = "*"
 markdown = "*"
 markdown-headdown = "*"
 beautifulsoup4 = "*"
-
-[packages]
+pygments-csv-lexer = "*"
+djlint = "*"
+md-mermaid = {editable = true, ref = "KiraMermaidWorking", git = "https://github.com/Kristinita/md_mermaid.git"}
+pelican-sitemap = "*"
+pelican-search = {editable = true, ref = "KiraFixWindowsPath", git = "https://github.com/Kristinita/search.git"}

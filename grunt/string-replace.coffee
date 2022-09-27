@@ -45,26 +45,30 @@ module.exports =
 				# [INFO] Inject permalink to the header
 				{
 					pattern: /(<p>\s*?<a id="(.+?)"><\/a>\s*?<\/p>\s+?<h\d+?>((.|\n|\r)+?))(<\/h\d+?>)/g
-					replacement: '$1 <a class="headerlink" href="#$2" title="Permanent link">¶</a>$5'
+					replacement: '$1 <a class="KiraAnchorPermanentLink" href="#$2" title="Permanent link">¶</a>$5'
 				}
 
 
 				# [PURPOSE] Validation
 				# [INFO] Remove proprietary attribute markdown="1" after site build:
 				# https://python-markdown.github.io/extensions/extra/#markdown-inside-html-blocks
-
+				#
+				# [NOTE] Latest versions of “Markdown in HTML” plugin
+				# must automatically delete “markdown="1"”.
+				# But in practice, plugin delete not all “markdown="1"”:
+				# https://python-markdown.github.io/extensions/md_in_html/
 				{
 					pattern: / markdown="1"/g
 					replacement: ''
 				}
 
 
-				# [INFO] Wrap GRights abbreviations to KiraGRights class
+				# [INFO] Wrap GRights abbreviations to KiraGRightsRule class
 				# [INFO] Regex for punctuation marks from here:
 				# https://www.regular-expressions.info/posixbrackets.html
 				{
 					pattern: /(GR:.+?)(?=(\s|[!"\#$%&'()*+,\-./:;<=>?@\[\\\]^_`{|}~]))/g
-					replacement: '<span class="KiraGRights">$1</span>'
+					replacement: '<span class="KiraGRightsRule">$1</span>'
 				}
 
 
@@ -129,10 +133,11 @@ module.exports =
 				# no line breaks between them!
 				{
 					pattern: /(<pre>)(((.|\n|\r)+?)?)(<\/pre>((\s+?)?)<\/div>)/g
-					replacement: '$1<button class="SashaButton" data-balloon-pos="left"><img class="SashaNotModify" \
+					replacement: '$1<button class="SashaClipboardButton" data-balloon-pos="left"><noscript class="loading-lazy">\
+								<img class="SashaClipboardImage" \
 								src="<%= templates.yamlconfig.SITEURL %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>\
 								/images/interface-images/clippy.svg" \
-								alt="Clipboard button"></button>$2$5'
+								alt="Clipboard button"></noscript></button>$2$5'
 				}
 
 
@@ -174,16 +179,44 @@ module.exports =
 				# 				src="$2" alt="$1"></a></div>'
 				# }
 
-				# [INFO] Wrap images to HesGallery syntax:
+
+				# [INFO] Wrap images to lazy loading polyfill and hes-gallery syntaxes:
+				# https://github.com/mfranzke/loading-attribute-polyfill#simple-image
 				# https://github.com/demtario/hes-gallery#sample-gallery-design
 
 				# [REQUIRED] “?”. Regex works incorrectly, if 2 or more images on 1 line
+				# {
+				# 	pattern: /((<img alt="[^"]+") src="(.+?)")>/g
+				# 	replacement: '<div class="hes-gallery">$2 class="lazyload" data-src="$3" \
+				# 			src="<%= templates.yamlconfig.SITEURL %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>\
+				# 			/images/interface-images/transparent-one-pixel.png"></div>'
+				# }
+
 				{
-					pattern: /((<img alt="[^"]+") src="(.+?)")>/g
-					replacement: '<div class="hes-gallery">$2 class="lazyload" data-src="$3" \
-							src="<%= templates.yamlconfig.SITEURL %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>\
-							/images/interface-images/transparent-one-pixel.png"></div>'
+					pattern: /((<img alt="[^"]+?") src="(.+?)")>/g
+					replacement: '<div class="hes-gallery"><noscript class="loading-lazy">$2 src="$3"></noscript></div>'
 				}
+
+
+				# [DECLINED] I migrated to the native iframes lazy loading
+				#
+				# [INFO] “<iframe src="about:blank" />” is a cross-browser standard to display a blank document:
+				# https://stackoverflow.com/a/5946696/5951529
+				# https://stackoverflow.com/a/5946664/5951529
+				#
+				# {
+				# 	pattern: /<iframe (class="lazyload") (.+?) data-src="(.+?)"(.+?)>((.|\n|\r)*?)<\/iframe>/g
+				# 	replacement: '<iframe $2 src="about:blank" data-src="$3"></iframe>'
+				# }
+
+
+				# [INFO] Wrap iframes to lazy loading polyfill syntax:
+				# https://github.com/mfranzke/loading-attribute-polyfill#iframe
+				{
+					pattern: /(<iframe (.+?)><\/iframe>)/g
+					replacement: '<noscript class="loading-lazy">$1</noscript>'
+				}
+
 
 				# [INFO] Add class for links to PDF files “.pdf” and “.pdf#page=<page_number>”
 				{
@@ -211,20 +244,54 @@ module.exports =
 			]
 
 
+	###
+	[INFO] Fix HTML after “grunt shell:tidymodify”,
+	i.e. fix HTML Tidy modifier errors
+
+	[FIXME][ISSUE] HTML Tidy generated blank tags <p> and <span>
+	###
+	htmlaftertidy:
+
+		files: [
+			expand: true
+			cwd: "."
+			src: "<%= templates.paths.html %>"
+			dest: "."
+		]
+
+		options:
+			replacements: [
+
+					# [INFO] Remove empty <p>
+					{
+						pattern: /(<p><\/p>)/g
+						replacement: ''
+					}
+
+					# [INFO] Remove empty <span>
+					{
+						pattern: /(<span><\/span>)/g
+						replacement: ''
+					}
+
+				]
+
+
+	### [DEPRECATED] Wildfire no longer functioning more
 	# [INFO] Substitutions in JavaScript files generated from CoffeeScript
 	coffeescript:
 		files: [
 			expand: true
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>"
-			src: '**/*.js'
+			src: '*.js'
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>"
 		]
 		options:
 			replacements: [
 
-				############
-				# Wildfire #
-				############
+				#
+				# Wildfire
+				#
 				# Add Wildfire to site
 				# https://slides.com/chengkang/how-to-wildfire
 
@@ -252,6 +319,7 @@ module.exports =
 					replacement: "<%= templates.yamlconfig.FORM_ID_TYPO_REPORTER %>"
 				}
 			]
+	###
 
 
 	######################
@@ -282,3 +350,93 @@ module.exports =
 				}
 			]
 	###
+
+
+	# [INFO] Replacements in CSS files
+	css:
+		files:
+			###
+			[INFO] Replace specific px breakpoints to orientation landscape or portrait
+			in third-party Bulma module.
+
+			I don’t use specific pixels for responsive design:
+			https://github.com/jerrylow/basictable/issues/26
+			###
+			"<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>\
+			/css/third-party/bulma/bulma-modules.css":\
+			"<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>\
+			/css/third-party/bulma/bulma-modules.css"
+
+		options:
+			replacements: [
+				{
+					pattern: /@media screen and \(min-width: 1024px\)/g
+					replacement: '@media screen and (orientation: landscape)'
+				}
+
+				{
+					pattern: /@media screen and \(max-width: 1023px\)/g
+					replacement: '@media screen and (orientation: portrait)'
+				}
+			]
+
+
+	###
+	[INFO] Convert relative paths in HTML files to absolute,
+	when all tasks are completed
+
+	[INFO] These replacements for HTML minified by htmlmin
+	###
+	"html-relative-to-absolute-paths":
+
+		files: [
+			expand: true
+			cwd: "."
+			src: "<%= templates.paths.html %>"
+			dest: "."
+		]
+		options:
+			replacements: [
+				# [INFO] Convert values of “href” and “src” attributes
+				# [EXAMPLES]
+				# <link href="./theme/kiratheme.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+				# <script src="../theme/js/Gemini/gemini-scrollbar.js" defer>
+				#
+				# [INFO] Replacements work for “./” in HTML files in root directory
+				# and for “../” in HTML files in directories above
+				{
+					pattern: /((href|src)=")\.\.?(\/)/g
+					replacement: '$1https://kristinita.netlify.app$3'
+				}
+
+				# [INFO] Convert paths to images in CSS styles:
+				# [EXAMPLES]
+				# <div class="KiraFadeSlideshowIcon3" data-style="background-image: url(./404/SashaBlueHairs.webp)">
+				# <style>.SashaIconAside{background-image:url(../theme/images/aside/SashaInflatedSponges.webp)}</style>
+				#
+				# [INFO] Replacements work if space exists or not — for “: url” and “:url”
+				{
+					pattern: /(: ?url\()\.\.?(\/)/g
+					replacement: '$1https://kristinita.netlify.app$2'
+				}
+
+				# [INFO] Convert paths for styles and scripts added via Defer.js
+				# [EXAMPLES]
+				# Defer.js("./theme/js/Stork/stork-404.js", "stork-local", 1000);
+				# Defer.css('../theme/css/third-party/AddToAny/addtoany.css', 'addtoany-styles', 6000);
+				{
+					pattern: /(Defer\.(js|css)\(')\.\.?(\/)/g
+					replacement: '$1https://kristinita.netlify.app$3'
+				}
+
+				# [INFO] Absolute URLs required for Open Graph:
+				# https://stackoverflow.com/a/9858694/5951529
+				# [EXAMPLES]
+				# <meta content="./Sublime-Text/ValeriyaSpeller.html" property="og:url">
+				# <meta content="../images/logo/SashaBlackLogo.jpg" property="og:image">
+				#
+				{
+					pattern: /(<meta content=")\.\.?(.+?)(" property="og:(url|image)">)/g
+					replacement: '$1https://kristinita.netlify.app$2$3'
+				}
+			]

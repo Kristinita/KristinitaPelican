@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2017-01-17 17:43:09
-# @Last Modified time: 2020-09-24 14:14:47
+# @Last Modified time: 2022-09-11 10:21:38
 """Pelican configuration file.
 
 For publishing. pelicanconf.py — for development.
@@ -20,7 +20,11 @@ sys.path.append(".")
 
 from pelican_settings_loader import PRODUCTION_SETTINGS  # noqa: E402
 from pelican_settings_loader import kira_load_settings  # noqa: E402
+
+# [INFO] Enough to import the variables “CURRENTYEAR” and “JINJA_FILTERS”
+# imports and “sys.path.append("..")” not required
 from pelicanconf import CURRENTYEAR  # noqa: F401
+from pelicanconf import JINJA_FILTERS  # noqa: F401
 # from pelicanconf import FILENAME_METADATA  # noqa: F401
 
 # pylint: enable=wrong-import-position, unused-import

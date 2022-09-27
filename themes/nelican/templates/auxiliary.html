@@ -1,0 +1,294 @@
+{# [INFO] Template for auxiliary web-pages — categories, tags and authors;
+“auxiliary” isn’t “main” web-pages — articles and pages.
+
+[INFO] Read “base.html” about data scructure details
+
+[INFO] Inclusions specific to auxiliary pages are in folder “includes-aux”
+#}
+
+
+<!--=============================
+=			Variables			=
+==============================-->
+
+
+{# [INFO] Same template for different types of auxiliary web-pages:
+http://bit.ly/pelican__articles_and_pages
+
+[REQUIRED][NOTE] “categories”, “tags” and “authors” in this block,
+but constructions like “if kira_object == tags” will not work
+#}
+{% if category %}
+	{% set kira_object = category %}
+{% elif tag %}
+	{% set kira_object = tag %}
+{% elif author %}
+	{% set kira_object = author %}
+{% elif categories %}
+	{% set kira_object = categories %}
+{% elif tags %}
+	{% set kira_object = tags %}
+{% elif authors %}
+	{% set kira_object = authors %}
+{% endif %}
+
+
+{# [INFO] Variables for object types, that print them #}
+{% if category %}
+	{% set kira_object_type = "category" %}
+{% elif tag %}
+	{% set kira_object_type = "tag" %}
+{% elif author %}
+	{% set kira_object_type = "author" %}
+{% endif %}
+
+
+{# [INFO] “kira_aux_categories_and_tags_list” is “category” and “tag” auxiliary objects #}
+{% set kira_aux_categories_and_tags_list = [category, tag] %}
+
+
+{# [INFO] “kira_en_articles_list” — auxiliary web-pages,
+predominantly containing English rather than Russian articles
+
+[LEARN][JINJA] Lists in Jinja:
+https://documentation.bloomreach.com/engagement/docs/datastructures#lists
+
+[INFO] First line — authors of predominantly English-language articles
+Second line — categories with predominantly English-language articles
+The lines below — tags with predominantly English-language articles
+#}
+{% set kira_en_articles_list = [
+		"authors",
+		"categories", "it-articles", "sublime-text",
+		"alltags", "package-control", "package-deployment", "pypi", "python",
+		"sasha-chernykh-software", "spell-check", "sublime-text-color-schemes",
+		"sublime-text-packages", "sublime-text-themes", "yaspeller"
+	] %}
+
+
+
+<!--=============================
+=			Beginning			=
+==============================-->
+
+<!DOCTYPE html>
+
+
+<!--=========================
+=			HTML			=
+==========================-->
+
+{% if kira_object in kira_en_articles_list %}
+	<html lang="en">
+{% else %}
+	<html lang="ru">
+{% endif %}
+
+
+<!--=========================
+=			Head			=
+==========================-->
+
+<head>
+
+	<!--=========================
+	=			Meta			=
+	==========================-->
+
+	{% if kira_object in kira_aux_categories_and_tags_list %}
+		{# [INFO] Repeated block for “category” and “tag” auxiliary web-pages.
+
+		[LEARN][JINJA] Define block in the first place, where would you like to see its content,
+		in the next time use “self.” syntax.
+		Don’t predefine block, it will be printed in predefine place. #}
+		<title>{% block kira_object_and_type %}{{ kira_object }} {{ kira_object_type }}{% endblock %}</title>
+
+	{% elif kira_object == author %}
+		{# [INFO] Repeated block for “author” auxiliary web-pages. #}
+		<title>{% block kira_articles_of_author %}Articles of {{ kira_object }}{% endblock %}</title>
+
+	{% else %}
+		<title>{% block aux_title %}{% endblock %}</title>
+	{% endif %}
+
+
+	{% if kira_object in kira_aux_categories_and_tags_list %}
+		{# [LEARN][JINJA] “self” — use a template multiple times:
+		https://stackoverflow.com/a/1245030/5951529 #}
+		<meta name="description" content="{{ self.kira_object_and_type() }} of “{{ SITENAME }}” site">
+	{% elif kira_object == author %}
+		<meta name="description" content="{{ self.kira_articles_of_author() }} in the “{{ SITENAME }}” site">
+	{% else %}
+		{% block aux_meta_description %}{% endblock %}
+	{% endif %}
+
+
+	{% include "includes/meta.html" %}
+
+
+	<!--=================================
+	=			Critical styles			=
+	==================================-->
+
+	{% include "includes/css-critical.html" %}
+
+	{% include "includes-aux/css-critical-aux.html" %}
+
+	{% include "includes/css-critical-second.html" %}
+
+	{% include "includes-aux/css-critical-aux-second.html" %}
+
+	{# [INFO] Neliateka articles navigation menu #}
+	{% if kira_object == "library-for-life-base" %}
+		<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/specific-categories/Library-for-life/neliateka-navigation-menu{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+	{% endif %}
+
+	<!--=============================
+	=		Critical scripts		=
+	==============================-->
+
+	{% include "includes/js-critical.html" %}
+
+	<!--=================
+	=		Fonts		=
+	==================-->
+
+	{% include "includes-aux/fonts-aux.html" %}
+
+	<!--=================================
+	=		Low-priority styles		    =
+	==================================-->
+
+	{% include "includes/css-low-priority.html" %}
+
+	<!--=================================
+	=		Low-priority scripts		=
+	==================================-->
+
+	{% include "includes/js-low-priority.html" %}
+
+</head>
+
+<body class="gm-scrollbar-container">
+	<div class="gm-scrollbar -vertical"><div class="thumb"></div></div>
+	<div class="gm-scrollbar -horizontal"><div class="thumb"></div></div>
+	<div class="gm-scroll-view">
+
+	<!--=============================
+	=			noscript			=
+	==============================-->
+
+	{% include "includes-aux/js-disabled-aux.html" %}
+
+	<!--=============================
+	=			Side icon			=
+	==============================-->
+
+	<aside class="SashaIconAside">
+
+		<div class="SashaAsideBottomText">
+
+			{% if kira_object in kira_aux_categories_and_tags_list %}
+				{{ self.kira_object_and_type() }}
+			{% elif kira_object == author %}
+				{{ self.kira_articles_of_author() }}
+			{% else %}
+				{{ self.aux_title() }}
+			{% endif %}
+
+		</div>
+	</aside>
+
+	<!--=========================
+	=			Content			=
+	==========================-->
+
+	<main>
+
+		<!--=========================
+		=			Navbar			=
+		==========================-->
+
+		{% if kira_object.lang == "ru" %}
+			{% include "includes/navbar-ru.html" %}
+		{% else %}
+			{% include "includes/navbar-en.html" %}
+		{% endif %}
+
+		<article>
+
+			<!--=========================
+			=			Header			=
+			==========================-->
+
+			<header>
+
+				<h1 class="SashaTopHeader">
+
+					{% if kira_object in kira_aux_categories_and_tags_list %}
+						{{ self.kira_object_and_type() }}
+					{% elif kira_object == author %}
+						{{ self.kira_articles_of_author() }}
+					{% else %}
+						{{ self.aux_title() }}
+					{% endif %}
+
+				</h1>
+
+				{# [INFO] Page loading progress bar #}
+				<img class="SashaPageLoading" src="https://2no.co/auxiliary-web-pages.png" alt="Page loading, please, little wait" width="1" height="1">
+
+				{% if kira_object == "library-for-life-base" %}
+					{% include "includes/nav-menu-neliateka.html" %}
+				{% endif %}
+
+			</header>
+
+			<!--=========================
+			=			Content			=
+			==========================-->
+
+			<section>
+
+				<h2>
+					{% if kira_object == category %}
+						Все статьи категории «{{ kira_object }}»
+					{% elif kira_object == tag %}
+						Все статьи по тегу «{{ kira_object }}»
+					{% elif kira_object == author %}
+						Все статьи автора {{ kira_object }}
+					{% else %}
+						{% block aux_header_h2 %}{% endblock %}
+					{% endif %}
+				</h2>
+
+				<ol>
+					{% block aux_items_of_kira_object %}{% endblock %}
+				</ol>
+
+			</section>
+
+			<!--=========================
+			=			Footer			=
+			==========================-->
+
+			<footer>
+
+				{% include "includes-aux/footer-aux.html" %}
+
+			</footer>
+
+		</article>
+	</main>
+
+	<!--=================================
+	=			Share buttons			=
+	==================================-->
+
+	{% include "includes/share-buttons-addtoany.html" %}
+
+	</div>
+
+</body>
+
+</html>

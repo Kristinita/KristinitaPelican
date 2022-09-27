@@ -1,9 +1,10 @@
 ############
 # AppVeyor #
 ############
-# [PURPOSE] Continuous integration for Windows:
+# [OVERVIEW] Continuous integration for Windows:
 # https://www.appveyor.com/docs/
-# [INFO] Configuration:
+#
+# [INFO] “appveyor.yml” configuration:
 # https://www.appveyor.com/docs/appveyor-yml/
 
 
@@ -16,6 +17,7 @@ platform: x64
 # https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/5c8lytcray3s6u2k?fullLog=true#L139
 # https://www.appveyor.com/docs/custom-build-images/#building-shared-image-in-a-dedicated-project
 # https://www.appveyor.com/docs/windows-images-software/#net-framework
+#
 # [INFO] It the latest AppVeyor image for the February 2022
 image: Visual Studio 2022
 
@@ -29,11 +31,14 @@ init:
 # [NOTE] Don’t use SETX for adding value of “PATH” variable!
 # You can loss PATH data, if PATH contains more than 1024 symbols:
 # https://superuser.com/a/939256/572069
+#
 # [LEARN] SETX PATH:
 # https://stackoverflow.com/a/26947177/5951529
 # https://superuser.com/a/939256/572069
+#
 # [LEARN] SET PATH:
 # https://stackoverflow.com/a/9546345/5951529
+#
 # [BUG] SETX doesn’t work with “configuration” step, compare:
 # https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/22144071
 # https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/22144311
@@ -41,16 +46,16 @@ init:
 # [LINK] “.travis.yml”:
 - SETX PIPENV_IGNORE_VIRTUALENVS 1
 - SETX PIPENV_VENV_IN_PROJECT 1
-# - SETX PIPENV_SKIP_LOCK 1
+- SETX PIPENV_SKIP_LOCK 1
 
 # [NOTE] Needs AppVeyor console set, see:
 # https://stackoverflow.com/a/48093971/5951529
 - SETX PYTHONIOENCODING utf-8
 
-# [LINK] “.travs.yml”
+# [LINK] “.travis.yml”
 - SETX DOTNET_CLI_TELEMETRY_OPTOUT 1
 
-# [LINK] “.travs.yml”
+# [LINK] “.travis.yml”
 - SETX GRUNT_PYLINT_SKIP_POSTINSTALL yes
 
 # [NOTE] Disable preventing Node.js warnings:
@@ -71,35 +76,42 @@ init:
 # - refreshenv
 
 
+# [DECLINED] I disable multi-jobs
+###
 # [LEARN][APPVEYOR] “configuration” step:
 # https://www.appveyor.com/blog/2018/04/25/specialized-build-matrix-configuration-in-appveyor/
 # “Debug” configuration is default
-configuration:
-- Debug
-- Release
+# configuration:
+# - Debug
+# - Release
 
 
 environment:
   # [LEARN][APPVEYOR] Variables:
   # https://help.appveyor.com/discussions/problems/4629-how-to-use-appveyor-environment-variable
   # https://help.appveyor.com/discussions/questions/15163-multiuple-build-matrix-dimensions-from-environment-variables
+  #
   # [INFO] I use the latest available Python version:
   # https://www.appveyor.com/docs/windows-images-software/#python
   PYTHON: C:\Python310-x64
 
+  # [DECLINED] I disable multi-jobs
+  ###
   # [INFO] “grunt default” = “grunt”;
-  # AppVeyor support blank value.
-
-  # [INFO] Spaces before “&&” doesn't need, compare:
+  # AppVeyor supports blank value.
+  #
+  # [INFO] Spaces before “&&” doesn’t need, compare:
   # https://ci.appveyor.com/project/Kristinita/sashatravis/build/job/5oqxucp76bpsr51o
   # https://ci.appveyor.com/project/Kristinita/sashatravis/build/1.0.38/job/s52ko615e3fpxr9b
-  GRUNT_BUILD:
+  # GRUNT_BUILD:
 
+  # [DECLINED] I disable multi-jobs
+  ###
   # [NOTE] For AppVeyor I use “clean-console”, not “validatedev”.
   # “checkPages” is a task for Travis CI solely;
   # for AppVeyor I get bugs, possibly, because HTML not fixed correctly:
   # https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/o5cwx0ug2htufar8#L2488
-  GRUNT_TEST: http-server clean-console&& grunt validate remote
+  # GRUNT_TEST: http-server checkPages&& grunt validate
 
   # [INFO] API key required for LocalAppVeyor:
   # https://www.appveyor.com/docs/api/
@@ -119,23 +131,22 @@ environment:
 # https://www.appveyor.com/docs/build-configuration/#build-pipeline
 install:
 
-
 # [REQUIRED] So that script run for “master” branch, not for “HEAD”;
 # Needs, that “grunt-checkbranch” works correct:
 # https://stackoverflow.com/a/18866140/5951529
+#
 # [NOTE] It needs in “install” section, because in “init” section actions before cloning.
 - git checkout master
-
 
 # [LEARN][APPVEYOR] Console (cmd.exe) is default terminal in AppVeyor.
 # If needs PowerShell, “ps:” required:
 # https://www.appveyor.com/docs/appveyor-yml/
-
+#
 # [NOTE] For local Scoop installation must required:
 # “Set-ExecutionPolicy RemoteSigned -scope CurrentUser”
 # http://scoop.sh/
-
-# [DEPRECATED] Old Scoop installation method doesn’t work:
+#
+# [DEPRECATED] Old Scoop installation method doesn’t work in 2022:
 # https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/o1iawbsb22eai63l#L26
 # [COMPARE] https://ci.appveyor.com/project/Kristinita/sashakristinitaappveyor/builds/44427848
 # https://ci.appveyor.com/project/Kristinita/sashakristinitaappveyor/builds/44427890
@@ -145,7 +156,8 @@ install:
 # https://github.com/ScoopInstaller/Install#for-admin
 - ps: iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
 
-# [NOTE][COMPARE] Required PATH changes to separated file, because “PATH” must be set before grunt-pylint installation:
+# [NOTE][COMPARE] Required PATH changes to separated file,
+# because “PATH” must be set before grunt-pylint installation:
 # https://ci.appveyor.com/project/Kristinita/sashagruntdebugging/builds/24778322
 # https://ci.appveyor.com/project/Kristinita/sashagruntdebugging/builds/24778353
 - '%APPVEYOR_BUILD_FOLDER%/batch/appveyor-pathed.bat'
@@ -153,41 +165,48 @@ install:
 
 # [NOTE] npm parallel doesn’t work, example:
 # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.25/job/70x5h1qq2d6j8gyp
+#
 # [NOTE] start command doesn’t work without batch file:
 # https://ci.appveyor.com/project/Kristinita/sashapelicantest/build/1.0.31
+#
 # [LEARN][APPVEYOR] Project folder:
 # https://github.com/vim/vim-win32-installer/blob/master/appveyor.yml
 - '%APPVEYOR_BUILD_FOLDER%/batch/appveyor-install.bat'
 - pathed /APPEND %USERPROFILE%\.dotnet\tools /USER
 
 # [NOTE] 2 “refreshenv” required, if you use pathed instead of “SET”.
+#
 # [COMPARE] “refreshenv” after install script required:
 # https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/24763413
 # https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/24763463
 - refreshenv
 
 
+# [DECLINED] I disable multi-jobs
+###
+# [LEARN][APPVEYOR] Simple working configuration:
+# https://github.com/Kristinita/SashaAppVeyorDebugging/blob/7ac8c23540c737f403ae280ce6502734833bb85f/appveyor.yml
+# for:
+# -
+#   matrix:
+#     only:
+#     - configuration: Release
+#   environment:
+#     GRUNT_BUILD: publish
+#     # [NOTE] Travis CI build run parallel and ends earlier than AppVeyor,
+#     # so “afterdeploy” will run after site deployment.
+#     GRUNT_TEST: validate remote afterdeploy
+
+
 build_script:
-- grunt %GRUNT_BUILD%
+- grunt
 
 
 test_script:
-- grunt %GRUNT_TEST%
+- grunt http-server checkPages
+- grunt validate
 
 
-# [LEARN][APPVEYOR] Simple working configuration:
-# https://github.com/Kristinita/SashaAppVeyorDebugging/blob/7ac8c23540c737f403ae280ce6502734833bb85f/appveyor.yml
-for:
--
-  matrix:
-    only:
-    - configuration: Release
-  environment:
-    GRUNT_BUILD: publish
-    # [DONE][FIXED] https://github.com/GoogleChromeLabs/psi/issues/118
-    # https://github.com/GoogleChromeLabs/psi/pull/120
-    # [NOTE] Travis CI build run parallel and end before AppVeyor,
-    # so “afterdeploy” will run after site deployment.
-    # [BUG][FIXME] “Cannot read property 'metrics' of undefined” bug:
-    # https://github.com/GoogleChromeLabs/psi/issues/118
-    GRUNT_TEST: validate remote afterdeploy
+after_test:
+- grunt aftertests
+- grunt afterdeploy

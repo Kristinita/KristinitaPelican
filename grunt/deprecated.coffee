@@ -97,7 +97,7 @@
 # 			to: '//gitcdn.xyz/repo/Kristinita/Kristinita.netlify.com/master/$1.$2'
 # 		# Header permalink
 # 			from: /(<p>\s*?<a name="(.+?)" id="(.+?)"><\/a>\s*?<\/p>\s+?<h\d+?>((.|\n|\r)+?))(<\/h\d+?>)/g
-# 			to: '$1 <a class="headerlink" href="#$2" title="Permanent link">¶</a>$6'
+# 			to: '$1 <a class="KiraAnchorPermanentLink" href="#$2" title="Permanent link">¶</a>$6'
 # 		]
 
 
@@ -122,8 +122,8 @@
 # 		]
 # 	single:
 # 		files: [
-# 				src: '<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/KristinitaLuckyLink.html'
-# 				dest: '<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/KristinitaLuckyLink.html'
+# 				src: '<%= templates.yamlconfig.OUTPUT_PATH %>/Sublime-Text/KristinitaLuckyLink.html'
+# 				dest: '<%= templates.yamlconfig.OUTPUT_PATH %>/Sublime-Text/KristinitaLuckyLink.html'
 # 			]
 
 
@@ -463,10 +463,10 @@
 # 	sublimetexttarget:
 # 		src: [
 # 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Sublime-Text/*.html"
-# 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/*.html"
+# 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Sublime-Text/*.html"
 # 				]
-# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/programs.css"]
-# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/programs.css"
+# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes/programs.css"]
+# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes/programs.css"
 
 
 # [DEPRECATED]
@@ -738,34 +738,34 @@
 # 					]
 # 	indextarget:
 # 		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/index.html"]
-# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/kristinita.css"]
-# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/kristinita.css"
+# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes-specific/kristinita.css"]
+# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes-specific/kristinita.css"
 # 	sublimetexttarget:
 # 		src: [
-# 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Erics-Rooms/*.html"
-# 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/*.html"
+# 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Nelias-Rooms/*.html"
+# 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Sublime-Text/*.html"
 # 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Sublime-Text/*.html"
 # 				]
-# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/programs.css"]
-# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/programs.css"
+# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes/programs.css"]
+# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes/programs.css"
 # 	gingerinastarget:
 # 		src: [
-# 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Erics-Rooms/*.html"
+# 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Nelias-Rooms/*.html"
 # 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Gingerinas/*.html"
 # 				]
-# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/gingerinas.css"]
-# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/gingerinas.css"
+# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes/gingerinas.css"]
+# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes/gingerinas.css"
 # 	itarticlestarget:
 # 		src: [
-# 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Erics-Rooms/*.html"
+# 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Nelias-Rooms/*.html"
 # 				"<%= templates.yamlconfig.OUTPUT_PATH %>/IT-articles/*.html"
 # 				]
-# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/it-articles.css"]
-# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/it-articles.css"
+# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes/it-articles.css"]
+# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes/it-articles.css"
 # 	giologicabluetarget:
 # 		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/Giologica/Valerywork-Kiravel.html"]
-# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica-blue.css"]
-# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica-blue.css"
+# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes/giologica-blue.css"]
+# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes/giologica-blue.css"
 # 	giologicatarget:
 # 		src: [
 # 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Books-Reviews/*.html"
@@ -773,105 +773,20 @@
 # 				"<%= templates.yamlconfig.OUTPUT_PATH %>/G-Rights/*.html"
 # 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Special/*.html"
 # 				]
-# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica.css"]
-# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/giologica.css"
+# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes/giologica.css"]
+# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes/giologica.css"
 # 	sashablacktarget:
 # 		# Pages and Sasha Black
 # 		src: [
 # 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Sasha-Black/*.html"
 # 				"<%= templates.yamlconfig.OUTPUT_PATH %>/Pages/*.html"
 # 				]
-# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/sasha-black-description.css"]
-# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/sasha-black-description.css"
+# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes-specific/sasha-black-description.css"]
+# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes-specific/sasha-black-description.css"
 # 	smertsvobodetarget:
 # 		src: ["<%= templates.yamlconfig.OUTPUT_PATH %>/Smert-svobode/*.html"]
-# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/smert-svobode.css"]
-# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/sections/smert-svobode.css"
-
-
-# [DECLINED]
-# 1. posthtml-img-autosize doesn’t work for relative paths:
-# https://github.com/posthtml/grunt-posthtml/issues/4
-# 2. lazysizes plugin required for my environment,
-# I don’t add native lazy loading via posthtml-lazyload
-# ####################
-# ## grunt-posthtml ##
-# ####################
-# ###
-# [INFO] Framework to transform HTML/XML via JavaScript plugins:
-# https://posthtml.org/#/
-# https://www.npmjs.com/package/posthtml
-
-# [INFO] Plugins:
-# https://www.npmjs.com/package/posthtml#plugins
-
-# [INFO] Grunt wrapper:
-# https://www.npmjs.com/package/grunt-juwain-posthtml
-
-# [FIXED] https://github.com/posthtml/grunt-posthtml/issues/4
-# [NOTE] Default version — “https://www.npmjs.com/package/grunt-posthtml” —
-# doesn’t work for me. I use grunt-juwain-posthtml version:
-# https://github.com/posthtml/grunt-posthtml/issues/3
-# ###
-# module.exports =
-# 	options:
-# 		use: [
-# 			#####################
-# 			# posthtml-lazyload #
-# 			#####################
-# 			# [SOON] Currently, I still use JQuery Lazy for lazy loading images and iframes.
-# 			# We have polyfill for browsers that not supported loading="lazy":
-# 			# https://github.com/mfranzke/loading-attribute-polyfill
-# 			# Polyfill problems:
-# 			# 1. It not valid:
-# 			# https://github.com/mfranzke/loading-attribute-polyfill/issues/90
-# 			# 2. Additional syntax required:
-# 			# https://github.com/mfranzke/loading-attribute-polyfill#simple-image
-
-
-# 			# [ACTION] Add “loading="lazy"” to all images and iframes:
-# 			# https://www.npmjs.com/package/posthtml-lazyload
-
-# 			# [NOTE] I couldn’t find any method for applying lazy loading for
-# 			# all images and frames without adding “loading="lazy"” each time
-
-# 			# [INFO] “loading="eager"” — load resources immediatly:
-# 			# https://web.dev/browser-level-image-lazy-loading/
-
-# 			# [INFO] For “picture” tag the “loading” attribute required solely for
-# 			# the fallback “img” element:
-# 			# https://web.dev/browser-level-image-lazy-loading/
-
-# 			# [NOTE] CSS background images haven’t “loading” attribute:
-# 			# https://web.dev/browser-level-image-lazy-loading/\
-# 			#can-css-background-images-take-advantage-of-the-loading-attribute
-
-# 			# require('posthtml-lazyload')(loading: 'lazy')
-
-
-# 			#########################
-# 			# posthtml-img-autosize #
-# 			#########################
-# 			# [BUG] Plugin doesn’t work with relative paths:
-# 			# https://github.com/posthtml/posthtml-img-autosize/issues/17#issuecomment-706592803
-
-# 			# [OVERVIEW] Plugin adds “height” and “width” attributes to all images:
-# 			# https://www.npmjs.com/package/posthtml-img-autosize
-# 			# [INFO] It required for 2020:
-# 			# https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/
-
-# 			# require('posthtml-img-autosize')(
-# 			# 		processEmptySize: true
-# 			# 		root: "output/Programs"
-# 			# 		)
-# 		]
-# 	target:
-# 		files: [
-# 			expand: true
-# 			cwd: "."
-# 			src: "output/Programs/*.html"
-# 			dest: "."
-# 		]
+# 		css: ["<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes/smert-svobode.css"]
+# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/theme/css/nelican-themes/smert-svobode.css"
 
 
 # [DECLINED] UglifyJS doesn’t support EcmaScript 2015 and above:
@@ -970,3 +885,351 @@
 # 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/js"
 # 			ext: '.min.js'
 # 			]
+
+
+# [DECLINED] I migrated from Visualize to Mermaid,
+# I don’t need grunt-curl for now
+#
+# ##############
+# # grunt-curl #
+# ##############
+# ###
+# [INFO] Download remote files:
+# https://www.npmjs.com/package/grunt-curl
+# I use grunt-curl, that then minify non-minified remote scripts or stylesheets
+# ###
+#
+#
+# ###
+# module.exports =
+#
+# 	[NOTE] gemini-scrollbar files exists in JSDelivr, despite the fact that they not exists in GitHub
+# 	https://github.com/noeldelgado/gemini-scrollbar/pull/61
+# 	[NOTE] AddToAny — https://static.addtoany.com/menu/page.js —
+# 	and Wildfire scripts — https://cdn.jsdelivr.net/npm/wildfire/dist/wildfire.auto.js — already minified
+#
+# 	[INFO] Visualize:
+# 	https://github.com/kellyk/visualize/pull/1
+# 	[NOTE] Use GitHub Raw, not GitCDN or another GitHub CDN,
+# 	because CDN — additional resource, that may not work:
+# 	https://github.com/schme16/gitcdn.xyz/issues/49#issuecomment-493354294
+#
+# 	visualize:
+# 		src: "https://raw.githubusercontent.com/kellyk/visualize/master/visualize.js"
+# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/js/visualize.js"
+# ###
+
+
+# [DECLINED] linthtml (as commitlint) doesn’t have the “right” configuration;
+# users set own configurations.
+# This is unacceptable logic for me.
+# ############
+# # linthtml #
+# ############
+# ###
+# [INFO] Lint HTML files:
+# https://linthtml.vercel.app/
+#
+# [NOTE] linthtml ignores “.gitignore” files,
+# “.linthtmlignore” overwrite “.gitignore” rules:
+# https://linthtml.vercel.app/user-guide/ignore-code
+#
+# [NOTE] linthtml requires "double quotes", not 'single quotes'
+# https://github.com/linthtml/linthtml/issues/411#issuecomment-1219056343
+# ###
+# linthtml:
+# 	command: 'npx linthtml "<%= templates.paths.html %>"'
+
+
+# [DEPRECATED] I used Modernizr fallback for browsers that don’t support webp image format.
+# But as of August 2022, all modern browsers support this format:
+# https://caniuse.com/?search=webp
+#
+# I don’t use Modernizr for other purposes, so I disable it
+#
+# ###################
+# # grunt-modernizr #
+# ###################
+# ###
+# [OVERVIEW] Modernizr fix flaws of non-compatible browsers:
+# https://modernizr.com/
+#
+# [INFO] grunt-modernizr generate Modernizr custom file for needed features:
+# https://www.npmjs.com/package/grunt-modernizr
+#
+# [INFO] Get Grunt configuration from online tool; I select “WebP” solely:
+# https://modernizr.com/download
+#
+# [INFO] Options:
+# https://github.com/modernizr/customizr#config-file
+# ###
+# module.exports =
+# 	dist:
+# 		dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>\
+# 				/js/Modernizr/modernizr-custom.min.js"
+# 		# [INFO] Don’t crawl a project
+# 		crawl: false
+# 		###
+# 		[INFO] I use Modernizr for jpg fallback for browsers doesn’t support webp format:
+# 		https://css-tricks.com/using-webp-images/#article-header-id-4
+# 		###
+# 		tests: ["webp"]
+# 		# [INFO] Uglify Modernizr JavaScript
+# 		uglify: true
+
+
+# [DEPRECATED] grunt-remark no longer maintained:
+# https://github.com/remarkjs/grunt-remark
+# I migrated to remark-cli.
+# ################
+# # grunt-remark #
+# ################
+#
+# [OVERVIEW] Markdown linter:
+# https://remark.js.org/
+#
+# [INFO] Grunt implementation:
+# https://www.npmjs.com/package/grunt-remark
+#
+# [OPTIONS] https://github.com/unifiedjs/unified-engine-gulp#options
+#
+# [INFO] You need to install remark plugins separately:
+# “npm install remark-preset-lint-markdown-style-guide remark-preset-lint-recommended --save-dev”
+#
+# [INFO] Disabling specific rules:
+# https://github.com/remarkjs/remark-lint#configuring-remark-lint
+#
+# module.exports =
+# 	src: "<%= templates.paths.markdown_remark %>"
+# 	options:
+# 		###
+# 		[INFO] Build failed, if any warning:
+# 		https://github.com/unifiedjs/unified-engine-gulp#optionsfrail
+# 		###
+# 		frail: true
+
+
+# [DECLINED] I don’t understand, how to make it work for my environment
+# I use “string-replace” expressions for convert relative paths to absolute
+# ##########################
+# # grunt-path-absolutely #
+# #########################
+# [OVERVIEW] Convert relative paths to absolute:
+# https://github.com/nonjene/grunt-path-absolutely
+# module.exports =
+# 	dist:
+# 		options:
+# 			devRoot: "."
+# 			releaseRoot: "https://kristinita.netlify.app"
+# 			resourceFilter: ['*.{jpg,jpeg,png,webp,css,js}']
+# 		files: [
+# 			expand: true
+# 			cwd: "."
+# 			src: "<%= templates.paths.html %>"
+# 			dest: "."
+# 			]
+
+
+# [DECLINED] I migrated to the PostCSS stylelint.
+# #############
+# # stylelint #
+# #############
+# ###
+# [INFO] Stylelint — CSS linter:
+# https://stylelint.io/
+#
+# [INFO] Grunt wrapper:
+# https://www.npmjs.com/package/grunt-stylelint
+#
+# [INFO] Configuration:
+# https://stylelint.io/user-guide/configuration
+#
+# [INFO] Grunt options:
+# https://www.npmjs.com/package/grunt-stylelint#options
+#
+# [NOTE] Not to be confused with stylint — stylus linter!
+# https://simenb.github.io/stylint/
+#
+# [INFO] manual stylelint installation required:
+# “npm install stylelint --save-dev”:
+# https://www.npmjs.com/package/grunt-stylelint#getting-started
+#
+# [NOTE] Manual configuration and config file installation required:
+# https://stackoverflow.com/a/55553735/5951529
+#
+# [INFO] stylelint-config-recommended:
+# https://www.npmjs.com/package/stylelint-config-recommended
+# ###
+# module.exports =
+# 	lint:
+# 		files: "<%= templates.paths.css %>"
+
+
+# [DEPRECATED] Plugin no longer maintained:
+# https://github.com/sindresorhus/grunt-cssnano
+# I migrated to PostCSS cssnano
+# ###########
+# # cssnano #
+# ###########
+# ###
+# [OVERVIEW] CSS minifier:
+# http://cssnano.co/
+#
+# [INFO] Grunt wrapper:
+# https://www.npmjs.com/package/grunt-cssnano
+#
+# [NOTE] Optimisations:
+# https://cssnano.co/docs/what-are-optimisations/
+#
+# [INFO] CSS minification benchmark:
+# https://goalsmashers.github.io/css-minification-benchmark/
+#
+# [NOTE] Delete “.beautified.css” files! cssnano incorrectly minify “.css” files, example:
+# Files: output/theme/css/components/basic.beautified.css, output/theme/css/components/basic.css ->
+# output/theme/css/components/basic.min.css
+# ###
+# module.exports =
+# 	options:
+#
+# 		###
+# 		[LEARN][CSS][JAVASCRIPT] Sourcemaps
+# 		make debugging simply, if styles and scripts combine and compress:
+# 		https://blog.teamtreehouse.com/introduction-source-maps
+# 		###
+# 		sourcemap: true
+# 	nanopersonal:
+# 		files: [
+# 			expand: true
+# 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/css/personal"
+# 			src: ['**/*.css'
+# 					'!**/*.min.css']
+# 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/css/personal"
+# 			# [INFO] Extensions in filepaths:
+# 			# https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
+# 			ext: '.min.css'
+# 			]
+# 	nanotheme:
+# 		files: [
+# 			expand: true
+# 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css"
+# 			src: ['**/*.css'
+# 					'!**/*.min.css']
+# 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css"
+# 			ext: '.min.css'
+# 			]
+
+
+# [DEPRECATED] I migrated to grunt-postcss
+# [INFO] The PostStylus code was contained in the file “stylus.coffee”
+# 1. PostStylus no longer maintained
+# 2. Possible conflicts between PostCSS versions in PostStylus and grunt-postcss
+# 3. If sourcemap generated by PostStylus, and then grunt-postcss,
+# I get errors from “merge-source-maps”
+# 4. Bug — PostStylus builds passed if any warning:
+# https://github.com/seaneking/poststylus/issues/26
+# 5. I didn’t understand how to add options to processors,
+# how to do similar for PostStylus:
+# require('postcss-combine-duplicated-selectors') removeDuplicatedProperties: true
+# ##############
+# # PostStylus #
+# ##############
+# ###
+# [OVERVIEW] PostCSS adapter for Stylus:
+# https://www.npmjs.com/package/poststylus
+#
+# [INFO] PostStylus Grunt usage:
+# https://www.npmjs.com/package/poststylus#grunt
+#
+# [INFO] Passing plugins arguments:
+# https://www.npmjs.com/package/poststylus#passing-arguments-to-plugins
+# doiuse = require('doiuse')
+# ###
+# postcss = ->
+# 	require('poststylus') [
+# 		################
+# 		# AutoPrefixer #
+# 		################
+#
+# 		# [OVERVIEW] Automatically add browser prefixes:
+# 		# https://www.npmjs.com/package/autoprefixer
+# 		'autoprefixer'
+#
+# 		# [BUG][SO] Build passed, if any warning
+# 		# https://github.com/seaneking/poststylus/issues/26
+# 		#
+# 		# I use PostCSS instead of PostStylus for doiuse
+# 		# doiuse
+#
+# 		################################
+# 		# combine-duplicated-selectors #
+# 		################################
+# 		# [OVERVIEW] Combine duplicated selectors in generated CSS:
+# 		# https://www.npmjs.com/package/postcss-combine-duplicated-selectors
+# 		#
+# 		# [INFO] Stylus itself don’t combine correctly “.progress”, “.progress-bar” in my HTML
+# 		#
+# 		# [FIXME] Add option “removeDuplicatedProperties: true” when migrate from PostStylus to PostCSS
+# 		'postcss-combine-duplicated-selectors'
+#
+# 		#######################
+# 		# combine-media-query #
+# 		#######################
+# 		# [OVERVIEW] Combine media queries PostCSS plugin:
+# 		# https://www.npmjs.com/package/postcss-combine-media-query
+# 		'postcss-combine-media-query'
+#
+# 		# [NOTE] postcss-merge-rules doesn’t work as a separate plugin,
+# 		# it works solely as a part of the cssnano:
+# 		# https://www.npmjs.com/package/postcss-merge-rules
+# 		# https://cssnano.co/docs/optimisations/mergerules/
+# 		# 'postcss-merge-rules'
+#
+# 		# [FIXME] Add “postcss-purgefonts” for adding solely specific characters
+# 		# from “Material Icons” font:
+# 		# https://github.com/ericpaulbishop/postcss-purgefonts
+# 	]
+
+
+# [DEPRECATED] CSSLint no longer maintained:
+# https://github.com/CSSLint/csslint/issues/754
+#
+# If I use CSS3 syntax, I will get CSSLint error in any case.
+# I can’t ignore parts of CSS files that contains CSS3 variables
+# https://github.com/CSSLint/csslint/issues/720#issuecomment-376566968
+# https://github.com/CSSLint/csslint/issues/720#issue-271707857
+# ###########
+# # csslint #
+# ###########
+# ###
+# [OVERVIEW] Linter for CSS:
+# http://csslint.net/
+#
+# [INFO] Grunt wrapper:
+# https://www.npmjs.com/package/grunt-contrib-csslint
+#
+# [INFO] Rules:
+# https://github.com/CSSLint/csslint/wiki/Rules
+#
+# [INFO] Grunt options:
+# https://www.npmjs.com/package/grunt-contrib-csslint#csslint-task
+#
+# [INFO] Ignoring parts of CSS during linting:
+# https://github.com/CSSLint/csslint/wiki/Ignoring-parts-of-CSS-during-linting
+#
+# [NOTE] Isn’t possible ignore specific rules for specific lines:
+# https://stackoverflow.com/questions/29248792#comment103080092_35260823
+#
+# [NOTE] Stylus single-line buffered comments doesn’t worked for
+# CSSLint ignore rules per line; they still removed:
+# http://stylus-lang.com/docs/comments.html#multi-line-buffered
+# https://github.com/CSSLint/csslint/wiki/Ignoring-parts-of-CSS-during-linting#ignoring-rules-per-line
+# ###
+# module.exports =
+# 	options:
+# 		csslintrc: '.csslintrc'
+# 	lint:
+# 		# [NOTE] “files” object doesn't work
+# 		src: [
+# 				"<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.css"
+# 				"!<%= templates.yamlconfig.OUTPUT_PATH %>/**/*.min*css"
+# 				]

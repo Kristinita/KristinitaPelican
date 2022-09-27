@@ -6,8 +6,12 @@
 # [INFO] Delete extra artifacts from development process
 DELETE_OUTPUT_DIRECTORY: true
 
-# [INFO] Absolute paths for publishing; that users can copy sources of my site
-RELATIVE_URLS: false
+# [INFO] I want absolute paths for publishing; that users can copy sources of my site.
+# But in building process relative paths required for some tools as
+# critical, checkPages and clean-console.
+# So I’m convert relative paths to absolute after all tasks
+# use regular expressions from “grunt string-replace:html-relative-to-absolute-paths”
+RELATIVE_URLS: true
 
 # [INFO] About caching:
 # https://docs.getpelican.com/en/latest/settings.html#reading-only-modified-content

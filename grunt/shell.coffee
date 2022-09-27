@@ -37,6 +37,7 @@ module.exports =
 		command: 'pipenv --update'
 	###
 
+
 	############
 	## pipenv ##
 	############
@@ -47,6 +48,8 @@ module.exports =
 	###
 	pipenvupdateall:
 		command: 'pipenv run pip-review --auto'
+
+
 	###
 	[INFO] Clean unused packages:
 	https://pipenv.pypa.io/en/latest/cli/#pipenv-clean
@@ -65,6 +68,7 @@ module.exports =
 	###
 	pipenvcleanunused:
 		command: 'pipenv clean --verbose'
+
 	###
 	Update packages versions to the newest in “Pipfile.lock”, that:
 
@@ -77,6 +81,17 @@ module.exports =
 	###
 	pipenvupdatepipfilelock:
 		command: 'pipenv update'
+
+
+	############
+	## djLint ##
+	############
+	###
+	[INFO] djLint — lint templates files (Jinja) for me
+	https://www.djlint.com
+	###
+	djlint:
+		command: "pipenv run djlint <%= templates.paths.theme %>/templates --lint"
 
 
 	#########
@@ -93,6 +108,7 @@ module.exports =
 	###
 	gitreflog:
 		command: 'git reflog expire --all'
+
 	###
 	git gc
 	https://stackoverflow.com/a/55738/5951529
@@ -107,20 +123,23 @@ module.exports =
 	## HTML Tidy ##
 	###############
 	###
-	Validate and fix HTML files:
+	[OVERVIEW] Validate and fix HTML files:
 	http://www.html-tidy.org/
-	Description:
+
+	[INFO] Description:
 	http://api.html-tidy.org/tidy/tidylib_api_next/index.html
-	Options:
+
+	[OPTIONS]
 	http://api.html-tidy.org/tidy/quickref_next.html
 	###
 	tidymodify:
 		# [LEARN][GRUNT] Platform-specific tasks:
 		# https://stackoverflow.com/a/23848087/5951529
-		# [REQUIRED] Single-line comments after a colon; otherwise the error “unexpected_newline”:
+		#
+		# [NOTE][REQUIRED] Single-line comments after a colon; otherwise the error “unexpected_newline”:
 		# https://travis-ci.com/github/Kristinita/KristinitaPelican/jobs/488737915#L1945
 		if process.platform is "win32"
-			# Need quotes, that command run:
+			# [INFO] Need quotes, that command run:
 			command: '"batch/tidy-modify.bat"'
 		else
 			###
@@ -139,20 +158,23 @@ module.exports =
 	## covgen ##
 	############
 	###
-	Generate Code of conduct for project:
+	[OVERVIEW] Generate Code of conduct for project:
 	https://contributor-covenant.org/
 	https://www.npmjs.com/package/covgen
+
 	[WARNING] Generate “CODE_OF_CONDUCT.md” for root folder:
 	https://github.com/simonv3/covenant-generator/issues/15
+
 	[WARNING] Unobfuscated plain text e-mail:
 	https://github.com/ContributorCovenant/contributor_covenant/issues/523
 	###
+
 
 	#########
 	## npx ##
 	#########
 	###
-	Tool for running npm CLI commands:
+	[OVERVIEW] Execute npm CLI commands inside project:
 	https://www.npmjs.com/package/npx
 	https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b
 	https://stackoverflow.com/a/45164863/5951529
@@ -165,20 +187,21 @@ module.exports =
 	## pip-licenses ##
 	##################
 	###
-	Output licenses of all PyPI packages:
+	[OVERVIEW] Output licenses of all PyPI packages:
 	https://pypi.org/project/pip-licenses/
-	Options:
+
+	[OPTIONS]
 	https://pypi.org/project/pip-licenses/#command-line-options
 	###
 	piplicenses:
-		command: 'pipenv run pip-licenses --with-authors --with-urls --with-description --format=markdown > python.md'
+		command: 'pipenv run pip-licenses --with-authors --with-urls --with-description --format=markdown > pip-licenses.md'
 
 
 	##########################
 	## commitlint Travis CI ##
 	##########################
 	###
-	Commit linting for Travis CI:
+	[OVERVIEW] Commit linting for Travis CI:
 	http://marionebl.github.io/commitlint/#/guides-ci-setup
 	###
 	commitlint:
@@ -192,6 +215,7 @@ module.exports =
 	[ACTION] Lint “.travis.yml” file locally:
 	https://stackoverflow.com/a/35607499/5951529
 	https://rubygems.org/gems/travis
+
 	[INFO] “-x” argument — exit code 1, if any warning:
 	https://github.com/travis-ci/travis.rb#lint
 	###
@@ -203,16 +227,21 @@ module.exports =
 	# EClint #
 	##########
 	###
-	Lint and fix files for EditorConfig rules:
+	[OVERVIEW] Lint and fix files use EditorConfig rules:
 	https://www.npmjs.com/package/eclint
+
 	eclint doesn't search files and folders, that ignored in “.gitignore”:
 	https://github.com/jedmao/eclint/issues/80#issuecomment-314936365
+
 	“eclint infer” — show current statistic:
 	https://www.npmjs.com/package/eclint#infer
+
 	[WARNING] Another eclint check and fix methods doesn't work:
 	https://github.com/jedmao/eclint/issues/130
+
 	[WARNING] User can get different results for Windows and *NIX:
 	https://github.com/jedmao/eclint/issues/129#event-1574600632
+
 	[BUG] 2 blank lines in end of file “CODE_OF_CONDUCT.md”, needs fix it:
 	https://github.com/ContributorCovenant/contributor_covenant/issues/528
 	###
@@ -238,8 +267,14 @@ module.exports =
 	# ShellCheck #
 	##############
 	###
-	Check “.sh” files:
+	[OVERVIEW] Check “.sh” files:
 	https://www.shellcheck.net/
+
+	[INFO] ShellCheck pre-installed on Travis:
+	https://github.com/koalaman/shellcheck#travis-ci
+
+	[INFO] Scoop or Chocolatey installation required on Windows:
+	https://github.com/koalaman/shellcheck#installing
 	###
 	shellcheck:
 		if process.platform is "win32"
@@ -266,11 +301,33 @@ module.exports =
 	# LocalAppVeyor #
 	#################
 	###
-	Validate “appveyor.yml” file:
+	[INFO] Validate “appveyor.yml” file:
 	https://github.com/joaope/LocalAppVeyor
+
 	[INFO] Get system environment variables:
 	https://stackoverflow.com/a/14089064/5951529
 	https://gruntjs.com/creating-tasks#cli-options-environment
 	###
 	localappveyor:
 		command: "LocalAppVeyor lint --token <%= templates.tokens.api_key_appveyor %>"
+
+
+	##########
+	# remark #
+	##########
+	###
+	[OVERVIEW] Remark — Markdown linter and formatter:
+	https://remark.js.org/
+
+	[INFO] CLI usage:
+	https://www.npmjs.com/package/remark-cli
+
+	[OPTIONS] https://github.com/unifiedjs/unified-args#cli
+
+	[REQUIRED][INFO] “--silently-ignore”. If no, remark will check all
+	ignored files and spam the console with errors about each ignored file
+
+	[INFO] “--frail” — build fail if any warning
+	###
+	remark:
+		command: "npx remark <%= templates.paths.cwd %>/**/*.md --silently-ignore --frail"

@@ -12,7 +12,7 @@
 @REM “pathed /APPEND firstpath secondpath thirdpath” will not work:
 @REM https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/24721706#L32
 
-@REM [WARNING] Needs set Python 3, because Python 2 by default at February 2019:
+@REM [NOTE] Needs set Python 3, because Python 2 by default at February 2019:
 @REM https://github.com/ogrisel/python-appveyor-demo/blob/master/appveyor.yml
 @REM https://www.appveyor.com/docs/windows-images-software/#python
 @REM https://ci.appveyor.com/project/Kristinita/erichek/build/1.0.3

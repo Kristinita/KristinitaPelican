@@ -1,38 +1,17 @@
 ##################
 ## registerTask ##
 ##################
-# Run chains of Grunt commands:
+# [OVERVIEW] Run chains of Grunt commands:
 
-# [LEARN][GRUNT] If “default”, you need run “grunt” in command prompt, not “grunt default”:
+
+# [LEARN][GRUNT] If “default”, required “grunt” in command prompt, not “grunt default”:
 # https://www.html5rocks.com/en/tutorials/tooling/supercharging-your-gruntfile/#toc-organizing
-
-# [INFO] Reviewing with relative paths
+# [INFO] Real site build
 default:
-- 'concurrent:tarb1'
-- 'concurrent:tarb2'
-- 'concurrent:tarb3'
-- 'concurrent:tarb4'
-- 'concurrent:tarb5'
-- 'concurrent:tarb6'
-- 'concurrent:tarb7'
-- 'concurrent:tarb8'
-- 'concurrent:tarb9'
-- 'concurrent:tarb10'
-
-# [INFO] Minimal set of tasks, that site works; for development
-minimal:
-- 'concurrent:tarb1'
-- 'string-replace'
-
-# [INFO] Make site screenshots
-screenshots:
-- 'concurrent:tarsc1'
-
-# [INFO] Before publishing with absolute paths,
-publish:
 - 'concurrent:taru1'
 - 'concurrent:taru2'
 - 'concurrent:taru3'
+- 'concurrent:taru4'
 - 'concurrent:tarp1'
 - 'concurrent:tarp2'
 - 'concurrent:tarp3'
@@ -47,8 +26,42 @@ publish:
 - 'concurrent:tarp12'
 - 'concurrent:tarp13'
 - 'concurrent:tarp14'
+- 'concurrent:tarp15'
+- 'concurrent:tarp16'
+- 'concurrent:tarp17'
 
-# [INFO] Publish without updating
+
+# [INFO] Update Node.js modules, Python packages and refactor Git
+update:
+- 'concurrent:taru1'
+- 'concurrent:taru2'
+- 'concurrent:taru3'
+- 'concurrent:taru4'
+
+
+# [INFO] Quick development
+build:
+- 'concurrent:tarb1'
+- 'concurrent:tarb2'
+- 'concurrent:tarb3'
+- 'concurrent:tarb4'
+- 'concurrent:tarb5'
+- 'concurrent:tarb6'
+- 'concurrent:tarb7'
+- 'concurrent:tarb8'
+- 'concurrent:tarb9'
+- 'concurrent:tarb10'
+
+
+# [INFO] Minimal set of tasks, so that web pages open normally
+minimal:
+- 'concurrent:tarb1'
+- 'posthtml'
+- 'string-replace:html'
+- 'string-replace:css'
+
+
+# [INFO] Publish without updating dependencies
 onlypublish:
 - 'concurrent:tarp1'
 - 'concurrent:tarp2'
@@ -64,6 +77,10 @@ onlypublish:
 - 'concurrent:tarp12'
 - 'concurrent:tarp13'
 - 'concurrent:tarp14'
+- 'concurrent:tarp15'
+- 'concurrent:tarp16'
+- 'concurrent:tarp17'
+
 
 # [INFO] Add, commit and push to GitHub
 git:
@@ -71,41 +88,43 @@ git:
 - 'gta:commit'
 - 'gta:push'
 
-# [INFO] Update Node.js modules, Python packages and refactor Git
-update:
-- 'concurrent:taru1'
-- 'concurrent:taru2'
-- 'concurrent:taru3'
-# - 'concurrent:taru4'
 
 # [INFO] Sources and output validation
 validate:
 - 'concurrent:tars1'
-- 'concurrent:tarv1'
-- 'concurrent:tarv2'
-- 'concurrent:tarv3'
+- 'concurrent:tars2'
+- 'concurrent:taro1'
+- 'concurrent:taro2'
+- 'concurrent:taro3'
+- 'concurrent:taro4'
+- 'concurrent:taro5'
 
-# [INFO] Validate for development builds
-validatedev:
-- 'concurrent:tard1'
-- 'concurrent:tard2'
 
-# [INFO] Continuous integration, not local
-remote:
-- 'concurrent:tarr1'
-- 'concurrent:tarr2'
+# [INFO] Validate use localhost server
+# validatelocalhost:
+# - 'concurrent:tarl1'
+# - 'concurrent:tarl2'
 
-# [INFO] Travis CI specific
+
+# [INFO] Travis CI specific tasks
 travis:
 - 'concurrent:tart1'
 - 'concurrent:tart2'
+
 
 # [INFO] Not in AppVeyor because of AppVeyor bugs
 notappveyor:
 - 'concurrent:tarna1'
 - 'concurrent:tarna2'
 
-# [INFO] For deployed site
+
+# [INFO] After all tests success
+aftertests:
+- 'concurrent:tarat1'
+- 'concurrent:tarat2'
+
+
+# [INFO] For alreaty deployed site
 afterdeploy:
 - 'concurrent:tarad1'
 - 'concurrent:tarad2'

@@ -1,0 +1,77 @@
+{#
+[OVERVIEW] HesGallery — lightweight pure JavaScript lightbox library:
+https://demtario.github.io/hes-gallery/demo/
+
+[OPTIONS] https://github.com/demtario/hes-gallery#possible-options
+
+[NOTE] HesGallery haven’t thumbnails bar:
+https://github.com/demtario/hes-gallery/issues/10
+
+[NOTE] Initialization “HesGallery.init()” required for using with Defer.js:
+https://github.com/demtario/hes-gallery#global-options
+“HesGallery.init()” in my local hes-gallery file
+
+[INFO][DJLINT] Ignoring T27 rule if use “sometimes in content” syntax:
+https://www.djlint.com/docs/ignoring-code/#ignoring-rules
+#}
+
+{# djlint:off T027,H006 #}
+
+{% if "<img alt=\"" in kira_object.content %}
+	<script>
+		Defer.js('https://cdn.jsdelivr.net/npm/hes-gallery/dist/hes-gallery.min.js', 'hes-gallery', 2000);
+		Defer.js('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/hes-gallery/hes-gallery{{ MIN }}.js', 'hes-gallery-local', 3000);
+	</script>
+{% endif %}
+
+{# djlint:on #}
+
+
+{# [DECLINED] I migrated to Mermaid — more powerful, customizable and user-friendly tool.
+
+[INFO] Visualize — generate bar and pie charts via JavaScript:
+http://www.kellyking.me/projects/visualize/
+https://github.com/kellyk/visualize
+
+[DONE]
+
+[FIXME] Replace to Mermaid on other tool, that generate charts in build process,
+not during page loading
+
+{% if "<li class=\"visualize\"" in kira_object.content %}
+	<script>
+		Defer.js('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize{{ MIN }}.js', 'visualize-local', 400);
+		Defer.js('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-bar-chart{{ MIN }}.js', 'visualize-bar-chart', 700);
+		Defer.js('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/Visualize/visualize-pie-chart{{ MIN }}.js', 'visualize-pie-chart', 700);
+	</script>
+{% endif %}
+#}
+
+
+{# [INFO] Mermaid — charts and diagrams:
+https://mermaid-js.github.io
+https://mermaid-js.github.io/mermaid/#/n00b-gettingStarted?id=requirements-for-the-mermaid-api
+
+[INFO] Initialization via Defer.js:
+https://github.com/shinsenter/defer.js/issues/111
+#}
+{% if "<pre class=\"mermaid\"" in kira_object.content %}
+	<script>
+	    Defer.js('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', 'mermaid', 400, function() {
+	        mermaid.init();
+	    });
+	</script>
+{% endif %}
+
+
+{# [INFO] RunKit — embed Node.js on any website:
+https://runkit.com/docs/embed
+
+[FIXME] Update RunKit to latest versions.
+#}
+{% if "<div id=\"SashaRunkit\"></div>" in kira_object.content %}
+	<script>
+		Defer.js('https://embed.runkit.com', 'runkit', 400);
+		Defer.js('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/RunKit/runkit{{ MIN }}.js', 'runkit-local', 700);
+	</script>
+{% endif %}

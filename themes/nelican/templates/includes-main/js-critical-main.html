@@ -1,0 +1,140 @@
+{# [DEPRECATED] As of August 2022, all modern browsers supports the webp format:
+https://caniuse.com/?search=webp
+
+
+[INFO] Modernizr for fallback if browser doesn’t support webp.
+Use webp for browsers, that support it and jpg for others:
+https://stackoverflow.com/a/54223755/5951529
+https://andywalpole.me/blog/142790/using-webp-image-format
+
+[INFO] Modernizr self-hosted, CDNs not supported:
+https://css-tricks.com/using-webp-images/
+https://modernizr.com/download/
+https://github.com/Modernizr/Modernizr/issues/2214
+
+[INFO] Modernizr automatically generate minified file.
+It would be nice use “.min.js”, not {{ MIN }} template:
+https://stackoverflow.com/a/41319855/5951529
+
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/Modernizr/modernizr-custom.min.js" defer></script>
+
+<style>
+	.webp .SashaIconAside {
+		background-image: url({{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/aside/{{kira_object.asideimage}}.webp)
+	}
+
+	.no-webp .SashaIconAside {
+		background-image: url({{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/aside/{{kira_object.asideimage}}.jpg)
+	}
+</style>
+#}
+
+
+{#
+[DECLINED] Confict with lazysizes.
+In general, I need to migrate to the native way.
+
+<script>
+	var KiraUpdateScrollbar = function() {
+		internals.scrollbar.update();
+	};
+
+	deferimg('img[data-src]', 80, 'image-id', KiraUpdateScrollbar);
+	deferiframe('iframe[data-src],div', 80, 'iframe-id', KiraUpdateScrollbar);
+</script>
+#}
+
+
+{# [DECLINED] I migrated to the native image deferring + Defer.js deferring for iframes
+
+[INFO] No smooth scrolling, if JQuery Lazy:
+https://github.com/eisbehr-/jquery.lazy/issues/98#issuecomment-376064894
+
+[INFO] JQuery Lazy plugins:
+http://jquery.eisbehr.de/lazy/#plugins
+
+[INFO] I use lazy loading for iframes, so that I selected solely this plugin
+
+<script src="https://cdn.jsdelivr.net/jquery.lazy/latest/jquery.lazy.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/jquery.lazy/latest/plugins/jquery.lazy.iframe.min.js" defer></script>
+#}
+
+
+{# [DECLINED] I migrate to the native lazy loading:
+https://web.dev/browser-level-image-lazy-loading/
+https://web.dev/iframe-lazy-loading/
+
+[INFO] lazysizes — lazy loading images and iframes:
+https://afarkas.github.io/lazysizes/index.html
+https://dev.to/carlesnunez/deep-dive-into-lazy-loading-images-211f
+
+[INFO] Update scrollbar position after lazy load event
+
+<script src="https://cdn.jsdelivr.net/npm/lazysizes/lazysizes.min.js" defer></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/lazysizes/lazysizes{{ MIN }}.js" defer></script>
+#}
+
+
+{# [INFO] Polyfill for the native lazy loading for images and iframes:
+https://github.com/mfranzke/loading-attribute-polyfill
+
+[NOTE] Don’t use “rel="preload"” for the loading attribute polyfill.
+1. In Firefox, all images are loaded on page load. No lazy loading.
+2. Chrome console:
+“The resource https://cdn.jsdelivr.net/npm/loading-attribute-polyfill/dist/loading-attribute-polyfill.umd.min.js
+was preloaded using link preload but not used within a few seconds from the window's load event.
+Please make sure it has an appropriate `as` value and it is preloaded intentionally.”
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill/dist/loading-attribute-polyfill.umd.min.js" as="script">
+#}
+
+{# djlint:off T027,H006 #}
+
+{% if "<img alt=\"" in kira_object.content %}
+	<script src="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill/dist/loading-attribute-polyfill.umd.min.js" async></script>
+{% endif %}
+
+{# djlint:on #}
+
+
+{# [DECLINED] I migrated to the native lazy loading for iframes
+
+[INFO] Defer.js iframes lazy loading:
+https://github.com/shinsenter/defer.js/#deferdomselector-delay-unveiledclass-resolver-observeoptions--void
+
+[INFO] I tested Defer.js iframes lazy loading on local Firefox and Chrome
+and BrowserStack macOS/iOS Safari and Chrome Android
+
+{% if "<iframe" in kira_object.content %}
+	<script>
+		Defer.dom('iframe', 0);
+	</script>
+{% endif %}
+#}
+
+
+{# [NOTUSED] Wildfire no longer functioning and I don’t use unveilhooks.
+
+[INFO] unveilhooks plugin — run script when user scroll to the specific element:
+https://afarkas.github.io/lazysizes/index.html
+https://stackoverflow.com/q/63753845/5951529
+
+[NOTE] I can’t found the solution without lazysizes/unveilhooks dependencies.
+Methods, described below, doesn’t worked for me:
+https://stackoverflow.com/a/40410131/5951529
+https://stackoverflow.com/q/21561480/5951529
+
+<script src="https://cdn.jsdelivr.net/npm/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js" defer></script>
+#}
+
+
+{# [NOTUSED] Commented, because for September 2020 I don’t use it,
+but i don’t rule out using this in the future
+
+[INFO] Custom scripts for specific articles/pages
+
+[REQUIRED] “Customjs: true” and “Customjs1: <path to script>” in article metadata
+
+{% if kira_object.customjs %}
+	<script src="{{ SITEURL }}/js/personal/{{kira_object.customjs1}}{{ MIN }}.js" defer></script>
+{% endif %} #}

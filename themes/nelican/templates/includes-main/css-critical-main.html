@@ -1,0 +1,144 @@
+<!-- Left/right aside icon styles -->
+
+{# [INFO] Different styles depending on whether the icon is on the left or right #}
+<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/Aside-icons/aside-icon-{{ kira_object.iconleftorright }}{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+
+
+<!-- Aside icon preload -->
+
+{# [INFO] Speed up background images:
+https://wpspeedmatters.com/speed-up-background-images/
+
+[INFO] Preload images:
+https://addyosmani.com/blog/preload-hero-images/
+
+[REQUIRED][NOTE] 2 lines:
+1. “<link rel="preload" href="path/to/image.webp" as="image">”
+2. “background-image: url(path/to/image.webp)”
+https://generatepress.com/forums/topic/preload-background-image/
+
+[INFO] Inline background images in HTML:
+https://wpspeedmatters.com/speed-up-background-images#inline-background-image-in-html
+
+[FIXME] Migrate from “background-image” to “object-fit: cover”:
+https://nystudio107.com/blog/the-css-background-image-property-as-an-anti-pattern
+
+[INFO] Preload aside icon as soon as possible, because on mobile devices it needs first
+#}
+<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/aside/{{ kira_object.asideimage }}.webp" as="image">
+<style>
+	.SashaIconAside {
+		background-image: url({{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/aside/{{ kira_object.asideimage }}.webp)
+	}
+</style>
+
+
+<!-- Titleimage preload -->
+
+{# [INFO] Preload title image if exists #}
+{% if kira_object.titleimage %}
+	<link rel="preload" href="{{ SITEURL }}/images/header/{{ kira_object.titleimagename }}.webp" as="image">
+{% endif %}
+
+
+<!-- Images styles -->
+
+{# djlint:off T027,H006 #}
+
+{% if "<img alt=\"" in kira_object.content %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/images{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% endif %}
+
+{# djlint:on #}
+
+
+<!-- Admonition -->
+
+{# djlint:off T027 #}
+
+{# [INFO] Admonition — note, warning etc. blocks:
+https://python-markdown.github.io/extensions/admonition/
+
+[INFO] My design from MkDocs Material theme:
+https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types
+
+[INFO] Use big Material Icons font solely for icons in admonition:
+https://google.github.io/material-design-icons/
+https://google.github.io/material-design-icons/#setup-method-1-using-via-google-web-fonts
+
+[INFO] Preload for Admonition CSS, because Admonition blocks in the top of page,
+when some information about page
+
+[LINK] See “..includes-main/fonts-main.html” file for description about font download
+
+[INFO] “if any() in object” syntax:
+https://stackoverflow.com/a/73671899/5951529
+#}
+{% if kira_object.content|any(["<div class=\"admonition", "<summary>"]) %}
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<link rel="preload"
+	      as="style"
+	      href="https://fonts.googleapis.com/css2?family=Material+Icons&amp;display=swap" />
+
+	<link rel="stylesheet"
+	      href="https://fonts.googleapis.com/css2?family=Material+Icons&amp;display=swap"
+	      media="print" onload="this.media='all'" />
+
+	<noscript>
+	  <link rel="stylesheet"
+	        href="https://fonts.googleapis.com/css2?family=Material+Icons&amp;display=swap" />
+	</noscript>
+
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Admonition/admonition{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+
+{% endif %}
+
+
+{# [NOTE] “if/elif” is incorrect syntax in this case. “if” block required for each Admonition file #}
+{% if kira_object.content|any(["class=\"admonition abstract\"", "class=\"admonition summary\"", "class=\"admonition tldr\""]) %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Admonition/admonition-abstract{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% endif %}
+
+{% if "class=\"admonition bug\"" in kira_object.content %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Admonition/admonition-bug{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% endif %}
+
+{% if kira_object.content|any(["class=\"admonition danger\"", "class=\"admonition error\""]) %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Admonition/admonition-error{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% endif %}
+
+{% if "class=\"admonition example\"" in kira_object.content %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Admonition/admonition-example{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% endif %}
+
+{% if kira_object.content|any(["class=\"admonition fail\"", "class=\"admonition failure\"", "class=\"admonition missing\""]) %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Admonition/admonition-failure{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% endif %}
+
+{% if kira_object.content|any(["class=\"admonition hint\"", "class=\"admonition important\"", "class=\"admonition tip\""]) %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Admonition/admonition-hint{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% endif %}
+
+{% if kira_object.content|any(["class=\"admonition info\"", "class=\"admonition todo\""]) %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Admonition/admonition-info{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% endif %}
+
+{% if kira_object.content|any(["class=\"admonition faq\"", "class=\"admonition help\"", "class=\"admonition question\""]) %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Admonition/admonition-question{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% endif %}
+
+{% if kira_object.content|any(["class=\"admonition cite\"", "class=\"admonition quote\""]) %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Admonition/admonition-quote{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% endif %}
+
+{% if kira_object.content|any(["class=\"admonition check\"", "class=\"admonition done\"", "class=\"admonition success\""]) %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Admonition/admonition-success{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% endif %}
+
+{% if kira_object.content|any(["class=\"admonition attention\"", "class=\"admonition caution\"", "class=\"admonition warning\""]) %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Admonition/admonition-warning{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% endif %}
+
+{# djlint:on #}

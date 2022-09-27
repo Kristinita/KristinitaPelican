@@ -10,7 +10,7 @@
 
 # [INFO] Do not touch in generation process
 OUTPUT_RETENTION:
-# [NOTE] "Quotes" not required
+# [INFO] "Quotes" not required
 - .git
 # Doesn't remove folder with screenshots
 - screenshots

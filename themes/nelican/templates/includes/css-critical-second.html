@@ -1,0 +1,50 @@
+{# [INFO] Styles that are displayed immediately on page load,
+but that should be loaded later than the “css-critical” and “css-critical-main”/“css-critical-aux” styles #}
+
+
+<!-- Hide body scrollbar -->
+
+{# [INFO] Hide native body scrollbars if Gemini scrollbar used.
+It hide Gemini bugs, but doesn’t solve it. Example bugs:
+https://github.com/noeldelgado/gemini-scrollbar/issues/62
+https://github.com/noeldelgado/gemini-scrollbar/issues/59 #}
+<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/scrollbar-body-hide{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+
+
+<!-- Fonts styles -->
+
+{# [INFO] Fonts styles #}
+<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/fonts{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+
+
+<!-- Bulma styles -->
+
+{# [INFO] Bulma — responsive CSS modular framework
+https://bulma.io/
+
+[INFO] Bulma Stylus translation:
+https://github.com/groenroos/bulma-stylus
+
+[INFO] Bulma modularity.
+Bulma allows to use solely components that are necessary for the project:
+https://bulma.io/documentation/overview/modular/
+
+[INFO] I use Bulma for menu and tags
+#}
+<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Bulma/bulma-modules{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Bulma/bulma-local{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+
+
+<!-- Gemini scrollbar styles -->
+
+{# [INFO] Gemini Scrollbar styles
+
+[NOTE] I use locally my fork of Gemini, because original Gemini contain “!important” anti-pattern.
+https://github.com/noeldelgado/gemini-scrollbar/blob/master/gemini-scrollbar.css#L29
+[PATCH] I patched it in my fork:
+https://github.com/Kristinita/gemini-scrollbar/commit/c37a2993338e8cd3a19589d270598e312ffa0e3a
+
+[NOTE] PurgeCSS removes the necessary CSS Gemini properties. Don’t use it for gemini.css or add exceptions.
+#}
+<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Gemini/gemini{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Gemini/gemini-local{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">

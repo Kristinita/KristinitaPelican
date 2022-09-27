@@ -1,0 +1,34 @@
+{# [INFO] Preload all fonts include “Marck Script” unlike “fonts-main.html”,
+where “Marck Script” loads lazy.
+
+[INFO] Disable “Fira Mono”, because it’s a font for code blocks,
+which auxiliary pages don’t have
+
+[INFO] Details about fonts see in template for articles and pages:
+[LINK] “../includes-main/fonts-main.html”
+
+[FIXME][BUG] For large helper pages as “alltags.html” where “.WorkOnYourself” isn’t displayed immediately,
+"Marck Script" font isn’t applied
+https://i.imgur.com/aIHU0JW.png
+#}
+
+{# 1 #}
+<link rel="preconnect"
+	href="https://fonts.googleapis.com"
+	crossorigin />
+
+{# 2 #}
+<link rel="preload"
+	as="style"
+	href="https://fonts.googleapis.com/css2?family=Play:wght@700&amp;family=El+Messiri&amp;family=Scada:ital,wght@1,700&amp;family=Marck+Script&amp;display=swap" />
+
+{# 3 #}
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Play:wght@700&amp;family=El+Messiri&amp;family=Scada:ital,wght@1,700&amp;family=Marck+Script&amp;display=swap"
+	media="print" onload="this.media='all'" />
+
+{# 4 #}
+<noscript>
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Play:wght@700&amp;family=El+Messiri&amp;family=Scada:ital,wght@1,700&amp;family=Marck+Script&amp;display=swap" />
+</noscript>

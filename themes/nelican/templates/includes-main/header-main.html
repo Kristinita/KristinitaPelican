@@ -1,0 +1,98 @@
+<!-- Header data -->
+
+{# [INFO] Title #}
+<h1 class="SashaTopHeader">
+	{% if kira_object.pagetitle %}
+		{{ kira_object.pagetitle }}
+	{% else %}
+		{{ kira_object.title }}
+	{% endif %}
+</h1>
+
+
+{# [INFO] Page loading progress bar #}
+<img class="SashaPageLoading" src="https://2no.co/{{ kira_object.noco }}.png" alt="Page loading, please, little wait" width="1" height="1">
+
+
+{# [INFO] Page version #}
+<div class="SashaHeaderData">Version {{ kira_object.version }}</div>
+
+
+{# [INFO] Created date #}
+<div class="SashaHeaderData">
+	{# [LEARN][JINJA] Multiple blocks with the same name:
+	https://stackoverflow.com/a/1245030/5951529
+
+	Example:
+	First usage — {% block base_date %}{{ kira_object.locale_date }}{% endblock %}
+	Second usage — “{{ self.base_date() }}”
+	#}
+	Posted — {{ kira_object.locale_date }}
+</div>
+
+
+{# [INFO] Last modified date #}
+<div class="SashaHeaderData">
+	{# [INFO] “pubdate” attribute is obsolete, use “itemprop: datePublished”:
+	https://stackoverflow.com/a/24455070/5951529 #}
+	Last modified — {{ kira_object.locale_modified }}
+</div>
+
+
+<div class="SashaHeaderData SashaHeaderCommentOffer">
+	{% if kira_object.lang == "ru" %}
+		Вы можете <a href="#Комментировать">прокомментировать</a> эту страницу
+	{% elif kira_object.lang == "en" %}
+		You can <a href="#Comment">comment</a> this web-page
+	{% endif %}
+</div>
+
+
+<!-- Tags -->
+
+{# [INFO] Using tags in Pelican templates
+https://github.com/getpelican/pelican/issues/22#issuecomment-610786
+
+[LEARN][BULMA] Bulma tags:
+https://bulma.io/documentation/elements/tag/
+
+[INFO] I selected medium rounded tags
+
+[INFO] Pelican don’t generate tags for draft and hidden articles and pages
+#}
+{% if kira_object.status not in ["draft", "hidden"] %}
+	<div class="tags are-medium">
+		{% for kira_tag in kira_object.tags %}
+		    <a class="tag is-rounded" href="{{ SITEURL }}/tag/{{ kira_tag }}.html">{{ kira_tag }}</a>
+		{% endfor %}
+	</div>
+{% endif %}
+
+
+<!-- Epigraph -->
+
+<div>
+	{# [INFO] Epigraph #}
+	{% if kira_object.epigraph %}
+	<div class="SashaEpigraph">
+		<em>{{ kira_object.epigraphtext }}</em>
+	</div>
+	{% endif %}
+
+	{# [INFO] Article/page image
+
+	[LEARN][JINJA] “if kira_object.titleimage” = “if kira_object.titleimage == 'true'”
+	#}
+	{% if kira_object.titleimage %}
+
+		{# [INFO] Ignore H006 DJLint rule, because titleimages has different height and width
+		#}
+
+		{# djlint:off H006 #}
+
+		<img src="{{ SITEURL }}/images/header/{{ kira_object.titleimagename }}.webp" alt="Header icon">
+
+		{# djlint:on #}
+
+	{% endif %}
+</div>

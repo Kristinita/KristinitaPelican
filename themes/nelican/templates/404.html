@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content="404 page for Kristinita’s Search site" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>404 error</title>
+
+	<!-- Defer.js -->
+
+	<link rel="preload" href="https://cdn.jsdelivr.net/npm/@shinsenter/defer.js/dist/defer_plus.min.js" as="script">
+	<script src="https://cdn.jsdelivr.net/npm/@shinsenter/defer.js/dist/defer_plus.min.js"></script>
+
+	<!-- Page styles -->
+
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/scrollbar-body-hide{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/nelican-themes-specific/404{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+
+	<!-- Slideshow styles -->
+
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/slideshow-fade{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+
+	<!-- Preload images -->
+
+	{# [INFO] Preload background image and first image of the fade slideshow #}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/backgrounds/SashaHangerBackground.webp" as="image">
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/404/SashaNose.webp" as="image">
+
+	<!-- Stork styles -->
+
+	<link rel="preload" href="https://files.stork-search.net/basic.css" as="style" onload="this.rel='stylesheet'">
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/Stork/stork-404{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+
+	<!-- Stork scripts -->
+
+	{# [NOTE] Set big value for “stork-local” to avoid errors in the console #}
+	<script>
+		Defer.js("https://files.stork-search.net/releases/v1.5.0/stork.js", "stork-remote", 400);
+		Defer.js("{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/Stork/stork-404{{ MIN }}.js", "stork-local", 1000);
+	</script>
+
+	<!-- Defer slideshow background images -->
+
+	{# [LEARN][DEFER.JS] Defer.js syntax for background images:
+	https://github.com/shinsenter/defer.js/#deferdomselector-delay-unveiledclass-resolver-observeoptions--void
+
+	[LEARN][JINJA] “range”:
+	https://jinja.palletsprojects.com/en/latest/templates/?highlight=range#jinja-globals.range
+
+	[LEARN][JINJA] Math expressions:
+	https://jinja.palletsprojects.com/en/latest/templates/#math
+
+	[REQUIRED] 1 in range #}
+	<script>
+		{% for number in range(1,8) %}
+			Defer.dom(".KiraSlider .KiraFadeSlideshowIcon{{ number }}", {{ number * 400 - 400 }}, "kira-slideshow-icon{{ number }}");
+		{% endfor %}
+	</script>
+</head>
+
+<body>
+	<img class="SashaPageLoading" src="https://2no.co/1sHR.png" alt="Page loading, please, little wait" width="1" height="1">
+
+	<div class="Sasha404Description">
+		<div class="Sasha404">404 Error</div>
+		<p>I’m sorry, perhaps the page you were about to view has been moved. Try using search below.</p>
+		<p>You can visit <a href="{{ SITEURL }}">main page</a>. There you will find out what is on this site. Perhaps you find something useful for yourself.</p>
+		<p>And enjoy the icons of the <a href="https://vk.com/psychologist_kira_k">greatest Creature of all time</a>!</p>
+	</div>
+
+
+	{# [INFO] Stork search interface:
+	https://stork-search.net/docs/interface #}
+	<div class="KiraStorkSearch">
+		{# [LEARN][ACCESSIBILITY] Label for “input” form:
+		https://blog.pope.tech/2020/02/28/missing-form-label-search/
+
+		[NOTE] “id”, not “class” required for “label”:
+		https://stackoverflow.com/q/11830898/5951529
+		#}
+		<label for="KiraStorkInput" class="KiraStorkLabel">Stork Search</label>
+
+		{# [REQUIRED] “id”, not class, for label association:
+		https://stackoverflow.com/q/11830898/5951529 #}
+		<input id="KiraStorkInput" data-stork="kira-stork" />
+
+		<div data-stork="kira-stork-output"></div>
+	</div>
+
+
+	{# [LEARN][HTML][SEMANTIC] “<section>” tag require headers, replace “<section>” → “<div>”:
+	https://stackoverflow.com/a/6941170/5951529
+	https://stackoverflow.com/q/24155024/5951529 #}
+	<div class="KiraSlider">
+
+		{# [LEARN][JINJA] Loop for each list element:
+		https://overiq.com/flask-101/basics-of-jinja-template-language/#for-loop #}
+		{% set kira_404_icons_list = [
+				("SashaNose", "1"),
+				("SashaRiver", "2"),
+				("SashaBlueHairs", "3"),
+				("SashaBow", "4"),
+				("SashaPigeon", "5"),
+				("SashaShimskyNovgorodDestrict", "6"),
+				("SashaWeddingOfFriends", "7")
+			]
+		%}
+
+		{% for kira_icon, kira_icon_number in kira_404_icons_list %}
+			<div class="KiraFadeSlideshowIcon{{ kira_icon_number }}" data-style="background-image: url({{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/404/{{ kira_icon }}.webp)"></div>
+		{% endfor %}
+
+	</div>
+
+</body>
+
+</html>

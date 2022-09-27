@@ -3,7 +3,7 @@ Status: published
 Version: 0.2.1
 Author: Sasha Chernykh
 Date: 2018-03-22 7:52:14
-Modified: 2020-09-24 13:12:49
+Modified: 2022-09-08 20:04:58
 Lang: en
 Summary: Features, problems and it solutions, that not described in official typo-reporter Readme.
 	![English typo-reporter form](https://i.imgur.com/U8pIw0a.png)
@@ -11,7 +11,7 @@ Pagetitle: typo-reporter
 Pagecolors: it-articles
 Asideimage: SashaGreenSweater
 Iconleftorright: left
-Tags: it-articles, spelling
+Tags: it-articles, error-reporting
 Noco: 1vWK5
 Og_image: https://i.imgur.com/U8pIw0a.png
 Schemaorgtype: HowTo

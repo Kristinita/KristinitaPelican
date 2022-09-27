@@ -1,0 +1,45 @@
+{# [NOTE][REQUIRED] Footer in Jinja format, not in Markdown.
+
+“{% include "kirafile.md" %}” adds content of “kirafile.md” to posts,
+but not convert Markdown to HTML. #}
+<div class="SashaFooterActions">
+
+	<p><a id="Share"></a></p>
+	<h2>Share</h2>
+		<p>You can share this page on social networks using the <a href="https://www.addtoany.com/" rel="noopener" target="_blank">AddToAny</a> social buttons widget on the side of the page</p>
+
+	<p><a id="Subscribe"></a></p>
+	<h2>Subcsribe</h2>
+		<p>You can subscribe to the <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" rel="noopener" target="_blank">Atom</a> or <a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" rel="noopener" target="_blank">RSS</a> feeds of all site materials and any of its <a href="{{ GITHUB_OUTPUT_URL }}/feeds/feeds-categories" rel="noopener" target="_blank">categories</a> and <a href="{{ GITHUB_OUTPUT_URL }}/feeds/feeds-tags" rel="noopener" target="_blank">tags</a>. To subscribe, you need to install any <a href="https://alternativeto.net/software/quiterss/?license=opensource" rel="noopener" target="_blank">feed reader software</a>. <a href="https://docs.getpelican.com/en/latest/faq.html#can-i-force-atom-feeds-to-show-only-summaries-instead-of-article-content" rel="noopener" target="_blank">Choose</a> subscriptions to Atom if preferable for you reading articles in your feed reader. Choose subscriptions to RSS feeds if more convenient for you to fully read articles in the browser; your feed reader will display solely the article abstracts.</p>
+
+		{# [BUG][CRITICAL] AddToAny default style for RSS not compatible with gemini-scrollbar:
+		https://github.com/noeldelgado/gemini-scrollbar/issues/64 #}
+		{# {% include "includes/addtoany-rss.html "%} #}
+
+	<p><a id="Report-a-typo-or-error"></a></p>
+	<h2>Report a typo or error</h2>
+		<p>(Solely for desktop, not mobile devices). If you see a typo, inaccuracy or error on this page, please report it using <a href="{{ SITEURL }}/IT-articles/typo-reporter" rel="noopener" target="_blank">typo-reporter</a>: select text with a typo/mistake → press <kbd>Ctrl+Enter</kbd> (<kbd>⌘Enter</kbd> for Mac) → write your comment → <em>Send</em>.</p>
+
+	<p><a id="Edit-page"></a></p>
+	<h2>Edit page</h2>
+		<p>You can <a href="{{ GITHUB_SOURCES_URL }}/edit/master/content/{{ kira_object.get_relative_source_path() }}" rel="noopener" target="_blank">edit this page yourself on GitHub</a> and send <a href="https://flaviocopes.com/how-to-make-first-github-pull-request/" rel="noopener" target="_blank">pull request</a>.</p>
+
+	<p><a id="Comment"></a></p>
+	<h2>Comment</h2>
+		<p>For any questions please contact via <a href="https://utteranc.es/" rel="noopener" target="_blank">utterances</a> comment widget below. Please be polite and constructive.</p>
+		<p>To leave a comment, you need to be registered with GitHub. When writing comments, use <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax" rel="noopener" target="_blank">Markdown</a> syntax.
+		<p>Once sended, your comment should appear at the top of the <a href="{{ GITHUB_SOURCES_URL }}/issues" rel="noopener" target="_blank">list of issues</a> for this site. Notification of a reply to your comment should be sent to the email associated with your GitHub account.</p>
+		<p>You can also write and send your message use <a href="{{ GITHUB_SOURCES_URL }}/issues/new" rel="noopener" target="_blank">GitHub Issues</a> directly.</p>
+
+	{# [DEPRECATED] Wildfire no longer functioning more.
+
+	[LEARN][HTML] List must contains “div” elements solely:
+	https://web.dev/list/?utm_source=lighthouse&utm_medium=devtools
+	“wildfire_thread” shouldn’t be listed.
+
+	<div class="wildfire_thread lazyload" data-script="https://cdn.jsdelivr.net/npm/wildfire/dist/wildfire.auto.js"></div>
+	#}
+
+	{# [INFO] Placing uterrances #}
+	<div class="KiraUtterances"></div>
+</div>

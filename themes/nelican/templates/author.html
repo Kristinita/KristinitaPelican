@@ -1,0 +1,11 @@
+<!-- @Author: Kristinita -->
+<!-- @Date:   2022-08-16 10:42:03 -->
+<!-- @Last Modified time: 2022-08-20 16:35:15 -->
+{% extends "auxiliary.html" %}
+
+
+{% block aux_items_of_kira_object %}
+	{% for kira_article in articles|sort(attribute="title") %}
+	    <li><a href="{{ SITEURL }}/{{ kira_article.url }}">{{ kira_article.title }}</a></li>
+	{% endfor %}
+{% endblock %}

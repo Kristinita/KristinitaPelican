@@ -8,32 +8,25 @@
 
 @REM [LEARN][BATCH] Use REM comments:
 @REM https://stackoverflow.com/a/12407934/5951529
+@REM
 @REM [LEARN][BATCH] Hide REM lines from showing, use @ symbol:
 @REM https://www.computerhope.com/issues/ch001313.htm
 @REM https://jpsoft.com/help/rem.htm
+@REM
 @REM [LEARN][BATCH] CMD command /C option run another console; without /C option command doesn't work:
 @REM https://ss64.com/nt/cmd.html
+@REM
 @REM [LEARN][BATCH] START command /B option, that output from another consoles move to head console:
 @REM https://ss64.com/nt/start.html
-
-
-@REM [NOTE] Use -ignoredependencies for HTML Tidy installation to AppVeyor
-@REM https://github.com/majkinetor/au-packages/issues/75
-@REM https://ci.appveyor.com/project/Kristinita/sashatidydebugging/build/1.0.12
-START /B CMD /C "choco install html-tidy -y -ignoredependencies"
 
 
 @REM [NOTE] Needs “python -m pip install -U pip”, not “pip install -U pip”, because
 @REM “PermissionError: [WinError 5] Access is denied”:
 @REM https://pip.pypa.io/en/stable/installing/#upgrading-pip
 @REM https://pythonhosted.org/CodeChat/appveyor.yml.html
-
-@REM [DONE]
-@REM [FIXME] Temporary downgrade pipenv, because locking bug in newest versions:
-@REM https://github.com/pypa/pipenv/issues/3391
-
+@REM
 @REM [NOTE] Needs “%PYTHON%\\python”, that Python 3, not Python 2 will run
-
+@REM
 @REM [NOTE] “python3” command deprecated in Python 3.7
 @REM https://github.com/ogrisel/python-appveyor-demo/blob/master/appveyor.yml
 @REM https://packaging.python.org/guides/supporting-windows-using-appveyor/
@@ -42,7 +35,7 @@ START /B CMD /C "choco install html-tidy -y -ignoredependencies"
 @REM [NOTE] In this batch file required:
 @REM 1. quotes
 @REM 2. slash escaping
-
+@REM
 @REM [FIXME] Disable pip upgrade. It used to work in 2018—2021, but doesn’t work in 2022:
 @REM “%PYTHON%\\python -m pip install --upgrade pip &”
 @REM https://ci.appveyor.com/project/Kristinita/kristinitapelican/build/job/7wwcotq9d18skwm4#L281
@@ -50,7 +43,11 @@ START /B CMD /C "choco install html-tidy -y -ignoredependencies"
 @REM https://ci.appveyor.com/project/Kristinita/sashaappveyordebugging/builds/42637089#L74
 START /B CMD /C "%PYTHON%\\python -m pip install pipenv & pipenv install --dev & pipenv run peru sync"
 
-START /B CMD /C "choco install nodejs phantomjs -y & npm install -g grunt-cli & npm install"
+
+@REM [INFO] Install Chocolatey packages from XML file with extension “.config”:
+@REM https://superuser.com/a/1132468/572069
+@REM https://docs.chocolatey.org/en-us/choco/commands/install#packages.config
+START /B CMD /C "choco install packages.config -y & npm install -g grunt-cli & npm install"
 
 
 @REM [NOTE] Old Ruby 1.9.3 default by September 2020:
@@ -58,12 +55,16 @@ START /B CMD /C "choco install nodejs phantomjs -y & npm install -g grunt-cli & 
 @REM START /B CMD /C "gem install travis"
 
 
-@REM [NOTE] In your local machine you need install dotnetcore for localappveyor installation:
+@REM [NOTE] For your local machine you need install dotnetcore for localappveyor installation:
 @REM https://chocolatey.org/packages/dotnetcore
 START /B CMD /C "dotnet tool install -g localappveyor"
 
 
-@REM [NOTE] ShellCheck installation via Scoop — the fastest way for Windows:
+@REM [NOTE][FIXME][ISSUE] Scoop hasn’t behavior for installation multiple packages from list
+@REM as “scoop install scoop-packages.yaml”
+@REM https://github.com/ScoopInstaller/Scoop/issues/2289#issuecomment-523370257
+@REM
+@REM [INFO] ShellCheck installation via Scoop — the fastest way for Windows:
 @REM https://github.com/koalaman/shellcheck/issues/915#issuecomment-385049702
 @REM https://help.appveyor.com/discussions/suggestions/843-add-support-for-the-scoop-installer
 START /B CMD /C "scoop install shellcheck"

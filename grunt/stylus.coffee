@@ -5,49 +5,6 @@
 [OVERVIEW] Compile Stylus to CSS:
 https://www.npmjs.com/package/grunt-contrib-stylus
 ###
-
-
-##############
-# PostStylus #
-##############
-###
-[OVERVIEW] PostCSS adapter for Stylus:
-https://www.npmjs.com/package/poststylus
-
-[INFO] PostStylus Grunt usage:
-https://www.npmjs.com/package/poststylus#grunt
-
-[INFO] Passing plugins arguments:
-https://www.npmjs.com/package/poststylus#passing-arguments-to-plugins
-doiuse = require('doiuse')
-###
-postcss = ->
-	require('poststylus') [
-		################
-		# AutoPrefixer #
-		################
-		# [OVERVIEW] Automatically add browser prefixes:
-		# https://www.npmjs.com/package/autoprefixer
-		# [BUG] AutoPrefixer add duplicates, if one property for multiple selectors:
-		# https://github.com/postcss/autoprefixer/issues/1196
-		'autoprefixer'
-
-		# [FIXME][SO] Build passed, if any warning; I need use PostCSS:
-		# https://github.com/seaneking/poststylus/issues/26
-		# doiuse
-
-		################################
-		# combine-duplicated-selectors #
-		################################
-		# Combine duplicated selectors in generated CSS:
-		# https://www.npmjs.com/package/postcss-combine-duplicated-selectors
-		# Stylelint doesn’t allow duplicated selectors:
-		# https://stylelint.io/user-guide/rules/no-duplicate-selectors
-		# [INFO] Stylus itself don’t combine correctly “.progress”, “.progress-bar”
-		'postcss-combine-duplicated-selectors'
-	]
-
-
 module.exports =
 	options:
 
@@ -60,11 +17,21 @@ module.exports =
 		compress: false
 
 		###
+		[INFO] Enable import CSS files directly.
+		“@import "path/to/KiraCSS.css"” will display content of “KiraCSS.css” in compiled CSS.
+		Without this option a string “@import "path/to/KiraCSS.css"” will in compiled CSS:
+		https://www.npmjs.com/package/grunt-contrib-stylus#include-css
+		https://github.com/stylus/stylus/issues/448#issuecomment-3034754
+
+		[INFO] Space in the option name:
+		###
+		'include css': true
+
+		###
 		[INFO] Preserve comments in Stylus:
 		https://www.npmjs.com/package/grunt-contrib-stylus#linenos
 		###
 		linenos: false
-		use: [postcss]
 
 		###
 		[INFO] Source map for compiled files:
@@ -93,17 +60,23 @@ module.exports =
 		files: [
 			expand: true
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/stylus/"
-			src: '**/*.styl'
+			src: ["**/*.styl"
+					# [INFO] Not compile deprecated CSS,
+					# not to have additional unnecessary problems at the build and lint stages
+					"!**/Deprecated/**/*.styl"]
+
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/<%= templates.yamlconfig.THEME_STATIC_DIR %>/css/"
 			# [LEARN][GRUNT] Extensions in filepaths:
 			# https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
 			ext: '.css'
 			]
+
 	personalcompile:
 		files: [
 			expand: true
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>/stylus"
-			src: '**/*.styl'
+			src: ["**/*.styl"
+					"!**/Deprecated/**/*.styl"]
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>/css"
 			ext: '.css'
 			]

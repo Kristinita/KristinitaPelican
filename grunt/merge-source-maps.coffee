@@ -41,7 +41,11 @@ module.exports =
 
 		# [INFO] Fatal error if missing source maps and input files
 		ignoreMissingSourceMaps: false
-		ignoreMissingSources: false
+
+		# [BUG] PurgeCSS generates incorrect source maps:
+		# https://github.com/FullHuman/purgecss/issues/995
+		# I set “true” until the bug is fixed
+		ignoreMissingSources: true
 
 	target:
 		###
@@ -57,7 +61,6 @@ module.exports =
 		files: [
 			expand: true
 			cwd: "<%= templates.yamlconfig.OUTPUT_PATH %>"
-			src: ['**/*.min*css'
-					'!**/*.min.css']
+			src: ['**/*.min.*.css']
 			dest: "<%= templates.yamlconfig.OUTPUT_PATH %>"
 			]

@@ -1,7 +1,7 @@
 ##############################
 # Python Markdown extensions #
 ##############################
-# Using Python Markdown extensions in Pelican:
+# [OVERVIEW] Using Python Markdown extensions in Pelican:
 # http://docs.getpelican.com/en/latest/settings.html?highlight=MARKDOWN#basic-settings
 # https://pythonhosted.org/Markdown/extensions/#third-party-extensions
 # http://romeogolf.github.io/pelican-i-modul-python-markdown.html
@@ -19,8 +19,8 @@ MARKDOWN:
     # 1. extra
     #
 
-    # Extensions list:
-    # https://python-markdown.github.io/extensions/#officially-supported-extensions
+    # Extra:
+    # https://python-markdown.github.io/extensions/extra/
 
     # Attribute List — add id and classes in Markdown
     # https://python-markdown.github.io/extensions/extra/
@@ -28,6 +28,14 @@ MARKDOWN:
     # Definition List — add dl, dd, dt tags
     # https://python-markdown.github.io/extensions/definition_lists/
     # https://webref.ru/html/dd
+
+    # [INFO] “Markdown in HTML” — parse Markdown inside of HTML tags:
+    # https://python-markdown.github.io/extensions/md_in_html/
+    #
+    # [NOTE] In 2022 Markdown in HTML versions any child tag
+    # inside which Markdown must be converted to HTML,
+    # must have “markdown="1"”
+    # https://python-markdown.github.io/extensions/md_in_html/#nesting
 
     # Fenced code blocks — correct display multiline code blocks
     # https://python-markdown.github.io/extensions/fenced_code_blocks/
@@ -38,6 +46,7 @@ MARKDOWN:
     # [LEARN][YAML] Braces required for empty dictionary:
     # https://stackoverflow.com/a/33510095/5951529
     markdown.extensions.extra: {}
+
 
     #
     # 2. Other default extensions
@@ -87,6 +96,11 @@ MARKDOWN:
     # http://facelessuser.github.io/pymdown-extensions/extensions/critic/
     pymdownx.critic: {}
 
+    # [FIXME] Migrate to this plugin. Quickstart not success for me.
+    # [INFO] “details/summary” tags
+    # https://facelessuser.github.io/pymdown-extensions/extensions/details/
+    # pymdownx.details: {}
+
     # Don’t convert spaces, octotorps and another symbols:
     # http://facelessuser.github.io/pymdown-extensions/extensions/escapeall/
     # https://github.com/waylan/Python-Markdown/issues/564#issuecomment-299681538
@@ -101,7 +115,7 @@ MARKDOWN:
     # https://pythonhosted.org/Markdown/extensions/code_hilite.html#step-2-add-css-classes
     pymdownx.inlinehilite:
       # [DEPRECATED] 'use_codehilite_settings' in 3.0 pymdown-extensions version
-      css_class: SashaInlineHighlight
+      css_class: SashaCodeInline
       style_plain_text: true
 
     # Clickable Bare URL:
@@ -154,7 +168,8 @@ MARKDOWN:
     # [INFO] Extensions list:
     # https://github.com/Python-Markdown/markdown/wiki/Third-Party-Extensions
     # [WARNING] Some old extensions incompatible with Python-Markdown 3.4 and higher:
-    # https://github.com/Python-Markdown/markdown/blob/master/docs/change_log/release-3.4.md#previously-deprecated-objects-have-been-removed
+    # https://github.com/Python-Markdown/markdown/blob/master/docs/change_log
+    # /release-3.4.md#previously-deprecated-objects-have-been-removed
 
 
     # [DEPRECATED] Not compatible with Python-Markdown 3.4.
@@ -226,11 +241,30 @@ MARKDOWN:
     # https://github.com/Undeterminant/markdown-newtab
     # markdown3_newtab: {}
 
+
     # [INFO] Add own environment variables to text:
     # https://github.com/cmacmackin/md-environ
     # [BUG][FIXME] ValueError: No item named "not_strong" exists.
     # I don't use this extension, so disabled
     # md_environ.environ: {}
+
+
+    # [INFO] md_mermaid — Mermaid integration for Python Markdown
+    # https://github.com/oruelle/md_mermaid
+    #
+    # [INFO] md_mermaid supports backticks like tildes,
+    # but it isn’t in md_mermaid documentation.
+    #
+    # [NOTE][FIXME] Original “md_mermaid” adds unexpected initialize script to the end of body tag;
+    # users may adds scripts ways that suit them.
+    # https://github.com/oruelle/md_mermaid/issues/8
+    #
+    # [NOTE][FIXME] I use “pre” tag instead of default “div” tag of the plugin.
+    # HTML formatting tools format “div”, but don’t format “pre”.
+    #
+    # I use my own fork of “md_mermaid”:
+    # https://github.com/Kristinita/md_mermaid/tree/KiraMermaidWorking
+    md_mermaid: {}
 
 
     # “cite” tag:
@@ -249,6 +283,7 @@ MARKDOWN:
     # [FIXME] Plugin doesn't work, if “!” symbol in constructions:
     # https://github.com/exaroth/mdx_custom_span_class/pull/3
     # mdx_custom_span_class: {}
+
 
     # [DEPRECATED] Not compatible with Python-Markdown 3.4.
     #
@@ -307,6 +342,7 @@ MARKDOWN:
     # https://ci.appveyor.com/project/Kristinita/kristinitapelican/builds/37013107/job/jopjxwruuectb226#L332
     # https://ci.appveyor.com/project/Kristinita/kristinitapelican/builds/37013107/job/jopjxwruuectb226#L528
 
+
     # [EXAMPLE] Code:
     # 1. Kira first
     # <!--- Kira comment -->
@@ -331,6 +367,7 @@ MARKDOWN:
     # </li>
     # </ol>
     python_markdown_comments: {}
+
 
   # [INFO] http://docs.getpelican.com/en/latest/settings.html#PATH
   output_format: html5

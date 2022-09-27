@@ -1,0 +1,48 @@
+{% extends "auxiliary.html" %}
+
+
+{# [FIXME][NOTE][JINJA] This syntax doesn’t work in auxiliary.html
+
+	{% if kira_object in kira_single_objects_list %}
+		<title>{{ kira_object }} {{ kira_object_type }}</title>
+	{% elif kira_object in kira_multiple_objects_list %}
+		<title>All {{ kira_object_type }}</title>
+	{% endif %}
+
+This also:
+
+	{% if kira_object in kira_single_objects_list %}
+		<title>{{ kira_object }} {{ kira_object_type }}</title>
+	{% elif categories %}
+		<title>All {{ kira_object_type }}</title>
+	{% elif tags %}
+		<title>All {{ kira_object_type }}</title>
+	{% elif categories %}
+		<title>All {{ kira_object_type }}</title>
+	{% endif %}
+
+“categories” print in place of “kira_object_type”
+
+Therefore, I use blocks syntax, but needs in syntax without repeats.
+#}
+
+
+{% block aux_title %}
+	All categories
+{% endblock %}
+
+{% block aux_meta_description %}
+	<meta name="description" content="All categories of the “{{ SITENAME }}” site">
+{% endblock %}
+
+
+{% block aux_items_of_kira_object %}
+	{% for kira_single_object, null in categories|sort %}
+	    <li><a href="{{ SITEURL }}/{{ kira_single_object.url }}">{{ kira_single_object }}</a></li>
+	{% endfor %}
+{% endblock %}
+
+
+{% block aux_header_h2 %}
+	Все категории сайта
+{% endblock %}

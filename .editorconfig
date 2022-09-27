@@ -1,16 +1,16 @@
 ################
 # EditorConfig #
 ################
-# Define and maintain consistent coding styles between different editors and IDEs:
+# [OVERVIEW] Define and maintain consistent coding styles between different editors and IDEs:
 # http://editorconfig.org/
 # [NOTE] At the time no existing linters for “.editorconfig” file:
 # https://github.com/editorconfig/editorconfig/issues/345
 
-# Apply another .editorconfig for subfolder, that for root folder
+# [INFO] Apply another .editorconfig for subfolder, that for root folder
 # http://editorconfig.org/#file-format-details
 # root = true
 
-# UNIX line endings in “.sh” files:
+# [INFO] UNIX line endings in “.sh” files:
 # https://stackoverflow.com/a/49050430/5951529
 # Tabs = 4 spaces for CoffeeScript always
 [*]
@@ -35,19 +35,19 @@ block_comment_end = */
 [*.md]
 trim_trailing_whitespace = false
 
-# [WARNING] YAML doesn't support tabs:
+# [NOTE] YAML doesn't support tabs:
 # http://yaml.org/faq.html
 # https://stackoverflow.com/a/19976827/5951529
 [*.{prettierc,yaml,yml,yamllint}]
 indent_style = space
 indent_size = 2
 
-# Read reasons in “.flake8” file:
+# [INFO] Read reasons in “.flake8” file:
 # https://github.com/Kristinita/KristinitaPelican/blob/master/.flake8
 [*.py]
 indent_style = space
 
-# Windows line endings in batch file.
+# [INFO] Windows line endings in batch file.
 # If LF, user may have some problems:
 # for me, incorrect output, if unicode symbols in batch comments
 # https://stackoverflow.com/a/38836221/5951529
@@ -55,16 +55,28 @@ indent_style = space
 [*.bat]
 end_of_line = crlf
 
-# eclint will not change third-party folders:
+# [INFO] “.st” is the extension of “search-index.st” —
+# binary subtitles file for the Stork search
+# No need to modify this file and check it against EditorConfig rules.
+#
+# [INFO] Ignore all EditorConfig properties for specific files:
+# https://stackoverflow.com/a/40348831/5951529
+[*.st]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset
+tab_width = unset
+
+# [INFO] eclint will not change third-party folders:
 # https://stackoverflow.com/a/40348831/5951529
 # https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties#current-universal-properties
 # [WARNING] Negative eclint glob patterns may doesn't works as expected:
 # https://github.com/jedmao/eclint#check
 # https://github.com/jedmao/eclint/issues/124
 [pelican-plugins/**]
-# [FIXED]
-# [BUG]: “charset = unset” doesn't work:
-# https://github.com/jedmao/eclint/issues/127
 charset = unset
 end_of_line = unset
 insert_final_newline = unset

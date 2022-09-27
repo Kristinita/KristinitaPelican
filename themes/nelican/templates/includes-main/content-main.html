@@ -1,0 +1,15 @@
+{# [INFO] Site content #}
+{{ kira_object.content }}
+
+{# [NOTUSED]
+
+[INFO] photos plugin:
+https://github.com/getpelican/pelican-plugins/tree/master/photos
+[NOTE] Declined, because now I don’t use this plugin at the time:
+
+{% block galleryblock %}
+	{% if kira_object.photo_image %}
+		<img src="{{ SITEURL }}/{{ kira_object.photo_image[1] }}" />
+	{% endif %}
+{% endblock %}
+#}

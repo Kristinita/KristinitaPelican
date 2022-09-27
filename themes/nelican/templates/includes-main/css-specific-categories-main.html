@@ -1,0 +1,35 @@
+{# [INFO] Styles for specific site categories #}
+
+{# [INFO] Neliateka articles navigation menu #}
+{% if kira_object.category == "Library-for-life" %}
+	<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/specific-categories/Library-for-life/neliateka-navigation-menu{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+{% endif %}
+
+
+{# [INFO] Styles for Kristinograd icons
+
+[INFO] “if kira_object.tag == "nelias-rooms-packages"” not work
+#}
+{% if "nelias-rooms-packages" in kira_object.tags %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/specific-categories/Nelias-Rooms/kristinograd-icons{{ MIN }}.css', 'kristinograd-icons', 700);
+	</script>
+{% endif %}
+
+
+{# [INFO] Gingerinas blocks for examples #}
+
+{% if kira_object.category == "gingerinas" %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/specific-categories/Gingerinas/gingerinas-blocks-examples{{ MIN }}.css', 'gingerinas-examples', 700);
+	</script>
+{% endif %}
+
+
+{# [INFO] CSS for the links to GRights rules #}
+
+{% if "GR:" in kira_object.content %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/specific-categories/Gingerinas/grights{{ MIN }}.css', 'grights', 700);
+	</script>
+{% endif %}

@@ -1,0 +1,87 @@
+{# [INFO] Hes-gallery JSDelivr styles #}
+
+{# djlint:off T027,H006 #}
+
+{% if "<img alt=\"" in kira_object.content %}
+	<script>
+		Defer.css('https://cdn.jsdelivr.net/npm/hes-gallery/dist/hes-gallery.min.css', 'hes-gallery-styles', 2000);
+	</script>
+{% endif %}
+
+{# djlint:on #}
+
+{# [INFO] PeerTube iframe style #}
+{% if "<div class=\"SashaPeerTube\">" in kira_object.content %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/PeerTube/peertube{{ MIN }}.css', 'peertube', 400);
+	</script>
+{% endif %}
+
+
+{# [INFO] Themes for Pygments — Python code highlighting:
+https://pygments.org/
+
+[LEARN][JINJA] Nested “if” syntax:
+https://stackoverflow.com/a/28512993/5951529
+
+[NOTE] “if and if” syntax like below doesn’t work in Jinja:
+“{% if kira_object.content|all(["<pre>", "<code>"]) and if kira_object.pagecolors in ["programs", "sasha-black-description"] %}”
+#}
+{% if kira_object.content|all(["<pre>", "<code>"]) %}
+	{% if kira_object.pagecolors in ["programs", "sasha-black-description"] %}
+		<script>
+			Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/nelican-themes-third-party/Pygments/pygments-fruity{{ MIN }}.css', 'pygments-fruity', 700);
+		</script>
+	{% elif kira_object.pagecolors in ["gingerinas", "it-articles"] %}
+		<script>
+			Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/nelican-themes-third-party/Pygments/pygments-paraiso-light{{ MIN }}.css', 'pygments-paraiso-light', 700);
+		</script>
+	{% endif %}
+{% endif %}
+
+
+{#
+[INFO] ProgressBar — progress/status bar:
+https://facelessuser.github.io/pymdown-extensions/extensions/progressbar/
+
+[FIXME] Replace ProgressBar to some bar chart extension
+
+[NOTE] Ansible and Saltstack solutions like below doesn’t work in Pelican:
+https://stackoverflow.com/a/42087938/5951529
+https://stackoverflow.com/a/54350773/5951529
+
+{% if kira_object.content is match('^\\[=\\d+% .*\\]$') %}
+	<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/ProgressBar/progressbar{{ MIN }}.css">
+{% endif %}
+#}
+{% if "<div class=\"progress-bar\"" in kira_object.content %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/ProgressBar/progressbar{{ MIN }}.css', 'progressbar', 400);
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/nelican-themes-third-party/ProgressBar/progressbar-gingerinas{{ MIN }}.css', 'progressbar-gingerinas', 700);
+	</script>
+{% endif %}
+
+
+{# [INFO] RunKit — embed Node.js on any website:
+https://runkit.com/docs/embed #}
+{% if "<div id=\"SashaRunkit\"></div>" in kira_object.content %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/RunKit/runkit{{ MIN }}.css', 'runkit', 400);
+	</script>
+{% endif %}
+
+
+{# [INFO] DonatePay #}
+{% if "<div class=\"SashaDonatePayWidget\">" in kira_object.content %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/DonatePay/donatepay{{ MIN }}.css', 'donatepay', 700);
+	</script>
+{% endif %}
+
+
+{# [INFO] WebMoney #}
+{% if "<div class=\"SashaWebMoneyWidget\">" in kira_object.content %}
+	<script>
+		Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/WebMoney/webmoney{{ MIN }}.css', 'webmoney', 700);
+	</script>
+{% endif %}

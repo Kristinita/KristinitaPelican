@@ -1,0 +1,281 @@
+{# [INFO] Pelican theme structure:
+https://docs.getpelican.com/en/latest/themes.html
+
+[INFO] Same template for articles and pages:
+http://bit.ly/pelican__articles_and_pages
+
+[INFO] Inclusions specific to articles and pages are in folder “includes-main”
+#}
+
+
+<!--=============================
+=			Variables			=
+==============================-->
+
+{% if article %}
+	{% set kira_object = article %}
+{% elif page %}
+	{% set kira_object = page %}
+{% endif %}
+
+<!--=============================
+=			Beginning			=
+==============================-->
+
+{# [INFO] Internet Explorer may not support сomments before DOCTYPE:
+https://stackoverflow.com/a/4897850/5951529
+But I don’t want support IE.
+#}
+
+<!DOCTYPE html>
+
+<!--=========================
+=			HTML			=
+==========================-->
+
+<html lang="{{ kira_object.lang }}">
+
+<!--=========================
+=			Head			=
+==========================-->
+
+<head>
+
+	<!--=========================
+	=			Meta			=
+	==========================-->
+
+	{# [INFO] “-main” — for articles and pages, “main” web pages
+	unlike “auxiliary” web pages — categories, tags and so on #}
+	{% include "includes/meta.html" %}
+
+	{% include "includes-main/meta-main.html" %}
+
+	<!--=================================
+	=			Critical styles			=
+	==================================-->
+
+	{% include "includes/css-critical.html" %}
+
+	{% include "includes-main/css-critical-main.html" %}
+
+	{% include "includes/css-critical-second.html" %}
+
+	{% include "includes-main/css-critical-main-second.html" %}
+
+	{% include "includes-main/css-header-main.html" %}
+
+	<!--=============================
+	=		Critical scripts		=
+	==============================-->
+
+	{% include "includes/js-critical.html" %}
+
+	{% include "includes-main/js-critical-main.html" %}
+
+	<!--=================
+	=		Fonts		=
+	==================-->
+
+	{% include "includes-main/fonts-main.html" %}
+
+	<!--=================================
+	=	Styles for specific categories	=
+	==================================-->
+
+	{# [INFO] These scripts and styles will run if some string will matched in HTMl files:
+	https://stackoverflow.com/a/19628156/5951529
+
+	[INFO] Pelican/Jinja2 is looking for matches in HTML, not in Markdown files #}
+
+	{% include "includes-main/css-specific-categories-main.html" %}
+
+	<!--=========================
+	=	Styles of components	=
+	==========================-->
+
+	{# [INFO] Tables, blockquotes, iframes, code blocks and so on #}
+
+	{% include "includes-main/css-components-main.html" %}
+
+	<!--=========================
+	=	Scripts of components	=
+	==========================-->
+
+	{% include "includes-main/js-components-main.html" %}
+
+	<!--=============================
+	=		Third-party styles		=
+	==============================-->
+
+	{# [INFO] Styles for PeerTube, RunKit, ProgressBar, DonatePay, WebMoney and so on #}
+
+	{% include "includes-main/css-third-party-main.html" %}
+
+	<!--=============================
+	=		Third-party scripts		=
+	==============================-->
+
+	{% include "includes-main/js-third-party-main.html" %}
+
+	<!--=================================
+	=		Low-priority styles		    =
+	==================================-->
+
+	{% include "includes/css-low-priority.html" %}
+
+	{% include "includes-main/css-low-priority-main.html" %}
+
+	<!--=================================
+	=		Low-priority scripts		=
+	==================================-->
+
+	{# [INFO] Scripts for each page that can be removed #}
+
+	{% include "includes/js-low-priority.html" %}
+
+	{% include "includes-main/js-low-priority-main.html" %}
+
+	<!--=========================
+	=			base			=
+	==========================-->
+
+	{# [DECLINED] It open all links in new tabs.
+	I can’t do this behavior solely for external links:
+	https://stackoverflow.com/a/28781184/5951529
+	Therefore, I migrated to the “markdown-link-attr-modifier”,
+	despite the fact that the HTML size is increasing:
+	https://github.com/Phuker/markdown_link_attr_modifier
+
+	[INFO] Add manually “rel="noopener" target="_blank"” to all external links in templates.
+	I use markdown-link-attr-modifier for automatically generation these attributes,
+	but it works solely for links in articles and pages, not for links in templates:
+	https://pypi.org/project/markdown-link-attr-modifier/
+
+	{% include "includes/base-tag.html" %}
+	#}
+
+	<!--=================================
+	=			Structured data			=
+	==================================-->
+
+	{% include "includes-main/structured-data-main.html" %}
+
+	<!--=========================
+	=			Feeds			=
+	==========================-->
+
+	<!-- Atom feeds -->
+
+	{% block base_atom_feeds %}{% endblock %}
+
+	<!-- RSS feeds -->
+
+	{% block base_rss_feeds %}{% endblock %}
+
+</head>
+
+
+{# [NOTE][REQUIRED] Manual define Gemini scrollbar,
+that Gemini don’t prevent native iframes lazy loading:
+https://github.com/noeldelgado/gemini-scrollbar/issues/69 #}
+<body class="gm-scrollbar-container">
+	<div class="gm-scrollbar -vertical"><div class="thumb"></div></div>
+	<div class="gm-scrollbar -horizontal"><div class="thumb"></div></div>
+	<div class="gm-scroll-view">
+	<!--=============================
+	=			noscript			=
+	==============================-->
+
+	{% include "includes-main/js-disabled-main.html" %}
+
+	<!--=============================
+	=			Side icon			=
+	==============================-->
+
+	{% include "includes-main/aside-icon-main.html" %}
+
+	<!--=========================
+	=			Content			=
+	==========================-->
+
+	{# [LEARN][HTML] “main” shouldn’t be inside “article” and “aside”:
+	https://webref.ru/html/main
+	http://disq.us/p/16r46ia #}
+
+	<main>
+
+		<!--=========================
+		=			Navbar			=
+		==========================-->
+
+		{% if kira_object.lang == "ru" %}
+			{% include "includes/navbar-ru.html" %}
+		{% else %}
+			{% include "includes/navbar-en.html" %}
+		{% endif %}
+
+
+		{# [LEARN][HTML] Article must include header and footer:
+		https://webref.ru/html/article
+		https://html.spec.whatwg.org/multipage/sections.html#the-article-element #}
+
+		<article>
+
+			<!--=========================
+			=			Header			=
+			==========================-->
+
+			<header>
+
+				{% include "includes-main/header-main.html" %}
+
+				{% if kira_object.category == "Library-for-life" %}
+					{% include "includes/nav-menu-neliateka.html" %}
+				{% endif %}
+
+			</header>
+
+			<!--=========================
+			=			Content			=
+			==========================-->
+
+			<section>
+
+				{% include "includes-main/content-main.html" %}
+
+			</section>
+
+			<!--=========================
+			=			Footer			=
+			==========================-->
+
+			<footer>
+
+				{# [INFO] Previous and past articles:
+				https://github.com/pelican-plugins/neighbors #}
+
+				{% block base_neighbors %}{% endblock %}
+
+				{% include "includes-main/footer-main.html" %}
+			</footer>
+
+		</article>
+	</main>
+
+	<!--=================================
+	=			Share buttons			=
+	==================================-->
+
+	{# [NOTE] I can’t find official recommendations about placing social media buttons in HTML structure.
+	Some resources recommends add share buttons before the end of the “body” tag:
+	https://www.geeksforgeeks.org/how-to-create-a-share-button-with-different-social-handles-using-html-css/
+	https://blog.stackfindover.com/html-share-buttons/ #}
+
+	{% include "includes/share-buttons-addtoany.html" %}
+
+	</div>
+
+</body>
+
+</html>

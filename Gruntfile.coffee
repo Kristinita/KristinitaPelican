@@ -40,8 +40,12 @@ module.exports = (grunt) ->
 	doesn’t write “grunt.loadNpmTasks 'task'” each time:
 	https://github.com/sindresorhus/load-grunt-tasks
 
+	[REQUIRED] “npm install js-yaml --save-dev” for load-grunt-config ≥ 4.0.0
+	https://github.com/firstandthird/load-grunt-config/issues/194#issuecomment-902821457
+
 	[NOTE] Do not use grunt-lazyload with load-grunt-config both! It conflicting plugin:
 	https://www.npmjs.com/package/grunt-lazyload
+
 	[NOTE] Not possible use subtasks in separate files:
 	https://github.com/firstandthird/load-grunt-config/issues/178
 	###
@@ -67,7 +71,6 @@ module.exports = (grunt) ->
 
 	[NOTE] We need initialize Closure via “require”,
 	not as another Grunt plugins.
-
 
 	[INFO] Java arguments as JVM memory available:
 	https://bit.ly/closure__extrajava-arguments--grunt-and-gulp

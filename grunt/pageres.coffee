@@ -29,6 +29,7 @@ module.exports =
 			[DECLINED] pageres will not show how web pages look on real mobile devices;
 			it will take screenshots that have nothing to do with the actual display
 			of web pages on mobile devices
+
 			[INFO] Add resolutions of supported mobile and tablet devices:
 			iPhone XS Max — 1242x2688
 			iPad Pro 12.9.2018 — 2048x2732
@@ -47,7 +48,7 @@ module.exports =
 					"<%= templates.yamlconfig.OUTPUT_PATH %>/Sasha-Black.html"
 					"<%= templates.yamlconfig.OUTPUT_PATH %>/Pages/About-for-developers.html"
 					"<%= templates.yamlconfig.OUTPUT_PATH %>/Smert-svobode/Новые-недовольные-русские.html"
-					"<%= templates.yamlconfig.OUTPUT_PATH %>/Programs/KristinitaLuckyLink.html"
+					"<%= templates.yamlconfig.OUTPUT_PATH %>/Sublime-Text/KristinitaLuckyLink.html"
 					"<%= templates.yamlconfig.OUTPUT_PATH %>/IT-articles/typo-reporter.html"
-					"<%= templates.yamlconfig.OUTPUT_PATH %>/Erics-Rooms/Тао.html"
+					"<%= templates.yamlconfig.OUTPUT_PATH %>/Gingerinas/Тао.html"
 					"<%= templates.yamlconfig.OUTPUT_PATH %>/Giologica/Nas-Izu.html"]

@@ -23,7 +23,7 @@ https://github.com/google/closure-compiler-npm/blob/master/packages/google-closu
 [INFO] This is Java package, JavaScript version deprecated:
 https://github.com/google/closure-compiler-npm/blob/master/packages/google-closure-compiler-js/readme.md
 
-[INFO] Options:
+[OPTIONS]
 https://github.com/google/closure-compiler/wiki/Flags-and-Options
 
 [NOTE] I didn’t find information about default Closure configuration file.
@@ -33,6 +33,9 @@ https://closure-compiler.appspot.com/
 
 [WARNING] I can’t generate source maps for all compiled files:
 https://github.com/google/closure-compiler/issues/3729
+
+[NOTE] Don’t use folder names that ends to the “.js” like “Clipboard.js”:
+https://github.com/google/closure-compiler-npm/issues/259
 ###
 module.exports =
 	options:
@@ -47,19 +50,16 @@ module.exports =
 		compilation_level: "SIMPLE"
 
 		###
-
-		https://blog.sentry.io/2018/10/18/4-reasons-why-your-source-maps-are-broken
-
 		[LEARN][CSS][JAVASCRIPT] Sourcemaps.
 		They make debugging simply, if styles and scripts combine and compress:
 		https://blog.teamtreehouse.com/introduction-source-maps
+		https://blog.sentry.io/2018/10/18/4-reasons-why-your-source-maps-are-broken
 
 		source_map_input: true
 		###
 
 		# [INFO] More detailed output
 		debug: true
-
 
 		###
 		[INFO] “Externs are declarations that tell Closure Compiler the names of symbols
@@ -77,7 +77,6 @@ module.exports =
 
 		externs: ["https://browser-update.org/update.min.js"]
 		###
-
 
 		###
 		[WARNING] This option doesn’t work in Grunt, if “jscomp_warning: "*"”:
@@ -115,7 +114,6 @@ module.exports =
 					# [INFO] Disable “[JSC_UNDEFINED_VARIABLE]” error
 					'undefinedVars'
 				]
-
 
 		###
 		[WARNING] I can’t find, how I can disable specific errors/warnings:

@@ -1,0 +1,43 @@
+{# [INFO] Styles to be loaded with page load:
+https://prgssr.ru/images/development/css/02-browser-opt-small.jpg
+
+
+[LEARN][CSS][JAVASCRIPT] For modern browsers doesn’t matter, will we put styles before scripts or vice versa:
+https://stackoverflow.com/a/9272730/5951529
+https://www.benmccann.com/css-or-js-first-for-performance/
+
+
+[INFO] “link rel="preload"”:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload
+https://www.filamentgroup.com/lab/async-css.html#a-modern-approach
+
+[INFO] “Use “link rel="preload"” specifying resources that your page will need very soon,
+which you want to start loading early in the page lifecycle,
+before browsers’ main rendering machinery kicks in”:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload
+
+[REQUIRED] “onload="this.rel='stylesheet'"”.
+Without it CSS will not be applied to the web-page.
+
+[INFO] As of August 2022, all modern browsers supports “<link rel="preload">”:
+https://caniuse.com/?search=preload
+
+
+[INFO] Async CSS downloading:
+“Once split, less-critical CSS should be loaded in the background — AKA asynchronously.”:
+https://www.filamentgroup.com/lab/load-css-simpler/#the-code
+
+[NOTE] I don’t use async CSS downloading in my cases
+#}
+
+
+<!-- Basic styles -->
+
+{# [INFO] Basic styles for all articles and pages #}
+<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/basic{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">
+
+
+<!-- Aside styles -->
+
+{# [INFO] Styles for aside with icon #}
+<link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/Aside-icons/aside-icons{{ MIN }}.css" as="style" onload="this.rel='stylesheet'">

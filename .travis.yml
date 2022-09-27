@@ -4,6 +4,10 @@
 # [PURPOSE] Continuous integration for Ubuntu:
 # https://travis-ci.org/
 
+# [REQUIRED] Request to Travis CI staff for using Travis CI for free since 2020:
+# https://travis-ci.community/t/
+# question-open-source-travis-ci-for-open-source-projects-as-of-august-2022/13233?u=kristinita
+
 # [INFO] You can convert this “.travis.yml” file to “build.sh”
 # so that build this site on your machine:
 # https://github.com/travis-ci/travis-build
@@ -11,8 +15,10 @@
 # [NOTE] If Travis CI doesn’t create build for your latest commit,
 # your “.travis.yml” file is not valid. Example:
 # https://github.com/Kristinita/SashaTravisDebugging/commits/KiraLocalAppVeyor/.travis.yml
+#
 # [NOTE] “group: travis_latest” doesn't work at April 2018, read end of article:
 # https://blog.travis-ci.com/2017-12-01-new-update-schedule-for-linux-build-images
+#
 # [INFO] Travis CI doesn’t support 32-bit platforms:
 # https://stackoverflow.com/a/37087813/5951529
 
@@ -22,14 +28,19 @@
 # [LEARN][TRAVIS] Sections:
 # https://docs.travis-ci.com/user/job-lifecycle
 # https://stackoverflow.com/a/34384262/5951529
+#
 # [LEARN][TRAVIS] Exit codes:
 # https://docs.travis-ci.com/user/job-lifecycle#breaking-the-build
 
 
-# [DECLINED] “sudo” key:
+# [DECLINED] “sudo” key no effect anymore:
+# https://app.travis-ci.com/github/Kristinita/SashaTravis/jobs/581136557
+# /config#rccb_SashaTravis:.travis.yml@604d44b6314c9791.8
 # https://blog.travis-ci.com/2018-11-19-required-linux-infrastructure-migration
+#
 # [NOTE] Needs for correct APT addon usage:
 # https://docs.travis-ci.com/user/reference/overview/
+#
 # [COMPARE]:
 # https://travis-ci.org/Kristinita/SashaScrutinizer/builds/370138075
 # https://travis-ci.org/Kristinita/SashaScrutinizer/builds/370122401
@@ -49,9 +60,11 @@ dist: focal
 
 # [FIXME] DotNet doesn’t work correctly with AWS Graviton2:
 # https://app.travis-ci.com/github/Kristinita/KristinitaPelican/jobs/525301413#L284-L286
+#
 # [LEARN][TRAVIS] Faster AWS Graviton2 processor:
 # https://blog.travis-ci.com/2020-09-11-arm-on-aws
 # arch: arm64-graviton2
+#
 # [REQUIRED] https://blog.travis-ci.com/2020-09-11-arm-on-aws#how-to-get-started
 # group: edge
 
@@ -67,11 +80,14 @@ git:
 
 
 # [LEARN][TRAVIS] Environment
+#
 # [LEARN][TRAVIS] Using secure variables for Travis CI:
 # https://docs.travis-ci.com/user/environment-variables/#defining-encrypted-variables-in-travisyml
+#
 # [LEARN][TRAVIS] Encrypt variables locally:
 # https://docs.travis-ci.com/user/environment-variables/#encrypting-environment-variables
-# [NOTE] Your variables must be secured!
+#
+# [NOTE] Variables must be secured!
 # If you push to GitHub unsecured token, GitHub remove it, and you will need create new;
 # you will get message as this:
 # https://github.com/nodejs/build/issues/1353#issuecomment-397950573
@@ -79,9 +95,11 @@ env:
   global:
   # [LEARN][TRAVIS] Needs get GitHub token with “public_repo” scope:
   # https://docs.travis-ci.com/user/deployment/pages/#setting-the-github-token
+  #
   # [LEARN][YAML] YAML multiline strings:
   # https://stackoverflow.com/a/21699210/5951529
   # https://yaml-multiline.info/
+  #
   # [NOTREQUIRED] Quotes around variables
 
   # [INFO] Equivalent: TOKEN_GITHUB_FOR_TRAVIS_DEPLOY = my real token
@@ -127,6 +145,7 @@ env:
 # [LEARN][TRAVIS] Needs “language: bash” for multilanguage projects:
 # https://github.com/travis-ci/travis-ci/issues/4895
 # https://github.com/travis-ci/docs-travis-ci-com/issues/910
+#
 # [NOTE] But so that use latest Python 3 version, not Python 2, you need “language: python” or
 # install Python via APT addon:
 # https://stackoverflow.com/a/37660551/5951529
@@ -140,12 +159,12 @@ language: python
 python: 3.10
 
 
-# [LEARN][TRAVIS] Addons:
-# https://docs.travis-ci.com/user/addons/
 # [LEARN][TRAVIS] APT addon:
 # https://docs.travis-ci.com/user/installing-dependencies/#Installing-Packages-with-the-APT-Addon
+#
 # [LEARN][TRAVIS] APT sources whitelist:
 # https://github.com/travis-ci/apt-source-whitelist
+#
 # [LEARN][TRAVIS] APT package whitelist:
 # https://github.com/travis-ci/apt-package-whitelist
 addons:
@@ -154,19 +173,26 @@ addons:
     # [INFO] For .NET Core SDK installation:
     # https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/sdk-current
     - apt-transport-https
-    # [INFO] For parallel installation:
+
+    # [INFO] Parallel installation:
     # https://unix.stackexchange.com/a/427419/237999
     - parallel
+
+    # [DEPRECATED] In August 2022 Tidy installation via Snap or Apt available
+    #
     # [INFO] For HTML Tidy building:
     # https://askubuntu.com/a/1027128/582218
-    - xsltproc
+    # - xsltproc
 
 
 # [NOTE] Cache not needed for this project.
+#
 # [LEARN][TRAVIS] Cache needs, when 1 job install dependencies, another jobs runs test, using the cache:
 # https://docs.travis-ci.com/user/build-stages/warm-cache/
+#
 # [INFO] Cache upload after “script” phase:
 # https://docs.travis-ci.com/user/caching/#Build-phases
+#
 # [NOTE] Cache doesn’t save between “images” — new builds: new virtual machine for each build:
 # https://docs.travis-ci.com/user/caching/#Things-not-to-cache
 
@@ -187,12 +213,14 @@ before_install:
 # https://github.com/pypa/pipenv/issues/4141
 # https://travis-ci.com/github/Kristinita/KristinitaPelican/jobs/440616814#L272-L305
 # https://ci.appveyor.com/project/Kristinita/kristinitapelican/builds/36332074/job/p7amggsx8flrw7p7#L168
+#
 # [INFO] Disable lock feature in the Pipenv:
 # https://pipenv.pypa.io/en/latest/cli/#envvar-PIPENV_SKIP_LOCK
 # https://github.com/pypa/pipenv/issues/2200
+#
 # 1. It the extra feature
 # 2. And too slow
-# - export PIPENV_SKIP_LOCK=1
+- export PIPENV_SKIP_LOCK=1
 
 # [INFO] Remove .NET Core SDK telemetry:
 # https://docs.microsoft.com/en-us/dotnet/core/tools/telemetry#disclosure
@@ -213,13 +241,16 @@ before_install:
 # [LEARN][UNIX] Add LocalAppVeyor directory to the end of the PATH environment variable:
 # https://unix.stackexchange.com/a/26067/237999
 # http://www.troubleshooters.com/linux/prepostpath.htm
+#
 # [INFO] “.dotnet/tools” must be added to PATH:
 # https://github.com/dotnet/cli/issues/9208#issuecomment-386851831
+#
 # [INFO] DotNet user profile is “USERPROFILE” on Windows and “HOME” on Linux:
 # https://github.com/dotnet/cli/issues/7569#issuecomment-329280924
+#
 # [INFO] “$HOME” is “/home/travis” on Travis Linux:
 # https://docs.travis-ci.com/user/environment-variables/#default-environment-variables
-- PATH=$PATH:$HOME/.dotnet/tools
+- export PATH=$PATH:$HOME/.dotnet/tools
 
 # [NOTE] That script run for “master” branch, not for “HEAD”;
 # Needs, that “grunt-checkbranch” works correct:
@@ -234,15 +265,18 @@ before_install:
 install:
 # [INFO] ShellCheck default in Travis CI configuration:
 # https://github.com/koalaman/shellcheck#travis-ci
+#
 # [INFO] PhantomJS is preinstalled on Travis:
 # https://docs.travis-ci.com/user/gui-and-headless-browsers/#using-phantomjs
 
 # [NOTE] Node.js latest version required;
 # because by default this build will not work correctly:
 # https://travis-ci.org/github/Kristinita/KristinitaPelican/jobs/728121010
+#
 # [LEARN][NVM] Install the latest Node.js version by NVM:
 # https://github.com/nvm-sh/nvm#usage
 # https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728253580#L187-L188
+#
 # [INFO] David Welsh reccomends NVM installation:
 # https://davidwalsh.name/nvm
 
@@ -259,9 +293,11 @@ install:
 # https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728248259#L182-L183
 # Node.js from apt addon:
 # https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728250645#L223-L224
+#
 # 2. “.nvmrc”:
 # https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#specifying-nodejs-versions-using-nvmrc
 # https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728252349#L182-L183
+#
 # 3. “apt-get -y install node.js”:
 # https://stackoverflow.com/a/21119945/5951529
 # https://travis-ci.org/github/Kristinita/SashaTravisDebugging/builds/728252818#L219-220
@@ -273,41 +309,60 @@ install:
 - bash bash/travis-install.sh
 
 
+# [DECLINED] I don’t need multi-jobs for my configuration,
+# so I disabled the “jobs” key.
+###
 # [LEARN][TRAVIS] “matrix.include”:
 # https://docs.travis-ci.com/user/customizing-the-build#build-matrix
+#
 # [INFO] “matrix” key is alias for “jobs”:
 # https://github.com/travis-ci/docs-travis-ci-com/issues/1500#issuecomment-444095922
+#
 # [FIXME] commitlint-travis bug
 # https://app.travis-ci.com/github/Kristinita/KristinitaPelican/jobs/525293245#L2243-L2266
-
+# I disable commitlint-travis (that is “grunt travis”)
+#
 # [FIXME] Disable clean-console for Travis CI. Travis unable to load some images:
 # https://app.travis-ci.com/github/Kristinita/KristinitaPelican/jobs/560440148#L2849-L2964
-jobs:
-  include:
-  - script:
-    - grunt
-    - grunt validate remote notappveyor
-  - script:
-    - grunt publish
-    - grunt validate remote notappveyor
-    # [INFO] Deploy, if production, not dev build:
-    # https://travis-ci.org/Kristinita/SashaTravis/builds/381271402
-    # [INFO] I make as cotila user:
-    # https://github.com/calebzulawski/cotila/blob/master/.travis.yml
-    - MATRIX_DEPLOY=1
+# jobs:
+#   include:
+#   - script:
+#     - grunt
+#     - grunt http-server checkPages && grunt validate notappveyor
+#   - script:
+#     - grunt
+#     - grunt validate notappveyor
+#     # [INFO] Deploy, if production, not dev build:
+#     # https://travis-ci.org/Kristinita/SashaTravis/builds/381271402
+#     #
+#     # [INFO] I make as cotila user:
+#     # https://github.com/calebzulawski/cotila/blob/master/.travis.yml
+#     - MATRIX_DEPLOY=1
+
+
+script:
+- grunt
+- grunt http-server checkPages
+- grunt validate notappveyor
+
+
+after_success:
+- grunt aftertests
 
 
 # [LEARN][TRAVIS] Automatically deploy site to GitHub Pages:
 # https://docs.travis-ci.com/user/deployment
 # https://docs.travis-ci.com/user/deployment/pages/
+#
 # [INFO] Changes not deploy, if pull request:
 # https://docs.travis-ci.com/user/deployment#Pull-Requests
-
+#
 # [WARNING] If “script” failed, deploying doesn’t run;
 # else “pelican_scaffold”, deploy run, even if “script” failed;
 # don’t use “pelican_scaffold” for deployment:
 # https://github.com/textbook/pelican_scaffold
 deploy:
+
   # [LEARN][TRAVIS] Deploy strategies:
   # https://docs.travis-ci.com/user/deployment-v2/providers/pages/#shared-options
   strategy: git
@@ -320,16 +375,20 @@ deploy:
   on:
     branch: master
 
+    # [DECLINED] I disable multi-jobs
+    ###
     # [INFO] Deploy site, if “grunt publish”, else “grunt” — not deploy:
     # https://docs.travis-ci.com/user/deployment#Conditional-Releases-with-on%3A
-    condition: $MATRIX_DEPLOY
+    # condition: $MATRIX_DEPLOY
 
   # [INFO] Git history keeping by default in dpl v2:
+  #
   # [LEARN][TRAVIS] Don’t overwrite commit history of destination repository:
   # https://docs.travis-ci.com/user/deployment/pages/
   # keep-history: true
 
   # [INFO] Cleanup deprecated in dpl v2, “cleanup” is “false” by default
+  #
   # [LEARN][TRAVIS] Don’t clean output folder:
   # https://docs.travis-ci.com/user/deployment/pages/
   # skip-cleanup: true
@@ -341,6 +400,7 @@ deploy:
   # [LEARN][TRAVIS] “TOKEN_GITHUB_FOR_TRAVIS_DEPLOY” is secure variable, that set in repository settings:
   # https://docs.travis-ci.com/user/environment-variables#Defining-Variables-in-Repository-Settings
   # https://docs.travis-ci.com/user/deployment/pages/#Setting-the-GitHub-token
+  #
   # [WARNING] You need set secure variables for each repository,
   # variables for all repositories not possible at the time:
   # https://github.com/travis-ci/travis-ci/issues/2069
@@ -348,34 +408,42 @@ deploy:
   # [INFO] “deploy_key” is another option instead of “token”:
   # https://docs.travis-ci.com/user/deployment-v2/providers/pages/#known-options
   # https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys
+  #
   # [INFO] “token” is alias for “github_token”:
   # https://docs.travis-ci.com/user/deployment-v2/providers/pages/#known-options
   token: $TOKEN_GITHUB_FOR_TRAVIS_DEPLOY
 
   # [LEARN][TRAVIS] Use name and e-mail of committer:
   # https://docs.travis-ci.com/user/deployment/pages/#Further-configuration
+  #
   # [INFO] For dpl v.2 “committer_from_gh”, not “committer-from-gh”:
   # https://docs.travis-ci.com/user/deployment-v2/providers/pages/#known-options
   committer_from_gh: true
 
-  # [INFO] I re-enable it, if I egt custom domain again
+  # [INFO] I re-enable it, if I get custom domain again
+  #
   # [INFO] Automatically generate CNAME for custom domains:
   # fqdn: kristinita.netlify.app
 
   # [NOTE] Don’t use single quotes in “project_name”:
   # https://github.com/travis-ci/travis-ci/issues/9325
+  #
   # [INFO] “project_name”, not “project-name” for dpl v.2
   project_name: Поиск Кристиниты
   verbose: true
 
   # [INFO] Custom deploy message
+  #
   # [INFO] Multiline message:
   # https://github.com/travis-ci/dpl/issues/1126
+  #
   # [INFO] Available variables:
   # 1. Travis Environment Variables:
   # https://docs.travis-ci.com/user/environment-variables/#default-environment-variables
+  #
   # 2. Known options:
   # https://docs.travis-ci.com/user/deployment-v2/providers/pages/#known-options
+  #
   # [INFO] For deploy message I use plain YAML with leading spaces:
   # https://github.com/Kristinita/SashaTravis.github.io/commit/18f1790be2eb90d5949a6a9b990becd3a42d1b6d
   # https://stackoverflow.com/a/21699210/5951529
@@ -386,22 +454,17 @@ deploy:
 
 
 # [INFO] Run command after site deployment.
+#
 # [NOTE] “exit_codes” doesn’t work for “after_deploy” by default:
 # https://docs.travis-ci.com/user/job-lifecycle#breaking-the-build
 # https://github.com/travis-ci/travis-ci/issues/1574
-
+#
 # [INFO] Use “travis_terminate” for it:
 # https://github.com/travis-ci/travis-ci/issues/1574#issuecomment-451787844
 # https://travis-ci.org/Kristinita/SashaTravis/builds/502952826
 # https://travis-ci.org/Kristinita/SashaTravis/builds/502951558
 # https://github.com/travis-ci/docs-travis-ci-com/issues/1899
 # http://bit.ly/2UkR2y9
-
-
-# [DONE][FIXED] https://github.com/GoogleChromeLabs/psi/issues/118
-# https://github.com/GoogleChromeLabs/psi/pull/120
-# [BUG][FIXME] “Cannot read property 'metrics' of undefined” bug:
-# https://github.com/GoogleChromeLabs/psi/issues/118
 after_deploy: >
   if ! grunt afterdeploy
     then travis_terminate 1

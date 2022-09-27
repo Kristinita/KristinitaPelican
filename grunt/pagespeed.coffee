@@ -2,11 +2,16 @@
 # PageSpeed Insights #
 ######################
 ###
-Check web page performance:
+[OVERVIEW] Check web page performance:
 https://developers.google.com/speed/pagespeed/insights/
-Grunt wrapper:
+
+[INFO] Grunt wrapper:
 https://www.npmjs.com/package/grunt-pagespeed
-Use PSI:
+
+[OPTIONS]
+https://www.npmjs.com/package/grunt-pagespeed#options
+
+[INFO] PSI — PageSpeed Insights CLI:
 https://www.npmjs.com/package/psi
 
 [NOTE] Requests quotas:
@@ -21,15 +26,12 @@ Cloudflare require custom domain:
 https://blog.cloudflare.com/secure-and-fast-github-pages-with-cloudflare/
 https://www.google.com/search?client=firefox-b-d&q=cloudflare+github+pages
 
-[NOTE] Remote site required for PSI running;
+[WARNING] Remote site required for PSI running;
 I can't fix “Serve static assets with an efficient cache policy” for localhost
 ###
 module.exports =
-	###
-	[INFO] Options:
-	https://www.npmjs.com/package/grunt-pagespeed#options
-	###
 	options:
+
 		###
 		[INFO] That get a key, create a project → visit API page:
 		https://console.developers.google.com/apis
@@ -37,12 +39,14 @@ module.exports =
 		https://console.developers.google.com/apis/library
 		###
 		key: "<%= templates.tokens.api_key_pagespeed_insights_v5 %>"
+
 		###
 		[INFO] Template before paths; PageSpeed will check
 		“url/404.html”, “url/Sasha-Black.html” and so on:
 		https://www.npmjs.com/package/grunt-pagespeed#url
 		###
 		url: "<%= templates.yamlconfig.SITEURL %>/"
+
 	prod:
 		options:
 			paths: [
@@ -52,22 +56,24 @@ module.exports =
 					"Sasha-Black"
 					"Gingerinas/Джинджерины"
 					"IT-articles/How-to-publish-your-package-to-PyPI-2018"
+					"Library-for-life/Библиотека-для-жизни"
 					"Pages/About-for-developers"
-					"Programs/KristinitaLuckyLink"
-					"Sasha-Black/Sasha-Black-description"
 					"Smert-svobode/Новые-недовольные-русские"
+					"Sublime-Text/KristinitaLuckyLink"
 					"Sublime-Text/Sacagawea"
 					]
 			###
-			[NOTE] Mandatory option:
+			[REQUIRED] Mandatory option:
 			https://www.npmjs.com/package/grunt-pagespeed#locale
 			###
 			locale: "en_US"
+
 			###
 			[INFO] Mobile or desktop:
 			https://www.npmjs.com/package/grunt-pagespeed#strategy
 			###
 			strategy: "mobile"
+
 			###
 			[INFO] If PageSpeed Insights value less than threshold value, build failed:
 			https://www.npmjs.com/package/grunt-pagespeed#threshold

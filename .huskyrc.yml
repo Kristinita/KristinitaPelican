@@ -1,10 +1,15 @@
 #########
 # husky #
 #########
-# Git hooks:
+# [OVERVIEW] Git hooks:
 # https://www.npmjs.com/package/husky
-# [WARNING] Setting commit-msg script in package.json > scripts will be deprecated. Please move it to husky.hooks in package.json, a .huskyrc file, or a husky.config.js file.
-# [WARNING] Using environment variable syntax ($GIT_PARAMS) in -e |--edit is deprecated. Use {-E|--env} GIT_PARAMS instead.
+#
+# [NOTE] Setting commit-msg script in package.json > scripts will be deprecated.
+# Please move it to husky.hooks in package.json, a .huskyrc file, or a husky.config.js file.
+#
+# [NOTE] Using environment variable syntax ($GIT_PARAMS) in -e |--edit is deprecated.
+# Use {-E|--env} GIT_PARAMS instead.
+#
 # [NOTE]: “GIT_PARAMS” renamed to “HUSKY_GIT_PARAMS”:
 # https://www.npmjs.com/package/husky#upgrading-from-014
 hooks:

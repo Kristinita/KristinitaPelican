@@ -1,0 +1,28 @@
+{#
+[DECLINED]
+Plugins as Pelican Open Graph still use “kira_object.title” without Jinja2 filters,
+see 5.1 item:
+https://stackoverflow.com/q/64058029/5951529
+
+[LEARN][JINJA] Set variable:
+https://stackoverflow.com/a/4181605/5951529
+
+{% set kira_title_variable = kira_object.title|replace('-', " ") %}
+#}
+
+{# [INFO] Encoding #}
+<meta charset="utf-8">
+
+
+{# [INFO] Mobile-friendly:
+https://web.dev/viewport/#how-to-add-a-viewport-meta-tag #}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+{# [DECLINED]
+Since 2015, new IE and Edge versions doesn’t required it;
+I don’t support old versions:
+https://stackoverflow.com/a/6771584/5951529
+
+[INFO] Internet Explorer/Edge support
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> #}

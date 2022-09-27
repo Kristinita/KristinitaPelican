@@ -1,0 +1,215 @@
+{# [INFO] Google Fonts:
+https://medium.freecodecamp.org/how-to-use-google-fonts-in-your-next-web-design-project-e1ad48f1adfa
+[INFO] Open Fonts License for fonts:
+https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web
+[INFO] Google Fonts v2 API:
+https://developers.google.com/fonts/docs/css2
+
+
+[INFO] I migrate from FontLibrary to Google Fonts:
+1. FontLibrary haven't CDN and load to page more slow:
+https://i.imgur.com/mH0qSvs.png
+
+2. FontLibrary fonts no cached:
+https://i.imgur.com/ZeRnQnS.png
+Requests for Google Fonts CSS assets arec cached for 1 day:
+https://developers.google.com/fonts/faq#what_does_using_the_google_fonts_api_mean_for_the_privacy_of_my_users
+
+3. FontLibrary can't remove non-used languages:
+https://i.imgur.com/Y0j0lnn.png
+
+4. FontLibrary haven't open issue tracker.
+Tracker for Google Fonts:
+https://github.com/google/fonts
+
+
+Used fonts:
+
+[INFO] Play for h1 headers:
+https://fonts.google.com/specimen/Play
+https://github.com/google/fonts/tree/master/ofl/play
+
+[INFO] El-Messiri for links:
+https://fontlibrary.org/en/font/el-messiri
+https://github.com/Gue3bara/El-Messiri
+
+[INFO] Scada for h2 headers:
+https://www.fontsquirrel.com/fonts/scada
+https://fonts.google.com/specimen/Scada
+https://github.com/googlefonts/scada
+
+[INFO] Fira Mono for code:
+http://mozilla.github.io/Fira/
+https://github.com/mozilla/Fira
+
+[INFO] Needs combine fonts for leverage browser caching:
+https://stackoverflow.com/a/34356311/5951529
+#}
+
+
+{#
+[INFO] Material icons font for admonition:
+https://google.github.io/material-design-icons/
+
+[NOTE] “display: swap” required:
+https://www.zachleat.com/web/google-fonts-display/
+
+[NOTE] “|” character must be replace in fonts URL for validator:
+https://stackoverflow.com/a/22469221/5951529
+
+[NOTE] “&” → “&amp;” replace required for HTML Tidy:
+https://stackoverflow.com/a/15606103/5951529
+
+[INFO] Variable fonts:
+https://web.dev/variable-fonts/
+Fonts that I use isn’t variable
+
+
+[NOTREQUIRED] “&subset=cyrillic” for all modern browsers, that supports “unicode-range”:
+https://github.com/google/fonts/issues/113
+https://stackoverflow.com/a/56367174/5951529
+https://caniuse.com/font-unicode-range
+https://github.com/google/fonts/issues/2480
+https://github.com/google/fonts/issues/384
+
+[NOTE] No easy way to exclude all unwanted subsets:
+https://github.com/google/fonts/issues/2230
+
+
+[INFO] “Some types of resources, such as fonts, are loaded in anonymous mode.
+For those you must set the crossorigin attribute with the preconnect hint”:
+https://web.dev/preconnect-and-dns-prefetch/#how-to-implement-relpreconnect
+
+
+[INFO] Fastest Google fonts downloading for May 2020:
+https://csswizardry.com/2020/05/the-fastest-google-fonts/
+
+1. Preemptively warm up the fonts’ origin.
+
+2. Initiate a high-priority, asynchronous fetch for the CSS file. Works in
+	most modern browsers.
+
+3. Initiate a low-priority, asynchronous fetch that gets applied to the page
+	only after it’s arrived. Works in all browsers with JavaScript enabled.
+
+4. In the unlikely event that a visitor has intentionally disabled
+	JavaScript, fall back to the original method. The good news is that,
+	although this is a render-blocking request, it can still make use of the
+	preconnect which makes it marginally faster than the default.
+#}
+
+
+{# 1 #}
+<link rel="preconnect"
+	href="https://fonts.gstatic.com"
+	crossorigin />
+
+{# 2 #}
+<link rel="preload"
+	as="style"
+	href="https://fonts.googleapis.com/css2?family=Play:wght@700&amp;family=El+Messiri&amp;display=swap" />
+
+{# 3 #}
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Play:wght@700&amp;family=El+Messiri&amp;display=swap"
+	media="print" onload="this.media='all'" />
+
+{# 4 #}
+<noscript>
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Play:wght@700&amp;family=El+Messiri&amp;display=swap" />
+</noscript>
+
+
+{# [INFO] Scada font when scrolling to h2 tag #}
+
+<script>
+	Defer.dom('h2', 0, 'KiraScadaFontHeaderDeferJS', function() {
+			let kira_scada_font_header_defer = document.createElement('link');
+			kira_scada_font_header_defer.setAttribute("href", "https://fonts.googleapis.com/css2?family=Scada:ital,wght@1,700&amp;display=swap");
+			kira_scada_font_header_defer.setAttribute("rel", "stylesheet");
+			document.getElementsByTagName("head")[0].appendChild(kira_scada_font_header_defer);
+		});
+</script>
+
+
+{# [INFO] Load “Fira Mono” font
+
+[INFO] Font loaded if “<code>” exists.
+That is, it’s loaded if inline and/or block code exists
+#}
+
+{# djlint:off T001 #}
+
+{% if "<code>" in kira_object.content%}
+	<script>
+		Defer.dom('code', 0, 'KiraFiraMonoFontCodeBlocksDeferJS', function() {
+				let kira_fira_mono_font_code_blocks_defer = document.createElement('link');
+				kira_fira_mono_font_code_blocks_defer.setAttribute("href", "https://fonts.googleapis.com/css2?family=Fira+Mono&amp;display=swap");
+				kira_fira_mono_font_code_blocks_defer.setAttribute("rel", "stylesheet");
+				document.getElementsByTagName("head")[0].appendChild(kira_fira_mono_font_code_blocks_defer);
+			});
+	</script>
+{% endif %}
+
+{# djlint:on #}
+
+
+{# [INFO] Marck Script for “Работайте над собой”:
+https://fonts.google.com/specimen/Marck+Script
+https://github.com/google/fonts/tree/master/ofl/marckscript
+
+[INFO] I use lazy loading “Marck Script” for articles and pages,
+but don’t use for auxiliary pages. In auxiliary pages the text
+“Работайте над собой” may appear instantly,
+while in articles and pages it appears after scrolling
+
+[INFO] Lazy loading “Marck Script” font for “Работайте над собой” text:
+https://stackoverflow.com/a/14919928/5951529
+https://stackoverflow.com/a/577002/5951529
+https://www.geeksforgeeks.org/how-to-load-css-files-using-javascript/
+#}
+<script>
+	Defer.dom('.SashaWorkOnYourself', 0, 'KiraMarckScriptFontWorkOnYourselfDeferJS', function() {
+			let kira_marck_script_font_work_on_yourself_defer = document.createElement('link');
+			kira_marck_script_font_work_on_yourself_defer.setAttribute("href", "https://fonts.googleapis.com/css2?family=Marck+Script&amp;display=swap");
+			kira_marck_script_font_work_on_yourself_defer.setAttribute("rel", "stylesheet");
+			document.getElementsByTagName("head")[0].appendChild(kira_marck_script_font_work_on_yourself_defer);
+		});
+</script>
+
+
+{# [DECLINED] I migrated from Font Library to Google Fonts
+
+[INFO] Open source fonts from Font Library:
+https://fontlibrary.org/en
+[INFO] Documentation:
+https://fontlibrary.org/en/guidebook
+[INFO] Licenses:
+https://fontlibrary.org/en/guidebook/font_licensing
+
+[INFO] Select fonts, that support Cyrillic symbols.
+
+Used fonts:
+
+[INFO] Xolonium for h1 headers:
+https://fontlibrary.org/en/font/xolonium
+<link rel="stylesheet" href="https://fontlibrary.org/face/xolonium">
+
+[INFO] Sansus-webissimo for h2 headers:
+https://fontlibrary.org/en/font/sansus-webissimo
+<link rel="stylesheet" href="https://fontlibrary.org/face/sansus-webissimo">
+
+[INFO] el-messiri for links:
+https://fontlibrary.org/en/font/el-messiri
+https://github.com/Gue3bara/El-Messiri
+<link rel="stylesheet" href="https://fontlibrary.org/face/el-messiri">
+
+[INFO] inconsolata-lgc for code:
+https://fontlibrary.org/en/font/inconsolata-lgc
+https://github.com/DeLaGuardo/Inconsolata-LGC
+<link rel="stylesheet" href="https://fontlibrary.org/face/inconsolata-lgc">
+
+[INFO] miama-nueva for “Работайте над собой”:
+https://fontlibrary.org/en/font/miama-nueva
+<link rel="stylesheet" href="https://fontlibrary.org/face/miama-nueva"> #}

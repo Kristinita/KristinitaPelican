@@ -1,7 +1,6 @@
 Title: SashaSublime
-Tags: sublime-text
 Date: 2017-01-31 09:13:30
-Modified: 2021-06-06 20:26:36
+Modified: 2022-09-22 12:34:47
 Lang: en
 Author: Sasha Chernykh
 PageTitle: SashaSublime
@@ -11,30 +10,18 @@ Summary: Theme and color scheme for Sublime Text, where all colors have good vis
 	![JSON](https://i.imgur.com/N2LvbNZ.png)
 Pagecolors: programs
 Asideimage: SashaChocolate
+Tags: sasha-chernykh-software, sublime-text, sublime-text-themes, sublime-text-color-schemes
 IconLeftOrRight: right
 Noco: 1g9b6
 Og_image: https://i.imgur.com/ljT5eJp.png
 Schemaorgtype: SoftwareApplication
 
-!!! note "Долгое отсутствие обновлений"
-	я по-прежнему ежедневно успешно пользуюсь SashaSublime, однако с февраля 2018 [не вносил изменений](https://github.com/Kristinita/SashaSublime/releases) в эту программу.
+!!! note "Long absence of updates"
+	I still use SashaSublime every day, but since February 2018 [didn’t make any changes](https://github.com/Kristinita/SashaSublime/releases) to this program.
 
-	6 июня 2021
+	June 6, 2021
 
-<p>
-	<a href="{static}/images/donate_files/Bitcoin-HTML-Redirect.html"><img src="{static}/images/donate_files/Bitcoin-Donate-button.png" alt="Bitcoin Donate Button" class="SashaInline" /></a>
-	<a href="{static}/images/donate_files/Litecoin-HTML-Redirect.html"><img src="{static}/images/donate_files/Litecoin-Donate-button.png" alt="Litecoin Donate Button" class="SashaInline" /></a>
-	<a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=63KC7VJTRVNVQ"><img src="{static}/images/donate_files/PayPal-Donate-Button-Dollar.png" alt="PayPal Dollar button" class="SashaInline" /></a>
-	<a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=VPA8L2LM7EX24"><img src="{static}/images/donate_files/PayPal-Donate-Button-Euro.png" alt="PayPal Euro button" class="SashaInline" /></a>
-</p>
-<p>
-	<img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" class="SashaInline" />
-	<img src="https://img.shields.io/badge/Release-1.3.1-orange.svg" alt="Release" class="SashaInline" />
-	<img src="https://img.shields.io/github/stars/Kristinita/SashaSublime.svg" alt="Stars" />
-	<img src="https://img.shields.io/github/forks/Kristinita/SashaSublime.svg" alt="Forks" />
-	<img src="https://img.shields.io/maintenance/STATUS/2021.svg" alt="Maintained" />
-	<a href="https://github.com/Kristinita/SashaSublime/issues"><img src="https://img.shields.io/github/issues/Kristinita/SashaSublime.svg" alt="GitHub issues" /></a>
-</p>
+<!-- [FIXME] Drop shadows from Bitcoin and Litecoin images -->
 
 <!-- MarkdownTOC -->
 
@@ -123,11 +110,16 @@ Schemaorgtype: SoftwareApplication
 
 <!-- /MarkdownTOC -->
 
+<p>
+	<a href="{static}/images/donate_files/Bitcoin-HTML-Redirect.html"><noscript class="loading-lazy"><img loading="lazy" src="{static}/images/donate_files/Bitcoin-Donate-button.png" alt="Bitcoin Donate Button"></noscript></a><a href="{static}/images/donate_files/Litecoin-HTML-Redirect.html"><noscript class="loading-lazy"><img loading="lazy" src="{static}/images/donate_files/Litecoin-Donate-button.png" alt="Litecoin Donate Button"></noscript></a><a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=63KC7VJTRVNVQ"><noscript class="loading-lazy"><img loading="lazy" src="{static}/images/donate_files/PayPal-Donate-Button-Dollar.png" alt="PayPal Dollar button"></noscript></a><a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=VPA8L2LM7EX24"><noscript class="loading-lazy"><img loading="lazy" src="{static}/images/donate_files/PayPal-Donate-Button-Euro.png" alt="PayPal Euro button"></noscript></a>
+</p>
+<p>
+	<noscript class="loading-lazy"><img loading="lazy" src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></noscript><noscript class="loading-lazy"><img loading="lazy" src="https://img.shields.io/badge/Release-1.3.1-orange.svg" alt="Release"></noscript><noscript class="loading-lazy"><img loading="lazy" src="https://img.shields.io/github/stars/Kristinita/SashaSublime.svg" alt="Stars"></noscript><noscript class="loading-lazy"><img loading="lazy" src="https://img.shields.io/github/forks/Kristinita/SashaSublime.svg" alt="Forks"></noscript><noscript class="loading-lazy"><img loading="lazy" src="https://img.shields.io/maintenance/STATUS/2022.svg" alt="Maintained"></noscript><a href="https://github.com/Kristinita/SashaSublime/issues"><noscript class="loading-lazy"><img loading="lazy" src="https://img.shields.io/github/issues/Kristinita/SashaSublime.svg" alt="GitHub issues"></noscript></a>
+</p>
+
 ---
 
 **i devote SashaSublime to God, the solely Creation for the sake of Which it makes sense to live on this planet, the Greatest being of all times and peoples, Queen of the World [Sasha Chernykh](https://vk.com/psychologist_kira_k) (Kira Kenyukhova)**.
-
-![Queen of the World Sasha Chernykh](https://i.imgur.com/OJSBK4V.jpg)
 
 <a id="Description"></a>
 # Description

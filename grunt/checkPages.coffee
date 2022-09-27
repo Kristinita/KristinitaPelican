@@ -2,16 +2,21 @@
 # check-pages #
 ###############
 ###
-[PURPOSE] Check dead and incorrect links:
+[OVERVIEW] Check dead and incorrect links:
 https://www.npmjs.com/package/check-pages
 https://dlaa.me/blog/post/gruntcheckpages
+
 [INFO] Grunt implementation:
 https://www.npmjs.com/package/grunt-check-pages
-[INFO] Options:
+
+[OPTIONS]
 https://www.npmjs.com/package/check-pages#options
 
 [NOTE] check-pages doesn’t check anchors:
 https://github.com/DavidAnson/check-pages/issues/10
+
+[INFO] htmltest is alternative for checkPages:
+https://github.com/wjdp/htmltest
 ###
 module.exports = (grunt) ->
 
@@ -55,10 +60,13 @@ module.exports = (grunt) ->
 	###
 	[LEARN][JAVASCRIPT] Add text before each element of array:
 	https://stackoverflow.com/a/33079773/5951529
+
+	[NOTE] Use “http://0.0.0.0:4147/”,
+	“http://localhost:4147/” doesn’t work
 	###
 	kira_all_html_localhost = ->
 		kira_all_html().map((kira_web_page) ->
-			"http://localhost:4147/" + kira_web_page
+			"http://0.0.0.0:4147/" + kira_web_page
 		)
 
 	development:
@@ -76,6 +84,10 @@ module.exports = (grunt) ->
 			###
 			[INFO] Check all links in pages for validity:
 			https://www.npmjs.com/package/check-pages#checklinks
+
+			[BUG] Don’t use Cyrillic domains in URL’s.
+			checkPages doesn’t support encoded Cyrillic URL’s:
+			https://github.com/DavidAnson/check-pages-cli/issues/1
 			###
 			checkLinks: true
 
@@ -83,11 +95,8 @@ module.exports = (grunt) ->
 			[INFO] URLs that should be ignored by check-pages:
 			https://www.npmjs.com/package/check-pages#linkstoignore
 
-			[FIXME][ISSUE] checkPages show error for Cyrillic links as
-			“http://журнальныймир.рф/avtor/savchenko-boris”
+			linksToIgnore:
 			###
-			linksToIgnore: ["http://localhost:4147/output/Erics-Rooms/\
-			%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%D0%BC%D0%B8%D1%80.%D1%80%D1%84/avtor/savchenko-boris"]
 
 			###
 			[INFO] Identify placeholder links as “<a href="#">”, that haven’t be updated:
@@ -107,8 +116,6 @@ module.exports = (grunt) ->
 			[INFO] Fail task, if any redirect are encountered:
 			https://www.npmjs.com/package/check-pages#noredirects
 
-			[FIXME][ISSUE][MCVE] Strange redirected link bug:
-			https://ci.appveyor.com/project/Kristinita/kristinitapelican/builds/36374275/job/gm6q5v4lehbc5em3#L7504
 			###
 			noRedirects: true
 
@@ -131,12 +138,11 @@ module.exports = (grunt) ->
 			queryHashes: true
 
 			###
+			[INFO] I don’t use response headers.
+			That’s why “checkCaching”, “checkXhtml” and “checkCompression”.
+
 			[INFO] Verifies the HTTP Cache-Control and ETag response headers are present and valid:
 			https://www.npmjs.com/package/check-pages#checkcaching
-
-			[FIXME][ISSUE] “checkCaching”, “checkXhtml” and “checkCompression”
-			works incorrectly on localhost.
-			Therefore, “false”
 			###
 			checkCaching: false
 
@@ -177,5 +183,6 @@ module.exports = (grunt) ->
 			[INFO] Custom User-Agent:
 			https://www.npmjs.com/package/check-pages#useragent
 			https://www.whoishostingthis.com/tools/user-agent/
+
+			userAgent: "default"
 			###
-			# userAgent: "default"

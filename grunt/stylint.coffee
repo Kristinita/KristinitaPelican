@@ -38,6 +38,12 @@ http://stylus-lang.com/docs/block.html
 + "colors": "false", — before hexadecimal value I wrote comment what’s color I use;
 I don’t need this rule.
 
+[FIXME][BUG][ISSUE] In my file “nelican-themes-core-design” “.navbar-item” has 4 depth
+except for pseudo-selectors. But lint failed.
+I temporary increase the "depthLimit" value.
++ "depthLimit": 5
+https://simenb.github.io/stylint/#depthlimit-default-false-number-or-false
+
 + "extendPref": "@extend", — “@extend” more short
 + "indentPref": "never", — “if you use hard tabs, set this value to false”
 + "leadingZero": "never" — leading zero — extra symbol

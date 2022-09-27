@@ -1,0 +1,11 @@
+{# [INFO] Message if user disable JavaScript in his browser
+
+[INFO] Don’t use “onload” attribute or running via Defer.js here.
+This won’t work because the user’s JavaScript is disabled.
+Use “rel="stylesheet"”. #}
+<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/components/javascript-disabled.css">
+
+{# [INFO] Styles for AddToAny — social share buttons #}
+<script>
+	Defer.css('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/third-party/AddToAny/addtoany{{ MIN }}.css', 'addtoany-styles', 6000);
+</script>

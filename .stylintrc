@@ -24,7 +24,7 @@
         "expect": "never",
         "error": true
     },
-    "depthLimit": 4,
+    "depthLimit": 5,
     "duplicates": {
         "expect": "always",
         "error": true

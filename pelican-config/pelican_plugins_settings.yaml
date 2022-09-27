@@ -1,12 +1,26 @@
 ###################
 # Pelican plugins #
 ###################
-# Pelican plugins configuration:
+# [OVERVIEW] Pelican plugins configuration:
 # https://github.com/getpelican/pelican-plugins
 
-# [BUG] Automatic plugins installation doesn't work;
-# pelican-plugin-installer is deprecated:
-# https://github.com/kplaube/pelican-plugin-installer/issues/6
+# [NOTE] You need add to “PLUGINS” sections plugins,
+# that loaded via “pelican.plugins” (so called “namespace plugins”):
+# “pelican-sitemap” as “sitemap” and
+# “pelican-search” as “search”
+# https://github.com/pelican-plugins/sitemap
+# https://github.com/pelican-plugins/search
+#
+# [INFO] If any namespace plugin for Pelican comes across, run
+# “pipenv run pelican content -s pelicanconf.py --fatal warnings --ignore-cache --debug”,
+# and find at the beginning lines:
+#
+# Namespace plugins found:
+# pelican.plugins.search
+# pelican.plugins.sitemap
+#
+# “search” and “sitemap” — names of your namespace plugins,
+# which you must add to your “PLUGINS” section.
 
 PLUGINS:
 
@@ -39,7 +53,6 @@ PLUGINS:
 # https://github.com/getpelican/pelican-plugins/issues/983
 # 'jinja2content'
 
-
 # [BUG] Andrew Heiss’ json_feed plugin doesn’t work:
 # https://github.com/andrewheiss/pelican_json_feed/issues/6
 # [BUG] Ryan M plugin also doesn’t work for me,
@@ -47,7 +60,6 @@ PLUGINS:
 # “AttributeError: 'NoneType' object has no attribute 'lstrip'”
 # https://ryanmo.co/2017/05/18/json-feed-in-pelican/
 # - json_feed
-
 
 # Simple tables:
 # https://github.com/burakkose/just_table
@@ -96,6 +108,13 @@ PLUGINS:
 # https://github.com/getpelican/pelican-plugins/tree/master/section_number
 - section_number
 
+# [OVERVIEW] Pelican plugin for the Stork search for static sites:
+# https://github.com/pelican-plugins/search
+#
+# [FIXME] Disabled until the installation of Stork is possible:
+# https://github.com/jameslittle230/stork/issues/313
+# - search
+
 # Generate sitemap:
 # https://github.com/getpelican/pelican-plugins/tree/master/sitemap
 - sitemap
@@ -113,6 +132,7 @@ PLUGINS:
 #     # Disable «403» or «404» text after link in generated HTML
 #     labels: false
 
+
 #####################
 # filetime_from_git #
 #####################
@@ -122,20 +142,29 @@ GIT_HISTORY_FOLLOWS_RENAME: true
 GIT_SHA_METADATA: true
 GIT_FILETIME_FROM_GIT: true
 
+
 ##############
 # Interlinks #
 ##############
 INTERLINKS:
     kristinita: https://kristinita.netlify.com/#gsc.tab=0&gsc.q=
 
+
 ##############
 # just_table #
 ##############
-# [WARNING] Unwanted <p> tag:
-# https://github.com/burakkose/just_table/issues/5
-# HTML Tidy fix it
 # [NOTE] Quotes required:
 JTABLE_SEPARATOR: "|"
+
+
+################
+# Stork search #
+################
+# [INFO] Search inside “<section>” tag:
+# https://github.com/pelican-plugins/search#search_html_selector--main
+#
+# SEARCH_HTML_SELECTOR: "section"
+
 
 ##################
 # section_number #
@@ -145,6 +174,7 @@ JTABLE_SEPARATOR: "|"
 # [INFO] Maximum value is 6 — Markdown specification:
 # https://daringfireball.net/projects/markdown/syntax#header
 SECTION_NUMBER_MAX: 6
+
 
 ###########
 # sitemap #

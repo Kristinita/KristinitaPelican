@@ -1,0 +1,27 @@
+{# [BUG] In this case “en” value will be for all articles;
+“kira_object.lang” exists always.
+Use “<html lang="{{ kira_object.lang }}">” and manually add lang to
+articles/pages metadata.
+
+[REQUIRED] The same language, that text in article/page, for The Nu Html Checker:
+https://validator.github.io/validator/
+https://travis-ci.org/Kristinita/KristinitaPelican/jobs/381246941#L1202
+
+[INFO] Russian is default language for my site;
+if article is English this must be indicated in the article/page metadata.
+
+[LEARN][JINJA] “-” sign for whitespace control:
+https://ttl255.com/jinja2-tutorial-part-3-whitespace-control/
+
+[WARNING] I couldn’t find any tool for automatically generate value of “lang” attribute:
+https://github.com/posthtml/posthtml-plugins-idea/issues/11
+
+[FIXME][ISSUE] Validator:
+https://github.com/validator/validator
+
+{% if kira_object.lang %}
+	en
+{% else %}
+	ru
+{% endif %}
+#}

@@ -128,14 +128,18 @@ rules:
       - test
       # Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
       - ci
-      # [INFO] Tool changes, configuration changes, and changes to things that do not actually go into production at all:
+      # [INFO] Tool changes, configuration changes,
+      # and changes to things that do not actually go into production at all:
       # https://stackoverflow.com/a/26944812/5951529
       - chore
       # Building tools changes (example scopes: grunt, gulp)
       - build
       # Reverts a previous commit
       - revert
-      # [INFO] Personal types:
+
+
+      # [INFO] Personal types
+
       # VCS changes (example scopes: bazaar, mercurial, git)
       - vcs
       # Debugging.
@@ -145,6 +149,10 @@ rules:
       # [INFO] Changes for linters/checkers/validators.
       # Example scopes — “eslint”, “stylint”
       - lint
+      # [INFO] Migrate from one tool to another
+      - migrate
+      # [INFO] Delete unneeded
+      - del
 
   type-case:
     - 2

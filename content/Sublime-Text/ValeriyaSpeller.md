@@ -2,7 +2,7 @@ Title: ValeriyaSpeller
 Version: 0.1.0
 Author: Sasha Chernykh
 Date: 2017-04-03 11:17:14
-Modified: 2021-07-19 07:54:34
+Modified: 2022-09-14 11:35:59
 Lang: en
 Summary: yaspeller implementation for Sublime Text
 	![ValeriyaSpeller](https://i.imgur.com/bqRl8eD.png)
@@ -12,7 +12,7 @@ Asideimage: SashaChocolate
 Titleimage: true
 Titleimagename: ValeriaEarring
 Iconleftorright: right
-Tags: sublime-text, yaspeller
+Tags: sasha-chernykh-software, sublime-text, spell-check, yaspeller
 Noco: 1g9b6
 Epigraph: true
 Epigraphtext: i express my gratitude to Her
@@ -57,7 +57,7 @@ Must be works in macOS and *nix operating systems.
 
 # Installation
 
-1. Install [Node.js](https://nodejs.org/en/), if no. For Windows users I recommend [install Chocolatey](https://lifehacker.ru/2015/01/08/chocolatey/) → [install Node.js by command `choco install nodejs -y`](https://chocolatey.org/packages/nodejs).
+1. Install [Node.js](https://nodejs.org/en/), if no. For Windows users I recommend [install Chocolatey](https://lifehacker.ru/2015/01/08/chocolatey/) → install Node.js by [command](https://chocolatey.org/packages/nodejs) `choco install nodejs -y`.
 1. Install [yaspeller](https://www.npmjs.com/package/yaspeller) — `npm install yaspeller -g`.
 1. Install [SublimeLinter](https://packagecontrol.io/packages/SublimeLinter) framework [via Package Control](https://docs.cs.cf.ac.uk/notes/sublime-text-packages/).
 1. [Install](http://www.macdrifter.com/2012/08/install-sublime-packages-from-github.html) [ValeriyaSpeller](https://github.com/Kristinita/SublimeLinter-contrib-ValeriyaSpeller).

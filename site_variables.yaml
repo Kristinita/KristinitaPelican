@@ -7,103 +7,149 @@
 # http://yaml.org/faq.html
 # [NOTE] UPPERCASE required for Pelican
 
+
 #############################
 # Not recommended to change #
 #############################
-# Default Pelican values for settings.
+# [INFO] Default Pelican values for settings.
 # Not recommended change it without the need,
 # because I can use straight values, not variables in some places of these site.
 # If you change one of these variables, check, that previous value not exist in site.
-# Source path
+
+# [INFO] Source path
 CONTENT_PATH: content
-# Build path
+
+# [INFO] Build path
 OUTPUT_PATH: output
-# Theme path
-THEME: themes/sashapelican
-# Theme directory in the output path
-# [NOTE] Name correct; “theme_static_dir” in output directory:
+
+# [INFO] Theme path
+THEME: themes/nelican
+
+# [INFO] The directory of the used theme in the output path:
 # https://docs.getpelican.com/en/latest/settings.html#THEME_STATIC_DIR
 THEME_STATIC_DIR: theme
-# Static paths in theme
+
+# [INFO] Static paths for theme
 THEME_STATIC_PATHS:
 - static
 
+
+# [FIXME][PELICAN][ISSUE] Custom path for categories and tags doesn’t work for me here
+# in YAML and in “pelicanconf.py” both:
+# https://docs.getpelican.com/en/latest/settings.html?#url-settings
+#
+# CATEGORY_URL: "{slug}.html"
+# CATEGORY_SAVE_AS: "{slug}.html"
+
+
 # [INFO] Plugin paths
 PLUGIN_PATHS:
+
 # [INFO] Third-party plugins
 - pelican-plugins
+
 # [INFO] Folder with own plugins
 - personal-plugins
-# Cache path
+
+# [INFO] Pelican cache path
 CACHE_PATH: pelican_cache
-# Path of Pelican settings
+
+# [INFO] Path of Pelican settings
 CONFIG_PATH: pelican-config
+
+
+# [INFO] Required templates:
+# https://docs.getpelican.com/en/latest/settings.html?#template-pages
+#
+# [INFO] I don’t use “archives.html” for my site,
+# therefore I delete “archives” from default value.
+DIRECT_TEMPLATES:
+- index
+- authors
+- categories
+- tags
 
 
 ##############
 # CHANGE IT! #
 ##############
+
 # Custom personal settings, change it
 AUTHOR: Саша Черных
+
 SITENAME: Поиск Кристиниты
+
 # [INFO] Russian by default, because most of my articles in Russian, not English
 DEFAULT_LANG: ru
-# Site URL. Absolute path for publishing.
+
+# [INFO] Site URL. Absolute path for publishing.
 SITEURL: &siteurl https://kristinita.netlify.app
-# “If you have already explicitly defined SITEURL (see above)
+
+# [INFO] “If you have already explicitly defined SITEURL (see above)
 # and want to use the same domain for your feeds, you can just set:”
 # https://docs.getpelican.com/en/latest/settings.html#feed-settings
+#
+# [INFO] “FEED_DOMAIN” always have absolute, not relative “SITEURL” value
+# for development and production settings
 FEED_DOMAIN: *siteurl
+
 # [REQUIRED] “If no timezone is defined, UTC is assumed.
 # This means that the generated Atom and RSS feeds will contain
 # incorrect date information if your locale is not UTC.”:
 # https://docs.getpelican.com/en/latest/settings.html#TIMEZONE
-# [INFO] Timezon list:
+# [INFO] Timezone list:
 # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 # [INFO] Use “TZ database name” for value of this option:
 # https://github.com/search?q=TIMEZONE+filename%3Apelicanconf.py
 TIMEZONE: 'Europe/Moscow'
+
 # [NOTE] Don't set “PAGE_PATHS = ['']”! Look at:
 # https://github.com/getpelican/pelican/issues/2123
 PAGE_PATHS:
 - Pages
 - 404.md
 - Sasha-Black.md
+
 ARTICLE_PATHS:
-- Books
 - Books-Reviews
-- Erics-Rooms
 - Gingerinas
 - Giologica
-- G-Rights
 - IT-articles
+- Kristinograd
 - Library-for-life
 - Life-hacks
+- Nelias-Rooms
 - Nelie
-- Programs
 - Sasha-Black
 - Smert-svobode
 - Sublime-Text
+
 # GitHub repository URL of this source:
 GITHUB_SOURCES_URL: https://github.com/Kristinita/KristinitaPelican
 GITHUB_OUTPUT_URL: https://github.com/Kristinita/Kristinita.github.io
 
+
 #######################
 # API keys and tokens #
 #######################
+# [FIXME][NOTE] Not possible get user environment variables from browser:
+# https://stackoverflow.com/q/21315708/5951529
+#
 # MailerLite:
 # [FIXME] MailerLite bugs for RSS and CoffeeScript:
 # https://github.com/Kristinita/SashaMiscellaneous/issues/18
 # https://github.com/Kristinita/SashaMiscellaneous/issues/19
 # mailerlite_account_id: 1389796
 # mailerlite_account_key: z8r4g9c0m9
-API_KEY_WILDFIRE_FIREBASE: AIzaSyBcqG96euym190CIuOLFO3PQx2a6cNcpwY
+#
+# [INFO] typo-reporter
 FORM_ID_TYPO_REPORTER: 1FAIpQLSfu5tnuHYKNPjH0n1fR9EmWDHwlFESzJj7JQFu_O5IS8G5R2A
 
-#############
-# Databases #
-#############
-# [FIXME][NOTE] Not possible get user environment variables from browser:
-# https://stackoverflow.com/q/21315708/5951529
-WILDFIRE_FIREBASE_PROJECT: kirawildfirefirebase
-WILDFIRE_MESSAGING_SENDER_ID: "545427878052"
+
+# [DEPRECATED] Wildfire no longer functioning more
+############
+# Wildfire #
+############
+# WILDFIRE_FIREBASE_PROJECT: kirawildfirefirebase
+# WILDFIRE_MESSAGING_SENDER_ID: "545427878052"
+# API_KEY_WILDFIRE_FIREBASE: AIzaSyBcqG96euym190CIuOLFO3PQx2a6cNcpwY

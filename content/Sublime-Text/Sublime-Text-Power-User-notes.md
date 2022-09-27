@@ -1,6 +1,6 @@
-Title: Sublime-Text-Power-User-notes
+Title: Sublime Text Power User notes
 Date: 2017-02-13 19:15:15
-Modified: 2020-09-22 12:00:02
+Modified: 2022-09-08 20:59:47
 Lang: en
 Author: Sasha Chernykh
 Summary: Notes of book “Sublime Text Power User”
@@ -8,7 +8,7 @@ Pagetitle: “Sublime Text Power User” notes
 Pagecolors: programs
 Asideimage: SashaChocolate
 Iconleftorright: right
-Tags: sublime-text
+Tags: errata, books-reviews, sublime-text
 Noco: 1EBY
 Og_image: https://i.imgur.com/K3YqJ4S.png
 Schemaorgtype: Review
