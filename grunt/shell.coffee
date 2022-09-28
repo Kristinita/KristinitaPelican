@@ -25,9 +25,9 @@ module.exports =
 	https://app.travis-ci.com/github/Kristinita/KristinitaPelican/jobs/560440148#L624-L2274
 	###
 	generate:
-		command: 'pipenv run pelican content -s pelicanconf.py --fatal warnings'
+		command: "pipenv run pelican content -s pelicanconf.py --fatal warnings"
 	deploy:
-		command: 'pipenv run pelican content -s publishconf.py --fatal warnings'
+		command: "pipenv run pelican content -s publishconf.py --fatal warnings"
 
 	###
 	[DEPRECATED] If “pipenv --update”, users have bug:
@@ -47,7 +47,7 @@ module.exports =
 	https://github.com/jgonggrijp/pip-review#pip-review
 	###
 	pipenvupdateall:
-		command: 'pipenv run pip-review --auto'
+		command: "pipenv run pip-review --auto"
 
 
 	###
@@ -67,7 +67,7 @@ module.exports =
 	https://github.com/pypa/pipenv/issues/1524#issuecomment-695213982
 	###
 	pipenvcleanunused:
-		command: 'pipenv clean'
+		command: "pipenv clean"
 
 	###
 	Update packages versions to the newest in “Pipfile.lock”, that:
@@ -80,7 +80,7 @@ module.exports =
 	https://app.travis-ci.com/github/Kristinita/KristinitaPelican/jobs/560271334#L736-L1277
 	###
 	pipenvupdatepipfilelock:
-		command: 'pipenv update'
+		command: "pipenv update"
 
 
 	############
@@ -107,7 +107,7 @@ module.exports =
 	https://stackoverflow.com/a/3824970/5951529
 	###
 	gitreflog:
-		command: 'git reflog expire --all'
+		command: "git reflog expire --all"
 
 	###
 	git gc
@@ -116,7 +116,7 @@ module.exports =
 	https://www.kernel.org/pub/software/scm/git/docgit-gc.html
 	###
 	gitgarbagecollector:
-		command: 'git gc --aggressive'
+		command: "git gc --aggressive"
 
 
 	###############
@@ -178,9 +178,12 @@ module.exports =
 	https://www.npmjs.com/package/npx
 	https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b
 	https://stackoverflow.com/a/45164863/5951529
+
+	[INFO] If the command doesn’t exist within the project, npx uses the command
+	from the “PATH” environment variable
 	###
 	covgen:
-		command: 'npx covgen kristinita$cock.li'
+		command: "npx covgen kristinita$cock.li"
 
 
 	##################
@@ -194,7 +197,7 @@ module.exports =
 	https://pypi.org/project/pip-licenses/#command-line-options
 	###
 	piplicenses:
-		command: 'pipenv run pip-licenses --with-authors --with-urls --with-description --format=markdown > pip-licenses.md'
+		command: "pipenv run pip-licenses --with-authors --with-urls --with-description --format=markdown > pip-licenses.md"
 
 
 	##########################
@@ -205,7 +208,7 @@ module.exports =
 	http://marionebl.github.io/commitlint/#/guides-ci-setup
 	###
 	commitlint:
-		command: 'commitlint-travis'
+		command: "commitlint-travis"
 
 
 	###################
@@ -220,7 +223,7 @@ module.exports =
 	https://github.com/travis-ci/travis.rb#lint
 	###
 	travislint:
-		command: 'travis lint -x'
+		command: "travis lint -x"
 
 
 	##########
@@ -324,16 +327,18 @@ module.exports =
 
 	[OPTIONS] https://github.com/unifiedjs/unified-args#cli
 
+
+	[NOTE] Install “remark-cli”, not “remark” devDependency for using “shell:remark”
+
+	[NOTE] Don’t use template <%= templates.paths.cwd %> in remark command.
+	grunt-shell will run the command “Command: npx remark D:\Kristinita/*.md --silently-ignore --frail”
+	and will not check any Markdown files.
+
+
 	[REQUIRED][INFO] “--silently-ignore”. If no, remark will check all
 	ignored files and spam the console with errors about each ignored file
 
 	[INFO] “--frail” — build fail if any warning
-
-	[NOTE] Don’t use template <%= templates.paths.cwd %> in the CLI command,
-	it doesn’t work for Travis:
-	https://app.travis-ci.com/github/Kristinita/KristinitaPelican/builds/256035121#L3597
-	Remark command should work without a template:
-	https://app.travis-ci.com/github/Kristinita/SashaTravis/jobs/584019226#L202
 	###
 	remark:
 		command: "npx remark **/*.md --silently-ignore --frail"
